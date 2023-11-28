@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "typescript/remote/command/generator"
 
 RSpec.configure do |config|

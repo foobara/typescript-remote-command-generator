@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class Typescript
+    class GenerateTypescript
     end
   end
 end

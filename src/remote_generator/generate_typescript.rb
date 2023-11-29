@@ -38,7 +38,7 @@ module Foobara
       end
 
       def templates_dir
-        "#{__dir__}/../../templates"
+        "#{__dir__}/templates"
       end
 
       def generate_organizations

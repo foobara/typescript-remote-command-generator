@@ -42,7 +42,17 @@ module Foobara
                          to: :relevant_manifest
 
         def domain_path
-          to_path organization_name, domain_name
+          path = []
+
+          if organization_name != "global_organization"
+            path << organization_name
+          end
+
+          if domain_name != "global_domain"
+            path << domain_name
+          end
+
+          path
         end
 
         def path_to_root

@@ -8,6 +8,8 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
 
   it "contains base files" do
+    expect(outcome).to be_success
+
     expect(result.keys).to any match(/base/)
     expect(command.manifest.organizations.map(&:organization_name)).to include("SomeOrg")
     expect(command.manifest.domains.map(&:domain_name)).to include("Auth")

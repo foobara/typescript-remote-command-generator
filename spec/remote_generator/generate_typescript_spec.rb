@@ -7,12 +7,16 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
 
-  def write_to_tmp(result)
-    result.each_pair do |path, contents|
-      path = "#{__dir__}/../../tmp/#{path}"
-      FileUtils.mkdir_p(File.dirname(path))
-      File.write(path, contents)
-    end
+  def write_all_to_tmp(result)
+    result.map do |path, contents|
+      Thread.new { write_to_tmp(path, contents) }
+    end.each(&:join)
+  end
+
+  def write_to_tmp(path, contents)
+    path = "#{__dir__}/../../tmp/#{path}"
+    FileUtils.mkdir_p(File.dirname(path))
+    File.write(path, contents)
   end
 
   it "contains base files" do
@@ -28,6 +32,6 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
     expect(result["SomeOrg/index.ts"]).to include("export class SomeOrgClass extends Organization {")
     expect(result["SomeOrg/Auth/index.ts"]).to include("export class AuthClass extends Domain {")
 
-    write_to_tmp(result)
+    write_all_to_tmp(result)
   end
 end

@@ -11,9 +11,17 @@ module Foobara
         generate_base_files
         generate_organizations
         generate_domains
+        each_command do
+          generate_command
+          # generate_command_inputs
+          # generate_command_result
+          # generate_command_errors
+        end
 
         paths_to_source_code
       end
+
+      attr_accessor :command_manifest
 
       def manifest
         @manifest ||= Foobara::Manifest.new(raw_manifest)
@@ -58,6 +66,33 @@ module Foobara
 
       def domain_manifests
         manifest.domains
+      end
+
+      def each_command
+        manifest.commands.each do |command_manifest|
+          self.command_manifest = command_manifest
+          yield
+        end
+      end
+
+      def generate_command
+        command_generator = Services::CommandGenerator.new(command_manifest)
+        paths_to_source_code[command_generator.target_path.join("/")] = command_generator.generate
+      end
+
+      def generate_command_inputs
+        command_inputs_generator = Services::CommandInputsGenerator.new(command_manifest)
+        paths_to_source_code[command_inputs_generator.target_path.join("/")] = command_inputs_generator.generate
+      end
+
+      def generate_command_result
+        command_result_generator = Services::CommandResultGenerator.new(command_manifest)
+        paths_to_source_code[command_result_generator.target_path.join("/")] = command_result_generator.generate
+      end
+
+      def generate_command_errors
+        command_errors_generator = Services::CommandErrorsGenerator.new(command_manifest)
+        paths_to_source_code[command_errors_generator.target_path.join("/")] = command_errors_generator.generate
       end
 
       # def generate_and_write_all

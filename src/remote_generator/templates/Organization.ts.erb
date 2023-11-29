@@ -1,5 +1,4 @@
 import {Organization} from "<%= path_to_root %>base/Organization"
-
 <% domain_generators.each do |domain| %>
 import {<%= domain.domain_name %>} from "<%= domain.path_to_root %><%= domain.domain_name %>"
 <% end %>
@@ -8,12 +7,11 @@ export class <%= organization_name %>Class extends Organization {
   constructor() {
     super("<%= organization_name %>")
   }
-
-  <% domain_generators.each do |domain| %>
+<% domain_generators.each do |domain| %>
   <%= domain.domain_name %>() {
-  return
-  <%= domain.domain_name %>
-}
+    return <%= domain.domain_name %>;
+  }
+
 <% end %>
 }
 

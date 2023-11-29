@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class TypeScriptGenerator
+    class Services
       class BaseGenerator
         attr_accessor :relevant_manifest
 
@@ -30,7 +30,7 @@ module Foobara
         end
 
         def erb_template
-          ERB.new(template_string)
+          ERB.new(template_string.gsub("\n<% end %>", "<% end %>"))
         end
 
         def short_name

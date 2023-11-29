@@ -1,4 +1,4 @@
-require_relative "src/typescript-remote-command-generator/version"
+require_relative "src/typescript_remote_command_generator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "typescript-remote-command-generator"

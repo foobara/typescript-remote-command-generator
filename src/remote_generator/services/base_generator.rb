@@ -67,6 +67,47 @@ module Foobara
             target_path
           end.join("/")
         end
+
+        def method_missing(method_name, *, &)
+          if relevant_manifest.respond_to?(method_name)
+            relevant_manifest.send(method_name, *, &)
+          else
+            super
+          end
+        end
+
+        def respond_to_missing?(method_name, include_private = false)
+          relevant_manifest.respond_to?(method_name, include_private)
+        end
+
+        # TODO: move this to a mixin somehow?
+        def inspect
+          manifest_data = relevant_manifest.to_h do |key, value|
+            if value.is_a?(::Array)
+              if value.size > 5 || value.any? { |v| _structure?(v) }
+                value = "..."
+              end
+            elsif value.is_a?(::Hash)
+              if value.size > 3 || value.keys.any? { |k| !k.is_a?(::Symbol) && !k.is_a?(::String) }
+                value = "..."
+              elsif value.values.any? { |v| _structure?(v) }
+                value = "..."
+              end
+            end
+
+            if key.is_a?(::String)
+              key = key.to_sym
+            end
+
+            [key, value]
+          end
+
+          "#{target_path.inspect}: #{manifest_data.inspect}"
+        end
+
+        def _structure?(object)
+          object.is_a?(::Hash) || object.is_a?(::Array)
+        end
       end
     end
   end

@@ -2,12 +2,7 @@ module Foobara
   module RemoteGenerator
     class GenerateTypescript < Foobara::Command
       # TODO: give better sugar for specifying required inputs
-      inputs type: :attributes,
-             element_type_declarations: {
-               # TODO: specify a better type?
-               raw_manifest: :associative_array
-             },
-             required: [:raw_manifest]
+      inputs raw_manifest: { type: :associative_array, required: true }
 
       # TODO: specify a better type?
       result :associative_array
@@ -15,6 +10,7 @@ module Foobara
       def execute
         generate_base_files
         generate_organizations
+        generate_domains
 
         paths_to_source_code
       end
@@ -48,9 +44,22 @@ module Foobara
         end
       end
 
+      def generate_domains
+        domain_manifests.each do |domain_manifest|
+          domain_generator = Services::DomainGenerator.new(domain_manifest)
+          paths_to_source_code[domain_generator.target_path.join("/")] =
+            domain_generator.generate
+        end
+      end
+
       def organization_manifests
         manifest.organizations
       end
+
+      def domain_manifests
+        manifest.domains
+      end
+
       # def generate_and_write_all
       #   organization_manifests.each do |organization_manifest|
       #     organization_generator = OrganizationGenerator.new(organization_manifest)
@@ -88,6 +97,35 @@ module Foobara
       #     end
       #  end
       # end
+      #
+      # TODO: move this to a mixin somehow?
+      def inspect
+        manifest_data = raw_manifest.to_h do |key, value|
+          if value.is_a?(::Array)
+            if value.size > 5 || value.any? { |v| _structure?(v) }
+              value = "..."
+            end
+          elsif value.is_a?(::Hash)
+            if value.size > 3 || value.keys.any? { |k| !k.is_a?(::Symbol) && !k.is_a?(::String) }
+              value = "..."
+            elsif value.values.any? { |v| _structure?(v) }
+              value = "..."
+            end
+          end
+
+          if key.is_a?(::String)
+            key = key.to_sym
+          end
+
+          [key, value]
+        end
+
+        "#{path.inspect}: #{manifest_data.inspect}"
+      end
+
+      def _structure?(object)
+        object.is_a?(::Hash) || object.is_a?(::Array)
+      end
     end
   end
 end

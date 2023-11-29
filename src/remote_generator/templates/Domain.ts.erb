@@ -1,0 +1,32 @@
+import { Domain } from "<%= path_to_root %>base/Domain"
+<% command_generators.each do |command| %>
+import {<%= command.command_name %>} from "<%= path_to_root %><%= command.import_path %>"
+<% end %>
+<% entity_generators.each do |entity| %>
+import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
+<% end %>
+
+export class <%= domain_name %>Class extends Domain {
+  constructor() {
+    super("<%= organization_name %>", "<%= domain_name %>")
+  }
+
+  // commands
+<% command_generators.each do |command| %>
+  <%= command.command_name %>() {
+    return <%= command.command_name %>;
+  }
+
+  // entities
+<% end %>
+<% entity_generators.each do |entity| %>
+  <%= entity.entity_name %>() {
+    return <%= entity.entity_name %>;
+  }
+
+<% end %>
+}
+
+export const <%= domain_name %> = new <%= domain_name %>Class
+
+

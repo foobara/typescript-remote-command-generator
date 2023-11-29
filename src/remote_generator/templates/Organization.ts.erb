@@ -1,6 +1,6 @@
 import {Organization} from "<%= path_to_root %>base/Organization"
 <% domain_generators.each do |domain| %>
-import {<%= domain.domain_name %>} from "<%= domain.path_to_root %><%= domain.domain_name %>"
+import {<%= domain.domain_name %>} from "<%= path_to_root %><%= domain.import_path %>"
 <% end %>
 
 export class <%= organization_name %>Class extends Organization {

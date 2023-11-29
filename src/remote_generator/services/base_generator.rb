@@ -59,6 +59,14 @@ module Foobara
           parts = ["../"] * (target_path.size - 1)
           parts.join
         end
+
+        def import_path
+          if target_path.last == "index.ts"
+            target_path[0..-2]
+          else
+            target_path
+          end.join("/")
+        end
       end
     end
   end

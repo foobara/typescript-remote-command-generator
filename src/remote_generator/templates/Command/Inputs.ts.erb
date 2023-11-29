@@ -1,0 +1,5 @@
+export default interface Inputs {
+<% attribute_declarations.each_pair do |attribute_name, attribute_declaration| %>
+  <%= attribute_name %><%= "?" unless required?(attribute_name) %>: <%= foobara_type_to_ts_type(attribute_declaration) %>
+<% end %>
+}

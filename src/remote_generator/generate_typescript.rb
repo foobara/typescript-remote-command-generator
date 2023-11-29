@@ -13,7 +13,7 @@ module Foobara
         generate_domains
         each_command do
           generate_command
-          # generate_command_inputs
+          generate_command_inputs
           # generate_command_result
           # generate_command_errors
         end
@@ -24,7 +24,7 @@ module Foobara
       attr_accessor :command_manifest
 
       def manifest
-        @manifest ||= Foobara::Manifest.new(raw_manifest)
+        @manifest ||= Manifest::RootManifest.new(raw_manifest)
       end
 
       def paths_to_source_code
@@ -134,33 +134,7 @@ module Foobara
       # end
       #
       # TODO: move this to a mixin somehow?
-      def inspect
-        manifest_data = raw_manifest.to_h do |key, value|
-          if value.is_a?(::Array)
-            if value.size > 5 || value.any? { |v| _structure?(v) }
-              value = "..."
-            end
-          elsif value.is_a?(::Hash)
-            if value.size > 3 || value.keys.any? { |k| !k.is_a?(::Symbol) && !k.is_a?(::String) }
-              value = "..."
-            elsif value.values.any? { |v| _structure?(v) }
-              value = "..."
-            end
-          end
-
-          if key.is_a?(::String)
-            key = key.to_sym
-          end
-
-          [key, value]
-        end
-
-        "#{path.inspect}: #{manifest_data.inspect}"
-      end
-
-      def _structure?(object)
-        object.is_a?(::Hash) || object.is_a?(::Array)
-      end
+      #
     end
   end
 end

@@ -13,7 +13,24 @@ module Foobara
         end
 
         def generate
+          # Render the template
+          erb_template.result(binding)
+        end
+
+        def template_path
           raise "Subclass responsibility"
+        end
+
+        def absolute_template_path
+          "#{__dir__}/../templates/#{template_path}"
+        end
+
+        def template_string
+          File.read(absolute_template_path)
+        end
+
+        def erb_template
+          ERB.new(template_string)
         end
 
         def short_name
@@ -29,7 +46,7 @@ module Foobara
         end
 
         def path_to_root
-          parts = ["../"] * (target_path.size - 2)
+          parts = ["../"] * (target_path.size - 1)
           parts.join
         end
       end

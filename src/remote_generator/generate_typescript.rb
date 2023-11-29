@@ -43,8 +43,8 @@ module Foobara
 
       def generate_organizations
         organization_manifests.each do |organization_manifest|
-          organization_generator = OrganizationGenerator.new(organization_manifest)
-          organization_generator.generate
+          organization_generator = TypeScriptGenerator::OrganizationGenerator.new(organization_manifest)
+          paths_to_source_code[organization_generator.target_path.join("/")] = organization_generator.generate
         end
       end
 

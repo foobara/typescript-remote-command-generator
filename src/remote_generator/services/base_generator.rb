@@ -83,7 +83,43 @@ module Foobara
         end
 
         def foobara_type_to_ts_type(type_declaration)
+          if type_declaration.relevant_manifest.size > 1
+            raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
+          end
+
+          type_symbol = type_declaration.type
+
+          case type_symbol
+            # TODO: should apply relevant processors to make email a real email type instead of "string"
+          when "string", "email", "boolean"
+            return type_symbol
+          when "integer"
+            return "number"
+          end
+
+          type = find_type(type_declaration)
+
           binding.pry
+          #
+          # if (!typeManifest) {
+          #   throw new Error(`Could not find type ${typeSymbol} in ${path.join("::")}`)
+          # }
+          #
+          # if (isEntityManifest(typeManifest)) {
+          #   // TODO: we need to handle being able to have different types with the same name somehow... I guess by
+          # // detecting that this is the case and then prefixing the interface names with the domain/org names?
+          # if (associationDepth === "ambiguous") {
+          #   return typeManifest.entity_name
+          # } else if (associationDepth === "atom") {
+          #   return `Unloaded${typeManifest.entity_name}`
+          # } else if (associationDepth === "aggregate") {
+          #   return `${typeManifest.entity_name}Aggregate`
+          # } else {
+          #   throw new Error("unreachable...")
+          # }
+          # } else {
+          #   throw new Error(`Not sure how to handle ${JSON.stringify(typeManifest)}`)
+          # }
         end
       end
     end

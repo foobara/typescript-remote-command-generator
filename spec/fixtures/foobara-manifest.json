@@ -2691,6 +2691,7 @@
               "entity_name": "Referral",
               "model_base_class": "Foobara::Entity",
               "model_class": "SomeOrg::Auth::Referral",
+              "name": "Referral",
               "organization_name": "SomeOrg",
               "primary_key_attribute": "id",
               "primary_key_type": {
@@ -3495,6 +3496,7 @@
               "entity_name": "User",
               "model_base_class": "Foobara::Entity",
               "model_class": "SomeOrg::Auth::User",
+              "name": "User",
               "organization_name": "SomeOrg",
               "primary_key_attribute": "id",
               "primary_key_type": {
@@ -4421,6 +4423,7 @@
               "declaration_data": {
                 "type": "associative_array"
               },
+              "name": "associative_array",
               "processors": {
                 "casters": {
                   "array": {
@@ -4458,6 +4461,7 @@
               "declaration_data": {
                 "type": "atomic_duck"
               },
+              "name": "atomic_duck",
               "processors": {
                 "casters": {
                 },
@@ -4481,6 +4485,7 @@
               "declaration_data": {
                 "type": "attributes"
               },
+              "name": "attributes",
               "processors": {
                 "casters": {
                   "hash": {
@@ -4529,6 +4534,7 @@
               "declaration_data": {
                 "type": "duck"
               },
+              "name": "duck",
               "processors": {
                 "casters": {
                 },
@@ -4552,6 +4558,7 @@
               "declaration_data": {
                 "type": "duckture"
               },
+              "name": "duckture",
               "processors": {
                 "casters": {
                 },
@@ -4575,6 +4582,7 @@
               "declaration_data": {
                 "type": "email"
               },
+              "name": "email",
               "processors": {
                 "casters": {
                   "symbol": {
@@ -4857,6 +4865,7 @@
               "declaration_data": {
                 "type": "entity"
               },
+              "name": "entity",
               "processors": {
                 "casters": {
                   "hash": {
@@ -4898,6 +4907,7 @@
               "declaration_data": {
                 "type": "integer"
               },
+              "name": "integer",
               "processors": {
                 "casters": {
                   "string": {
@@ -4935,6 +4945,7 @@
               "declaration_data": {
                 "type": "model"
               },
+              "name": "model",
               "processors": {
                 "casters": {
                   "hash": {
@@ -4976,6 +4987,7 @@
               "declaration_data": {
                 "type": "number"
               },
+              "name": "number",
               "processors": {
                 "casters": {
                 },
@@ -5007,6 +5019,7 @@
               "declaration_data": {
                 "type": "string"
               },
+              "name": "string",
               "processors": {
                 "casters": {
                   "symbol": {

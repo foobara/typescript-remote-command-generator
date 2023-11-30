@@ -1,3 +1,7 @@
+<% entity_generators.each do |entity_generator| %>
+import { <%= entity_generator.all_names.join(", ") %> } from "<%= path_to_root %><%= entity_generator.import_path %>"
+<% end %>
+
 export default interface Inputs {
 <% attribute_declarations.each_pair do |attribute_name, attribute_declaration| %>
   <%= attribute_name %><%= "?" unless required?(attribute_name) %>: <%= foobara_type_to_ts_type(attribute_declaration) %>

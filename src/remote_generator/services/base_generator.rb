@@ -82,28 +82,47 @@ module Foobara
           relevant_manifest.respond_to?(method_name, include_private)
         end
 
-        def foobara_type_to_ts_type(type_declaration, association_depth = AssociationDepth::AMBIGUOUS)
+        def foobara_type_to_ts_type(type_declaration, name: nil)
+          if type_declaration.is_a?(Manifest::Attributes)
+            ts_type = attributes_to_ts_type(type_declaration)
+
+            return name ? "interface #{name} #{ts_type}" : ts_type
+          end
+
           if type_declaration.relevant_manifest.size > 1
             raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
           end
 
           type_symbol = type_declaration.type
 
-          case type_symbol
-            # TODO: should apply relevant processors to make email a real email type instead of "string"
-          when "string", "email", "boolean"
-            return type_symbol
-          when "integer"
-            return "number"
-          end
+          type_string = case type_symbol
+                        # TODO: should apply relevant processors to make email a real email type instead of "string"
+                        when "string", "email", "boolean"
+                          type_symbol
+                        when "integer"
+                          "number"
+                        else
+                          if type_declaration.entity?
+                            # How do we handle name collisions across domains/orgs??
+                            type_declaration.to_entity.entity_name
+                          end
+                        end
 
-          type = find_type(type_declaration)
-
-          if type.entity?
-            entity_to_ts_type(type, association_depth)
+          if type_string
+            name ? "#{name} = #{type_symbol}" : type_symbol
           else
-            raise "Not sure how to convert #{type} to a TS type"
+            raise "Not sure how to convert #{type_declaration} to a TS type"
           end
+        end
+
+        def attributes_to_ts_type(attributes)
+          guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
+            "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
+              foobara_type_to_ts_type(attribute_declaration)
+            }"
+          end.join("\n")
+
+          "{\n#{guts}\n}"
         end
 
         def entity_to_ts_type(type, association_depth = AssociationDepth::AMBIGUOUS)

@@ -15,7 +15,7 @@ module Foobara
         end
 
         def required?(attribute_name)
-          inputs_type.required
+          inputs_type.required?(attribute_name)
         end
 
         def attribute_declarations

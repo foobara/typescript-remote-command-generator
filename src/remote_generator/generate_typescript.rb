@@ -14,9 +14,11 @@ module Foobara
         each_command do
           generate_command
           generate_command_inputs
-          # generate_command_result
+          generate_command_result
           # generate_command_errors
         end
+
+        generate_generated_files_json
 
         paths_to_source_code
       end
@@ -93,6 +95,12 @@ module Foobara
       def generate_command_errors
         command_errors_generator = Services::CommandErrorsGenerator.new(command_manifest)
         paths_to_source_code[command_errors_generator.target_path.join("/")] = command_errors_generator.generate
+      end
+
+      def generate_generated_files_json
+        paths_to_source_code["foobara-generated.json"] = "[\n#{
+          paths_to_source_code.keys.map { |k| "  \"#{k}\"" }.join(",\n")
+        }\n]\n"
       end
 
       # def generate_and_write_all

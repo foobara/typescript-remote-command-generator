@@ -891,29 +891,7 @@
               "result_transformers": [
               ],
               "result_type": {
-                "attributes_declaration": {
-                  "element_type_declarations": {
-                    "channel": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "integer"
-                    },
-                    "referred_user": {
-                      "type": "User"
-                    },
-                    "referring_user": {
-                      "type": "User"
-                    }
-                  },
-                  "type": "attributes"
-                },
-                "model_base_class": "Foobara::Entity",
-                "model_class": "SomeOrg::Auth::Referral",
-                "model_module": "SomeOrg::Auth",
-                "name": "Referral",
-                "primary_key": "id",
-                "type": "entity"
+                "type": "Referral"
               },
               "serializers": [
                 {
@@ -2588,29 +2566,7 @@
               "result_transformers": [
               ],
               "result_type": {
-                "attributes_declaration": {
-                  "element_type_declarations": {
-                    "email": {
-                      "type": "email"
-                    },
-                    "first_name": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "integer"
-                    },
-                    "last_name": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "attributes"
-                },
-                "model_base_class": "Foobara::Entity",
-                "model_class": "SomeOrg::Auth::User",
-                "model_module": "SomeOrg::Auth",
-                "name": "User",
-                "primary_key": "id",
-                "type": "entity"
+                "type": "User"
               },
               "serializers": [
                 {

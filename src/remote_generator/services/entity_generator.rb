@@ -26,6 +26,18 @@ module Foobara
           end
         end
 
+        def all_names
+          @all_names ||= if has_associations?
+                           [name, unloaded_name, atom_name, aggregate_name]
+                         else
+                           [name, unloaded_name]
+                         end
+        end
+
+        def has_associations?
+          !associations.empty?
+        end
+
         def aggregate_name
           if has_associations?
             "#{entity_name}Aggregate"

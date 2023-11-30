@@ -82,7 +82,7 @@ module Foobara
           relevant_manifest.respond_to?(method_name, include_private)
         end
 
-        def foobara_type_to_ts_type(type_declaration)
+        def foobara_type_to_ts_type(type_declaration, association_depth = AssociationDepth::AMBIGUOUS)
           if type_declaration.relevant_manifest.size > 1
             raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
           end
@@ -99,27 +99,33 @@ module Foobara
 
           type = find_type(type_declaration)
 
-          binding.pry
-          #
-          # if (!typeManifest) {
-          #   throw new Error(`Could not find type ${typeSymbol} in ${path.join("::")}`)
-          # }
-          #
-          # if (isEntityManifest(typeManifest)) {
-          #   // TODO: we need to handle being able to have different types with the same name somehow... I guess by
-          # // detecting that this is the case and then prefixing the interface names with the domain/org names?
-          # if (associationDepth === "ambiguous") {
-          #   return typeManifest.entity_name
-          # } else if (associationDepth === "atom") {
-          #   return `Unloaded${typeManifest.entity_name}`
-          # } else if (associationDepth === "aggregate") {
-          #   return `${typeManifest.entity_name}Aggregate`
-          # } else {
-          #   throw new Error("unreachable...")
-          # }
-          # } else {
-          #   throw new Error(`Not sure how to handle ${JSON.stringify(typeManifest)}`)
-          # }
+          if type.entity?
+            entity_to_ts_type(type, association_depth)
+          else
+            raise "Not sure how to convert #{type} to a TS type"
+          end
+        end
+
+        def entity_to_ts_type(type, association_depth = AssociationDepth::AMBIGUOUS)
+          entity_manifest = Manifest::Entity.new(root_manifest, type.path)
+          entity_generator = Services::EntityGenerator.new(entity_manifest)
+
+          entity_name = entity_generator.entity_name
+
+          case association_depth
+          when AssociationDepth::AMBIGUOUS
+            entity_name
+          when AssociationDepth::ATOM
+            entity_generator.atom_name # "Unloaded#{entity_name}"
+          when AssociationDepth::AGGREGATE
+            if type.has_associations?
+              entity_generator.aggregate_name # "#{entity_name}Aggregate"
+            else
+              entity_name
+            end
+          else
+            raise "Bad association_depth: #{association_depth}"
+          end
         end
       end
     end

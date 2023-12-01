@@ -15,7 +15,15 @@ module Foobara
         end
 
         def uniq_error_generators_by_symbol
-          @uniq_error_generators_by_symbol ||= error_generators.group_by(&:symbol).values
+          @uniq_error_generators_by_symbol ||= begin
+            set = {}
+
+            error_generators.each do |error_generator|
+              set[error_generator.symbol] = error_generator
+            end
+
+            set.values
+          end
         end
 
         def error_generators

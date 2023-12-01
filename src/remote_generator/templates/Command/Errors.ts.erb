@@ -1,0 +1,5 @@
+<% error_generators.each do |error| %>
+import {<%= error.error_name %>} from "<%= path_to_root %><%= error.import_path %>"
+<% end %>
+
+export type Errors = <%= instantiated_error_types_union %>

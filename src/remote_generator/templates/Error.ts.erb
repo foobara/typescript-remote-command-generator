@@ -1,20 +1,15 @@
 // imports needed for context types...
+import <%= error_base_class %> from "<%= path_to_root %>base/Error"
 
-interface ErrorT {
-  key: string
-  symbol: string
-  category: "data" | "runtime"
-  context: any
-  path: []
-  runtime_path: []
-}
+<% entity_generators.each do |entity| %>
+import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
+<% end %>
 
-/*
 interface <%= error_name %><
   keyT extends string,
   pathT extends string[] = [],
-  runtime_pathT extends string[] = [],
-> extends <%= runtime_error? ? "Runtime" : "Data" %>Error {
+  runtime_pathT extends string[] = []
+> extends <%= error_base_class %> {
   key: keyT
   symbol: "<%= symbol %>"
   path: pathT

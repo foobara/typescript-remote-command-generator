@@ -4,7 +4,7 @@ module Foobara
   module RemoteGenerator
     class Services
       class CommandErrorGenerator < BaseGenerator
-        alias command_manifest relevant_manifest
+        alias error_manifest relevant_manifest
 
         def target_path
           if global?
@@ -14,16 +14,8 @@ module Foobara
           end
         end
 
-        def global?
-          global_symbols.include?(symbol.to_sym)
-        end
-
-        def global_symbols
-          %w[
-            cannot_cast
-            missing_required_attribute
-            unexpected_attributes
-          ]
+        def command_name
+          path[-3].to_s
         end
 
         def error_name
@@ -34,8 +26,18 @@ module Foobara
           "Command/Errors.ts.erb"
         end
 
-        def entity_generators
-          raise "wtf"
+        def instantiated_error_type
+          result = "#{error_name}<\"#{key}\""
+
+          if _path.any? || runtime_path.any?
+            result += ", #{_path.map(&:to_s).inspect}"
+          end
+
+          if runtime_path.any?
+            result += ", #{runtime_path.map(&:to_s).inspect}"
+          end
+
+          "#{result}>"
         end
       end
     end

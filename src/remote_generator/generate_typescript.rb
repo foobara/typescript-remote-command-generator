@@ -15,7 +15,7 @@ module Foobara
           generate_command
           generate_command_inputs
           generate_command_result
-          # generate_command_errors
+          generate_command_errors
         end
 
         generate_generated_files_json

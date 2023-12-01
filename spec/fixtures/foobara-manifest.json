@@ -29,6 +29,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.cannot_cast",
                   "path": [
                   ],
                   "runtime_path": [
@@ -52,6 +53,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.channel.cannot_cast",
                   "path": [
                     "channel"
                   ],
@@ -76,6 +78,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.id.cannot_cast",
                   "path": [
                     "id"
                   ],
@@ -100,6 +103,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referred_user.cannot_cast",
                   "path": [
                     "referred_user"
                   ],
@@ -124,6 +128,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referred_user.email.cannot_cast",
                   "path": [
                     "referred_user",
                     "email"
@@ -149,6 +154,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.cannot_exceed64_characters",
                   "path": [
                     "referred_user",
                     "email"
@@ -174,6 +180,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.cannot_have_multiple_at_signs",
                   "path": [
                     "referred_user",
                     "email"
@@ -199,6 +206,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
                   "path": [
                     "referred_user",
                     "email"
@@ -224,6 +232,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.first_part_cannot_be_empty",
                   "path": [
                     "referred_user",
                     "email"
@@ -249,6 +258,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
                   "path": [
                     "referred_user",
                     "email"
@@ -274,6 +284,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.first_part_has_bad_characters",
                   "path": [
                     "referred_user",
                     "email"
@@ -299,6 +310,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.must_have_an_at_sign",
                   "path": [
                     "referred_user",
                     "email"
@@ -324,6 +336,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.second_part_cannot_be_empty",
                   "path": [
                     "referred_user",
                     "email"
@@ -349,6 +362,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referred_user.email.second_part_has_bad_characters",
                   "path": [
                     "referred_user",
                     "email"
@@ -374,6 +388,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referred_user.first_name.cannot_cast",
                   "path": [
                     "referred_user",
                     "first_name"
@@ -399,6 +414,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referred_user.id.cannot_cast",
                   "path": [
                     "referred_user",
                     "id"
@@ -424,6 +440,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referred_user.last_name.cannot_cast",
                   "path": [
                     "referred_user",
                     "last_name"
@@ -452,6 +469,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referred_user.unexpected_attributes",
                   "path": [
                     "referred_user"
                   ],
@@ -476,6 +494,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.cannot_cast",
                   "path": [
                     "referring_user"
                   ],
@@ -500,6 +519,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.email.cannot_cast",
                   "path": [
                     "referring_user",
                     "email"
@@ -525,6 +545,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.cannot_exceed64_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -550,6 +571,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.cannot_have_multiple_at_signs",
                   "path": [
                     "referring_user",
                     "email"
@@ -575,6 +597,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
                   "path": [
                     "referring_user",
                     "email"
@@ -600,6 +623,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.first_part_cannot_be_empty",
                   "path": [
                     "referring_user",
                     "email"
@@ -625,6 +649,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
                   "path": [
                     "referring_user",
                     "email"
@@ -650,6 +675,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.first_part_has_bad_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -675,6 +701,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.must_have_an_at_sign",
                   "path": [
                     "referring_user",
                     "email"
@@ -700,6 +727,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.second_part_cannot_be_empty",
                   "path": [
                     "referring_user",
                     "email"
@@ -725,6 +753,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.second_part_has_bad_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -750,6 +779,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.first_name.cannot_cast",
                   "path": [
                     "referring_user",
                     "first_name"
@@ -775,6 +805,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.id.cannot_cast",
                   "path": [
                     "referring_user",
                     "id"
@@ -800,6 +831,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.last_name.cannot_cast",
                   "path": [
                     "referring_user",
                     "last_name"
@@ -828,6 +860,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.unexpected_attributes",
                   "path": [
                     "referring_user"
                   ],
@@ -855,6 +888,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.unexpected_attributes",
                   "path": [
                   ],
                   "runtime_path": [
@@ -930,6 +964,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.cannot_cast",
                   "path": [
                   ],
                   "runtime_path": [
@@ -953,6 +988,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.email.cannot_cast",
                   "path": [
                     "email"
                   ],
@@ -977,6 +1013,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.cannot_exceed64_characters",
                   "path": [
                     "email"
                   ],
@@ -1001,6 +1038,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.cannot_have_multiple_at_signs",
                   "path": [
                     "email"
                   ],
@@ -1025,6 +1063,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.domain_cannot_start_with_or_end_with_a_hyphen",
                   "path": [
                     "email"
                   ],
@@ -1049,6 +1088,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.first_part_cannot_be_empty",
                   "path": [
                     "email"
                   ],
@@ -1073,6 +1113,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
                   "path": [
                     "email"
                   ],
@@ -1097,6 +1138,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.first_part_has_bad_characters",
                   "path": [
                     "email"
                   ],
@@ -1121,6 +1163,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.must_have_an_at_sign",
                   "path": [
                     "email"
                   ],
@@ -1145,6 +1188,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.second_part_cannot_be_empty",
                   "path": [
                     "email"
                   ],
@@ -1169,6 +1213,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.email.second_part_has_bad_characters",
                   "path": [
                     "email"
                   ],
@@ -1193,6 +1238,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.first_name.cannot_cast",
                   "path": [
                     "first_name"
                   ],
@@ -1217,6 +1263,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.id.cannot_cast",
                   "path": [
                     "id"
                   ],
@@ -1241,6 +1288,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.last_name.cannot_cast",
                   "path": [
                     "last_name"
                   ],
@@ -1265,6 +1313,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.cannot_cast",
                   "path": [
                     "referring_user"
                   ],
@@ -1289,6 +1338,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.email.cannot_cast",
                   "path": [
                     "referring_user",
                     "email"
@@ -1314,6 +1364,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.cannot_exceed64_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -1339,6 +1390,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.cannot_have_multiple_at_signs",
                   "path": [
                     "referring_user",
                     "email"
@@ -1364,6 +1416,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
                   "path": [
                     "referring_user",
                     "email"
@@ -1389,6 +1442,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.first_part_cannot_be_empty",
                   "path": [
                     "referring_user",
                     "email"
@@ -1414,6 +1468,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
                   "path": [
                     "referring_user",
                     "email"
@@ -1439,6 +1494,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.first_part_has_bad_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -1464,6 +1520,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.must_have_an_at_sign",
                   "path": [
                     "referring_user",
                     "email"
@@ -1489,6 +1546,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.second_part_cannot_be_empty",
                   "path": [
                     "referring_user",
                     "email"
@@ -1514,6 +1572,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "data.referring_user.email.second_part_has_bad_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -1539,6 +1598,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.first_name.cannot_cast",
                   "path": [
                     "referring_user",
                     "first_name"
@@ -1564,6 +1624,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.id.cannot_cast",
                   "path": [
                     "referring_user",
                     "id"
@@ -1589,6 +1650,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.last_name.cannot_cast",
                   "path": [
                     "referring_user",
                     "last_name"
@@ -1617,6 +1679,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.referring_user.unexpected_attributes",
                   "path": [
                     "referring_user"
                   ],
@@ -1644,6 +1707,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.unexpected_attributes",
                   "path": [
                   ],
                   "runtime_path": [
@@ -1667,6 +1731,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.cannot_cast",
                   "path": [
                   ],
                   "runtime_path": [
@@ -1691,6 +1756,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.channel.cannot_cast",
                   "path": [
                     "channel"
                   ],
@@ -1716,6 +1782,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.id.cannot_cast",
                   "path": [
                     "id"
                   ],
@@ -1741,6 +1808,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referred_user.cannot_cast",
                   "path": [
                     "referred_user"
                   ],
@@ -1766,6 +1834,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.cannot_cast",
                   "path": [
                     "referred_user",
                     "email"
@@ -1792,6 +1861,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.cannot_exceed64_characters",
                   "path": [
                     "referred_user",
                     "email"
@@ -1818,6 +1888,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.cannot_have_multiple_at_signs",
                   "path": [
                     "referred_user",
                     "email"
@@ -1844,6 +1915,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
                   "path": [
                     "referred_user",
                     "email"
@@ -1870,6 +1942,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_be_empty",
                   "path": [
                     "referred_user",
                     "email"
@@ -1896,6 +1969,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
                   "path": [
                     "referred_user",
                     "email"
@@ -1922,6 +1996,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.first_part_has_bad_characters",
                   "path": [
                     "referred_user",
                     "email"
@@ -1948,6 +2023,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.must_have_an_at_sign",
                   "path": [
                     "referred_user",
                     "email"
@@ -1974,6 +2050,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.second_part_cannot_be_empty",
                   "path": [
                     "referred_user",
                     "email"
@@ -2000,6 +2077,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referred_user.email.second_part_has_bad_characters",
                   "path": [
                     "referred_user",
                     "email"
@@ -2026,6 +2104,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referred_user.first_name.cannot_cast",
                   "path": [
                     "referred_user",
                     "first_name"
@@ -2052,6 +2131,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referred_user.id.cannot_cast",
                   "path": [
                     "referred_user",
                     "id"
@@ -2078,6 +2158,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referred_user.last_name.cannot_cast",
                   "path": [
                     "referred_user",
                     "last_name"
@@ -2107,6 +2188,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referred_user.unexpected_attributes",
                   "path": [
                     "referred_user"
                   ],
@@ -2132,6 +2214,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referring_user.cannot_cast",
                   "path": [
                     "referring_user"
                   ],
@@ -2157,6 +2240,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.cannot_cast",
                   "path": [
                     "referring_user",
                     "email"
@@ -2183,6 +2267,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.cannot_exceed64_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -2209,6 +2294,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.cannot_have_multiple_at_signs",
                   "path": [
                     "referring_user",
                     "email"
@@ -2235,6 +2321,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
                   "path": [
                     "referring_user",
                     "email"
@@ -2261,6 +2348,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_be_empty",
                   "path": [
                     "referring_user",
                     "email"
@@ -2287,6 +2375,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
                   "path": [
                     "referring_user",
                     "email"
@@ -2313,6 +2402,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.first_part_has_bad_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -2339,6 +2429,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.must_have_an_at_sign",
                   "path": [
                     "referring_user",
                     "email"
@@ -2365,6 +2456,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.second_part_cannot_be_empty",
                   "path": [
                     "referring_user",
                     "email"
@@ -2391,6 +2483,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": false,
+                  "key": "some_org::auth::create_referral>data.referring_user.email.second_part_has_bad_characters",
                   "path": [
                     "referring_user",
                     "email"
@@ -2417,6 +2510,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referring_user.first_name.cannot_cast",
                   "path": [
                     "referring_user",
                     "first_name"
@@ -2443,6 +2537,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referring_user.id.cannot_cast",
                   "path": [
                     "referring_user",
                     "id"
@@ -2469,6 +2564,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referring_user.last_name.cannot_cast",
                   "path": [
                     "referring_user",
                     "last_name"
@@ -2498,6 +2594,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.referring_user.unexpected_attributes",
                   "path": [
                     "referring_user"
                   ],
@@ -2526,6 +2623,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "some_org::auth::create_referral>data.unexpected_attributes",
                   "path": [
                   ],
                   "runtime_path": [
@@ -3863,6 +3961,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.base.cannot_cast",
                   "path": [
                     "base"
                   ],
@@ -3881,6 +3980,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.base.missing_required_attribute",
                   "path": [
                     "base"
                   ],
@@ -3905,6 +4005,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.cannot_cast",
                   "path": [
                   ],
                   "runtime_path": [
@@ -3928,6 +4029,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.exponent.cannot_cast",
                   "path": [
                     "exponent"
                   ],
@@ -3946,6 +4048,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.exponent.missing_required_attribute",
                   "path": [
                     "exponent"
                   ],
@@ -3964,6 +4067,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.missing_required_attribute",
                   "path": [
                   ],
                   "runtime_path": [
@@ -3990,6 +4094,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.unexpected_attributes",
                   "path": [
                   ],
                   "runtime_path": [
@@ -4077,6 +4182,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.cannot_cast",
                   "path": [
                   ],
                   "runtime_path": [
@@ -4094,6 +4200,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.missing_required_attribute",
                   "path": [
                   ],
                   "runtime_path": [
@@ -4117,6 +4224,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.some_integer.cannot_cast",
                   "path": [
                     "some_integer"
                   ],
@@ -4135,6 +4243,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.some_integer.missing_required_attribute",
                   "path": [
                     "some_integer"
                   ],
@@ -4162,6 +4271,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.unexpected_attributes",
                   "path": [
                   ],
                   "runtime_path": [
@@ -4240,6 +4350,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.cannot_cast",
                   "path": [
                   ],
                   "runtime_path": [
@@ -4257,6 +4368,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.missing_required_attribute",
                   "path": [
                   ],
                   "runtime_path": [
@@ -4280,6 +4392,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.some_integer.cannot_cast",
                   "path": [
                     "some_integer"
                   ],
@@ -4298,6 +4411,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.some_integer.missing_required_attribute",
                   "path": [
                     "some_integer"
                   ],
@@ -4325,6 +4439,7 @@
                     "type": "attributes"
                   },
                   "is_fatal": true,
+                  "key": "data.unexpected_attributes",
                   "path": [
                   ],
                   "runtime_path": [

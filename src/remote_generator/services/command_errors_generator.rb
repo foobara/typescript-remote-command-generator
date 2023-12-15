@@ -7,7 +7,7 @@ module Foobara
         alias command_manifest relevant_manifest
 
         def target_path
-          [*domain_path, command_name, "Errors.ts"]
+          [*scoped_full_path, "Errors.ts"]
         end
 
         def template_path
@@ -28,7 +28,7 @@ module Foobara
 
         def error_generators
           @error_generators ||= error_types.values.map do |error_manifest|
-            Services::CommandErrorGenerator.new(error_manifest)
+            Services::CommandErrorGenerator.new(error_manifest, elements_to_generate)
           end
         end
 

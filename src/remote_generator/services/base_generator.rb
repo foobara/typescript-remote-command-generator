@@ -4,10 +4,11 @@ module Foobara
       class BaseGenerator
         include TruncatedInspect
 
-        attr_accessor :relevant_manifest
+        attr_accessor :relevant_manifest, :elements_to_generate
 
-        def initialize(relevant_manifest)
+        def initialize(relevant_manifest, elements_to_generate)
           self.relevant_manifest = relevant_manifest
+          self.elements_to_generate = elements_to_generate
         end
 
         def target_path

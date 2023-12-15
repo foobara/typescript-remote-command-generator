@@ -9,21 +9,82 @@ module Foobara
 
       def execute
         generate_base_files
-        generate_organizations
-        generate_domains
-        each_command do
-          generate_command
-          generate_command_inputs
-          generate_command_result
-          generate_command_errors
+
+        add_all_commands_to_set_of_elements_to_generate
+
+        each_element_to_generate do
+          generate_element
         end
+        # generate_organizations
+        # generate_domains
+        # each_command do
+        #   generate_command
+        #   generate_command_inputs
+        #   generate_command_result
+        #   generate_command_errors
+        # end
 
         generate_generated_files_json
 
         paths_to_source_code
       end
 
-      attr_accessor :command_manifest
+      attr_accessor :command_manifest, :element_to_generate, :generator
+
+      def elements_to_generate
+        @elements_to_generate ||= Set.new
+      end
+
+      def generated
+        @generated ||= Set.new
+      end
+
+      def each_element_to_generate
+        until elements_to_generate.empty?
+          self.element_to_generate = elements_to_generate.first
+          elements_to_generate.delete(element_to_generate)
+
+          unless generated.include?(element_to_generate)
+            yield
+            generated << element_to_generate
+          end
+        end
+      end
+
+      def add_all_commands_to_set_of_elements_to_generate
+        manifest.commands.each do |command|
+          elements_to_generate << command
+        end
+      end
+
+      def generate_element
+        each_generator do
+          run_generator
+        end
+      end
+
+      def run_generator
+        paths_to_source_code[generator.target_path.join("/")] = generator.generate
+      end
+
+      def each_generator
+        generator_classes = case element_to_generate
+                            when Manifest::Command
+                              [
+                                Services::CommandGenerator,
+                                Services::CommandInputsGenerator,
+                                Services::CommandResultGenerator,
+                                Services::CommandErrorsGenerator
+                              ]
+                            else
+                              raise "Not sure how to generate a #{element_to_generate}"
+                            end
+
+        Util.array(generator_classes).each do |generator_class|
+          self.generator = generator_class.new(element_to_generate, elements_to_generate)
+          yield
+        end
+      end
 
       def manifest
         @manifest ||= Manifest::RootManifest.new(raw_manifest)

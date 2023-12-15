@@ -11,7 +11,7 @@ module Foobara
         end
 
         def target_path
-          [*domain_path, command_name, "Result.ts"]
+          [*scoped_full_path, "Result.ts"]
         end
 
         def template_path

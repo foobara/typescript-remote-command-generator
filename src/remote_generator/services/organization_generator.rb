@@ -7,7 +7,7 @@ module Foobara
         alias organization_manifest relevant_manifest
 
         def target_path
-          [organization_name, "index.ts"]
+          [*scoped_full_path, "index.ts"]
         end
 
         def template_path

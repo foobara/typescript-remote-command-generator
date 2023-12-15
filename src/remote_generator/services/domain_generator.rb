@@ -7,7 +7,7 @@ module Foobara
         alias domain_manifest relevant_manifest
 
         def target_path
-          [*domain_path, "index.ts"]
+          [*scoped_full_path, "index.ts"]
         end
 
         def template_path

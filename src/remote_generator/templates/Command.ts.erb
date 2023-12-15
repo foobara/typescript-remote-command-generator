@@ -5,10 +5,10 @@ import Result from "./Result"
 import Error from "./Error"
 
 export default class <%= command_name %> extends Command<Inputs, Result, Error> {
-<% unless global_organization? %>
+<% unless organization.global? %>
   static organizationName = "<%= organization_name %>"
 <% end %>
-<% unless global_domain? %>
+<% unless domain.global? %>
   static domainName = "<%= domain_name %>"
 <% end %>
   static commandName = <%= command_name %>

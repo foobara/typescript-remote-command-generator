@@ -24,7 +24,7 @@ module Foobara
         end
 
         def absolute_template_path
-          "#{__dir__}/../templates/#{template_path}"
+          Pathname.new("#{__dir__}/../templates/#{template_path}").cleanpath.to_s
         end
 
         def template_string
@@ -32,7 +32,9 @@ module Foobara
         end
 
         def erb_template
-          ERB.new(template_string.gsub("\n<% end %>", "<% end %>"))
+          erb = ERB.new(template_string.gsub("\n<% end %>", "<% end %>"))
+          erb.filename = absolute_template_path
+          erb
         end
 
         def short_name

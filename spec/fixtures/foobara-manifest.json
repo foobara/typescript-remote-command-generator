@@ -5,6 +5,7 @@
       "capture_unknown_error": null,
       "command": "GlobalCommand",
       "depends_on": [
+
       ],
       "domain": "global_organization::global_domain",
       "domain_name": "global_organization::global_domain",
@@ -28,8 +29,10 @@
           "is_fatal": true,
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -46,8 +49,10 @@
           "is_fatal": true,
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -73,6 +78,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -92,6 +98,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -117,16 +124,20 @@
           "is_fatal": true,
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         }
       },
       "errors_transformers": [
+
       ],
       "full_command_name": "GlobalCommand",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -146,10 +157,12 @@
         "global_organization::global_domain"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "GlobalCommand",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "integer"
@@ -158,9 +171,12 @@
       "scoped_full_path": [
         "GlobalCommand"
       ],
+      "scoped_name": "GlobalCommand",
       "scoped_path": [
         "GlobalCommand"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "GlobalCommand",
       "serializers": [
         {
           "domain": "CommandConnectors",
@@ -176,9 +192,12 @@
             "CommandConnectors",
             "ErrorsSerializer"
           ],
+          "scoped_name": "ErrorsSerializer",
           "scoped_path": [
             "ErrorsSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
@@ -194,9 +213,12 @@
             "CommandConnectors",
             "JsonSerializer"
           ],
+          "scoped_name": "JsonSerializer",
           "scoped_path": [
             "JsonSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
@@ -214,6 +236,7 @@
       "capture_unknown_error": null,
       "command": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "depends_on": [
+
       ],
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
@@ -237,8 +260,10 @@
           "is_fatal": true,
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -255,8 +280,10 @@
           "is_fatal": true,
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -282,6 +309,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -301,6 +329,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -326,16 +355,20 @@
           "is_fatal": true,
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         }
       },
       "errors_transformers": [
+
       ],
       "full_command_name": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -355,10 +388,12 @@
         "SomeDomainWithoutOrg"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "integer"
@@ -368,9 +403,12 @@
         "SomeDomainWithoutOrg",
         "CommandWithDomainButNoOrg"
       ],
+      "scoped_name": "CommandWithDomainButNoOrg",
       "scoped_path": [
         "CommandWithDomainButNoOrg"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CommandWithDomainButNoOrg",
       "serializers": [
         {
           "domain": "CommandConnectors",
@@ -386,9 +424,12 @@
             "CommandConnectors",
             "ErrorsSerializer"
           ],
+          "scoped_name": "ErrorsSerializer",
           "scoped_path": [
             "ErrorsSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
@@ -404,9 +445,12 @@
             "CommandConnectors",
             "JsonSerializer"
           ],
+          "scoped_name": "JsonSerializer",
           "scoped_path": [
             "JsonSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
@@ -424,6 +468,7 @@
       "capture_unknown_error": null,
       "command": "SomeOrg::Auth::CreateReferral",
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "SomeOrg::Auth",
@@ -447,8 +492,10 @@
           "is_fatal": true,
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -474,6 +521,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -499,6 +547,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -524,6 +573,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -550,6 +600,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -576,6 +627,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -602,6 +654,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -628,6 +681,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -654,6 +708,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -680,6 +735,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -706,6 +762,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -732,6 +789,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -758,6 +816,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -784,6 +843,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -810,6 +870,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -836,6 +897,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -862,6 +924,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -890,6 +953,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -915,6 +979,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -941,6 +1006,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -967,6 +1033,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -993,6 +1060,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -1019,6 +1087,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -1045,6 +1114,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -1071,6 +1141,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -1097,6 +1168,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -1123,6 +1195,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -1149,6 +1222,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -1175,6 +1249,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -1201,6 +1276,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1227,6 +1303,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1253,6 +1330,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1281,6 +1359,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -1306,16 +1385,20 @@
           "is_fatal": true,
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         }
       },
       "errors_transformers": [
+
       ],
       "full_command_name": "SomeOrg::Auth::CreateReferral",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -1341,10 +1424,12 @@
         "SomeOrg::Auth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOrg::Auth::CreateReferral",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOrg::Auth::Referral"
@@ -1355,9 +1440,12 @@
         "Auth",
         "CreateReferral"
       ],
+      "scoped_name": "CreateReferral",
       "scoped_path": [
         "CreateReferral"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CreateReferral",
       "serializers": [
         {
           "domain": "CommandConnectors",
@@ -1373,9 +1461,12 @@
             "CommandConnectors",
             "ErrorsSerializer"
           ],
+          "scoped_name": "ErrorsSerializer",
           "scoped_path": [
             "ErrorsSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
@@ -1391,9 +1482,12 @@
             "CommandConnectors",
             "JsonSerializer"
           ],
+          "scoped_name": "JsonSerializer",
           "scoped_path": [
             "JsonSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
@@ -1441,8 +1535,10 @@
           "is_fatal": true,
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1468,6 +1564,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1493,6 +1590,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -1518,6 +1616,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -1543,6 +1642,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -1568,6 +1668,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -1593,6 +1694,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -1618,6 +1720,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -1643,6 +1746,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -1668,6 +1772,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -1693,6 +1798,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -1718,6 +1824,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1743,6 +1850,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1768,6 +1876,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1793,6 +1902,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1819,6 +1929,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1845,6 +1956,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -1871,6 +1983,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -1897,6 +2010,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -1923,6 +2037,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -1949,6 +2064,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -1975,6 +2091,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -2001,6 +2118,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -2027,6 +2145,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -2053,6 +2172,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -2079,6 +2199,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2105,6 +2226,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2131,6 +2253,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2159,6 +2282,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -2184,8 +2308,10 @@
           "is_fatal": true,
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -2208,6 +2334,7 @@
           "is_fatal": true,
           "key": "some_org::auth::create_referral>data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
             "some_org::auth::create_referral"
@@ -3100,6 +3227,7 @@
           "is_fatal": true,
           "key": "some_org::auth::create_referral>data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
             "some_org::auth::create_referral"
@@ -3108,9 +3236,11 @@
         }
       },
       "errors_transformers": [
+
       ],
       "full_command_name": "SomeOrg::Auth::CreateUser",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -3139,10 +3269,12 @@
         "SomeOrg::Auth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOrg::Auth::CreateUser",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOrg::Auth::User"
@@ -3153,9 +3285,12 @@
         "Auth",
         "CreateUser"
       ],
+      "scoped_name": "CreateUser",
       "scoped_path": [
         "CreateUser"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CreateUser",
       "serializers": [
         {
           "domain": "CommandConnectors",
@@ -3171,9 +3306,12 @@
             "CommandConnectors",
             "ErrorsSerializer"
           ],
+          "scoped_name": "ErrorsSerializer",
           "scoped_path": [
             "ErrorsSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
@@ -3189,9 +3327,12 @@
             "CommandConnectors",
             "JsonSerializer"
           ],
+          "scoped_name": "JsonSerializer",
           "scoped_path": [
             "JsonSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
@@ -3214,6 +3355,7 @@
       "capture_unknown_error": null,
       "command": "SomeOrg::Math::CalculateExponent",
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Math",
       "domain_name": "SomeOrg::Math",
@@ -3240,6 +3382,7 @@
             "base"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -3259,6 +3402,7 @@
             "base"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -3281,8 +3425,10 @@
           "is_fatal": true,
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -3308,6 +3454,7 @@
             "exponent"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -3327,6 +3474,7 @@
             "exponent"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -3343,8 +3491,10 @@
           "is_fatal": true,
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -3370,8 +3520,10 @@
           "is_fatal": true,
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -3388,16 +3540,20 @@
           "is_fatal": true,
           "key": "runtime.negative_exponent",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "negative_exponent"
         }
       },
       "errors_transformers": [
+
       ],
       "full_command_name": "SomeOrg::Math::CalculateExponent",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -3421,10 +3577,12 @@
         "SomeOrg::Math"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOrg::Math::CalculateExponent",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "integer"
@@ -3435,9 +3593,12 @@
         "Math",
         "CalculateExponent"
       ],
+      "scoped_name": "CalculateExponent",
       "scoped_path": [
         "CalculateExponent"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CalculateExponent",
       "serializers": [
         {
           "domain": "CommandConnectors",
@@ -3453,9 +3614,12 @@
             "CommandConnectors",
             "ErrorsSerializer"
           ],
+          "scoped_name": "ErrorsSerializer",
           "scoped_path": [
             "ErrorsSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
@@ -3471,9 +3635,12 @@
             "CommandConnectors",
             "JsonSerializer"
           ],
+          "scoped_name": "JsonSerializer",
           "scoped_path": [
             "JsonSerializer"
-          ]
+          ],
+          "scoped_prefix": null,
+          "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
@@ -3493,6 +3660,7 @@
         "SomeDomainWithoutOrg::CommandWithDomainButNoOrg"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
@@ -3507,10 +3675,14 @@
       "scoped_full_path": [
         "SomeDomainWithoutOrg"
       ],
+      "scoped_name": "SomeDomainWithoutOrg",
       "scoped_path": [
         "SomeDomainWithoutOrg"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "SomeDomainWithoutOrg",
       "types": [
+
       ]
     },
     "SomeOrg::Auth": {
@@ -3519,6 +3691,7 @@
         "SomeOrg::Auth::CreateUser"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
@@ -3534,9 +3707,12 @@
         "SomeOrg",
         "Auth"
       ],
+      "scoped_name": "Auth",
       "scoped_path": [
         "Auth"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Auth",
       "types": [
         "SomeOrg::Auth::User",
         "SomeOrg::Auth::Referral"
@@ -3547,6 +3723,7 @@
         "SomeOrg::Math::CalculateExponent"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Math",
       "domain_name": "Math",
@@ -3562,10 +3739,14 @@
         "SomeOrg",
         "Math"
       ],
+      "scoped_name": "Math",
       "scoped_path": [
         "Math"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Math",
       "types": [
+
       ]
     },
     "global_organization::global_domain": {
@@ -3573,6 +3754,7 @@
         "GlobalCommand"
       ],
       "depends_on": [
+
       ],
       "domain": "global_organization::global_domain",
       "domain_name": "global_domain",
@@ -3585,10 +3767,18 @@
       "reference": "global_organization::global_domain",
       "scoped_full_name": "",
       "scoped_full_path": [
+
       ],
+      "scoped_name": null,
       "scoped_path": [
+
       ],
+      "scoped_prefix": [
+
+      ],
+      "scoped_short_name": null,
       "types": [
+
       ]
     }
   },
@@ -3618,12 +3808,19 @@
         "Validators",
         "CannotExceed64CharactersError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "CannotExceed64CharactersError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "CannotExceed64CharactersError",
       "symbol": "cannot_exceed64_characters"
     },
     "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError": {
@@ -3651,12 +3848,19 @@
         "Validators",
         "CannotHaveMultipleAtSignsError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "CannotHaveMultipleAtSignsError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "CannotHaveMultipleAtSignsError",
       "symbol": "cannot_have_multiple_at_signs"
     },
     "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError": {
@@ -3684,12 +3888,19 @@
         "Validators",
         "DomainCannotStartWithOrEndWithAHyphenError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "DomainCannotStartWithOrEndWithAHyphenError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "DomainCannotStartWithOrEndWithAHyphenError",
       "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
     },
     "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError": {
@@ -3717,12 +3928,19 @@
         "Validators",
         "FirstPartCannotBeEmptyError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "FirstPartCannotBeEmptyError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "FirstPartCannotBeEmptyError",
       "symbol": "first_part_cannot_be_empty"
     },
     "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError": {
@@ -3750,12 +3968,19 @@
         "Validators",
         "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
     },
     "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError": {
@@ -3783,12 +4008,19 @@
         "Validators",
         "FirstPartHasBadCharactersError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "FirstPartHasBadCharactersError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "FirstPartHasBadCharactersError",
       "symbol": "first_part_has_bad_characters"
     },
     "BuiltinTypes::Email::Validators::MustHaveAnAtSignError": {
@@ -3816,12 +4048,19 @@
         "Validators",
         "MustHaveAnAtSignError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "MustHaveAnAtSignError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "MustHaveAnAtSignError",
       "symbol": "must_have_an_at_sign"
     },
     "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError": {
@@ -3849,12 +4088,19 @@
         "Validators",
         "SecondPartCannotBeEmptyError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "SecondPartCannotBeEmptyError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "SecondPartCannotBeEmptyError",
       "symbol": "second_part_cannot_be_empty"
     },
     "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError": {
@@ -3882,12 +4128,19 @@
         "Validators",
         "SecondPartHasBadCharactersError"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "SecondPartHasBadCharactersError"
       ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "SecondPartHasBadCharactersError",
       "symbol": "second_part_has_bad_characters"
     },
     "SomeOrg::Math::CalculateExponent::NegativeExponentError": {
@@ -3915,9 +4168,12 @@
         "CalculateExponent",
         "NegativeExponentError"
       ],
+      "scoped_name": "NegativeExponentError",
       "scoped_path": [
         "NegativeExponentError"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "NegativeExponentError",
       "symbol": "negative_exponent"
     },
     "Value::Processor::Casting::CannotCastError": {
@@ -3949,9 +4205,12 @@
         "Casting",
         "CannotCastError"
       ],
+      "scoped_name": "CannotCastError",
       "scoped_path": [
         "CannotCastError"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CannotCastError",
       "symbol": "cannot_cast"
     },
     "attributes::element_type_declarations::UnexpectedAttributesError": {
@@ -3985,9 +4244,12 @@
         "element_type_declarations",
         "UnexpectedAttributesError"
       ],
+      "scoped_name": "UnexpectedAttributesError",
       "scoped_path": [
         "UnexpectedAttributesError"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "UnexpectedAttributesError",
       "symbol": "unexpected_attributes"
     },
     "attributes::required::MissingRequiredAttributeError": {
@@ -4012,9 +4274,12 @@
         "required",
         "MissingRequiredAttributeError"
       ],
+      "scoped_name": "MissingRequiredAttributeError",
       "scoped_path": [
         "MissingRequiredAttributeError"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "MissingRequiredAttributeError",
       "symbol": "missing_required_attribute"
     }
   },
@@ -4031,9 +4296,12 @@
       "scoped_full_path": [
         "SomeOrg"
       ],
+      "scoped_name": "SomeOrg",
       "scoped_path": [
         "SomeOrg"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "SomeOrg"
     },
     "global_organization": {
       "domains": [
@@ -4045,15 +4313,23 @@
       "reference": "global_organization",
       "scoped_full_name": "",
       "scoped_full_path": [
+
       ],
+      "scoped_name": null,
       "scoped_path": [
-      ]
+
+      ],
+      "scoped_prefix": [
+
+      ],
+      "scoped_short_name": null
     }
   },
   "processor": {
     "BuiltinTypes::AssociativeArray::Casters::Array": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::Casters::Array",
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "BuiltinTypes::AssociativeArray::Casters::Array",
@@ -4064,16 +4340,24 @@
         "Casters",
         "Array"
       ],
+      "scoped_name": "BuiltinTypes::AssociativeArray::Casters::Array",
       "scoped_path": [
         "BuiltinTypes",
         "AssociativeArray",
         "Casters",
         "Array"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "AssociativeArray",
+        "Casters"
+      ],
+      "scoped_short_name": "Array"
     },
     "BuiltinTypes::Attributes::Casters::Hash": {
       "name": "Foobara::BuiltinTypes::Attributes::Casters::Hash",
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "BuiltinTypes::Attributes::Casters::Hash",
@@ -4084,17 +4368,25 @@
         "Casters",
         "Hash"
       ],
+      "scoped_name": "BuiltinTypes::Attributes::Casters::Hash",
       "scoped_path": [
         "BuiltinTypes",
         "Attributes",
         "Casters",
         "Hash"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Attributes",
+        "Casters"
+      ],
+      "scoped_short_name": "Hash"
     },
     "BuiltinTypes::Email::Transformers::Downcase": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Transformers::Downcase",
       "possible_errors": {
+
       },
       "processor_type": "transformer",
       "reference": "BuiltinTypes::Email::Transformers::Downcase",
@@ -4105,12 +4397,19 @@
         "Transformers",
         "Downcase"
       ],
+      "scoped_name": "BuiltinTypes::Email::Transformers::Downcase",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Transformers",
         "Downcase"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Transformers"
+      ],
+      "scoped_short_name": "Downcase"
     },
     "BuiltinTypes::Email::Validators::CannotExceed64Characters": {
       "declaration_data": true,
@@ -4127,12 +4426,19 @@
         "Validators",
         "CannotExceed64Characters"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::CannotExceed64Characters",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "CannotExceed64Characters"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "CannotExceed64Characters"
     },
     "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns": {
       "declaration_data": true,
@@ -4149,12 +4455,19 @@
         "Validators",
         "CannotHaveMultipleAtSigns"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "CannotHaveMultipleAtSigns"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "CannotHaveMultipleAtSigns"
     },
     "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen": {
       "declaration_data": true,
@@ -4171,12 +4484,19 @@
         "Validators",
         "DomainCannotStartWithOrEndWithAHyphen"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "DomainCannotStartWithOrEndWithAHyphen"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "DomainCannotStartWithOrEndWithAHyphen"
     },
     "BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty": {
       "declaration_data": true,
@@ -4193,12 +4513,19 @@
         "Validators",
         "FirstPartCannotBeEmpty"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "FirstPartCannotBeEmpty"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "FirstPartCannotBeEmpty"
     },
     "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow": {
       "declaration_data": true,
@@ -4215,12 +4542,19 @@
         "Validators",
         "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow"
     },
     "BuiltinTypes::Email::Validators::FirstPartHasBadCharacters": {
       "declaration_data": true,
@@ -4237,12 +4571,19 @@
         "Validators",
         "FirstPartHasBadCharacters"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "FirstPartHasBadCharacters"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "FirstPartHasBadCharacters"
     },
     "BuiltinTypes::Email::Validators::MustHaveAnAtSign": {
       "declaration_data": true,
@@ -4259,12 +4600,19 @@
         "Validators",
         "MustHaveAnAtSign"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::MustHaveAnAtSign",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "MustHaveAnAtSign"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "MustHaveAnAtSign"
     },
     "BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty": {
       "declaration_data": true,
@@ -4281,12 +4629,19 @@
         "Validators",
         "SecondPartCannotBeEmpty"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "SecondPartCannotBeEmpty"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "SecondPartCannotBeEmpty"
     },
     "BuiltinTypes::Email::Validators::SecondPartHasBadCharacters": {
       "declaration_data": true,
@@ -4303,12 +4658,19 @@
         "Validators",
         "SecondPartHasBadCharacters"
       ],
+      "scoped_name": "BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
       "scoped_path": [
         "BuiltinTypes",
         "Email",
         "Validators",
         "SecondPartHasBadCharacters"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Email",
+        "Validators"
+      ],
+      "scoped_short_name": "SecondPartHasBadCharacters"
     },
     "BuiltinTypes::Entity::Casters::Hash": {
       "name": "Foobara::BuiltinTypes::Entity::Casters::Hash",
@@ -4338,6 +4700,7 @@
         "type": "entity"
       },
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "BuiltinTypes::Entity::Casters::Hash",
@@ -4348,12 +4711,19 @@
         "Casters",
         "Hash"
       ],
+      "scoped_name": "BuiltinTypes::Entity::Casters::Hash",
       "scoped_path": [
         "BuiltinTypes",
         "Entity",
         "Casters",
         "Hash"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Entity",
+        "Casters"
+      ],
+      "scoped_short_name": "Hash"
     },
     "BuiltinTypes::Entity::Validators::CreatedInValidState": {
       "declaration_data": true,
@@ -4409,16 +4779,24 @@
         "Validators",
         "CreatedInValidState"
       ],
+      "scoped_name": "BuiltinTypes::Entity::Validators::CreatedInValidState",
       "scoped_path": [
         "BuiltinTypes",
         "Entity",
         "Validators",
         "CreatedInValidState"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Entity",
+        "Validators"
+      ],
+      "scoped_short_name": "CreatedInValidState"
     },
     "BuiltinTypes::Integer::Casters::String": {
       "name": "Foobara::BuiltinTypes::Integer::Casters::String",
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "BuiltinTypes::Integer::Casters::String",
@@ -4429,12 +4807,19 @@
         "Casters",
         "String"
       ],
+      "scoped_name": "BuiltinTypes::Integer::Casters::String",
       "scoped_path": [
         "BuiltinTypes",
         "Integer",
         "Casters",
         "String"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Integer",
+        "Casters"
+      ],
+      "scoped_short_name": "String"
     },
     "BuiltinTypes::Model::Casters::Hash": {
       "name": "Foobara::BuiltinTypes::Model::Casters::Hash",
@@ -4442,6 +4827,7 @@
         "type": "model"
       },
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "BuiltinTypes::Model::Casters::Hash",
@@ -4452,12 +4838,19 @@
         "Casters",
         "Hash"
       ],
+      "scoped_name": "BuiltinTypes::Model::Casters::Hash",
       "scoped_path": [
         "BuiltinTypes",
         "Model",
         "Casters",
         "Hash"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Model",
+        "Casters"
+      ],
+      "scoped_short_name": "Hash"
     },
     "BuiltinTypes::Model::Validators::AttributesDeclaration": {
       "declaration_data": true,
@@ -4466,6 +4859,7 @@
         "type": "model"
       },
       "possible_errors": {
+
       },
       "processor_type": "processor",
       "reference": "BuiltinTypes::Model::Validators::AttributesDeclaration",
@@ -4476,16 +4870,24 @@
         "Validators",
         "AttributesDeclaration"
       ],
+      "scoped_name": "BuiltinTypes::Model::Validators::AttributesDeclaration",
       "scoped_path": [
         "BuiltinTypes",
         "Model",
         "Validators",
         "AttributesDeclaration"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Model",
+        "Validators"
+      ],
+      "scoped_short_name": "AttributesDeclaration"
     },
     "BuiltinTypes::String::Casters::Symbol": {
       "name": "Foobara::BuiltinTypes::String::Casters::Symbol",
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "BuiltinTypes::String::Casters::Symbol",
@@ -4496,12 +4898,19 @@
         "Casters",
         "Symbol"
       ],
+      "scoped_name": "BuiltinTypes::String::Casters::Symbol",
       "scoped_path": [
         "BuiltinTypes",
         "String",
         "Casters",
         "Symbol"
-      ]
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "String",
+        "Casters"
+      ],
+      "scoped_short_name": "Symbol"
     },
     "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster": {
       "declaration_data": "SomeOrg::Auth::User",
@@ -4511,6 +4920,7 @@
         "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
@@ -4522,9 +4932,12 @@
         "ToTypeTransformer",
         "EntityPrimaryKeyCaster"
       ],
+      "scoped_name": "EntityPrimaryKeyCaster",
       "scoped_path": [
         "EntityPrimaryKeyCaster"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "EntityPrimaryKeyCaster"
     }
   },
   "processor_class": {
@@ -4538,11 +4951,17 @@
         "Handlers",
         "ExtendEntityTypeDeclaration"
       ],
+      "scoped_name": "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
       "scoped_path": [
         "TypeDeclarations",
         "Handlers",
         "ExtendEntityTypeDeclaration"
-      ]
+      ],
+      "scoped_prefix": [
+        "TypeDeclarations",
+        "Handlers"
+      ],
+      "scoped_short_name": "ExtendEntityTypeDeclaration"
     },
     "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer": {
       "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer",
@@ -4559,9 +4978,12 @@
         "ExtendEntityTypeDeclaration",
         "ToTypeTransformer"
       ],
+      "scoped_name": "ToTypeTransformer",
       "scoped_path": [
         "ToTypeTransformer"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "ToTypeTransformer"
     },
     "Value::Processor::Casting": {
       "name": "Foobara::Value::Processor::Casting",
@@ -4573,11 +4995,17 @@
         "Processor",
         "Casting"
       ],
+      "scoped_name": "Value::Processor::Casting",
       "scoped_path": [
         "Value",
         "Processor",
         "Casting"
-      ]
+      ],
+      "scoped_prefix": [
+        "Value",
+        "Processor"
+      ],
+      "scoped_short_name": "Casting"
     },
     "associative_array::key_type_declaration": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::KeyTypeDeclaration",
@@ -4592,9 +5020,12 @@
         "associative_array",
         "key_type_declaration"
       ],
+      "scoped_name": "key_type_declaration",
       "scoped_path": [
         "key_type_declaration"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "key_type_declaration"
     },
     "associative_array::value_type_declaration": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::ValueTypeDeclaration",
@@ -4609,9 +5040,12 @@
         "associative_array",
         "value_type_declaration"
       ],
+      "scoped_name": "value_type_declaration",
       "scoped_path": [
         "value_type_declaration"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "value_type_declaration"
     },
     "attributes::defaults": {
       "name": "Foobara::BuiltinTypes::Attributes::SupportedTransformers::Defaults",
@@ -4626,9 +5060,12 @@
         "attributes",
         "defaults"
       ],
+      "scoped_name": "defaults",
       "scoped_path": [
         "defaults"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "defaults"
     },
     "attributes::element_type_declarations": {
       "name": "Foobara::BuiltinTypes::Attributes::SupportedProcessors::ElementTypeDeclarations",
@@ -4643,9 +5080,12 @@
         "attributes",
         "element_type_declarations"
       ],
+      "scoped_name": "element_type_declarations",
       "scoped_path": [
         "element_type_declarations"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "element_type_declarations"
     },
     "attributes::required": {
       "name": "Foobara::BuiltinTypes::Attributes::SupportedValidators::Required",
@@ -4660,9 +5100,12 @@
         "attributes",
         "required"
       ],
+      "scoped_name": "required",
       "scoped_path": [
         "required"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "required"
     },
     "number::max": {
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Max",
@@ -4677,9 +5120,12 @@
         "number",
         "max"
       ],
+      "scoped_name": "max",
       "scoped_path": [
         "max"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "max"
     },
     "number::min": {
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Min",
@@ -4694,9 +5140,12 @@
         "number",
         "min"
       ],
+      "scoped_name": "min",
       "scoped_path": [
         "min"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "min"
     },
     "string::downcase": {
       "name": "Foobara::BuiltinTypes::String::SupportedTransformers::Downcase",
@@ -4711,9 +5160,12 @@
         "string",
         "downcase"
       ],
+      "scoped_name": "downcase",
       "scoped_path": [
         "downcase"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "downcase"
     },
     "string::matches": {
       "name": "Foobara::BuiltinTypes::String::SupportedValidators::Matches",
@@ -4728,9 +5180,12 @@
         "string",
         "matches"
       ],
+      "scoped_name": "matches",
       "scoped_path": [
         "matches"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "matches"
     },
     "string::max_length": {
       "name": "Foobara::BuiltinTypes::String::SupportedValidators::MaxLength",
@@ -4745,9 +5200,12 @@
         "string",
         "max_length"
       ],
+      "scoped_name": "max_length",
       "scoped_path": [
         "max_length"
-      ]
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "max_length"
     }
   },
   "type": {
@@ -4831,6 +5289,7 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster"
         ],
         "transformers": [
+
         ],
         "validators": [
           "BuiltinTypes::Entity::Validators::CreatedInValidState"
@@ -4843,14 +5302,20 @@
         "Auth",
         "Referral"
       ],
+      "scoped_name": "Referral",
       "scoped_path": [
         "Referral"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Referral",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOrg::Auth::Referral"
@@ -4873,6 +5338,7 @@
     },
     "SomeOrg::Auth::User": {
       "associations": {
+
       },
       "attributes_type": {
         "element_type_declarations": {
@@ -4918,10 +5384,13 @@
         "type": "entity"
       },
       "deep_associations": {
+
       },
       "deep_depends_on": [
+
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
@@ -4945,6 +5414,7 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster"
         ],
         "transformers": [
+
         ],
         "validators": [
           "BuiltinTypes::Entity::Validators::CreatedInValidState"
@@ -4957,14 +5427,20 @@
         "Auth",
         "User"
       ],
+      "scoped_name": "User",
       "scoped_path": [
         "User"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "User",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOrg::Auth::User"
@@ -4995,8 +5471,10 @@
           "BuiltinTypes::AssociativeArray::Casters::Array"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "associative_array",
@@ -5004,16 +5482,21 @@
       "scoped_full_path": [
         "associative_array"
       ],
+      "scoped_name": "associative_array",
       "scoped_path": [
         "associative_array"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "associative_array",
       "supported_processors": [
         "associative_array::value_type_declaration",
         "associative_array::key_type_declaration"
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Hash"
@@ -5032,10 +5515,13 @@
       "name": "atomic_duck",
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "atomic_duck",
@@ -5043,14 +5529,20 @@
       "scoped_full_path": [
         "atomic_duck"
       ],
+      "scoped_name": "atomic_duck",
       "scoped_path": [
         "atomic_duck"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "atomic_duck",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Object"
@@ -5071,8 +5563,10 @@
           "BuiltinTypes::Attributes::Casters::Hash"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "attributes",
@@ -5080,9 +5574,12 @@
       "scoped_full_path": [
         "attributes"
       ],
+      "scoped_name": "attributes",
       "scoped_path": [
         "attributes"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "attributes",
       "supported_processors": [
         "attributes::element_type_declarations",
         "associative_array::value_type_declaration",
@@ -5095,6 +5592,7 @@
         "attributes::required"
       ],
       "target_classes": [
+
       ],
       "types_depended_on": [
         "attributes",
@@ -5111,10 +5609,13 @@
       "name": "duck",
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "duck",
@@ -5122,14 +5623,20 @@
       "scoped_full_path": [
         "duck"
       ],
+      "scoped_name": "duck",
       "scoped_path": [
         "duck"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "duck",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Object"
@@ -5146,10 +5653,13 @@
       "name": "duckture",
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "duckture",
@@ -5157,14 +5667,20 @@
       "scoped_full_path": [
         "duckture"
       ],
+      "scoped_name": "duckture",
       "scoped_path": [
         "duckture"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "duckture",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Object"
@@ -5204,10 +5720,14 @@
       "scoped_full_path": [
         "email"
       ],
+      "scoped_name": "email",
       "scoped_path": [
         "email"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "email",
       "supported_processors": [
+
       ],
       "supported_transformers": [
         "string::downcase"
@@ -5237,6 +5757,7 @@
           "BuiltinTypes::Entity::Casters::Hash"
         ],
         "transformers": [
+
         ],
         "validators": [
           "BuiltinTypes::Entity::Validators::CreatedInValidState"
@@ -5247,16 +5768,23 @@
       "scoped_full_path": [
         "entity"
       ],
+      "scoped_name": "entity",
       "scoped_path": [
         "entity"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "entity",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
+
       ],
       "types_depended_on": [
         "entity",
@@ -5276,8 +5804,10 @@
           "BuiltinTypes::Integer::Casters::String"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "integer",
@@ -5285,16 +5815,21 @@
       "scoped_full_path": [
         "integer"
       ],
+      "scoped_name": "integer",
       "scoped_path": [
         "integer"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "integer",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
-        "number::max",
-        "number::min"
+        "number::min",
+        "number::max"
       ],
       "target_classes": [
         "Integer"
@@ -5317,6 +5852,7 @@
           "BuiltinTypes::Model::Casters::Hash"
         ],
         "transformers": [
+
         ],
         "validators": [
           "BuiltinTypes::Model::Validators::AttributesDeclaration"
@@ -5327,16 +5863,23 @@
       "scoped_full_path": [
         "model"
       ],
+      "scoped_name": "model",
       "scoped_path": [
         "model"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "model",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
+
       ],
       "types_depended_on": [
         "model",
@@ -5352,10 +5895,13 @@
       "name": "number",
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "number",
@@ -5363,16 +5909,21 @@
       "scoped_full_path": [
         "number"
       ],
+      "scoped_name": "number",
       "scoped_path": [
         "number"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "number",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
-        "number::max",
-        "number::min"
+        "number::min",
+        "number::max"
       ],
       "target_classes": [
         "Object"
@@ -5394,8 +5945,10 @@
           "BuiltinTypes::String::Casters::Symbol"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "string",
@@ -5403,10 +5956,14 @@
       "scoped_full_path": [
         "string"
       ],
+      "scoped_name": "string",
       "scoped_path": [
         "string"
       ],
+      "scoped_prefix": null,
+      "scoped_short_name": "string",
       "supported_processors": [
+
       ],
       "supported_transformers": [
         "string::downcase"

@@ -33,13 +33,16 @@ module Foobara
         end
 
         def instantiated_error_types_union
-          error_generators.map do |error_generator|
-            error_generator.instantiated_error_type
+          error_types.keys.map do |key|
+            instantiated_error_type(key)
           end.join(" |\n  ")
+        rescue => e
+          binding.pry
+          raise
         end
 
         def instantiated_error_type(key)
-          command_error = errors_types[key]
+          command_error = error_types[key]
           error = command_error.error
 
           result = "#{error.error_name}<\"#{key}\""

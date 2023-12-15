@@ -40,8 +40,10 @@ module Foobara
                               Services::EntityGenerator
                             when Manifest::Error
                               Services::ErrorGenerator
+                            when Manifest::ProcessorClass
+                              Services::ProcessorClassGenerator
                             else
-                              raise "Not sure how build a generator for a #{manifeest}"
+                              raise "Not sure how build a generator for a #{manifest}"
                             end
 
         Util.array(generator_classes).map do |generator_class|
@@ -74,8 +76,8 @@ module Foobara
         end
 
         def parent
-          if manifest.parent
-            RemoteGenerator.generator_for(manifest.parent, elements_to_generate)
+          if relevant_manifest.parent
+            RemoteGenerator.generator_for(relevant_manifest.parent, elements_to_generate)
           end
         end
 

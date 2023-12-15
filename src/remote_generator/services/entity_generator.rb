@@ -7,7 +7,6 @@ module Foobara
         alias entity_manifest relevant_manifest
 
         def target_path
-          binding.pry
           [*domain_path, "entities", entity_name, "index.ts"]
         end
 

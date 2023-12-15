@@ -68,20 +68,8 @@ module Foobara
       end
 
       def each_generator
-        generator_classes = case element_to_generate
-                            when Manifest::Command
-                              [
-                                Services::CommandGenerator,
-                                Services::CommandInputsGenerator,
-                                Services::CommandResultGenerator,
-                                Services::CommandErrorsGenerator
-                              ]
-                            else
-                              raise "Not sure how to generate a #{element_to_generate}"
-                            end
-
-        Util.array(generator_classes).each do |generator_class|
-          self.generator = generator_class.new(element_to_generate, elements_to_generate)
+        RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
+          self.generator = generator
           yield
         end
       end

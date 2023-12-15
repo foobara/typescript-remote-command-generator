@@ -1,5 +1,59 @@
+# Where to put files?
+# let's examine an error...
+# if an error belongs to a command, let's put it in <command path>/errors/<error_name>.ts
+# if an error belongs to a domain, let's put it in <domain path>/errors/<error_name>.ts
+# if an error belongs to an organization, let's put it in <organization path>/errors/<error_name>.ts
+# if an error belongs to a base processor, let's put it in base/processors/<processor path>/<error_name>.ts
+# if an error belongs to nothing, let's put it in errors/<error_name>.ts
+#
+# so what is the official logic?
+# if parent is a domain or org or nil,
+# then we need to insert "errors" before the last element in the scoped_path.
+# This is to help make the commands more first-class.
+# otherwise, the thing will already be out of site. We could prepend the path with "base" and <parent_category>.
+#
+# Might just be safer though to leverage the parent's target_dir.
+#
+# So that logic would be...
+# if parent is domain, nil, or org:
+# <parent_target_dir>/errors/<error_name>.ts
+# else
+# <parent_target_dir>/<error_name>.ts
+
 module Foobara
   module RemoteGenerator
+    class << self
+      def generators_for(manifest, elements_to_generate)
+        generator_classes = case manifest
+                            when Manifest::Command
+                              [
+                                Services::CommandGenerator,
+                                Services::CommandInputsGenerator,
+                                Services::CommandResultGenerator,
+                                Services::CommandErrorsGenerator
+                              ]
+                            when Manifest::Domain
+                              Services::DomainGenerator
+                            when Manifest::Organization
+                              Services::OrganizationGenerator
+                            when Manifest::Entity
+                              Services::EntityGenerator
+                            when Manifest::Error
+                              Services::ErrorGenerator
+                            else
+                              raise "Not sure how build a generator for a #{manifeest}"
+                            end
+
+        Util.array(generator_classes).map do |generator_class|
+          generator_class.new(manifest, elements_to_generate)
+        end
+      end
+
+      def generator_for(manifest, elements_to_generate)
+        generators_for(manifest, elements_to_generate).first
+      end
+    end
+
     class Services
       class BaseGenerator
         include TruncatedInspect
@@ -13,6 +67,16 @@ module Foobara
 
         def target_path
           raise "Subclass responsibility"
+        end
+
+        def target_dir
+          target_path[0..-2]
+        end
+
+        def parent
+          if manifest.parent
+            RemoteGenerator.generator_for(manifest.parent, elements_to_generate)
+          end
         end
 
         def generate

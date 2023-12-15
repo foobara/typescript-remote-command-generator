@@ -27,8 +27,8 @@ module Foobara
         end
 
         def error_generators
-          @error_generators ||= error_types.values.map do |error_manifest|
-            Services::CommandErrorGenerator.new(error_manifest, elements_to_generate)
+          error_types.values.map(&:error).uniq.map do |error|
+            Services::ErrorGenerator.new(error, elements_to_generate)
           end
         end
 
@@ -38,8 +38,21 @@ module Foobara
           end.join(" |\n  ")
         end
 
-        def entity_generators
-          raise "wtf"
+        def instantiated_error_type(key)
+          command_error = errors_types[key]
+          error = command_error.error
+
+          result = "#{error.error_name}<\"#{key}\""
+
+          if command_error._path.any? || command_error.runtime_path.any?
+            result += ", #{command_error._path.map(&:to_s).inspect}"
+          end
+
+          if runtime_path.any?
+            result += ", #{command_error.runtime_path.map(&:to_s).inspect}"
+          end
+
+          "#{result}>"
         end
       end
     end

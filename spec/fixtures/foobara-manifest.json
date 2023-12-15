@@ -12,21 +12,7 @@
       "error_types": {
         "data.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
 
@@ -38,15 +24,7 @@
         },
         "data.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
 
@@ -58,21 +36,7 @@
         },
         "data.some_integer.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.some_integer.cannot_cast",
           "path": [
             "some_integer"
@@ -84,15 +48,7 @@
         },
         "data.some_integer.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.some_integer.missing_required_attribute",
           "path": [
             "some_integer"
@@ -104,24 +60,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
 
@@ -243,21 +182,7 @@
       "error_types": {
         "data.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
 
@@ -269,15 +194,7 @@
         },
         "data.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
 
@@ -289,21 +206,7 @@
         },
         "data.some_integer.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.some_integer.cannot_cast",
           "path": [
             "some_integer"
@@ -315,15 +218,7 @@
         },
         "data.some_integer.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.some_integer.missing_required_attribute",
           "path": [
             "some_integer"
@@ -335,24 +230,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
 
@@ -475,21 +353,7 @@
       "error_types": {
         "data.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
 
@@ -501,21 +365,7 @@
         },
         "data.channel.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.channel.cannot_cast",
           "path": [
             "channel"
@@ -527,21 +377,7 @@
         },
         "data.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.id.cannot_cast",
           "path": [
             "id"
@@ -553,21 +389,7 @@
         },
         "data.referred_user.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referred_user.cannot_cast",
           "path": [
             "referred_user"
@@ -579,21 +401,7 @@
         },
         "data.referred_user.email.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referred_user.email.cannot_cast",
           "path": [
             "referred_user",
@@ -606,21 +414,7 @@
         },
         "data.referred_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
           "key": "data.referred_user.email.cannot_exceed64_characters",
           "path": [
             "referred_user",
@@ -633,21 +427,7 @@
         },
         "data.referred_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
           "key": "data.referred_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referred_user",
@@ -660,21 +440,7 @@
         },
         "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referred_user",
@@ -687,21 +453,7 @@
         },
         "data.referred_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
           "key": "data.referred_user.email.first_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -714,21 +466,7 @@
         },
         "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referred_user",
@@ -741,21 +479,7 @@
         },
         "data.referred_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
           "key": "data.referred_user.email.first_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -768,21 +492,7 @@
         },
         "data.referred_user.email.must_have_an_at_sign": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
           "key": "data.referred_user.email.must_have_an_at_sign",
           "path": [
             "referred_user",
@@ -795,21 +505,7 @@
         },
         "data.referred_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
           "key": "data.referred_user.email.second_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -822,21 +518,7 @@
         },
         "data.referred_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
           "key": "data.referred_user.email.second_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -849,21 +531,7 @@
         },
         "data.referred_user.first_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referred_user.first_name.cannot_cast",
           "path": [
             "referred_user",
@@ -876,21 +544,7 @@
         },
         "data.referred_user.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referred_user.id.cannot_cast",
           "path": [
             "referred_user",
@@ -903,21 +557,7 @@
         },
         "data.referred_user.last_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referred_user.last_name.cannot_cast",
           "path": [
             "referred_user",
@@ -930,24 +570,7 @@
         },
         "data.referred_user.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.referred_user.unexpected_attributes",
           "path": [
             "referred_user"
@@ -959,21 +582,7 @@
         },
         "data.referring_user.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.cannot_cast",
           "path": [
             "referring_user"
@@ -985,21 +594,7 @@
         },
         "data.referring_user.email.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.email.cannot_cast",
           "path": [
             "referring_user",
@@ -1012,21 +607,7 @@
         },
         "data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
           "key": "data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -1039,21 +620,7 @@
         },
         "data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
           "key": "data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -1066,21 +633,7 @@
         },
         "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -1093,21 +646,7 @@
         },
         "data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
           "key": "data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -1120,21 +659,7 @@
         },
         "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -1147,21 +672,7 @@
         },
         "data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
           "key": "data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -1174,21 +685,7 @@
         },
         "data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
           "key": "data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -1201,21 +698,7 @@
         },
         "data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
           "key": "data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -1228,21 +711,7 @@
         },
         "data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
           "key": "data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -1255,21 +724,7 @@
         },
         "data.referring_user.first_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.first_name.cannot_cast",
           "path": [
             "referring_user",
@@ -1282,21 +737,7 @@
         },
         "data.referring_user.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.id.cannot_cast",
           "path": [
             "referring_user",
@@ -1309,21 +750,7 @@
         },
         "data.referring_user.last_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.last_name.cannot_cast",
           "path": [
             "referring_user",
@@ -1336,24 +763,7 @@
         },
         "data.referring_user.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.referring_user.unexpected_attributes",
           "path": [
             "referring_user"
@@ -1365,24 +775,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
 
@@ -1518,21 +911,7 @@
       "error_types": {
         "data.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
 
@@ -1544,21 +923,7 @@
         },
         "data.email.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.email.cannot_cast",
           "path": [
             "email"
@@ -1570,21 +935,7 @@
         },
         "data.email.cannot_exceed64_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
           "key": "data.email.cannot_exceed64_characters",
           "path": [
             "email"
@@ -1596,21 +947,7 @@
         },
         "data.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
           "key": "data.email.cannot_have_multiple_at_signs",
           "path": [
             "email"
@@ -1622,21 +959,7 @@
         },
         "data.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "email"
@@ -1648,21 +971,7 @@
         },
         "data.email.first_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
           "key": "data.email.first_part_cannot_be_empty",
           "path": [
             "email"
@@ -1674,21 +983,7 @@
         },
         "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "email"
@@ -1700,21 +995,7 @@
         },
         "data.email.first_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
           "key": "data.email.first_part_has_bad_characters",
           "path": [
             "email"
@@ -1726,21 +1007,7 @@
         },
         "data.email.must_have_an_at_sign": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
           "key": "data.email.must_have_an_at_sign",
           "path": [
             "email"
@@ -1752,21 +1019,7 @@
         },
         "data.email.second_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
           "key": "data.email.second_part_cannot_be_empty",
           "path": [
             "email"
@@ -1778,21 +1031,7 @@
         },
         "data.email.second_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
           "key": "data.email.second_part_has_bad_characters",
           "path": [
             "email"
@@ -1804,21 +1043,7 @@
         },
         "data.first_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.first_name.cannot_cast",
           "path": [
             "first_name"
@@ -1830,21 +1055,7 @@
         },
         "data.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.id.cannot_cast",
           "path": [
             "id"
@@ -1856,21 +1067,7 @@
         },
         "data.last_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.last_name.cannot_cast",
           "path": [
             "last_name"
@@ -1882,21 +1079,7 @@
         },
         "data.referring_user.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.cannot_cast",
           "path": [
             "referring_user"
@@ -1908,21 +1091,7 @@
         },
         "data.referring_user.email.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.email.cannot_cast",
           "path": [
             "referring_user",
@@ -1935,21 +1104,7 @@
         },
         "data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
           "key": "data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -1962,21 +1117,7 @@
         },
         "data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
           "key": "data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -1989,21 +1130,7 @@
         },
         "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -2016,21 +1143,7 @@
         },
         "data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
           "key": "data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -2043,21 +1156,7 @@
         },
         "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -2070,21 +1169,7 @@
         },
         "data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
           "key": "data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -2097,21 +1182,7 @@
         },
         "data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
           "key": "data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -2124,21 +1195,7 @@
         },
         "data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
           "key": "data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -2151,21 +1208,7 @@
         },
         "data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
           "key": "data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -2178,21 +1221,7 @@
         },
         "data.referring_user.first_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.first_name.cannot_cast",
           "path": [
             "referring_user",
@@ -2205,21 +1234,7 @@
         },
         "data.referring_user.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.id.cannot_cast",
           "path": [
             "referring_user",
@@ -2232,21 +1247,7 @@
         },
         "data.referring_user.last_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.referring_user.last_name.cannot_cast",
           "path": [
             "referring_user",
@@ -2259,24 +1260,7 @@
         },
         "data.referring_user.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.referring_user.unexpected_attributes",
           "path": [
             "referring_user"
@@ -2288,24 +1272,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
 
@@ -2317,21 +1284,7 @@
         },
         "some_org::auth::create_referral>data.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.cannot_cast",
           "path": [
 
@@ -2343,21 +1296,7 @@
         },
         "some_org::auth::create_referral>data.channel.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.channel.cannot_cast",
           "path": [
             "channel"
@@ -2369,21 +1308,7 @@
         },
         "some_org::auth::create_referral>data.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.id.cannot_cast",
           "path": [
             "id"
@@ -2395,21 +1320,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referred_user.cannot_cast",
           "path": [
             "referred_user"
@@ -2421,21 +1332,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referred_user.email.cannot_cast",
           "path": [
             "referred_user",
@@ -2448,21 +1345,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
           "key": "some_org::auth::create_referral>data.referred_user.email.cannot_exceed64_characters",
           "path": [
             "referred_user",
@@ -2475,21 +1358,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
           "key": "some_org::auth::create_referral>data.referred_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referred_user",
@@ -2502,21 +1371,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "some_org::auth::create_referral>data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referred_user",
@@ -2529,21 +1384,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
           "key": "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -2556,21 +1397,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referred_user",
@@ -2583,21 +1410,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
           "key": "some_org::auth::create_referral>data.referred_user.email.first_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -2610,21 +1423,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.must_have_an_at_sign": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
           "key": "some_org::auth::create_referral>data.referred_user.email.must_have_an_at_sign",
           "path": [
             "referred_user",
@@ -2637,21 +1436,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
           "key": "some_org::auth::create_referral>data.referred_user.email.second_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -2664,21 +1449,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
           "key": "some_org::auth::create_referral>data.referred_user.email.second_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -2691,21 +1462,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.first_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referred_user.first_name.cannot_cast",
           "path": [
             "referred_user",
@@ -2718,21 +1475,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referred_user.id.cannot_cast",
           "path": [
             "referred_user",
@@ -2745,21 +1488,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.last_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referred_user.last_name.cannot_cast",
           "path": [
             "referred_user",
@@ -2772,24 +1501,7 @@
         },
         "some_org::auth::create_referral>data.referred_user.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "some_org::auth::create_referral>data.referred_user.unexpected_attributes",
           "path": [
             "referred_user"
@@ -2801,21 +1513,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referring_user.cannot_cast",
           "path": [
             "referring_user"
@@ -2827,21 +1525,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referring_user.email.cannot_cast",
           "path": [
             "referring_user",
@@ -2854,21 +1538,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
           "key": "some_org::auth::create_referral>data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -2881,21 +1551,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
           "key": "some_org::auth::create_referral>data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -2908,21 +1564,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "some_org::auth::create_referral>data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -2935,21 +1577,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
           "key": "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -2962,21 +1590,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -2989,21 +1603,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
           "key": "some_org::auth::create_referral>data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -3016,21 +1616,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
           "key": "some_org::auth::create_referral>data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -3043,21 +1629,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
           "key": "some_org::auth::create_referral>data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -3070,21 +1642,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "negate_regex": {
-                "type": "duck"
-              },
-              "regex": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": false,
+          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
           "key": "some_org::auth::create_referral>data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -3097,21 +1655,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.first_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referring_user.first_name.cannot_cast",
           "path": [
             "referring_user",
@@ -3124,21 +1668,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.id.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referring_user.id.cannot_cast",
           "path": [
             "referring_user",
@@ -3151,21 +1681,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.last_name.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "some_org::auth::create_referral>data.referring_user.last_name.cannot_cast",
           "path": [
             "referring_user",
@@ -3178,24 +1694,7 @@
         },
         "some_org::auth::create_referral>data.referring_user.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "some_org::auth::create_referral>data.referring_user.unexpected_attributes",
           "path": [
             "referring_user"
@@ -3207,24 +1706,7 @@
         },
         "some_org::auth::create_referral>data.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "some_org::auth::create_referral>data.unexpected_attributes",
           "path": [
 
@@ -3362,21 +1844,7 @@
       "error_types": {
         "data.base.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.base.cannot_cast",
           "path": [
             "base"
@@ -3388,15 +1856,7 @@
         },
         "data.base.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.base.missing_required_attribute",
           "path": [
             "base"
@@ -3408,21 +1868,7 @@
         },
         "data.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
 
@@ -3434,21 +1880,7 @@
         },
         "data.exponent.cannot_cast": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              },
-              "cast_to": {
-                "type": "duck"
-              },
-              "value": {
-                "type": "duck"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.exponent.cannot_cast",
           "path": [
             "exponent"
@@ -3460,15 +1892,7 @@
         },
         "data.exponent.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.exponent.missing_required_attribute",
           "path": [
             "exponent"
@@ -3480,15 +1904,7 @@
         },
         "data.missing_required_attribute": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "attribute_name": {
-                "type": "symbol"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
 
@@ -3500,24 +1916,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "allowed_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              },
-              "unexpected_attributes": {
-                "element_type_declaration": {
-                  "type": "symbol"
-                },
-                "type": "array"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
 
@@ -3529,15 +1928,7 @@
         },
         "runtime.negative_exponent": {
           "category": "runtime",
-          "context_type_declaration": {
-            "element_type_declarations": {
-              "exponent": {
-                "type": "integer"
-              }
-            },
-            "type": "attributes"
-          },
-          "is_fatal": true,
+          "error": "SomeOrg::Math::CalculateExponent::NegativeExponentError",
           "key": "runtime.negative_exponent",
           "path": [
 
@@ -5704,7 +4095,6 @@
           "BuiltinTypes::Email::Transformers::Downcase"
         ],
         "validators": [
-          "BuiltinTypes::Email::Validators::MustHaveAnAtSign",
           "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
           "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
           "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
@@ -5712,7 +4102,8 @@
           "BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
           "BuiltinTypes::Email::Validators::CannotExceed64Characters",
           "BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
-          "BuiltinTypes::Email::Validators::SecondPartHasBadCharacters"
+          "BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
+          "BuiltinTypes::Email::Validators::MustHaveAnAtSign"
         ]
       },
       "reference": "email",

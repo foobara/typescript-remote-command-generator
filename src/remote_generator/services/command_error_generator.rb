@@ -7,6 +7,7 @@ module Foobara
         alias error_manifest relevant_manifest
 
         def target_path
+          binding.pry
           if global?
             ["base", "errors", "#{error_name}.ts"]
           else

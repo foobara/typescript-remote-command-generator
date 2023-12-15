@@ -1,6 +1,6 @@
 GIT
   remote: foobara
-  revision: 7d0ed6ef9a9756e310d6e9c4cbeaef733636c4bc
+  revision: 793fd0af302f8827d4aa7a275fd1af19b5efa894
   branch: main
   specs:
     foobara (0.0.1)

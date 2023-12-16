@@ -1,4 +1,5 @@
 <% entity_generators.each do |entity_generator| %>
+<% elements_to_generate << entity_generator.relevant_manifest %>
 import { <%= entity_generator.all_names.join(", ") %> } from "<%= path_to_root %><%= entity_generator.import_path %>"
 <% end %>
 

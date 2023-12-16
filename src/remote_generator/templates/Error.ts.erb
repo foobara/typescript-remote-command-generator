@@ -1,6 +1,6 @@
 // imports needed for context types...
 import <%= error_base_class %> from "<%= path_to_root %>base/Error"
-
+<% binding.pry  %>
 <% uniq_error_generators_by_symbol.each do |entity| %>
 import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
 <% end %>

@@ -21,6 +21,15 @@ module Foobara
           end
         end
 
+        def error_base_class
+          case category
+          when "data"
+            "DataError"
+          else
+            "RuntimeError"
+          end
+        end
+
         def template_path
           "Error.ts.erb"
         end

@@ -1,4 +1,5 @@
 <% uniq_error_generators_by_symbol.each do |error| %>
+<% elements_to_generate << error.relevant_manifest %>
 import {<%= error.error_name %>} from "<%= path_to_root %><%= error.import_path %>"
 <% end %>
 

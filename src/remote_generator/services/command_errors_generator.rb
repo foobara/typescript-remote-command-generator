@@ -36,9 +36,6 @@ module Foobara
           error_types.keys.map do |key|
             instantiated_error_type(key)
           end.join(" |\n  ")
-        rescue => e
-          binding.pry
-          raise
         end
 
         def instantiated_error_type(key)
@@ -58,9 +55,6 @@ module Foobara
           end
 
           "#{result}>"
-        rescue => e
-          binding.pry
-          raise
         end
       end
     end

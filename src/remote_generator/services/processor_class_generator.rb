@@ -8,7 +8,7 @@ module Foobara
 
         def target_path
           *path, basename = scoped_full_path
-          basename = "#{scoped_short_name}.ts"
+          basename = "#{basename}.ts"
 
           ["base", "processors", *path, basename]
         end

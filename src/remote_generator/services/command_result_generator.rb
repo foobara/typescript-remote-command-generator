@@ -20,7 +20,7 @@ module Foobara
 
         def entity_generators(type = result_type)
           if type.entity?
-            [EntityGenerator.new(type.to_entity)]
+            [EntityGenerator.new(type.to_entity, elements_to_generate)]
           elsif type.type.to_sym == :attributes
             type.attribute_declarations.values.map do |attribute_declaration|
               entity_generators(attribute_declaration)

@@ -44,18 +44,23 @@ module Foobara
         def instantiated_error_type(key)
           command_error = error_types[key]
           error = command_error.error
+          path = command_error._path
+          runtime_path = command_error.runtime_path
 
           result = "#{error.error_name}<\"#{key}\""
 
-          if command_error._path.any? || command_error.runtime_path.any?
-            result += ", #{command_error._path.map(&:to_s).inspect}"
+          if path.any? || runtime_path.any?
+            result += ", #{path.map(&:to_s).inspect}"
           end
 
           if runtime_path.any?
-            result += ", #{command_error.runtime_path.map(&:to_s).inspect}"
+            result += ", #{runtime_path.map(&:to_s).inspect}"
           end
 
           "#{result}>"
+        rescue => e
+          binding.pry
+          raise
         end
       end
     end

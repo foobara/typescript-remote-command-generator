@@ -29,7 +29,7 @@ module Foobara
           end
 
           entity_manifests.uniq.map do |entity_manifest|
-            Services::EntityGenerator.new(entity_manifest)
+            Services::EntityGenerator.new(entity_manifest, elements_to_generate)
           end
         end
       end

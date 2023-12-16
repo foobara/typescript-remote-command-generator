@@ -6,9 +6,11 @@ import Error from "./Error"
 
 export default class <%= command_name %> extends Command<Inputs, Result, Error> {
 <% unless organization.global? %>
+  <% elements_to_generate << organization %>
   static organizationName = "<%= organization_name %>"
 <% end %>
 <% unless domain.global? %>
+  <% elements_to_generate << domain %>
   static domainName = "<%= domain_name %>"
 <% end %>
   static commandName = <%= command_name %>

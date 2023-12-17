@@ -33,6 +33,14 @@ module Foobara
         def template_path
           "Error.ts.erb"
         end
+
+        def context_type_declaration
+          @context_type_declaration ||= Manifest::TypeDeclaration.new(root_manifest, [*path, :context_type_declaration])
+        end
+
+        def context_ts_type
+          foobara_type_to_ts_type(context_type_declaration)
+        end
       end
     end
   end

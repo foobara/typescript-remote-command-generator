@@ -23,14 +23,12 @@ module Foobara
         end
 
         def entity_generators
-          entity_manifests = attribute_declarations.values.select(&:entity?).map do |attribute_declaration|
-            type = find_type(attribute_declaration)
-            Manifest::Entity.new(root_manifest, type.path)
+          inputs_types_depended_on.select(&:entity?).map do |entity|
+            Services::EntityGenerator.new(entity, elements_to_generate)
           end
-
-          entity_manifests.uniq.map do |entity_manifest|
-            Services::EntityGenerator.new(entity_manifest, elements_to_generate)
-          end
+        rescue => e
+          binding.pry
+          raise
         end
       end
     end

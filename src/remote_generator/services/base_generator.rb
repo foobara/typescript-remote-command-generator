@@ -192,6 +192,9 @@ module Foobara
           else
             raise "Not sure how to convert #{type_declaration} to a TS type"
           end
+        rescue => e
+          binding.pry
+          raise
         end
 
         def attributes_to_ts_type(attributes)

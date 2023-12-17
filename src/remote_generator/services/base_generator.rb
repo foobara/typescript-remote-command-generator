@@ -158,18 +158,28 @@ module Foobara
             return name ? "interface #{name} #{ts_type}" : ts_type
           end
 
+          if type_declaration.is_a?(Manifest::Array)
+            ts_type = foobara_type_to_ts_type(type_declaration.element_type)
+            return "#{ts_type}[]"
+          end
+
           if type_declaration.relevant_manifest.size > 1
+            binding.pry
             raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
           end
 
           type_symbol = type_declaration.type
 
           type_string = case type_symbol
-                        # TODO: should apply relevant processors to make email a real email type instead of "string"
-                        when "string", "email", "boolean"
+                        when "string", "boolean"
                           type_symbol
                         when "integer"
                           "number"
+                        # TODO: should apply relevant processors to make email a real email type instead of "string"
+                        when "symbol", "email"
+                          "string"
+                        when "duck"
+                          "any"
                         else
                           if type_declaration.entity?
                             # How do we handle name collisions across domains/orgs??

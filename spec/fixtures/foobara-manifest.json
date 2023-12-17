@@ -72,7 +72,38 @@
         }
       },
       "errors_transformers": [
-
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
       ],
       "full_command_name": "GlobalCommand",
       "inputs_transformers": [
@@ -89,6 +120,13 @@
         ],
         "type": "attributes"
       },
+      "inputs_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer"
+      ],
       "organization": "global_organization",
       "organization_name": "global_organization",
       "parent": [
@@ -106,6 +144,9 @@
       "result_type": {
         "type": "integer"
       },
+      "result_types_depended_on": [
+        "integer"
+      ],
       "scoped_category": "command",
       "scoped_full_name": "GlobalCommand",
       "scoped_full_path": [
@@ -120,57 +161,63 @@
       "serializers": [
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::ErrorsSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::ErrorsSerializer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::ErrorsSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_name": "ErrorsSerializer",
+          "scoped_name": "Serializers::ErrorsSerializer",
           "scoped_path": [
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::JsonSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::JsonSerializer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::JsonSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_name": "JsonSerializer",
+          "scoped_name": "Serializers::JsonSerializer",
           "scoped_path": [
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
         "duck",
-        "integer",
-        "number",
-        "atomic_duck"
+        "integer"
       ]
     },
     "SomeDomainWithoutOrg::CommandWithDomainButNoOrg": {
@@ -245,7 +292,38 @@
         }
       },
       "errors_transformers": [
-
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
       ],
       "full_command_name": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "inputs_transformers": [
@@ -262,6 +340,13 @@
         ],
         "type": "attributes"
       },
+      "inputs_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer"
+      ],
       "organization": "global_organization",
       "organization_name": "global_organization",
       "parent": [
@@ -279,6 +364,9 @@
       "result_type": {
         "type": "integer"
       },
+      "result_types_depended_on": [
+        "integer"
+      ],
       "scoped_category": "command",
       "scoped_full_name": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "scoped_full_path": [
@@ -294,57 +382,63 @@
       "serializers": [
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::ErrorsSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::ErrorsSerializer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::ErrorsSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_name": "ErrorsSerializer",
+          "scoped_name": "Serializers::ErrorsSerializer",
           "scoped_path": [
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::JsonSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::JsonSerializer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::JsonSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_name": "JsonSerializer",
+          "scoped_name": "Serializers::JsonSerializer",
           "scoped_path": [
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
         "duck",
-        "integer",
-        "number",
-        "atomic_duck"
+        "integer"
       ]
     },
     "SomeOrg::Auth::CreateReferral": {
@@ -793,7 +887,38 @@
         }
       },
       "errors_transformers": [
-
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
       ],
       "full_command_name": "SomeOrg::Auth::CreateReferral",
       "inputs_transformers": [
@@ -816,6 +941,15 @@
         },
         "type": "attributes"
       },
+      "inputs_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer",
+        "string",
+        "SomeOrg::Auth::User"
+      ],
       "organization": "SomeOrg",
       "organization_name": "SomeOrg",
       "parent": [
@@ -833,6 +967,9 @@
       "result_type": {
         "type": "SomeOrg::Auth::Referral"
       },
+      "result_types_depended_on": [
+        "SomeOrg::Auth::Referral"
+      ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOrg::Auth::CreateReferral",
       "scoped_full_path": [
@@ -849,62 +986,65 @@
       "serializers": [
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::ErrorsSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::ErrorsSerializer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::ErrorsSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_name": "ErrorsSerializer",
+          "scoped_name": "Serializers::ErrorsSerializer",
           "scoped_path": [
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::JsonSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::JsonSerializer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::JsonSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_name": "JsonSerializer",
+          "scoped_name": "Serializers::JsonSerializer",
           "scoped_path": [
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
         "duck",
         "integer",
-        "number",
-        "atomic_duck",
         "string",
         "SomeOrg::Auth::User",
-        "entity",
-        "model",
-        "email",
         "SomeOrg::Auth::Referral"
       ]
     },
@@ -1290,444 +1430,41 @@
 
           ],
           "symbol": "unexpected_attributes"
-        },
-        "some_org::auth::create_referral>data.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.cannot_cast",
-          "path": [
-
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.channel.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.channel.cannot_cast",
-          "path": [
-            "channel"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.id.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.id.cannot_cast",
-          "path": [
-            "id"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referred_user.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referred_user.cannot_cast",
-          "path": [
-            "referred_user"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.cannot_cast",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.cannot_exceed64_characters": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.cannot_exceed64_characters",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_exceed64_characters"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.cannot_have_multiple_at_signs": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.cannot_have_multiple_at_signs",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_have_multiple_at_signs"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_be_empty": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_be_empty",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "first_part_cannot_be_empty"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.first_part_has_bad_characters": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.first_part_has_bad_characters",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "first_part_has_bad_characters"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.must_have_an_at_sign": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.must_have_an_at_sign",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "must_have_an_at_sign"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.second_part_cannot_be_empty": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.second_part_cannot_be_empty",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "second_part_cannot_be_empty"
-        },
-        "some_org::auth::create_referral>data.referred_user.email.second_part_has_bad_characters": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
-          "key": "some_org::auth::create_referral>data.referred_user.email.second_part_has_bad_characters",
-          "path": [
-            "referred_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "second_part_has_bad_characters"
-        },
-        "some_org::auth::create_referral>data.referred_user.first_name.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referred_user.first_name.cannot_cast",
-          "path": [
-            "referred_user",
-            "first_name"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referred_user.id.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referred_user.id.cannot_cast",
-          "path": [
-            "referred_user",
-            "id"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referred_user.last_name.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referred_user.last_name.cannot_cast",
-          "path": [
-            "referred_user",
-            "last_name"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referred_user.unexpected_attributes": {
-          "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
-          "key": "some_org::auth::create_referral>data.referred_user.unexpected_attributes",
-          "path": [
-            "referred_user"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "unexpected_attributes"
-        },
-        "some_org::auth::create_referral>data.referring_user.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referring_user.cannot_cast",
-          "path": [
-            "referring_user"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.cannot_cast",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.cannot_exceed64_characters": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::CannotExceed64CharactersError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.cannot_exceed64_characters",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_exceed64_characters"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.cannot_have_multiple_at_signs": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSignsError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.cannot_have_multiple_at_signs",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_have_multiple_at_signs"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_be_empty": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::FirstPartCannotBeEmptyError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_be_empty",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "first_part_cannot_be_empty"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.first_part_has_bad_characters": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::FirstPartHasBadCharactersError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.first_part_has_bad_characters",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "first_part_has_bad_characters"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.must_have_an_at_sign": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::MustHaveAnAtSignError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.must_have_an_at_sign",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "must_have_an_at_sign"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.second_part_cannot_be_empty": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::SecondPartCannotBeEmptyError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.second_part_cannot_be_empty",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "second_part_cannot_be_empty"
-        },
-        "some_org::auth::create_referral>data.referring_user.email.second_part_has_bad_characters": {
-          "category": "data",
-          "error": "BuiltinTypes::Email::Validators::SecondPartHasBadCharactersError",
-          "key": "some_org::auth::create_referral>data.referring_user.email.second_part_has_bad_characters",
-          "path": [
-            "referring_user",
-            "email"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "second_part_has_bad_characters"
-        },
-        "some_org::auth::create_referral>data.referring_user.first_name.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referring_user.first_name.cannot_cast",
-          "path": [
-            "referring_user",
-            "first_name"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referring_user.id.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referring_user.id.cannot_cast",
-          "path": [
-            "referring_user",
-            "id"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referring_user.last_name.cannot_cast": {
-          "category": "data",
-          "error": "Value::Processor::Casting::CannotCastError",
-          "key": "some_org::auth::create_referral>data.referring_user.last_name.cannot_cast",
-          "path": [
-            "referring_user",
-            "last_name"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "cannot_cast"
-        },
-        "some_org::auth::create_referral>data.referring_user.unexpected_attributes": {
-          "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
-          "key": "some_org::auth::create_referral>data.referring_user.unexpected_attributes",
-          "path": [
-            "referring_user"
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "unexpected_attributes"
-        },
-        "some_org::auth::create_referral>data.unexpected_attributes": {
-          "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
-          "key": "some_org::auth::create_referral>data.unexpected_attributes",
-          "path": [
-
-          ],
-          "runtime_path": [
-            "some_org::auth::create_referral"
-          ],
-          "symbol": "unexpected_attributes"
         }
       },
       "errors_transformers": [
-
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
       ],
       "full_command_name": "SomeOrg::Auth::CreateUser",
       "inputs_transformers": [
@@ -1753,6 +1490,16 @@
         },
         "type": "attributes"
       },
+      "inputs_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer",
+        "string",
+        "email",
+        "SomeOrg::Auth::User"
+      ],
       "organization": "SomeOrg",
       "organization_name": "SomeOrg",
       "parent": [
@@ -1770,6 +1517,9 @@
       "result_type": {
         "type": "SomeOrg::Auth::User"
       },
+      "result_types_depended_on": [
+        "SomeOrg::Auth::User"
+      ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOrg::Auth::CreateUser",
       "scoped_full_path": [
@@ -1786,62 +1536,66 @@
       "serializers": [
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::ErrorsSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::ErrorsSerializer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::ErrorsSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_name": "ErrorsSerializer",
+          "scoped_name": "Serializers::ErrorsSerializer",
           "scoped_path": [
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::JsonSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::JsonSerializer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::JsonSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_name": "JsonSerializer",
+          "scoped_name": "Serializers::JsonSerializer",
           "scoped_path": [
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
         "duck",
         "integer",
-        "number",
-        "atomic_duck",
         "string",
         "email",
-        "SomeOrg::Auth::User",
-        "entity",
-        "model"
+        "SomeOrg::Auth::User"
       ]
     },
     "SomeOrg::Math::CalculateExponent": {
@@ -1952,7 +1706,39 @@
         }
       },
       "errors_transformers": [
-
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer"
       ],
       "full_command_name": "SomeOrg::Math::CalculateExponent",
       "inputs_transformers": [
@@ -1973,6 +1759,13 @@
         ],
         "type": "attributes"
       },
+      "inputs_types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer"
+      ],
       "organization": "SomeOrg",
       "organization_name": "SomeOrg",
       "parent": [
@@ -1990,6 +1783,9 @@
       "result_type": {
         "type": "integer"
       },
+      "result_types_depended_on": [
+        "integer"
+      ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOrg::Math::CalculateExponent",
       "scoped_full_path": [
@@ -2006,57 +1802,63 @@
       "serializers": [
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::ErrorsSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::ErrorsSerializer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::ErrorsSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_name": "ErrorsSerializer",
+          "scoped_name": "Serializers::ErrorsSerializer",
           "scoped_path": [
+            "Serializers",
             "ErrorsSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "ErrorsSerializer"
         },
         {
           "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::JsonSerializer",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
           "parent": [
             "domain",
             "CommandConnectors"
           ],
           "processor_type": "transformer",
-          "reference": "CommandConnectors::JsonSerializer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::JsonSerializer",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
           "scoped_full_path": [
             "CommandConnectors",
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_name": "JsonSerializer",
+          "scoped_name": "Serializers::JsonSerializer",
           "scoped_path": [
+            "Serializers",
             "JsonSerializer"
           ],
-          "scoped_prefix": null,
+          "scoped_prefix": [
+            "Serializers"
+          ],
           "scoped_short_name": "JsonSerializer"
         }
       ],
       "types_depended_on": [
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
         "duck",
-        "integer",
-        "number",
-        "atomic_duck"
+        "integer"
       ]
     }
   },
@@ -2751,6 +2553,35 @@
     }
   },
   "processor": {
+    "BuiltinTypes::Array::Casters::Arrayable": {
+      "name": "Foobara::BuiltinTypes::Array::Casters::Arrayable",
+      "possible_errors": {
+
+      },
+      "processor_type": "caster",
+      "reference": "BuiltinTypes::Array::Casters::Arrayable",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "BuiltinTypes::Array::Casters::Arrayable",
+      "scoped_full_path": [
+        "BuiltinTypes",
+        "Array",
+        "Casters",
+        "Arrayable"
+      ],
+      "scoped_name": "BuiltinTypes::Array::Casters::Arrayable",
+      "scoped_path": [
+        "BuiltinTypes",
+        "Array",
+        "Casters",
+        "Arrayable"
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Array",
+        "Casters"
+      ],
+      "scoped_short_name": "Arrayable"
+    },
     "BuiltinTypes::AssociativeArray::Casters::Array": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::Casters::Array",
       "possible_errors": {
@@ -3355,6 +3186,38 @@
       ],
       "scoped_short_name": "Symbol"
     },
+    "BuiltinTypes::Symbol::Casters::String": {
+      "name": "Foobara::BuiltinTypes::Symbol::Casters::String",
+      "parent_declaration_data": {
+        "type": "symbol"
+      },
+      "possible_errors": {
+
+      },
+      "processor_type": "caster",
+      "reference": "BuiltinTypes::Symbol::Casters::String",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "BuiltinTypes::Symbol::Casters::String",
+      "scoped_full_path": [
+        "BuiltinTypes",
+        "Symbol",
+        "Casters",
+        "String"
+      ],
+      "scoped_name": "BuiltinTypes::Symbol::Casters::String",
+      "scoped_path": [
+        "BuiltinTypes",
+        "Symbol",
+        "Casters",
+        "String"
+      ],
+      "scoped_prefix": [
+        "BuiltinTypes",
+        "Symbol",
+        "Casters"
+      ],
+      "scoped_short_name": "String"
+    },
     "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster": {
       "declaration_data": "SomeOrg::Auth::User",
       "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
@@ -3453,6 +3316,48 @@
         "Processor"
       ],
       "scoped_short_name": "Casting"
+    },
+    "array::element_type_declaration": {
+      "name": "Foobara::BuiltinTypes::Array::SupportedProcessors::ElementTypeDeclaration",
+      "parent": [
+        "type",
+        "array"
+      ],
+      "processor_type": "processor",
+      "reference": "array::element_type_declaration",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "array::element_type_declaration",
+      "scoped_full_path": [
+        "array",
+        "element_type_declaration"
+      ],
+      "scoped_name": "element_type_declaration",
+      "scoped_path": [
+        "element_type_declaration"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "element_type_declaration"
+    },
+    "array::size": {
+      "name": "Foobara::BuiltinTypes::Array::SupportedValidators::Size",
+      "parent": [
+        "type",
+        "array"
+      ],
+      "processor_type": "transformer",
+      "reference": "array::size",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "array::size",
+      "scoped_full_path": [
+        "array",
+        "size"
+      ],
+      "scoped_name": "size",
+      "scoped_path": [
+        "size"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "size"
     },
     "associative_array::key_type_declaration": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::KeyTypeDeclaration",
@@ -3779,19 +3684,14 @@
         "SomeOrg::Auth::Referral"
       ],
       "types_depended_on": [
-        "SomeOrg::Auth::Referral",
         "entity",
-        "model",
-        "atomic_duck",
-        "duck",
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
+        "duck",
         "integer",
-        "number",
         "string",
-        "SomeOrg::Auth::User",
-        "email"
+        "SomeOrg::Auth::User"
       ]
     },
     "SomeOrg::Auth::User": {
@@ -3905,18 +3805,62 @@
         "SomeOrg::Auth::User"
       ],
       "types_depended_on": [
-        "SomeOrg::Auth::User",
         "entity",
-        "model",
-        "atomic_duck",
-        "duck",
         "attributes",
-        "associative_array",
-        "duckture",
+        "array",
+        "symbol",
+        "duck",
         "integer",
-        "number",
         "string",
         "email"
+      ]
+    },
+    "array": {
+      "base_type": "duckture",
+      "declaration_data": {
+        "type": "array"
+      },
+      "name": "array",
+      "processors": {
+        "casters": [
+          "BuiltinTypes::Array::Casters::Arrayable"
+        ],
+        "transformers": [
+
+        ],
+        "validators": [
+
+        ]
+      },
+      "reference": "array",
+      "scoped_category": "type",
+      "scoped_full_name": "array",
+      "scoped_full_path": [
+        "array"
+      ],
+      "scoped_name": "array",
+      "scoped_path": [
+        "array"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "array",
+      "supported_processors": [
+        "array::element_type_declaration"
+      ],
+      "supported_transformers": [
+
+      ],
+      "supported_validators": [
+        "array::size"
+      ],
+      "target_classes": [
+        "Array"
+      ],
+      "types_depended_on": [
+        "duckture",
+        "attributes",
+        "symbol",
+        "duck"
       ]
     },
     "associative_array": {
@@ -3962,8 +3906,10 @@
         "Hash"
       ],
       "types_depended_on": [
-        "associative_array",
         "duckture",
+        "attributes",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4009,8 +3955,10 @@
         "Object"
       ],
       "types_depended_on": [
-        "atomic_duck",
-        "duck"
+        "duck",
+        "attributes",
+        "array",
+        "symbol"
       ]
     },
     "attributes": {
@@ -4057,9 +4005,9 @@
 
       ],
       "types_depended_on": [
-        "attributes",
         "associative_array",
-        "duckture",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4105,7 +4053,9 @@
         "Object"
       ],
       "types_depended_on": [
-        "duck"
+        "attributes",
+        "array",
+        "symbol"
       ]
     },
     "duckture": {
@@ -4150,8 +4100,10 @@
         "Object"
       ],
       "types_depended_on": [
-        "duckture",
-        "duck"
+        "duck",
+        "attributes",
+        "array",
+        "symbol"
       ]
     },
     "email": {
@@ -4168,15 +4120,15 @@
           "BuiltinTypes::Email::Transformers::Downcase"
         ],
         "validators": [
+          "BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
+          "BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
           "BuiltinTypes::Email::Validators::CannotExceed64Characters",
           "BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
           "BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
           "BuiltinTypes::Email::Validators::MustHaveAnAtSign",
           "BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
           "BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
-          "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
-          "BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
-          "BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty"
+          "BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen"
         ]
       },
       "reference": "email",
@@ -4198,16 +4150,17 @@
         "string::downcase"
       ],
       "supported_validators": [
-        "string::max_length",
-        "string::matches"
+        "string::matches",
+        "string::max_length"
       ],
       "target_classes": [
         "String"
       ],
       "types_depended_on": [
-        "email",
         "string",
-        "atomic_duck",
+        "attributes",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4253,9 +4206,10 @@
 
       ],
       "types_depended_on": [
-        "entity",
         "model",
-        "atomic_duck",
+        "attributes",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4295,16 +4249,17 @@
 
       ],
       "supported_validators": [
-        "number::min",
-        "number::max"
+        "number::max",
+        "number::min"
       ],
       "target_classes": [
         "Integer"
       ],
       "types_depended_on": [
-        "integer",
         "number",
-        "atomic_duck",
+        "attributes",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4350,8 +4305,10 @@
 
       ],
       "types_depended_on": [
-        "model",
         "atomic_duck",
+        "attributes",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4391,15 +4348,17 @@
 
       ],
       "supported_validators": [
-        "number::min",
-        "number::max"
+        "number::max",
+        "number::min"
       ],
       "target_classes": [
         "Object"
       ],
       "types_depended_on": [
-        "number",
         "atomic_duck",
+        "attributes",
+        "array",
+        "symbol",
         "duck"
       ]
     },
@@ -4439,15 +4398,65 @@
         "string::downcase"
       ],
       "supported_validators": [
-        "string::max_length",
-        "string::matches"
+        "string::matches",
+        "string::max_length"
       ],
       "target_classes": [
         "String"
       ],
       "types_depended_on": [
-        "string",
         "atomic_duck",
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
+    },
+    "symbol": {
+      "base_type": "atomic_duck",
+      "declaration_data": {
+        "type": "symbol"
+      },
+      "name": "symbol",
+      "processors": {
+        "casters": [
+          "BuiltinTypes::Symbol::Casters::String"
+        ],
+        "transformers": [
+
+        ],
+        "validators": [
+
+        ]
+      },
+      "reference": "symbol",
+      "scoped_category": "type",
+      "scoped_full_name": "symbol",
+      "scoped_full_path": [
+        "symbol"
+      ],
+      "scoped_name": "symbol",
+      "scoped_path": [
+        "symbol"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "symbol",
+      "supported_processors": [
+
+      ],
+      "supported_transformers": [
+
+      ],
+      "supported_validators": [
+
+      ],
+      "target_classes": [
+        "Symbol"
+      ],
+      "types_depended_on": [
+        "atomic_duck",
+        "attributes",
+        "array",
         "duck"
       ]
     }

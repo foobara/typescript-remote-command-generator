@@ -1,0 +1,99 @@
+import {Entity, EntityPrimaryKeyType, Never, UnloadedAttributesType} from "<%= path_to_root %>base/Entity"
+
+<% entity_generators.each do |entity_generator| %>
+<% elements_to_generate << entity_generator.relevant_manifest %>
+import { <%= entity_generator.all_names.join(", ") %> } from "<%= path_to_root %><%= entity_generator.import_path %>"
+<% end %>
+
+
+import {ReferralAttributesType} from "./Referral";
+
+export type UserPrimaryKeyType = number
+export const userPrimaryKeyAttributeName: "id" = "id"
+
+export interface UserAttributesType {
+  readonly first_name?: string | undefined
+  readonly last_name?: string | undefined
+  readonly email?: string | undefined
+}
+
+
+export interface UserAtomAttributesType extends UserAttributesType {
+}
+
+export interface UserAggregateAttributesType extends UserAttributesType {
+}
+
+
+export class User<
+  AttributesType extends UserAttributesType | UserAtomAttributesType | UserAggregateAttributesType =
+      UserAttributesType | UserAtomAttributesType | UserAggregateAttributesType
+> extends Entity<UserPrimaryKeyType, AttributesType> {
+  static readonly entityName: string = "User"
+  static readonly primaryKeyAttributeName: "id" = "id"
+
+  get associationsMetadata () {
+    return {}
+  }
+
+
+  get isAtom(): boolean {
+    return this.isLoaded
+  }
+
+  get isAggregate(): boolean {
+    return this.isLoaded
+  }
+
+  get id (): UserPrimaryKeyType {
+    return this.primaryKey
+  }
+
+  get first_name () {
+    return this.readAttribute("first_name")
+  }
+  get last_name () {
+    return this.readAttribute("last_name")
+  }
+  get email () {
+    return this.readAttribute("email")
+  }
+}
+
+export class UnloadedUser extends User<Never<UserAttributesType>> {
+  constructor(id: UserPrimaryKeyType) {
+    super(id)
+  }
+
+  get isLoaded(): false { return false }
+  get isAtom(): false { return false }
+  get isAggregate(): false { return false }
+}
+
+export class LoadedUser<T extends UserAttributesType> extends User<T> {
+
+  constructor(id: UserPrimaryKeyType, attributes: T) {
+    super(id, attributes)
+  }
+
+  get isLoaded(): true { return true }
+  get isAtom(): true { return true }
+  get isAggregate(): true { return true }
+
+  get first_name (): T["first_name"] {
+    return this._attributes.first_name
+  }
+  get last_name (): T["last_name"] {
+    return this._attributes.last_name
+  }
+  get email (): T["email"] {
+    return this._attributes.email
+  }
+
+}
+
+export class UserAtom extends LoadedUser<UserAtomAttributesType> {
+}
+
+export class UserAggregate extends LoadedUser<UserAggregateAttributesType> {
+}

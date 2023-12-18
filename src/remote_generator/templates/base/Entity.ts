@@ -18,11 +18,8 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
   readonly _isLoaded: boolean
   readonly _attributes: AttributesType
 
-  get hasAssociations() {
-    return Object.keys(this.associationsMetadata).length > 0
-  }
-
-  abstract get associationsMetadata (): {[key: string]: string}
+  abstract get hasAssociations(): boolean
+  abstract get associationPropertyNames (): (keyof AttributesType)[]
 
   constructor(primaryKey: PrimaryKeyType, attributes: AttributesType | undefined = undefined) {
     this.primaryKey = primaryKey
@@ -45,7 +42,7 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
       return true
     }
 
-    for (const propertyName in this.associationsMetadata) {
+    for (const propertyName of this.associationPropertyNames) {
       const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
 
       if (record.isLoaded) {
@@ -65,7 +62,7 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
       return true
     }
 
-    for (const propertyName in this.associationsMetadata) {
+    for (const propertyName of this.associationPropertyNames) {
       const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
 
       if (!record.isLoaded) {

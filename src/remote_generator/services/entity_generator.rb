@@ -45,6 +45,31 @@ module Foobara
             entity_name
           end
         end
+
+        def entity_generators
+          types_depended_on.select(&:entity?).map do |entity|
+            Services::EntityGenerator.new(entity, elements_to_generate)
+          end
+        rescue => e
+          binding.pry
+          raise
+        end
+
+        def primary_key_name
+          primary_key_attribute
+        end
+
+        def primary_key_ts_type
+          foobara_type_to_ts_type(primary_key_type)
+        end
+
+        def entity_name_downcase
+          entity_name[0].downcase + entity_name[1..]
+        end
+
+        def attributes_type_ts_type
+          binding.pry
+        end
       end
     end
   end

@@ -99,7 +99,8 @@ module Foobara
         end
 
         def erb_template
-          erb = ERB.new(template_string.gsub("\n<% end %>", "<% end %>"))
+          # erb = ERB.new(template_string.gsub("\n<% end %>", "<% end %>"))
+          erb = ERB.new(template_string)
           erb.filename = absolute_template_path
           erb
         end

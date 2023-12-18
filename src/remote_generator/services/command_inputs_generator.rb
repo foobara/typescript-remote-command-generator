@@ -26,9 +26,6 @@ module Foobara
           inputs_types_depended_on.select(&:entity?).map do |entity|
             Services::EntityGenerator.new(entity, elements_to_generate)
           end
-        rescue => e
-          binding.pry
-          raise
         end
       end
     end

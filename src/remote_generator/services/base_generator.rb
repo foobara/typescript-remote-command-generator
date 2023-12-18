@@ -152,9 +152,9 @@ module Foobara
           relevant_manifest.respond_to?(method_name, include_private)
         end
 
-        def foobara_type_to_ts_type(type_declaration, name: nil)
+        def foobara_type_to_ts_type(type_declaration, name: nil, association_depth: AssociationDepth::AMBIGUOUS)
           if type_declaration.is_a?(Manifest::Attributes)
-            ts_type = attributes_to_ts_type(type_declaration)
+            ts_type = attributes_to_ts_type(type_declaration, association_depth:)
 
             return name ? "interface #{name} #{ts_type}" : ts_type
           end
@@ -165,7 +165,6 @@ module Foobara
           end
 
           if type_declaration.relevant_manifest.size > 1
-            binding.pry
             raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
           end
 
@@ -183,8 +182,7 @@ module Foobara
                           "any"
                         else
                           if type_declaration.entity?
-                            # How do we handle name collisions across domains/orgs??
-                            type_declaration.to_entity.entity_name
+                            entity_to_ts_entity_name(type_declaration, association_depth:)
                           end
                         end
 
@@ -193,35 +191,34 @@ module Foobara
           else
             raise "Not sure how to convert #{type_declaration} to a TS type"
           end
-        rescue => e
-          binding.pry
-          raise
         end
 
-        def attributes_to_ts_type(attributes)
+        def attributes_to_ts_type(attributes, association_depth: AssociationDepth::AMBIGUOUS)
           guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
             "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
-              foobara_type_to_ts_type(attribute_declaration)
+              foobara_type_to_ts_type(attribute_declaration, association_depth:)
             }"
           end.join("\n")
 
           "{\n#{guts}\n}"
         end
 
-        def entity_to_ts_type(type, association_depth = AssociationDepth::AMBIGUOUS)
-          entity_manifest = Manifest::Entity.new(root_manifest, type.path)
-          entity_generator = Services::EntityGenerator.new(entity_manifest)
-
-          entity_name = entity_generator.entity_name
+        def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
+          entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
+          entity_name = entity.entity_name
 
           case association_depth
           when AssociationDepth::AMBIGUOUS
             entity_name
           when AssociationDepth::ATOM
-            entity_generator.atom_name # "Unloaded#{entity_name}"
+            if entity.has_associations?
+              "#{entity_name}Atom"
+            else
+              entity_name
+            end
           when AssociationDepth::AGGREGATE
-            if type.has_associations?
-              entity_generator.aggregate_name # "#{entity_name}Aggregate"
+            if entity.has_associations?
+              "#{entity_name}Aggregate"
             else
               entity_name
             end

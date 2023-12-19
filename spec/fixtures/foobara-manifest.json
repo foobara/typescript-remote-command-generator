@@ -21,7 +21,7 @@
         },
         "data.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
           ],
@@ -42,7 +42,7 @@
         },
         "data.some_integer.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.some_integer.missing_required_attribute",
           "path": [
             "some_integer"
@@ -53,7 +53,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
           ],
@@ -229,7 +229,7 @@
         },
         "data.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
           ],
@@ -250,7 +250,7 @@
         },
         "data.some_integer.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.some_integer.missing_required_attribute",
           "path": [
             "some_integer"
@@ -261,7 +261,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
           ],
@@ -483,7 +483,7 @@
         },
         "data.referred_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.referred_user.email.cannot_exceed64_characters",
           "path": [
             "referred_user",
@@ -495,7 +495,7 @@
         },
         "data.referred_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.referred_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referred_user",
@@ -507,7 +507,7 @@
         },
         "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referred_user",
@@ -519,7 +519,7 @@
         },
         "data.referred_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.referred_user.email.first_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -531,7 +531,7 @@
         },
         "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referred_user",
@@ -543,7 +543,7 @@
         },
         "data.referred_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.referred_user.email.first_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -555,7 +555,7 @@
         },
         "data.referred_user.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.referred_user.email.must_have_an_at_sign",
           "path": [
             "referred_user",
@@ -567,7 +567,7 @@
         },
         "data.referred_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.referred_user.email.second_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -579,7 +579,7 @@
         },
         "data.referred_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.referred_user.email.second_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -627,7 +627,7 @@
         },
         "data.referred_user.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.referred_user.unexpected_attributes",
           "path": [
             "referred_user"
@@ -661,7 +661,7 @@
         },
         "data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -673,7 +673,7 @@
         },
         "data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -685,7 +685,7 @@
         },
         "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -697,7 +697,7 @@
         },
         "data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -709,7 +709,7 @@
         },
         "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -721,7 +721,7 @@
         },
         "data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -733,7 +733,7 @@
         },
         "data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -745,7 +745,7 @@
         },
         "data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -757,7 +757,7 @@
         },
         "data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -805,7 +805,7 @@
         },
         "data.referring_user.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.referring_user.unexpected_attributes",
           "path": [
             "referring_user"
@@ -816,7 +816,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
           ],
@@ -1017,7 +1017,7 @@
         },
         "data.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.email.cannot_exceed64_characters",
           "path": [
             "email"
@@ -1028,7 +1028,7 @@
         },
         "data.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.email.cannot_have_multiple_at_signs",
           "path": [
             "email"
@@ -1039,7 +1039,7 @@
         },
         "data.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "email"
@@ -1050,7 +1050,7 @@
         },
         "data.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.email.first_part_cannot_be_empty",
           "path": [
             "email"
@@ -1061,7 +1061,7 @@
         },
         "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "email"
@@ -1072,7 +1072,7 @@
         },
         "data.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.email.first_part_has_bad_characters",
           "path": [
             "email"
@@ -1083,7 +1083,7 @@
         },
         "data.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.email.must_have_an_at_sign",
           "path": [
             "email"
@@ -1094,7 +1094,7 @@
         },
         "data.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.email.second_part_cannot_be_empty",
           "path": [
             "email"
@@ -1105,7 +1105,7 @@
         },
         "data.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.email.second_part_has_bad_characters",
           "path": [
             "email"
@@ -1172,7 +1172,7 @@
         },
         "data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -1184,7 +1184,7 @@
         },
         "data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -1196,7 +1196,7 @@
         },
         "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -1208,7 +1208,7 @@
         },
         "data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -1220,7 +1220,7 @@
         },
         "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -1232,7 +1232,7 @@
         },
         "data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -1244,7 +1244,7 @@
         },
         "data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -1256,7 +1256,7 @@
         },
         "data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -1268,7 +1268,7 @@
         },
         "data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -1316,7 +1316,7 @@
         },
         "data.referring_user.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.referring_user.unexpected_attributes",
           "path": [
             "referring_user"
@@ -1327,7 +1327,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
           ],
@@ -1521,7 +1521,7 @@
         },
         "data.base.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.base.missing_required_attribute",
           "path": [
             "base"
@@ -1553,7 +1553,7 @@
         },
         "data.exponent.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.exponent.missing_required_attribute",
           "path": [
             "exponent"
@@ -1564,7 +1564,7 @@
         },
         "data.missing_required_attribute": {
           "category": "data",
-          "error": "attributes::required::MissingRequiredAttributeError",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
           ],
@@ -1574,7 +1574,7 @@
         },
         "data.unexpected_attributes": {
           "category": "data",
-          "error": "attributes::element_type_declarations::UnexpectedAttributesError",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
           ],
@@ -1942,7 +1942,7 @@
       "scoped_short_name": "CannotCastError",
       "symbol": "cannot_cast"
     },
-    "attributes::element_type_declarations::UnexpectedAttributesError": {
+    "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -1964,13 +1964,14 @@
       "is_fatal": true,
       "parent": [
         "processor_class",
-        "attributes::element_type_declarations"
+        "attributes::supported_processors::element_type_declarations"
       ],
-      "reference": "attributes::element_type_declarations::UnexpectedAttributesError",
+      "reference": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
       "scoped_category": "error",
-      "scoped_full_name": "attributes::element_type_declarations::UnexpectedAttributesError",
+      "scoped_full_name": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
       "scoped_full_path": [
         "attributes",
+        "supported_processors",
         "element_type_declarations",
         "UnexpectedAttributesError"
       ],
@@ -1982,7 +1983,7 @@
       "scoped_short_name": "UnexpectedAttributesError",
       "symbol": "unexpected_attributes"
     },
-    "attributes::required::MissingRequiredAttributeError": {
+    "attributes::supported_validators::required::MissingRequiredAttributeError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -1995,13 +1996,14 @@
       "is_fatal": true,
       "parent": [
         "processor_class",
-        "attributes::required"
+        "attributes::supported_validators::required"
       ],
-      "reference": "attributes::required::MissingRequiredAttributeError",
+      "reference": "attributes::supported_validators::required::MissingRequiredAttributeError",
       "scoped_category": "error",
-      "scoped_full_name": "attributes::required::MissingRequiredAttributeError",
+      "scoped_full_name": "attributes::supported_validators::required::MissingRequiredAttributeError",
       "scoped_full_path": [
         "attributes",
+        "supported_validators",
         "required",
         "MissingRequiredAttributeError"
       ],
@@ -2013,7 +2015,7 @@
       "scoped_short_name": "MissingRequiredAttributeError",
       "symbol": "missing_required_attribute"
     },
-    "email::cannot_exceed64_characters::CannotExceed64CharactersError": {
+    "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2032,13 +2034,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::cannot_exceed64_characters"
+        "email::validators::cannot_exceed64_characters"
       ],
-      "reference": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
+      "reference": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
       "scoped_category": "error",
-      "scoped_full_name": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
+      "scoped_full_name": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
       "scoped_full_path": [
         "email",
+        "validators",
         "cannot_exceed64_characters",
         "CannotExceed64CharactersError"
       ],
@@ -2050,7 +2053,7 @@
       "scoped_short_name": "CannotExceed64CharactersError",
       "symbol": "cannot_exceed64_characters"
     },
-    "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError": {
+    "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2069,13 +2072,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::cannot_have_multiple_at_signs"
+        "email::validators::cannot_have_multiple_at_signs"
       ],
-      "reference": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+      "reference": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
       "scoped_category": "error",
-      "scoped_full_name": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+      "scoped_full_name": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
       "scoped_full_path": [
         "email",
+        "validators",
         "cannot_have_multiple_at_signs",
         "CannotHaveMultipleAtSignsError"
       ],
@@ -2087,7 +2091,7 @@
       "scoped_short_name": "CannotHaveMultipleAtSignsError",
       "symbol": "cannot_have_multiple_at_signs"
     },
-    "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError": {
+    "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2106,13 +2110,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::domain_cannot_start_with_or_end_with_a_hyphen"
+        "email::validators::domain_cannot_start_with_or_end_with_a_hyphen"
       ],
-      "reference": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+      "reference": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
       "scoped_category": "error",
-      "scoped_full_name": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+      "scoped_full_name": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
       "scoped_full_path": [
         "email",
+        "validators",
         "domain_cannot_start_with_or_end_with_a_hyphen",
         "DomainCannotStartWithOrEndWithAHyphenError"
       ],
@@ -2124,7 +2129,7 @@
       "scoped_short_name": "DomainCannotStartWithOrEndWithAHyphenError",
       "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
     },
-    "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError": {
+    "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2143,13 +2148,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::first_part_cannot_be_empty"
+        "email::validators::first_part_cannot_be_empty"
       ],
-      "reference": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+      "reference": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
       "scoped_category": "error",
-      "scoped_full_name": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+      "scoped_full_name": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_cannot_be_empty",
         "FirstPartCannotBeEmptyError"
       ],
@@ -2161,7 +2167,7 @@
       "scoped_short_name": "FirstPartCannotBeEmptyError",
       "symbol": "first_part_cannot_be_empty"
     },
-    "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError": {
+    "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2180,13 +2186,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
       ],
-      "reference": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+      "reference": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "scoped_category": "error",
-      "scoped_full_name": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+      "scoped_full_name": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
         "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
       ],
@@ -2198,7 +2205,7 @@
       "scoped_short_name": "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
     },
-    "email::first_part_has_bad_characters::FirstPartHasBadCharactersError": {
+    "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2217,13 +2224,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::first_part_has_bad_characters"
+        "email::validators::first_part_has_bad_characters"
       ],
-      "reference": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+      "reference": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
       "scoped_category": "error",
-      "scoped_full_name": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+      "scoped_full_name": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_has_bad_characters",
         "FirstPartHasBadCharactersError"
       ],
@@ -2235,7 +2243,7 @@
       "scoped_short_name": "FirstPartHasBadCharactersError",
       "symbol": "first_part_has_bad_characters"
     },
-    "email::must_have_an_at_sign::MustHaveAnAtSignError": {
+    "email::validators::must_have_an_at_sign::MustHaveAnAtSignError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2254,13 +2262,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::must_have_an_at_sign"
+        "email::validators::must_have_an_at_sign"
       ],
-      "reference": "email::must_have_an_at_sign::MustHaveAnAtSignError",
+      "reference": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
       "scoped_category": "error",
-      "scoped_full_name": "email::must_have_an_at_sign::MustHaveAnAtSignError",
+      "scoped_full_name": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
       "scoped_full_path": [
         "email",
+        "validators",
         "must_have_an_at_sign",
         "MustHaveAnAtSignError"
       ],
@@ -2272,7 +2281,7 @@
       "scoped_short_name": "MustHaveAnAtSignError",
       "symbol": "must_have_an_at_sign"
     },
-    "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError": {
+    "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2291,13 +2300,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::second_part_cannot_be_empty"
+        "email::validators::second_part_cannot_be_empty"
       ],
-      "reference": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+      "reference": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
       "scoped_category": "error",
-      "scoped_full_name": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+      "scoped_full_name": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
       "scoped_full_path": [
         "email",
+        "validators",
         "second_part_cannot_be_empty",
         "SecondPartCannotBeEmptyError"
       ],
@@ -2309,7 +2319,7 @@
       "scoped_short_name": "SecondPartCannotBeEmptyError",
       "symbol": "second_part_cannot_be_empty"
     },
-    "email::second_part_has_bad_characters::SecondPartHasBadCharactersError": {
+    "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2328,13 +2338,14 @@
       "is_fatal": false,
       "parent": [
         "processor_class",
-        "email::second_part_has_bad_characters"
+        "email::validators::second_part_has_bad_characters"
       ],
-      "reference": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+      "reference": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
       "scoped_category": "error",
-      "scoped_full_name": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+      "scoped_full_name": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
       "scoped_full_path": [
         "email",
+        "validators",
         "second_part_has_bad_characters",
         "SecondPartHasBadCharactersError"
       ],
@@ -2416,7 +2427,7 @@
       "scoped_prefix": null,
       "scoped_short_name": "EntityPrimaryKeyCaster"
     },
-    "array::arrayable": {
+    "array::casters::arrayable": {
       "name": "Foobara::BuiltinTypes::Array::Casters::Arrayable",
       "parent": [
         "type",
@@ -2425,21 +2436,25 @@
       "possible_errors": {
       },
       "processor_type": "caster",
-      "reference": "array::arrayable",
+      "reference": "array::casters::arrayable",
       "scoped_category": "processor_class",
-      "scoped_full_name": "array::arrayable",
+      "scoped_full_name": "array::casters::arrayable",
       "scoped_full_path": [
         "array",
+        "casters",
         "arrayable"
       ],
-      "scoped_name": "arrayable",
+      "scoped_name": "casters::arrayable",
       "scoped_path": [
+        "casters",
         "arrayable"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "casters"
+      ],
       "scoped_short_name": "arrayable"
     },
-    "associative_array::array": {
+    "associative_array::casters::array": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::Casters::Array",
       "parent": [
         "type",
@@ -2448,21 +2463,25 @@
       "possible_errors": {
       },
       "processor_type": "caster",
-      "reference": "associative_array::array",
+      "reference": "associative_array::casters::array",
       "scoped_category": "processor_class",
-      "scoped_full_name": "associative_array::array",
+      "scoped_full_name": "associative_array::casters::array",
       "scoped_full_path": [
         "associative_array",
+        "casters",
         "array"
       ],
-      "scoped_name": "array",
+      "scoped_name": "casters::array",
       "scoped_path": [
+        "casters",
         "array"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "casters"
+      ],
       "scoped_short_name": "array"
     },
-    "attributes::hash": {
+    "attributes::casters::hash": {
       "name": "Foobara::BuiltinTypes::Attributes::Casters::Hash",
       "parent": [
         "type",
@@ -2471,96 +2490,25 @@
       "possible_errors": {
       },
       "processor_type": "caster",
-      "reference": "attributes::hash",
+      "reference": "attributes::casters::hash",
       "scoped_category": "processor_class",
-      "scoped_full_name": "attributes::hash",
+      "scoped_full_name": "attributes::casters::hash",
       "scoped_full_path": [
         "attributes",
+        "casters",
         "hash"
       ],
-      "scoped_name": "hash",
+      "scoped_name": "casters::hash",
       "scoped_path": [
+        "casters",
         "hash"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "casters"
+      ],
       "scoped_short_name": "hash"
     },
-    "email::cannot_exceed64_characters": {
-      "declaration_data": true,
-      "name": "Foobara::BuiltinTypes::Email::Validators::CannotExceed64Characters",
-      "parent": [
-        "type",
-        "email"
-      ],
-      "possible_errors": {
-        "data.cannot_exceed64_characters": "email::cannot_exceed64_characters::CannotExceed64CharactersError"
-      },
-      "processor_type": "transformer",
-      "reference": "email::cannot_exceed64_characters",
-      "scoped_category": "processor_class",
-      "scoped_full_name": "email::cannot_exceed64_characters",
-      "scoped_full_path": [
-        "email",
-        "cannot_exceed64_characters"
-      ],
-      "scoped_name": "cannot_exceed64_characters",
-      "scoped_path": [
-        "cannot_exceed64_characters"
-      ],
-      "scoped_prefix": null,
-      "scoped_short_name": "cannot_exceed64_characters"
-    },
-    "email::cannot_have_multiple_at_signs": {
-      "declaration_data": true,
-      "name": "Foobara::BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
-      "parent": [
-        "type",
-        "email"
-      ],
-      "possible_errors": {
-        "data.cannot_have_multiple_at_signs": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError"
-      },
-      "processor_type": "transformer",
-      "reference": "email::cannot_have_multiple_at_signs",
-      "scoped_category": "processor_class",
-      "scoped_full_name": "email::cannot_have_multiple_at_signs",
-      "scoped_full_path": [
-        "email",
-        "cannot_have_multiple_at_signs"
-      ],
-      "scoped_name": "cannot_have_multiple_at_signs",
-      "scoped_path": [
-        "cannot_have_multiple_at_signs"
-      ],
-      "scoped_prefix": null,
-      "scoped_short_name": "cannot_have_multiple_at_signs"
-    },
-    "email::domain_cannot_start_with_or_end_with_a_hyphen": {
-      "declaration_data": true,
-      "name": "Foobara::BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
-      "parent": [
-        "type",
-        "email"
-      ],
-      "possible_errors": {
-        "data.domain_cannot_start_with_or_end_with_a_hyphen": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError"
-      },
-      "processor_type": "transformer",
-      "reference": "email::domain_cannot_start_with_or_end_with_a_hyphen",
-      "scoped_category": "processor_class",
-      "scoped_full_name": "email::domain_cannot_start_with_or_end_with_a_hyphen",
-      "scoped_full_path": [
-        "email",
-        "domain_cannot_start_with_or_end_with_a_hyphen"
-      ],
-      "scoped_name": "domain_cannot_start_with_or_end_with_a_hyphen",
-      "scoped_path": [
-        "domain_cannot_start_with_or_end_with_a_hyphen"
-      ],
-      "scoped_prefix": null,
-      "scoped_short_name": "domain_cannot_start_with_or_end_with_a_hyphen"
-    },
-    "email::downcase": {
+    "email::transformers::downcase": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Transformers::Downcase",
       "parent": [
@@ -2570,21 +2518,112 @@
       "possible_errors": {
       },
       "processor_type": "transformer",
-      "reference": "email::downcase",
+      "reference": "email::transformers::downcase",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::downcase",
+      "scoped_full_name": "email::transformers::downcase",
       "scoped_full_path": [
         "email",
+        "transformers",
         "downcase"
       ],
-      "scoped_name": "downcase",
+      "scoped_name": "transformers::downcase",
       "scoped_path": [
+        "transformers",
         "downcase"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "transformers"
+      ],
       "scoped_short_name": "downcase"
     },
-    "email::first_part_cannot_be_empty": {
+    "email::validators::cannot_exceed64_characters": {
+      "declaration_data": true,
+      "name": "Foobara::BuiltinTypes::Email::Validators::CannotExceed64Characters",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "possible_errors": {
+        "data.cannot_exceed64_characters": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError"
+      },
+      "processor_type": "transformer",
+      "reference": "email::validators::cannot_exceed64_characters",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::validators::cannot_exceed64_characters",
+      "scoped_full_path": [
+        "email",
+        "validators",
+        "cannot_exceed64_characters"
+      ],
+      "scoped_name": "validators::cannot_exceed64_characters",
+      "scoped_path": [
+        "validators",
+        "cannot_exceed64_characters"
+      ],
+      "scoped_prefix": [
+        "validators"
+      ],
+      "scoped_short_name": "cannot_exceed64_characters"
+    },
+    "email::validators::cannot_have_multiple_at_signs": {
+      "declaration_data": true,
+      "name": "Foobara::BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "possible_errors": {
+        "data.cannot_have_multiple_at_signs": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError"
+      },
+      "processor_type": "transformer",
+      "reference": "email::validators::cannot_have_multiple_at_signs",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::validators::cannot_have_multiple_at_signs",
+      "scoped_full_path": [
+        "email",
+        "validators",
+        "cannot_have_multiple_at_signs"
+      ],
+      "scoped_name": "validators::cannot_have_multiple_at_signs",
+      "scoped_path": [
+        "validators",
+        "cannot_have_multiple_at_signs"
+      ],
+      "scoped_prefix": [
+        "validators"
+      ],
+      "scoped_short_name": "cannot_have_multiple_at_signs"
+    },
+    "email::validators::domain_cannot_start_with_or_end_with_a_hyphen": {
+      "declaration_data": true,
+      "name": "Foobara::BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "possible_errors": {
+        "data.domain_cannot_start_with_or_end_with_a_hyphen": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError"
+      },
+      "processor_type": "transformer",
+      "reference": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_full_path": [
+        "email",
+        "validators",
+        "domain_cannot_start_with_or_end_with_a_hyphen"
+      ],
+      "scoped_name": "validators::domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_path": [
+        "validators",
+        "domain_cannot_start_with_or_end_with_a_hyphen"
+      ],
+      "scoped_prefix": [
+        "validators"
+      ],
+      "scoped_short_name": "domain_cannot_start_with_or_end_with_a_hyphen"
+    },
+    "email::validators::first_part_cannot_be_empty": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
       "parent": [
@@ -2592,24 +2631,28 @@
         "email"
       ],
       "possible_errors": {
-        "data.first_part_cannot_be_empty": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError"
+        "data.first_part_cannot_be_empty": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError"
       },
       "processor_type": "transformer",
-      "reference": "email::first_part_cannot_be_empty",
+      "reference": "email::validators::first_part_cannot_be_empty",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::first_part_cannot_be_empty",
+      "scoped_full_name": "email::validators::first_part_cannot_be_empty",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_cannot_be_empty"
       ],
-      "scoped_name": "first_part_cannot_be_empty",
+      "scoped_name": "validators::first_part_cannot_be_empty",
       "scoped_path": [
+        "validators",
         "first_part_cannot_be_empty"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "first_part_cannot_be_empty"
     },
-    "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+    "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
       "parent": [
@@ -2617,24 +2660,28 @@
         "email"
       ],
       "possible_errors": {
-        "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
+        "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
       },
       "processor_type": "transformer",
-      "reference": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "reference": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_full_name": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
       ],
-      "scoped_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_name": "validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
       "scoped_path": [
+        "validators",
         "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
     },
-    "email::first_part_has_bad_characters": {
+    "email::validators::first_part_has_bad_characters": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
       "parent": [
@@ -2642,24 +2689,28 @@
         "email"
       ],
       "possible_errors": {
-        "data.first_part_has_bad_characters": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError"
+        "data.first_part_has_bad_characters": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError"
       },
       "processor_type": "transformer",
-      "reference": "email::first_part_has_bad_characters",
+      "reference": "email::validators::first_part_has_bad_characters",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::first_part_has_bad_characters",
+      "scoped_full_name": "email::validators::first_part_has_bad_characters",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_has_bad_characters"
       ],
-      "scoped_name": "first_part_has_bad_characters",
+      "scoped_name": "validators::first_part_has_bad_characters",
       "scoped_path": [
+        "validators",
         "first_part_has_bad_characters"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "first_part_has_bad_characters"
     },
-    "email::must_have_an_at_sign": {
+    "email::validators::must_have_an_at_sign": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Validators::MustHaveAnAtSign",
       "parent": [
@@ -2667,24 +2718,28 @@
         "email"
       ],
       "possible_errors": {
-        "data.must_have_an_at_sign": "email::must_have_an_at_sign::MustHaveAnAtSignError"
+        "data.must_have_an_at_sign": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError"
       },
       "processor_type": "transformer",
-      "reference": "email::must_have_an_at_sign",
+      "reference": "email::validators::must_have_an_at_sign",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::must_have_an_at_sign",
+      "scoped_full_name": "email::validators::must_have_an_at_sign",
       "scoped_full_path": [
         "email",
+        "validators",
         "must_have_an_at_sign"
       ],
-      "scoped_name": "must_have_an_at_sign",
+      "scoped_name": "validators::must_have_an_at_sign",
       "scoped_path": [
+        "validators",
         "must_have_an_at_sign"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "must_have_an_at_sign"
     },
-    "email::second_part_cannot_be_empty": {
+    "email::validators::second_part_cannot_be_empty": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
       "parent": [
@@ -2692,24 +2747,28 @@
         "email"
       ],
       "possible_errors": {
-        "data.second_part_cannot_be_empty": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError"
+        "data.second_part_cannot_be_empty": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError"
       },
       "processor_type": "transformer",
-      "reference": "email::second_part_cannot_be_empty",
+      "reference": "email::validators::second_part_cannot_be_empty",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::second_part_cannot_be_empty",
+      "scoped_full_name": "email::validators::second_part_cannot_be_empty",
       "scoped_full_path": [
         "email",
+        "validators",
         "second_part_cannot_be_empty"
       ],
-      "scoped_name": "second_part_cannot_be_empty",
+      "scoped_name": "validators::second_part_cannot_be_empty",
       "scoped_path": [
+        "validators",
         "second_part_cannot_be_empty"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "second_part_cannot_be_empty"
     },
-    "email::second_part_has_bad_characters": {
+    "email::validators::second_part_has_bad_characters": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
       "parent": [
@@ -2717,24 +2776,58 @@
         "email"
       ],
       "possible_errors": {
-        "data.second_part_has_bad_characters": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError"
+        "data.second_part_has_bad_characters": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError"
       },
       "processor_type": "transformer",
-      "reference": "email::second_part_has_bad_characters",
+      "reference": "email::validators::second_part_has_bad_characters",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::second_part_has_bad_characters",
+      "scoped_full_name": "email::validators::second_part_has_bad_characters",
       "scoped_full_path": [
         "email",
+        "validators",
         "second_part_has_bad_characters"
       ],
-      "scoped_name": "second_part_has_bad_characters",
+      "scoped_name": "validators::second_part_has_bad_characters",
       "scoped_path": [
+        "validators",
         "second_part_has_bad_characters"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "second_part_has_bad_characters"
     },
-    "entity::created_in_valid_state": {
+    "entity::casters::hash": {
+      "name": "Foobara::BuiltinTypes::Entity::Casters::Hash",
+      "parent": [
+        "type",
+        "entity"
+      ],
+      "parent_declaration_data": {
+        "type": "entity"
+      },
+      "possible_errors": {
+      },
+      "processor_type": "caster",
+      "reference": "entity::casters::hash",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "entity::casters::hash",
+      "scoped_full_path": [
+        "entity",
+        "casters",
+        "hash"
+      ],
+      "scoped_name": "casters::hash",
+      "scoped_path": [
+        "casters",
+        "hash"
+      ],
+      "scoped_prefix": [
+        "casters"
+      ],
+      "scoped_short_name": "hash"
+    },
+    "entity::validators::created_in_valid_state": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Entity::Validators::CreatedInValidState",
       "parent": [
@@ -2747,47 +2840,25 @@
       "possible_errors": {
       },
       "processor_type": "processor",
-      "reference": "entity::created_in_valid_state",
+      "reference": "entity::validators::created_in_valid_state",
       "scoped_category": "processor_class",
-      "scoped_full_name": "entity::created_in_valid_state",
+      "scoped_full_name": "entity::validators::created_in_valid_state",
       "scoped_full_path": [
         "entity",
+        "validators",
         "created_in_valid_state"
       ],
-      "scoped_name": "created_in_valid_state",
+      "scoped_name": "validators::created_in_valid_state",
       "scoped_path": [
+        "validators",
         "created_in_valid_state"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "created_in_valid_state"
     },
-    "entity::hash": {
-      "name": "Foobara::BuiltinTypes::Entity::Casters::Hash",
-      "parent": [
-        "type",
-        "entity"
-      ],
-      "parent_declaration_data": {
-        "type": "entity"
-      },
-      "possible_errors": {
-      },
-      "processor_type": "caster",
-      "reference": "entity::hash",
-      "scoped_category": "processor_class",
-      "scoped_full_name": "entity::hash",
-      "scoped_full_path": [
-        "entity",
-        "hash"
-      ],
-      "scoped_name": "hash",
-      "scoped_path": [
-        "hash"
-      ],
-      "scoped_prefix": null,
-      "scoped_short_name": "hash"
-    },
-    "integer::string": {
+    "integer::casters::string": {
       "name": "Foobara::BuiltinTypes::Integer::Casters::String",
       "parent": [
         "type",
@@ -2796,21 +2867,55 @@
       "possible_errors": {
       },
       "processor_type": "caster",
-      "reference": "integer::string",
+      "reference": "integer::casters::string",
       "scoped_category": "processor_class",
-      "scoped_full_name": "integer::string",
+      "scoped_full_name": "integer::casters::string",
       "scoped_full_path": [
         "integer",
+        "casters",
         "string"
       ],
-      "scoped_name": "string",
+      "scoped_name": "casters::string",
       "scoped_path": [
+        "casters",
         "string"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "casters"
+      ],
       "scoped_short_name": "string"
     },
-    "model::attributes_declaration": {
+    "model::casters::hash": {
+      "name": "Foobara::BuiltinTypes::Model::Casters::Hash",
+      "parent": [
+        "type",
+        "model"
+      ],
+      "parent_declaration_data": {
+        "type": "model"
+      },
+      "possible_errors": {
+      },
+      "processor_type": "caster",
+      "reference": "model::casters::hash",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "model::casters::hash",
+      "scoped_full_path": [
+        "model",
+        "casters",
+        "hash"
+      ],
+      "scoped_name": "casters::hash",
+      "scoped_path": [
+        "casters",
+        "hash"
+      ],
+      "scoped_prefix": [
+        "casters"
+      ],
+      "scoped_short_name": "hash"
+    },
+    "model::validators::attributes_declaration": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Model::Validators::AttributesDeclaration",
       "parent": [
@@ -2823,47 +2928,25 @@
       "possible_errors": {
       },
       "processor_type": "processor",
-      "reference": "model::attributes_declaration",
+      "reference": "model::validators::attributes_declaration",
       "scoped_category": "processor_class",
-      "scoped_full_name": "model::attributes_declaration",
+      "scoped_full_name": "model::validators::attributes_declaration",
       "scoped_full_path": [
         "model",
+        "validators",
         "attributes_declaration"
       ],
-      "scoped_name": "attributes_declaration",
+      "scoped_name": "validators::attributes_declaration",
       "scoped_path": [
+        "validators",
         "attributes_declaration"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "attributes_declaration"
     },
-    "model::hash": {
-      "name": "Foobara::BuiltinTypes::Model::Casters::Hash",
-      "parent": [
-        "type",
-        "model"
-      ],
-      "parent_declaration_data": {
-        "type": "model"
-      },
-      "possible_errors": {
-      },
-      "processor_type": "caster",
-      "reference": "model::hash",
-      "scoped_category": "processor_class",
-      "scoped_full_name": "model::hash",
-      "scoped_full_path": [
-        "model",
-        "hash"
-      ],
-      "scoped_name": "hash",
-      "scoped_path": [
-        "hash"
-      ],
-      "scoped_prefix": null,
-      "scoped_short_name": "hash"
-    },
-    "string::symbol": {
+    "string::casters::symbol": {
       "name": "Foobara::BuiltinTypes::String::Casters::Symbol",
       "parent": [
         "type",
@@ -2872,21 +2955,25 @@
       "possible_errors": {
       },
       "processor_type": "caster",
-      "reference": "string::symbol",
+      "reference": "string::casters::symbol",
       "scoped_category": "processor_class",
-      "scoped_full_name": "string::symbol",
+      "scoped_full_name": "string::casters::symbol",
       "scoped_full_path": [
         "string",
+        "casters",
         "symbol"
       ],
-      "scoped_name": "symbol",
+      "scoped_name": "casters::symbol",
       "scoped_path": [
+        "casters",
         "symbol"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "casters"
+      ],
       "scoped_short_name": "symbol"
     },
-    "symbol::string": {
+    "symbol::casters::string": {
       "name": "Foobara::BuiltinTypes::Symbol::Casters::String",
       "parent": [
         "type",
@@ -2898,18 +2985,22 @@
       "possible_errors": {
       },
       "processor_type": "caster",
-      "reference": "symbol::string",
+      "reference": "symbol::casters::string",
       "scoped_category": "processor_class",
-      "scoped_full_name": "symbol::string",
+      "scoped_full_name": "symbol::casters::string",
       "scoped_full_path": [
         "symbol",
+        "casters",
         "string"
       ],
-      "scoped_name": "string",
+      "scoped_name": "casters::string",
       "scoped_path": [
+        "casters",
         "string"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "casters"
+      ],
       "scoped_short_name": "string"
     }
   },
@@ -2983,445 +3074,529 @@
       ],
       "scoped_short_name": "Casting"
     },
-    "array::element_type_declaration": {
+    "array::supported_processors::element_type_declaration": {
       "name": "Foobara::BuiltinTypes::Array::SupportedProcessors::ElementTypeDeclaration",
       "parent": [
         "type",
         "array"
       ],
       "processor_type": "processor",
-      "reference": "array::element_type_declaration",
+      "reference": "array::supported_processors::element_type_declaration",
       "scoped_category": "processor_class",
-      "scoped_full_name": "array::element_type_declaration",
+      "scoped_full_name": "array::supported_processors::element_type_declaration",
       "scoped_full_path": [
         "array",
+        "supported_processors",
         "element_type_declaration"
       ],
-      "scoped_name": "element_type_declaration",
+      "scoped_name": "supported_processors::element_type_declaration",
       "scoped_path": [
+        "supported_processors",
         "element_type_declaration"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_processors"
+      ],
       "scoped_short_name": "element_type_declaration"
     },
-    "array::size": {
+    "array::supported_validators::size": {
       "name": "Foobara::BuiltinTypes::Array::SupportedValidators::Size",
       "parent": [
         "type",
         "array"
       ],
       "processor_type": "transformer",
-      "reference": "array::size",
+      "reference": "array::supported_validators::size",
       "scoped_category": "processor_class",
-      "scoped_full_name": "array::size",
+      "scoped_full_name": "array::supported_validators::size",
       "scoped_full_path": [
         "array",
+        "supported_validators",
         "size"
       ],
-      "scoped_name": "size",
+      "scoped_name": "supported_validators::size",
       "scoped_path": [
+        "supported_validators",
         "size"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_validators"
+      ],
       "scoped_short_name": "size"
     },
-    "associative_array::key_type_declaration": {
+    "associative_array::supported_processors::key_type_declaration": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::KeyTypeDeclaration",
       "parent": [
         "type",
         "associative_array"
       ],
       "processor_type": "processor",
-      "reference": "associative_array::key_type_declaration",
+      "reference": "associative_array::supported_processors::key_type_declaration",
       "scoped_category": "processor_class",
-      "scoped_full_name": "associative_array::key_type_declaration",
+      "scoped_full_name": "associative_array::supported_processors::key_type_declaration",
       "scoped_full_path": [
         "associative_array",
+        "supported_processors",
         "key_type_declaration"
       ],
-      "scoped_name": "key_type_declaration",
+      "scoped_name": "supported_processors::key_type_declaration",
       "scoped_path": [
+        "supported_processors",
         "key_type_declaration"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_processors"
+      ],
       "scoped_short_name": "key_type_declaration"
     },
-    "associative_array::value_type_declaration": {
+    "associative_array::supported_processors::value_type_declaration": {
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::ValueTypeDeclaration",
       "parent": [
         "type",
         "associative_array"
       ],
       "processor_type": "processor",
-      "reference": "associative_array::value_type_declaration",
+      "reference": "associative_array::supported_processors::value_type_declaration",
       "scoped_category": "processor_class",
-      "scoped_full_name": "associative_array::value_type_declaration",
+      "scoped_full_name": "associative_array::supported_processors::value_type_declaration",
       "scoped_full_path": [
         "associative_array",
+        "supported_processors",
         "value_type_declaration"
       ],
-      "scoped_name": "value_type_declaration",
+      "scoped_name": "supported_processors::value_type_declaration",
       "scoped_path": [
+        "supported_processors",
         "value_type_declaration"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_processors"
+      ],
       "scoped_short_name": "value_type_declaration"
     },
-    "attributes::defaults": {
-      "name": "Foobara::BuiltinTypes::Attributes::SupportedTransformers::Defaults",
-      "parent": [
-        "type",
-        "attributes"
-      ],
-      "processor_type": "transformer",
-      "reference": "attributes::defaults",
-      "scoped_category": "processor_class",
-      "scoped_full_name": "attributes::defaults",
-      "scoped_full_path": [
-        "attributes",
-        "defaults"
-      ],
-      "scoped_name": "defaults",
-      "scoped_path": [
-        "defaults"
-      ],
-      "scoped_prefix": null,
-      "scoped_short_name": "defaults"
-    },
-    "attributes::element_type_declarations": {
+    "attributes::supported_processors::element_type_declarations": {
       "name": "Foobara::BuiltinTypes::Attributes::SupportedProcessors::ElementTypeDeclarations",
       "parent": [
         "type",
         "attributes"
       ],
       "processor_type": "processor",
-      "reference": "attributes::element_type_declarations",
+      "reference": "attributes::supported_processors::element_type_declarations",
       "scoped_category": "processor_class",
-      "scoped_full_name": "attributes::element_type_declarations",
+      "scoped_full_name": "attributes::supported_processors::element_type_declarations",
       "scoped_full_path": [
         "attributes",
+        "supported_processors",
         "element_type_declarations"
       ],
-      "scoped_name": "element_type_declarations",
+      "scoped_name": "supported_processors::element_type_declarations",
       "scoped_path": [
+        "supported_processors",
         "element_type_declarations"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_processors"
+      ],
       "scoped_short_name": "element_type_declarations"
     },
-    "attributes::required": {
+    "attributes::supported_transformers::defaults": {
+      "name": "Foobara::BuiltinTypes::Attributes::SupportedTransformers::Defaults",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "processor_type": "transformer",
+      "reference": "attributes::supported_transformers::defaults",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "attributes::supported_transformers::defaults",
+      "scoped_full_path": [
+        "attributes",
+        "supported_transformers",
+        "defaults"
+      ],
+      "scoped_name": "supported_transformers::defaults",
+      "scoped_path": [
+        "supported_transformers",
+        "defaults"
+      ],
+      "scoped_prefix": [
+        "supported_transformers"
+      ],
+      "scoped_short_name": "defaults"
+    },
+    "attributes::supported_validators::required": {
       "name": "Foobara::BuiltinTypes::Attributes::SupportedValidators::Required",
       "parent": [
         "type",
         "attributes"
       ],
       "processor_type": "transformer",
-      "reference": "attributes::required",
+      "reference": "attributes::supported_validators::required",
       "scoped_category": "processor_class",
-      "scoped_full_name": "attributes::required",
+      "scoped_full_name": "attributes::supported_validators::required",
       "scoped_full_path": [
         "attributes",
+        "supported_validators",
         "required"
       ],
-      "scoped_name": "required",
+      "scoped_name": "supported_validators::required",
       "scoped_path": [
+        "supported_validators",
         "required"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_validators"
+      ],
       "scoped_short_name": "required"
     },
-    "email::cannot_exceed64_characters": {
+    "email::validators::cannot_exceed64_characters": {
       "name": "Foobara::BuiltinTypes::Email::Validators::CannotExceed64Characters",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::cannot_exceed64_characters",
+      "reference": "email::validators::cannot_exceed64_characters",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::cannot_exceed64_characters",
+      "scoped_full_name": "email::validators::cannot_exceed64_characters",
       "scoped_full_path": [
         "email",
+        "validators",
         "cannot_exceed64_characters"
       ],
-      "scoped_name": "cannot_exceed64_characters",
+      "scoped_name": "validators::cannot_exceed64_characters",
       "scoped_path": [
+        "validators",
         "cannot_exceed64_characters"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "cannot_exceed64_characters"
     },
-    "email::cannot_have_multiple_at_signs": {
+    "email::validators::cannot_have_multiple_at_signs": {
       "name": "Foobara::BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::cannot_have_multiple_at_signs",
+      "reference": "email::validators::cannot_have_multiple_at_signs",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::cannot_have_multiple_at_signs",
+      "scoped_full_name": "email::validators::cannot_have_multiple_at_signs",
       "scoped_full_path": [
         "email",
+        "validators",
         "cannot_have_multiple_at_signs"
       ],
-      "scoped_name": "cannot_have_multiple_at_signs",
+      "scoped_name": "validators::cannot_have_multiple_at_signs",
       "scoped_path": [
+        "validators",
         "cannot_have_multiple_at_signs"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "cannot_have_multiple_at_signs"
     },
-    "email::domain_cannot_start_with_or_end_with_a_hyphen": {
+    "email::validators::domain_cannot_start_with_or_end_with_a_hyphen": {
       "name": "Foobara::BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::domain_cannot_start_with_or_end_with_a_hyphen",
+      "reference": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_full_name": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
       "scoped_full_path": [
         "email",
+        "validators",
         "domain_cannot_start_with_or_end_with_a_hyphen"
       ],
-      "scoped_name": "domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_name": "validators::domain_cannot_start_with_or_end_with_a_hyphen",
       "scoped_path": [
+        "validators",
         "domain_cannot_start_with_or_end_with_a_hyphen"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "domain_cannot_start_with_or_end_with_a_hyphen"
     },
-    "email::first_part_cannot_be_empty": {
+    "email::validators::first_part_cannot_be_empty": {
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::first_part_cannot_be_empty",
+      "reference": "email::validators::first_part_cannot_be_empty",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::first_part_cannot_be_empty",
+      "scoped_full_name": "email::validators::first_part_cannot_be_empty",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_cannot_be_empty"
       ],
-      "scoped_name": "first_part_cannot_be_empty",
+      "scoped_name": "validators::first_part_cannot_be_empty",
       "scoped_path": [
+        "validators",
         "first_part_cannot_be_empty"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "first_part_cannot_be_empty"
     },
-    "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+    "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "reference": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_full_name": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
       ],
-      "scoped_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_name": "validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
       "scoped_path": [
+        "validators",
         "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
     },
-    "email::first_part_has_bad_characters": {
+    "email::validators::first_part_has_bad_characters": {
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::first_part_has_bad_characters",
+      "reference": "email::validators::first_part_has_bad_characters",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::first_part_has_bad_characters",
+      "scoped_full_name": "email::validators::first_part_has_bad_characters",
       "scoped_full_path": [
         "email",
+        "validators",
         "first_part_has_bad_characters"
       ],
-      "scoped_name": "first_part_has_bad_characters",
+      "scoped_name": "validators::first_part_has_bad_characters",
       "scoped_path": [
+        "validators",
         "first_part_has_bad_characters"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "first_part_has_bad_characters"
     },
-    "email::must_have_an_at_sign": {
+    "email::validators::must_have_an_at_sign": {
       "name": "Foobara::BuiltinTypes::Email::Validators::MustHaveAnAtSign",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::must_have_an_at_sign",
+      "reference": "email::validators::must_have_an_at_sign",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::must_have_an_at_sign",
+      "scoped_full_name": "email::validators::must_have_an_at_sign",
       "scoped_full_path": [
         "email",
+        "validators",
         "must_have_an_at_sign"
       ],
-      "scoped_name": "must_have_an_at_sign",
+      "scoped_name": "validators::must_have_an_at_sign",
       "scoped_path": [
+        "validators",
         "must_have_an_at_sign"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "must_have_an_at_sign"
     },
-    "email::second_part_cannot_be_empty": {
+    "email::validators::second_part_cannot_be_empty": {
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::second_part_cannot_be_empty",
+      "reference": "email::validators::second_part_cannot_be_empty",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::second_part_cannot_be_empty",
+      "scoped_full_name": "email::validators::second_part_cannot_be_empty",
       "scoped_full_path": [
         "email",
+        "validators",
         "second_part_cannot_be_empty"
       ],
-      "scoped_name": "second_part_cannot_be_empty",
+      "scoped_name": "validators::second_part_cannot_be_empty",
       "scoped_path": [
+        "validators",
         "second_part_cannot_be_empty"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "second_part_cannot_be_empty"
     },
-    "email::second_part_has_bad_characters": {
+    "email::validators::second_part_has_bad_characters": {
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
       "parent": [
         "type",
         "email"
       ],
       "processor_type": "transformer",
-      "reference": "email::second_part_has_bad_characters",
+      "reference": "email::validators::second_part_has_bad_characters",
       "scoped_category": "processor_class",
-      "scoped_full_name": "email::second_part_has_bad_characters",
+      "scoped_full_name": "email::validators::second_part_has_bad_characters",
       "scoped_full_path": [
         "email",
+        "validators",
         "second_part_has_bad_characters"
       ],
-      "scoped_name": "second_part_has_bad_characters",
+      "scoped_name": "validators::second_part_has_bad_characters",
       "scoped_path": [
+        "validators",
         "second_part_has_bad_characters"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "validators"
+      ],
       "scoped_short_name": "second_part_has_bad_characters"
     },
-    "number::max": {
+    "number::supported_validators::max": {
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Max",
       "parent": [
         "type",
         "number"
       ],
       "processor_type": "transformer",
-      "reference": "number::max",
+      "reference": "number::supported_validators::max",
       "scoped_category": "processor_class",
-      "scoped_full_name": "number::max",
+      "scoped_full_name": "number::supported_validators::max",
       "scoped_full_path": [
         "number",
+        "supported_validators",
         "max"
       ],
-      "scoped_name": "max",
+      "scoped_name": "supported_validators::max",
       "scoped_path": [
+        "supported_validators",
         "max"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_validators"
+      ],
       "scoped_short_name": "max"
     },
-    "number::min": {
+    "number::supported_validators::min": {
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Min",
       "parent": [
         "type",
         "number"
       ],
       "processor_type": "transformer",
-      "reference": "number::min",
+      "reference": "number::supported_validators::min",
       "scoped_category": "processor_class",
-      "scoped_full_name": "number::min",
+      "scoped_full_name": "number::supported_validators::min",
       "scoped_full_path": [
         "number",
+        "supported_validators",
         "min"
       ],
-      "scoped_name": "min",
+      "scoped_name": "supported_validators::min",
       "scoped_path": [
+        "supported_validators",
         "min"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_validators"
+      ],
       "scoped_short_name": "min"
     },
-    "string::downcase": {
+    "string::supported_transformers::downcase": {
       "name": "Foobara::BuiltinTypes::String::SupportedTransformers::Downcase",
       "parent": [
         "type",
         "string"
       ],
       "processor_type": "transformer",
-      "reference": "string::downcase",
+      "reference": "string::supported_transformers::downcase",
       "scoped_category": "processor_class",
-      "scoped_full_name": "string::downcase",
+      "scoped_full_name": "string::supported_transformers::downcase",
       "scoped_full_path": [
         "string",
+        "supported_transformers",
         "downcase"
       ],
-      "scoped_name": "downcase",
+      "scoped_name": "supported_transformers::downcase",
       "scoped_path": [
+        "supported_transformers",
         "downcase"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_transformers"
+      ],
       "scoped_short_name": "downcase"
     },
-    "string::matches": {
+    "string::supported_validators::matches": {
       "name": "Foobara::BuiltinTypes::String::SupportedValidators::Matches",
       "parent": [
         "type",
         "string"
       ],
       "processor_type": "transformer",
-      "reference": "string::matches",
+      "reference": "string::supported_validators::matches",
       "scoped_category": "processor_class",
-      "scoped_full_name": "string::matches",
+      "scoped_full_name": "string::supported_validators::matches",
       "scoped_full_path": [
         "string",
+        "supported_validators",
         "matches"
       ],
-      "scoped_name": "matches",
+      "scoped_name": "supported_validators::matches",
       "scoped_path": [
+        "supported_validators",
         "matches"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_validators"
+      ],
       "scoped_short_name": "matches"
     },
-    "string::max_length": {
+    "string::supported_validators::max_length": {
       "name": "Foobara::BuiltinTypes::String::SupportedValidators::MaxLength",
       "parent": [
         "type",
         "string"
       ],
       "processor_type": "transformer",
-      "reference": "string::max_length",
+      "reference": "string::supported_validators::max_length",
       "scoped_category": "processor_class",
-      "scoped_full_name": "string::max_length",
+      "scoped_full_name": "string::supported_validators::max_length",
       "scoped_full_path": [
         "string",
+        "supported_validators",
         "max_length"
       ],
-      "scoped_name": "max_length",
+      "scoped_name": "supported_validators::max_length",
       "scoped_path": [
+        "supported_validators",
         "max_length"
       ],
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "supported_validators"
+      ],
       "scoped_short_name": "max_length"
     }
   },
@@ -3502,13 +3677,13 @@
       },
       "processors": {
         "casters": [
-          "entity::hash",
+          "entity::casters::hash",
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster"
         ],
         "transformers": [
         ],
         "validators": [
-          "entity::created_in_valid_state"
+          "entity::validators::created_in_valid_state"
         ]
       },
       "reference": "SomeOrg::Auth::Referral",
@@ -3615,13 +3790,13 @@
       },
       "processors": {
         "casters": [
-          "entity::hash",
+          "entity::casters::hash",
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster"
         ],
         "transformers": [
         ],
         "validators": [
-          "entity::created_in_valid_state"
+          "entity::validators::created_in_valid_state"
         ]
       },
       "reference": "SomeOrg::Auth::User",
@@ -3666,7 +3841,7 @@
       "name": "array",
       "processors": {
         "casters": [
-          "array::arrayable"
+          "array::casters::arrayable"
         ],
         "transformers": [
         ],
@@ -3686,12 +3861,12 @@
       "scoped_prefix": null,
       "scoped_short_name": "array",
       "supported_processors": [
-        "array::element_type_declaration"
+        "array::supported_processors::element_type_declaration"
       ],
       "supported_transformers": [
       ],
       "supported_validators": [
-        "array::size"
+        "array::supported_validators::size"
       ],
       "target_classes": [
         "Array"
@@ -3711,7 +3886,7 @@
       "name": "associative_array",
       "processors": {
         "casters": [
-          "associative_array::array"
+          "associative_array::casters::array"
         ],
         "transformers": [
         ],
@@ -3731,8 +3906,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "associative_array",
       "supported_processors": [
-        "associative_array::key_type_declaration",
-        "associative_array::value_type_declaration"
+        "associative_array::supported_processors::value_type_declaration",
+        "associative_array::supported_processors::key_type_declaration"
       ],
       "supported_transformers": [
       ],
@@ -3799,7 +3974,7 @@
       "name": "attributes",
       "processors": {
         "casters": [
-          "attributes::hash"
+          "attributes::casters::hash"
         ],
         "transformers": [
         ],
@@ -3819,15 +3994,15 @@
       "scoped_prefix": null,
       "scoped_short_name": "attributes",
       "supported_processors": [
-        "attributes::element_type_declarations",
-        "associative_array::key_type_declaration",
-        "associative_array::value_type_declaration"
+        "attributes::supported_processors::element_type_declarations",
+        "associative_array::supported_processors::value_type_declaration",
+        "associative_array::supported_processors::key_type_declaration"
       ],
       "supported_transformers": [
-        "attributes::defaults"
+        "attributes::supported_transformers::defaults"
       ],
       "supported_validators": [
-        "attributes::required"
+        "attributes::supported_validators::required"
       ],
       "target_classes": [
       ],
@@ -3929,21 +4104,21 @@
       "name": "email",
       "processors": {
         "casters": [
-          "string::symbol"
+          "string::casters::symbol"
         ],
         "transformers": [
-          "email::downcase"
+          "email::transformers::downcase"
         ],
         "validators": [
-          "email::must_have_an_at_sign",
-          "email::cannot_have_multiple_at_signs",
-          "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
-          "email::domain_cannot_start_with_or_end_with_a_hyphen",
-          "email::first_part_cannot_be_empty",
-          "email::second_part_cannot_be_empty",
-          "email::cannot_exceed64_characters",
-          "email::first_part_has_bad_characters",
-          "email::second_part_has_bad_characters"
+          "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
+          "email::validators::first_part_cannot_be_empty",
+          "email::validators::second_part_cannot_be_empty",
+          "email::validators::cannot_exceed64_characters",
+          "email::validators::first_part_has_bad_characters",
+          "email::validators::second_part_has_bad_characters",
+          "email::validators::must_have_an_at_sign",
+          "email::validators::cannot_have_multiple_at_signs",
+          "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         ]
       },
       "reference": "email",
@@ -3961,11 +4136,11 @@
       "supported_processors": [
       ],
       "supported_transformers": [
-        "string::downcase"
+        "string::supported_transformers::downcase"
       ],
       "supported_validators": [
-        "string::matches",
-        "string::max_length"
+        "string::supported_validators::matches",
+        "string::supported_validators::max_length"
       ],
       "target_classes": [
         "String"
@@ -3986,12 +4161,12 @@
       "name": "entity",
       "processors": {
         "casters": [
-          "entity::hash"
+          "entity::casters::hash"
         ],
         "transformers": [
         ],
         "validators": [
-          "entity::created_in_valid_state"
+          "entity::validators::created_in_valid_state"
         ]
       },
       "reference": "entity",
@@ -4030,7 +4205,7 @@
       "name": "integer",
       "processors": {
         "casters": [
-          "integer::string"
+          "integer::casters::string"
         ],
         "transformers": [
         ],
@@ -4054,8 +4229,8 @@
       "supported_transformers": [
       ],
       "supported_validators": [
-        "number::max",
-        "number::min"
+        "number::supported_validators::max",
+        "number::supported_validators::min"
       ],
       "target_classes": [
         "Integer"
@@ -4076,12 +4251,12 @@
       "name": "model",
       "processors": {
         "casters": [
-          "model::hash"
+          "model::casters::hash"
         ],
         "transformers": [
         ],
         "validators": [
-          "model::attributes_declaration"
+          "model::validators::attributes_declaration"
         ]
       },
       "reference": "model",
@@ -4143,8 +4318,8 @@
       "supported_transformers": [
       ],
       "supported_validators": [
-        "number::max",
-        "number::min"
+        "number::supported_validators::max",
+        "number::supported_validators::min"
       ],
       "target_classes": [
         "Object"
@@ -4165,7 +4340,7 @@
       "name": "string",
       "processors": {
         "casters": [
-          "string::symbol"
+          "string::casters::symbol"
         ],
         "transformers": [
         ],
@@ -4187,11 +4362,11 @@
       "supported_processors": [
       ],
       "supported_transformers": [
-        "string::downcase"
+        "string::supported_transformers::downcase"
       ],
       "supported_validators": [
-        "string::matches",
-        "string::max_length"
+        "string::supported_validators::matches",
+        "string::supported_validators::max_length"
       ],
       "target_classes": [
         "String"
@@ -4212,7 +4387,7 @@
       "name": "symbol",
       "processors": {
         "casters": [
-          "symbol::string"
+          "symbol::casters::string"
         ],
         "transformers": [
         ],

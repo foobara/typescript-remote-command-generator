@@ -483,7 +483,7 @@
         },
         "data.referred_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::Validators::CannotExceed64CharactersError",
+          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.referred_user.email.cannot_exceed64_characters",
           "path": [
             "referred_user",
@@ -495,7 +495,7 @@
         },
         "data.referred_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::Validators::CannotHaveMultipleAtSignsError",
+          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.referred_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referred_user",
@@ -507,7 +507,7 @@
         },
         "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referred_user",
@@ -519,7 +519,7 @@
         },
         "data.referred_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotBeEmptyError",
+          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.referred_user.email.first_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -531,7 +531,7 @@
         },
         "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referred_user",
@@ -543,7 +543,7 @@
         },
         "data.referred_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::FirstPartHasBadCharactersError",
+          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.referred_user.email.first_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -555,7 +555,7 @@
         },
         "data.referred_user.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::Validators::MustHaveAnAtSignError",
+          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.referred_user.email.must_have_an_at_sign",
           "path": [
             "referred_user",
@@ -567,7 +567,7 @@
         },
         "data.referred_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::SecondPartCannotBeEmptyError",
+          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.referred_user.email.second_part_cannot_be_empty",
           "path": [
             "referred_user",
@@ -579,7 +579,7 @@
         },
         "data.referred_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::SecondPartHasBadCharactersError",
+          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.referred_user.email.second_part_has_bad_characters",
           "path": [
             "referred_user",
@@ -661,7 +661,7 @@
         },
         "data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::Validators::CannotExceed64CharactersError",
+          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -673,7 +673,7 @@
         },
         "data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::Validators::CannotHaveMultipleAtSignsError",
+          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -685,7 +685,7 @@
         },
         "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -697,7 +697,7 @@
         },
         "data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotBeEmptyError",
+          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -709,7 +709,7 @@
         },
         "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -721,7 +721,7 @@
         },
         "data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::FirstPartHasBadCharactersError",
+          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -733,7 +733,7 @@
         },
         "data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::Validators::MustHaveAnAtSignError",
+          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -745,7 +745,7 @@
         },
         "data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::SecondPartCannotBeEmptyError",
+          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -757,7 +757,7 @@
         },
         "data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::SecondPartHasBadCharactersError",
+          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -1017,7 +1017,7 @@
         },
         "data.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::Validators::CannotExceed64CharactersError",
+          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.email.cannot_exceed64_characters",
           "path": [
             "email"
@@ -1028,7 +1028,7 @@
         },
         "data.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::Validators::CannotHaveMultipleAtSignsError",
+          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.email.cannot_have_multiple_at_signs",
           "path": [
             "email"
@@ -1039,7 +1039,7 @@
         },
         "data.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "email"
@@ -1050,7 +1050,7 @@
         },
         "data.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotBeEmptyError",
+          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.email.first_part_cannot_be_empty",
           "path": [
             "email"
@@ -1061,7 +1061,7 @@
         },
         "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "email"
@@ -1072,7 +1072,7 @@
         },
         "data.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::FirstPartHasBadCharactersError",
+          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.email.first_part_has_bad_characters",
           "path": [
             "email"
@@ -1083,7 +1083,7 @@
         },
         "data.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::Validators::MustHaveAnAtSignError",
+          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.email.must_have_an_at_sign",
           "path": [
             "email"
@@ -1094,7 +1094,7 @@
         },
         "data.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::SecondPartCannotBeEmptyError",
+          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.email.second_part_cannot_be_empty",
           "path": [
             "email"
@@ -1105,7 +1105,7 @@
         },
         "data.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::SecondPartHasBadCharactersError",
+          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.email.second_part_has_bad_characters",
           "path": [
             "email"
@@ -1172,7 +1172,7 @@
         },
         "data.referring_user.email.cannot_exceed64_characters": {
           "category": "data",
-          "error": "email::Validators::CannotExceed64CharactersError",
+          "error": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
           "key": "data.referring_user.email.cannot_exceed64_characters",
           "path": [
             "referring_user",
@@ -1184,7 +1184,7 @@
         },
         "data.referring_user.email.cannot_have_multiple_at_signs": {
           "category": "data",
-          "error": "email::Validators::CannotHaveMultipleAtSignsError",
+          "error": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
           "key": "data.referring_user.email.cannot_have_multiple_at_signs",
           "path": [
             "referring_user",
@@ -1196,7 +1196,7 @@
         },
         "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
-          "error": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
+          "error": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
           "path": [
             "referring_user",
@@ -1208,7 +1208,7 @@
         },
         "data.referring_user.email.first_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotBeEmptyError",
+          "error": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
           "key": "data.referring_user.email.first_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -1220,7 +1220,7 @@
         },
         "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
-          "error": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "error": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "path": [
             "referring_user",
@@ -1232,7 +1232,7 @@
         },
         "data.referring_user.email.first_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::FirstPartHasBadCharactersError",
+          "error": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
           "key": "data.referring_user.email.first_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -1244,7 +1244,7 @@
         },
         "data.referring_user.email.must_have_an_at_sign": {
           "category": "data",
-          "error": "email::Validators::MustHaveAnAtSignError",
+          "error": "email::must_have_an_at_sign::MustHaveAnAtSignError",
           "key": "data.referring_user.email.must_have_an_at_sign",
           "path": [
             "referring_user",
@@ -1256,7 +1256,7 @@
         },
         "data.referring_user.email.second_part_cannot_be_empty": {
           "category": "data",
-          "error": "email::Validators::SecondPartCannotBeEmptyError",
+          "error": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
           "key": "data.referring_user.email.second_part_cannot_be_empty",
           "path": [
             "referring_user",
@@ -1268,7 +1268,7 @@
         },
         "data.referring_user.email.second_part_has_bad_characters": {
           "category": "data",
-          "error": "email::Validators::SecondPartHasBadCharactersError",
+          "error": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
           "key": "data.referring_user.email.second_part_has_bad_characters",
           "path": [
             "referring_user",
@@ -2013,7 +2013,7 @@
       "scoped_short_name": "MissingRequiredAttributeError",
       "symbol": "missing_required_attribute"
     },
-    "email::Validators::CannotExceed64CharactersError": {
+    "email::cannot_exceed64_characters::CannotExceed64CharactersError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2030,12 +2030,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::CannotExceed64CharactersError",
+      "parent": [
+        "processor_class",
+        "email::cannot_exceed64_characters"
+      ],
+      "reference": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::CannotExceed64CharactersError",
+      "scoped_full_name": "email::cannot_exceed64_characters::CannotExceed64CharactersError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "cannot_exceed64_characters",
         "CannotExceed64CharactersError"
       ],
       "scoped_name": "CannotExceed64CharactersError",
@@ -2046,7 +2050,7 @@
       "scoped_short_name": "CannotExceed64CharactersError",
       "symbol": "cannot_exceed64_characters"
     },
-    "email::Validators::CannotHaveMultipleAtSignsError": {
+    "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2063,12 +2067,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::CannotHaveMultipleAtSignsError",
+      "parent": [
+        "processor_class",
+        "email::cannot_have_multiple_at_signs"
+      ],
+      "reference": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::CannotHaveMultipleAtSignsError",
+      "scoped_full_name": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "cannot_have_multiple_at_signs",
         "CannotHaveMultipleAtSignsError"
       ],
       "scoped_name": "CannotHaveMultipleAtSignsError",
@@ -2079,7 +2087,7 @@
       "scoped_short_name": "CannotHaveMultipleAtSignsError",
       "symbol": "cannot_have_multiple_at_signs"
     },
-    "email::Validators::DomainCannotStartWithOrEndWithAHyphenError": {
+    "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2096,12 +2104,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
+      "parent": [
+        "processor_class",
+        "email::domain_cannot_start_with_or_end_with_a_hyphen"
+      ],
+      "reference": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError",
+      "scoped_full_name": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "domain_cannot_start_with_or_end_with_a_hyphen",
         "DomainCannotStartWithOrEndWithAHyphenError"
       ],
       "scoped_name": "DomainCannotStartWithOrEndWithAHyphenError",
@@ -2112,7 +2124,7 @@
       "scoped_short_name": "DomainCannotStartWithOrEndWithAHyphenError",
       "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
     },
-    "email::Validators::FirstPartCannotBeEmptyError": {
+    "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2129,12 +2141,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::FirstPartCannotBeEmptyError",
+      "parent": [
+        "processor_class",
+        "email::first_part_cannot_be_empty"
+      ],
+      "reference": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::FirstPartCannotBeEmptyError",
+      "scoped_full_name": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "first_part_cannot_be_empty",
         "FirstPartCannotBeEmptyError"
       ],
       "scoped_name": "FirstPartCannotBeEmptyError",
@@ -2145,7 +2161,7 @@
       "scoped_short_name": "FirstPartCannotBeEmptyError",
       "symbol": "first_part_cannot_be_empty"
     },
-    "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError": {
+    "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2162,12 +2178,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+      "parent": [
+        "processor_class",
+        "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+      ],
+      "reference": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+      "scoped_full_name": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
         "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
       ],
       "scoped_name": "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
@@ -2178,7 +2198,7 @@
       "scoped_short_name": "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
       "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
     },
-    "email::Validators::FirstPartHasBadCharactersError": {
+    "email::first_part_has_bad_characters::FirstPartHasBadCharactersError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2195,12 +2215,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::FirstPartHasBadCharactersError",
+      "parent": [
+        "processor_class",
+        "email::first_part_has_bad_characters"
+      ],
+      "reference": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::FirstPartHasBadCharactersError",
+      "scoped_full_name": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "first_part_has_bad_characters",
         "FirstPartHasBadCharactersError"
       ],
       "scoped_name": "FirstPartHasBadCharactersError",
@@ -2211,7 +2235,7 @@
       "scoped_short_name": "FirstPartHasBadCharactersError",
       "symbol": "first_part_has_bad_characters"
     },
-    "email::Validators::MustHaveAnAtSignError": {
+    "email::must_have_an_at_sign::MustHaveAnAtSignError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2228,12 +2252,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::MustHaveAnAtSignError",
+      "parent": [
+        "processor_class",
+        "email::must_have_an_at_sign"
+      ],
+      "reference": "email::must_have_an_at_sign::MustHaveAnAtSignError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::MustHaveAnAtSignError",
+      "scoped_full_name": "email::must_have_an_at_sign::MustHaveAnAtSignError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "must_have_an_at_sign",
         "MustHaveAnAtSignError"
       ],
       "scoped_name": "MustHaveAnAtSignError",
@@ -2244,7 +2272,7 @@
       "scoped_short_name": "MustHaveAnAtSignError",
       "symbol": "must_have_an_at_sign"
     },
-    "email::Validators::SecondPartCannotBeEmptyError": {
+    "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2261,12 +2289,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::SecondPartCannotBeEmptyError",
+      "parent": [
+        "processor_class",
+        "email::second_part_cannot_be_empty"
+      ],
+      "reference": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::SecondPartCannotBeEmptyError",
+      "scoped_full_name": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "second_part_cannot_be_empty",
         "SecondPartCannotBeEmptyError"
       ],
       "scoped_name": "SecondPartCannotBeEmptyError",
@@ -2277,7 +2309,7 @@
       "scoped_short_name": "SecondPartCannotBeEmptyError",
       "symbol": "second_part_cannot_be_empty"
     },
-    "email::Validators::SecondPartHasBadCharactersError": {
+    "email::second_part_has_bad_characters::SecondPartHasBadCharactersError": {
       "category": "data",
       "context_type_declaration": {
         "element_type_declarations": {
@@ -2294,12 +2326,16 @@
         "type": "attributes"
       },
       "is_fatal": false,
-      "reference": "email::Validators::SecondPartHasBadCharactersError",
+      "parent": [
+        "processor_class",
+        "email::second_part_has_bad_characters"
+      ],
+      "reference": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
       "scoped_category": "error",
-      "scoped_full_name": "email::Validators::SecondPartHasBadCharactersError",
+      "scoped_full_name": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError",
       "scoped_full_path": [
         "email",
-        "Validators",
+        "second_part_has_bad_characters",
         "SecondPartHasBadCharactersError"
       ],
       "scoped_name": "SecondPartHasBadCharactersError",
@@ -2457,7 +2493,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.cannot_exceed64_characters": "email::Validators::CannotExceed64CharactersError"
+        "data.cannot_exceed64_characters": "email::cannot_exceed64_characters::CannotExceed64CharactersError"
       },
       "processor_type": "transformer",
       "reference": "email::cannot_exceed64_characters",
@@ -2482,7 +2518,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.cannot_have_multiple_at_signs": "email::Validators::CannotHaveMultipleAtSignsError"
+        "data.cannot_have_multiple_at_signs": "email::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError"
       },
       "processor_type": "transformer",
       "reference": "email::cannot_have_multiple_at_signs",
@@ -2507,7 +2543,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.domain_cannot_start_with_or_end_with_a_hyphen": "email::Validators::DomainCannotStartWithOrEndWithAHyphenError"
+        "data.domain_cannot_start_with_or_end_with_a_hyphen": "email::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError"
       },
       "processor_type": "transformer",
       "reference": "email::domain_cannot_start_with_or_end_with_a_hyphen",
@@ -2556,7 +2592,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.first_part_cannot_be_empty": "email::Validators::FirstPartCannotBeEmptyError"
+        "data.first_part_cannot_be_empty": "email::first_part_cannot_be_empty::FirstPartCannotBeEmptyError"
       },
       "processor_type": "transformer",
       "reference": "email::first_part_cannot_be_empty",
@@ -2581,7 +2617,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
+        "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError"
       },
       "processor_type": "transformer",
       "reference": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
@@ -2606,7 +2642,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.first_part_has_bad_characters": "email::Validators::FirstPartHasBadCharactersError"
+        "data.first_part_has_bad_characters": "email::first_part_has_bad_characters::FirstPartHasBadCharactersError"
       },
       "processor_type": "transformer",
       "reference": "email::first_part_has_bad_characters",
@@ -2631,7 +2667,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.must_have_an_at_sign": "email::Validators::MustHaveAnAtSignError"
+        "data.must_have_an_at_sign": "email::must_have_an_at_sign::MustHaveAnAtSignError"
       },
       "processor_type": "transformer",
       "reference": "email::must_have_an_at_sign",
@@ -2656,7 +2692,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.second_part_cannot_be_empty": "email::Validators::SecondPartCannotBeEmptyError"
+        "data.second_part_cannot_be_empty": "email::second_part_cannot_be_empty::SecondPartCannotBeEmptyError"
       },
       "processor_type": "transformer",
       "reference": "email::second_part_cannot_be_empty",
@@ -2681,7 +2717,7 @@
         "email"
       ],
       "possible_errors": {
-        "data.second_part_has_bad_characters": "email::Validators::SecondPartHasBadCharactersError"
+        "data.second_part_has_bad_characters": "email::second_part_has_bad_characters::SecondPartHasBadCharactersError"
       },
       "processor_type": "transformer",
       "reference": "email::second_part_has_bad_characters",
@@ -3093,6 +3129,195 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "required"
+    },
+    "email::cannot_exceed64_characters": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::CannotExceed64Characters",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::cannot_exceed64_characters",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::cannot_exceed64_characters",
+      "scoped_full_path": [
+        "email",
+        "cannot_exceed64_characters"
+      ],
+      "scoped_name": "cannot_exceed64_characters",
+      "scoped_path": [
+        "cannot_exceed64_characters"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "cannot_exceed64_characters"
+    },
+    "email::cannot_have_multiple_at_signs": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::cannot_have_multiple_at_signs",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::cannot_have_multiple_at_signs",
+      "scoped_full_path": [
+        "email",
+        "cannot_have_multiple_at_signs"
+      ],
+      "scoped_name": "cannot_have_multiple_at_signs",
+      "scoped_path": [
+        "cannot_have_multiple_at_signs"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "cannot_have_multiple_at_signs"
+    },
+    "email::domain_cannot_start_with_or_end_with_a_hyphen": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_full_path": [
+        "email",
+        "domain_cannot_start_with_or_end_with_a_hyphen"
+      ],
+      "scoped_name": "domain_cannot_start_with_or_end_with_a_hyphen",
+      "scoped_path": [
+        "domain_cannot_start_with_or_end_with_a_hyphen"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "domain_cannot_start_with_or_end_with_a_hyphen"
+    },
+    "email::first_part_cannot_be_empty": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::first_part_cannot_be_empty",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::first_part_cannot_be_empty",
+      "scoped_full_path": [
+        "email",
+        "first_part_cannot_be_empty"
+      ],
+      "scoped_name": "first_part_cannot_be_empty",
+      "scoped_path": [
+        "first_part_cannot_be_empty"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "first_part_cannot_be_empty"
+    },
+    "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_full_path": [
+        "email",
+        "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+      ],
+      "scoped_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "scoped_path": [
+        "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+    },
+    "email::first_part_has_bad_characters": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::first_part_has_bad_characters",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::first_part_has_bad_characters",
+      "scoped_full_path": [
+        "email",
+        "first_part_has_bad_characters"
+      ],
+      "scoped_name": "first_part_has_bad_characters",
+      "scoped_path": [
+        "first_part_has_bad_characters"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "first_part_has_bad_characters"
+    },
+    "email::must_have_an_at_sign": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::MustHaveAnAtSign",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::must_have_an_at_sign",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::must_have_an_at_sign",
+      "scoped_full_path": [
+        "email",
+        "must_have_an_at_sign"
+      ],
+      "scoped_name": "must_have_an_at_sign",
+      "scoped_path": [
+        "must_have_an_at_sign"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "must_have_an_at_sign"
+    },
+    "email::second_part_cannot_be_empty": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::second_part_cannot_be_empty",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::second_part_cannot_be_empty",
+      "scoped_full_path": [
+        "email",
+        "second_part_cannot_be_empty"
+      ],
+      "scoped_name": "second_part_cannot_be_empty",
+      "scoped_path": [
+        "second_part_cannot_be_empty"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "second_part_cannot_be_empty"
+    },
+    "email::second_part_has_bad_characters": {
+      "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
+      "parent": [
+        "type",
+        "email"
+      ],
+      "processor_type": "transformer",
+      "reference": "email::second_part_has_bad_characters",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "email::second_part_has_bad_characters",
+      "scoped_full_path": [
+        "email",
+        "second_part_has_bad_characters"
+      ],
+      "scoped_name": "second_part_has_bad_characters",
+      "scoped_path": [
+        "second_part_has_bad_characters"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "second_part_has_bad_characters"
     },
     "number::max": {
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Max",
@@ -3710,15 +3935,15 @@
           "email::downcase"
         ],
         "validators": [
-          "email::first_part_has_bad_characters",
-          "email::second_part_has_bad_characters",
           "email::must_have_an_at_sign",
           "email::cannot_have_multiple_at_signs",
           "email::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "email::domain_cannot_start_with_or_end_with_a_hyphen",
           "email::first_part_cannot_be_empty",
           "email::second_part_cannot_be_empty",
-          "email::cannot_exceed64_characters"
+          "email::cannot_exceed64_characters",
+          "email::first_part_has_bad_characters",
+          "email::second_part_has_bad_characters"
         ]
       },
       "reference": "email",

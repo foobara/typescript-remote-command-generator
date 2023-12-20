@@ -30,7 +30,11 @@ module Foobara
 
         def collision_data_for(dep)
           key = to_key(dep)
-          collision_data[key]
+          collision_data[key].tap do |cd|
+            unless cd
+              raise "Dependency #{dep} is not part of this dependency group"
+            end
+          end
         end
 
         def set_collision_data_for(dep, collision_data)

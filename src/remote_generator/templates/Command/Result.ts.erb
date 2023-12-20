@@ -3,5 +3,5 @@
 import { <%= entity_generator.all_names.join(", ") %> } from "<%= path_to_root %><%= entity_generator.import_path %>"
 <% end %>
 
-export default <%= foobara_type_to_ts_type(inputs_type, name: "Result") %>
+export default <%= foobara_type_to_ts_type(result_type, name: "Result") %>
 

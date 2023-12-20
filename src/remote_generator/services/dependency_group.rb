@@ -28,8 +28,25 @@ module Foobara
           find_collisions
         end
 
-        def collisions
-          @collisions ||= {}
+        def collision_data_for(dep)
+          key = to_key(dep)
+          collision_data[key]
+        end
+
+        def set_collision_data_for(dep, collision_data)
+          key = to_key(dep)
+          self.collision_data[key] = collision_data
+        end
+
+        def to_key(dep)
+          [dep.scoped_category.to_s, dep.scoped_full_path.map(&:to_s)]
+        rescue => e
+          binding.pry
+          raise
+        end
+
+        def collision_data
+          @collision_data ||= {}
         end
 
         def non_colliding_dependency_roots
@@ -59,7 +76,7 @@ module Foobara
         end
 
         def points_for(dep)
-          points = collisions[dep].points
+          points = collision_data_for(dep).points
 
           unless points
             raise "Dependency #{dep} has no collision data"
@@ -87,7 +104,7 @@ module Foobara
 
         def find_collisions
           dependencies.each do |dep|
-            record = collisions[dep] = CollisionData.new
+            collision_data = CollisionData.new
 
             points = 0
 
@@ -99,10 +116,11 @@ module Foobara
               end
 
               if collisions.empty?
-                record.points = points
+                collision_data.points = points
+                set_collision_data_for(dep, collision_data)
                 break
               else
-                record.collisions_for_points[points] = collisions
+                collision_data.collisions_for_points[points] = collisions
                 points += 1
               end
             end

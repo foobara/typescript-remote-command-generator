@@ -14,15 +14,72 @@ module Foobara
           "Entity.ts.erb"
         end
 
-        def unloaded_name
-          "Unloaded#{entity_name}"
+        def scoped_full_path(points = nil)
+          full_path = entity_manifest.scoped_full_path
+
+          if points
+            start_at = full_path.size - points - 1
+            full_path[start_at..]
+          else
+            full_path
+          end
         end
 
-        def atom_name
-          if has_associations?
-            "#{entity_name}Atom"
+        def entity_name(points = nil)
+          if points
+            scoped_full_path(points).join(".")
           else
-            entity_name
+            scoped_path.join(".")
+          end
+        end
+
+        def unloaded_name(points = nil)
+          *prefix, name = if points
+                            scoped_full_path(points)
+                          else
+                            scoped_path
+                          end
+
+          [*prefix, "Unloaded#{name}"].join(".")
+        end
+
+        # TODO: consider using User for loaded user instead of LoadedUser and so maybe
+        # PotentiallyUnloadedUser for User?? (or some better name)
+        def loaded_name(points = nil)
+          *prefix, name = if points
+                            scoped_full_path(points)
+                          else
+                            scoped_path
+                          end
+
+          [*prefix, "Loaded#{name}"].join(".")
+        end
+
+        def atom_name(points = nil)
+          if has_associations?
+            *prefix, name = if points
+                              scoped_full_path(points)
+                            else
+                              scoped_path
+                            end
+
+            [*prefix, "#{name}Atom"].join(".")
+          else
+            loaded_name(points)
+          end
+        end
+
+        def aggregate_name(points = nil)
+          if has_associations?
+            *prefix, name = if points
+                              scoped_full_path(points)
+                            else
+                              scoped_path
+                            end
+
+            [*prefix, "#{name}Aggregate"].join(".")
+          else
+            loaded_name(points)
           end
         end
 
@@ -32,14 +89,6 @@ module Foobara
                          else
                            [name, unloaded_name]
                          end
-        end
-
-        def aggregate_name
-          if has_associations?
-            "#{entity_name}Aggregate"
-          else
-            entity_name
-          end
         end
 
         def entity_generators

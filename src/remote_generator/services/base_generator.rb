@@ -91,16 +91,18 @@ module Foobara
         end
 
         def dependency_roots
-          unless belongs_to_dependency_group
+          unless dependency_group
+            binding.pry
             raise "This generator was created without a " \
-                  "belongs_to_dependency_group and therefore cannot call #{__method__}"
+                  "dependency_group and therefore cannot call #{__method__}"
           end
 
-          belongs_to_dependency_group.non_colliding_dependency_roots
+          dependency_group.non_colliding_dependency_roots
         end
 
         def non_colliding_root
           unless belongs_to_dependency_group
+            binding.pry
             raise "This generator was created without a " \
                   "belongs_to_dependency_group and therefore cannot call #{__method__}"
           end
@@ -110,6 +112,7 @@ module Foobara
 
         def non_colliding_name
           unless belongs_to_dependency_group
+            binding.pry
             raise "This generator was created without a " \
                   "belongs_to_dependency_group and therefore cannot call #{__method__}"
           end
@@ -260,13 +263,15 @@ module Foobara
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
           generator = generator_for(entity)
 
+          points = dependency_group.points_for(generator)
+
           case association_depth
           when AssociationDepth::AMBIGUOUS
-            generator.fully_qualified_ts_name
+            generator.entity_name(points)
           when AssociationDepth::ATOM
-            generator.fully_qualified_atom_ts_name
+            generator.atom_name(points)
           when AssociationDepth::AGGREGATE
-            generator.fully_qualified_aggregate_ts_name
+            generator.aggregate_name(points)
           else
             raise "Bad association_depth: #{association_depth}"
           end

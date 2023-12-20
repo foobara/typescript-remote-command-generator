@@ -17,8 +17,9 @@ module Foobara
           self.dependencies = dependencies.to_set
 
           dependencies.each do |dep|
-            if dep.dependency_group
-              raise "Dependency group #{dep} already has a dependency group #{dep.dependency_group}"
+            if dep.belongs_to_dependency_group
+              binding.pry
+              raise "Dependency group #{dep} already belongs to dependency group #{dep.dependency_group}"
             end
 
             dep.belongs_to_dependency_group = self
@@ -43,13 +44,31 @@ module Foobara
 
         def non_colliding_root(dep)
           root = dep
-          path = non_colliding_path(points_for(dep))
-          root = root.parent until root.full_scoped_path == path
+          points = points_for(dep)
+          points_climbed = 0
+
+          until points_climbed >= points
+            points_climbed += dep.scoped_path.size
+            root = root.parent
+          end
+
           root
+        rescue => e
+          binding.pry
+          raise
         end
 
         def points_for(dep)
-          collisions[dep].points
+          points = collisions[dep].points
+
+          unless points
+            raise "Dependency #{dep} has no collision data"
+          end
+
+          points
+        rescue => e
+          binding.pry
+          raise
         end
 
         def non_colliding_name(dep, points = points_for(dep))
@@ -57,7 +76,11 @@ module Foobara
         end
 
         def non_colliding_path(dep, points = points_for(dep))
-          scoped_full_path[dep.scoped_full_path.size - points..].map(&:to_s)
+          start_at = dep.scoped_full_path.size - points - 1
+          dep.scoped_full_path[start_at..].map(&:to_s)
+        rescue => e
+          binding.pry
+          raise
         end
 
         private
@@ -77,6 +100,7 @@ module Foobara
 
               if collisions.empty?
                 record.points = points
+                break
               else
                 record.collisions_for_points[points] = collisions
                 points += 1

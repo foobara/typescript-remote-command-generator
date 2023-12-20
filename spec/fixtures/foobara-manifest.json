@@ -823,6 +823,16 @@
           "runtime_path": [
           ],
           "symbol": "unexpected_attributes"
+        },
+        "runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
+          "key": "runtime.bad_referral",
+          "path": [
+          ],
+          "runtime_path": [
+          ],
+          "symbol": "bad_referral"
         }
       },
       "errors_transformers": [
@@ -857,7 +867,9 @@
         "attributes",
         "array",
         "symbol",
-        "duck"
+        "duck",
+        "SomeOrg::Auth::User",
+        "string"
       ],
       "full_command_name": "SomeOrg::Auth::CreateReferral",
       "inputs_transformers": [
@@ -1147,6 +1159,17 @@
           ],
           "symbol": "cannot_cast"
         },
+        "data.referral_channel.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.referral_channel.cannot_cast",
+          "path": [
+            "referral_channel"
+          ],
+          "runtime_path": [
+          ],
+          "symbol": "cannot_cast"
+        },
         "data.referring_user.cannot_cast": {
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
@@ -1334,6 +1357,17 @@
           "runtime_path": [
           ],
           "symbol": "unexpected_attributes"
+        },
+        "some_org::auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
+          "key": "some_org::auth::create_referral>runtime.bad_referral",
+          "path": [
+          ],
+          "runtime_path": [
+            "some_org::auth::create_referral"
+          ],
+          "symbol": "bad_referral"
         }
       },
       "errors_transformers": [
@@ -1368,7 +1402,9 @@
         "attributes",
         "array",
         "symbol",
-        "duck"
+        "duck",
+        "SomeOrg::Auth::User",
+        "string"
       ],
       "full_command_name": "SomeOrg::Auth::CreateUser",
       "inputs_transformers": [
@@ -1385,6 +1421,9 @@
             "type": "integer"
           },
           "last_name": {
+            "type": "string"
+          },
+          "referral_channel": {
             "type": "string"
           },
           "referring_user": {
@@ -1870,6 +1909,46 @@
     }
   },
   "error": {
+    "SomeOrg::Auth::CreateReferral::BadReferralError": {
+      "category": "runtime",
+      "context_type_declaration": {
+        "element_type_declarations": {
+          "channel": {
+            "type": "string"
+          },
+          "referred_user": {
+            "type": "SomeOrg::Auth::User"
+          },
+          "referring_user": {
+            "type": "SomeOrg::Auth::User"
+          }
+        },
+        "type": "attributes"
+      },
+      "domain": "SomeOrg::Auth",
+      "is_fatal": true,
+      "organization": "SomeOrg",
+      "parent": [
+        "command",
+        "SomeOrg::Auth::CreateReferral"
+      ],
+      "reference": "SomeOrg::Auth::CreateReferral::BadReferralError",
+      "scoped_category": "error",
+      "scoped_full_name": "SomeOrg::Auth::CreateReferral::BadReferralError",
+      "scoped_full_path": [
+        "SomeOrg",
+        "Auth",
+        "CreateReferral",
+        "BadReferralError"
+      ],
+      "scoped_name": "BadReferralError",
+      "scoped_path": [
+        "BadReferralError"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "BadReferralError",
+      "symbol": "bad_referral"
+    },
     "SomeOrg::Math::CalculateExponent::NegativeExponentError": {
       "category": "runtime",
       "context_type_declaration": {
@@ -4110,15 +4189,15 @@
           "email::transformers::downcase"
         ],
         "validators": [
-          "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
-          "email::validators::first_part_cannot_be_empty",
-          "email::validators::second_part_cannot_be_empty",
-          "email::validators::cannot_exceed64_characters",
           "email::validators::first_part_has_bad_characters",
           "email::validators::second_part_has_bad_characters",
           "email::validators::must_have_an_at_sign",
           "email::validators::cannot_have_multiple_at_signs",
-          "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+          "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
+          "email::validators::first_part_cannot_be_empty",
+          "email::validators::second_part_cannot_be_empty",
+          "email::validators::cannot_exceed64_characters"
         ]
       },
       "reference": "email",

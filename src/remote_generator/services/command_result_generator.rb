@@ -30,6 +30,10 @@ module Foobara
             []
           end
         end
+
+        def dependencies
+          entity_generators
+        end
       end
     end
   end

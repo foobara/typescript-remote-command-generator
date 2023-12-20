@@ -51,7 +51,7 @@ module Foobara
         end
       end
 
-      def generator_for(manifest, elements_to_generate)
+      def generator_for(manifest, elements_to_generate = nil)
         generators_for(manifest, elements_to_generate).first
       end
     end
@@ -60,9 +60,9 @@ module Foobara
       class BaseGenerator
         include TruncatedInspect
 
-        attr_accessor :relevant_manifest, :elements_to_generate
+        attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
 
-        def initialize(relevant_manifest, elements_to_generate)
+        def initialize(relevant_manifest, elements_to_generate = nil)
           self.relevant_manifest = relevant_manifest
           self.elements_to_generate = elements_to_generate
         end
@@ -81,9 +81,57 @@ module Foobara
           end
         end
 
+        def dependencies
+          binding.pry
+          raise "Subclass responsibility"
+        end
+
+        def dependency_group
+          @dependency_group ||= DependencyGroup.new(dependencies, name: scoped_full_path.join("."))
+        end
+
+        def dependency_roots
+          unless belongs_to_dependency_group
+            raise "This generator was created without a " \
+                  "belongs_to_dependency_group and therefore cannot call #{__method__}"
+          end
+
+          belongs_to_dependency_group.non_colliding_dependency_roots
+        end
+
+        def non_colliding_root
+          unless belongs_to_dependency_group
+            raise "This generator was created without a " \
+                  "belongs_to_dependency_group and therefore cannot call #{__method__}"
+          end
+
+          belongs_to_dependency_group.non_colliding_root(self)
+        end
+
+        def non_colliding_name
+          unless belongs_to_dependency_group
+            raise "This generator was created without a " \
+                  "belongs_to_dependency_group and therefore cannot call #{__method__}"
+          end
+
+          belongs_to_dependency_group.non_colliding_name(self)
+        end
+
         def generate
+          unless elements_to_generate
+            raise "This generator was created without elements_to_generate and therefore cannot be ran."
+          end
+
+          dependencies.each do |dependency|
+            elements_to_generate << dependency
+          end
+
           # Render the template
           erb_template.result(binding)
+        end
+
+        def generator_for(manifest)
+          RemoteGenerator.generator_for(manifest)
         end
 
         def template_path
@@ -152,9 +200,14 @@ module Foobara
           relevant_manifest.respond_to?(method_name, include_private)
         end
 
-        def foobara_type_to_ts_type(type_declaration, name: nil, association_depth: AssociationDepth::AMBIGUOUS)
+        def foobara_type_to_ts_type(
+          type_declaration,
+          name: nil,
+          association_depth: AssociationDepth::AMBIGUOUS,
+          dependency_group: nil
+        )
           if type_declaration.is_a?(Manifest::Attributes)
-            ts_type = attributes_to_ts_type(type_declaration, association_depth:)
+            ts_type = attributes_to_ts_type(type_declaration, association_depth:, dependency_group:)
 
             return name ? "interface #{name} #{ts_type}" : ts_type
           end
@@ -187,16 +240,16 @@ module Foobara
                         end
 
           if type_string
-            name ? "#{name} = #{type_symbol}" : type_symbol
+            name ? "#{name} = #{type_string}" : type_string
           else
             raise "Not sure how to convert #{type_declaration} to a TS type"
           end
         end
 
-        def attributes_to_ts_type(attributes, association_depth: AssociationDepth::AMBIGUOUS)
+        def attributes_to_ts_type(attributes, dependency_group:, association_depth: AssociationDepth::AMBIGUOUS)
           guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
             "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
-              foobara_type_to_ts_type(attribute_declaration, association_depth:)
+              foobara_type_to_ts_type(attribute_declaration, dependency_group:, association_depth:)
             }"
           end.join("\n")
 
@@ -205,23 +258,15 @@ module Foobara
 
         def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
-          entity_name = entity.entity_name
+          generator = generator_for(entity)
 
           case association_depth
           when AssociationDepth::AMBIGUOUS
-            entity_name
+            generator.fully_qualified_ts_name
           when AssociationDepth::ATOM
-            if entity.has_associations?
-              "#{entity_name}Atom"
-            else
-              entity_name
-            end
+            generator.fully_qualified_atom_ts_name
           when AssociationDepth::AGGREGATE
-            if entity.has_associations?
-              "#{entity_name}Aggregate"
-            else
-              entity_name
-            end
+            generator.fully_qualified_aggregate_ts_name
           else
             raise "Bad association_depth: #{association_depth}"
           end

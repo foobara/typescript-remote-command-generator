@@ -4,7 +4,7 @@ import Inputs from "./Inputs"
 import Result from "./Result"
 import Error from "./Error"
 
-export default class <%= command_name %> extends Command<Inputs, Result, Error> {
+export class <%= command_name %> extends Command<Inputs, Result, Error> {
 <% unless organization.global? %>
   <% elements_to_generate << organization %>
   static organizationName = "<%= organization_name %>"

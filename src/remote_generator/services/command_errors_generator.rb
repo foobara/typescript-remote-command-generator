@@ -32,6 +32,10 @@ module Foobara
           end
         end
 
+        def dependencies
+          error_generators
+        end
+
         def instantiated_error_types_union
           error_types.keys.map do |key|
             instantiated_error_type(key)

@@ -13,6 +13,10 @@ module Foobara
         def template_path
           "Command.ts.erb"
         end
+
+        def dependencies
+          []
+        end
       end
     end
   end

@@ -48,6 +48,10 @@ module Foobara
           end
         end
 
+        def dependencies
+          entity_generators
+        end
+
         def primary_key_name
           primary_key_attribute
         end

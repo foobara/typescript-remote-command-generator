@@ -19,7 +19,7 @@ export class <%= domain_name %>Class extends Domain {
 
   // commands
 <% command_generators.each do |command| %>
-  <%= command.command_name %>() {
+  get <%= command.command_name %> () {
     return <%= command.command_name %>;
   }
 

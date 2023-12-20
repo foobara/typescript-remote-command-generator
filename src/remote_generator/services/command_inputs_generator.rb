@@ -23,9 +23,13 @@ module Foobara
         end
 
         def entity_generators
-          inputs_types_depended_on.select(&:entity?).map do |entity|
+          @entity_generators ||= inputs_types_depended_on.select(&:entity?).map do |entity|
             Services::EntityGenerator.new(entity, elements_to_generate)
           end
+        end
+
+        def dependencies
+          entity_generators
         end
       end
     end

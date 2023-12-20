@@ -19,6 +19,10 @@ module Foobara
             DomainGenerator.new(domain_manifest, elements_to_generate)
           end
         end
+
+        def dependencies
+          domain_generators
+        end
       end
     end
   end

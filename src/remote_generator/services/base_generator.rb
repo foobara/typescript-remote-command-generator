@@ -154,7 +154,13 @@ module Foobara
         end
 
         def absolute_template_path
-          Pathname.new("#{__dir__}/../templates/#{template_path}").cleanpath.to_s
+          path = template_path
+
+          if path.is_a?(::Array)
+            path = path.join("/")
+          end
+
+          Pathname.new("#{__dir__}/../templates/#{path}").cleanpath.to_s
         end
 
         def template_string

@@ -1,3 +1,5 @@
+require_relative "entity_generator"
+
 module Foobara
   module RemoteGenerator
     class Services

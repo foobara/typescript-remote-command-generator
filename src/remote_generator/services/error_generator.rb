@@ -41,6 +41,11 @@ module Foobara
         def context_ts_type
           foobara_type_to_ts_type(context_type_declaration)
         end
+
+        def dependencies
+          binding.pry
+          raise "wtf"
+        end
       end
     end
   end

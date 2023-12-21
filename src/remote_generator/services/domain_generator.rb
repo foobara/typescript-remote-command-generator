@@ -25,6 +25,10 @@ module Foobara
             EntityGenerator.new(entity_manifest, elements_to_generate)
           end
         end
+
+        def dependencies
+          [*command_generators, *entity_generators]
+        end
       end
     end
   end

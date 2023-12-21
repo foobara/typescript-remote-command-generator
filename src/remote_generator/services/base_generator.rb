@@ -25,6 +25,8 @@ module Foobara
     class << self
       def generators_for(manifest, elements_to_generate)
         generator_classes = case manifest
+                            when Services::BaseGenerator
+                              return Util.array(manifest)
                             when Manifest::Command
                               [
                                 Services::CommandGenerator,
@@ -43,6 +45,7 @@ module Foobara
                             when Manifest::ProcessorClass
                               Services::ProcessorClassGenerator
                             else
+                              binding.pry
                               raise "Not sure how build a generator for a #{manifest}"
                             end
 

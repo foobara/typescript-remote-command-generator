@@ -1947,7 +1947,15 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "BadReferralError",
-      "symbol": "bad_referral"
+      "symbol": "bad_referral",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "SomeOrg::Auth::User",
+        "string"
+      ]
     },
     "SomeOrg::Math::CalculateExponent::NegativeExponentError": {
       "category": "runtime",
@@ -1981,7 +1989,14 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "NegativeExponentError",
-      "symbol": "negative_exponent"
+      "symbol": "negative_exponent",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer"
+      ]
     },
     "Value::Processor::Casting::CannotCastError": {
       "category": "data",
@@ -2019,7 +2034,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "CannotCastError",
-      "symbol": "cannot_cast"
+      "symbol": "cannot_cast",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError": {
       "category": "data",
@@ -2060,7 +2081,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "UnexpectedAttributesError",
-      "symbol": "unexpected_attributes"
+      "symbol": "unexpected_attributes",
+      "types_depended_on": [
+        "attributes",
+        "duck",
+        "symbol",
+        "array"
+      ]
     },
     "attributes::supported_validators::required::MissingRequiredAttributeError": {
       "category": "data",
@@ -2092,7 +2119,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "MissingRequiredAttributeError",
-      "symbol": "missing_required_attribute"
+      "symbol": "missing_required_attribute",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError": {
       "category": "data",
@@ -2130,7 +2163,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "CannotExceed64CharactersError",
-      "symbol": "cannot_exceed64_characters"
+      "symbol": "cannot_exceed64_characters",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError": {
       "category": "data",
@@ -2168,7 +2207,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "CannotHaveMultipleAtSignsError",
-      "symbol": "cannot_have_multiple_at_signs"
+      "symbol": "cannot_have_multiple_at_signs",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError": {
       "category": "data",
@@ -2206,7 +2251,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "DomainCannotStartWithOrEndWithAHyphenError",
-      "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+      "symbol": "domain_cannot_start_with_or_end_with_a_hyphen",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError": {
       "category": "data",
@@ -2244,7 +2295,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "FirstPartCannotBeEmptyError",
-      "symbol": "first_part_cannot_be_empty"
+      "symbol": "first_part_cannot_be_empty",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError": {
       "category": "data",
@@ -2282,7 +2339,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
-      "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+      "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError": {
       "category": "data",
@@ -2320,7 +2383,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "FirstPartHasBadCharactersError",
-      "symbol": "first_part_has_bad_characters"
+      "symbol": "first_part_has_bad_characters",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::must_have_an_at_sign::MustHaveAnAtSignError": {
       "category": "data",
@@ -2358,7 +2427,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "MustHaveAnAtSignError",
-      "symbol": "must_have_an_at_sign"
+      "symbol": "must_have_an_at_sign",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError": {
       "category": "data",
@@ -2396,7 +2471,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "SecondPartCannotBeEmptyError",
-      "symbol": "second_part_cannot_be_empty"
+      "symbol": "second_part_cannot_be_empty",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     },
     "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError": {
       "category": "data",
@@ -2434,7 +2515,13 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "SecondPartHasBadCharactersError",
-      "symbol": "second_part_has_bad_characters"
+      "symbol": "second_part_has_bad_characters",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck"
+      ]
     }
   },
   "organization": {

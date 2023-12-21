@@ -1,0 +1,15 @@
+import { Command } from "<%= path_to_root %>base/Command"
+
+import Inputs from "./Inputs"
+import Result from "./Result"
+import Error from "./Error"
+
+export default class <%= command_name %> extends Command<Inputs, Result, Error> {
+<% unless global_organization? %>
+  static organizationName = "<%= organization_name %>"
+<% end %>
+<% unless global_domain? %>
+  static domainName = "<%= domain_name %>"
+<% end %>
+  static commandName = <%= command_name %>
+}

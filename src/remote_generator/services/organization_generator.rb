@@ -7,7 +7,7 @@ module Foobara
         alias organization_manifest relevant_manifest
 
         def target_path
-          [organization_name, "index.ts"]
+          [*scoped_full_path, "index.ts"]
         end
 
         def template_path
@@ -16,8 +16,12 @@ module Foobara
 
         def domain_generators
           @domain_generators ||= organization_manifest.domains.map do |domain_manifest|
-            DomainGenerator.new(domain_manifest)
+            DomainGenerator.new(domain_manifest, elements_to_generate)
           end
+        end
+
+        def dependencies
+          domain_generators
         end
       end
     end

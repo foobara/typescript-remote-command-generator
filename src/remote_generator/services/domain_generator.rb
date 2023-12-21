@@ -7,7 +7,7 @@ module Foobara
         alias domain_manifest relevant_manifest
 
         def target_path
-          [*domain_path, "index.ts"]
+          [*scoped_full_path, "index.ts"]
         end
 
         def template_path
@@ -16,14 +16,18 @@ module Foobara
 
         def command_generators
           @command_generators ||= domain_manifest.commands.map do |command_manifest|
-            CommandGenerator.new(command_manifest)
+            CommandGenerator.new(command_manifest, elements_to_generate)
           end
         end
 
         def entity_generators
           @entity_generators ||= domain_manifest.entities.map do |entity_manifest|
-            EntityGenerator.new(entity_manifest)
+            EntityGenerator.new(entity_manifest, elements_to_generate)
           end
+        end
+
+        def dependencies
+          [*command_generators, *entity_generators, *organization]
         end
       end
     end

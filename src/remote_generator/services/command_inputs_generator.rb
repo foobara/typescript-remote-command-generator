@@ -7,7 +7,7 @@ module Foobara
         alias command_manifest relevant_manifest
 
         def target_path
-          [*domain_path, command_name, "Inputs.ts"]
+          [*scoped_full_path, "Inputs.ts"]
         end
 
         def template_path
@@ -23,14 +23,13 @@ module Foobara
         end
 
         def entity_generators
-          entity_manifests = attribute_declarations.values.select(&:entity?).map do |attribute_declaration|
-            type = find_type(attribute_declaration)
-            Manifest::Entity.new(root_manifest, type.path)
+          @entity_generators ||= inputs_types_depended_on.select(&:entity?).uniq.map do |entity|
+            Services::EntityGenerator.new(entity, elements_to_generate)
           end
+        end
 
-          entity_manifests.uniq.map do |entity_manifest|
-            Services::EntityGenerator.new(entity_manifest)
-          end
+        def dependencies
+          entity_generators
         end
       end
     end

@@ -11,7 +11,7 @@ module Foobara
         end
 
         def target_path
-          [*domain_path, command_name, "Result.ts"]
+          [*scoped_full_path, "Result.ts"]
         end
 
         def template_path
@@ -20,7 +20,7 @@ module Foobara
 
         def entity_generators(type = result_type)
           if type.entity?
-            [EntityGenerator.new(type.to_entity)]
+            [EntityGenerator.new(type.to_entity, elements_to_generate)]
           elsif type.type.to_sym == :attributes
             type.attribute_declarations.values.map do |attribute_declaration|
               entity_generators(attribute_declaration)
@@ -29,6 +29,10 @@ module Foobara
             # TODO: handle tuples, associative arrays, arrays
             []
           end
+        end
+
+        def dependencies
+          entity_generators
         end
       end
     end

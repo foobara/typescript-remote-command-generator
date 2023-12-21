@@ -3,6 +3,7 @@ import {
 } from "./Ambiguous"
 import { Loaded<%= entity_name %> } from "./Loaded"
 <% dependency_roots.each do |dependency_root| %>
+<% binding.pry %>
 import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 

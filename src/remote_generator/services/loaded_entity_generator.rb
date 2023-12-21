@@ -14,7 +14,7 @@ module Foobara
 
         def ts_instance_path
           *prefix, name = super
-          [*prefix, "Loaded#{name}"].join(".")
+          [*prefix, "Loaded#{name}"]
         end
       end
     end

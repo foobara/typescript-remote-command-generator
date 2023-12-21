@@ -20,7 +20,7 @@ module Foobara
 
         def ts_instance_path
           *prefix, name = super
-          [*prefix, "#{name}Aggregate"].join(".")
+          [*prefix, "#{name}Aggregate"]
         end
       end
     end

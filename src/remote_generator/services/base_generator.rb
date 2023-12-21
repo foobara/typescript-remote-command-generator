@@ -185,7 +185,7 @@ module Foobara
         end
 
         def ts_instance_name
-          scoped_path.join(".")
+          ts_instance_path.join(".")
         end
 
         def ts_instance_path

@@ -1,6 +1,6 @@
 import { Outcome } from './Outcome';
-import {Organization} from "./Organization";
-import {Domain,globalDomain} from "./Domain";
+import { Organization } from "./Organization";
+import { Domain, globalDomain } from "./Domain";
 
 export default abstract class RemoteCommand<Inputs, Result, Error> {
   static _urlBase: string

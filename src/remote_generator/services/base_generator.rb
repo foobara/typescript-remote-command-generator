@@ -200,7 +200,7 @@ module Foobara
             target_path[0..-2]
           else
             target_path
-          end.join("/")
+          end.join("/").gsub(/\.ts$/, "")
         end
 
         def method_missing(method_name, *, &)

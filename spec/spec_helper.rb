@@ -30,6 +30,6 @@ RSpec.configure do |config|
   # config.raise_errors_for_deprecations!
 end
 
-require "typescript_remote_command_generator"
+require "foobara/typescript_remote_command_generator"
 
 Foobara::Util.require_directory("#{__dir__}/../../foobara/spec/support")

@@ -1,8 +1,8 @@
-require_relative "lib/typescript-remote-command-generator/version"
+require_relative "src/typescript_remote_command_generator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "typescript-remote-command-generator"
-  spec.version = TypescriptRemoteCommandGenerator::Version::VERSION
+  spec.version = Foobara::TypescriptRemoteCommandGenerator::Version::VERSION
   spec.authors = ["Miles Georgi"]
   spec.email = ["azimux@gmail.com"]
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = %w[lib src]
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"

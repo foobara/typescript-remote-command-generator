@@ -141,6 +141,7 @@ module Foobara
         end
 
         def association_property_names_ts_array
+          binding.pry
           attribute_names.inspect
         end
 

@@ -5,7 +5,7 @@ import {
   <%= entity_name %>AttributesType
 } from "./<%= entity_name %>"
 
-export Unloaded<%= entity_name %>AttributesType = Never<<%= entity_name %>AttributesType>
+export type Unloaded<%= entity_name %>AttributesType = Never<<%= entity_name %>AttributesType>
 
 export class Unloaded<%= entity_name %> extends <%= entity_name %><Unloaded<%= entity_name %>AttributesType> {
   constructor(id: <%= entity_name %>PrimaryKeyType) {

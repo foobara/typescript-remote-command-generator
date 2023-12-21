@@ -39,7 +39,14 @@ module Foobara
                             when Manifest::Organization
                               Services::OrganizationGenerator
                             when Manifest::Entity
-                              Services::EntityGenerator
+                              [
+                                Services::EntityGenerator,
+                                Services::UnloadedEntityGenerator,
+                                Services::LoadedEntityGenerator,
+                                Services::AtomEntityGenerator,
+                                Services::AggregateEntityGenerator,
+                                Services::EntityVariantsGenerator
+                              ]
                             when Manifest::Error
                               Services::ErrorGenerator
                             when Manifest::ProcessorClass
@@ -85,7 +92,6 @@ module Foobara
         end
 
         def dependencies
-          binding.pry
           raise "Subclass responsibility"
         end
 

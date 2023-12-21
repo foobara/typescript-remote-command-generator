@@ -33,10 +33,16 @@ module Foobara
 
       def each_element_to_generate
         until elements_to_generate.empty?
-          self.element_to_generate = elements_to_generate.first
+          element_to_generate = elements_to_generate.first
           elements_to_generate.delete(element_to_generate)
 
+          if element_to_generate.is_a?(Services::BaseGenerator)
+            elements_to_generate << element_to_generate.relevant_manifest
+            next
+          end
+
           unless generated.include?(element_to_generate)
+            self.element_to_generate = element_to_generate
             yield
             generated << element_to_generate
           end

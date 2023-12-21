@@ -2,9 +2,9 @@ import RemoteCommand from "<%= path_to_root %>base/RemoteCommand"
 
 import Inputs from "./Inputs"
 import Result from "./Result"
-import Error from "./Error"
+import Errors from "./Errors"
 
-export class <%= command_name %> extends RemoteCommand<Inputs, Result, Error> {
+export class <%= command_name %> extends RemoteCommand<Inputs, Result, Errors> {
 <% unless organization.global? %>
   <% elements_to_generate << organization %>
   static organizationName = "<%= organization_name %>"
@@ -13,5 +13,5 @@ export class <%= command_name %> extends RemoteCommand<Inputs, Result, Error> {
   <% elements_to_generate << domain %>
   static domainName = "<%= domain_name %>"
 <% end %>
-  static commandName = <%= command_name %>
+  static commandName = "<%= command_name %>"
 }

@@ -15,6 +15,11 @@ module Foobara
             Services::UnloadedEntityGenerator.new(entity, elements_to_generate)
           end
         end
+
+        def ts_instance_path
+          *prefix, name = super
+          [*prefix, "#{name}Atom"].join(".")
+        end
       end
     end
   end

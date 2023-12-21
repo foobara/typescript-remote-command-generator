@@ -72,7 +72,7 @@ module Foobara
           points_climbed = 0
 
           until points_climbed >= points
-
+            # TODO: can't use scoped_path because sometimes we want UnloadedUser instead of User. How to fix??
             points_climbed += dep.scoped_path.size
             root = root.parent
           end

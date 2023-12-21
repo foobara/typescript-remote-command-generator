@@ -184,6 +184,14 @@ module Foobara
           raise "Subclass responsibility"
         end
 
+        def ts_instance_name
+          scoped_path.join(".")
+        end
+
+        def ts_instance_path
+          scoped_path
+        end
+
         foobara_delegate :organization_name,
                          :domain_name,
                          to: :relevant_manifest

@@ -9,6 +9,11 @@ module Foobara
         def template_path
           ["Entity", "Unloaded.ts.erb"]
         end
+
+        def ts_instance_path
+          *prefix, name = super
+          [*prefix, "Unloaded#{name}"].join(".")
+        end
       end
     end
   end

@@ -17,6 +17,11 @@ module Foobara
             Services::AggregateEntityGenerator.new(entity, elements_to_generate)
           end
         end
+
+        def ts_instance_path
+          *prefix, name = super
+          [*prefix, "#{name}Aggregate"].join(".")
+        end
       end
     end
   end

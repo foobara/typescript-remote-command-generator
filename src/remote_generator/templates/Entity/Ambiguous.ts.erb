@@ -1,4 +1,4 @@
-import { Entity, Never } from "<%= path_to_root %>base/Entity"
+import { Entity } from "<%= path_to_root %>base/Entity"
 <% dependency_roots.each do |dependency_root| %>
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>

@@ -1,0 +1,34 @@
+import { Entity, Never } from "<%= path_to_root %>base/Entity"
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
+export type <%= entity_name %>PrimaryKeyType = <%= primary_key_ts_type %>
+export const <%= entity_name_downcase %>PrimaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
+
+export interface <%= entity_name %>AttributesType <%= attributes_type_ts_type %>
+
+export class <%= entity_name %><
+  AttributesType extends <%= attributes_types_union %> = <%= attributes_types_union %>
+> extends Entity<<%= entity_name %>PrimaryKeyType, AttributesType> {
+  static readonly entityName: string = "<%= entity_name %>"
+  static readonly primaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
+
+  get associationPropertyNames (): (keyof AttributesType)[] {
+    return <%= association_property_names_ts_array %>
+  }
+
+  get hasAssociations (): <%= has_associations? %> {
+    return <%= has_associations? %>
+  }
+
+  get <%= primary_key_name %> (): <%= entity_name %>PrimaryKeyType {
+    return this.primaryKey
+  }
+
+  <% attribute_names.each do |attribute_name| %>
+  get <%= attribute_name %> (): AttributesType["<%= attribute_name %>"] {
+    return this.readAttribute("<%= attribute_name %>")
+  }
+  <% end %>
+}

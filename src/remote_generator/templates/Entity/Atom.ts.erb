@@ -1,0 +1,19 @@
+import { Entity, Never } from "<%= path_to_root %>base/Entity"
+import {
+  <%= entity_name %>,
+  <%= entity_name %>PrimaryKeyType,
+  <%= entity_name %>AttributesType
+} from "./<%= entity_name %>"
+import { Loaded<%= entity_name %> } from "./Loaded"
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
+export interface <%= entity_name %>AtomAttributesType extends <%= entity_name %>AttributesType <%= atom_attributes_ts_type %>
+
+export class <%= entity_name %>Atom extends Loaded<%= entity_name %><<%= entity_name %>AtomAttributesType> {
+  <% if has_associations? %>
+  get isAtom(): true { return true }
+  get isAggregate(): false { return false }
+  <% end %>
+}

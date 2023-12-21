@@ -3,7 +3,7 @@ import {
   <%= entity_name %>,
   <%= entity_name %>PrimaryKeyType,
   <%= entity_name %>AttributesType
-} from "./<%= entity_name %>"
+} from "./<%= entity_name %>/Ambiguous"
 
 export class Loaded<%= entity_name %><T extends <%= entity_name %>AttributesType> extends <%= entity_name %><T> {
   constructor(id: <%= entity_name %>PrimaryKeyType, attributes: T) {

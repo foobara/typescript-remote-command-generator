@@ -90,7 +90,16 @@ module Foobara
         end
 
         def dependency_group
-          @dependency_group ||= DependencyGroup.new(dependencies, name: scoped_full_path.join("."))
+          @dependency_group ||= begin
+            generators = dependencies.map do |dependency|
+              RemoteGenerator.generator_for(dependency, elements_to_generate)
+            end
+
+            DependencyGroup.new(generators, name: scoped_full_path.join("."))
+          rescue => e
+            binding.pry
+            raise
+          end
         end
 
         def dependency_roots

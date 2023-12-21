@@ -26,6 +26,9 @@ module Foobara
           end
 
           find_collisions
+        rescue => e
+          binding.pry
+          raise
         end
 
         def collision_data_for(dep)

@@ -43,8 +43,7 @@ module Foobara
         end
 
         def dependencies
-          binding.pry
-          raise "wtf"
+          types_depended_on.select(&:entity?)
         end
       end
     end

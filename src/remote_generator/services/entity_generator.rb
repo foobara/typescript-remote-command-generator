@@ -106,7 +106,7 @@ module Foobara
         end
 
         def primary_key_ts_type
-          foobara_type_to_ts_type(primary_key_type)
+          foobara_type_to_ts_type(primary_key_type, dependency_group:)
         end
 
         def entity_name_downcase
@@ -115,17 +115,17 @@ module Foobara
 
         def attributes_type_ts_type
           association_depth = AssociationDepth::AMBIGUOUS
-          foobara_type_to_ts_type(attributes_type, association_depth:)
+          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
         end
 
         def atom_attributes_ts_type
           association_depth = AssociationDepth::ATOM
-          foobara_type_to_ts_type(attributes_type, association_depth:)
+          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
         end
 
         def aggregate_attributes_ts_type
           association_depth = AssociationDepth::AGGREGATE
-          foobara_type_to_ts_type(attributes_type, association_depth:)
+          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
         end
 
         def attributes_types_union

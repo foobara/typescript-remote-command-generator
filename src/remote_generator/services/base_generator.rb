@@ -217,9 +217,8 @@ module Foobara
 
         def foobara_type_to_ts_type(
           type_declaration,
-          name: nil,
-          association_depth: AssociationDepth::AMBIGUOUS,
-          dependency_group: nil
+          dependency_group:, name: nil,
+          association_depth: AssociationDepth::AMBIGUOUS
         )
           if type_declaration.is_a?(Manifest::Attributes)
             ts_type = attributes_to_ts_type(type_declaration, association_depth:, dependency_group:)
@@ -228,7 +227,8 @@ module Foobara
           end
 
           if type_declaration.is_a?(Manifest::Array)
-            ts_type = foobara_type_to_ts_type(type_declaration.element_type)
+            # TODO: which association_depth do we pass here?
+            ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
             return "#{ts_type}[]"
           end
 

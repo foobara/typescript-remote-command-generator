@@ -39,7 +39,7 @@ module Foobara
         end
 
         def context_ts_type
-          foobara_type_to_ts_type(context_type_declaration)
+          foobara_type_to_ts_type(context_type_declaration, dependency_group:)
         end
 
         def dependencies

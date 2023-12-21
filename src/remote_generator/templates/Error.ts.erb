@@ -1,11 +1,10 @@
-// imports needed for context types...
-import <%= error_base_class %> from "<%= path_to_root %>base/Error"
-
-<% uniq_error_generators_by_symbol.each do |entity| %>
-import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-interface <%= error_name %><
+import { <%= error_base_class %> } from "<%= path_to_root %>base/Error"
+
+export interface <%= error_name %><
   keyT extends string,
   pathT extends string[] = [],
   runtime_pathT extends string[] = []

@@ -1,0 +1,16 @@
+import {
+  <%= entity_name %>AttributesType
+} from "./Ambiguous"
+import { Loaded<%= entity_name %> } from "./Loaded"
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
+export interface <%= entity_name %>AggregateAttributesType extends <%= entity_name %>AttributesType <%= aggregate_attributes_ts_type %>
+
+export class <%= entity_name %>Aggregate extends Loaded<%= entity_name %><<%= entity_name %>AggregateAttributesType> {
+  <% if has_associations? %>
+  get isAtom(): false { return false }
+  get isAggregate(): true { return true }
+  <% end %>
+}

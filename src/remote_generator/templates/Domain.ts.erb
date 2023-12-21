@@ -6,7 +6,13 @@ import {<%= command.command_name %>} from "<%= path_to_root %><%= command.import
 import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
 <% end %>
 
-const entities = {
+interface entitiesT {
+<% entity_generators.each do |entity| %>
+  readonly <%= entity.entity_name %>: <%= entity.entity_name %>,
+<% end %>
+}
+
+const entities: entitiesT = {
 <% entity_generators.each do |entity| %>
   <%= entity.entity_name %>,
 <% end %>
@@ -19,14 +25,10 @@ export class <%= domain_name %>Class extends Domain {
 
   // commands
 <% command_generators.each do |command| %>
-  <%= command.command_name %>() {
-    return <%= command.command_name %>;
-  }
-
+  readonly <%= command.command_name %> = <%= command.command_name %>
 <% end %>
-  get entities () {
-    return entities
-  }
+
+  readonly entities: entitiesT = entities
 }
 
 export const <%= domain_name %> = new <%= domain_name %>Class

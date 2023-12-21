@@ -1,0 +1,16 @@
+import { Never } from "<%= path_to_root %>base/Entity"
+import {
+  <%= entity_name %>,
+  <%= entity_name %>PrimaryKeyType,
+  <%= entity_name %>AttributesType
+} from "./Ambiguous"
+
+export type Unloaded<%= entity_name %>AttributesType = Never<<%= entity_name %>AttributesType>
+
+export class Unloaded<%= entity_name %> extends <%= entity_name %><Unloaded<%= entity_name %>AttributesType> {
+  constructor(id: <%= entity_name %>PrimaryKeyType) {
+    super(id)
+  }
+
+  get isLoaded(): false { return false }
+}

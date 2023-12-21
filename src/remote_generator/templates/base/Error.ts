@@ -1,16 +1,16 @@
-interface ErrorT {
+export interface ErrorT {
   key: string
   symbol: string
   category: "data" | "runtime"
   context: any
-  path: []
-  runtime_path: []
+  path: string[]
+  runtime_path: string[]
 }
 
-interface DataError extends Error {
+export interface DataError extends ErrorT {
   category: "data"
 }
 
-interface RuntimeError extends Error {
+export interface RuntimeError extends ErrorT {
   category: "runtime"
 }

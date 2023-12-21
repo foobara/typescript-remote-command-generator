@@ -1,0 +1,35 @@
+import {
+  <%= entity_name %>,
+  <%= entity_name %>PrimaryKeyType,
+  <%= entity_name_downcase %>PrimaryKeyAttributeName,
+  <%= entity_name %>AttributesType
+} from "./<%= entity_name %>/Ambiguous"
+import {
+  Unloaded<%= entity_name %>,
+  Unloaded<%= entity_name %>AttributesType
+} from "./<%= entity_name %>/Unloaded"
+import {
+  Loaded<%= entity_name %>
+} from "./<%= entity_name %>/Loaded"
+import {
+  <%= entity_name %>Atom,
+  <%= entity_name %>AtomAttributesType
+} from "./<%= entity_name %>/Atom"
+import {
+  <%= entity_name %>Aggregate,
+  <%= entity_name %>AggregateAttributesType
+} from "./<%= entity_name %>/Aggregate"
+
+export {
+  <%= entity_name %>,
+  <%= entity_name %>PrimaryKeyType,
+  <%= entity_name_downcase %>PrimaryKeyAttributeName,
+  <%= entity_name %>AttributesType,
+  Unloaded<%= entity_name %>,
+  Unloaded<%= entity_name %>AttributesType,
+  Loaded<%= entity_name %>,
+  <%= entity_name %>Atom,
+  <%= entity_name %>AtomAttributesType,
+  <%= entity_name %>Aggregate,
+  <%= entity_name %>AggregateAttributesType
+}

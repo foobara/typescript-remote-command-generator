@@ -1,13 +1,20 @@
 module Foobara
   module RemoteGenerator
     class GenerateTypescript < Foobara::Command
+      class MissingManifestError < RuntimeError; end
+
+      possible_error MissingManifestError
+
       # TODO: give better sugar for specifying required inputs
-      inputs raw_manifest: { type: :associative_array, required: true }
+      inputs raw_manifest: { type: :associative_array },
+             manifest_url: { type: :string }
 
       # TODO: specify a better type?
       result :associative_array
 
       def execute
+        load_manifest_if_needed
+
         generate_base_files
 
         add_all_commands_to_set_of_elements_to_generate
@@ -21,7 +28,21 @@ module Foobara
         paths_to_source_code
       end
 
-      attr_accessor :command_manifest, :element_to_generate, :generator
+      def validate
+        if raw_manifest.nil? && manifest_url.nil?
+          add_runtime_error(MissingManifestError.new("Either raw_manifest or manifest_url must be given"))
+        end
+      end
+
+      attr_accessor :command_manifest, :element_to_generate, :generator, :manifest_data
+
+      def load_manifest_if_needed
+        self.manifest_data = if raw_manifest
+                               raw_manifest
+                             elsif manifest_url
+                               JSON.parse(File.read(manifest_url))
+                             end
+      end
 
       def elements_to_generate
         @elements_to_generate ||= Set.new
@@ -73,7 +94,7 @@ module Foobara
       end
 
       def manifest
-        @manifest ||= Manifest::RootManifest.new(raw_manifest)
+        @manifest ||= Manifest::RootManifest.new(manifest_data)
       end
 
       def paths_to_source_code

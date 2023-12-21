@@ -11,7 +11,8 @@ export class <%= organization_name %>Class extends Organization {
   readonly <%= domain.domain_name %> = <%= domain.domain_name %>
 <% end %>
 
-  domainForName(name: string) { {
+  domainForName(name: string) {
+    return {
   <% domain_generators.each do |domain| %>
   <%= domain.domain_name %>: <%= domain.domain_name %>,
   <% end %>

@@ -5,11 +5,10 @@ import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= depen
 
 export type <%= entity_name %>PrimaryKeyType = <%= primary_key_ts_type %>
 export const <%= entity_name_downcase %>PrimaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
-
 export interface <%= entity_name %>AttributesType <%= attributes_type_ts_type %>
 
 export class <%= entity_name %><
-  AttributesType extends <%= attributes_types_union %> = <%= attributes_types_union %>
+  AttributesType extends <%= entity_name %>AttributesType = <%= entity_name %>AttributesType
 > extends Entity<<%= entity_name %>PrimaryKeyType, AttributesType> {
   static readonly entityName: string = "<%= entity_name %>"
   static readonly primaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"

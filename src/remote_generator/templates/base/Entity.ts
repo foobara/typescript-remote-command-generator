@@ -4,11 +4,13 @@ export type Never<T> = {[P in keyof T]: never};
 export type UnloadedAttributesType = {}
 export type EntityPrimaryKeyType = number | string
 
+/*
 interface EntityConstructor<PrimaryKeyType extends EntityPrimaryKeyType, AttributesType> {
   new(primaryKey: PrimaryKeyType, attributes: any): Entity<PrimaryKeyType, AttributesType>
   entityName: string
   primaryKeyAttributeName: string
 }
+*/
 
 export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, AttributesType> {
   static readonly entityName: string
@@ -77,9 +79,11 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     return true
   }
 
+  /* Can we make this work or not?
   getConstructor(): EntityConstructor<PrimaryKeyType, AttributesType> {
     return this.constructor as EntityConstructor<PrimaryKeyType, AttributesType>;
   }
+  */
 
   get isLoaded(): boolean {
     return this._isLoaded
@@ -88,7 +92,7 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
   get attributes(): AttributesType {
     if (!this.isLoaded) {
       throw new Error(
-        `Cannot read attributes because ${this.getConstructor().entityName}:${this.primaryKey} is not a loaded record`
+        `Cannot read attributes because :${this.primaryKey} is not a loaded record`
       )
     }
 

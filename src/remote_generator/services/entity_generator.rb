@@ -70,17 +70,13 @@ module Foobara
         end
 
         def aggregate_name(points = nil)
-          if has_associations?
-            *prefix, name = if points
-                              scoped_full_path(points)
-                            else
-                              scoped_path
-                            end
+          *prefix, name = if points
+                            scoped_full_path(points)
+                          else
+                            scoped_path
+                          end
 
-            [*prefix, "#{name}Aggregate"].join(".")
-          else
-            loaded_name(points)
-          end
+          [*prefix, "#{name}Aggregate"].join(".")
         end
 
         def all_names

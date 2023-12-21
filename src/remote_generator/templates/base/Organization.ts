@@ -1,4 +1,10 @@
+
 export class Organization {
+  static all: {[organizationName: string]: Organization} = {}
+  static forName(organizationName: string): Organization {
+    return this.all[organizationName]
+  }
+
   organizationName: string
   isGlobal: boolean
   _urlBase: string | undefined
@@ -6,6 +12,7 @@ export class Organization {
   constructor(organizationName: string, isGlobal: boolean = false) {
     this.organizationName = organizationName
     this.isGlobal = isGlobal
+    Organization.all[organizationName] = this
   }
 
   get urlBase(): string {
@@ -21,6 +28,8 @@ export class Organization {
   set urlBase(urlBase: string) {
     this._urlBase = urlBase
   }
+
+
 }
 
 export const globalOrganization = new Organization("global_organization", true)

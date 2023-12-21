@@ -1,7 +1,7 @@
 import { Entity, Never } from "<%= path_to_root %>base/Entity"
 
-<% entity_generators.each do |entity_generator| %>
-import { <%= entity_generator.all_names.join(", ") %> } from "<%= path_to_root %><%= entity_generator.import_path %>"
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
 export type <%= entity_name %>PrimaryKeyType = <%= primary_key_ts_type %>

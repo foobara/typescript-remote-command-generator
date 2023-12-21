@@ -1,11 +1,21 @@
 import { Outcome } from './Outcome';
 import { Organization } from "./Organization";
-import { Domain, globalDomain } from "./Domain";
+import { Domain } from "./Domain";
 
 export default abstract class RemoteCommand<Inputs, Result, Error> {
   static _urlBase: string
-  static domain: Domain = globalDomain
+  static domain: Domain
   static commandName: string
+  static organizationName: string
+  static domainName: string
+
+  get organizationName(): string {
+    return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).organizationName
+  }
+
+  get domainName(): string {
+    return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).domainName
+  }
 
   inputs: Inputs
 
@@ -15,7 +25,15 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   }
 
   static get organization(): Organization {
-    return this.domain.organization
+    return Organization.forName(this.organizationName)
+  }
+
+  static get domain(): Domain {
+    return this.organization.domainForName(this.domainName)
+  }
+
+  static get domain(): Domain {
+
   }
 
   static get urlBase(): string {
@@ -24,22 +42,6 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
 
   static set urlBase(urlBase: string) {
     this._urlBase = urlBase
-  }
-
-  static get domainName(): string {
-    return this.domain.domainName
-  }
-
-  static get organizationName(): string {
-    return this.organization.organizationName
-  }
-
-  get domainName(): string {
-    return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).domainName
-  }
-
-  get organizationName(): string {
-    return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).organizationName
   }
 
   get commandName(): string {

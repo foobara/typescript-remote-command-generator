@@ -8,9 +8,15 @@ export class <%= organization_name %>Class extends Organization {
     super("<%= organization_name %>")
   }
 <% domain_generators.each do |domain| %>
-
   readonly <%= domain.domain_name %> = <%= domain.domain_name %>
 <% end %>
+
+  domainForName(name: string) { {
+  <% domain_generators.each do |domain| %>
+  <%= domain.domain_name %>: <%= domain.domain_name %>,
+  <% end %>
+}[name]
+}
 }
 
 export const <%= organization_name %> = new <%= organization_name %>Class

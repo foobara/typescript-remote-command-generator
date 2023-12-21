@@ -1,19 +1,15 @@
-import {globalOrganization, Organization} from "./Organization";
+import { Organization} from "./Organization";
 
 export class Domain {
-  organization: Organization
+  organizationName: string
   domainName: string
   isGlobal: boolean
   _urlBase: string | undefined
 
-  constructor(organization: Organization, domainName: string, isGlobal: boolean = false) {
-    this.organization = organization
+  constructor(organizationName: string, domainName: string, isGlobal: boolean = false) {
+    this.organizationName = organizationName
     this.domainName = domainName
     this.isGlobal = isGlobal
-  }
-
-  get organizationName(): string {
-    return this.organization.organizationName
   }
 
   get urlBase(): string {
@@ -23,6 +19,10 @@ export class Domain {
   set urlBase(urlBase: string) {
     this._urlBase = urlBase
   }
+
+  get organization(): Organization {
+    return Organization.forName(this.organizationName)
+  }
 }
 
-export const globalDomain = new Domain(globalOrganization, "global_domain", true)
+export const globalDomain = new Domain("global_organization", "global_domain", true)

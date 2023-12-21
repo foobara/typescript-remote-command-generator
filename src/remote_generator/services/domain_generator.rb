@@ -27,7 +27,7 @@ module Foobara
         end
 
         def dependencies
-          [*command_generators, *entity_generators]
+          [*command_generators, *entity_generators, *organization]
         end
       end
     end

@@ -6,7 +6,6 @@ import Errors from "./Errors"
 
 export class <%= command_name %> extends RemoteCommand<Inputs, Result, Errors> {
 <% unless organization.global? %>
-  <% elements_to_generate << organization %>
   static organizationName = "<%= organization_name %>"
 <% end %>
 <% unless domain.global? %>

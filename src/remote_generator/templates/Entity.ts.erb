@@ -21,7 +21,7 @@ export class <%= entity_name %><
   static readonly entityName: string = "<%= entity_name %>"
   static readonly primaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
 
-  get associationPropertyNames () {
+  get associationPropertyNames (): (keyof AttributesType)[] {
     return <%= association_property_names_ts_array %>
   }
 
@@ -57,12 +57,6 @@ export class Loaded<%= entity_name %><T extends <%= entity_name %>AttributesType
   <% unless has_associations? %>
   get isAtom(): true { return true }
   get isAggregate(): true { return true }
-  <% end %>
-
-  <% attribute_names.each do |attribute_name| %>
-  get <%= attribute_name %> (): T["<%= attribute_name %>"] {
-    return this._attributes.<%= attribute_name %>
-  }
   <% end %>
 }
 

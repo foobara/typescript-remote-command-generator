@@ -281,7 +281,7 @@ module Foobara
           when AssociationDepth::AMBIGUOUS
             generator.entity_name(points)
           when AssociationDepth::ATOM
-            generator.atom_name(points)
+            generator.unloaded_name(points)
           when AssociationDepth::AGGREGATE
             generator.aggregate_name(points)
           else

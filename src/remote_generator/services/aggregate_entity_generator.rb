@@ -11,6 +11,12 @@ module Foobara
         def template_path
           ["Entity", "Aggregate.ts.erb"]
         end
+
+        def entity_generators
+          types_depended_on.select(&:entity?).map do |entity|
+            Services::AggregateEntityGenerator.new(entity, elements_to_generate)
+          end
+        end
       end
     end
   end

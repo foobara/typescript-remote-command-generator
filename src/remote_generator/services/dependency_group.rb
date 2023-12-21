@@ -72,6 +72,7 @@ module Foobara
           points_climbed = 0
 
           until points_climbed >= points
+
             points_climbed += dep.scoped_path.size
             root = root.parent
           end

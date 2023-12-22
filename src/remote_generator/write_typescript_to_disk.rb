@@ -1,3 +1,5 @@
+require_relative "generate_typescript"
+
 module Foobara
   module RemoteGenerator
     class WriteTypescriptToDisk < Foobara::Command
@@ -24,7 +26,14 @@ module Foobara
       attr_accessor :paths_to_source_code
 
       def generate_typescript
-        self.paths_to_source_code = run_subcommand!(GenerateTypescript, raw_manifest:, manifest_url:)
+        # TODO: we need a way to allow values to be nil in type declarations
+        inputs = if raw_manifest
+                   { raw_manifest: }
+                 else
+                   { manifest_url: }
+                 end
+
+        self.paths_to_source_code = run_subcommand!(GenerateTypescript, inputs)
       end
 
       def delete_old_files_if_needed
@@ -33,18 +42,14 @@ module Foobara
         if File.exist?(file_list_file)
           file_list = JSON.parse(File.read(file_list_file))
 
-          file_list = file_list.map { |file| file.split("/").first }
-
-          file_list.uniq.each do |file|
-            FileUtils.rm_rf("#{out_dir}/#{file}")
-          end
-
-          FileUtils.rm_rf(file_list_file)
+          file_list.map do |file|
+            Thread.new { FileUtils.rm("#{output_directory}/#{file}") }
+          end.each(&:join)
         end
       end
 
       def write_all_files_to_disk
-        write_to_tmp("foobara-generated.json", paths_to_source_code["foobara-generated.json"])
+        write_file_to_disk("foobara-generated.json", paths_to_source_code["foobara-generated.json"])
 
         paths_to_source_code.map do |path, contents|
           Thread.new { write_file_to_disk(path, contents) unless path == "foobara-generated.json" }

@@ -1,6 +1,8 @@
 require "foobara/all"
 
 require "erb"
+require "json"
+require "open-uri"
 
 require "remote_generator"
 

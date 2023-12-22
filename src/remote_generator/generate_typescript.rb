@@ -40,7 +40,8 @@ module Foobara
         self.manifest_data = if raw_manifest
                                raw_manifest
                              elsif manifest_url
-                               JSON.parse(File.read(manifest_url))
+                               manifest_json = URI.open(manifest_url).read
+                               JSON.parse(manifest_json)
                              end
       end
 

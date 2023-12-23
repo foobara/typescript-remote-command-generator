@@ -6,7 +6,9 @@ import {<%= command.command_name %>} from "<%= path_to_root %><%= command.import
 import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
 <% end %>
 
-interface entitiesT {
+<% if entity_generators.empty? %>
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+<% end %>interface entitiesT {
 <% entity_generators.each do |entity| %>
   readonly <%= entity.entity_name %>: <%= entity.entity_name %>,
 <% end %>

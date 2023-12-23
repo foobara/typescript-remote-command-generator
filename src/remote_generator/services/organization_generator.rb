@@ -23,6 +23,16 @@ module Foobara
         def dependencies
           domain_generators
         end
+
+        def organization_name
+          s = super
+
+          if s == "global_organization"
+            s = "GlobalOrganization"
+          end
+
+          s
+        end
       end
     end
   end

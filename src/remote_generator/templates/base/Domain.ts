@@ -10,6 +10,8 @@ export class Domain {
     this.organizationName = organizationName
     this.domainName = domainName
     this.isGlobal = isGlobal
+
+    this.organization.addDomain(this)
   }
 
   get urlBase(): string {
@@ -25,4 +27,4 @@ export class Domain {
   }
 }
 
-export const globalDomain = new Domain("global_organization", "global_domain", true)
+export const globalDomain = new Domain("GlobalOrganization", "GlobalDomain", true)

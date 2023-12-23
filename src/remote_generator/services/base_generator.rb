@@ -199,11 +199,11 @@ module Foobara
         def domain_path
           path = []
 
-          if organization_name != "global_organization"
+          if organization_name != "GlobalOrganization"
             path << organization_name
           end
 
-          if domain_name != "global_domain"
+          if domain_name != "GlobalDomain"
             path << domain_name
           end
 

@@ -1,6 +1,6 @@
 import {Domain} from "./Domain";
 
-export abstract class Organization {
+export class Organization {
   static all: {[organizationName: string]: Organization} = {}
   static forName(organizationName: string): Organization {
     return this.all[organizationName]
@@ -17,7 +17,13 @@ export abstract class Organization {
     Organization.all[organizationName] = this
   }
 
-  abstract domainForName(domainName: string): Domain
+  domainForName(domainName: string): Domain {
+    return this.domainsByName[domainName]
+  }
+
+  addDomain(domain: Domain) {
+    this.domainsByName[domain.domainName] = domain
+  }
 
   get urlBase(): string {
     let base = this._urlBase
@@ -36,7 +42,7 @@ export abstract class Organization {
 
 }
 
-export const globalOrganization = new Organization("global_organization", true)
+export const globalOrganization = new Organization("GlobalOrganization", true)
 
 const globalUrlBase = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
 

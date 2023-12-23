@@ -3,8 +3,7 @@ import { Organization } from "./Organization";
 import { Domain } from "./Domain";
 
 export default abstract class RemoteCommand<Inputs, Result, Error> {
-  static _urlBase: string
-  static domain: Domain
+  static _urlBase: string | undefined
   static commandName: string
   static organizationName: string
   static domainName: string
@@ -32,12 +31,8 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
     return this.organization.domainForName(this.domainName)
   }
 
-  static get domain(): Domain {
-
-  }
-
   static get urlBase(): string {
-    return this._urlBase || this.domain.urlBase
+    return this._urlBase ?? this.domain.urlBase
   }
 
   static set urlBase(urlBase: string) {
@@ -80,7 +75,7 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
         errors: await response.json()
       }
     } else {
-      throw new Error(`not sure how to handle ${response}`)
+      throw new Error(`not sure how to handle ${await response.text()}`)
     }
   }
 }

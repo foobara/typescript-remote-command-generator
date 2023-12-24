@@ -1,3 +1,6 @@
+require "net/http"
+require "uri"
+
 module Foobara
   module RemoteGenerator
     class GenerateTypescript < Foobara::Command
@@ -40,7 +43,16 @@ module Foobara
         self.manifest_data = if raw_manifest
                                raw_manifest
                              elsif manifest_url
-                               manifest_json = URI.open(manifest_url).read
+                               url = URI.parse(manifest_url)
+                               response = Net::HTTP.get_response(url)
+
+                               manifest_json = if response.is_a?(Net::HTTPSuccess)
+                                                 response.body
+                                               else
+                                                 raise "Could not get manifest from #{url}: " \
+                                                       "#{response.code} #{response.message}"
+                                               end
+
                                JSON.parse(manifest_json)
                              end
       end

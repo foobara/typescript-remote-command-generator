@@ -18,7 +18,6 @@ module Foobara
 
           dependencies.each do |dep|
             if dep.belongs_to_dependency_group
-              binding.pry
               raise "Dependency group #{dep} already belongs to dependency group #{dep.dependency_group}"
             end
 
@@ -26,9 +25,6 @@ module Foobara
           end
 
           find_collisions
-        rescue => e
-          binding.pry
-          raise
         end
 
         def collision_data_for(dep)
@@ -47,9 +43,6 @@ module Foobara
 
         def to_key(dep)
           [dep.scoped_category.to_s, dep.scoped_full_path.map(&:to_s)]
-        rescue => e
-          binding.pry
-          raise
         end
 
         def collision_data
@@ -78,9 +71,6 @@ module Foobara
           end
 
           root
-        rescue => e
-          binding.pry
-          raise
         end
 
         def points_for(dep)
@@ -91,9 +81,6 @@ module Foobara
           end
 
           points
-        rescue => e
-          binding.pry
-          raise
         end
 
         def non_colliding_name(dep, points = points_for(dep))
@@ -103,9 +90,6 @@ module Foobara
         def non_colliding_path(dep, points = points_for(dep))
           start_at = dep.scoped_full_path.size - points - 1
           dep.scoped_full_path[start_at..].map(&:to_s)
-        rescue => e
-          binding.pry
-          raise
         end
 
         private

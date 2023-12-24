@@ -52,7 +52,6 @@ module Foobara
                             when Manifest::ProcessorClass
                               Services::ProcessorClassGenerator
                             else
-                              binding.pry
                               raise "Not sure how build a generator for a #{manifest}"
                             end
 
@@ -102,15 +101,11 @@ module Foobara
             end
 
             DependencyGroup.new(generators, name: scoped_full_path.join("."))
-          rescue => e
-            binding.pry
-            raise
           end
         end
 
         def dependency_roots
           unless dependency_group
-            binding.pry
             raise "This generator was created without a " \
                   "dependency_group and therefore cannot call #{__method__}"
           end
@@ -120,7 +115,6 @@ module Foobara
 
         def non_colliding_root
           unless belongs_to_dependency_group
-            binding.pry
             raise "This generator was created without a " \
                   "belongs_to_dependency_group and therefore cannot call #{__method__}"
           end
@@ -130,7 +124,6 @@ module Foobara
 
         def non_colliding_name
           unless belongs_to_dependency_group
-            binding.pry
             raise "This generator was created without a " \
                   "belongs_to_dependency_group and therefore cannot call #{__method__}"
           end

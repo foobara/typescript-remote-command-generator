@@ -5,6 +5,7 @@ export interface ErrorT {
   context: any
   path: string[]
   runtime_path: string[]
+  message: string
 }
 
 export interface DataError extends ErrorT {

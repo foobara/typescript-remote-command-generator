@@ -17,8 +17,12 @@ export class Organization {
     Organization.all[organizationName] = this
   }
 
-  domainForName(domainName: string): Domain {
-    return this.domainsByName[domainName]
+  domainForName (domainName: string): Domain {
+    if (domainName in this.domainsByName) {
+      return this.domainsByName[domainName]
+    }
+
+    throw new Error(`Unknown domain name: ${domainName}`)
   }
 
   addDomain(domain: Domain): void {
@@ -38,8 +42,6 @@ export class Organization {
   set urlBase(urlBase: string) {
     this._urlBase = urlBase
   }
-
-
 }
 
 export const globalOrganization = new Organization("GlobalOrganization", true)

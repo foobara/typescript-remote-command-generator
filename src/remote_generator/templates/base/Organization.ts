@@ -2,8 +2,12 @@ import {Domain} from "./Domain";
 
 export class Organization {
   static all: {[organizationName: string]: Organization} = {}
-  static forName(organizationName: string): Organization {
-    return this.all[organizationName]
+  static forName (organizationName: string): Organization {
+    if (organizationName in this.all) {
+      return this.all[organizationName]
+    }
+
+    throw new Error(`Unknown organization name: ${organizationName}`)
   }
 
   organizationName: string

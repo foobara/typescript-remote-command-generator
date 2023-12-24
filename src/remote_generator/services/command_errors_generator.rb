@@ -37,7 +37,7 @@ module Foobara
         end
 
         def instantiated_error_types_union
-          error_types.keys.map do |key|
+          error_types.keys.sort.map do |key|
             instantiated_error_type(key)
           end.join(" |\n  ")
         end

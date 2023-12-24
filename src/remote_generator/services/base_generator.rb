@@ -110,7 +110,7 @@ module Foobara
                   "dependency_group and therefore cannot call #{__method__}"
           end
 
-          dependency_group.non_colliding_dependency_roots
+          dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
 
         def non_colliding_root
@@ -204,8 +204,13 @@ module Foobara
         end
 
         def path_to_root
-          parts = ["../"] * (target_path.size - 1)
-          parts.join
+          size = target_path.size - 1
+
+          if size.zero?
+            "./"
+          else
+            (["../"] * size).join
+          end
         end
 
         def import_path

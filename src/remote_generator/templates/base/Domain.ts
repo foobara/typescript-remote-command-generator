@@ -1,6 +1,20 @@
-import { Organization} from "./Organization";
+import { Organization } from "./Organization";
 
 export class Domain {
+  static domainsByOrganization: {[organizationName: string]: {[domainName: string]: Domain}} = {}
+
+  static forName(organizationName: string, domainName: string): Domain {
+    if (organizationName in Domain.domainsByOrganization) {
+      if (domainName in Domain.domainsByOrganization[organizationName]) {
+        return Domain.domainsByOrganization[organizationName][domainName]
+      } else {
+        throw new Error(`Unknown domain name: ${domainName}`)
+      }
+    } else {
+      throw new Error(`Unknown organization name: ${organizationName}`)
+    }
+  }
+
   organizationName: string
   domainName: string
   isGlobal: boolean
@@ -11,7 +25,11 @@ export class Domain {
     this.domainName = domainName
     this.isGlobal = isGlobal
 
-    this.organization.addDomain(this)
+    if (organizationName in Domain.domainsByOrganization) {
+      Domain.domainsByOrganization[organizationName][domainName] = this
+    } else {
+      Domain.domainsByOrganization[organizationName] = {[domainName]: this}
+    }
   }
 
   get urlBase(): string {
@@ -26,5 +44,3 @@ export class Domain {
     return Organization.forName(this.organizationName)
   }
 }
-
-export const globalDomain = new Domain("GlobalOrganization", "GlobalDomain", true)

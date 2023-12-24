@@ -7,7 +7,11 @@ module Foobara
         alias domain_manifest relevant_manifest
 
         def target_path
-          [*scoped_full_path, "index.ts"]
+          if global?
+            ["GlobalDomain.ts"]
+          else
+            [*scoped_full_path, "index.ts"]
+          end
         end
 
         def template_path
@@ -40,15 +44,11 @@ module Foobara
           s
         end
 
-        def organization_name
-          s = super
-
-          if s == "global_organization"
-            s = "GlobalOrganization"
-          end
-
-          s
+        def organization_generator
+          @organization_generator ||= OrganizationGenerator.new(domain_manifest.organization, elements_to_generate)
         end
+
+        foobara_delegate :organization_name, to: :organization_generator
       end
     end
   end

@@ -13,11 +13,17 @@ export class <%= organization_name %>Class extends Organization {
 <% end %>
 
   domainForName(name: string): Domain {
-    return {
+    const domain = {
   <% domain_generators.each do |domain| %>
   <%= domain.domain_name %>: <%= domain.domain_name %>,
   <% end %>
 }[name]
+
+    if (!domain) {
+      throw new Error(`Unknown domain name: ${name}`)
+    }
+
+    return domain
 }
 }
 

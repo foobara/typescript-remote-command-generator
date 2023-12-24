@@ -204,8 +204,13 @@ module Foobara
         end
 
         def path_to_root
-          parts = ["../"] * (target_path.size - 1)
-          parts.join
+          size = target_path.size - 1
+
+          if size.zero?
+            "./"
+          else
+            (["../"] * size).join
+          end
         end
 
         def import_path

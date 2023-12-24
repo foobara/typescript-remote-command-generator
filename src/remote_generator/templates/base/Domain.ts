@@ -15,7 +15,7 @@ export class Domain {
   }
 
   get urlBase(): string {
-    return this._urlBase || this.organization.urlBase
+    return this._urlBase ?? this.organization.urlBase
   }
 
   set urlBase(urlBase: string) {

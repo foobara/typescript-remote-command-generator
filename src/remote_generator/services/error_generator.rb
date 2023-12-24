@@ -15,7 +15,7 @@ module Foobara
           when OrganizationGenerator, DomainGenerator, CommandGenerator
             [*p.target_dir, "errors", basename]
           when nil
-            ["errors", basename]
+            ["base", "errors", basename]
           else
             [*p.target_dir, basename]
           end
@@ -39,7 +39,12 @@ module Foobara
         end
 
         def context_ts_type
-          foobara_type_to_ts_type(context_type_declaration, dependency_group:)
+          if context_type_declaration.is_a?(Manifest::Attributes) && context_type_declaration.empty?
+            # TODO: update other parts of the generator that disable the linting rule to use this instead...
+            "Record<string, never>"
+          else
+            foobara_type_to_ts_type(context_type_declaration, dependency_group:)
+          end
         end
 
         def dependencies

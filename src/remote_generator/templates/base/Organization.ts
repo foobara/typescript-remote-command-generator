@@ -21,18 +21,18 @@ export class Organization {
     return this.domainsByName[domainName]
   }
 
-  addDomain(domain: Domain) {
+  addDomain(domain: Domain): void {
     this.domainsByName[domain.domainName] = domain
   }
 
   get urlBase(): string {
     let base = this._urlBase
 
-    if (!base && this.isGlobal) {
+    if (base == null && this.isGlobal) {
       throw new Error("urlBase not set")
     }
 
-    return base || globalOrganization.urlBase
+    return base ?? globalOrganization.urlBase
   }
 
   set urlBase(urlBase: string) {
@@ -46,6 +46,6 @@ export const globalOrganization = new Organization("GlobalOrganization", true)
 
 const globalUrlBase = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
 
-if (globalUrlBase) {
+if (globalUrlBase != null) {
   globalOrganization.urlBase = globalUrlBase
 }

@@ -10,7 +10,9 @@ export interface <%= entity_name %>AtomAttributesType extends <%= entity_name %>
 
 export class <%= entity_name %>Atom extends Loaded<%= entity_name %><<%= entity_name %>AtomAttributesType> {
   <% if has_associations? %>
-  readonly isAtom: true = true
-  readonly isAggregate: false = false
+  /* eslint-disable @typescript-eslint/class-literal-property-style */
+  get isAtom (): true { return true }
+  get isAggregate (): false { return false }
+  /* eslint-enable @typescript-eslint/class-literal-property-style */
   <% end %>
 }

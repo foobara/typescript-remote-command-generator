@@ -27,11 +27,7 @@ module Foobara
 
       def generate_typescript
         # TODO: we need a way to allow values to be nil in type declarations
-        inputs = if raw_manifest
-                   { raw_manifest: }
-                 else
-                   { manifest_url: }
-                 end
+        inputs = raw_manifest ? { raw_manifest: } : { manifest_url: }
 
         self.paths_to_source_code = run_subcommand!(GenerateTypescript, inputs)
       end

@@ -6,7 +6,9 @@ import {
 export class Loaded<%= entity_name %><T extends <%= entity_name %>AttributesType> extends <%= entity_name %><T> {
   readonly isLoaded: true = true
   <% unless has_associations? %>
-  readonly isAtom: true = true
-  readonly isAggregate: true = true
+/* eslint-disable @typescript-eslint/class-literal-property-style */
+  get isAtom (): true { return true }
+  get isAggregate (): true { return true }
+/* eslint-enable @typescript-eslint/class-literal-property-style */
   <% end %>
 }

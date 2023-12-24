@@ -10,7 +10,7 @@ export interface <%= entity_name %>AggregateAttributesType extends <%= entity_na
 
 export class <%= entity_name %>Aggregate extends Loaded<%= entity_name %><<%= entity_name %>AggregateAttributesType> {
   <% if has_associations? %>
-  get isAtom(): false { return false }
-  get isAggregate(): true { return true }
+  readonly isAtom: false = false
+  readonly isAggregate: true = true
   <% end %>
 }

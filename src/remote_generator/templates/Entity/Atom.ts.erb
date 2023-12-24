@@ -10,7 +10,7 @@ export interface <%= entity_name %>AtomAttributesType extends <%= entity_name %>
 
 export class <%= entity_name %>Atom extends Loaded<%= entity_name %><<%= entity_name %>AtomAttributesType> {
   <% if has_associations? %>
-  get isAtom(): true { return true }
-  get isAggregate(): false { return false }
+  readonly isAtom: true = true
+  readonly isAggregate: false = false
   <% end %>
 }

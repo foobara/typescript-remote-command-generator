@@ -1,7 +1,6 @@
 export type Never<T> = {[P in keyof T]: never};
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export type UnloadedAttributesType = {}
 export type EntityPrimaryKeyType = number | string
 
 /*
@@ -17,21 +16,16 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
   static readonly primaryKeyAttributeName: string
 
   readonly primaryKey: PrimaryKeyType
-  readonly _isLoaded: boolean
-  readonly _attributes: AttributesType | undefined
+  readonly isLoaded: boolean
+  readonly _attributes: AttributesType
 
   abstract get hasAssociations(): boolean
   abstract get associationPropertyNames (): (keyof AttributesType)[]
 
-  constructor(primaryKey: PrimaryKeyType, attributes: AttributesType | undefined = undefined) {
+  constructor(primaryKey: PrimaryKeyType, attributes: AttributesType) {
     this.primaryKey = primaryKey
-
-    if (attributes === undefined) {
-      this._isLoaded = false
-    } else {
-      this._isLoaded = true
-      this._attributes = attributes
-    }
+    this._attributes = attributes
+    this.isLoaded = attributes !== undefined
   }
 
   get isAtom(): boolean {
@@ -83,10 +77,6 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     return this.constructor as EntityConstructor<PrimaryKeyType, AttributesType>;
   }
   */
-
-  get isLoaded(): boolean {
-    return this._isLoaded
-  }
 
   get attributes(): AttributesType {
     if (!this.isLoaded) {

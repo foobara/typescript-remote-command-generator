@@ -13,13 +13,8 @@ export class <%= entity_name %><
   static readonly entityName: string = "<%= entity_name %>"
   static readonly primaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
 
-  get associationPropertyNames (): (keyof AttributesType)[] {
-    return <%= association_property_names_ts_array %>
-  }
-
-  get hasAssociations (): <%= has_associations? %> {
-    return <%= has_associations? %>
-  }
+  readonly associationPropertyNames: (keyof AttributesType)[] = <%= association_property_names_ts_array %>
+  readonly hasAssociations: <%= has_associations? %> = <%= has_associations? %>
 
   get <%= primary_key_name %> (): <%= entity_name %>PrimaryKeyType {
     return this.primaryKey

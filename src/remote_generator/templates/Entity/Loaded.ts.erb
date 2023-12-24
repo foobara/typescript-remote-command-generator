@@ -1,17 +1,12 @@
 import {
   <%= entity_name %>,
-  <%= entity_name %>PrimaryKeyType,
   <%= entity_name %>AttributesType
 } from "./Ambiguous"
 
 export class Loaded<%= entity_name %><T extends <%= entity_name %>AttributesType> extends <%= entity_name %><T> {
-  constructor(id: <%= entity_name %>PrimaryKeyType, attributes: T) {
-    super(id, attributes)
-  }
-
-  get isLoaded(): true { return true }
+  readonly isLoaded: true = true
   <% unless has_associations? %>
-  get isAtom(): true { return true }
-  get isAggregate(): true { return true }
+  readonly isAtom: true = true
+  readonly isAggregate: true = true
   <% end %>
 }

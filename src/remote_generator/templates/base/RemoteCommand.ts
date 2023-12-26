@@ -7,6 +7,8 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   static commandName: string
   static organizationName: string
   static domainName: string
+  static organization: Organization
+  static domain: Domain
 
   get organizationName(): string {
     return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).organizationName
@@ -16,20 +18,20 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
     return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).domainName
   }
 
-  inputs: Inputs
+  get organization(): Organization {
+    return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).organization
+  }
 
+  get domain(): Domain {
+    return (this.constructor as typeof RemoteCommand<Inputs,Result,Error>).domain
+  }
+
+  inputs: Inputs
 
   constructor(inputs: Inputs) {
     this.inputs = inputs
   }
 
-  static get organization(): Organization {
-    return Organization.forName(this.organizationName)
-  }
-
-  static get domain(): Domain {
-    return this.organization.domainForName(this.domainName)
-  }
 
   static get urlBase(): string {
     return this._urlBase ?? this.domain.urlBase

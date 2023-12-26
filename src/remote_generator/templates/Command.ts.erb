@@ -1,16 +1,17 @@
 import RemoteCommand from "<%= path_to_root %>base/RemoteCommand"
 
+import { <%= domain_name %> } from "<%= path_to_root %><%= domain_generator.import_path %>"
+import { <%= organization_name %> } from "<%= path_to_root %><%= organization_generator.import_path %>"
+
 import Inputs from "./Inputs"
 import Result from "./Result"
 import Errors from "./Errors"
 
 export class <%= command_name %> extends RemoteCommand<Inputs, Result, Errors> {
-<% unless organization.global? %>
-  static organizationName = "<%= organization_name %>"
-<% end %>
-<% unless domain.global? %>
-  <% elements_to_generate << domain %>
-  static domainName = "<%= domain_name %>"
-<% end %>
-  static commandName = "<%= command_name %>"
+  static readonly organizationName = "<%= organization_name %>"
+  static readonly domainName = "<%= domain_name %>"
+  static readonly commandName = "<%= command_name %>"
+
+  static readonly organization: typeof <%= organization_name %> = <%= organization_name %>
+  static readonly domain: typeof <%= domain_name %> = <%= domain_name %>
 }

@@ -10,8 +10,6 @@ export class Domain {
     this.organizationName = organizationName
     this.domainName = domainName
     this.isGlobal = isGlobal
-
-    this.organization.addDomain(this)
   }
 
   get urlBase(): string {

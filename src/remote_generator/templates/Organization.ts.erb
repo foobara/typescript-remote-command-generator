@@ -9,7 +9,7 @@ export class <%= organization_name %>Class extends Organization {
     super("<%= organization_name %>")
   }
 <% domain_generators.each do |domain| %>
-  readonly <%= domain.domain_name %> = <%= domain.domain_name %>
+  readonly <%= domain.domain_name %>: typeof <%= domain.domain_name %> = <%= domain.domain_name %>
 <% end %>
 
   domainForName(name: string): Domain {

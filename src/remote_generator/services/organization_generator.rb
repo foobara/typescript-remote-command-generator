@@ -7,8 +7,12 @@ module Foobara
         alias organization_manifest relevant_manifest
 
         def target_path
-          *prefix, name = scoped_full_path
-          [prefix, "#{name}.ts"]
+          if global?
+            ["GlobalOrganization.ts"]
+          else
+            *prefix, name = scoped_full_path
+            [*prefix, "#{name}.ts"]
+          end
         end
 
         def template_path

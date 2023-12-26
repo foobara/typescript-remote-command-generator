@@ -19,12 +19,12 @@ export class <%= organization_name %>Class extends Organization {
   <% end %>
 }[name]
 
-    if (!domain) {
+    if (domain == null) {
       throw new Error(`Unknown domain name: ${name}`)
     }
 
     return domain
-}
+  }
 }
 
 export const <%= organization_name %> = new <%= organization_name %>Class

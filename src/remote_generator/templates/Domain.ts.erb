@@ -5,6 +5,7 @@ import {<%= command.command_name %>} from "<%= path_to_root %><%= command.import
 <% entity_generators.each do |entity| %>
 import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
 <% end %>
+import { <%= organization_name %> } from "<%= path_to_root %><%= organization_name %>"
 
 <% if entity_generators.empty? %>
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -27,8 +28,10 @@ export class <%= domain_name %>Class extends Domain {
 
   // commands
 <% command_generators.each do |command| %>
-  readonly <%= command.command_name %> = <%= command.command_name %>
+  readonly <%= command.command_name %>: <%= command.command_name %> = <%= command.command_name %>
 <% end %>
+
+  get organization (): <%= organization_name %> { return <%= organization_name %> }
 
   readonly entities: entitiesT = entities
 }

@@ -10,8 +10,7 @@ module Foobara
           if global?
             ["GlobalDomain.ts"]
           else
-            *prefix, name = scoped_full_path
-            [*prefix, "#{name}.ts"]
+            [*scoped_full_path, "index.ts"]
           end
         end
 

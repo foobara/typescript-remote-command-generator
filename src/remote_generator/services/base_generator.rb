@@ -110,7 +110,7 @@ module Foobara
                   "dependency_group and therefore cannot call #{__method__}"
           end
 
-          dependency_group.non_colliding_dependency_roots
+          dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
 
         def non_colliding_root

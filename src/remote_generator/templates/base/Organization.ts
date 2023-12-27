@@ -1,19 +1,19 @@
-import {Domain} from "./Domain";
+const globalUrlBase = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
 
 export class Organization {
   static all: {[organizationName: string]: Organization} = {}
-  static forName (organizationName: string): Organization {
-    if (organizationName in this.all) {
-      return this.all[organizationName]
-    }
 
-    throw new Error(`Unknown organization name: ${organizationName}`)
+  static forName(organizationName: string): Organization {
+    if (organizationName in Organization.all) {
+      return Organization.all[organizationName]
+    } else {
+      throw new Error(`Unknown organization name: ${organizationName}`)
+    }
   }
 
   organizationName: string
   isGlobal: boolean
   _urlBase: string | undefined
-  domainsByName: {[domainName: string]: Domain} = {}
 
   constructor(organizationName: string, isGlobal: boolean = false) {
     this.organizationName = organizationName
@@ -21,37 +21,17 @@ export class Organization {
     Organization.all[organizationName] = this
   }
 
-  domainForName (domainName: string): Domain {
-    if (domainName in this.domainsByName) {
-      return this.domainsByName[domainName]
-    }
-
-    throw new Error(`Unknown domain name: ${domainName}`)
-  }
-
-  addDomain(domain: Domain): void {
-    this.domainsByName[domain.domainName] = domain
-  }
-
   get urlBase(): string {
-    let base = this._urlBase
+    const base = this._urlBase ?? globalUrlBase
 
-    if (base == null && this.isGlobal) {
-      throw new Error("urlBase not set")
+    if (base === undefined) {
+      throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
     }
 
-    return base ?? globalOrganization.urlBase
+    return base
   }
 
   set urlBase(urlBase: string) {
     this._urlBase = urlBase
   }
-}
-
-export const globalOrganization = new Organization("GlobalOrganization", true)
-
-const globalUrlBase = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
-
-if (globalUrlBase != null) {
-  globalOrganization.urlBase = globalUrlBase
 }

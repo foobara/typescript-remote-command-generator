@@ -14,14 +14,6 @@ module Foobara
           "Command/Inputs.ts.erb"
         end
 
-        def required?(attribute_name)
-          inputs_type.required?(attribute_name)
-        end
-
-        def attribute_declarations
-          inputs_type.attribute_declarations
-        end
-
         def entity_generators
           @entity_generators ||= inputs_types_depended_on.select(&:entity?).uniq.map do |entity|
             Services::EntityGenerator.new(entity, elements_to_generate)

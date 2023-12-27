@@ -6,7 +6,7 @@ import { Loaded<%= entity_name %> } from "./Loaded"
 import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export interface <%= entity_name %>AggregateAttributesType extends <%= entity_name %>AttributesType <%= aggregate_attributes_ts_type %>
+export interface <%= entity_name %>AggregateAttributesType extends <%= entity_name %>AttributesType <%= attributes_type_ts_type %>
 
 export class <%= entity_name %>Aggregate extends Loaded<%= entity_name %><<%= entity_name %>AggregateAttributesType> {
   <% if has_associations? %>

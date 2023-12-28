@@ -14,6 +14,11 @@ module Foobara
           *prefix, name = super
           [*prefix, "Unloaded#{name}"]
         end
+
+        def ts_instance_full_path
+          *prefix, name = super
+          [*prefix, "Unloaded#{name}"]
+        end
       end
     end
   end

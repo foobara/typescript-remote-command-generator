@@ -181,6 +181,14 @@ module Foobara
           scoped_path
         end
 
+        def ts_instance_full_name
+          ts_instance_full_path.join(".")
+        end
+
+        def ts_instance_full_path
+          scoped_full_path
+        end
+
         foobara_delegate :organization_name,
                          :domain_name,
                          to: :relevant_manifest
@@ -210,11 +218,19 @@ module Foobara
         end
 
         def import_path
-          if target_path.last == "index.ts"
-            target_path[0..-2]
-          else
-            target_path
-          end.join("/").gsub(/\.ts$/, "")
+          import_path_array.join("/")
+        end
+
+        def import_path_array
+          path = if target_path.last == "index.ts"
+                   target_path[0..-2]
+                 else
+                   target_path
+                 end
+
+          path[-1] = path.last.gsub(/\.ts$/, "")
+
+          path
         end
 
         def method_missing(method_name, *, &)
@@ -246,6 +262,11 @@ module Foobara
             # TODO: which association_depth do we pass here?
             ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
             return "#{ts_type}[]"
+          end
+
+          if type_declaration.is_a?(Manifest::Error)
+            error_generator = generator_for(type_declaration)
+            return dependency_group.non_colliding_type(error_generator)
           end
 
           if type_declaration.relevant_manifest.size > 1
@@ -295,22 +316,23 @@ module Foobara
 
         def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
-          generator = generator_for(entity)
 
-          points = dependency_group.points_for(generator)
+          generator_class = case association_depth
+                            when AssociationDepth::AMBIGUOUS
+                              Services::EntityGenerator
+                            when AssociationDepth::ATOM
+                              Services::UnloadedEntityGenerator
+                            when AssociationDepth::AGGREGATE
+                              Services::AggregateEntityGenerator
+                            else
+                              # :nocov:
+                              raise "Bad association_depth: #{association_depth}"
+                              # :nocov:
+                            end
 
-          case association_depth
-          when AssociationDepth::AMBIGUOUS
-            generator.entity_name(points)
-          when AssociationDepth::ATOM
-            generator.unloaded_name(points)
-          when AssociationDepth::AGGREGATE
-            generator.aggregate_name(points)
-          else
-            # :nocov:
-            raise "Bad association_depth: #{association_depth}"
-            # :nocov:
-          end
+          generator = generator_class.new(entity, elements_to_generate)
+
+          dependency_group.non_colliding_type(generator)
         end
       end
     end

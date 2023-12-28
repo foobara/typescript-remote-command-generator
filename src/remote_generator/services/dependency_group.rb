@@ -18,7 +18,9 @@ module Foobara
 
           dependencies.each do |dep|
             if dep.belongs_to_dependency_group
+              # :nocov:
               raise "Dependency group #{dep} already belongs to dependency group #{dep.dependency_group}"
+              # :nocov:
             end
 
             dep.belongs_to_dependency_group = self
@@ -31,7 +33,9 @@ module Foobara
           key = to_key(dep)
           collision_data[key].tap do |cd|
             unless cd
+              # :nocov:
               raise "Dependency #{dep} is not part of this dependency group"
+              # :nocov:
             end
           end
         end
@@ -77,7 +81,9 @@ module Foobara
           points = collision_data_for(dep).points
 
           unless points
+            # :nocov:
             raise "Dependency #{dep} has no collision data"
+            # :nocov:
           end
 
           points
@@ -89,7 +95,8 @@ module Foobara
 
         def non_colliding_path(dep, points = points_for(dep))
           start_at = dep.scoped_full_path.size - points - 1
-          dep.scoped_full_path[start_at..].map(&:to_s)
+          path = dep.scoped_full_path[start_at..] || []
+          path.map(&:to_s)
         end
 
         private

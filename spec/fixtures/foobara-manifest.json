@@ -5,7 +5,12 @@
       "capture_unknown_error": null,
       "command": "GlobalCommand",
       "depends_on": [
-
+        "SomeOrg::Auth::CreateReferral",
+        "SomeOrg::Auth::CreateUser",
+        "SomeOtherOrg::Auth::CreateReferral",
+        "SomeOtherOrg::Auth::CreateUser",
+        "SomeOtherOrg::SomeOtherAuth::CreateReferral",
+        "SomeOtherOrg::SomeOtherAuth::CreateUser"
       ],
       "domain": "global_organization::global_domain",
       "domain_name": "global_organization::global_domain",
@@ -58,6 +63,2541 @@
           ],
           "symbol": "missing_required_attribute"
         },
+        "data.some_org_auth_referral.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.cannot_cast",
+          "path": [
+            "some_org_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.channel.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.channel.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "channel"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.channel.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.channel.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "channel"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.id.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referred_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referred_user.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referred_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referred_user.email.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referred_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_org_auth_referral.referred_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_org_auth_referral.referred_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_org_auth_referral.referred_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_org_auth_referral.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_org_auth_referral.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_org_auth_referral.referred_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_org_auth_referral.referred_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_org_auth_referral.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_org_auth_referral.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_org_auth_referral.referred_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_org_auth_referral.referred_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_org_auth_referral.referred_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referred_user.email.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referred_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_org_auth_referral.referred_user.email.must_have_an_at_sign",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_org_auth_referral.referred_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_org_auth_referral.referred_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_org_auth_referral.referred_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_org_auth_referral.referred_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_org_auth_referral.referred_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referred_user.first_name.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referred_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referred_user.first_name.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referred_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referred_user.id.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referred_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referred_user.last_name.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referred_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referred_user.last_name.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referred_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referred_user.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referred_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_org_auth_referral.referred_user.unexpected_attributes",
+          "path": [
+            "some_org_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_org_auth_referral.referring_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referring_user.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referring_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referring_user.email.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referring_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_org_auth_referral.referring_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_org_auth_referral.referring_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_org_auth_referral.referring_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_org_auth_referral.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_org_auth_referral.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_org_auth_referral.referring_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_org_auth_referral.referring_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_org_auth_referral.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_org_auth_referral.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_org_auth_referral.referring_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_org_auth_referral.referring_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_org_auth_referral.referring_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referring_user.email.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referring_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_org_auth_referral.referring_user.email.must_have_an_at_sign",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_org_auth_referral.referring_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_org_auth_referral.referring_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_org_auth_referral.referring_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_org_auth_referral.referring_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_org_auth_referral.referring_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referring_user.first_name.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referring_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referring_user.first_name.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referring_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referring_user.id.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referring_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_referral.referring_user.last_name.cannot_cast",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_referral.referring_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referring_user.last_name.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referring_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_referral.referring_user.missing_required_attribute",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_referral.referring_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_org_auth_referral.referring_user.unexpected_attributes",
+          "path": [
+            "some_org_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_org_auth_referral.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_org_auth_referral.unexpected_attributes",
+          "path": [
+            "some_org_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_org_auth_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_user.cannot_cast",
+          "path": [
+            "some_org_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_user.email.cannot_cast",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_org_auth_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_org_auth_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_org_auth_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_org_auth_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_org_auth_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_org_auth_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_org_auth_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_org_auth_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_org_auth_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_org_auth_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_org_auth_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_org_auth_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_user.email.missing_required_attribute",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_org_auth_user.email.must_have_an_at_sign",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_org_auth_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_org_auth_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_org_auth_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_org_auth_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_org_auth_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_user.first_name.cannot_cast",
+          "path": [
+            "some_org_auth_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_user.first_name.missing_required_attribute",
+          "path": [
+            "some_org_auth_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_user.id.cannot_cast",
+          "path": [
+            "some_org_auth_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_org_auth_user.last_name.cannot_cast",
+          "path": [
+            "some_org_auth_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_org_auth_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_user.last_name.missing_required_attribute",
+          "path": [
+            "some_org_auth_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_org_auth_user.missing_required_attribute",
+          "path": [
+            "some_org_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_org_auth_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_org_auth_user.unexpected_attributes",
+          "path": [
+            "some_org_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_auth_referral.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.channel.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.channel.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "channel"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.channel.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.channel.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "channel"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.id.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referred_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referred_user.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.must_have_an_at_sign",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_other_org_auth_referral.referred_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_other_org_auth_referral.referred_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_other_org_auth_referral.referred_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referred_user.first_name.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referred_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referred_user.first_name.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referred_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referred_user.id.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referred_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referred_user.last_name.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referred_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referred_user.last_name.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referred_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referred_user.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referred_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_auth_referral.referred_user.unexpected_attributes",
+          "path": [
+            "some_other_org_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_auth_referral.referring_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referring_user.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.must_have_an_at_sign",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_other_org_auth_referral.referring_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_other_org_auth_referral.referring_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_other_org_auth_referral.referring_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referring_user.first_name.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referring_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referring_user.first_name.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referring_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referring_user.id.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referring_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_referral.referring_user.last_name.cannot_cast",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_referral.referring_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referring_user.last_name.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referring_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_referral.referring_user.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_referral.referring_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_auth_referral.referring_user.unexpected_attributes",
+          "path": [
+            "some_other_org_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_auth_referral.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_auth_referral.unexpected_attributes",
+          "path": [
+            "some_other_org_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_auth_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_user.cannot_cast",
+          "path": [
+            "some_other_org_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_user.email.cannot_cast",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_other_org_auth_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_other_org_auth_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_other_org_auth_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_other_org_auth_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_other_org_auth_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_other_org_auth_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_other_org_auth_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_other_org_auth_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_other_org_auth_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_other_org_auth_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_other_org_auth_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_other_org_auth_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_user.email.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_other_org_auth_user.email.must_have_an_at_sign",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_other_org_auth_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_other_org_auth_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_other_org_auth_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_other_org_auth_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_other_org_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_other_org_auth_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_user.first_name.cannot_cast",
+          "path": [
+            "some_other_org_auth_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_user.first_name.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_user.id.cannot_cast",
+          "path": [
+            "some_other_org_auth_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_auth_user.last_name.cannot_cast",
+          "path": [
+            "some_other_org_auth_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_auth_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_user.last_name.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_auth_user.missing_required_attribute",
+          "path": [
+            "some_other_org_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_auth_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_auth_user.unexpected_attributes",
+          "path": [
+            "some_other_org_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_some_other_auth_referral.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.channel.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.channel.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "channel"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.channel.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.channel.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "channel"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.id.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.must_have_an_at_sign",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.first_name.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.first_name.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.id.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.last_name.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.last_name.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referred_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_some_other_auth_referral.referred_user.unexpected_attributes",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referred_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.must_have_an_at_sign",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.first_name.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.first_name.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.id.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.last_name.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.last_name.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_referral.referring_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_some_other_auth_referral.referring_user.unexpected_attributes",
+          "path": [
+            "some_other_org_some_other_auth_referral",
+            "referring_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_some_other_auth_referral.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_some_other_auth_referral.unexpected_attributes",
+          "path": [
+            "some_other_org_some_other_auth_referral"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_other_org_some_other_auth_user.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_user.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_user.email.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_user.email.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_user.email.cannot_exceed64_characters": {
+          "category": "data",
+          "error": "email::validators::cannot_exceed64_characters::CannotExceed64CharactersError",
+          "key": "data.some_other_org_some_other_auth_user.email.cannot_exceed64_characters",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_exceed64_characters"
+        },
+        "data.some_other_org_some_other_auth_user.email.cannot_have_multiple_at_signs": {
+          "category": "data",
+          "error": "email::validators::cannot_have_multiple_at_signs::CannotHaveMultipleAtSignsError",
+          "key": "data.some_other_org_some_other_auth_user.email.cannot_have_multiple_at_signs",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_have_multiple_at_signs"
+        },
+        "data.some_other_org_some_other_auth_user.email.domain_cannot_start_with_or_end_with_a_hyphen": {
+          "category": "data",
+          "error": "email::validators::domain_cannot_start_with_or_end_with_a_hyphen::DomainCannotStartWithOrEndWithAHyphenError",
+          "key": "data.some_other_org_some_other_auth_user.email.domain_cannot_start_with_or_end_with_a_hyphen",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
+        },
+        "data.some_other_org_some_other_auth_user.email.first_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_be_empty::FirstPartCannotBeEmptyError",
+          "key": "data.some_other_org_some_other_auth_user.email.first_part_cannot_be_empty",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_be_empty"
+        },
+        "data.some_other_org_some_other_auth_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+          "category": "data",
+          "error": "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
+          "key": "data.some_other_org_some_other_auth_user.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
+        },
+        "data.some_other_org_some_other_auth_user.email.first_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::first_part_has_bad_characters::FirstPartHasBadCharactersError",
+          "key": "data.some_other_org_some_other_auth_user.email.first_part_has_bad_characters",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "first_part_has_bad_characters"
+        },
+        "data.some_other_org_some_other_auth_user.email.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_user.email.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_user.email.must_have_an_at_sign": {
+          "category": "data",
+          "error": "email::validators::must_have_an_at_sign::MustHaveAnAtSignError",
+          "key": "data.some_other_org_some_other_auth_user.email.must_have_an_at_sign",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "must_have_an_at_sign"
+        },
+        "data.some_other_org_some_other_auth_user.email.second_part_cannot_be_empty": {
+          "category": "data",
+          "error": "email::validators::second_part_cannot_be_empty::SecondPartCannotBeEmptyError",
+          "key": "data.some_other_org_some_other_auth_user.email.second_part_cannot_be_empty",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_cannot_be_empty"
+        },
+        "data.some_other_org_some_other_auth_user.email.second_part_has_bad_characters": {
+          "category": "data",
+          "error": "email::validators::second_part_has_bad_characters::SecondPartHasBadCharactersError",
+          "key": "data.some_other_org_some_other_auth_user.email.second_part_has_bad_characters",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "email"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "second_part_has_bad_characters"
+        },
+        "data.some_other_org_some_other_auth_user.first_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_user.first_name.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_user.first_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_user.first_name.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "first_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_user.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_user.id.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "id"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_user.last_name.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_other_org_some_other_auth_user.last_name.cannot_cast",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "cannot_cast"
+        },
+        "data.some_other_org_some_other_auth_user.last_name.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_user.last_name.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_user",
+            "last_name"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_user.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
+          "key": "data.some_other_org_some_other_auth_user.missing_required_attribute",
+          "path": [
+            "some_other_org_some_other_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_other_org_some_other_auth_user.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
+          "key": "data.some_other_org_some_other_auth_user.unexpected_attributes",
+          "path": [
+            "some_other_org_some_other_auth_user"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "unexpected_attributes"
+        },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
@@ -81,6 +2621,81 @@
 
           ],
           "symbol": "global"
+        },
+        "some_org::auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
+          "key": "some_org::auth::create_referral>runtime.bad_referral",
+          "path": [
+
+          ],
+          "runtime_path": [
+            "some_org::auth::create_referral"
+          ],
+          "symbol": "bad_referral"
+        },
+        "some_org::auth::create_user>some_org::auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
+          "key": "some_org::auth::create_user>some_org::auth::create_referral>runtime.bad_referral",
+          "path": [
+
+          ],
+          "runtime_path": [
+            "some_org::auth::create_user",
+            "some_org::auth::create_referral"
+          ],
+          "symbol": "bad_referral"
+        },
+        "some_other_org::auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
+          "key": "some_other_org::auth::create_referral>runtime.bad_referral",
+          "path": [
+
+          ],
+          "runtime_path": [
+            "some_other_org::auth::create_referral"
+          ],
+          "symbol": "bad_referral"
+        },
+        "some_other_org::auth::create_user>some_other_org::auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
+          "key": "some_other_org::auth::create_user>some_other_org::auth::create_referral>runtime.bad_referral",
+          "path": [
+
+          ],
+          "runtime_path": [
+            "some_other_org::auth::create_user",
+            "some_other_org::auth::create_referral"
+          ],
+          "symbol": "bad_referral"
+        },
+        "some_other_org::some_other_auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
+          "key": "some_other_org::some_other_auth::create_referral>runtime.bad_referral",
+          "path": [
+
+          ],
+          "runtime_path": [
+            "some_other_org::some_other_auth::create_referral"
+          ],
+          "symbol": "bad_referral"
+        },
+        "some_other_org::some_other_auth::create_user>some_other_org::some_other_auth::create_referral>runtime.bad_referral": {
+          "category": "runtime",
+          "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
+          "key": "some_other_org::some_other_auth::create_user>some_other_org::some_other_auth::create_referral>runtime.bad_referral",
+          "path": [
+
+          ],
+          "runtime_path": [
+            "some_other_org::some_other_auth::create_user",
+            "some_other_org::some_other_auth::create_referral"
+          ],
+          "symbol": "bad_referral"
         }
       },
       "errors_transformers": [
@@ -115,7 +2730,11 @@
         "attributes",
         "array",
         "symbol",
-        "duck"
+        "duck",
+        "SomeOrg::Auth::User",
+        "string",
+        "SomeOtherOrg::Auth::User",
+        "SomeOtherOrg::SomeOtherAuth::User"
       ],
       "full_command_name": "GlobalCommand",
       "inputs_transformers": [
@@ -125,6 +2744,24 @@
         "element_type_declarations": {
           "some_integer": {
             "type": "integer"
+          },
+          "some_org_auth_referral": {
+            "type": "SomeOrg::Auth::Referral"
+          },
+          "some_org_auth_user": {
+            "type": "SomeOrg::Auth::User"
+          },
+          "some_other_org_auth_referral": {
+            "type": "SomeOtherOrg::Auth::Referral"
+          },
+          "some_other_org_auth_user": {
+            "type": "SomeOtherOrg::Auth::User"
+          },
+          "some_other_org_some_other_auth_referral": {
+            "type": "SomeOtherOrg::SomeOtherAuth::Referral"
+          },
+          "some_other_org_some_other_auth_user": {
+            "type": "SomeOtherOrg::SomeOtherAuth::User"
           }
         },
         "required": [
@@ -137,7 +2774,13 @@
         "array",
         "symbol",
         "duck",
-        "integer"
+        "integer",
+        "SomeOrg::Auth::Referral",
+        "SomeOrg::Auth::User",
+        "SomeOtherOrg::Auth::Referral",
+        "SomeOtherOrg::Auth::User",
+        "SomeOtherOrg::SomeOtherAuth::Referral",
+        "SomeOtherOrg::SomeOtherAuth::User"
       ],
       "organization": "global_organization",
       "organization_name": "global_organization",
@@ -229,7 +2872,14 @@
         "array",
         "symbol",
         "duck",
-        "integer"
+        "integer",
+        "SomeOrg::Auth::Referral",
+        "SomeOrg::Auth::User",
+        "SomeOtherOrg::Auth::Referral",
+        "SomeOtherOrg::Auth::User",
+        "SomeOtherOrg::SomeOtherAuth::Referral",
+        "SomeOtherOrg::SomeOtherAuth::User",
+        "string"
       ]
     },
     "SomeDomainWithoutOrg::CommandWithDomainButNoOrg": {

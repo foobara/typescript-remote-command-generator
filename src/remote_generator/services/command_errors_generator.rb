@@ -15,7 +15,7 @@ module Foobara
         end
 
         def error_generators
-          error_types.values.map(&:error).uniq.map do |error|
+          @error_generators ||= error_types.values.map(&:error).uniq.map do |error|
             Services::ErrorGenerator.new(error, elements_to_generate)
           end
         end
@@ -36,7 +36,8 @@ module Foobara
           path = command_error._path
           runtime_path = command_error.runtime_path
 
-          result = "#{error.error_name}<\"#{key}\""
+          error_manifest = command_error.error
+          result = "#{foobara_type_to_ts_type(error_manifest, dependency_group:)}<\"#{key}\""
 
           if path.any? || runtime_path.any?
             result += ", #{path.map(&:to_s).inspect}"

@@ -210,11 +210,19 @@ module Foobara
         end
 
         def import_path
-          if target_path.last == "index.ts"
-            target_path[0..-2]
-          else
-            target_path
-          end.join("/").gsub(/\.ts$/, "")
+          import_path_array.join("/")
+        end
+
+        def import_path_array
+          path = if target_path.last == "index.ts"
+                   target_path[0..-2]
+                 else
+                   target_path
+                 end
+
+          path[-1] = path.last.gsub(/\.ts$/, "")
+
+          path
         end
 
         def method_missing(method_name, *, &)
@@ -246,6 +254,11 @@ module Foobara
             # TODO: which association_depth do we pass here?
             ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
             return "#{ts_type}[]"
+          end
+
+          if type_declaration.is_a?(Manifest::Error)
+            error_generator = generator_for(type_declaration)
+            return dependency_group.non_colliding_name(error_generator)
           end
 
           if type_declaration.relevant_manifest.size > 1

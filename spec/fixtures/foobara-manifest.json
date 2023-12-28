@@ -2797,10 +2797,23 @@
 
       ],
       "result_type": {
-        "type": "integer"
+        "element_type_declarations": {
+          "result": {
+            "type": "integer"
+          },
+          "when": {
+            "type": "datetime"
+          }
+        },
+        "type": "attributes"
       },
       "result_types_depended_on": [
-        "integer"
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "integer",
+        "datetime"
       ],
       "scoped_category": "command",
       "scoped_full_name": "GlobalCommand",
@@ -2879,6 +2892,7 @@
         "SomeOtherOrg::Auth::User",
         "SomeOtherOrg::SomeOtherAuth::Referral",
         "SomeOtherOrg::SomeOtherAuth::User",
+        "datetime",
         "string"
       ]
     },
@@ -8968,6 +8982,90 @@
       ],
       "scoped_short_name": "hash"
     },
+    "datetime::casters::date": {
+      "name": "Foobara::BuiltinTypes::Datetime::Casters::Date",
+      "parent": [
+        "type",
+        "datetime"
+      ],
+      "possible_errors": {
+
+      },
+      "processor_type": "caster",
+      "reference": "datetime::casters::date",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "datetime::casters::date",
+      "scoped_full_path": [
+        "datetime",
+        "casters",
+        "date"
+      ],
+      "scoped_name": "casters::date",
+      "scoped_path": [
+        "casters",
+        "date"
+      ],
+      "scoped_prefix": [
+        "casters"
+      ],
+      "scoped_short_name": "date"
+    },
+    "datetime::casters::hash": {
+      "name": "Foobara::BuiltinTypes::Datetime::Casters::Hash",
+      "parent": [
+        "type",
+        "datetime"
+      ],
+      "possible_errors": {
+
+      },
+      "processor_type": "caster",
+      "reference": "datetime::casters::hash",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "datetime::casters::hash",
+      "scoped_full_path": [
+        "datetime",
+        "casters",
+        "hash"
+      ],
+      "scoped_name": "casters::hash",
+      "scoped_path": [
+        "casters",
+        "hash"
+      ],
+      "scoped_prefix": [
+        "casters"
+      ],
+      "scoped_short_name": "hash"
+    },
+    "datetime::casters::string": {
+      "name": "Foobara::BuiltinTypes::Datetime::Casters::String",
+      "parent": [
+        "type",
+        "datetime"
+      ],
+      "possible_errors": {
+
+      },
+      "processor_type": "caster",
+      "reference": "datetime::casters::string",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "datetime::casters::string",
+      "scoped_full_path": [
+        "datetime",
+        "casters",
+        "string"
+      ],
+      "scoped_name": "casters::string",
+      "scoped_path": [
+        "casters",
+        "string"
+      ],
+      "scoped_prefix": [
+        "casters"
+      ],
+      "scoped_short_name": "string"
+    },
     "email::transformers::downcase": {
       "declaration_data": true,
       "name": "Foobara::BuiltinTypes::Email::Transformers::Downcase",
@@ -11052,6 +11150,57 @@
       ],
       "types_depended_on": [
         "associative_array",
+        "array",
+        "symbol",
+        "duck"
+      ]
+    },
+    "datetime": {
+      "base_type": "atomic_duck",
+      "declaration_data": {
+        "type": "datetime"
+      },
+      "name": "datetime",
+      "processors": {
+        "casters": [
+          "datetime::casters::date",
+          "datetime::casters::string",
+          "datetime::casters::hash"
+        ],
+        "transformers": [
+
+        ],
+        "validators": [
+
+        ]
+      },
+      "reference": "datetime",
+      "scoped_category": "type",
+      "scoped_full_name": "datetime",
+      "scoped_full_path": [
+        "datetime"
+      ],
+      "scoped_name": "datetime",
+      "scoped_path": [
+        "datetime"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "datetime",
+      "supported_processors": [
+
+      ],
+      "supported_transformers": [
+
+      ],
+      "supported_validators": [
+
+      ],
+      "target_classes": [
+        "Time"
+      ],
+      "types_depended_on": [
+        "atomic_duck",
+        "attributes",
         "array",
         "symbol",
         "duck"

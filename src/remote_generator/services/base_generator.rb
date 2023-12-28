@@ -266,6 +266,8 @@ module Foobara
                           "string"
                         when "duck"
                           "any"
+                        when "datetime"
+                          "Date"
                         else
                           if type_declaration.entity?
                             entity_to_ts_entity_name(type_declaration, association_depth:)

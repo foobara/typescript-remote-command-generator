@@ -36,8 +36,7 @@ module Foobara
           path = command_error._path
           runtime_path = command_error.runtime_path
 
-          error_manifest = command_error.error
-          result = "#{foobara_type_to_ts_type(error_manifest, dependency_group:)}<\"#{key}\""
+          result = "#{foobara_type_to_ts_type(error, dependency_group:)}<\"#{key}\""
 
           if path.any? || runtime_path.any?
             result += ", #{path.map(&:to_s).inspect}"

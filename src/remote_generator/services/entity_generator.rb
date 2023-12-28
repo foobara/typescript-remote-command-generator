@@ -37,7 +37,10 @@ module Foobara
           *prefix, name = if points
                             scoped_full_path(points)
                           else
+                            # TODO: test this
+                            # :nocov:
                             scoped_path
+                            # :nocov:
                           end
 
           [*prefix, "Unloaded#{name}"].join(".")
@@ -79,14 +82,6 @@ module Foobara
           [*prefix, "#{name}Aggregate"].join(".")
         end
 
-        def all_names
-          @all_names ||= if has_associations?
-                           [name, unloaded_name, atom_name, aggregate_name]
-                         else
-                           [name, unloaded_name]
-                         end
-        end
-
         def entity_generators
           types_depended_on.select(&:entity?).map do |entity|
             Services::EntityGenerator.new(entity, elements_to_generate)
@@ -122,18 +117,6 @@ module Foobara
         def aggregate_attributes_ts_type
           association_depth = AssociationDepth::AGGREGATE
           foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
-        end
-
-        def attributes_types_union
-          attributes_types = if has_associations?
-                               ["", "Atom", "Aggregate"]
-                             else
-                               [""]
-                             end
-
-          attributes_types.map! { |prefix| "#{entity_name}#{prefix}AttributesType" }
-
-          attributes_types.join(" | ")
         end
 
         def association_property_names_ts_array

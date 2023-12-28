@@ -14,18 +14,6 @@ module Foobara
           "Command/Errors.ts.erb"
         end
 
-        def uniq_error_generators_by_symbol
-          @uniq_error_generators_by_symbol ||= begin
-            set = {}
-
-            error_generators.each do |error_generator|
-              set[error_generator.symbol] = error_generator
-            end
-
-            set.values
-          end
-        end
-
         def error_generators
           error_types.values.map(&:error).uniq.map do |error|
             Services::ErrorGenerator.new(error, elements_to_generate)

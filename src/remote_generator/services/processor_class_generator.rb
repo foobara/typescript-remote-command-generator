@@ -12,10 +12,6 @@ module Foobara
 
           ["base", "processors", *path, basename]
         end
-
-        def template_path
-          "ProcessorClass.ts.erb"
-        end
       end
     end
   end

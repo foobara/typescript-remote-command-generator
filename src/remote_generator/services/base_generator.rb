@@ -52,7 +52,9 @@ module Foobara
                             when Manifest::ProcessorClass
                               Services::ProcessorClassGenerator
                             else
+                              # :nocov:
                               raise "Not sure how build a generator for a #{manifest}"
+                              # :nocov:
                             end
 
         Util.array(generator_classes).map do |generator_class|
@@ -77,7 +79,9 @@ module Foobara
         end
 
         def target_path
+          # :nocov:
           raise "Subclass responsibility"
+          # :nocov:
         end
 
         def target_dir
@@ -91,7 +95,9 @@ module Foobara
         end
 
         def dependencies
+          # :nocov:
           raise "Subclass responsibility"
+          # :nocov:
         end
 
         def dependency_group
@@ -106,34 +112,20 @@ module Foobara
 
         def dependency_roots
           unless dependency_group
+            # :nocov:
             raise "This generator was created without a " \
                   "dependency_group and therefore cannot call #{__method__}"
+            # :nocov:
           end
 
           dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
 
-        def non_colliding_root
-          unless belongs_to_dependency_group
-            raise "This generator was created without a " \
-                  "belongs_to_dependency_group and therefore cannot call #{__method__}"
-          end
-
-          belongs_to_dependency_group.non_colliding_root(self)
-        end
-
-        def non_colliding_name
-          unless belongs_to_dependency_group
-            raise "This generator was created without a " \
-                  "belongs_to_dependency_group and therefore cannot call #{__method__}"
-          end
-
-          belongs_to_dependency_group.non_colliding_name(self)
-        end
-
         def generate
           unless elements_to_generate
+            # :nocov:
             raise "This generator was created without elements_to_generate and therefore cannot be ran."
+            # :nocov:
           end
 
           dependencies.each do |dependency|
@@ -149,7 +141,9 @@ module Foobara
         end
 
         def template_path
+          # :nocov:
           raise "Subclass responsibility"
+          # :nocov:
         end
 
         def absolute_template_path
@@ -174,7 +168,9 @@ module Foobara
         end
 
         def short_name
+          # :nocov:
           raise "Subclass responsibility"
+          # :nocov:
         end
 
         def ts_instance_name
@@ -225,7 +221,9 @@ module Foobara
           if relevant_manifest.respond_to?(method_name)
             relevant_manifest.send(method_name, *, &)
           else
+            # :nocov:
             super
+            # :nocov:
           end
         end
 
@@ -251,7 +249,9 @@ module Foobara
           end
 
           if type_declaration.relevant_manifest.size > 1
+            # :nocov:
             raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
+            # :nocov:
           end
 
           type_symbol = type_declaration.type
@@ -277,7 +277,9 @@ module Foobara
           if type_string
             name ? "#{name} = #{type_string}" : type_string
           else
+            # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
+            # :nocov:
           end
         end
 
@@ -305,7 +307,9 @@ module Foobara
           when AssociationDepth::AGGREGATE
             generator.aggregate_name(points)
           else
+            # :nocov:
             raise "Bad association_depth: #{association_depth}"
+            # :nocov:
           end
         end
       end

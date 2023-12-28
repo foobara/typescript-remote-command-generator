@@ -34,6 +34,10 @@ export class <%= domain_name %>Class extends Domain {
   get organization (): typeof <%= organization_name %> { return <%= organization_name %> }
 
   readonly entities: entitiesT = entities
+
+  <% entity_generators.each do |entity| %>
+  readonly <%= entity.entity_name %>: typeof <%= entity.entity_name %> = <%= entity.entity_name %>
+  <% end %>
 }
 
 export const <%= domain_name %> = new <%= domain_name %>Class

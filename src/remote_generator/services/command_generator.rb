@@ -21,7 +21,7 @@ module Foobara
         foobara_delegate :organization_generator, :domain_name, :organization_name, to: :domain_generator
 
         def errors_in_this_namespace
-          @errors_in_this_namespace ||= error_types.values.map(&:error).uniq.select do |error|
+          @errors_in_this_namespace ||= error_types.values.map(&:error).uniq.sort_by(&:error_name).select do |error|
             error.parent&.path&.map(&:to_s) == path.map(&:to_s)
           end.map do |error_manifest|
             Services::ErrorGenerator.new(error_manifest, elements_to_generate)

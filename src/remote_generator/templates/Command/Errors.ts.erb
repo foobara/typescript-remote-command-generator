@@ -2,8 +2,10 @@
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export default interface Errors {
+export interface PossibleErrors {
 <% error_types.keys.sort.each do |key| %>
   "<%= key %>": <%= foobara_type_to_ts_type(error_types[key].error, dependency_group:) %>,
 <% end  %>
 }
+
+export type Error = <%= error_type_union %>

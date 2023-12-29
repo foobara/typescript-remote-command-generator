@@ -1,9 +1,10 @@
 require_relative "base_generator"
+require_relative "command_generator"
 
 module Foobara
   module RemoteGenerator
     class Services
-      class CommandErrorsGenerator < BaseGenerator
+      class CommandErrorsGenerator < CommandGenerator
         alias command_manifest relevant_manifest
 
         def target_path
@@ -18,6 +19,12 @@ module Foobara
           @error_generators ||= error_types.values.map(&:error).uniq.map do |error|
             Services::ErrorGenerator.new(error, elements_to_generate)
           end
+        end
+
+        def error_type_union
+          errors_in_this_namespace.map do |error|
+            dependency_group.non_colliding_type(error)
+          end.join(" |\n  ")
         end
 
         def dependencies

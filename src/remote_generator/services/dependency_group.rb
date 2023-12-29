@@ -39,9 +39,6 @@ module Foobara
               # :nocov:
             end
           end
-        rescue => e
-          binding.pry
-          raise
         end
 
         def set_collision_data_for(dep, collision_data)
@@ -108,8 +105,9 @@ module Foobara
             when Manifest::Command, Services::CommandGenerator, Manifest::Entity, Services::EntityGenerator
               "InstanceType<typeof #{name}>"
             else
-              binding.pry
+              # :nocov:
               raise "Not sure how to handle #{name} for #{dep}"
+              # :nocov:
             end
           else
             name

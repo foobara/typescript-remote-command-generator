@@ -317,24 +317,20 @@ module Foobara
         def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
 
-          generator = if entity.is_a?(BaseGenerator)
-                        entity
-                      else
-                        generator_class = case association_depth
-                                          when AssociationDepth::AMBIGUOUS
-                                            Services::EntityGenerator
-                                          when AssociationDepth::ATOM
-                                            Services::UnloadedEntityGenerator
-                                          when AssociationDepth::AGGREGATE
-                                            Services::AggregateEntityGenerator
-                                          else
-                                            # :nocov:
-                                            raise "Bad association_depth: #{association_depth}"
-                                            # :nocov:
-                                          end
+          generator_class = case association_depth
+                            when AssociationDepth::AMBIGUOUS
+                              Services::EntityGenerator
+                            when AssociationDepth::ATOM
+                              Services::UnloadedEntityGenerator
+                            when AssociationDepth::AGGREGATE
+                              Services::AggregateEntityGenerator
+                            else
+                              # :nocov:
+                              raise "Bad association_depth: #{association_depth}"
+                              # :nocov:
+                            end
 
-                        generator_class.new(entity, elements_to_generate)
-                      end
+          generator = generator_class.new(entity, elements_to_generate)
 
           dependency_group.non_colliding_type(generator)
         end

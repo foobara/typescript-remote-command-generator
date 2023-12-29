@@ -291,7 +291,6 @@ module Foobara
                           "Date"
                         else
                           if type_declaration.entity?
-                            binding.pry
                             entity_to_ts_entity_name(type_declaration, association_depth:)
                           end
                         end
@@ -317,22 +316,27 @@ module Foobara
 
         def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
-          generator = generator_for(entity)
 
-          points = dependency_group.points_for(generator)
+          generator = if entity.is_a?(BaseGenerator)
+                        entity
+                      else
+                        generator_class = case association_depth
+                                          when AssociationDepth::AMBIGUOUS
+                                            Services::EntityGenerator
+                                          when AssociationDepth::ATOM
+                                            Services::UnloadedEntityGenerator
+                                          when AssociationDepth::AGGREGATE
+                                            Services::AggregateEntityGenerator
+                                          else
+                                            # :nocov:
+                                            raise "Bad association_depth: #{association_depth}"
+                                            # :nocov:
+                                          end
 
-          case association_depth
-          when AssociationDepth::AMBIGUOUS
-            generator.entity_name(points)
-          when AssociationDepth::ATOM
-            generator.unloaded_name(points)
-          when AssociationDepth::AGGREGATE
-            generator.aggregate_name(points)
-          else
-            # :nocov:
-            raise "Bad association_depth: #{association_depth}"
-            # :nocov:
-          end
+                        generator_class.new(entity, elements_to_generate)
+                      end
+
+          dependency_group.non_colliding_type(generator)
         end
       end
     end

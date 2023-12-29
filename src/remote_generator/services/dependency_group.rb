@@ -39,6 +39,9 @@ module Foobara
               # :nocov:
             end
           end
+        rescue => e
+          binding.pry
+          raise
         end
 
         def set_collision_data_for(dep, collision_data)

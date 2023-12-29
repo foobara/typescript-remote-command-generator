@@ -2,13 +2,13 @@ import RemoteCommand from "<%= path_to_root %>base/RemoteCommand"
 
 import Inputs from "./Inputs"
 import Result from "./Result"
-import Errors from "./Errors"
+import { Error } from "./Errors"
 
 <% dependency_roots.each do |dependency_root| %>
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export class <%= command_name %> extends RemoteCommand<Inputs, Result, Errors> {
+export class <%= command_name %> extends RemoteCommand<Inputs, Result, Error> {
   static readonly organizationName = "<%= organization_name %>"
   static readonly domainName = "<%= domain_name %>"
   static readonly commandName = "<%= command_name %>"

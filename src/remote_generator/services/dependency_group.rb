@@ -94,24 +94,20 @@ module Foobara
           non_colliding_path(dep, points).join(".")
         end
 
-        def non_colliding_type(dep, points = points_for(dep))
+        def non_colliding_type(dep, points = points_for(dep), class_type: false)
           name = non_colliding_name(dep, points)
 
-          if name.include?(".")
-            case dep
-            when Manifest::Domain, Services::DomainGenerator, Manifest::Organization, Services::OrganizationGenerator,
-              Manifest::Error, Services::ErrorGenerator
-              "typeof #{name}"
-            when Manifest::Command, Services::CommandGenerator, Manifest::Entity, Services::EntityGenerator
-              "InstanceType<typeof #{name}>"
-            else
-              # :nocov:
-              raise "Not sure how to handle #{name} for #{dep}"
-              # :nocov:
-            end
+          if class_type
+            "typeof #{name}"
+          elsif name.include?(".")
+            "InstanceType<typeof #{name}>"
           else
             name
           end
+        end
+
+        def non_colliding_class_type(dep, points = points_for(dep))
+          non_colliding_type(dep, points, class_type: true)
         end
 
         def non_colliding_path(dep, points = points_for(dep))

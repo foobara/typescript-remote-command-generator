@@ -16,14 +16,14 @@ module Foobara
         end
 
         def error_generators
-          @error_generators ||= error_types.values.map(&:error).uniq.map do |error|
+          @error_generators ||= error_types.values.map(&:error).sort_by(&:error_name).uniq.map do |error|
             Services::ErrorGenerator.new(error, elements_to_generate)
           end
         end
 
         def error_type_union
-          errors_in_this_namespace.map do |error|
-            dependency_group.non_colliding_type(error)
+          error_generators.map do |error_generator|
+            dependency_group.non_colliding_type(error_generator)
           end.join(" |\n  ")
         end
 

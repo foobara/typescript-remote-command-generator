@@ -4,14 +4,5 @@ import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= depen
 
 import { <%= error_base_class %> } from "<%= path_to_root %>base/Error"
 
-export interface <%= error_name %><
-  keyT extends string,
-  pathT extends string[] = [],
-  runtime_pathT extends string[] = []
-> extends <%= error_base_class %> {
-  key: keyT
-  symbol: "<%= symbol %>"
-  path: pathT
-  runtime_path: runtime_pathT
-  context: <%= context_ts_type %>
+export class <%= error_name %> extends <%= error_base_class %><<%= context_ts_type %>> {
 }

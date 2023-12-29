@@ -1,17 +1,29 @@
-export interface ErrorT {
-  key: string
-  symbol: string
-  category: "data" | "runtime"
-  context: any
-  path: string[]
-  runtime_path: string[]
-  message: string
+/* eslint-disable @typescript-eslint/naming-convention */
+
+export abstract class Error<contextT extends Record<string, any>> {
+  static readonly symbol: string
+  static readonly category: 'data' | 'runtime'
+
+  readonly key: string
+  readonly path: string[]
+  readonly runtime_path: string[]
+  readonly message: string
+  readonly context: contextT
+
+  constructor ({ key, path, runtime_path, message, context }:
+                 { key: string, path?: string[], runtime_path?: string[], message: string, context: contextT }) {
+    this.key = key
+    this.path = path ?? []
+    this.runtime_path = runtime_path ?? []
+    this.message = message
+    this.context = context
+  }
 }
 
-export interface DataError extends ErrorT {
-  category: "data"
+export class DataError<contextT extends Record<string, any>> extends Error<contextT> {
+  static readonly category: 'data' = 'data'
 }
 
-export interface RuntimeError extends ErrorT {
-  category: "runtime"
+export class RuntimeError<contextT extends Record<string, any>> extends Error<contextT> {
+  static readonly category: 'runtime' = 'runtime'
 }

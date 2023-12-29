@@ -14,6 +14,6 @@ export class <%= command_name %> extends RemoteCommand<Inputs, Result, Errors> {
   static readonly commandName = "<%= command_name %>"
 
 <% errors_in_this_namespace.each do |error| %>
-  static readonly <%= dependency_group.non_colliding_name(error) %>: <%= dependency_group.non_colliding_type(error) %> = <%= dependency_group.non_colliding_class_type(error) %>
+  static readonly <%= dependency_group.non_colliding_name(error) %>: <%= dependency_group.non_colliding_class_type(error) %> = <%= dependency_group.non_colliding_name(error) %>
 <% end %>
 }

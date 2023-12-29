@@ -181,6 +181,14 @@ module Foobara
           scoped_path
         end
 
+        def ts_instance_full_name
+          ts_instance_full_path.join(".")
+        end
+
+        def ts_instance_full_path
+          scoped_full_path
+        end
+
         foobara_delegate :organization_name,
                          :domain_name,
                          to: :relevant_manifest
@@ -258,7 +266,7 @@ module Foobara
 
           if type_declaration.is_a?(Manifest::Error)
             error_generator = generator_for(type_declaration)
-            return dependency_group.non_colliding_name(error_generator)
+            return dependency_group.non_colliding_type(error_generator)
           end
 
           if type_declaration.relevant_manifest.size > 1
@@ -283,6 +291,7 @@ module Foobara
                           "Date"
                         else
                           if type_declaration.entity?
+                            binding.pry
                             entity_to_ts_entity_name(type_declaration, association_depth:)
                           end
                         end

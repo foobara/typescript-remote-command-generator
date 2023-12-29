@@ -23,7 +23,12 @@ module Foobara
         end
 
         def ts_instance_path
-          *prefix, name = scoped_path
+          *prefix, name = super
+          [*prefix, "#{name}Aggregate"]
+        end
+
+        def ts_instance_full_path
+          *prefix, name = super
           [*prefix, "#{name}Aggregate"]
         end
       end

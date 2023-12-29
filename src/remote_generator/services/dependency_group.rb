@@ -31,6 +31,7 @@ module Foobara
 
         def collision_data_for(dep)
           key = to_key(dep)
+
           collision_data[key].tap do |cd|
             unless cd
               # :nocov:
@@ -46,7 +47,7 @@ module Foobara
         end
 
         def to_key(dep)
-          [dep.scoped_category.to_s, dep.scoped_full_path.map(&:to_s)]
+          [dep.scoped_category, *dep.ts_instance_full_path].map(&:to_s)
         end
 
         def collision_data
@@ -93,9 +94,28 @@ module Foobara
           non_colliding_path(dep, points).join(".")
         end
 
+        def non_colliding_type(dep, points = points_for(dep))
+          name = non_colliding_name(dep, points)
+
+          if name.include?(".")
+            case dep
+            when Manifest::Domain, Services::DomainGenerator, Manifest::Organization, Services::OrganizationGenerator,
+              Manifest::Error, Services::ErrorGenerator
+              "typeof #{name}"
+            when Manifest::Command, Services::CommandGenerator, Manifest::Entity, Services::EntityGenerator
+              "InstanceType<typeof #{name}>"
+            else
+              binding.pry
+              raise "Not sure how to handle #{name} for #{dep}"
+            end
+          else
+            name
+          end
+        end
+
         def non_colliding_path(dep, points = points_for(dep))
-          start_at = dep.scoped_full_path.size - points - 1
-          path = dep.scoped_full_path[start_at..] || []
+          start_at = dep.ts_instance_full_path.size - points - 1
+          path = dep.ts_instance_full_path[start_at..] || []
           path.map(&:to_s)
         end
 

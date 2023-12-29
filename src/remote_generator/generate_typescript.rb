@@ -91,6 +91,7 @@ module Foobara
       def add_all_commands_to_set_of_elements_to_generate
         manifest.commands.each do |command|
           elements_to_generate << command
+          elements_to_generate << command.domain
         end
       end
 

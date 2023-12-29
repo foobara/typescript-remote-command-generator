@@ -4,8 +4,16 @@ import Inputs from "./Inputs"
 import Result from "./Result"
 import Errors from "./Errors"
 
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
 export class <%= command_name %> extends RemoteCommand<Inputs, Result, Errors> {
   static readonly organizationName = "<%= organization_name %>"
   static readonly domainName = "<%= domain_name %>"
   static readonly commandName = "<%= command_name %>"
+
+<% errors_in_this_namespace.each do |error| %>
+  static readonly <%= dependency_group.non_colliding_name(error) %>: <%= dependency_group.non_colliding_type(error) %> = <%= dependency_group.non_colliding_name(error) %>
+<% end %>
 }

@@ -23,31 +23,6 @@ module Foobara
         def dependencies
           error_generators
         end
-
-        def instantiated_error_types_union
-          error_types.keys.sort.map do |key|
-            instantiated_error_type(key)
-          end.join(" |\n  ")
-        end
-
-        def instantiated_error_type(key)
-          command_error = error_types[key]
-          error = command_error.error
-          path = command_error._path
-          runtime_path = command_error.runtime_path
-
-          result = "#{foobara_type_to_ts_type(error, dependency_group:)}<\"#{key}\""
-
-          if path.any? || runtime_path.any?
-            result += ", #{path.map(&:to_s).inspect}"
-          end
-
-          if runtime_path.any?
-            result += ", #{runtime_path.map(&:to_s).inspect}"
-          end
-
-          "#{result}>"
-        end
       end
     end
   end

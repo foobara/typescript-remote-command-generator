@@ -51,6 +51,8 @@ module Foobara
                               Services::ErrorGenerator
                             when Manifest::ProcessorClass
                               Services::ProcessorClassGenerator
+                            when Manifest::RootManifest
+                              Services::InitGenerator
                             else
                               # :nocov:
                               raise "Not sure how build a generator for a #{manifest}"
@@ -214,7 +216,11 @@ module Foobara
         end
 
         def import_path
-          import_path_array.join("/")
+          if import_path_array.size == 1
+            "./#{import_path_array.first}"
+          else
+            import_path_array.join("/")
+          end
         end
 
         def import_path_array

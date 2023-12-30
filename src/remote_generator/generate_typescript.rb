@@ -92,7 +92,10 @@ module Foobara
         manifest.commands.each do |command|
           elements_to_generate << command
           elements_to_generate << command.domain
+          elements_to_generate << command.organization
         end
+
+        elements_to_generate << manifest
       end
 
       def generate_element

@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="<%= path_to_root %><%= organization_generator.import_path %>/index.ts" />
+
 import { Domain } from "<%= path_to_root %>base/Domain"
 <% command_generators.each do |command| %>
 import {<%= command.command_name %>} from "<%= path_to_root %><%= command.import_path %>"
@@ -5,21 +8,6 @@ import {<%= command.command_name %>} from "<%= path_to_root %><%= command.import
 <% entity_generators.each do |entity| %>
 import {<%= entity.entity_name %>} from "<%= path_to_root %><%= entity.import_path %>"
 <% end %>
-import { <%= organization_name %> } from "<%= path_to_root %><%= organization_name %>"
-
-<% if entity_generators.empty? %>
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-<% end %>interface entitiesT {
-<% entity_generators.each do |entity| %>
-  readonly <%= entity.entity_name %>: typeof <%= entity.entity_name %>,
-<% end %>
-}
-
-const entities: entitiesT = {
-<% entity_generators.each do |entity| %>
-  <%= entity.entity_name %>,
-<% end %>
-}
 
 export class <%= domain_name %>Class extends Domain {
   constructor() {
@@ -30,10 +18,6 @@ export class <%= domain_name %>Class extends Domain {
 <% command_generators.each do |command| %>
   readonly <%= command.command_name %>: typeof <%= command.command_name %> = <%= command.command_name %>
 <% end %>
-
-  get organization (): typeof <%= organization_name %> { return <%= organization_name %> }
-
-  readonly entities: entitiesT = entities
 
   <% entity_generators.each do |entity| %>
   readonly <%= entity.entity_name %>: typeof <%= entity.entity_name %> = <%= entity.entity_name %>

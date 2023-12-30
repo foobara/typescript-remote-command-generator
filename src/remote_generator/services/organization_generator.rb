@@ -8,7 +8,7 @@ module Foobara
 
         def target_path
           if global?
-            ["GlobalOrganization.ts"]
+            ["GlobalOrganization", "index.ts"]
           else
             [*scoped_full_path, "index.ts"]
           end

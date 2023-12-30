@@ -36,11 +36,13 @@ module Foobara
         file_list_file = "#{output_directory}/foobara-generated.json"
 
         if File.exist?(file_list_file)
+          # :nocov:
           file_list = JSON.parse(File.read(file_list_file))
 
           file_list.map do |file|
             Thread.new { FileUtils.rm("#{output_directory}/#{file}") }
           end.each(&:join)
+          # :nocov:
         end
       end
 

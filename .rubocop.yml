@@ -3,8 +3,8 @@ AllCops:
   NewCops: enable
 
 inherit_gem:
-  foobara:
-    - lint/rubocop/*
+  foobara-rubocop-rules:
+    - rules/*
 
 Naming/FileName:
   inherit_mode:

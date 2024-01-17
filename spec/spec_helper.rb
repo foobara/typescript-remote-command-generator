@@ -31,5 +31,4 @@ RSpec.configure do |config|
 end
 
 require "foobara/typescript_remote_command_generator"
-
-Foobara::Util.require_directory("#{__dir__}/../../foobara/spec/support")
+require "foobara/spec_helpers/all"

@@ -1,13 +1,13 @@
 GIT
   remote: foobara
-  revision: 1aff180eb62ae1b48f999a60a3c6eab84476c77e
+  revision: ffd584b442b80a895bf8abcdd5750d56d307765c
   branch: main
   specs:
     foobara (0.0.1)
 
 GIT
   remote: https://github.com/foobara/rubocop-rules.git
-  revision: bdeaf31cca6539ce1f5e3bdb1674273989ccdb13
+  revision: ab767521b18ac1d78a3d746d858ae1fc29b542f6
   specs:
     foobara-rubocop-rules (0.0.1)
       rubocop
@@ -15,13 +15,13 @@ GIT
 
 GIT
   remote: https://github.com/foobara/spec-helpers.git
-  revision: f59ca59324280455353ef3ba85f95ce7da24bfdc
+  revision: ee5809a26ae9ee4bae8e29f77ef689192b399bec
   specs:
     foobara-spec-helpers (0.1.0)
 
 GIT
   remote: https://github.com/foobara/util.git
-  revision: 57d4e606ad1cb88144b3837ca9c2dae69bf20d22
+  revision: b20d1072622b502239b18fbc2e0e39cf50e169d4
   specs:
     foobara-util (0.1.0)
 
@@ -66,7 +66,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.24.0)
-    parser (3.3.0.4)
+    parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
     pry (0.14.2)
@@ -99,7 +99,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.1)
-    rubocop (1.60.0)
+    rubocop (1.60.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)

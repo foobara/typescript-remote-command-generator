@@ -20,8 +20,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -30,10 +32,24 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
+        },
+        "data.some_integer.below_minimum": {
+          "category": "data",
+          "error": "number::supported_validators::min::BelowMinimumError",
+          "key": "data.some_integer.below_minimum",
+          "path": [
+            "some_integer"
+          ],
+          "runtime_path": [
+
+          ],
+          "symbol": "below_minimum"
         },
         "data.some_integer.cannot_cast": {
           "category": "data",
@@ -43,6 +59,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -54,6 +71,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -65,6 +83,7 @@
             "some_org_auth_referral"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -76,6 +95,7 @@
             "some_org_auth_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -87,6 +107,7 @@
             "some_other_org_auth_referral"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -98,6 +119,7 @@
             "some_other_org_auth_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -109,6 +131,7 @@
             "some_other_org_some_other_auth_referral"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -120,6 +143,7 @@
             "some_other_org_some_other_auth_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -128,8 +152,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -138,8 +164,10 @@
           "error": "GlobalError",
           "key": "runtime.global",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "global"
         },
@@ -148,6 +176,7 @@
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_org::auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_org::auth::create_referral"
@@ -159,6 +188,7 @@
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_org::auth::create_user>some_org::auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_org::auth::create_user",
@@ -171,6 +201,7 @@
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_other_org::auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_other_org::auth::create_referral"
@@ -182,6 +213,7 @@
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_other_org::auth::create_user>some_other_org::auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_other_org::auth::create_user",
@@ -194,6 +226,7 @@
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "some_other_org::some_other_auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_other_org::some_other_auth::create_referral"
@@ -205,6 +238,7 @@
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "some_other_org::some_other_auth::create_user>some_other_org::some_other_auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_other_org::some_other_auth::create_user",
@@ -246,6 +280,7 @@
         "array",
         "symbol",
         "duck",
+        "number",
         "SomeOrg::Auth::User",
         "string",
         "SomeOtherOrg::Auth::User",
@@ -253,10 +288,12 @@
       ],
       "full_command_name": "GlobalCommand",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
           "some_integer": {
+            "min": 10,
             "type": "integer"
           },
           "some_org_auth_referral": {
@@ -288,6 +325,7 @@
         "array",
         "symbol",
         "duck",
+        "number",
         "integer",
         "SomeOrg::Auth::Referral",
         "SomeOrg::Auth::User",
@@ -303,10 +341,12 @@
         "global_organization::global_domain"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "GlobalCommand",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "element_type_declarations": {
@@ -397,6 +437,7 @@
         "array",
         "symbol",
         "duck",
+        "number",
         "integer",
         "SomeOrg::Auth::Referral",
         "SomeOrg::Auth::User",
@@ -413,6 +454,7 @@
       "capture_unknown_error": null,
       "command": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "depends_on": [
+
       ],
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
@@ -422,8 +464,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -432,8 +476,10 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -445,6 +491,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -456,6 +503,7 @@
             "some_integer"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -464,8 +512,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         }
@@ -506,6 +556,7 @@
       ],
       "full_command_name": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -532,10 +583,12 @@
         "SomeDomainWithoutOrg"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "integer"
@@ -622,6 +675,7 @@
       "capture_unknown_error": null,
       "command": "SomeOrg::Auth::CreateReferral",
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "SomeOrg::Auth",
@@ -631,8 +685,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -644,6 +700,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -655,6 +712,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -666,6 +724,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -674,8 +733,10 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -687,6 +748,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -698,6 +760,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -709,6 +772,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -720,6 +784,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -728,8 +793,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -738,8 +805,10 @@
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "bad_referral"
         }
@@ -782,6 +851,7 @@
       ],
       "full_command_name": "SomeOrg::Auth::CreateReferral",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -821,10 +891,12 @@
         "SomeOrg::Auth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOrg::Auth::CreateReferral",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOrg::Auth::Referral"
@@ -929,8 +1001,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -942,6 +1016,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -953,6 +1028,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -964,6 +1040,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -975,6 +1052,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -986,6 +1064,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -997,6 +1076,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -1008,6 +1088,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -1019,6 +1100,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -1030,6 +1112,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -1041,6 +1124,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -1052,6 +1136,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1063,6 +1148,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1074,6 +1160,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1085,6 +1172,7 @@
             "referral_channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1096,6 +1184,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1104,8 +1193,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -1114,6 +1205,7 @@
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_org::auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_org::auth::create_referral"
@@ -1159,6 +1251,7 @@
       ],
       "full_command_name": "SomeOrg::Auth::CreateUser",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -1200,10 +1293,12 @@
         "SomeOrg::Auth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOrg::Auth::CreateUser",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOrg::Auth::User"
@@ -1294,6 +1389,7 @@
       "capture_unknown_error": null,
       "command": "SomeOrg::Math::CalculateExponent",
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Math",
       "domain_name": "SomeOrg::Math",
@@ -1306,6 +1402,7 @@
             "base"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1317,6 +1414,7 @@
             "base"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1325,8 +1423,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1338,6 +1438,7 @@
             "exponent"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1349,6 +1450,7 @@
             "exponent"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1357,8 +1459,10 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1367,8 +1471,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -1377,8 +1483,10 @@
           "error": "SomeOrg::Math::CalculateExponent::NegativeExponentError",
           "key": "runtime.negative_exponent",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "negative_exponent"
         }
@@ -1420,6 +1528,7 @@
       ],
       "full_command_name": "SomeOrg::Math::CalculateExponent",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -1450,10 +1559,12 @@
         "SomeOrg::Math"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOrg::Math::CalculateExponent",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "integer"
@@ -1541,6 +1652,7 @@
       "capture_unknown_error": null,
       "command": "SomeOtherOrg::Auth::CreateReferral",
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "SomeOtherOrg::Auth",
@@ -1550,8 +1662,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1563,6 +1677,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1574,6 +1689,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1585,6 +1701,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1593,8 +1710,10 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1606,6 +1725,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1617,6 +1737,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1628,6 +1749,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1639,6 +1761,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -1647,8 +1770,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -1657,8 +1782,10 @@
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "bad_referral"
         }
@@ -1701,6 +1828,7 @@
       ],
       "full_command_name": "SomeOtherOrg::Auth::CreateReferral",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -1740,10 +1868,12 @@
         "SomeOtherOrg::Auth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOtherOrg::Auth::CreateReferral",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOtherOrg::Auth::Referral"
@@ -1848,8 +1978,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1861,6 +1993,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1872,6 +2005,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -1883,6 +2017,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -1894,6 +2029,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -1905,6 +2041,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -1916,6 +2053,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -1927,6 +2065,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -1938,6 +2077,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -1949,6 +2089,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -1960,6 +2101,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -1971,6 +2113,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1982,6 +2125,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -1993,6 +2137,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2004,6 +2149,7 @@
             "referral_channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2015,6 +2161,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2023,8 +2170,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -2033,6 +2182,7 @@
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_other_org::auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_other_org::auth::create_referral"
@@ -2078,6 +2228,7 @@
       ],
       "full_command_name": "SomeOtherOrg::Auth::CreateUser",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -2119,10 +2270,12 @@
         "SomeOtherOrg::Auth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOtherOrg::Auth::CreateUser",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOtherOrg::Auth::User"
@@ -2213,6 +2366,7 @@
       "capture_unknown_error": null,
       "command": "SomeOtherOrg::Math::CalculateExponent",
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::Math",
       "domain_name": "SomeOtherOrg::Math",
@@ -2225,6 +2379,7 @@
             "base"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2236,6 +2391,7 @@
             "base"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2244,8 +2400,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2257,6 +2415,7 @@
             "exponent"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2268,6 +2427,7 @@
             "exponent"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2276,8 +2436,10 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2286,8 +2448,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -2296,8 +2460,10 @@
           "error": "SomeOtherOrg::Math::CalculateExponent::NegativeExponentError",
           "key": "runtime.negative_exponent",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "negative_exponent"
         }
@@ -2339,6 +2505,7 @@
       ],
       "full_command_name": "SomeOtherOrg::Math::CalculateExponent",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -2369,10 +2536,12 @@
         "SomeOtherOrg::Math"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOtherOrg::Math::CalculateExponent",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "integer"
@@ -2460,6 +2629,7 @@
       "capture_unknown_error": null,
       "command": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherOrg::SomeOtherAuth",
@@ -2469,8 +2639,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2482,6 +2654,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2493,6 +2666,7 @@
             "channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2504,6 +2678,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2512,8 +2687,10 @@
           "error": "attributes::supported_validators::required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2525,6 +2702,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2536,6 +2714,7 @@
             "referred_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2547,6 +2726,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2558,6 +2738,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "missing_required_attribute"
         },
@@ -2566,8 +2747,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -2576,8 +2759,10 @@
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "bad_referral"
         }
@@ -2620,6 +2805,7 @@
       ],
       "full_command_name": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -2659,10 +2845,12 @@
         "SomeOtherOrg::SomeOtherAuth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOtherOrg::SomeOtherAuth::Referral"
@@ -2767,8 +2955,10 @@
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2780,6 +2970,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2791,6 +2982,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_exceed64_characters"
         },
@@ -2802,6 +2994,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_have_multiple_at_signs"
         },
@@ -2813,6 +3006,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
@@ -2824,6 +3018,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_be_empty"
         },
@@ -2835,6 +3030,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
@@ -2846,6 +3042,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "first_part_has_bad_characters"
         },
@@ -2857,6 +3054,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "must_have_an_at_sign"
         },
@@ -2868,6 +3066,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_cannot_be_empty"
         },
@@ -2879,6 +3078,7 @@
             "email"
           ],
           "runtime_path": [
+
           ],
           "symbol": "second_part_has_bad_characters"
         },
@@ -2890,6 +3090,7 @@
             "first_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2901,6 +3102,7 @@
             "id"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2912,6 +3114,7 @@
             "last_name"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2923,6 +3126,7 @@
             "referral_channel"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2934,6 +3138,7 @@
             "referring_user"
           ],
           "runtime_path": [
+
           ],
           "symbol": "cannot_cast"
         },
@@ -2942,8 +3147,10 @@
           "error": "attributes::supported_processors::element_type_declarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
           "path": [
+
           ],
           "runtime_path": [
+
           ],
           "symbol": "unexpected_attributes"
         },
@@ -2952,6 +3159,7 @@
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "some_other_org::some_other_auth::create_referral>runtime.bad_referral",
           "path": [
+
           ],
           "runtime_path": [
             "some_other_org::some_other_auth::create_referral"
@@ -2997,6 +3205,7 @@
       ],
       "full_command_name": "SomeOtherOrg::SomeOtherAuth::CreateUser",
       "inputs_transformers": [
+
       ],
       "inputs_type": {
         "element_type_declarations": {
@@ -3038,10 +3247,12 @@
         "SomeOtherOrg::SomeOtherAuth"
       ],
       "pre_commit_transformers": [
+
       ],
       "reference": "SomeOtherOrg::SomeOtherAuth::CreateUser",
       "requires_authentication": null,
       "result_transformers": [
+
       ],
       "result_type": {
         "type": "SomeOtherOrg::SomeOtherAuth::User"
@@ -3129,11 +3340,38 @@
     }
   },
   "domain": {
+    "CommandConnectors": {
+      "commands": [
+
+      ],
+      "depends_on": [
+
+      ],
+      "domain": "CommandConnectors",
+      "domain_name": "CommandConnectors",
+      "organization_name": "global_organization",
+      "reference": "CommandConnectors",
+      "scoped_category": "domain",
+      "scoped_full_name": "CommandConnectors",
+      "scoped_full_path": [
+        "CommandConnectors"
+      ],
+      "scoped_name": "CommandConnectors",
+      "scoped_path": [
+        "CommandConnectors"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CommandConnectors",
+      "types": [
+
+      ]
+    },
     "SomeDomainWithoutOrg": {
       "commands": [
         "SomeDomainWithoutOrg::CommandWithDomainButNoOrg"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
@@ -3156,6 +3394,7 @@
       "scoped_prefix": null,
       "scoped_short_name": "SomeDomainWithoutOrg",
       "types": [
+
       ]
     },
     "SomeOrg::Auth": {
@@ -3164,6 +3403,7 @@
         "SomeOrg::Auth::CreateUser"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
@@ -3196,6 +3436,7 @@
         "SomeOrg::Math::CalculateExponent"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Math",
       "domain_name": "Math",
@@ -3219,6 +3460,7 @@
       "scoped_prefix": null,
       "scoped_short_name": "Math",
       "types": [
+
       ]
     },
     "SomeOtherOrg::Auth": {
@@ -3227,6 +3469,7 @@
         "SomeOtherOrg::Auth::CreateUser"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "Auth",
@@ -3259,6 +3502,7 @@
         "SomeOtherOrg::Math::CalculateExponent"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::Math",
       "domain_name": "Math",
@@ -3282,6 +3526,7 @@
       "scoped_prefix": null,
       "scoped_short_name": "Math",
       "types": [
+
       ]
     },
     "SomeOtherOrg::SomeOtherAuth": {
@@ -3290,6 +3535,7 @@
         "SomeOtherOrg::SomeOtherAuth::CreateUser"
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherAuth",
@@ -3322,6 +3568,7 @@
         "GlobalCommand"
       ],
       "depends_on": [
+
       ],
       "domain": "global_organization::global_domain",
       "domain_name": "global_domain",
@@ -3335,14 +3582,31 @@
       "scoped_category": "domain",
       "scoped_full_name": "",
       "scoped_full_path": [
+
       ],
       "scoped_name": null,
       "scoped_path": [
+
       ],
       "scoped_prefix": [
+
       ],
       "scoped_short_name": null,
       "types": [
+        "duck",
+        "atomic_duck",
+        "symbol",
+        "number",
+        "integer",
+        "string",
+        "datetime",
+        "email",
+        "duckture",
+        "array",
+        "associative_array",
+        "attributes",
+        "model",
+        "entity"
       ]
     }
   },
@@ -3351,6 +3615,7 @@
       "category": "runtime",
       "context_type_declaration": {
         "element_type_declarations": {
+
         },
         "type": "attributes"
       },
@@ -3664,7 +3929,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": true,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "attributes::supported_processors::element_type_declarations"
@@ -3702,7 +3969,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": true,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "attributes::supported_validators::required"
@@ -3746,7 +4015,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::cannot_exceed64_characters"
@@ -3790,7 +4061,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::cannot_have_multiple_at_signs"
@@ -3834,7 +4107,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::domain_cannot_start_with_or_end_with_a_hyphen"
@@ -3878,7 +4153,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::first_part_cannot_be_empty"
@@ -3922,7 +4199,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
@@ -3966,7 +4245,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::first_part_has_bad_characters"
@@ -4010,7 +4291,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::must_have_an_at_sign"
@@ -4054,7 +4337,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::second_part_cannot_be_empty"
@@ -4098,7 +4383,9 @@
         },
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "is_fatal": false,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "email::validators::second_part_has_bad_characters"
@@ -4124,6 +4411,50 @@
         "array",
         "symbol",
         "duck"
+      ]
+    },
+    "number::supported_validators::min::BelowMinimumError": {
+      "category": "data",
+      "context_type_declaration": {
+        "element_type_declarations": {
+          "min": {
+            "type": "number"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "type": "attributes"
+      },
+      "domain": "global_organization::global_domain",
+      "is_fatal": false,
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "number::supported_validators::min"
+      ],
+      "reference": "number::supported_validators::min::BelowMinimumError",
+      "scoped_category": "error",
+      "scoped_full_name": "number::supported_validators::min::BelowMinimumError",
+      "scoped_full_path": [
+        "number",
+        "supported_validators",
+        "min",
+        "BelowMinimumError"
+      ],
+      "scoped_name": "BelowMinimumError",
+      "scoped_path": [
+        "BelowMinimumError"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "BelowMinimumError",
+      "symbol": "below_minimum",
+      "types_depended_on": [
+        "attributes",
+        "array",
+        "symbol",
+        "duck",
+        "number"
       ]
     }
   },
@@ -4180,11 +4511,14 @@
       "scoped_category": "organization",
       "scoped_full_name": "",
       "scoped_full_path": [
+
       ],
       "scoped_name": null,
       "scoped_path": [
+
       ],
       "scoped_prefix": [
+
       ],
       "scoped_short_name": null
     }
@@ -4198,6 +4532,7 @@
         "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
@@ -4218,12 +4553,15 @@
       "scoped_short_name": "EntityPrimaryKeyCaster"
     },
     "array::casters::arrayable": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Array::Casters::Arrayable",
+      "organization": "global_organization",
       "parent": [
         "type",
         "array"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "array::casters::arrayable",
@@ -4245,12 +4583,15 @@
       "scoped_short_name": "arrayable"
     },
     "associative_array::casters::array": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::AssociativeArray::Casters::Array",
+      "organization": "global_organization",
       "parent": [
         "type",
         "associative_array"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "associative_array::casters::array",
@@ -4272,12 +4613,15 @@
       "scoped_short_name": "array"
     },
     "attributes::casters::hash": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Attributes::Casters::Hash",
+      "organization": "global_organization",
       "parent": [
         "type",
         "attributes"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "attributes::casters::hash",
@@ -4299,12 +4643,15 @@
       "scoped_short_name": "hash"
     },
     "datetime::casters::date": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Datetime::Casters::Date",
+      "organization": "global_organization",
       "parent": [
         "type",
         "datetime"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "datetime::casters::date",
@@ -4326,12 +4673,15 @@
       "scoped_short_name": "date"
     },
     "datetime::casters::hash": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Datetime::Casters::Hash",
+      "organization": "global_organization",
       "parent": [
         "type",
         "datetime"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "datetime::casters::hash",
@@ -4353,12 +4703,15 @@
       "scoped_short_name": "hash"
     },
     "datetime::casters::string": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Datetime::Casters::String",
+      "organization": "global_organization",
       "parent": [
         "type",
         "datetime"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "datetime::casters::string",
@@ -4381,12 +4734,15 @@
     },
     "email::transformers::downcase": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Transformers::Downcase",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
       ],
       "possible_errors": {
+
       },
       "processor_type": "transformer",
       "reference": "email::transformers::downcase",
@@ -4409,7 +4765,9 @@
     },
     "email::validators::cannot_exceed64_characters": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::CannotExceed64Characters",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4438,7 +4796,9 @@
     },
     "email::validators::cannot_have_multiple_at_signs": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4467,7 +4827,9 @@
     },
     "email::validators::domain_cannot_start_with_or_end_with_a_hyphen": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4496,7 +4858,9 @@
     },
     "email::validators::first_part_cannot_be_empty": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4525,7 +4889,9 @@
     },
     "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4554,7 +4920,9 @@
     },
     "email::validators::first_part_has_bad_characters": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4583,7 +4951,9 @@
     },
     "email::validators::must_have_an_at_sign": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::MustHaveAnAtSign",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4612,7 +4982,9 @@
     },
     "email::validators::second_part_cannot_be_empty": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4641,7 +5013,9 @@
     },
     "email::validators::second_part_has_bad_characters": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -4669,7 +5043,9 @@
       "scoped_short_name": "second_part_has_bad_characters"
     },
     "entity::casters::hash": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Entity::Casters::Hash",
+      "organization": "global_organization",
       "parent": [
         "type",
         "entity"
@@ -4678,6 +5054,7 @@
         "type": "entity"
       },
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "entity::casters::hash",
@@ -4700,7 +5077,9 @@
     },
     "entity::transformers::mutable": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Entity::Transformers::Mutable",
+      "organization": "global_organization",
       "parent": [
         "type",
         "entity"
@@ -4709,6 +5088,7 @@
         "type": "entity"
       },
       "possible_errors": {
+
       },
       "processor_type": "transformer",
       "reference": "entity::transformers::mutable",
@@ -4731,7 +5111,9 @@
     },
     "entity::validators::created_in_valid_state": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Entity::Validators::CreatedInValidState",
+      "organization": "global_organization",
       "parent": [
         "type",
         "entity"
@@ -4740,6 +5122,7 @@
         "type": "entity"
       },
       "possible_errors": {
+
       },
       "processor_type": "processor",
       "reference": "entity::validators::created_in_valid_state",
@@ -4761,12 +5144,15 @@
       "scoped_short_name": "created_in_valid_state"
     },
     "integer::casters::string": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Integer::Casters::String",
+      "organization": "global_organization",
       "parent": [
         "type",
         "integer"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "integer::casters::string",
@@ -4788,7 +5174,9 @@
       "scoped_short_name": "string"
     },
     "model::casters::hash": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Model::Casters::Hash",
+      "organization": "global_organization",
       "parent": [
         "type",
         "model"
@@ -4797,6 +5185,7 @@
         "type": "model"
       },
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "model::casters::hash",
@@ -4819,7 +5208,9 @@
     },
     "model::transformers::mutable": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Model::Transformers::Mutable",
+      "organization": "global_organization",
       "parent": [
         "type",
         "model"
@@ -4828,6 +5219,7 @@
         "type": "model"
       },
       "possible_errors": {
+
       },
       "processor_type": "transformer",
       "reference": "model::transformers::mutable",
@@ -4850,7 +5242,9 @@
     },
     "model::validators::attributes_declaration": {
       "declaration_data": true,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Model::Validators::AttributesDeclaration",
+      "organization": "global_organization",
       "parent": [
         "type",
         "model"
@@ -4859,6 +5253,7 @@
         "type": "model"
       },
       "possible_errors": {
+
       },
       "processor_type": "processor",
       "reference": "model::validators::attributes_declaration",
@@ -4880,12 +5275,15 @@
       "scoped_short_name": "attributes_declaration"
     },
     "string::casters::symbol": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::String::Casters::Symbol",
+      "organization": "global_organization",
       "parent": [
         "type",
         "string"
       ],
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "string::casters::symbol",
@@ -4907,7 +5305,9 @@
       "scoped_short_name": "symbol"
     },
     "symbol::casters::string": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Symbol::Casters::String",
+      "organization": "global_organization",
       "parent": [
         "type",
         "symbol"
@@ -4916,6 +5316,7 @@
         "type": "symbol"
       },
       "possible_errors": {
+
       },
       "processor_type": "caster",
       "reference": "symbol::casters::string",
@@ -5008,7 +5409,9 @@
       "scoped_short_name": "Casting"
     },
     "array::supported_processors::element_type_declaration": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Array::SupportedProcessors::ElementTypeDeclaration",
+      "organization": "global_organization",
       "parent": [
         "type",
         "array"
@@ -5033,7 +5436,9 @@
       "scoped_short_name": "element_type_declaration"
     },
     "array::supported_validators::size": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Array::SupportedValidators::Size",
+      "organization": "global_organization",
       "parent": [
         "type",
         "array"
@@ -5058,7 +5463,9 @@
       "scoped_short_name": "size"
     },
     "associative_array::supported_processors::key_type_declaration": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::KeyTypeDeclaration",
+      "organization": "global_organization",
       "parent": [
         "type",
         "associative_array"
@@ -5083,7 +5490,9 @@
       "scoped_short_name": "key_type_declaration"
     },
     "associative_array::supported_processors::value_type_declaration": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::ValueTypeDeclaration",
+      "organization": "global_organization",
       "parent": [
         "type",
         "associative_array"
@@ -5108,7 +5517,9 @@
       "scoped_short_name": "value_type_declaration"
     },
     "attributes::supported_processors::element_type_declarations": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Attributes::SupportedProcessors::ElementTypeDeclarations",
+      "organization": "global_organization",
       "parent": [
         "type",
         "attributes"
@@ -5133,7 +5544,9 @@
       "scoped_short_name": "element_type_declarations"
     },
     "attributes::supported_transformers::defaults": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Attributes::SupportedTransformers::Defaults",
+      "organization": "global_organization",
       "parent": [
         "type",
         "attributes"
@@ -5158,7 +5571,9 @@
       "scoped_short_name": "defaults"
     },
     "attributes::supported_validators::required": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Attributes::SupportedValidators::Required",
+      "organization": "global_organization",
       "parent": [
         "type",
         "attributes"
@@ -5183,7 +5598,9 @@
       "scoped_short_name": "required"
     },
     "email::validators::cannot_exceed64_characters": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::CannotExceed64Characters",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5208,7 +5625,9 @@
       "scoped_short_name": "cannot_exceed64_characters"
     },
     "email::validators::cannot_have_multiple_at_signs": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::CannotHaveMultipleAtSigns",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5233,7 +5652,9 @@
       "scoped_short_name": "cannot_have_multiple_at_signs"
     },
     "email::validators::domain_cannot_start_with_or_end_with_a_hyphen": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::DomainCannotStartWithOrEndWithAHyphen",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5258,7 +5679,9 @@
       "scoped_short_name": "domain_cannot_start_with_or_end_with_a_hyphen"
     },
     "email::validators::first_part_cannot_be_empty": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotBeEmpty",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5283,7 +5706,9 @@
       "scoped_short_name": "first_part_cannot_be_empty"
     },
     "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5308,7 +5733,9 @@
       "scoped_short_name": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
     },
     "email::validators::first_part_has_bad_characters": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::FirstPartHasBadCharacters",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5333,7 +5760,9 @@
       "scoped_short_name": "first_part_has_bad_characters"
     },
     "email::validators::must_have_an_at_sign": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::MustHaveAnAtSign",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5358,7 +5787,9 @@
       "scoped_short_name": "must_have_an_at_sign"
     },
     "email::validators::second_part_cannot_be_empty": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartCannotBeEmpty",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5383,7 +5814,9 @@
       "scoped_short_name": "second_part_cannot_be_empty"
     },
     "email::validators::second_part_has_bad_characters": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Email::Validators::SecondPartHasBadCharacters",
+      "organization": "global_organization",
       "parent": [
         "type",
         "email"
@@ -5408,7 +5841,9 @@
       "scoped_short_name": "second_part_has_bad_characters"
     },
     "number::supported_validators::max": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Max",
+      "organization": "global_organization",
       "parent": [
         "type",
         "number"
@@ -5433,7 +5868,9 @@
       "scoped_short_name": "max"
     },
     "number::supported_validators::min": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Min",
+      "organization": "global_organization",
       "parent": [
         "type",
         "number"
@@ -5458,7 +5895,9 @@
       "scoped_short_name": "min"
     },
     "string::supported_transformers::downcase": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::String::SupportedTransformers::Downcase",
+      "organization": "global_organization",
       "parent": [
         "type",
         "string"
@@ -5483,7 +5922,9 @@
       "scoped_short_name": "downcase"
     },
     "string::supported_validators::matches": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::String::SupportedValidators::Matches",
+      "organization": "global_organization",
       "parent": [
         "type",
         "string"
@@ -5508,7 +5949,9 @@
       "scoped_short_name": "matches"
     },
     "string::supported_validators::max_length": {
+      "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::String::SupportedValidators::MaxLength",
+      "organization": "global_organization",
       "parent": [
         "type",
         "string"
@@ -5645,10 +6088,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "Referral",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOrg::Auth::Referral"
@@ -5666,6 +6112,7 @@
     },
     "SomeOrg::Auth::User": {
       "associations": {
+
       },
       "attributes_type": {
         "element_type_declarations": {
@@ -5721,10 +6168,13 @@
         "type": "entity"
       },
       "deep_associations": {
+
       },
       "deep_depends_on": [
+
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
@@ -5769,10 +6219,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "User",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOrg::Auth::User"
@@ -5899,10 +6352,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "Referral",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOtherOrg::Auth::Referral"
@@ -5920,6 +6376,7 @@
     },
     "SomeOtherOrg::Auth::User": {
       "associations": {
+
       },
       "attributes_type": {
         "element_type_declarations": {
@@ -5975,10 +6432,13 @@
         "type": "entity"
       },
       "deep_associations": {
+
       },
       "deep_depends_on": [
+
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "Auth",
@@ -6023,10 +6483,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "User",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOtherOrg::Auth::User"
@@ -6153,10 +6616,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "Referral",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOtherOrg::SomeOtherAuth::Referral"
@@ -6174,6 +6640,7 @@
     },
     "SomeOtherOrg::SomeOtherAuth::User": {
       "associations": {
+
       },
       "attributes_type": {
         "element_type_declarations": {
@@ -6229,10 +6696,13 @@
         "type": "entity"
       },
       "deep_associations": {
+
       },
       "deep_depends_on": [
+
       ],
       "depends_on": [
+
       ],
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherAuth",
@@ -6277,10 +6747,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "User",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "SomeOtherOrg::SomeOtherAuth::User"
@@ -6301,14 +6774,22 @@
       "declaration_data": {
         "type": "array"
       },
+      "domain": "global_organization::global_domain",
       "name": "array",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "array::casters::arrayable"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "array",
@@ -6327,6 +6808,7 @@
         "array::supported_processors::element_type_declaration"
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
         "array::supported_validators::size"
@@ -6346,14 +6828,22 @@
       "declaration_data": {
         "type": "associative_array"
       },
+      "domain": "global_organization::global_domain",
       "name": "associative_array",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "associative_array::casters::array"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "associative_array",
@@ -6369,12 +6859,14 @@
       "scoped_prefix": null,
       "scoped_short_name": "associative_array",
       "supported_processors": [
-        "associative_array::supported_processors::key_type_declaration",
-        "associative_array::supported_processors::value_type_declaration"
+        "associative_array::supported_processors::value_type_declaration",
+        "associative_array::supported_processors::key_type_declaration"
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Hash"
@@ -6392,13 +6884,22 @@
       "declaration_data": {
         "type": "atomic_duck"
       },
+      "domain": "global_organization::global_domain",
       "name": "atomic_duck",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "atomic_duck",
@@ -6414,10 +6915,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "atomic_duck",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Object"
@@ -6434,14 +6938,22 @@
       "declaration_data": {
         "type": "attributes"
       },
+      "domain": "global_organization::global_domain",
       "name": "attributes",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "attributes::casters::hash"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "attributes",
@@ -6458,8 +6970,8 @@
       "scoped_short_name": "attributes",
       "supported_processors": [
         "attributes::supported_processors::element_type_declarations",
-        "associative_array::supported_processors::key_type_declaration",
-        "associative_array::supported_processors::value_type_declaration"
+        "associative_array::supported_processors::value_type_declaration",
+        "associative_array::supported_processors::key_type_declaration"
       ],
       "supported_transformers": [
         "attributes::supported_transformers::defaults"
@@ -6468,6 +6980,7 @@
         "attributes::supported_validators::required"
       ],
       "target_classes": [
+
       ],
       "types_depended_on": [
         "associative_array",
@@ -6481,16 +6994,24 @@
       "declaration_data": {
         "type": "datetime"
       },
+      "domain": "global_organization::global_domain",
       "name": "datetime",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
-          "datetime::casters::string",
           "datetime::casters::date",
+          "datetime::casters::string",
           "datetime::casters::hash"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "datetime",
@@ -6506,10 +7027,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "datetime",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Time"
@@ -6527,13 +7051,22 @@
       "declaration_data": {
         "type": "duck"
       },
+      "domain": "global_organization::global_domain",
       "name": "duck",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "duck",
@@ -6549,10 +7082,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "duck",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Object"
@@ -6568,13 +7104,22 @@
       "declaration_data": {
         "type": "duckture"
       },
+      "domain": "global_organization::global_domain",
       "name": "duckture",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "duckture",
@@ -6590,10 +7135,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "duckture",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Object"
@@ -6610,7 +7158,13 @@
       "declaration_data": {
         "type": "email"
       },
+      "domain": "global_organization::global_domain",
       "name": "email",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "string::casters::symbol"
@@ -6619,15 +7173,15 @@
           "email::transformers::downcase"
         ],
         "validators": [
-          "email::validators::cannot_exceed64_characters",
-          "email::validators::first_part_has_bad_characters",
-          "email::validators::second_part_has_bad_characters",
           "email::validators::must_have_an_at_sign",
           "email::validators::cannot_have_multiple_at_signs",
           "email::validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "email::validators::domain_cannot_start_with_or_end_with_a_hyphen",
           "email::validators::first_part_cannot_be_empty",
-          "email::validators::second_part_cannot_be_empty"
+          "email::validators::second_part_cannot_be_empty",
+          "email::validators::cannot_exceed64_characters",
+          "email::validators::first_part_has_bad_characters",
+          "email::validators::second_part_has_bad_characters"
         ]
       },
       "reference": "email",
@@ -6643,6 +7197,7 @@
       "scoped_prefix": null,
       "scoped_short_name": "email",
       "supported_processors": [
+
       ],
       "supported_transformers": [
         "string::supported_transformers::downcase"
@@ -6667,7 +7222,13 @@
       "declaration_data": {
         "type": "entity"
       },
+      "domain": "global_organization::global_domain",
       "name": "entity",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "entity::casters::hash"
@@ -6692,12 +7253,16 @@
       "scoped_prefix": null,
       "scoped_short_name": "entity",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
+
       ],
       "types_depended_on": [
         "model",
@@ -6712,14 +7277,22 @@
       "declaration_data": {
         "type": "integer"
       },
+      "domain": "global_organization::global_domain",
       "name": "integer",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "integer::casters::string"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "integer",
@@ -6735,8 +7308,10 @@
       "scoped_prefix": null,
       "scoped_short_name": "integer",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
         "number::supported_validators::max",
@@ -6758,7 +7333,13 @@
       "declaration_data": {
         "type": "model"
       },
+      "domain": "global_organization::global_domain",
       "name": "model",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "model::casters::hash"
@@ -6783,12 +7364,16 @@
       "scoped_prefix": null,
       "scoped_short_name": "model",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
+
       ],
       "types_depended_on": [
         "atomic_duck",
@@ -6803,13 +7388,22 @@
       "declaration_data": {
         "type": "number"
       },
+      "domain": "global_organization::global_domain",
       "name": "number",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
+
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "number",
@@ -6825,8 +7419,10 @@
       "scoped_prefix": null,
       "scoped_short_name": "number",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
         "number::supported_validators::max",
@@ -6848,14 +7444,22 @@
       "declaration_data": {
         "type": "string"
       },
+      "domain": "global_organization::global_domain",
       "name": "string",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "string::casters::symbol"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "string",
@@ -6871,6 +7475,7 @@
       "scoped_prefix": null,
       "scoped_short_name": "string",
       "supported_processors": [
+
       ],
       "supported_transformers": [
         "string::supported_transformers::downcase"
@@ -6895,14 +7500,22 @@
       "declaration_data": {
         "type": "symbol"
       },
+      "domain": "global_organization::global_domain",
       "name": "symbol",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
       "processors": {
         "casters": [
           "symbol::casters::string"
         ],
         "transformers": [
+
         ],
         "validators": [
+
         ]
       },
       "reference": "symbol",
@@ -6918,10 +7531,13 @@
       "scoped_prefix": null,
       "scoped_short_name": "symbol",
       "supported_processors": [
+
       ],
       "supported_transformers": [
+
       ],
       "supported_validators": [
+
       ],
       "target_classes": [
         "Symbol"

@@ -271,18 +271,12 @@ module Foobara
             return dependency_group.non_colliding_type(error_generator)
           end
 
-          if type_declaration.relevant_manifest.size > 1
-            # :nocov:
-            raise "Converting a #{type_declaration.inspect} to a TS type yet supported"
-            # :nocov:
-          end
-
           type_symbol = type_declaration.type
 
           type_string = case type_symbol
                         when "string", "boolean"
                           type_symbol
-                        when "integer"
+                        when "number", "integer", "float"
                           "number"
                         # TODO: should apply relevant processors to make email a real email type instead of "string"
                         when "symbol", "email"

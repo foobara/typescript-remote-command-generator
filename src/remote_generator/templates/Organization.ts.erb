@@ -1,7 +1,7 @@
 export * as config from "./config"
 
 <% domain_generators.each do |domain| %>
-export {<%= domain.domain_name %>} from "<%= path_to_root %><%= domain.import_path %>"
+export <%= domain.import_destructure %> from "<%= path_to_root %><%= domain.import_path %>"
 <% end %>
 
 export const isGlobal = <%= global? %>

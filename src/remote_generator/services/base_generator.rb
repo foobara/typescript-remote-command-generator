@@ -35,7 +35,10 @@ module Foobara
                                 Services::CommandErrorsGenerator
                               ]
                             when Manifest::Domain
-                              Services::DomainGenerator
+                              [
+                                Services::DomainGenerator,
+                                Services::DomainConfigGenerator
+                              ]
                             when Manifest::Organization
                               [
                                 Services::OrganizationGenerator,

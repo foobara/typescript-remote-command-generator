@@ -7,7 +7,7 @@ module Foobara
         alias organization_manifest relevant_manifest
 
         def import_destructure
-          "* as #{scoped_name}"
+          "* as #{organization_name}"
         end
 
         def target_path

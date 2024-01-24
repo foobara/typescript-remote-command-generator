@@ -1,6 +1,4 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
-import { Organization } from './Organization'
-import { Domain } from './Domain'
 
 export default abstract class RemoteCommand<Inputs, Result, Error> {
   static _urlBase: string | undefined
@@ -8,36 +6,31 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   static organizationName: string
   static domainName: string
 
+  // TODO: make use of domain's config instead of process.env directly.
   static get urlBase (): string {
-    return this._urlBase ?? this.domain.urlBase
+    let base = this._urlBase
+
+    if (base == null) {
+      base = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
+    }
+
+    if (base == null) {
+      throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
+    }
+
+    return base
   }
 
   static set urlBase (urlBase: string) {
     this._urlBase = urlBase
   }
 
-  static get organization (): Organization {
-    return Organization.forName(this.organizationName)
-  }
-
-  static get domain (): Domain {
-    return Domain.forName(this.organizationName, this.domainName)
-  }
-
-  get organization (): Organization {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).organization
-  }
-
-  get domain (): Domain {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).domain
-  }
-
   get organizationName (): string {
-    return this.organization.organizationName
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).organizationName
   }
 
   get domainName (): string {
-    return this.domain.domainName
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).domainName
   }
 
   inputs: Inputs

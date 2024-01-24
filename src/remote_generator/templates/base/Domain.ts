@@ -1,20 +1,4 @@
-import { Organization } from "./Organization";
-
 export class Domain {
-  static domainsByOrganization: {[organizationName: string]: {[domainName: string]: Domain}} = {}
-
-  static forName(organizationName: string, domainName: string): Domain {
-    if (organizationName in Domain.domainsByOrganization) {
-      if (domainName in Domain.domainsByOrganization[organizationName]) {
-        return Domain.domainsByOrganization[organizationName][domainName]
-      } else {
-        throw new Error(`Unknown domain name: ${domainName}`)
-      }
-    } else {
-      throw new Error(`Unknown organization name: ${organizationName}`)
-    }
-  }
-
   organizationName: string
   domainName: string
   isGlobal: boolean
@@ -24,23 +8,24 @@ export class Domain {
     this.organizationName = organizationName
     this.domainName = domainName
     this.isGlobal = isGlobal
-
-    if (organizationName in Domain.domainsByOrganization) {
-      Domain.domainsByOrganization[organizationName][domainName] = this
-    } else {
-      Domain.domainsByOrganization[organizationName] = {[domainName]: this}
-    }
   }
 
+  // TODO: make use of domain's config instead of process.env directly.
   get urlBase(): string {
-    return this._urlBase ?? this.organization.urlBase
+    let base = this._urlBase
+
+    if (base == null) {
+      base = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
+    }
+
+    if (base == null) {
+      throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
+    }
+
+    return base
   }
 
   set urlBase(urlBase: string) {
     this._urlBase = urlBase
-  }
-
-  get organization(): Organization {
-    return Organization.forName(this.organizationName)
   }
 }

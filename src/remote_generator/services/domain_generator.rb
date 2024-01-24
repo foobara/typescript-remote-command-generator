@@ -6,6 +6,11 @@ module Foobara
       class DomainGenerator < BaseGenerator
         alias domain_manifest relevant_manifest
 
+        def import_destructure
+          # "* as #{scoped_name}"
+          super
+        end
+
         def target_path
           if global?
             ["GlobalDomain", "index.ts"]

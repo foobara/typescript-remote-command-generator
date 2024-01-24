@@ -11,7 +11,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   it "contains base files" do
     expect(outcome).to be_success
 
-    expect(result["SomeOrg/index.ts"]).to include("export class SomeOrgClass extends Organization {")
+    expect(result["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
     expect(result["SomeOrg/Auth/index.ts"]).to include("export class AuthClass extends Domain {")
 
     expect(File.exist?("#{output_directory}/foobara-generated.json")).to be true

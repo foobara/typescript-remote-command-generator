@@ -37,7 +37,10 @@ module Foobara
                             when Manifest::Domain
                               Services::DomainGenerator
                             when Manifest::Organization
-                              Services::OrganizationGenerator
+                              [
+                                Services::OrganizationGenerator,
+                                Services::OrganizationConfigGenerator
+                              ]
                             when Manifest::Entity
                               [
                                 Services::EntityGenerator,
@@ -221,6 +224,10 @@ module Foobara
           else
             import_path_array.join("/")
           end
+        end
+
+        def import_destructure
+          "{ #{scoped_name} }"
         end
 
         def import_path_array

@@ -37,7 +37,10 @@ module Foobara
                             when Manifest::Domain
                               Services::DomainGenerator
                             when Manifest::Organization
-                              Services::OrganizationGenerator
+                              [
+                                Services::OrganizationGenerator,
+                                Services::OrganizationConfigGenerator
+                              ]
                             when Manifest::Entity
                               [
                                 Services::EntityGenerator,

@@ -25,11 +25,7 @@ module Foobara
         end
 
         def dependencies
-          [*domain_generators, config_generator]
-        end
-
-        def config_generator
-          @config_generator ||= OrganizationConfigGenerator.new(organization_manifest, elements_to_generate)
+          domain_generators
         end
 
         def organization_name

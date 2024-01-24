@@ -5,7 +5,7 @@ module Foobara
     class Services
       class OrganizationConfigGenerator < OrganizationGenerator
         def target_path
-          [*super[0..-1], "config.ts"]
+          [*super[0..-2], "config.ts"]
         end
 
         def template_path

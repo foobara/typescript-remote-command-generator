@@ -226,6 +226,10 @@ module Foobara
           end
         end
 
+        def import_destructure
+          "{ #{scoped_name} }"
+        end
+
         def import_path_array
           path = if target_path.last == "index.ts"
                    target_path[0..-2]

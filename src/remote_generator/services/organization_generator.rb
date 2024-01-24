@@ -6,6 +6,10 @@ module Foobara
       class OrganizationGenerator < BaseGenerator
         alias organization_manifest relevant_manifest
 
+        def import_destructure
+          "* as #{scoped_name}"
+        end
+
         def target_path
           if global?
             ["GlobalOrganization", "index.ts"]

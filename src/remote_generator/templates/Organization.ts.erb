@@ -1,10 +1,8 @@
 export * as config from "./config"
 
 <% domain_generators.each do |domain| %>
-import {<%= domain.domain_name %>} from "<%= path_to_root %><%= domain.import_path %>"
-export <%= domain.domain_name %>
+export {<%= domain.domain_name %>} from "<%= path_to_root %><%= domain.import_path %>"
 <% end %>
 
 export const isGlobal = <%= global? %>
 export const organizationName = "<%= organization_name %>"
-

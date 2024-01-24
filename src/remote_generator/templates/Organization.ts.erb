@@ -1,16 +1,4 @@
-let _urlBase = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
-
-export get urlBase(): string {
-  if (_urlBase === undefined) {
-    throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
-  }
-
-  return _urlBase
-}
-
-export set urlBase(urlBase: string) {
-  this._urlBase = urlBase
-}
+export * as config from "./config"
 
 export const isGlobal = <%= global? %>
 export const organizationName = "<%= organization_name %>"

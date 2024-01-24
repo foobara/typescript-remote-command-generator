@@ -1,5 +1,10 @@
 export * as config from "./config"
 
+<% domain_generators.each do |domain| %>
+readonly <%= domain.domain_name %>: typeof <%= domain.domain_name %> = <%= domain.domain_name %>
+<% end %>
+
+
 export const isGlobal = <%= global? %>
 export const organizationName = "<%= organization_name %>"
 

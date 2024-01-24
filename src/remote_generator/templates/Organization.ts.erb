@@ -1,9 +1,9 @@
 export * as config from "./config"
 
 <% domain_generators.each do |domain| %>
-readonly <%= domain.domain_name %>: typeof <%= domain.domain_name %> = <%= domain.domain_name %>
+import {<%= domain.domain_name %>} from "<%= path_to_root %><%= domain.import_path %>"
+export <%= domain.domain_name %>
 <% end %>
-
 
 export const isGlobal = <%= global? %>
 export const organizationName = "<%= organization_name %>"

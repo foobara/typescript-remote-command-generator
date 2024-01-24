@@ -12,7 +12,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     expect(outcome).to be_success
 
     expect(result["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
-    expect(result["SomeOrg/Auth/index.ts"]).to include("export class AuthClass extends Domain {")
+    expect(result["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
 
     expect(File.exist?("#{output_directory}/foobara-generated.json")).to be true
   end

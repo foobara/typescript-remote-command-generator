@@ -7,8 +7,7 @@ module Foobara
         alias domain_manifest relevant_manifest
 
         def import_destructure
-          # "* as #{scoped_name}"
-          super
+          "* as #{domain_name}"
         end
 
         def target_path

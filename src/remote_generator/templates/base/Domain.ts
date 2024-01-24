@@ -10,8 +10,19 @@ export class Domain {
     this.isGlobal = isGlobal
   }
 
+  // TODO: make use of domain's config instead of process.env directly.
   get urlBase(): string {
-    return this._urlBase ?? this.organization.urlBase
+    let base = this._urlBase
+
+    if (!base) {
+      base = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
+    }
+
+    if (!base) {
+      throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
+    }
+
+    return base
   }
 
   set urlBase(urlBase: string) {

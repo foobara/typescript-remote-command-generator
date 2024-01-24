@@ -16,7 +16,7 @@ module Foobara
         end
 
         def error_generators
-          @error_generators ||= error_types.values.map(&:error).sort_by(&:error_name).uniq.map do |error|
+          @error_generators ||= possible_errors.values.map(&:error).sort_by(&:error_name).uniq.map do |error|
             Services::ErrorGenerator.new(error, elements_to_generate)
           end
         end

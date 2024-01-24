@@ -3,8 +3,8 @@ import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= depen
 <% end %>
 
 export interface PossibleErrors {
-<% error_types.keys.sort.each do |key| %>
-  "<%= key %>": <%= foobara_type_to_ts_type(error_types[key].error, dependency_group:) %>,
+<% possible_errors.keys.sort.each do |key| %>
+  "<%= key %>": <%= foobara_type_to_ts_type(possible_errors[key].error, dependency_group:) %>,
 <% end  %>
 }
 

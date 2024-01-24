@@ -17,7 +17,7 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
     expect(command.manifest.types.map(&:name)).to include("User")
     expect(command.manifest.entities.map(&:entity_name)).to include("User")
 
-    expect(result["SomeOrg/index.ts"]).to include("export class SomeOrgClass extends Organization {")
+    expect(result["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
     expect(result["SomeOrg/Auth/index.ts"]).to include("export class AuthClass extends Domain {")
   end
 end

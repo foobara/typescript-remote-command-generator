@@ -10,11 +10,11 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   static get urlBase (): string {
     let base = this._urlBase
 
-    if (!base) {
+    if (base == null) {
       base = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
     }
 
-    if (!base) {
+    if (base == null) {
       throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
     }
 

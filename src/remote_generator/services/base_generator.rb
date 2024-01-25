@@ -32,7 +32,8 @@ module Foobara
                                 Services::CommandGenerator,
                                 Services::CommandInputsGenerator,
                                 Services::CommandResultGenerator,
-                                Services::CommandErrorsGenerator
+                                Services::CommandErrorsGenerator,
+                                Services::CommandErrorsIndexGenerator
                               ]
                             when Manifest::Domain
                               [

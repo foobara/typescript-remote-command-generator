@@ -58,8 +58,6 @@ module Foobara
                               Services::ErrorGenerator
                             when Manifest::ProcessorClass
                               Services::ProcessorClassGenerator
-                            when Manifest::RootManifest
-                              Services::InitGenerator
                             else
                               # :nocov:
                               raise "Not sure how build a generator for a #{manifest}"

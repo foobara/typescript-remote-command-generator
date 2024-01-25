@@ -94,8 +94,6 @@ module Foobara
           elements_to_generate << command.domain
           elements_to_generate << command.organization
         end
-
-        elements_to_generate << manifest
       end
 
       def generate_element

@@ -1,6 +1,6 @@
-import {Error} from './Error'
+import { type FoobaraError } from './Error'
 
-export class Outcome<Result, OutcomeError extends Error> {
+export class Outcome<Result, OutcomeError extends FoobaraError> {
   readonly result?: Result
   readonly errors: OutcomeError[] = []
   readonly _isSuccess: boolean
@@ -17,15 +17,14 @@ export class Outcome<Result, OutcomeError extends Error> {
     return this._isSuccess
   }
 
-
   errorMessage (): string {
     return this.errors.map(e => e.message).join(', ')
   }
 }
 
-export class SuccessfulOutcome<Result, Error> extends Outcome<Result, Error> {
+export class SuccessfulOutcome<Result, OutcomeError extends FoobaraError> extends Outcome<Result, OutcomeError> {
   readonly _isSuccess: true = true
-  readonly errors: Error[] = []
+  readonly errors: OutcomeError[] = []
   readonly result: Result
 
   constructor (result: Result) {
@@ -34,10 +33,10 @@ export class SuccessfulOutcome<Result, Error> extends Outcome<Result, Error> {
   }
 }
 
-export class ErrorOutcome<Result, Error> extends Outcome<Result, Error> {
+export class ErrorOutcome<Result, OutcomeError extends FoobaraError> extends Outcome<Result, OutcomeError> {
   readonly _isSuccess: false = false
 
-  constructor (errors: Error[]) {
+  constructor (errors: OutcomeError[]) {
     super(undefined, errors)
   }
 }

@@ -337,6 +337,18 @@ module Foobara
 
           dependency_group.non_colliding_type(generator)
         end
+
+        def ==(other)
+          self.class == other.class && path == other.path && root_manifest == other.root_manifest
+        end
+
+        def eql?(other)
+          self == other
+        end
+
+        def hash
+          path.hash
+        end
       end
     end
   end

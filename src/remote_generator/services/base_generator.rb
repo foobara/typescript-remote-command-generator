@@ -102,6 +102,10 @@ module Foobara
           end
         end
 
+        def applicable?
+          true
+        end
+
         def dependencies
           # :nocov:
           raise "Subclass responsibility"

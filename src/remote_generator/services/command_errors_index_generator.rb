@@ -19,7 +19,11 @@ module Foobara
         end
 
         def applicable?
-          error_generators.any?
+          errors_in_this_namespace.any?
+        end
+
+        def import_destructure
+          "* as #{scoped_name}Errors"
         end
       end
     end

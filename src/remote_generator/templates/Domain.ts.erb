@@ -6,7 +6,11 @@ export const domainName = "<%= domain_name %>"
 
 <% command_generators.each do |command| %>
 export <%= command.import_destructure %> from "<%= path_to_root %><%= command.import_path %>"
+<% if command.command_errors_index_generator.applicable? %>
+export <% command.command_errors_index_generator.import_destructure %> from "<%= path_to_root %><%= command.command_errors_index_generator.import_path %>"
 <% end %>
+<% end %>
+
 // TODO: put these on an entities module so that commands can be the only top-level interface.
 <% entity_generators.each do |entity| %>
 export <%= entity.import_destructure %> from "<%= path_to_root %><%= entity.import_path %>"

@@ -31,6 +31,10 @@ module Foobara
         def dependencies
           errors_in_this_namespace
         end
+
+        def command_errors_index_generator
+          Services::CommandErrorsIndexGenerator.new(command_manifest, elements_to_generate)
+        end
       end
     end
   end

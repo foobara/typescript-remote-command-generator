@@ -50,6 +50,16 @@ module Foobara
         def dependencies
           types_depended_on.select(&:entity?)
         end
+
+        def ts_type_full_path
+          if parent.is_a?(CommandGenerator)
+            p = super.dup
+            p[-2] += "Errors"
+            p
+          else
+            super
+          end
+        end
       end
     end
   end

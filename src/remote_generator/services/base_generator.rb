@@ -202,6 +202,10 @@ module Foobara
           scoped_full_path
         end
 
+        def ts_type_full_path
+          ts_instance_full_path
+        end
+
         foobara_delegate :organization_name,
                          :domain_name,
                          to: :relevant_manifest
@@ -309,6 +313,7 @@ module Foobara
           if type_string
             name ? "#{name} = #{type_string}" : type_string
           else
+            binding.pry
             # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:

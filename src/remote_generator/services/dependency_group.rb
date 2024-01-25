@@ -94,29 +94,8 @@ module Foobara
           non_colliding_type_path(dep, points).join(".")
         end
 
-        def non_colliding_instance_name(dep, points = points_for(dep))
-          non_colliding_instance_path(dep, points).join(".")
-        end
-
-        def non_colliding_type(dep, points = points_for(dep), class_type: false)
-          name = non_colliding_type_name(dep, points)
-
-          if class_type
-            "typeof #{name}"
-          else
-            name
-          end
-        end
-
-        def non_colliding_class_type(dep, points = points_for(dep))
-          non_colliding_type(dep, points, class_type: true)
-        end
-
-        def non_colliding_instance_path(dep, points = points_for(dep))
-          start_at = dep.ts_instance_full_path.size - points - 1
-          path = dep.ts_instance_full_path[start_at..] || []
-
-          path.map(&:to_s)
+        def non_colliding_type(dep, points = points_for(dep))
+          non_colliding_type_name(dep, points)
         end
 
         def non_colliding_type_path(dep, points = points_for(dep))

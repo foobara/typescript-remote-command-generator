@@ -17,7 +17,7 @@ export class Outcome<Result, OutcomeError extends FoobaraError> {
     return this._isSuccess
   }
 
-  errorMessage (): string {
+  get errorMessage (): string {
     return this.errors.map(e => e.message).join(', ')
   }
 }

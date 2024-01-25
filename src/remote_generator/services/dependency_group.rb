@@ -90,29 +90,18 @@ module Foobara
           points
         end
 
-        def non_colliding_name(dep, points = points_for(dep))
-          non_colliding_path(dep, points).join(".")
+        def non_colliding_type_name(dep, points = points_for(dep))
+          non_colliding_type_path(dep, points).join(".")
         end
 
-        def non_colliding_type(dep, points = points_for(dep), class_type: false)
-          name = non_colliding_name(dep, points)
-
-          if class_type
-            "typeof #{name}"
-          elsif name.include?(".")
-            "InstanceType<typeof #{name}>"
-          else
-            name
-          end
+        def non_colliding_type(dep, points = points_for(dep))
+          non_colliding_type_name(dep, points)
         end
 
-        def non_colliding_class_type(dep, points = points_for(dep))
-          non_colliding_type(dep, points, class_type: true)
-        end
+        def non_colliding_type_path(dep, points = points_for(dep))
+          start_at = dep.ts_type_full_path.size - points - 1
+          path = dep.ts_type_full_path[start_at..] || []
 
-        def non_colliding_path(dep, points = points_for(dep))
-          start_at = dep.ts_instance_full_path.size - points - 1
-          path = dep.ts_instance_full_path[start_at..] || []
           path.map(&:to_s)
         end
 
@@ -125,10 +114,10 @@ module Foobara
             points = 0
 
             loop do
-              name = non_colliding_name(dep, points)
+              name = non_colliding_type_name(dep, points)
 
               collisions = dependencies.select do |other_dep|
-                dep != other_dep && name == non_colliding_name(other_dep, points)
+                dep != other_dep && name == non_colliding_type_name(other_dep, points)
               end
 
               if collisions.empty?

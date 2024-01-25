@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-export abstract class Error<contextT extends Record<string, any>> {
+export abstract class FoobaraError<contextT = any> {
   static readonly symbol: string
   static readonly category: 'data' | 'runtime'
 
@@ -20,10 +20,10 @@ export abstract class Error<contextT extends Record<string, any>> {
   }
 }
 
-export class DataError<contextT extends Record<string, any>> extends Error<contextT> {
+export class DataError<contextT extends Record<string, any>> extends FoobaraError<contextT> {
   static readonly category: 'data' = 'data'
 }
 
-export class RuntimeError<contextT extends Record<string, any>> extends Error<contextT> {
+export class RuntimeError<contextT extends Record<string, any>> extends FoobaraError<contextT> {
   static readonly category: 'runtime' = 'runtime'
 }

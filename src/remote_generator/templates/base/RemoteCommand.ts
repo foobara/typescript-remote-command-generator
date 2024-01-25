@@ -1,6 +1,7 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
+import { type FoobaraError } from './Error'
 
-export default abstract class RemoteCommand<Inputs, Result, Error> {
+export default abstract class RemoteCommand<Inputs, Result, CommandError extends FoobaraError> {
   static _urlBase: string | undefined
   static commandName: string
   static organizationName: string
@@ -26,11 +27,11 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   }
 
   get organizationName (): string {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).organizationName
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).organizationName
   }
 
   get domainName (): string {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).domainName
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).domainName
   }
 
   inputs: Inputs
@@ -40,11 +41,11 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   }
 
   get commandName (): string {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).commandName
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).commandName
   }
 
   get urlBase (): string {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).urlBase
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).urlBase
   }
 
   static get fullCommandName (): string {
@@ -52,10 +53,10 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
   }
 
   get fullCommandName (): string {
-    return (this.constructor as typeof RemoteCommand<Inputs, Result, Error>).fullCommandName
+    return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).fullCommandName
   }
 
-  async run (): Promise<Outcome<Result, Error>> {
+  async run (): Promise<Outcome<Result, CommandError>> {
     const url = `${this.urlBase}/run/${this.fullCommandName}`
 
     const response = await fetch(url, {
@@ -65,9 +66,9 @@ export default abstract class RemoteCommand<Inputs, Result, Error> {
     })
 
     if (response.ok) {
-      return new SuccessfulOutcome<Result, Error>(await response.json())
+      return new SuccessfulOutcome<Result, CommandError>(await response.json())
     } else if (response.status === 422) {
-      return new ErrorOutcome<Result, Error>(await response.json())
+      return new ErrorOutcome<Result, CommandError>(await response.json())
     } else {
       throw new Error(`not sure how to handle ${await response.text()}`)
     }

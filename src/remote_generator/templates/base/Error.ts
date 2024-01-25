@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-export abstract class Error<contextT extends Record<string, any> = {} > {
+export abstract class Error<contextT extends Record<string, any> = Record<string, any> > {
   static readonly symbol: string
   static readonly category: 'data' | 'runtime'
 

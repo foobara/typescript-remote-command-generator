@@ -116,20 +116,12 @@ module Foobara
           start_at = dep.ts_instance_full_path.size - points - 1
           path = dep.ts_instance_full_path[start_at..] || []
 
-          if dep.is_a?(Services::ErrorGenerator) && dep.symbol == :bad_referral
-            binding.pry if path.size > 1
-          end
-
           path.map(&:to_s)
         end
 
         def non_colliding_type_path(dep, points = points_for(dep))
           start_at = dep.ts_type_full_path.size - points - 1
           path = dep.ts_type_full_path[start_at..] || []
-
-          if dep.is_a?(Services::ErrorGenerator) && dep.symbol == :bad_referral
-            binding.pry if path.size > 1
-          end
 
           path.map(&:to_s)
         end

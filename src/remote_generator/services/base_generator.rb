@@ -313,7 +313,6 @@ module Foobara
           if type_string
             name ? "#{name} = #{type_string}" : type_string
           else
-            binding.pry
             # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:

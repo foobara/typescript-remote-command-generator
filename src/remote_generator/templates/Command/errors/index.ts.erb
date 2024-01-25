@@ -1,0 +1,3 @@
+<% errors_in_this_namespace.each do |error_generator| %>
+export <%= error_generator.import_destructure %> from "<%= path_to_root %><%= error_generator.import_path %>"
+<% end %>

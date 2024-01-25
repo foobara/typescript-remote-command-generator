@@ -110,6 +110,8 @@ module Foobara
 
       def each_generator
         RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
+          next unless generator.applicable?
+
           self.generator = generator
           yield
         end

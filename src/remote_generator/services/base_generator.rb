@@ -32,7 +32,8 @@ module Foobara
                                 Services::CommandGenerator,
                                 Services::CommandInputsGenerator,
                                 Services::CommandResultGenerator,
-                                Services::CommandErrorsGenerator
+                                Services::CommandErrorsGenerator,
+                                Services::CommandErrorsIndexGenerator
                               ]
                             when Manifest::Domain
                               [
@@ -100,6 +101,10 @@ module Foobara
           if relevant_manifest.parent
             RemoteGenerator.generator_for(relevant_manifest.parent, elements_to_generate)
           end
+        end
+
+        def applicable?
+          true
         end
 
         def dependencies

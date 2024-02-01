@@ -12,6 +12,7 @@
         "SomeOtherOrg::SomeOtherAuth::CreateReferral",
         "SomeOtherOrg::SomeOtherAuth::CreateUser"
       ],
+      "description": null,
       "domain": "global_organization::global_domain",
       "domain_name": "global_organization::global_domain",
       "errors_transformers": [
@@ -757,6 +758,7 @@
       "command": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
       "errors_transformers": [
@@ -1013,6 +1015,7 @@
       "command": "SomeOrg::Auth::CreateReferral",
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOrg::Auth",
       "domain_name": "SomeOrg::Auth",
       "errors_transformers": [
@@ -1482,6 +1485,7 @@
       "depends_on": [
         "SomeOrg::Auth::CreateReferral"
       ],
+      "description": null,
       "domain": "SomeOrg::Auth",
       "domain_name": "SomeOrg::Auth",
       "errors_transformers": [
@@ -2127,6 +2131,7 @@
       "command": "SomeOrg::Math::CalculateExponent",
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOrg::Math",
       "domain_name": "SomeOrg::Math",
       "errors_transformers": [
@@ -2449,6 +2454,7 @@
       "command": "SomeOtherOrg::Auth::CreateReferral",
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "SomeOtherOrg::Auth",
       "errors_transformers": [
@@ -2918,6 +2924,7 @@
       "depends_on": [
         "SomeOtherOrg::Auth::CreateReferral"
       ],
+      "description": null,
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "SomeOtherOrg::Auth",
       "errors_transformers": [
@@ -3563,6 +3570,7 @@
       "command": "SomeOtherOrg::Math::CalculateExponent",
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOtherOrg::Math",
       "domain_name": "SomeOtherOrg::Math",
       "errors_transformers": [
@@ -3885,6 +3893,7 @@
       "command": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherOrg::SomeOtherAuth",
       "errors_transformers": [
@@ -4354,6 +4363,7 @@
       "depends_on": [
         "SomeOtherOrg::SomeOtherAuth::CreateReferral"
       ],
+      "description": null,
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherOrg::SomeOtherAuth",
       "errors_transformers": [
@@ -7992,6 +8002,7 @@
       "depends_on": [
         "SomeOrg::Auth::User"
       ],
+      "description": null,
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
       "entity_name": "Referral",
@@ -8192,6 +8203,7 @@
       ],
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
       "entity_name": "User",
@@ -8398,6 +8410,7 @@
       "depends_on": [
         "SomeOtherOrg::Auth::User"
       ],
+      "description": null,
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "Auth",
       "entity_name": "Referral",
@@ -8598,6 +8611,7 @@
       ],
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "Auth",
       "entity_name": "User",
@@ -8804,6 +8818,7 @@
       "depends_on": [
         "SomeOtherOrg::SomeOtherAuth::User"
       ],
+      "description": null,
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherAuth",
       "entity_name": "Referral",
@@ -9004,6 +9019,7 @@
       ],
       "depends_on": [
       ],
+      "description": null,
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherAuth",
       "entity_name": "User",
@@ -9147,6 +9163,7 @@
       "declaration_data": {
         "type": "array"
       },
+      "description": "Built-in array type",
       "domain": "global_organization::global_domain",
       "name": "array",
       "organization": "global_organization",
@@ -9248,6 +9265,7 @@
       "declaration_data": {
         "type": "associative_array"
       },
+      "description": "Built-in associative_array type",
       "domain": "global_organization::global_domain",
       "name": "associative_array",
       "organization": "global_organization",
@@ -9350,6 +9368,7 @@
       "declaration_data": {
         "type": "atomic_duck"
       },
+      "description": "Built-in atomic_duck type",
       "domain": "global_organization::global_domain",
       "name": "atomic_duck",
       "organization": "global_organization",
@@ -9447,6 +9466,7 @@
       "declaration_data": {
         "type": "attributes"
       },
+      "description": "Built-in attributes type",
       "domain": "global_organization::global_domain",
       "name": "attributes",
       "organization": "global_organization",
@@ -9552,6 +9572,7 @@
       "declaration_data": {
         "type": "datetime"
       },
+      "description": "Built-in datetime type",
       "domain": "global_organization::global_domain",
       "name": "datetime",
       "organization": "global_organization",
@@ -9601,13 +9622,13 @@
       ],
       "processors": {
         "caster_classes": [
-          "datetime::Casters::String",
           "datetime::Casters::Date",
+          "datetime::Casters::String",
           "datetime::Casters::Hash"
         ],
         "casters": [
-          "datetime::Casters::string",
           "datetime::Casters::date",
+          "datetime::Casters::string",
           "datetime::Casters::hash"
         ],
         "transformer_classes": [
@@ -9656,6 +9677,7 @@
       "declaration_data": {
         "type": "duck"
       },
+      "description": "Built-in duck type",
       "domain": "global_organization::global_domain",
       "name": "duck",
       "organization": "global_organization",
@@ -9752,6 +9774,7 @@
       "declaration_data": {
         "type": "duckture"
       },
+      "description": "Built-in duckture type",
       "domain": "global_organization::global_domain",
       "name": "duckture",
       "organization": "global_organization",
@@ -9849,6 +9872,7 @@
       "declaration_data": {
         "type": "email"
       },
+      "description": "Built-in email type",
       "domain": "global_organization::global_domain",
       "name": "email",
       "organization": "global_organization",
@@ -10403,8 +10427,8 @@
         "string::SupportedTransformers::Downcase"
       ],
       "supported_validators": [
-        "string::SupportedValidators::Matches",
-        "string::SupportedValidators::MaxLength"
+        "string::SupportedValidators::MaxLength",
+        "string::SupportedValidators::Matches"
       ],
       "target_classes": [
         "String"
@@ -10422,6 +10446,7 @@
       "declaration_data": {
         "type": "entity"
       },
+      "description": "Built-in entity type",
       "domain": "global_organization::global_domain",
       "name": "entity",
       "organization": "global_organization",
@@ -10522,6 +10547,7 @@
       "declaration_data": {
         "type": "integer"
       },
+      "description": "Built-in integer type",
       "domain": "global_organization::global_domain",
       "name": "integer",
       "organization": "global_organization",
@@ -10624,6 +10650,7 @@
       "declaration_data": {
         "type": "model"
       },
+      "description": "Built-in model type",
       "domain": "global_organization::global_domain",
       "name": "model",
       "organization": "global_organization",
@@ -10724,6 +10751,7 @@
       "declaration_data": {
         "type": "number"
       },
+      "description": "Built-in number type",
       "domain": "global_organization::global_domain",
       "name": "number",
       "organization": "global_organization",
@@ -10824,6 +10852,7 @@
       "declaration_data": {
         "type": "string"
       },
+      "description": "Built-in string type",
       "domain": "global_organization::global_domain",
       "name": "string",
       "organization": "global_organization",
@@ -10908,8 +10937,8 @@
         "string::SupportedTransformers::Downcase"
       ],
       "supported_validators": [
-        "string::SupportedValidators::Matches",
-        "string::SupportedValidators::MaxLength"
+        "string::SupportedValidators::MaxLength",
+        "string::SupportedValidators::Matches"
       ],
       "target_classes": [
         "String"
@@ -10927,6 +10956,7 @@
       "declaration_data": {
         "type": "symbol"
       },
+      "description": "Built-in symbol type",
       "domain": "global_organization::global_domain",
       "name": "symbol",
       "organization": "global_organization",

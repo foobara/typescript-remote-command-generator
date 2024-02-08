@@ -1,8 +1,6 @@
 {
   "command": {
     "GlobalCommand": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "GlobalCommand",
       "depends_on": [
         "SomeOrg::Auth::CreateReferral",
@@ -55,8 +53,6 @@
         "symbol"
       ],
       "full_command_name": "GlobalCommand",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "some_integer": {
@@ -112,9 +108,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -150,23 +143,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.some_integer.below_minimum": {
@@ -176,13 +162,9 @@
           "path": [
             "some_integer"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "min": 10
           },
-          "runtime_path": [
-          ],
           "symbol": "below_minimum"
         },
         "data.some_integer.cannot_cast": {
@@ -192,8 +174,6 @@
           "path": [
             "some_integer"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -202,8 +182,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_integer.missing_required_attribute": {
@@ -213,15 +191,12 @@
           "path": [
             "some_integer"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
               "some_integer"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.some_org_auth_referral.cannot_cast": {
@@ -231,8 +206,6 @@
           "path": [
             "some_org_auth_referral"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -267,8 +240,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_org_auth_user.cannot_cast": {
@@ -278,8 +249,6 @@
           "path": [
             "some_org_auth_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -314,8 +283,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_other_org_auth_referral.cannot_cast": {
@@ -325,8 +292,6 @@
           "path": [
             "some_other_org_auth_referral"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -361,8 +326,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_other_org_auth_user.cannot_cast": {
@@ -372,8 +335,6 @@
           "path": [
             "some_other_org_auth_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -408,8 +369,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_other_org_some_other_auth_referral.cannot_cast": {
@@ -419,8 +378,6 @@
           "path": [
             "some_other_org_some_other_auth_referral"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -455,8 +412,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_other_org_some_other_auth_user.cannot_cast": {
@@ -466,8 +421,6 @@
           "path": [
             "some_other_org_some_other_auth_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -502,17 +455,12 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -540,32 +488,18 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "runtime.global": {
           "category": "runtime",
           "error": "GlobalError",
           "key": "runtime.global",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "global"
         },
         "some_org::auth::create_referral>runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_org::auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_org::auth::create_referral"
           ],
@@ -575,11 +509,6 @@
           "category": "runtime",
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_org::auth::create_user>some_org::auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_org::auth::create_user",
             "some_org::auth::create_referral"
@@ -590,11 +519,6 @@
           "category": "runtime",
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_other_org::auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_other_org::auth::create_referral"
           ],
@@ -604,11 +528,6 @@
           "category": "runtime",
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_other_org::auth::create_user>some_other_org::auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_other_org::auth::create_user",
             "some_other_org::auth::create_referral"
@@ -619,11 +538,6 @@
           "category": "runtime",
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "some_other_org::some_other_auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_other_org::some_other_auth::create_referral"
           ],
@@ -633,11 +547,6 @@
           "category": "runtime",
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "some_other_org::some_other_auth::create_user>some_other_org::some_other_auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_other_org::some_other_auth::create_user",
             "some_other_org::some_other_auth::create_referral"
@@ -645,12 +554,7 @@
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "GlobalCommand",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "element_type_declarations": {
           "result": {
@@ -753,11 +657,7 @@
       ]
     },
     "SomeDomainWithoutOrg::CommandWithDomainButNoOrg": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
@@ -796,8 +696,6 @@
         "symbol"
       ],
       "full_command_name": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "some_integer": {
@@ -827,9 +725,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -846,23 +741,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.some_integer.cannot_cast": {
@@ -872,8 +760,6 @@
           "path": [
             "some_integer"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -881,8 +767,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.some_integer.missing_required_attribute": {
@@ -892,24 +776,18 @@
           "path": [
             "some_integer"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
               "some_integer"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -918,17 +796,10 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeDomainWithoutOrg::CommandWithDomainButNoOrg",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "integer"
       },
@@ -1010,11 +881,7 @@
       ]
     },
     "SomeOrg::Auth::CreateReferral": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOrg::Auth::CreateReferral",
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOrg::Auth",
       "domain_name": "SomeOrg::Auth",
@@ -1055,8 +922,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOrg::Auth::CreateReferral",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "channel": {
@@ -1099,9 +964,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -1129,8 +991,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.channel.cannot_cast": {
@@ -1140,8 +1000,6 @@
           "path": [
             "channel"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1149,8 +1007,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.channel.missing_required_attribute": {
@@ -1160,7 +1016,6 @@
           "path": [
             "channel"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -1169,8 +1024,6 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.id.cannot_cast": {
@@ -1180,8 +1033,6 @@
           "path": [
             "id"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1189,23 +1040,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referred_user.cannot_cast": {
@@ -1215,8 +1059,6 @@
           "path": [
             "referred_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1251,8 +1093,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referred_user.missing_required_attribute": {
@@ -1262,7 +1102,6 @@
           "path": [
             "referred_user"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -1271,8 +1110,6 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referring_user.cannot_cast": {
@@ -1282,8 +1119,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1318,8 +1153,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referring_user.missing_required_attribute": {
@@ -1329,7 +1162,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -1338,17 +1170,12 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -1366,30 +1193,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOrg::Auth::CreateReferral",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "SomeOrg::Auth::Referral"
       },
@@ -1479,8 +1292,6 @@
       ]
     },
     "SomeOrg::Auth::CreateUser": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOrg::Auth::CreateUser",
       "depends_on": [
         "SomeOrg::Auth::CreateReferral"
@@ -1525,8 +1336,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOrg::Auth::CreateUser",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "email": {
@@ -1576,9 +1385,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -1612,8 +1418,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.email.cannot_cast": {
@@ -1623,8 +1427,6 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1632,8 +1434,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.email.cannot_exceed64_characters": {
@@ -1643,13 +1443,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "cannot_exceed64_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_exceed64_characters"
         },
         "data.email.cannot_have_multiple_at_signs": {
@@ -1659,13 +1455,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "cannot_have_multiple_at_signs": true
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_have_multiple_at_signs"
         },
         "data.email.domain_cannot_start_with_or_end_with_a_hyphen": {
@@ -1675,13 +1467,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "domain_cannot_start_with_or_end_with_a_hyphen": true
           },
-          "runtime_path": [
-          ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
         "data.email.first_part_cannot_be_empty": {
@@ -1691,13 +1479,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_cannot_be_empty": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_be_empty"
         },
         "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
@@ -1707,13 +1491,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
         "data.email.first_part_has_bad_characters": {
@@ -1723,13 +1503,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_has_bad_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_has_bad_characters"
         },
         "data.email.missing_required_attribute": {
@@ -1739,7 +1515,6 @@
           "path": [
             "email"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -1748,8 +1523,6 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.email.must_have_an_at_sign": {
@@ -1759,13 +1532,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "must_have_an_at_sign": true
           },
-          "runtime_path": [
-          ],
           "symbol": "must_have_an_at_sign"
         },
         "data.email.second_part_cannot_be_empty": {
@@ -1775,13 +1544,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "second_part_cannot_be_empty": true
           },
-          "runtime_path": [
-          ],
           "symbol": "second_part_cannot_be_empty"
         },
         "data.email.second_part_has_bad_characters": {
@@ -1791,13 +1556,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "second_part_has_bad_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "second_part_has_bad_characters"
         },
         "data.first_name.cannot_cast": {
@@ -1807,8 +1568,6 @@
           "path": [
             "first_name"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1816,8 +1575,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.first_name.missing_required_attribute": {
@@ -1827,7 +1584,6 @@
           "path": [
             "first_name"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -1836,8 +1592,6 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.id.cannot_cast": {
@@ -1847,8 +1601,6 @@
           "path": [
             "id"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1856,8 +1608,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.last_name.cannot_cast": {
@@ -1867,8 +1617,6 @@
           "path": [
             "last_name"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1876,8 +1624,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.last_name.missing_required_attribute": {
@@ -1887,7 +1633,6 @@
           "path": [
             "last_name"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -1896,23 +1641,16 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referral_channel.cannot_cast": {
@@ -1922,8 +1660,6 @@
           "path": [
             "referral_channel"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1931,8 +1667,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referring_user.cannot_cast": {
@@ -1942,8 +1676,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -1978,17 +1710,12 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -2012,31 +1739,19 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "some_org::auth::create_referral>runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_org::auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_org::auth::create_referral"
           ],
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOrg::Auth::CreateUser",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "SomeOrg::Auth::User"
       },
@@ -2126,11 +1841,7 @@
       ]
     },
     "SomeOrg::Math::CalculateExponent": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOrg::Math::CalculateExponent",
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOrg::Math",
       "domain_name": "SomeOrg::Math",
@@ -2170,8 +1881,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOrg::Math::CalculateExponent",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "base": {
@@ -2208,8 +1917,6 @@
           "path": [
             "base"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -2217,8 +1924,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.base.missing_required_attribute": {
@@ -2228,7 +1933,6 @@
           "path": [
             "base"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -2236,17 +1940,12 @@
               "exponent"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.cannot_cast": {
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -2267,8 +1966,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.exponent.cannot_cast": {
@@ -2278,8 +1975,6 @@
           "path": [
             "exponent"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -2287,8 +1982,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.exponent.missing_required_attribute": {
@@ -2298,7 +1991,6 @@
           "path": [
             "exponent"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -2306,32 +1998,22 @@
               "exponent"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -2343,30 +2025,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "runtime.negative_exponent": {
           "category": "runtime",
           "error": "SomeOrg::Math::CalculateExponent::NegativeExponentError",
           "key": "runtime.negative_exponent",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "negative_exponent"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOrg::Math::CalculateExponent",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "integer"
       },
@@ -2449,11 +2117,7 @@
       ]
     },
     "SomeOtherOrg::Auth::CreateReferral": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOtherOrg::Auth::CreateReferral",
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "SomeOtherOrg::Auth",
@@ -2494,8 +2158,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOtherOrg::Auth::CreateReferral",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "channel": {
@@ -2538,9 +2200,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -2568,8 +2227,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.channel.cannot_cast": {
@@ -2579,8 +2236,6 @@
           "path": [
             "channel"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -2588,8 +2243,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.channel.missing_required_attribute": {
@@ -2599,7 +2252,6 @@
           "path": [
             "channel"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -2608,8 +2260,6 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.id.cannot_cast": {
@@ -2619,8 +2269,6 @@
           "path": [
             "id"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -2628,23 +2276,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referred_user.cannot_cast": {
@@ -2654,8 +2295,6 @@
           "path": [
             "referred_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -2690,8 +2329,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referred_user.missing_required_attribute": {
@@ -2701,7 +2338,6 @@
           "path": [
             "referred_user"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -2710,8 +2346,6 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referring_user.cannot_cast": {
@@ -2721,8 +2355,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -2757,8 +2389,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referring_user.missing_required_attribute": {
@@ -2768,7 +2398,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -2777,17 +2406,12 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -2805,30 +2429,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOtherOrg::Auth::CreateReferral",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "SomeOtherOrg::Auth::Referral"
       },
@@ -2918,8 +2528,6 @@
       ]
     },
     "SomeOtherOrg::Auth::CreateUser": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOtherOrg::Auth::CreateUser",
       "depends_on": [
         "SomeOtherOrg::Auth::CreateReferral"
@@ -2964,8 +2572,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOtherOrg::Auth::CreateUser",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "email": {
@@ -3015,9 +2621,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -3051,8 +2654,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.email.cannot_cast": {
@@ -3062,8 +2663,6 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3071,8 +2670,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.email.cannot_exceed64_characters": {
@@ -3082,13 +2679,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "cannot_exceed64_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_exceed64_characters"
         },
         "data.email.cannot_have_multiple_at_signs": {
@@ -3098,13 +2691,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "cannot_have_multiple_at_signs": true
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_have_multiple_at_signs"
         },
         "data.email.domain_cannot_start_with_or_end_with_a_hyphen": {
@@ -3114,13 +2703,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "domain_cannot_start_with_or_end_with_a_hyphen": true
           },
-          "runtime_path": [
-          ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
         "data.email.first_part_cannot_be_empty": {
@@ -3130,13 +2715,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_cannot_be_empty": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_be_empty"
         },
         "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
@@ -3146,13 +2727,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
         "data.email.first_part_has_bad_characters": {
@@ -3162,13 +2739,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_has_bad_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_has_bad_characters"
         },
         "data.email.missing_required_attribute": {
@@ -3178,7 +2751,6 @@
           "path": [
             "email"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -3187,8 +2759,6 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.email.must_have_an_at_sign": {
@@ -3198,13 +2768,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "must_have_an_at_sign": true
           },
-          "runtime_path": [
-          ],
           "symbol": "must_have_an_at_sign"
         },
         "data.email.second_part_cannot_be_empty": {
@@ -3214,13 +2780,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "second_part_cannot_be_empty": true
           },
-          "runtime_path": [
-          ],
           "symbol": "second_part_cannot_be_empty"
         },
         "data.email.second_part_has_bad_characters": {
@@ -3230,13 +2792,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "second_part_has_bad_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "second_part_has_bad_characters"
         },
         "data.first_name.cannot_cast": {
@@ -3246,8 +2804,6 @@
           "path": [
             "first_name"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3255,8 +2811,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.first_name.missing_required_attribute": {
@@ -3266,7 +2820,6 @@
           "path": [
             "first_name"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -3275,8 +2828,6 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.id.cannot_cast": {
@@ -3286,8 +2837,6 @@
           "path": [
             "id"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3295,8 +2844,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.last_name.cannot_cast": {
@@ -3306,8 +2853,6 @@
           "path": [
             "last_name"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3315,8 +2860,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.last_name.missing_required_attribute": {
@@ -3326,7 +2869,6 @@
           "path": [
             "last_name"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -3335,23 +2877,16 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referral_channel.cannot_cast": {
@@ -3361,8 +2896,6 @@
           "path": [
             "referral_channel"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3370,8 +2903,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referring_user.cannot_cast": {
@@ -3381,8 +2912,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3417,17 +2946,12 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -3451,31 +2975,19 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "some_other_org::auth::create_referral>runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOtherOrg::Auth::CreateReferral::BadReferralError",
           "key": "some_other_org::auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_other_org::auth::create_referral"
           ],
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOtherOrg::Auth::CreateUser",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "SomeOtherOrg::Auth::User"
       },
@@ -3565,11 +3077,7 @@
       ]
     },
     "SomeOtherOrg::Math::CalculateExponent": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOtherOrg::Math::CalculateExponent",
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOtherOrg::Math",
       "domain_name": "SomeOtherOrg::Math",
@@ -3609,8 +3117,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOtherOrg::Math::CalculateExponent",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "base": {
@@ -3647,8 +3153,6 @@
           "path": [
             "base"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3656,8 +3160,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.base.missing_required_attribute": {
@@ -3667,7 +3169,6 @@
           "path": [
             "base"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -3675,17 +3176,12 @@
               "exponent"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.cannot_cast": {
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -3706,8 +3202,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.exponent.cannot_cast": {
@@ -3717,8 +3211,6 @@
           "path": [
             "exponent"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -3726,8 +3218,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.exponent.missing_required_attribute": {
@@ -3737,7 +3227,6 @@
           "path": [
             "exponent"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -3745,32 +3234,22 @@
               "exponent"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -3782,30 +3261,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "runtime.negative_exponent": {
           "category": "runtime",
           "error": "SomeOtherOrg::Math::CalculateExponent::NegativeExponentError",
           "key": "runtime.negative_exponent",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "negative_exponent"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOtherOrg::Math::CalculateExponent",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "integer"
       },
@@ -3888,11 +3353,7 @@
       ]
     },
     "SomeOtherOrg::SomeOtherAuth::CreateReferral": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherOrg::SomeOtherAuth",
@@ -3933,8 +3394,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "channel": {
@@ -3977,9 +3436,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -4007,8 +3463,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.channel.cannot_cast": {
@@ -4018,8 +3472,6 @@
           "path": [
             "channel"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4027,8 +3479,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.channel.missing_required_attribute": {
@@ -4038,7 +3488,6 @@
           "path": [
             "channel"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -4047,8 +3496,6 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.id.cannot_cast": {
@@ -4058,8 +3505,6 @@
           "path": [
             "id"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4067,23 +3512,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referred_user.cannot_cast": {
@@ -4093,8 +3531,6 @@
           "path": [
             "referred_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4129,8 +3565,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referred_user.missing_required_attribute": {
@@ -4140,7 +3574,6 @@
           "path": [
             "referred_user"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -4149,8 +3582,6 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referring_user.cannot_cast": {
@@ -4160,8 +3591,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4196,8 +3625,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referring_user.missing_required_attribute": {
@@ -4207,7 +3634,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -4216,17 +3642,12 @@
               "referred_user"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -4244,30 +3665,16 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "SomeOtherOrg::SomeOtherAuth::Referral"
       },
@@ -4357,8 +3764,6 @@
       ]
     },
     "SomeOtherOrg::SomeOtherAuth::CreateUser": {
-      "authenticator": null,
-      "capture_unknown_error": null,
       "command": "SomeOtherOrg::SomeOtherAuth::CreateUser",
       "depends_on": [
         "SomeOtherOrg::SomeOtherAuth::CreateReferral"
@@ -4403,8 +3808,6 @@
         "symbol"
       ],
       "full_command_name": "SomeOtherOrg::SomeOtherAuth::CreateUser",
-      "inputs_transformers": [
-      ],
       "inputs_type": {
         "element_type_declarations": {
           "email": {
@@ -4454,9 +3857,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -4490,8 +3890,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.email.cannot_cast": {
@@ -4501,8 +3899,6 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4510,8 +3906,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.email.cannot_exceed64_characters": {
@@ -4521,13 +3915,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "cannot_exceed64_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_exceed64_characters"
         },
         "data.email.cannot_have_multiple_at_signs": {
@@ -4537,13 +3927,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "cannot_have_multiple_at_signs": true
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_have_multiple_at_signs"
         },
         "data.email.domain_cannot_start_with_or_end_with_a_hyphen": {
@@ -4553,13 +3939,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "domain_cannot_start_with_or_end_with_a_hyphen": true
           },
-          "runtime_path": [
-          ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
         "data.email.first_part_cannot_be_empty": {
@@ -4569,13 +3951,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_cannot_be_empty": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_be_empty"
         },
         "data.email.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
@@ -4585,13 +3963,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
         "data.email.first_part_has_bad_characters": {
@@ -4601,13 +3975,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "first_part_has_bad_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "first_part_has_bad_characters"
         },
         "data.email.missing_required_attribute": {
@@ -4617,7 +3987,6 @@
           "path": [
             "email"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -4626,8 +3995,6 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.email.must_have_an_at_sign": {
@@ -4637,13 +4004,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "must_have_an_at_sign": true
           },
-          "runtime_path": [
-          ],
           "symbol": "must_have_an_at_sign"
         },
         "data.email.second_part_cannot_be_empty": {
@@ -4653,13 +4016,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "second_part_cannot_be_empty": true
           },
-          "runtime_path": [
-          ],
           "symbol": "second_part_cannot_be_empty"
         },
         "data.email.second_part_has_bad_characters": {
@@ -4669,13 +4028,9 @@
           "path": [
             "email"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "second_part_has_bad_characters": true
           },
-          "runtime_path": [
-          ],
           "symbol": "second_part_has_bad_characters"
         },
         "data.first_name.cannot_cast": {
@@ -4685,8 +4040,6 @@
           "path": [
             "first_name"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4694,8 +4047,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.first_name.missing_required_attribute": {
@@ -4705,7 +4056,6 @@
           "path": [
             "first_name"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -4714,8 +4064,6 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.id.cannot_cast": {
@@ -4725,8 +4073,6 @@
           "path": [
             "id"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4734,8 +4080,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.last_name.cannot_cast": {
@@ -4745,8 +4089,6 @@
           "path": [
             "last_name"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4754,8 +4096,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.last_name.missing_required_attribute": {
@@ -4765,7 +4105,6 @@
           "path": [
             "last_name"
           ],
-          "processor": null,
           "processor_class": "attributes::SupportedValidators::Required",
           "processor_manifest_data": {
             "required": [
@@ -4774,23 +4113,16 @@
               "email"
             ]
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.missing_required_attribute": {
           "category": "data",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
           "key": "data.missing_required_attribute",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Pipeline",
           "processor_manifest_data": {
             "pipeline": null
           },
-          "runtime_path": [
-          ],
           "symbol": "missing_required_attribute"
         },
         "data.referral_channel.cannot_cast": {
@@ -4800,8 +4132,6 @@
           "path": [
             "referral_channel"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4809,8 +4139,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.referring_user.cannot_cast": {
@@ -4820,8 +4148,6 @@
           "path": [
             "referring_user"
           ],
-          "processor": null,
-          "processor_class": null,
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
@@ -4856,17 +4182,12 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.unexpected_attributes": {
           "category": "data",
           "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
           "key": "data.unexpected_attributes",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
@@ -4890,31 +4211,19 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "unexpected_attributes"
         },
         "some_other_org::some_other_auth::create_referral>runtime.bad_referral": {
           "category": "runtime",
           "error": "SomeOtherOrg::SomeOtherAuth::CreateReferral::BadReferralError",
           "key": "some_other_org::some_other_auth::create_referral>runtime.bad_referral",
-          "path": [
-          ],
-          "processor": null,
-          "processor_class": null,
-          "processor_manifest_data": null,
           "runtime_path": [
             "some_other_org::some_other_auth::create_referral"
           ],
           "symbol": "bad_referral"
         }
       },
-      "pre_commit_transformers": [
-      ],
       "reference": "SomeOtherOrg::SomeOtherAuth::CreateUser",
-      "requires_authentication": null,
-      "result_transformers": [
-      ],
       "result_type": {
         "type": "SomeOtherOrg::SomeOtherAuth::User"
       },
@@ -5008,8 +4317,6 @@
     "CommandConnectors": {
       "commands": [
       ],
-      "depends_on": [
-      ],
       "domain": "CommandConnectors",
       "domain_name": "CommandConnectors",
       "organization_name": "global_organization",
@@ -5031,8 +4338,6 @@
     "SomeDomainWithoutOrg": {
       "commands": [
         "SomeDomainWithoutOrg::CommandWithDomainButNoOrg"
-      ],
-      "depends_on": [
       ],
       "domain": "SomeDomainWithoutOrg",
       "domain_name": "SomeDomainWithoutOrg",
@@ -5061,8 +4366,6 @@
       "commands": [
         "SomeOrg::Auth::CreateReferral",
         "SomeOrg::Auth::CreateUser"
-      ],
-      "depends_on": [
       ],
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
@@ -5094,8 +4397,6 @@
       "commands": [
         "SomeOrg::Math::CalculateExponent"
       ],
-      "depends_on": [
-      ],
       "domain": "SomeOrg::Math",
       "domain_name": "Math",
       "organization": "SomeOrg",
@@ -5124,8 +4425,6 @@
       "commands": [
         "SomeOtherOrg::Auth::CreateReferral",
         "SomeOtherOrg::Auth::CreateUser"
-      ],
-      "depends_on": [
       ],
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "Auth",
@@ -5157,8 +4456,6 @@
       "commands": [
         "SomeOtherOrg::Math::CalculateExponent"
       ],
-      "depends_on": [
-      ],
       "domain": "SomeOtherOrg::Math",
       "domain_name": "Math",
       "organization": "SomeOtherOrg",
@@ -5187,8 +4484,6 @@
       "commands": [
         "SomeOtherOrg::SomeOtherAuth::CreateReferral",
         "SomeOtherOrg::SomeOtherAuth::CreateUser"
-      ],
-      "depends_on": [
       ],
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherAuth",
@@ -5219,8 +4514,6 @@
     "global_organization::global_domain": {
       "commands": [
         "GlobalCommand"
-      ],
-      "depends_on": [
       ],
       "domain": "global_organization::global_domain",
       "domain_name": "global_domain",
@@ -6617,13 +5910,8 @@
           "category": "data",
           "error": "email::Validators::CannotExceed64Characters::CannotExceed64CharactersError",
           "key": "data.cannot_exceed64_characters",
-          "path": [
-          ],
           "processor": "email::Validators::cannot_exceed64_characters",
           "processor_class": "email::Validators::CannotExceed64Characters",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "cannot_exceed64_characters"
         }
       },
@@ -6659,13 +5947,8 @@
           "category": "data",
           "error": "email::Validators::CannotHaveMultipleAtSigns::CannotHaveMultipleAtSignsError",
           "key": "data.cannot_have_multiple_at_signs",
-          "path": [
-          ],
           "processor": "email::Validators::cannot_have_multiple_at_signs",
           "processor_class": "email::Validators::CannotHaveMultipleAtSigns",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "cannot_have_multiple_at_signs"
         }
       },
@@ -6701,13 +5984,8 @@
           "category": "data",
           "error": "email::Validators::DomainCannotStartWithOrEndWithAHyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.domain_cannot_start_with_or_end_with_a_hyphen",
-          "path": [
-          ],
           "processor": "email::Validators::domain_cannot_start_with_or_end_with_a_hyphen",
           "processor_class": "email::Validators::DomainCannotStartWithOrEndWithAHyphen",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         }
       },
@@ -6743,13 +6021,8 @@
           "category": "data",
           "error": "email::Validators::FirstPartCannotBeEmpty::FirstPartCannotBeEmptyError",
           "key": "data.first_part_cannot_be_empty",
-          "path": [
-          ],
           "processor": "email::Validators::first_part_cannot_be_empty",
           "processor_class": "email::Validators::FirstPartCannotBeEmpty",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_be_empty"
         }
       },
@@ -6785,13 +6058,8 @@
           "category": "data",
           "error": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
-          "path": [
-          ],
           "processor": "email::Validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "processor_class": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         }
       },
@@ -6827,13 +6095,8 @@
           "category": "data",
           "error": "email::Validators::FirstPartHasBadCharacters::FirstPartHasBadCharactersError",
           "key": "data.first_part_has_bad_characters",
-          "path": [
-          ],
           "processor": "email::Validators::first_part_has_bad_characters",
           "processor_class": "email::Validators::FirstPartHasBadCharacters",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "first_part_has_bad_characters"
         }
       },
@@ -6869,13 +6132,8 @@
           "category": "data",
           "error": "email::Validators::MustHaveAnAtSign::MustHaveAnAtSignError",
           "key": "data.must_have_an_at_sign",
-          "path": [
-          ],
           "processor": "email::Validators::must_have_an_at_sign",
           "processor_class": "email::Validators::MustHaveAnAtSign",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "must_have_an_at_sign"
         }
       },
@@ -6911,13 +6169,8 @@
           "category": "data",
           "error": "email::Validators::SecondPartCannotBeEmpty::SecondPartCannotBeEmptyError",
           "key": "data.second_part_cannot_be_empty",
-          "path": [
-          ],
           "processor": "email::Validators::second_part_cannot_be_empty",
           "processor_class": "email::Validators::SecondPartCannotBeEmpty",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "second_part_cannot_be_empty"
         }
       },
@@ -6953,13 +6206,8 @@
           "category": "data",
           "error": "email::Validators::SecondPartHasBadCharacters::SecondPartHasBadCharactersError",
           "key": "data.second_part_has_bad_characters",
-          "path": [
-          ],
           "processor": "email::Validators::second_part_has_bad_characters",
           "processor_class": "email::Validators::SecondPartHasBadCharacters",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "second_part_has_bad_characters"
         }
       },
@@ -8426,9 +7674,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -8464,8 +7709,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -8478,17 +7721,11 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "SomeOrg::Auth::Referral",
@@ -8508,10 +7745,6 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
-      ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
       ],
@@ -8530,8 +7763,6 @@
       ]
     },
     "SomeOrg::Auth::User": {
-      "associations": {
-      },
       "attributes_type": {
         "element_type_declarations": {
           "email": {
@@ -8585,12 +7816,6 @@
         "primary_key": "id",
         "type": "entity"
       },
-      "deep_associations": {
-      },
-      "deep_depends_on": [
-      ],
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOrg::Auth",
       "domain_name": "Auth",
@@ -8609,9 +7834,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -8647,8 +7869,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -8661,17 +7881,11 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "SomeOrg::Auth::User",
@@ -8690,10 +7904,6 @@
       "scoped_short_name": "User",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -8798,9 +8008,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -8836,8 +8043,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -8850,17 +8055,11 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "SomeOtherOrg::Auth::Referral",
@@ -8880,10 +8079,6 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
-      ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
       ],
@@ -8902,8 +8097,6 @@
       ]
     },
     "SomeOtherOrg::Auth::User": {
-      "associations": {
-      },
       "attributes_type": {
         "element_type_declarations": {
           "email": {
@@ -8957,12 +8150,6 @@
         "primary_key": "id",
         "type": "entity"
       },
-      "deep_associations": {
-      },
-      "deep_depends_on": [
-      ],
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOtherOrg::Auth",
       "domain_name": "Auth",
@@ -8981,9 +8168,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9019,8 +8203,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9033,17 +8215,11 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "SomeOtherOrg::Auth::User",
@@ -9062,10 +8238,6 @@
       "scoped_short_name": "User",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -9170,9 +8342,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9208,8 +8377,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9222,17 +8389,11 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "SomeOtherOrg::SomeOtherAuth::Referral",
@@ -9252,10 +8413,6 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
-      ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
       ],
@@ -9274,8 +8431,6 @@
       ]
     },
     "SomeOtherOrg::SomeOtherAuth::User": {
-      "associations": {
-      },
       "attributes_type": {
         "element_type_declarations": {
           "email": {
@@ -9329,12 +8484,6 @@
         "primary_key": "id",
         "type": "entity"
       },
-      "deep_associations": {
-      },
-      "deep_depends_on": [
-      ],
-      "depends_on": [
-      ],
       "description": null,
       "domain": "SomeOtherOrg::SomeOtherAuth",
       "domain_name": "SomeOtherAuth",
@@ -9353,9 +8502,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9391,8 +8537,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9405,17 +8549,11 @@
           "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "SomeOtherOrg::SomeOtherAuth::User",
@@ -9434,10 +8572,6 @@
       "scoped_short_name": "User",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -9474,9 +8608,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9485,8 +8616,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9496,14 +8625,6 @@
         ],
         "casters": [
           "array::Casters::arrayable"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "array",
@@ -9523,8 +8644,6 @@
       ],
       "supported_processors": [
         "array::SupportedProcessors::ElementTypeDeclaration"
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "array::SupportedValidators::Size",
@@ -9558,9 +8677,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9569,8 +8685,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9580,14 +8694,6 @@
         ],
         "casters": [
           "associative_array::Casters::array"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "associative_array",
@@ -9608,8 +8714,6 @@
       "supported_processors": [
         "associative_array::SupportedProcessors::KeyTypeDeclaration",
         "associative_array::SupportedProcessors::ValueTypeDeclaration"
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -9643,9 +8747,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9654,24 +8755,8 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
-      },
-      "processors": {
-        "caster_classes": [
-        ],
-        "casters": [
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
-        ]
       },
       "reference": "atomic_duck",
       "scoped_category": "type",
@@ -9687,10 +8772,6 @@
       "scoped_short_name": "atomic_duck",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -9723,9 +8804,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9734,8 +8812,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9747,14 +8823,6 @@
         "casters": [
           "attributes::Casters::array",
           "attributes::Casters::hash"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "attributes",
@@ -9784,8 +8852,6 @@
         "attributes::SupportedValidators::Required",
         "duck::SupportedValidators::OneOf"
       ],
-      "target_classes": [
-      ],
       "types_depended_on": [
         "array",
         "associative_array",
@@ -9811,9 +8877,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9822,8 +8885,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -9837,14 +8898,6 @@
           "datetime::Casters::date",
           "datetime::Casters::hash",
           "datetime::Casters::string"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "datetime",
@@ -9861,10 +8914,6 @@
       "scoped_short_name": "datetime",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -9898,9 +8947,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9909,24 +8955,8 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
-      },
-      "processors": {
-        "caster_classes": [
-        ],
-        "casters": [
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
-        ]
       },
       "reference": "duck",
       "scoped_category": "type",
@@ -9942,10 +8972,6 @@
       "scoped_short_name": "duck",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -9977,9 +9003,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -9988,24 +9011,8 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
-      },
-      "processors": {
-        "caster_classes": [
-        ],
-        "casters": [
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
-        ]
       },
       "reference": "duckture",
       "scoped_category": "type",
@@ -10021,10 +9028,6 @@
       "scoped_short_name": "duckture",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
@@ -10057,9 +9060,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10068,125 +9068,78 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         },
         "data.cannot_exceed64_characters": {
           "category": "data",
           "error": "email::Validators::CannotExceed64Characters::CannotExceed64CharactersError",
           "key": "data.cannot_exceed64_characters",
-          "path": [
-          ],
           "processor": "email::Validators::cannot_exceed64_characters",
           "processor_class": "email::Validators::CannotExceed64Characters",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "cannot_exceed64_characters"
         },
         "data.cannot_have_multiple_at_signs": {
           "category": "data",
           "error": "email::Validators::CannotHaveMultipleAtSigns::CannotHaveMultipleAtSignsError",
           "key": "data.cannot_have_multiple_at_signs",
-          "path": [
-          ],
           "processor": "email::Validators::cannot_have_multiple_at_signs",
           "processor_class": "email::Validators::CannotHaveMultipleAtSigns",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "cannot_have_multiple_at_signs"
         },
         "data.domain_cannot_start_with_or_end_with_a_hyphen": {
           "category": "data",
           "error": "email::Validators::DomainCannotStartWithOrEndWithAHyphen::DomainCannotStartWithOrEndWithAHyphenError",
           "key": "data.domain_cannot_start_with_or_end_with_a_hyphen",
-          "path": [
-          ],
           "processor": "email::Validators::domain_cannot_start_with_or_end_with_a_hyphen",
           "processor_class": "email::Validators::DomainCannotStartWithOrEndWithAHyphen",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "domain_cannot_start_with_or_end_with_a_hyphen"
         },
         "data.first_part_cannot_be_empty": {
           "category": "data",
           "error": "email::Validators::FirstPartCannotBeEmpty::FirstPartCannotBeEmptyError",
           "key": "data.first_part_cannot_be_empty",
-          "path": [
-          ],
           "processor": "email::Validators::first_part_cannot_be_empty",
           "processor_class": "email::Validators::FirstPartCannotBeEmpty",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_be_empty"
         },
         "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row": {
           "category": "data",
           "error": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError",
           "key": "data.first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
-          "path": [
-          ],
           "processor": "email::Validators::first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row",
           "processor_class": "email::Validators::FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARow",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "first_part_cannot_start_with_or_end_with_a_dot_or_have_two_dots_in_a_row"
         },
         "data.first_part_has_bad_characters": {
           "category": "data",
           "error": "email::Validators::FirstPartHasBadCharacters::FirstPartHasBadCharactersError",
           "key": "data.first_part_has_bad_characters",
-          "path": [
-          ],
           "processor": "email::Validators::first_part_has_bad_characters",
           "processor_class": "email::Validators::FirstPartHasBadCharacters",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "first_part_has_bad_characters"
         },
         "data.must_have_an_at_sign": {
           "category": "data",
           "error": "email::Validators::MustHaveAnAtSign::MustHaveAnAtSignError",
           "key": "data.must_have_an_at_sign",
-          "path": [
-          ],
           "processor": "email::Validators::must_have_an_at_sign",
           "processor_class": "email::Validators::MustHaveAnAtSign",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "must_have_an_at_sign"
         },
         "data.second_part_cannot_be_empty": {
           "category": "data",
           "error": "email::Validators::SecondPartCannotBeEmpty::SecondPartCannotBeEmptyError",
           "key": "data.second_part_cannot_be_empty",
-          "path": [
-          ],
           "processor": "email::Validators::second_part_cannot_be_empty",
           "processor_class": "email::Validators::SecondPartCannotBeEmpty",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "second_part_cannot_be_empty"
         },
         "data.second_part_has_bad_characters": {
           "category": "data",
           "error": "email::Validators::SecondPartHasBadCharacters::SecondPartHasBadCharactersError",
           "key": "data.second_part_has_bad_characters",
-          "path": [
-          ],
           "processor": "email::Validators::second_part_has_bad_characters",
           "processor_class": "email::Validators::SecondPartHasBadCharacters",
-          "processor_manifest_data": null,
-          "runtime_path": [
-          ],
           "symbol": "second_part_has_bad_characters"
         }
       },
@@ -10243,8 +9196,6 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
-      "supported_processors": [
-      ],
       "supported_transformers": [
         "string::SupportedTransformers::Downcase"
       ],
@@ -10282,9 +9233,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10293,8 +9241,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -10302,17 +9248,11 @@
         "caster_classes": [
           "entity::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "entity",
@@ -10330,14 +9270,8 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
-      ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
-      ],
-      "target_classes": [
       ],
       "types_depended_on": [
         "array",
@@ -10365,9 +9299,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10376,8 +9307,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -10387,14 +9316,6 @@
         ],
         "casters": [
           "integer::Casters::string"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "integer",
@@ -10411,10 +9332,6 @@
       "scoped_short_name": "integer",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf",
@@ -10450,9 +9367,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10461,8 +9375,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -10470,17 +9382,11 @@
         "caster_classes": [
           "model::Casters::Hash"
         ],
-        "casters": [
-        ],
         "transformer_classes": [
           "model::Transformers::Mutable"
         ],
-        "transformers": [
-        ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
-        ],
-        "validators": [
         ]
       },
       "reference": "model",
@@ -10498,14 +9404,8 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
-      ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
-      ],
-      "target_classes": [
       ],
       "types_depended_on": [
         "array",
@@ -10533,9 +9433,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10544,24 +9441,8 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
-      },
-      "processors": {
-        "caster_classes": [
-        ],
-        "casters": [
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
-        ]
       },
       "reference": "number",
       "scoped_category": "type",
@@ -10577,10 +9458,6 @@
       "scoped_short_name": "number",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf",
@@ -10616,9 +9493,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10627,8 +9501,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -10640,14 +9512,6 @@
         "casters": [
           "string::Casters::numeric",
           "string::Casters::symbol"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "string",
@@ -10664,8 +9528,6 @@
       "scoped_short_name": "string",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
       ],
       "supported_transformers": [
         "string::SupportedTransformers::Downcase"
@@ -10704,9 +9566,6 @@
           "category": "data",
           "error": "Value::Processor::Casting::CannotCastError",
           "key": "data.cannot_cast",
-          "path": [
-          ],
-          "processor": null,
           "processor_class": "Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
@@ -10715,8 +9574,6 @@
               }
             }
           },
-          "runtime_path": [
-          ],
           "symbol": "cannot_cast"
         }
       },
@@ -10726,14 +9583,6 @@
         ],
         "casters": [
           "symbol::Casters::string"
-        ],
-        "transformer_classes": [
-        ],
-        "transformers": [
-        ],
-        "validator_classes": [
-        ],
-        "validators": [
         ]
       },
       "reference": "symbol",
@@ -10750,10 +9599,6 @@
       "scoped_short_name": "symbol",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
-      ],
-      "supported_processors": [
-      ],
-      "supported_transformers": [
       ],
       "supported_validators": [
         "duck::SupportedValidators::OneOf"

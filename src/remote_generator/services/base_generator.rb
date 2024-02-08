@@ -52,7 +52,8 @@ module Foobara
                                 Services::LoadedEntityGenerator,
                                 Services::AtomEntityGenerator,
                                 Services::AggregateEntityGenerator,
-                                Services::EntityVariantsGenerator
+                                Services::EntityVariantsGenerator,
+                                Services::EntityManifestGenerator
                               ]
                             when Manifest::Error
                               Services::ErrorGenerator

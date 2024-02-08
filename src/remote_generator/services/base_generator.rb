@@ -33,17 +33,20 @@ module Foobara
                                 Services::CommandInputsGenerator,
                                 Services::CommandResultGenerator,
                                 Services::CommandErrorsGenerator,
-                                Services::CommandErrorsIndexGenerator
+                                Services::CommandErrorsIndexGenerator,
+                                Services::CommandManifestGenerator
                               ]
                             when Manifest::Domain
                               [
                                 Services::DomainGenerator,
-                                Services::DomainConfigGenerator
+                                Services::DomainConfigGenerator,
+                                Services::DomainManifestGenerator
                               ]
                             when Manifest::Organization
                               [
                                 Services::OrganizationGenerator,
-                                Services::OrganizationConfigGenerator
+                                Services::OrganizationConfigGenerator,
+                                Services::OrganizationManifestGenerator
                               ]
                             when Manifest::Entity
                               [
@@ -52,12 +55,15 @@ module Foobara
                                 Services::LoadedEntityGenerator,
                                 Services::AtomEntityGenerator,
                                 Services::AggregateEntityGenerator,
-                                Services::EntityVariantsGenerator
+                                Services::EntityVariantsGenerator,
+                                Services::EntityManifestGenerator
                               ]
                             when Manifest::Error
                               Services::ErrorGenerator
                             when Manifest::ProcessorClass
                               Services::ProcessorClassGenerator
+                            when Manifest::RootManifest
+                              Services::RootManifestGenerator
                             else
                               # :nocov:
                               raise "Not sure how build a generator for a #{manifest}"

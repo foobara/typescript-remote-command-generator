@@ -20,6 +20,7 @@ module Foobara
 
         generate_base_files
 
+        add_root_manifest_to_set_of_elements_to_generate
         add_all_commands_to_set_of_elements_to_generate
 
         each_element_to_generate do
@@ -94,6 +95,10 @@ module Foobara
           elements_to_generate << command.domain
           elements_to_generate << command.organization
         end
+      end
+
+      def add_root_manifest_to_set_of_elements_to_generate
+        elements_to_generate << manifest
       end
 
       def generate_element

@@ -277,44 +277,54 @@ module Foobara
           dependency_group:, name: nil,
           association_depth: AssociationDepth::AMBIGUOUS
         )
-          if type_declaration.is_a?(Manifest::Attributes)
-            ts_type = attributes_to_ts_type(type_declaration, association_depth:, dependency_group:)
-
-            return name ? "interface #{name} #{ts_type}" : ts_type
-          end
-
-          if type_declaration.is_a?(Manifest::Array)
-            # TODO: which association_depth do we pass here?
-            ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
-            return "#{ts_type}[]"
-          end
-
           if type_declaration.is_a?(Manifest::Error)
             error_generator = generator_for(type_declaration)
             return dependency_group.non_colliding_type(error_generator)
           end
 
-          type_symbol = type_declaration.type
+          type_string = if type_declaration.is_a?(Manifest::Attributes)
+                          ts_type = attributes_to_ts_type(type_declaration, association_depth:, dependency_group:)
 
-          type_string = case type_symbol
-                        when "string", "boolean"
-                          type_symbol
-                        when "number", "integer", "float"
-                          "number"
-                        # TODO: should apply relevant processors to make email a real email type instead of "string"
-                        when "symbol", "email"
-                          "string"
-                        when "duck"
-                          "any"
-                        when "datetime"
-                          "Date"
+                          if name
+                            return "interface #{name} #{ts_type}"
+                          else
+                            ts_type
+                          end
+                        elsif type_declaration.is_a?(Manifest::Array)
+                          # TODO: which association_depth do we pass here?
+                          ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
+                          "#{ts_type}[]"
                         else
-                          if type_declaration.entity?
-                            entity_to_ts_entity_name(type_declaration, association_depth:)
+                          type_symbol = type_declaration.type
+
+                          case type_symbol
+                          when "string", "boolean"
+                            type_symbol
+                          when "number", "integer", "float"
+                            "number"
+                          # TODO: should apply relevant processors to make email a real email type instead of "string"
+                          when "symbol", "email"
+                            "string"
+                          when "duck"
+                            "any"
+                          when "datetime"
+                            "Date"
+                          else
+                            if type_declaration.entity?
+                              entity_to_ts_entity_name(type_declaration, association_depth:)
+                            end
                           end
                         end
 
           if type_string
+            if type_declaration.one_of
+              type_string = type_declaration.one_of.map(&:inspect).join(" | ")
+            end
+
+            if type_declaration.allows_nil?
+              type_string = "#{type_string} | null"
+            end
+
             name ? "#{name} = #{type_string}" : type_string
           else
             # :nocov:

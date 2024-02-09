@@ -264,7 +264,17 @@
                       "type": "integer"
                     },
                     "last_name": {
+                      "allow_nil": true,
                       "type": "string"
+                    },
+                    "preferred_contact_method": {
+                      "allow_nil": true,
+                      "one_of": [
+                        "email",
+                        "phonecall",
+                        "sms"
+                      ],
+                      "type": "symbol"
                     }
                   },
                   "required": [
@@ -1074,7 +1084,17 @@
                       "type": "integer"
                     },
                     "last_name": {
+                      "allow_nil": true,
                       "type": "string"
+                    },
+                    "preferred_contact_method": {
+                      "allow_nil": true,
+                      "one_of": [
+                        "email",
+                        "phonecall",
+                        "sms"
+                      ],
+                      "type": "symbol"
                     }
                   },
                   "required": [
@@ -1134,7 +1154,17 @@
                       "type": "integer"
                     },
                     "last_name": {
+                      "allow_nil": true,
                       "type": "string"
+                    },
+                    "preferred_contact_method": {
+                      "allow_nil": true,
+                      "one_of": [
+                        "email",
+                        "phonecall",
+                        "sms"
+                      ],
+                      "type": "symbol"
                     }
                   },
                   "required": [
@@ -1348,7 +1378,17 @@
             "type": "integer"
           },
           "last_name": {
+            "allow_nil": true,
             "type": "string"
+          },
+          "preferred_contact_method": {
+            "allow_nil": true,
+            "one_of": [
+              "email",
+              "phonecall",
+              "sms"
+            ],
+            "type": "symbol"
           },
           "referral_channel": {
             "type": "string"
@@ -1400,7 +1440,17 @@
                     "type": "integer"
                   },
                   "last_name": {
+                    "allow_nil": true,
                     "type": "string"
+                  },
+                  "preferred_contact_method": {
+                    "allow_nil": true,
+                    "one_of": [
+                      "email",
+                      "phonecall",
+                      "sms"
+                    ],
+                    "type": "symbol"
                   },
                   "referral_channel": {
                     "type": "string"
@@ -1620,6 +1670,7 @@
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
+                "allow_nil": true,
                 "type": "string"
               }
             }
@@ -1652,6 +1703,44 @@
             "pipeline": null
           },
           "symbol": "missing_required_attribute"
+        },
+        "data.preferred_contact_method.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.preferred_contact_method.cannot_cast",
+          "path": [
+            "preferred_contact_method"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "allow_nil": true,
+                "one_of": [
+                  "email",
+                  "phonecall",
+                  "sms"
+                ],
+                "type": "symbol"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.preferred_contact_method.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.preferred_contact_method.value_not_valid",
+          "path": [
+            "preferred_contact_method"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "email",
+              "phonecall",
+              "sms"
+            ]
+          },
+          "symbol": "value_not_valid"
         },
         "data.referral_channel.cannot_cast": {
           "category": "data",
@@ -1691,7 +1780,17 @@
                       "type": "integer"
                     },
                     "last_name": {
+                      "allow_nil": true,
                       "type": "string"
+                    },
+                    "preferred_contact_method": {
+                      "allow_nil": true,
+                      "one_of": [
+                        "email",
+                        "phonecall",
+                        "sms"
+                      ],
+                      "type": "symbol"
                     }
                   },
                   "required": [
@@ -1729,7 +1828,17 @@
                 "type": "integer"
               },
               "last_name": {
+                "allow_nil": true,
                 "type": "string"
+              },
+              "preferred_contact_method": {
+                "allow_nil": true,
+                "one_of": [
+                  "email",
+                  "phonecall",
+                  "sms"
+                ],
+                "type": "symbol"
               },
               "referral_channel": {
                 "type": "string"
@@ -7775,7 +7884,17 @@
             "type": "integer"
           },
           "last_name": {
+            "allow_nil": true,
             "type": "string"
+          },
+          "preferred_contact_method": {
+            "allow_nil": true,
+            "one_of": [
+              "email",
+              "phonecall",
+              "sms"
+            ],
+            "type": "symbol"
           }
         },
         "required": [
@@ -7799,7 +7918,17 @@
               "type": "integer"
             },
             "last_name": {
+              "allow_nil": true,
               "type": "string"
+            },
+            "preferred_contact_method": {
+              "allow_nil": true,
+              "one_of": [
+                "email",
+                "phonecall",
+                "sms"
+              ],
+              "type": "symbol"
             }
           },
           "required": [
@@ -7850,7 +7979,17 @@
                       "type": "integer"
                     },
                     "last_name": {
+                      "allow_nil": true,
                       "type": "string"
+                    },
+                    "preferred_contact_method": {
+                      "allow_nil": true,
+                      "one_of": [
+                        "email",
+                        "phonecall",
+                        "sms"
+                      ],
+                      "type": "symbol"
                     }
                   },
                   "required": [

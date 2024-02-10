@@ -349,9 +349,11 @@ module Foobara
           "{\n#{guts}\n}"
         end
 
+        # TODO: should probably test with a model that has a reference to an entity in it.
         def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
 
+          raise "wtf"
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
                               Services::EntityGenerator
@@ -366,6 +368,27 @@ module Foobara
                             end
 
           generator = generator_class.new(entity, elements_to_generate)
+
+          dependency_group.non_colliding_type(generator)
+        end
+
+        def model_to_ts_model_name(model, association_depth: AssociationDepth::AMBIGUOUS)
+          model = model.to_model if model.is_a?(Manifest::TypeDeclaration)
+
+          generator_class = case association_depth
+                            when AssociationDepth::AMBIGUOUS
+                              Services::EntityGenerator
+                            when AssociationDepth::ATOM
+                              Services::UnloadedEntityGenerator
+                            when AssociationDepth::AGGREGATE
+                              Services::AggregateEntityGenerator
+                            else
+                              # :nocov:
+                              raise "Bad association_depth: #{association_depth}"
+                              # :nocov:
+                            end
+
+          generator = generator_class.new(model, elements_to_generate)
 
           dependency_group.non_colliding_type(generator)
         end

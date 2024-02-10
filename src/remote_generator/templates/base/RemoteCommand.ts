@@ -49,7 +49,18 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   }
 
   static get fullCommandName (): string {
-    return [this.organizationName, this.domainName, this.commandName].filter(Boolean).join('::')
+    const path = []
+
+    if (this.organizationName != null && this.organizationName !== "GlobalOrganization") {
+      path.push(this.organizationName)
+    }
+    if (this.domainName != null && this.domainName !== "GlobalDomain") {
+      path.push(this.domainName)
+    }
+    if (this.commandName != null) {
+      path.push(this.commandName)
+    }
+    return path.join('::')
   }
 
   get fullCommandName (): string {

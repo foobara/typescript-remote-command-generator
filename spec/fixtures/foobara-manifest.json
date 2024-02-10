@@ -8848,7 +8848,6 @@
       "target_classes": [
         "Foobara::Ai::Gpt::Types::Completion::Choice"
       ],
-      "type_symbol": "Choice",
       "types_depended_on": [
         "Ai::Gpt::Message",
         "array",
@@ -9539,7 +9538,6 @@
       "target_classes": [
         "Foobara::Ai::Gpt::Types::Completion"
       ],
-      "type_symbol": "Completion",
       "types_depended_on": [
         "Ai::Gpt::Choice",
         "Ai::Gpt::Usage",
@@ -9744,7 +9742,6 @@
       "target_classes": [
         "Foobara::Ai::Gpt::Types::Completion::Message"
       ],
-      "type_symbol": "Message",
       "types_depended_on": [
         "array",
         "attributes",
@@ -9933,7 +9930,6 @@
       "target_classes": [
         "Foobara::Ai::Gpt::Types::Completion::Usage"
       ],
-      "type_symbol": "Usage",
       "types_depended_on": [
         "array",
         "attributes",
@@ -10107,7 +10103,6 @@
       "target_classes": [
         "SomeOrg::Auth::Referral"
       ],
-      "type_symbol": "Referral",
       "types_depended_on": [
         "SomeOrg::Auth::User",
         "array",
@@ -10296,7 +10291,6 @@
       "target_classes": [
         "SomeOrg::Auth::User"
       ],
-      "type_symbol": "User",
       "types_depended_on": [
         "array",
         "attributes",
@@ -10472,7 +10466,6 @@
       "target_classes": [
         "SomeOtherOrg::Auth::Referral"
       ],
-      "type_symbol": "Referral",
       "types_depended_on": [
         "SomeOtherOrg::Auth::User",
         "array",
@@ -10634,7 +10627,6 @@
       "target_classes": [
         "SomeOtherOrg::Auth::User"
       ],
-      "type_symbol": "User",
       "types_depended_on": [
         "array",
         "attributes",
@@ -10810,7 +10802,6 @@
       "target_classes": [
         "SomeOtherOrg::SomeOtherAuth::Referral"
       ],
-      "type_symbol": "Referral",
       "types_depended_on": [
         "SomeOtherOrg::SomeOtherAuth::User",
         "array",
@@ -10972,7 +10963,6 @@
       "target_classes": [
         "SomeOtherOrg::SomeOtherAuth::User"
       ],
-      "type_symbol": "User",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11046,7 +11036,6 @@
       "target_classes": [
         "Array"
       ],
-      "type_symbol": "array",
       "types_depended_on": [
         "attributes",
         "duck",
@@ -11116,7 +11105,6 @@
       "target_classes": [
         "Hash"
       ],
-      "type_symbol": "associative_array",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11175,7 +11163,6 @@
       "target_classes": [
         "Object"
       ],
-      "type_symbol": "atomic_duck",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11249,7 +11236,6 @@
         "attributes::SupportedValidators::Required",
         "duck::SupportedValidators::OneOf"
       ],
-      "type_symbol": "attributes",
       "types_depended_on": [
         "array",
         "associative_array",
@@ -11321,7 +11307,6 @@
       "target_classes": [
         "Time"
       ],
-      "type_symbol": "datetime",
       "types_depended_on": [
         "array",
         "atomic_duck",
@@ -11380,7 +11365,6 @@
       "target_classes": [
         "Object"
       ],
-      "type_symbol": "duck",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11437,7 +11421,6 @@
       "target_classes": [
         "Object"
       ],
-      "type_symbol": "duckture",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11610,7 +11593,6 @@
       "target_classes": [
         "String"
       ],
-      "type_symbol": "email",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11677,7 +11659,6 @@
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
       ],
-      "type_symbol": "entity",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11746,7 +11727,6 @@
       "target_classes": [
         "Integer"
       ],
-      "type_symbol": "integer",
       "types_depended_on": [
         "array",
         "attributes",
@@ -11813,7 +11793,6 @@
       "supported_validators": [
         "duck::SupportedValidators::OneOf"
       ],
-      "type_symbol": "model",
       "types_depended_on": [
         "array",
         "atomic_duck",
@@ -11874,7 +11853,6 @@
       "target_classes": [
         "Object"
       ],
-      "type_symbol": "number",
       "types_depended_on": [
         "array",
         "atomic_duck",
@@ -11948,7 +11926,6 @@
       "target_classes": [
         "String"
       ],
-      "type_symbol": "string",
       "types_depended_on": [
         "array",
         "atomic_duck",
@@ -12015,7 +11992,6 @@
       "target_classes": [
         "Symbol"
       ],
-      "type_symbol": "symbol",
       "types_depended_on": [
         "array",
         "atomic_duck",

@@ -303,8 +303,11 @@ module Foobara
                           when "number", "integer", "float"
                             "number"
                           # TODO: should apply relevant processors to make email a real email type instead of "string"
-                          when "symbol", "email"
+                          when "symbol"
                             "string"
+                          when "email"
+                            binding.pry
+                            raise "wtf"
                           when "duck"
                             "any"
                           when "datetime"
@@ -312,6 +315,8 @@ module Foobara
                           else
                             if type_declaration.entity?
                               entity_to_ts_entity_name(type_declaration, association_depth:)
+                            elsif type_declaration.model?
+                              model_to_ts_model_name(type_declaration, association_depth:)
                             end
                           end
                         end
@@ -327,6 +332,7 @@ module Foobara
 
             name ? "#{name} = #{type_string}" : type_string
           else
+            binding.pry
             # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:

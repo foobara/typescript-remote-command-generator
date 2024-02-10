@@ -1,5 +1,700 @@
 {
   "command": {
+    "Ai::Gpt::GenerateCompletion": {
+      "command": "Ai::Gpt::GenerateCompletion",
+      "description": null,
+      "domain": "Ai::Gpt",
+      "domain_name": "Ai::Gpt",
+      "errors_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "full_command_name": "Ai::Gpt::GenerateCompletion",
+      "inputs_type": {
+        "defaults": {
+          "model": "gpt-3.5-turbo"
+        },
+        "element_type_declarations": {
+          "api_token": {
+            "type": "string"
+          },
+          "messages": {
+            "element_type_declaration": {
+              "element_type_declarations": {
+                "content": {
+                  "type": "string"
+                },
+                "role": {
+                  "one_of": [
+                    "system",
+                    "user",
+                    "assistant"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "attributes"
+            },
+            "type": "array"
+          },
+          "model": {
+            "one_of": [
+              "gpt-3.5-turbo",
+              "gpt-4"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "organization": "Ai",
+      "organization_name": "Ai",
+      "parent": [
+        "domain",
+        "Ai::Gpt"
+      ],
+      "possible_errors": {
+        "data.api_token.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.api_token.cannot_cast",
+          "path": [
+            "api_token"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "defaults": {
+                  "model": "gpt-3.5-turbo"
+                },
+                "element_type_declarations": {
+                  "api_token": {
+                    "type": "string"
+                  },
+                  "messages": {
+                    "element_type_declaration": {
+                      "element_type_declarations": {
+                        "content": {
+                          "type": "string"
+                        },
+                        "role": {
+                          "one_of": [
+                            "system",
+                            "user",
+                            "assistant"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "type": "attributes"
+                    },
+                    "type": "array"
+                  },
+                  "model": {
+                    "one_of": [
+                      "gpt-3.5-turbo",
+                      "gpt-4"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.messages.#.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.messages.#.cannot_cast",
+          "path": [
+            "messages",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "one_of": [
+                      "system",
+                      "user",
+                      "assistant"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.messages.#.content.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.messages.#.content.cannot_cast",
+          "path": [
+            "messages",
+            "#",
+            "content"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.messages.#.role.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.messages.#.role.cannot_cast",
+          "path": [
+            "messages",
+            "#",
+            "role"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "system",
+                  "user",
+                  "assistant"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.messages.#.role.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.messages.#.role.value_not_valid",
+          "path": [
+            "messages",
+            "#",
+            "role"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "system",
+              "user",
+              "assistant"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.messages.#.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.messages.#.unexpected_attributes",
+          "path": [
+            "messages",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "content": {
+                "type": "string"
+              },
+              "role": {
+                "one_of": [
+                  "system",
+                  "user",
+                  "assistant"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.messages.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.messages.cannot_cast",
+          "path": [
+            "messages"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "element_type_declarations": {
+                    "content": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "one_of": [
+                        "system",
+                        "user",
+                        "assistant"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "attributes"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.model.cannot_cast",
+          "path": [
+            "model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "gpt-3.5-turbo",
+                  "gpt-4"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.model.value_not_valid",
+          "path": [
+            "model"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "gpt-3.5-turbo",
+              "gpt-4"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "api_token": {
+                "type": "string"
+              },
+              "messages": {
+                "element_type_declaration": {
+                  "element_type_declarations": {
+                    "content": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "one_of": [
+                        "system",
+                        "user",
+                        "assistant"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "attributes"
+                },
+                "type": "array"
+              },
+              "model": {
+                "one_of": [
+                  "gpt-3.5-turbo",
+                  "gpt-4"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "reference": "Ai::Gpt::GenerateCompletion",
+      "result_type": {
+        "type": "Ai::Gpt::Completion"
+      },
+      "result_types_depended_on": [
+        "Ai::Gpt::Completion",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "Ai::Gpt::GenerateCompletion",
+      "scoped_full_path": [
+        "Ai",
+        "Gpt",
+        "GenerateCompletion"
+      ],
+      "scoped_name": "GenerateCompletion",
+      "scoped_path": [
+        "GenerateCompletion"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "GenerateCompletion",
+      "serializers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Serializers",
+            "ErrorsSerializer"
+          ],
+          "scoped_name": "Serializers::ErrorsSerializer",
+          "scoped_path": [
+            "Serializers",
+            "ErrorsSerializer"
+          ],
+          "scoped_prefix": [
+            "Serializers"
+          ],
+          "scoped_short_name": "ErrorsSerializer"
+        },
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Serializers",
+            "JsonSerializer"
+          ],
+          "scoped_name": "Serializers::JsonSerializer",
+          "scoped_path": [
+            "Serializers",
+            "JsonSerializer"
+          ],
+          "scoped_prefix": [
+            "Serializers"
+          ],
+          "scoped_short_name": "JsonSerializer"
+        }
+      ],
+      "types_depended_on": [
+        "Ai::Gpt::Completion",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "FoobaraAi::Ask": {
+      "command": "FoobaraAi::Ask",
+      "depends_on": [
+        "Ai::Gpt::GenerateCompletion"
+      ],
+      "description": "Ask a question and get an answer!",
+      "domain": "FoobaraAi",
+      "domain_name": "FoobaraAi",
+      "errors_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "full_command_name": "FoobaraAi::Ask",
+      "inputs_type": {
+        "element_type_declarations": {
+          "question": {
+            "description": "what do you want to ask?",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "FoobaraAi"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "question": {
+                    "description": "what do you want to ask?",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "question"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.missing_required_attribute",
+          "processor_class": "Value::Processor::Pipeline",
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.question.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.question.cannot_cast",
+          "path": [
+            "question"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "description": "what do you want to ask?",
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.question.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.question.missing_required_attribute",
+          "path": [
+            "question"
+          ],
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "question"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "question": {
+                "description": "what do you want to ask?",
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "reference": "FoobaraAi::Ask",
+      "result_type": {
+        "type": "string"
+      },
+      "result_types_depended_on": [
+        "string"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "FoobaraAi::Ask",
+      "scoped_full_path": [
+        "FoobaraAi",
+        "Ask"
+      ],
+      "scoped_name": "Ask",
+      "scoped_path": [
+        "Ask"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Ask",
+      "serializers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Serializers",
+            "ErrorsSerializer"
+          ],
+          "scoped_name": "Serializers::ErrorsSerializer",
+          "scoped_path": [
+            "Serializers",
+            "ErrorsSerializer"
+          ],
+          "scoped_prefix": [
+            "Serializers"
+          ],
+          "scoped_short_name": "ErrorsSerializer"
+        },
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Serializers::JsonSerializer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Serializers",
+            "JsonSerializer"
+          ],
+          "scoped_name": "Serializers::JsonSerializer",
+          "scoped_path": [
+            "Serializers",
+            "JsonSerializer"
+          ],
+          "scoped_prefix": [
+            "Serializers"
+          ],
+          "scoped_short_name": "JsonSerializer"
+        }
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
     "GlobalCommand": {
       "command": "GlobalCommand",
       "depends_on": [
@@ -268,7 +963,6 @@
                       "type": "string"
                     },
                     "preferred_contact_method": {
-                      "allow_nil": true,
                       "one_of": [
                         "email",
                         "phonecall",
@@ -1088,7 +1782,6 @@
                       "type": "string"
                     },
                     "preferred_contact_method": {
-                      "allow_nil": true,
                       "one_of": [
                         "email",
                         "phonecall",
@@ -1158,7 +1851,6 @@
                       "type": "string"
                     },
                     "preferred_contact_method": {
-                      "allow_nil": true,
                       "one_of": [
                         "email",
                         "phonecall",
@@ -1382,7 +2074,6 @@
             "type": "string"
           },
           "preferred_contact_method": {
-            "allow_nil": true,
             "one_of": [
               "email",
               "phonecall",
@@ -1444,7 +2135,6 @@
                     "type": "string"
                   },
                   "preferred_contact_method": {
-                    "allow_nil": true,
                     "one_of": [
                       "email",
                       "phonecall",
@@ -1714,7 +2404,6 @@
           "processor_manifest_data": {
             "casting": {
               "cast_to": {
-                "allow_nil": true,
                 "one_of": [
                   "email",
                   "phonecall",
@@ -1784,7 +2473,6 @@
                       "type": "string"
                     },
                     "preferred_contact_method": {
-                      "allow_nil": true,
                       "one_of": [
                         "email",
                         "phonecall",
@@ -1832,7 +2520,6 @@
                 "type": "string"
               },
               "preferred_contact_method": {
-                "allow_nil": true,
                 "one_of": [
                   "email",
                   "phonecall",
@@ -4423,6 +5110,38 @@
     }
   },
   "domain": {
+    "Ai::Gpt": {
+      "commands": [
+        "Ai::Gpt::GenerateCompletion"
+      ],
+      "domain": "Ai::Gpt",
+      "domain_name": "Gpt",
+      "organization": "Ai",
+      "organization_name": "Ai",
+      "parent": [
+        "organization",
+        "Ai"
+      ],
+      "reference": "Ai::Gpt",
+      "scoped_category": "domain",
+      "scoped_full_name": "Ai::Gpt",
+      "scoped_full_path": [
+        "Ai",
+        "Gpt"
+      ],
+      "scoped_name": "Gpt",
+      "scoped_path": [
+        "Gpt"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Gpt",
+      "types": [
+        "Ai::Gpt::Choice",
+        "Ai::Gpt::Completion",
+        "Ai::Gpt::Message",
+        "Ai::Gpt::Usage"
+      ]
+    },
     "CommandConnectors": {
       "commands": [
       ],
@@ -4441,6 +5160,36 @@
       ],
       "scoped_prefix": null,
       "scoped_short_name": "CommandConnectors",
+      "types": [
+      ]
+    },
+    "FoobaraAi": {
+      "commands": [
+        "FoobaraAi::Ask"
+      ],
+      "depends_on": [
+        "Ai::Gpt"
+      ],
+      "domain": "FoobaraAi",
+      "domain_name": "FoobaraAi",
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "organization",
+        "global_organization"
+      ],
+      "reference": "FoobaraAi",
+      "scoped_category": "domain",
+      "scoped_full_name": "FoobaraAi",
+      "scoped_full_path": [
+        "FoobaraAi"
+      ],
+      "scoped_name": "FoobaraAi",
+      "scoped_path": [
+        "FoobaraAi"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FoobaraAi",
       "types": [
       ]
     },
@@ -5735,6 +6484,25 @@
     }
   },
   "organization": {
+    "Ai": {
+      "domains": [
+        "Ai::Gpt"
+      ],
+      "organization": "Ai",
+      "organization_name": "Ai",
+      "reference": "Ai",
+      "scoped_category": "organization",
+      "scoped_full_name": "Ai",
+      "scoped_full_path": [
+        "Ai"
+      ],
+      "scoped_name": "Ai",
+      "scoped_path": [
+        "Ai"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Ai"
+    },
     "SomeOrg": {
       "domains": [
         "SomeOrg::Auth",
@@ -5778,6 +6546,7 @@
     },
     "global_organization": {
       "domains": [
+        "FoobaraAi",
         "SomeDomainWithoutOrg",
         "global_organization::global_domain"
       ],
@@ -5952,6 +6721,32 @@
         "Casters"
       ],
       "scoped_short_name": "hash"
+    },
+    "datetime::Casters::seconds_since_epoch": {
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "datetime"
+      ],
+      "processor_class": "datetime::Casters::SecondsSinceEpoch",
+      "reference": "datetime::Casters::seconds_since_epoch",
+      "scoped_category": "processor",
+      "scoped_full_name": "datetime::Casters::seconds_since_epoch",
+      "scoped_full_path": [
+        "datetime",
+        "Casters",
+        "seconds_since_epoch"
+      ],
+      "scoped_name": "Casters::seconds_since_epoch",
+      "scoped_path": [
+        "Casters",
+        "seconds_since_epoch"
+      ],
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_short_name": "seconds_since_epoch"
     },
     "datetime::Casters::string": {
       "domain": "global_organization::global_domain",
@@ -6924,6 +7719,33 @@
       ],
       "scoped_short_name": "Hash"
     },
+    "datetime::Casters::SecondsSinceEpoch": {
+      "domain": "global_organization::global_domain",
+      "name": "Foobara::BuiltinTypes::Datetime::Casters::SecondsSinceEpoch",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "datetime"
+      ],
+      "processor_type": "caster",
+      "reference": "datetime::Casters::SecondsSinceEpoch",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "datetime::Casters::SecondsSinceEpoch",
+      "scoped_full_path": [
+        "datetime",
+        "Casters",
+        "SecondsSinceEpoch"
+      ],
+      "scoped_name": "Casters::SecondsSinceEpoch",
+      "scoped_path": [
+        "Casters",
+        "SecondsSinceEpoch"
+      ],
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_short_name": "SecondsSinceEpoch"
+    },
     "datetime::Casters::String": {
       "domain": "global_organization::global_domain",
       "name": "Foobara::BuiltinTypes::Datetime::Casters::String",
@@ -7697,6 +8519,1323 @@
     }
   },
   "type": {
+    "Ai::Gpt::Choice": {
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "finish_reason": {
+              "one_of": [
+                "stop"
+              ],
+              "type": "string"
+            },
+            "index": {
+              "type": "integer"
+            },
+            "logprobs": {
+              "type": "duck"
+            },
+            "message": {
+              "type": "Ai::Gpt::Message"
+            }
+          },
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "Foobara::Ai::Gpt::Types::Completion::Choice",
+        "model_module": "Foobara::Ai::Gpt::Types::Completion",
+        "name": "Choice",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "Ai::Gpt",
+      "name": "Choice",
+      "organization": "Ai",
+      "parent": [
+        "domain",
+        "Ai::Gpt"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "finish_reason": {
+                    "one_of": [
+                      "stop"
+                    ],
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": "integer"
+                  },
+                  "logprobs": {
+                    "type": "duck"
+                  },
+                  "message": {
+                    "type": "Ai::Gpt::Message"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.finish_reason.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.finish_reason.cannot_cast",
+          "path": [
+            "finish_reason"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "stop"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.finish_reason.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.finish_reason.value_not_valid",
+          "path": [
+            "finish_reason"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "stop"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.index.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.index.cannot_cast",
+          "path": [
+            "index"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.logprobs.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.logprobs.cannot_cast",
+          "path": [
+            "logprobs"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "duck"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.message.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.message.cannot_cast",
+          "path": [
+            "message"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "one_of": [
+                      "assistant",
+                      "user",
+                      "system"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.message.content.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.message.content.cannot_cast",
+          "path": [
+            "message",
+            "content"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.message.role.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.message.role.cannot_cast",
+          "path": [
+            "message",
+            "role"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "assistant",
+                  "user",
+                  "system"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.message.role.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.message.role.value_not_valid",
+          "path": [
+            "message",
+            "role"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "assistant",
+              "user",
+              "system"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.message.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.message.unexpected_attributes",
+          "path": [
+            "message"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "content": {
+                "type": "string"
+              },
+              "role": {
+                "one_of": [
+                  "assistant",
+                  "user",
+                  "system"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "finish_reason": {
+                "one_of": [
+                  "stop"
+                ],
+                "type": "string"
+              },
+              "index": {
+                "type": "integer"
+              },
+              "logprobs": {
+                "type": "duck"
+              },
+              "message": {
+                "type": "Ai::Gpt::Message"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "Ai::Gpt::Choice",
+      "scoped_category": "type",
+      "scoped_full_name": "Ai::Gpt::Choice",
+      "scoped_full_path": [
+        "Ai",
+        "Gpt",
+        "Choice"
+      ],
+      "scoped_name": "Choice",
+      "scoped_path": [
+        "Choice"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Choice",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "Foobara::Ai::Gpt::Types::Completion::Choice"
+      ],
+      "types_depended_on": [
+        "Ai::Gpt::Message",
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "model",
+        "string",
+        "symbol"
+      ]
+    },
+    "Ai::Gpt::Completion": {
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "choices": {
+              "element_type_declaration": {
+                "type": "Ai::Gpt::Choice"
+              },
+              "type": "array"
+            },
+            "created": {
+              "type": "datetime"
+            },
+            "id": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            },
+            "object": {
+              "one_of": [
+                "chat.completion"
+              ],
+              "type": "string"
+            },
+            "system_fingerprint": {
+              "allow_nil": true,
+              "type": "string"
+            },
+            "usage": {
+              "type": "Ai::Gpt::Usage"
+            }
+          },
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "Foobara::Ai::Gpt::Types::Completion",
+        "model_module": "Foobara::Ai::Gpt::Types",
+        "name": "Completion",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "Ai::Gpt",
+      "name": "Completion",
+      "organization": "Ai",
+      "parent": [
+        "domain",
+        "Ai::Gpt"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "choices": {
+                    "element_type_declaration": {
+                      "type": "Ai::Gpt::Choice"
+                    },
+                    "type": "array"
+                  },
+                  "created": {
+                    "type": "datetime"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "model": {
+                    "type": "string"
+                  },
+                  "object": {
+                    "one_of": [
+                      "chat.completion"
+                    ],
+                    "type": "string"
+                  },
+                  "system_fingerprint": {
+                    "allow_nil": true,
+                    "type": "string"
+                  },
+                  "usage": {
+                    "type": "Ai::Gpt::Usage"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.cannot_cast",
+          "path": [
+            "choices",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "finish_reason": {
+                    "one_of": [
+                      "stop"
+                    ],
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": "integer"
+                  },
+                  "logprobs": {
+                    "type": "duck"
+                  },
+                  "message": {
+                    "type": "Ai::Gpt::Message"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.finish_reason.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.finish_reason.cannot_cast",
+          "path": [
+            "choices",
+            "#",
+            "finish_reason"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "stop"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.finish_reason.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.choices.#.finish_reason.value_not_valid",
+          "path": [
+            "choices",
+            "#",
+            "finish_reason"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "stop"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.choices.#.index.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.index.cannot_cast",
+          "path": [
+            "choices",
+            "#",
+            "index"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.logprobs.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.logprobs.cannot_cast",
+          "path": [
+            "choices",
+            "#",
+            "logprobs"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "duck"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.message.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.message.cannot_cast",
+          "path": [
+            "choices",
+            "#",
+            "message"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "one_of": [
+                      "assistant",
+                      "user",
+                      "system"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.message.content.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.message.content.cannot_cast",
+          "path": [
+            "choices",
+            "#",
+            "message",
+            "content"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.message.role.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.#.message.role.cannot_cast",
+          "path": [
+            "choices",
+            "#",
+            "message",
+            "role"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "assistant",
+                  "user",
+                  "system"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.choices.#.message.role.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.choices.#.message.role.value_not_valid",
+          "path": [
+            "choices",
+            "#",
+            "message",
+            "role"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "assistant",
+              "user",
+              "system"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.choices.#.message.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.choices.#.message.unexpected_attributes",
+          "path": [
+            "choices",
+            "#",
+            "message"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "content": {
+                "type": "string"
+              },
+              "role": {
+                "one_of": [
+                  "assistant",
+                  "user",
+                  "system"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.choices.#.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.choices.#.unexpected_attributes",
+          "path": [
+            "choices",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "finish_reason": {
+                "one_of": [
+                  "stop"
+                ],
+                "type": "string"
+              },
+              "index": {
+                "type": "integer"
+              },
+              "logprobs": {
+                "type": "duck"
+              },
+              "message": {
+                "type": "Ai::Gpt::Message"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.choices.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.choices.cannot_cast",
+          "path": [
+            "choices"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "type": "Ai::Gpt::Choice"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.created.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.created.cannot_cast",
+          "path": [
+            "created"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "datetime"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.id.cannot_cast",
+          "path": [
+            "id"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.model.cannot_cast",
+          "path": [
+            "model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.object.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.object.cannot_cast",
+          "path": [
+            "object"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "chat.completion"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.object.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.object.value_not_valid",
+          "path": [
+            "object"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "chat.completion"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.system_fingerprint.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.system_fingerprint.cannot_cast",
+          "path": [
+            "system_fingerprint"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "allow_nil": true,
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "choices": {
+                "element_type_declaration": {
+                  "type": "Ai::Gpt::Choice"
+                },
+                "type": "array"
+              },
+              "created": {
+                "type": "datetime"
+              },
+              "id": {
+                "type": "string"
+              },
+              "model": {
+                "type": "string"
+              },
+              "object": {
+                "one_of": [
+                  "chat.completion"
+                ],
+                "type": "string"
+              },
+              "system_fingerprint": {
+                "allow_nil": true,
+                "type": "string"
+              },
+              "usage": {
+                "type": "Ai::Gpt::Usage"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.usage.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.usage.cannot_cast",
+          "path": [
+            "usage"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "completion_tokens": {
+                    "type": "integer"
+                  },
+                  "prompt_tokens": {
+                    "type": "integer"
+                  },
+                  "total_tokens": {
+                    "type": "integer"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.usage.completion_tokens.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.usage.completion_tokens.cannot_cast",
+          "path": [
+            "usage",
+            "completion_tokens"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.usage.prompt_tokens.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.usage.prompt_tokens.cannot_cast",
+          "path": [
+            "usage",
+            "prompt_tokens"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.usage.total_tokens.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.usage.total_tokens.cannot_cast",
+          "path": [
+            "usage",
+            "total_tokens"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.usage.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.usage.unexpected_attributes",
+          "path": [
+            "usage"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "completion_tokens": {
+                "type": "integer"
+              },
+              "prompt_tokens": {
+                "type": "integer"
+              },
+              "total_tokens": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "Ai::Gpt::Completion",
+      "scoped_category": "type",
+      "scoped_full_name": "Ai::Gpt::Completion",
+      "scoped_full_path": [
+        "Ai",
+        "Gpt",
+        "Completion"
+      ],
+      "scoped_name": "Completion",
+      "scoped_path": [
+        "Completion"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Completion",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "Foobara::Ai::Gpt::Types::Completion"
+      ],
+      "types_depended_on": [
+        "Ai::Gpt::Choice",
+        "Ai::Gpt::Usage",
+        "array",
+        "attributes",
+        "datetime",
+        "duck",
+        "model",
+        "string",
+        "symbol"
+      ]
+    },
+    "Ai::Gpt::Message": {
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "content": {
+              "type": "string"
+            },
+            "role": {
+              "one_of": [
+                "assistant",
+                "user",
+                "system"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "Foobara::Ai::Gpt::Types::Completion::Message",
+        "model_module": "Foobara::Ai::Gpt::Types::Completion",
+        "name": "Message",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "Ai::Gpt",
+      "name": "Message",
+      "organization": "Ai",
+      "parent": [
+        "domain",
+        "Ai::Gpt"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "one_of": [
+                      "assistant",
+                      "user",
+                      "system"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.content.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.content.cannot_cast",
+          "path": [
+            "content"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.role.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.role.cannot_cast",
+          "path": [
+            "role"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "assistant",
+                  "user",
+                  "system"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.role.value_not_valid": {
+          "category": "data",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "key": "data.role.value_not_valid",
+          "path": [
+            "role"
+          ],
+          "processor_manifest_data": {
+            "one_of": [
+              "assistant",
+              "user",
+              "system"
+            ]
+          },
+          "symbol": "value_not_valid"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "content": {
+                "type": "string"
+              },
+              "role": {
+                "one_of": [
+                  "assistant",
+                  "user",
+                  "system"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "Ai::Gpt::Message",
+      "scoped_category": "type",
+      "scoped_full_name": "Ai::Gpt::Message",
+      "scoped_full_path": [
+        "Ai",
+        "Gpt",
+        "Message"
+      ],
+      "scoped_name": "Message",
+      "scoped_path": [
+        "Message"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Message",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "Foobara::Ai::Gpt::Types::Completion::Message"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "model",
+        "string",
+        "symbol"
+      ]
+    },
+    "Ai::Gpt::Usage": {
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "completion_tokens": {
+              "type": "integer"
+            },
+            "prompt_tokens": {
+              "type": "integer"
+            },
+            "total_tokens": {
+              "type": "integer"
+            }
+          },
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "Foobara::Ai::Gpt::Types::Completion::Usage",
+        "model_module": "Foobara::Ai::Gpt::Types::Completion",
+        "name": "Usage",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "Ai::Gpt",
+      "name": "Usage",
+      "organization": "Ai",
+      "parent": [
+        "domain",
+        "Ai::Gpt"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "completion_tokens": {
+                    "type": "integer"
+                  },
+                  "prompt_tokens": {
+                    "type": "integer"
+                  },
+                  "total_tokens": {
+                    "type": "integer"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.completion_tokens.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.completion_tokens.cannot_cast",
+          "path": [
+            "completion_tokens"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.prompt_tokens.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.prompt_tokens.cannot_cast",
+          "path": [
+            "prompt_tokens"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.total_tokens.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.total_tokens.cannot_cast",
+          "path": [
+            "total_tokens"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "completion_tokens": {
+                "type": "integer"
+              },
+              "prompt_tokens": {
+                "type": "integer"
+              },
+              "total_tokens": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "Ai::Gpt::Usage",
+      "scoped_category": "type",
+      "scoped_full_name": "Ai::Gpt::Usage",
+      "scoped_full_path": [
+        "Ai",
+        "Gpt",
+        "Usage"
+      ],
+      "scoped_name": "Usage",
+      "scoped_path": [
+        "Usage"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "Usage",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "Foobara::Ai::Gpt::Types::Completion::Usage"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "model",
+        "symbol"
+      ]
+    },
     "SomeOrg::Auth::Referral": {
       "associations": {
         "referred_user": "SomeOrg::Auth::User",
@@ -7888,7 +10027,6 @@
             "type": "string"
           },
           "preferred_contact_method": {
-            "allow_nil": true,
             "one_of": [
               "email",
               "phonecall",
@@ -7922,7 +10060,6 @@
               "type": "string"
             },
             "preferred_contact_method": {
-              "allow_nil": true,
               "one_of": [
                 "email",
                 "phonecall",
@@ -7983,7 +10120,6 @@
                       "type": "string"
                     },
                     "preferred_contact_method": {
-                      "allow_nil": true,
                       "one_of": [
                         "email",
                         "phonecall",
@@ -9031,11 +11167,13 @@
         "caster_classes": [
           "datetime::Casters::Date",
           "datetime::Casters::Hash",
+          "datetime::Casters::SecondsSinceEpoch",
           "datetime::Casters::String"
         ],
         "casters": [
           "datetime::Casters::date",
           "datetime::Casters::hash",
+          "datetime::Casters::seconds_since_epoch",
           "datetime::Casters::string"
         ]
       },

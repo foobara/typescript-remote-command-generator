@@ -58,6 +58,13 @@ module Foobara
                                 Services::EntityVariantsGenerator,
                                 Services::EntityManifestGenerator
                               ]
+                            when Manifest::Model
+                              [
+                                Services::ModelGenerator,
+                                Services::AtomModelGenerator,
+                                Services::AggregateModelGenerator,
+                                Services::ModelManifestGenerator
+                              ]
                             when Manifest::Error
                               Services::ErrorGenerator
                             when Manifest::ProcessorClass

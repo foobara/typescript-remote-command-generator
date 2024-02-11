@@ -1,12 +1,13 @@
 module Foobara
   module RemoteGenerator
     class Services
-      class AtomEntityGenerator < LoadedEntityGenerator
+      class AtomModelGenerator < ModelGenerator
         def target_path
-          [*domain_path, "types", entity_name, "Atom.ts"]
+          [*domain_path, "types", model_name, "Atom.ts"]
         end
 
         def template_path
+          # TODO: change to Model
           ["Entity", "Atom.ts.erb"]
         end
 

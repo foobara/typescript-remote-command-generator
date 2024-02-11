@@ -1,14 +1,13 @@
-require_relative "loaded_entity_generator"
-
 module Foobara
   module RemoteGenerator
     class Services
-      class AggregateEntityGenerator < LoadedEntityGenerator
+      class AggregateModelGenerator < ModelGenerator
         def target_path
           [*domain_path, "types", entity_name, "Aggregate.ts"]
         end
 
         def template_path
+          # TODO: change to model
           ["Entity", "Aggregate.ts.erb"]
         end
 

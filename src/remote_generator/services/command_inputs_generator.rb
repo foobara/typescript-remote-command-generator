@@ -14,14 +14,18 @@ module Foobara
           "Command/Inputs.ts.erb"
         end
 
-        def entity_generators
-          @entity_generators ||= inputs_types_depended_on.select(&:entity?).uniq.map do |entity|
-            Services::EntityGenerator.new(entity, elements_to_generate)
+        def model_generators
+          @model_generators ||= inputs_types_depended_on.select(&:model?).uniq.map do |model|
+            if model.entity?
+              Services::EntityGenerator.new(model, elements_to_generate)
+            else
+              Services::ModelGenerator.new(model, elements_to_generate)
+            end
           end
         end
 
         def dependencies
-          entity_generators
+          model_generators
         end
       end
     end

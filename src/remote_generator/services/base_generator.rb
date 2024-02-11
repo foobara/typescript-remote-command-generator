@@ -303,11 +303,8 @@ module Foobara
                           when "number", "integer", "float"
                             "number"
                           # TODO: should apply relevant processors to make email a real email type instead of "string"
-                          when "symbol"
+                          when "symbol", "email"
                             "string"
-                          when "email"
-                            binding.pry
-                            raise "wtf"
                           when "duck"
                             "any"
                           when "datetime"
@@ -353,7 +350,6 @@ module Foobara
         def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
 
-          raise "wtf"
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
                               Services::EntityGenerator
@@ -377,11 +373,11 @@ module Foobara
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
-                              Services::EntityGenerator
+                              Services::ModelGenerator
                             when AssociationDepth::ATOM
-                              Services::UnloadedEntityGenerator
+                              Services::AtomModelGenerator
                             when AssociationDepth::AGGREGATE
-                              Services::AggregateEntityGenerator
+                              Services::AggregateModelGenerator
                             else
                               # :nocov:
                               raise "Bad association_depth: #{association_depth}"

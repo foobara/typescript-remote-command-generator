@@ -33,19 +33,19 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
       expect(generator.atom_name).to eq("LoadedUser")
       expect(generator.loaded_name).to eq("LoadedUser")
       expect(generator.unloaded_name).to eq("UnloadedUser")
-      expect(generator.aggregate_name).to eq("UserAggregate")
+      expect(generator.aggregate_name).to eq("LoadedUser")
       expect(generator.entity_name).to eq("User")
 
       expect(generator.atom_name(1)).to eq("Auth.LoadedUser")
       expect(generator.loaded_name(1)).to eq("Auth.LoadedUser")
       expect(generator.unloaded_name(1)).to eq("Auth.UnloadedUser")
-      expect(generator.aggregate_name(1)).to eq("Auth.UserAggregate")
+      expect(generator.aggregate_name(1)).to eq("Auth.LoadedUser")
       expect(generator.entity_name(1)).to eq("Auth.User")
 
       expect(generator.atom_name(2)).to eq("SomeOrg.Auth.LoadedUser")
       expect(generator.loaded_name(2)).to eq("SomeOrg.Auth.LoadedUser")
       expect(generator.unloaded_name(2)).to eq("SomeOrg.Auth.UnloadedUser")
-      expect(generator.aggregate_name(2)).to eq("SomeOrg.Auth.UserAggregate")
+      expect(generator.aggregate_name(2)).to eq("SomeOrg.Auth.LoadedUser")
       expect(generator.entity_name(2)).to eq("SomeOrg.Auth.User")
     end
   end

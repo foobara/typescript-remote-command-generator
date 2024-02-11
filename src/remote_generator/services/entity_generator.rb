@@ -1,8 +1,17 @@
+require_relative "model_generator"
+
 module Foobara
   module RemoteGenerator
     class Services
       class EntityGenerator < ModelGenerator
         alias entity_manifest relevant_manifest
+
+        def initialize(entity_manifest, *args, **opts, &)
+          unless entity_manifest.entity?
+            binding.pry
+          end
+          super
+        end
 
         def template_path
           ["Entity", "Ambiguous.ts.erb"]
@@ -34,41 +43,26 @@ module Foobara
                             scoped_path
                           end
 
+          # TODO: I think this should be just Name not LoadedName.
+          # The ambiguous class could be called PotentiallyUnloadedName instead?
+          # or maybe NameOrReference? And unloaded could be NameReference instead?
           [*prefix, "Loaded#{name}"].join(".")
         end
 
         def atom_name(points = nil)
           if has_associations?
-            *prefix, name = if points
-                              scoped_full_path(points)
-                            else
-                              scoped_path
-                            end
-
-            [*prefix, "#{name}Atom"].join(".")
+            super
           else
             loaded_name(points)
           end
         end
 
         def aggregate_name(points = nil)
-          *prefix, name = if points
-                            scoped_full_path(points)
-                          else
-                            scoped_path
-                          end
-
-          [*prefix, "#{name}Aggregate"].join(".")
-        end
-
-        def entity_generators
-          types_depended_on.select(&:entity?).map do |entity|
-            Services::EntityGenerator.new(entity, elements_to_generate)
+          if has_associations?
+            super
+          else
+            loaded_name(points)
           end
-        end
-
-        def dependencies
-          entity_generators
         end
 
         def primary_key_name
@@ -80,30 +74,15 @@ module Foobara
         end
 
         def entity_name_downcase
-          entity_name[0].downcase + entity_name[1..]
-        end
-
-        def attributes_type_ts_type
-          association_depth = AssociationDepth::AMBIGUOUS
-          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
-        end
-
-        def atom_attributes_ts_type
-          association_depth = AssociationDepth::ATOM
-          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
-        end
-
-        def aggregate_attributes_ts_type
-          association_depth = AssociationDepth::AGGREGATE
-          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
-        end
-
-        def association_property_names_ts_array
-          associations.keys.map(&:to_s).inspect
+          model_name_downcase
         end
 
         def attribute_names
-          attributes_type.attribute_names - [primary_key_name]
+          super - [primary_key_name]
+        end
+
+        def base_ts_class
+          "Entity"
         end
       end
     end

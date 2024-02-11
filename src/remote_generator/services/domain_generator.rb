@@ -34,8 +34,18 @@ module Foobara
           end
         end
 
+        def model_generators
+          @model_generators ||= begin
+            only_models = domain_manifest.models.reject(&:entity?)
+
+            only_models.map do |model_manifest|
+              ModelGenerator.new(model_manifest, elements_to_generate)
+            end
+          end
+        end
+
         def dependencies
-          [*command_generators, *entity_generators, *organization]
+          [*command_generators, *model_generators, *entity_generators, *organization]
         end
 
         def domain_name

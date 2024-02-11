@@ -11,7 +11,8 @@ module Foobara
         end
 
         def template_path
-          ["Model", "Ambiguous.ts.erb"]
+          # TODO: change this to Model
+          ["Entity", "Ambiguous.ts.erb"]
         end
 
         def scoped_full_path(points = nil)
@@ -44,40 +45,40 @@ module Foobara
 
             [*prefix, "#{name}Atom"].join(".")
           else
-            loaded_name(points)
+            model_name(points)
           end
         end
 
         def aggregate_name(points = nil)
-          *prefix, name = if points
-                            scoped_full_path(points)
-                          else
-                            scoped_path
-                          end
+          if has_associations?
+            *prefix, name = if points
+                              scoped_full_path(points)
+                            else
+                              scoped_path
+                            end
 
-          [*prefix, "#{name}Aggregate"].join(".")
+            [*prefix, "#{name}Aggregate"].join(".")
+          else
+            model_name(points)
+          end
         end
 
-        def entity_generators
-          types_depended_on.select(&:entity?).map do |entity|
-            Services::EntityGenerator.new(entity, elements_to_generate)
+        def model_generators
+          types_depended_on.select(&:model?).map do |model|
+            if model.entity?
+              Services::EntityGenerator.new(model, elements_to_generate)
+            else
+              Services::ModelGenerator.new(model, elements_to_generate)
+            end
           end
         end
 
         def dependencies
-          entity_generators
+          model_generators
         end
 
-        def primary_key_name
-          primary_key_attribute
-        end
-
-        def primary_key_ts_type
-          foobara_type_to_ts_type(primary_key_type, dependency_group:)
-        end
-
-        def entity_name_downcase
-          entity_name[0].downcase + entity_name[1..]
+        def model_name_downcase
+          model_name[0].downcase + model_name[1..]
         end
 
         def attributes_type_ts_type
@@ -100,7 +101,11 @@ module Foobara
         end
 
         def attribute_names
-          attributes_type.attribute_names - [primary_key_name]
+          attributes_type.attribute_names
+        end
+
+        def base_ts_class
+          "Model"
         end
       end
     end

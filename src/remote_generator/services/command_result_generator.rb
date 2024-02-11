@@ -18,12 +18,14 @@ module Foobara
           "Command/Result.ts.erb"
         end
 
-        def entity_generators(type = result_type)
+        def model_generators(type = result_type)
           if type.entity?
             [EntityGenerator.new(type.to_entity, elements_to_generate)]
+          elsif type.model?
+            [ModelGenerator.new(type.to_model, elements_to_generate)]
           elsif type.type.to_sym == :attributes
             type.attribute_declarations.values.map do |attribute_declaration|
-              entity_generators(attribute_declaration)
+              model_generators(attribute_declaration)
             end.flatten
           else
             # TODO: handle tuples, associative arrays, arrays
@@ -32,7 +34,7 @@ module Foobara
         end
 
         def dependencies
-          entity_generators
+          model_generators
         end
       end
     end

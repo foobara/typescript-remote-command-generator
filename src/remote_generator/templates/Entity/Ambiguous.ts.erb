@@ -1,24 +1,34 @@
-import { Entity } from "<%= path_to_root %>base/Entity"
+import { <%= base_ts_class %> } from "<%= path_to_root %>base/<%= base_ts_class %>"
 <% dependency_roots.each do |dependency_root| %>
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export type <%= entity_name %>PrimaryKeyType = <%= primary_key_ts_type %>
-export const <%= entity_name_downcase %>PrimaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
-export interface <%= entity_name %>AttributesType <%= attributes_type_ts_type %>
+<% if entity? %>
+export type <%= model_name %>PrimaryKeyType = <%= primary_key_ts_type %>
+export const <%= model_name_downcase %>PrimaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
+<% end %>
+export interface <%= model_name %>AttributesType <%= attributes_type_ts_type %>
 
-export class <%= entity_name %><
-  AttributesType extends <%= entity_name %>AttributesType = <%= entity_name %>AttributesType
-> extends Entity<<%= entity_name %>PrimaryKeyType, AttributesType> {
-  static readonly entityName: string = "<%= entity_name %>"
+export class <%= model_name %><
+  AttributesType extends <%= model_name %>AttributesType = <%= model_name %>AttributesType
+> extends <%= base_ts_class %><
+<% if entity? %>
+  <%= model_name %>PrimaryKeyType,
+<% end %>
+AttributesType
+> {
+  static readonly modelName: string = "<%= model_name %>"
+<% if entity? %>
+  static readonly entityName: string = "<%= model_name %>"
   static readonly primaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
 
-  get associationPropertyNames (): (keyof <%= entity_name %>AttributesType)[] { return <%= association_property_names_ts_array %> }
-  readonly hasAssociations: <%= has_associations? %> = <%= has_associations? %>
-
-  get <%= primary_key_name %> (): <%= entity_name %>PrimaryKeyType {
+  get <%= primary_key_name %> (): <%= model_name %>PrimaryKeyType {
     return this.primaryKey
   }
+<% end %>
+
+  get associationPropertyNames (): (keyof <%= model_name %>AttributesType)[] { return <%= association_property_names_ts_array %> }
+  readonly hasAssociations: <%= has_associations? %> = <%= has_associations? %>
 
   <% attribute_names.each do |attribute_name| %>
   get <%= attribute_name %> (): AttributesType["<%= attribute_name %>"] {

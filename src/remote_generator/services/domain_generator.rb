@@ -45,6 +45,7 @@ module Foobara
         end
 
         def dependencies
+          binding.pry
           [*command_generators, *model_generators, *entity_generators, *organization]
         end
 

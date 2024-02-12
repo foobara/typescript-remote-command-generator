@@ -64,7 +64,12 @@ module Foobara
       end
 
       def elements_to_generate
-        @elements_to_generate ||= Set.new
+        @elements_to_generate ||= Set.new.tap do |s|
+          s.singleton_class.define_method(:<<) do |element|
+            binding.pry if element.respond_to?(:reference) && element.reference == "entity"
+            super(element)
+          end
+        end
       end
 
       def generated

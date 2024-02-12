@@ -1,3 +1,5 @@
+require_relative "model_variants_generator"
+
 module Foobara
   module RemoteGenerator
     class Services

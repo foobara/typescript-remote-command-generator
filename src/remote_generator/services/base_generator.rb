@@ -153,6 +153,10 @@ module Foobara
             # :nocov:
           end
 
+          binding.pry if is_a?(CommandResultGenerator) && reference =~ /Referral/i
+
+          # binding.pry if is_a?(EntityVariantsGenerator) && reference =~ /Referral/i
+
           dependencies.each do |dependency|
             elements_to_generate << dependency
           end

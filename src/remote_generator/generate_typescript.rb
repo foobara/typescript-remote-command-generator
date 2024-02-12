@@ -76,10 +76,17 @@ module Foobara
           element_to_generate = elements_to_generate.first
           elements_to_generate.delete(element_to_generate)
 
-          if element_to_generate.is_a?(Services::BaseGenerator)
-            elements_to_generate << element_to_generate.relevant_manifest
+          unless element_to_generate.is_a?(Services::BaseGenerator)
+            RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
+              next unless generator.applicable?
+
+              elements_to_generate << generator
+            end
             next
           end
+
+          # TODO: fix this name
+          next unless element_to_generate.applicable?
 
           unless generated.include?(element_to_generate)
             self.element_to_generate = element_to_generate
@@ -111,13 +118,18 @@ module Foobara
         paths_to_source_code[generator.target_path.join("/")] = generator.generate
       end
 
+      # TODO: eliminate this method
       def each_generator
-        RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
-          next unless generator.applicable?
+        # RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
+        #   next unless generator.applicable?
+        #
+        #   self.generator = generator
+        #   yield
+        # end
+        return unless element_to_generate.applicable?
 
-          self.generator = generator
-          yield
-        end
+        self.generator = element_to_generate
+        yield
       end
 
       def manifest

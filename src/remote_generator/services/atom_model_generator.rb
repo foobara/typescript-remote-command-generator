@@ -2,6 +2,18 @@ module Foobara
   module RemoteGenerator
     class Services
       class AtomModelGenerator < ModelGenerator
+        class << self
+          def new(relevant_manifest, elements_to_generate)
+            if relevant_manifest.entity?
+              AtomEntityGenerator.new(relevant_manifest, elements_to_generate)
+            elsif relevant_manifest.has_associations?
+              super
+            else
+              ModelGenerator.new(relevant_manifest, elements_to_generate)
+            end
+          end
+        end
+
         def target_path
           [*domain_path, "types", model_name, "Atom.ts"]
         end

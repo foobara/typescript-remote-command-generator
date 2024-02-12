@@ -4,6 +4,16 @@ module Foobara
   module RemoteGenerator
     class Services
       class ModelGenerator < BaseGenerator
+        class << self
+          def new(relevant_manifest, elements_to_generate)
+            if relevant_manifest.entity?
+              EntityGenerator.new(relevant_manifest, elements_to_generate)
+            else
+              super
+            end
+          end
+        end
+
         alias model_manifest relevant_manifest
 
         def target_path
@@ -73,6 +83,7 @@ module Foobara
         end
 
         def dependencies
+          binding.pry if model_name =~ /Completion/i
           model_generators
         end
 

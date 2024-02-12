@@ -4,6 +4,16 @@ module Foobara
   module RemoteGenerator
     class Services
       class AggregateEntityGenerator < LoadedEntityGenerator
+        class << self
+          def new(relevant_manifest, elements_to_generate)
+            if relevant_manifest.has_associations?
+              super
+            else
+              LoadedEntityGenerator.new(relevant_manifest, elements_to_generate)
+            end
+          end
+        end
+
         def target_path
           [*domain_path, "types", entity_name, "Aggregate.ts"]
         end

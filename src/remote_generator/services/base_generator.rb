@@ -93,7 +93,7 @@ module Foobara
 
         attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
 
-        def initialize(relevant_manifest, elements_to_generate = nil)
+        def initialize(relevant_manifest, elements_to_generate)
           self.relevant_manifest = relevant_manifest
           self.elements_to_generate = elements_to_generate
         end

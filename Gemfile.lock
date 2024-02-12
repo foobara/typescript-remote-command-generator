@@ -19,9 +19,8 @@ GIT
   specs:
     foobara-spec-helpers (0.1.0)
 
-GIT
-  remote: https://github.com/foobara/util.git
-  revision: 2eb1add2428bca2569b035ae57697e1aebaca931
+PATH
+  remote: ../util
   specs:
     foobara-util (0.1.0)
 

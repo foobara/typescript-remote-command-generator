@@ -3,7 +3,8 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
   let(:entity_manifest) { Foobara::Manifest::Entity.new(raw_manifest, path) }
   let(:path) { [:type, "SomeOrg::Auth::Referral"] }
-  let(:generator) { generator_class.new(entity_manifest) }
+  let(:generator) { generator_class.new(entity_manifest, elements_to_generate) }
+  let(:elements_to_generate) { [] }
   let(:generator_class) { described_class }
 
   it "has the expected names prefixed as necessary" do

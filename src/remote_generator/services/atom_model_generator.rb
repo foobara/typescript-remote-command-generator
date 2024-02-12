@@ -4,10 +4,13 @@ module Foobara
       class AtomModelGenerator < ModelGenerator
         class << self
           def new(relevant_manifest, elements_to_generate)
+            return super unless self == AtomModelGenerator
+
             if relevant_manifest.entity?
               AtomEntityGenerator.new(relevant_manifest, elements_to_generate)
             elsif relevant_manifest.has_associations?
-              super
+              super_method = Util.method_of(self, Class, :new)
+              super_method.call(relevant_manifest, elements_to_generate)
             else
               ModelGenerator.new(relevant_manifest, elements_to_generate)
             end

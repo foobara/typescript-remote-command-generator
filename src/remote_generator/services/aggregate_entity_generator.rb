@@ -6,8 +6,11 @@ module Foobara
       class AggregateEntityGenerator < LoadedEntityGenerator
         class << self
           def new(relevant_manifest, elements_to_generate)
+            return super unless self == AggregateEntityGenerator
+
             if relevant_manifest.has_associations?
-              super
+              super_method = Util.method_of(self, Class, :new)
+              super_method.call(relevant_manifest, elements_to_generate)
             else
               LoadedEntityGenerator.new(relevant_manifest, elements_to_generate)
             end

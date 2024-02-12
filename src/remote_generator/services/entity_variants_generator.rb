@@ -3,16 +3,21 @@ require_relative "model_variants_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class EntityVariantsGenerator < ModelVariantsGenerator
+      class EntityVariantsGenerator < EntityGenerator
+        def target_path
+          [*domain_path, "types", "#{model_name}.ts"]
+        end
+
         def template_path
           "EntityVariants.ts.erb"
         end
 
         def entity_generator
-          model_generator
+          EntityGenerator.new(entity_manifest, elements_to_generate)
         end
 
         def unloaded_entity_generator
+          binding.pry
           UnloadedEntityGenerator.new(entity_manifest, elements_to_generate)
         end
 
@@ -21,11 +26,11 @@ module Foobara
         end
 
         def atom_entity_generator
-          atom_model_generator
+          AtomEntityGenerator.new(entity_manifest, elements_to_generate)
         end
 
         def aggregate_entity_generator
-          aggregate_model_generator
+          AggregateEntityGenerator.new(entity_manifest, elements_to_generate)
         end
 
         def dependencies

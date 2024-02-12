@@ -89,6 +89,10 @@ module Foobara
         attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
 
         def initialize(relevant_manifest, elements_to_generate)
+          unless relevant_manifest.is_a?(Manifest::BaseManifest)
+            raise ArgumentError, "Expected a Foobara::Manifest, got #{relevant_manifest.class}"
+          end
+
           self.relevant_manifest = relevant_manifest
           self.elements_to_generate = elements_to_generate
         end
@@ -264,6 +268,7 @@ module Foobara
           if relevant_manifest.respond_to?(method_name)
             relevant_manifest.send(method_name, *, &)
           else
+            binding.pry
             # :nocov:
             super
             # :nocov:

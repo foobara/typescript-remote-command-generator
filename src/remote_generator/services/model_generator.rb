@@ -5,11 +5,11 @@ module Foobara
     class Services
       class ModelGenerator < BaseGenerator
         class << self
-          def new(relevant_manifest, elements_to_generate)
-            if relevant_manifest.entity?
-              EntityGenerator.new(relevant_manifest, elements_to_generate)
+          def new(relevant_manifest, elements_to_generate, just_super: false)
+            if relevant_manifest.entity? && !just_super
+              EntityGenerator.new(relevant_manifest, elements_to_generate, just_super: true)
             else
-              super
+              super(relevant_manifest, elements_to_generate)
             end
           end
         end

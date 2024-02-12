@@ -51,18 +51,13 @@ module Foobara
                             when Manifest::Entity
                               [
                                 Services::EntityGenerator,
-                                Services::UnloadedEntityGenerator,
-                                Services::LoadedEntityGenerator,
-                                Services::AtomEntityGenerator,
-                                Services::AggregateEntityGenerator,
                                 Services::EntityVariantsGenerator,
                                 Services::EntityManifestGenerator
                               ]
                             when Manifest::Model
                               [
                                 Services::ModelGenerator,
-                                Services::AtomModelGenerator,
-                                Services::AggregateModelGenerator,
+                                Services::ModelVariantsGenerator,
                                 Services::ModelManifestGenerator
                               ]
                             when Manifest::Error

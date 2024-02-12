@@ -43,6 +43,7 @@ module Foobara
             deps += [atom_entity_generator, aggregate_entity_generator]
           end
 
+          binding.pry
           deps
         end
       end

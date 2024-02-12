@@ -114,10 +114,6 @@ module Foobara
         def attribute_names
           attributes_type.attribute_names
         end
-
-        def base_ts_class
-          "Model"
-        end
       end
     end
   end

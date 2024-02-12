@@ -90,7 +90,9 @@ module Foobara
 
         def initialize(relevant_manifest, elements_to_generate)
           unless relevant_manifest.is_a?(Manifest::BaseManifest)
+            # :nocov:
             raise ArgumentError, "Expected a Foobara::Manifest, got #{relevant_manifest.class}"
+            # :nocov:
           end
 
           self.relevant_manifest = relevant_manifest

@@ -73,10 +73,6 @@ module Foobara
         def attribute_names
           super - [primary_key_name]
         end
-
-        def base_ts_class
-          "Entity"
-        end
       end
     end
   end

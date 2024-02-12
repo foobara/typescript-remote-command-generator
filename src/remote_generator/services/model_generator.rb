@@ -83,7 +83,6 @@ module Foobara
         end
 
         def dependencies
-          binding.pry if model_name =~ /Completion/i
           model_generators
         end
 

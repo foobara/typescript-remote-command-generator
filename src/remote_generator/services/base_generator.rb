@@ -72,6 +72,7 @@ module Foobara
                             when Manifest::RootManifest
                               Services::RootManifestGenerator
                             else
+                              binding.pry
                               # :nocov:
                               raise "Not sure how build a generator for a #{manifest}"
                               # :nocov:

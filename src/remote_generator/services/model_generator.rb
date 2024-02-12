@@ -11,8 +11,7 @@ module Foobara
             if relevant_manifest.entity?
               EntityGenerator.new(relevant_manifest, elements_to_generate)
             else
-              super_method = Util.method_of(self, Class, :new)
-              super_method.call(relevant_manifest, elements_to_generate)
+              super
             end
           end
         end

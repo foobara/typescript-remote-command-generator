@@ -9,8 +9,7 @@ module Foobara
             if relevant_manifest.entity?
               AggregateEntityGenerator.new(relevant_manifest, elements_to_generate)
             elsif relevant_manifest.has_associations?
-              super_method = Util.method_of(self, Class, :new)
-              super_method.call(relevant_manifest, elements_to_generate)
+              super
             else
               ModelGenerator.new(relevant_manifest, elements_to_generate)
             end

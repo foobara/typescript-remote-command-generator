@@ -7,8 +7,7 @@ module Foobara
             return super unless self == AtomEntityGenerator
 
             if relevant_manifest.has_associations?
-              super_method = Util.method_of(self, Class, :new)
-              super_method.call(relevant_manifest, elements_to_generate)
+              super
             else
               LoadedEntityGenerator.new(relevant_manifest, elements_to_generate)
             end

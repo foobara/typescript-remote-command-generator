@@ -72,7 +72,6 @@ module Foobara
                             when Manifest::RootManifest
                               Services::RootManifestGenerator
                             else
-                              binding.pry
                               # :nocov:
                               raise "Not sure how build a generator for a #{manifest}"
                               # :nocov:
@@ -337,7 +336,6 @@ module Foobara
 
             name ? "#{name} = #{type_string}" : type_string
           else
-            binding.pry
             # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:

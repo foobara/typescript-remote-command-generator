@@ -6,13 +6,6 @@ module Foobara
       class EntityGenerator < ModelGenerator
         alias entity_manifest relevant_manifest
 
-        def initialize(entity_manifest, *args, **opts, &)
-          unless entity_manifest.entity?
-            binding.pry
-          end
-          super
-        end
-
         def template_path
           ["Entity", "Ambiguous.ts.erb"]
         end

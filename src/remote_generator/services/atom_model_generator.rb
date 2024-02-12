@@ -7,8 +7,7 @@ module Foobara
         end
 
         def template_path
-          # TODO: change to Model
-          ["Entity", "Atom.ts.erb"]
+          ["Model", "Atom.ts.erb"]
         end
 
         def model_generators

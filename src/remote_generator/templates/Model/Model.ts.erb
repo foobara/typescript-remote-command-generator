@@ -1,0 +1,18 @@
+import { Model } from "<%= path_to_root %>base/Model"
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
+export interface <%= model_name %>AttributesType <%= attributes_type_ts_type %>
+
+export class <%= model_name %><
+  AttributesType extends <%= model_name %>AttributesType = <%= model_name %>AttributesType
+> extends Model<AttributesType> {
+  static readonly modelName: string = "<%= model_name %>"
+
+  <% attribute_names.each do |attribute_name| %>
+  get <%= attribute_name %> (): AttributesType["<%= attribute_name %>"] {
+    return this.readAttribute("<%= attribute_name %>")
+  }
+  <% end %>
+}

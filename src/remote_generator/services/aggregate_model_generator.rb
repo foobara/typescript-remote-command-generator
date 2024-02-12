@@ -7,8 +7,7 @@ module Foobara
         end
 
         def template_path
-          # TODO: change to model
-          ["Entity", "Aggregate.ts.erb"]
+          ["Model", "Aggregate.ts.erb"]
         end
 
         def model_generators

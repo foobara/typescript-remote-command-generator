@@ -105,6 +105,9 @@ module Foobara
         def aggregate_attributes_ts_type
           association_depth = AssociationDepth::AGGREGATE
           foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
+        rescue => e
+          binding.pry
+          raise
         end
 
         def association_property_names_ts_array

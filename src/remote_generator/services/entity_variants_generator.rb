@@ -17,7 +17,6 @@ module Foobara
         end
 
         def unloaded_entity_generator
-          binding.pry
           UnloadedEntityGenerator.new(entity_manifest, elements_to_generate)
         end
 

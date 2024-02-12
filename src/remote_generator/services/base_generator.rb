@@ -268,7 +268,6 @@ module Foobara
           if relevant_manifest.respond_to?(method_name)
             relevant_manifest.send(method_name, *, &)
           else
-            binding.pry
             # :nocov:
             super
             # :nocov:

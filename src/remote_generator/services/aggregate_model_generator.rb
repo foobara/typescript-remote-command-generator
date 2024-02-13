@@ -4,7 +4,7 @@ module Foobara
       class AggregateModelGenerator < ModelGenerator
         class << self
           def new(relevant_manifest, elements_to_generate)
-            return super unless self == AggregateEntityGenerator
+            return super unless self == AggregateModelGenerator
 
             if relevant_manifest.entity?
               AggregateEntityGenerator.new(relevant_manifest, elements_to_generate)

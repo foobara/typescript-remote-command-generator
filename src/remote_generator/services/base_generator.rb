@@ -288,7 +288,8 @@ module Foobara
         def foobara_type_to_ts_type(
           type_declaration,
           dependency_group:, name: nil,
-          association_depth: AssociationDepth::AMBIGUOUS
+          association_depth: AssociationDepth::AMBIGUOUS,
+          initial: true
         )
           if type_declaration.is_a?(Manifest::Error)
             error_generator = generator_for(type_declaration)
@@ -308,7 +309,8 @@ module Foobara
                           ts_type = foobara_type_to_ts_type(
                             type_declaration.element_type,
                             association_depth:,
-                            dependency_group:
+                            dependency_group:,
+                            initial: false
                           )
                           "#{ts_type}[]"
                         else
@@ -328,7 +330,7 @@ module Foobara
                             "Date"
                           else
                             if type_declaration.entity?
-                              entity_to_ts_entity_name(type_declaration, association_depth:)
+                              entity_to_ts_entity_name(type_declaration, association_depth:, initial:)
                             elsif type_declaration.model?
                               model_to_ts_model_name(type_declaration, association_depth:)
                             end
@@ -355,7 +357,7 @@ module Foobara
         def attributes_to_ts_type(attributes, dependency_group:, association_depth: AssociationDepth::AMBIGUOUS)
           guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
             "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
-              foobara_type_to_ts_type(attribute_declaration, dependency_group:, association_depth:)
+              foobara_type_to_ts_type(attribute_declaration, dependency_group:, association_depth:, initial: false)
             }"
           end.join("\n")
 
@@ -363,14 +365,18 @@ module Foobara
         end
 
         # TODO: should probably test with a model that has a reference to an entity in it.
-        def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
+        def entity_to_ts_entity_name(entity, initial:, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
                               Services::EntityGenerator
                             when AssociationDepth::ATOM
-                              Services::UnloadedEntityGenerator
+                              if initial
+                                Services::AtomEntityGenerator
+                              else
+                                Services::UnloadedEntityGenerator
+                              end
                             when AssociationDepth::AGGREGATE
                               Services::AggregateEntityGenerator
                             else

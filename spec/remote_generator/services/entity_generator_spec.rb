@@ -43,5 +43,15 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
         expect(generator.ts_instance_full_name).to eq("SomeOrg.Auth.ReferralAtom")
       end
     end
+
+    context "when it's an aggregate generator" do
+      let(:generator_class) { Foobara::RemoteGenerator::Services::AggregateEntityGenerator }
+
+      it "gives the aggregate path" do
+        expect(generator.ts_instance_path).to eq(["ReferralAggregate"])
+        expect(generator.ts_instance_full_path).to eq(%w[SomeOrg Auth ReferralAggregate])
+        expect(generator.ts_instance_full_name).to eq("SomeOrg.Auth.ReferralAggregate")
+      end
+    end
   end
 end

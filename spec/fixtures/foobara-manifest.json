@@ -7709,6 +7709,9 @@
                   "inner_entity": {
                     "type": "InnerEntityNoCollisions"
                   },
+                  "model_in_a_model": {
+                    "type": "ModelInAModelNoCollisions"
+                  },
                   "some_array": {
                     "element_type_declaration": {
                       "type": "InnerEntityNoCollisions"
@@ -7720,7 +7723,8 @@
                   "attr1",
                   "some_array",
                   "inner_entity",
-                  "foo"
+                  "foo",
+                  "model_in_a_model"
                 ],
                 "type": "attributes"
               }
@@ -7760,7 +7764,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -7835,7 +7840,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -7852,6 +7858,223 @@
             "pipeline": null
           },
           "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.model_in_a_model.attr1.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.model_in_a_model.attr1.baz.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.model_in_a_model.attr1.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.model_in_a_model.attr1.baz.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.model_in_a_model.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.model_in_a_model.attr1.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.model_in_a_model.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.model_in_a_model.attr1.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.model_in_a_model.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.outer_model.model_in_a_model.attr1.unexpected_attributes",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.attr1.outer_model.model_in_a_model.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.model_in_a_model.baz.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.model_in_a_model.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.model_in_a_model.baz.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.model_in_a_model.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.model_in_a_model.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "baz": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "baz"
+                    ],
+                    "type": "attributes"
+                  },
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.model_in_a_model.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.model_in_a_model.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.model_in_a_model.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.outer_model.model_in_a_model.unexpected_attributes",
+          "path": [
+            "attr1",
+            "outer_model",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              },
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
         },
         "data.attr1.outer_model.some_array.#.cannot_cast": {
           "category": "data",
@@ -7945,7 +8168,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -7980,6 +8204,9 @@
               },
               "inner_entity": {
                 "type": "InnerEntityNoCollisions"
+              },
+              "model_in_a_model": {
+                "type": "ModelInAModelNoCollisions"
               },
               "some_array": {
                 "element_type_declaration": {
@@ -8242,6 +8469,9 @@
                   "inner_entity": {
                     "type": "InnerEntityNoCollisions"
                   },
+                  "model_in_a_model": {
+                    "type": "ModelInAModelNoCollisions"
+                  },
                   "some_array": {
                     "element_type_declaration": {
                       "type": "InnerEntityNoCollisions"
@@ -8253,7 +8483,8 @@
                   "attr1",
                   "some_array",
                   "inner_entity",
-                  "foo"
+                  "foo",
+                  "model_in_a_model"
                 ],
                 "type": "attributes"
               }
@@ -8291,7 +8522,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -8364,7 +8596,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -8380,6 +8613,213 @@
             "pipeline": null
           },
           "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.model_in_a_model.attr1.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.model_in_a_model.attr1.baz.cannot_cast",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.model_in_a_model.attr1.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.model_in_a_model.attr1.baz.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.model_in_a_model.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.model_in_a_model.attr1.cannot_cast",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.model_in_a_model.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.model_in_a_model.attr1.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.model_in_a_model.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.outer_model.model_in_a_model.attr1.unexpected_attributes",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.outer_model.model_in_a_model.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.model_in_a_model.baz.cannot_cast",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.model_in_a_model.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.model_in_a_model.baz.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.model_in_a_model.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.model_in_a_model.cannot_cast",
+          "path": [
+            "outer_model",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "baz": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "baz"
+                    ],
+                    "type": "attributes"
+                  },
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.model_in_a_model.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.model_in_a_model.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.model_in_a_model.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.outer_model.model_in_a_model.unexpected_attributes",
+          "path": [
+            "outer_model",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              },
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
         },
         "data.outer_model.some_array.#.cannot_cast": {
           "category": "data",
@@ -8470,7 +8910,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -8504,6 +8945,9 @@
               },
               "inner_entity": {
                 "type": "InnerEntityNoCollisions"
+              },
+              "model_in_a_model": {
+                "type": "ModelInAModelNoCollisions"
               },
               "some_array": {
                 "element_type_declaration": {
@@ -8725,6 +9169,9 @@
                   "inner_entity": {
                     "type": "InnerEntityNoCollisions"
                   },
+                  "model_in_a_model": {
+                    "type": "ModelInAModelNoCollisions"
+                  },
                   "some_array": {
                     "element_type_declaration": {
                       "type": "InnerEntityNoCollisions"
@@ -8736,7 +9183,8 @@
                   "attr1",
                   "some_array",
                   "inner_entity",
-                  "foo"
+                  "foo",
+                  "model_in_a_model"
                 ],
                 "type": "attributes"
               }
@@ -8776,7 +9224,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -8851,7 +9300,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -8868,6 +9318,223 @@
             "pipeline": null
           },
           "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.model_in_a_model.attr1.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.model_in_a_model.attr1.baz.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.model_in_a_model.attr1.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.model_in_a_model.attr1.baz.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.model_in_a_model.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.model_in_a_model.attr1.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.model_in_a_model.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.model_in_a_model.attr1.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.model_in_a_model.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.some_array.#.model_in_a_model.attr1.unexpected_attributes",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_array.#.model_in_a_model.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.model_in_a_model.baz.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.model_in_a_model.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.model_in_a_model.baz.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.model_in_a_model.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.model_in_a_model.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "baz": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "baz"
+                    ],
+                    "type": "attributes"
+                  },
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.model_in_a_model.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.model_in_a_model.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.model_in_a_model.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.some_array.#.model_in_a_model.unexpected_attributes",
+          "path": [
+            "some_array",
+            "#",
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              },
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
         },
         "data.some_array.#.some_array.#.cannot_cast": {
           "category": "data",
@@ -8961,7 +9628,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -8996,6 +9664,9 @@
               },
               "inner_entity": {
                 "type": "InnerEntityNoCollisions"
+              },
+              "model_in_a_model": {
+                "type": "ModelInAModelNoCollisions"
               },
               "some_array": {
                 "element_type_declaration": {
@@ -14181,6 +14852,7 @@
       "types": [
         "InnerEntityNoCollisions",
         "InnerModelNoCollisions",
+        "ModelInAModelNoCollisions",
         "OuterEntityNoCollisions",
         "OuterModelNoCollisions",
         "array",
@@ -19322,6 +19994,302 @@
         "symbol"
       ]
     },
+    "ModelInAModelNoCollisions": {
+      "attributes_type": {
+        "element_type_declarations": {
+          "attr1": {
+            "element_type_declarations": {
+              "baz": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "baz"
+            ],
+            "type": "attributes"
+          },
+          "baz": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "attr1",
+          "baz"
+        ],
+        "type": "attributes"
+      },
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "attr1": {
+              "element_type_declarations": {
+                "baz": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "baz"
+              ],
+              "type": "attributes"
+            },
+            "baz": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "attr1",
+            "baz"
+          ],
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "NestedModelsNoCollisions::TypesNoCollisions::ModelInAModelNoCollisions",
+        "model_module": "NestedModelsNoCollisions::TypesNoCollisions",
+        "name": "ModelInAModelNoCollisions",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "global_organization::global_domain",
+      "domain_name": "global_domain",
+      "model_base_class": "Foobara::Model",
+      "model_class": "NestedModelsNoCollisions::TypesNoCollisions::ModelInAModelNoCollisions",
+      "model_name": "ModelInAModelNoCollisions",
+      "name": "ModelInAModelNoCollisions",
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "possible_errors": {
+        "data.attr1.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.baz.cannot_cast",
+          "path": [
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.baz.missing_required_attribute",
+          "path": [
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.cannot_cast",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.missing_required_attribute",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.unexpected_attributes",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.baz.cannot_cast",
+          "path": [
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.baz.missing_required_attribute",
+          "path": [
+            "baz"
+          ],
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "baz": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "baz"
+                    ],
+                    "type": "attributes"
+                  },
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.missing_required_attribute",
+          "processor_class": "Value::Processor::Pipeline",
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              },
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "ModelInAModelNoCollisions",
+      "scoped_category": "type",
+      "scoped_full_name": "ModelInAModelNoCollisions",
+      "scoped_full_path": [
+        "ModelInAModelNoCollisions"
+      ],
+      "scoped_name": "ModelInAModelNoCollisions",
+      "scoped_path": [
+        "ModelInAModelNoCollisions"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "ModelInAModelNoCollisions",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "NestedModelsNoCollisions::TypesNoCollisions::ModelInAModelNoCollisions"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "model",
+        "string",
+        "symbol"
+      ]
+    },
     "NestedModels2::InnerEntity": {
       "attributes_type": {
         "element_type_declarations": {
@@ -22185,6 +23153,9 @@
           "inner_entity": {
             "type": "InnerEntityNoCollisions"
           },
+          "model_in_a_model": {
+            "type": "ModelInAModelNoCollisions"
+          },
           "some_array": {
             "element_type_declaration": {
               "type": "InnerEntityNoCollisions"
@@ -22196,7 +23167,8 @@
           "attr1",
           "some_array",
           "inner_entity",
-          "foo"
+          "foo",
+          "model_in_a_model"
         ],
         "type": "attributes"
       },
@@ -22225,6 +23197,9 @@
             "inner_entity": {
               "type": "InnerEntityNoCollisions"
             },
+            "model_in_a_model": {
+              "type": "ModelInAModelNoCollisions"
+            },
             "some_array": {
               "element_type_declaration": {
                 "type": "InnerEntityNoCollisions"
@@ -22236,7 +23211,8 @@
             "attr1",
             "some_array",
             "inner_entity",
-            "foo"
+            "foo",
+            "model_in_a_model"
           ],
           "type": "attributes"
         },
@@ -22453,6 +23429,9 @@
                   "inner_entity": {
                     "type": "InnerEntityNoCollisions"
                   },
+                  "model_in_a_model": {
+                    "type": "ModelInAModelNoCollisions"
+                  },
                   "some_array": {
                     "element_type_declaration": {
                       "type": "InnerEntityNoCollisions"
@@ -22464,7 +23443,8 @@
                   "attr1",
                   "some_array",
                   "inner_entity",
-                  "foo"
+                  "foo",
+                  "model_in_a_model"
                 ],
                 "type": "attributes"
               }
@@ -22501,7 +23481,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -22573,7 +23554,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -22587,6 +23569,203 @@
             "pipeline": null
           },
           "symbol": "missing_required_attribute"
+        },
+        "data.model_in_a_model.attr1.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.model_in_a_model.attr1.baz.cannot_cast",
+          "path": [
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model_in_a_model.attr1.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.model_in_a_model.attr1.baz.missing_required_attribute",
+          "path": [
+            "model_in_a_model",
+            "attr1",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.model_in_a_model.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.model_in_a_model.attr1.cannot_cast",
+          "path": [
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model_in_a_model.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.model_in_a_model.attr1.missing_required_attribute",
+          "path": [
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.model_in_a_model.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.model_in_a_model.attr1.unexpected_attributes",
+          "path": [
+            "model_in_a_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.model_in_a_model.baz.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.model_in_a_model.baz.cannot_cast",
+          "path": [
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model_in_a_model.baz.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.model_in_a_model.baz.missing_required_attribute",
+          "path": [
+            "model_in_a_model",
+            "baz"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "baz"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.model_in_a_model.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.model_in_a_model.cannot_cast",
+          "path": [
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "baz": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "baz"
+                    ],
+                    "type": "attributes"
+                  },
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "baz"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.model_in_a_model.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.model_in_a_model.missing_required_attribute",
+          "path": [
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.model_in_a_model.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.model_in_a_model.unexpected_attributes",
+          "path": [
+            "model_in_a_model"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "baz": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "baz"
+                ],
+                "type": "attributes"
+              },
+              "baz": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
         },
         "data.some_array.#.cannot_cast": {
           "category": "data",
@@ -22675,7 +23854,8 @@
               "attr1",
               "some_array",
               "inner_entity",
-              "foo"
+              "foo",
+              "model_in_a_model"
             ]
           },
           "symbol": "missing_required_attribute"
@@ -22707,6 +23887,9 @@
               },
               "inner_entity": {
                 "type": "InnerEntityNoCollisions"
+              },
+              "model_in_a_model": {
+                "type": "ModelInAModelNoCollisions"
               },
               "some_array": {
                 "element_type_declaration": {
@@ -22753,6 +23936,7 @@
       ],
       "types_depended_on": [
         "InnerEntityNoCollisions",
+        "ModelInAModelNoCollisions",
         "array",
         "attributes",
         "duck",

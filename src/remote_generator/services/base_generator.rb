@@ -365,6 +365,7 @@ module Foobara
         end
 
         # TODO: should probably test with a model that has a reference to an entity in it.
+        # TODO: attempt to combine these two methods
         def entity_to_ts_entity_name(entity, initial:, association_depth: AssociationDepth::AMBIGUOUS)
           entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
 
@@ -373,7 +374,7 @@ module Foobara
                               Services::EntityGenerator
                             when AssociationDepth::ATOM
                               if initial
-                                Services::AtomEntityGenerator
+                                Services::AtomModelGenerator
                               else
                                 Services::UnloadedEntityGenerator
                               end

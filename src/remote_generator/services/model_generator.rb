@@ -46,34 +46,6 @@ module Foobara
         end
 
         # Do models have associations??
-        def atom_name(points = nil)
-          if has_associations?
-            *prefix, name = if points
-                              scoped_full_path(points)
-                            else
-                              scoped_path
-                            end
-
-            [*prefix, "#{name}Atom"].join(".")
-          else
-            model_name(points)
-          end
-        end
-
-        def aggregate_name(points = nil)
-          if has_associations?
-            *prefix, name = if points
-                              scoped_full_path(points)
-                            else
-                              scoped_path
-                            end
-
-            [*prefix, "#{name}Aggregate"].join(".")
-          else
-            model_name(points)
-          end
-        end
-
         def model_generators
           types_depended_on.select(&:model?).map do |model|
             Services::ModelGenerator.new(model, elements_to_generate)

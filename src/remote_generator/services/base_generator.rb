@@ -153,10 +153,6 @@ module Foobara
             # :nocov:
           end
 
-          #           binding.pry if is_a?(CommandResultGenerator) && reference =~ /Referral/i
-
-          # binding.pry if is_a?(EntityVariantsGenerator) && reference =~ /Referral/i
-
           dependencies.each do |dependency|
             if dependency.is_a?(ModelGenerator)
               # This is confusing
@@ -309,7 +305,11 @@ module Foobara
                           end
                         elsif type_declaration.is_a?(Manifest::Array)
                           # TODO: which association_depth do we pass here?
-                          ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
+                          ts_type = foobara_type_to_ts_type(
+                            type_declaration.element_type,
+                            association_depth:,
+                            dependency_group:
+                          )
                           "#{ts_type}[]"
                         else
                           type_symbol = type_declaration.type

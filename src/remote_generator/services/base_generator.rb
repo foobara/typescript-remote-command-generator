@@ -230,11 +230,11 @@ module Foobara
         def domain_path
           path = []
 
-          if organization_name != "GlobalOrganization"
+          if organization_name != "GlobalOrganization" && organization_name != "global_organization"
             path << organization_name
           end
 
-          if domain_name != "GlobalDomain"
+          if domain_name != "GlobalDomain" && domain_name != "global_domain"
             path << domain_name
           end
 

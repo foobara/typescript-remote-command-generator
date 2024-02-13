@@ -398,58 +398,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "GenerateCompletion",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "Ai::Gpt::Completion",
@@ -630,58 +580,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "Ask",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "array",
@@ -1286,58 +1186,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "GlobalCommand",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOrg::Auth::Referral",
@@ -3029,58 +2879,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateNested",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "NestedModels::OuterEntity",
@@ -3223,58 +3023,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "FindNested",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "NestedModels::OuterEntity",
@@ -3397,6 +3147,34 @@
           "symbol": "unexpected_attributes"
         }
       },
+      "pre_commit_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_name": "Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_path": [
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "LoadAggregatesPreCommitTransformer"
+        }
+      ],
       "reference": "NestedModels::FindNestedAggregate",
       "result_type": {
         "type": "NestedModels::OuterEntity"
@@ -3417,84 +3195,9 @@
       "scoped_prefix": null,
       "scoped_short_name": "FindNestedAggregate",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::AggregateSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::AggregateSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::AggregateSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "AggregateSerializer"
-          ],
-          "scoped_name": "Serializers::AggregateSerializer",
-          "scoped_path": [
-            "Serializers",
-            "AggregateSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "AggregateSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer",
+        "CommandConnectors::Serializers::AggregateSerializer"
       ],
       "types_depended_on": [
         "NestedModels::OuterEntity",
@@ -3637,84 +3340,9 @@
       "scoped_prefix": null,
       "scoped_short_name": "FindNestedAtom",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::AtomicSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::AtomicSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::AtomicSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "AtomicSerializer"
-          ],
-          "scoped_name": "Serializers::AtomicSerializer",
-          "scoped_path": [
-            "Serializers",
-            "AtomicSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "AtomicSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer",
+        "CommandConnectors::Serializers::AtomicSerializer"
       ],
       "types_depended_on": [
         "NestedModels::OuterEntity",
@@ -3888,58 +3516,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CommandWithDomainButNoOrg",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "array",
@@ -4310,58 +3888,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateReferral",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOrg::Auth::Referral",
@@ -4929,58 +4457,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateUser",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOrg::Auth::User",
@@ -5208,58 +4686,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CalculateExponent",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "array",
@@ -5612,58 +5040,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateReferral",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOtherOrg::Auth::Referral",
@@ -6157,58 +5535,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateUser",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOtherOrg::Auth::User",
@@ -6436,58 +5764,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CalculateExponent",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "array",
@@ -6840,58 +6118,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateReferral",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOtherOrg::SomeOtherAuth::Referral",
@@ -7385,58 +6613,8 @@
       "scoped_prefix": null,
       "scoped_short_name": "CreateUser",
       "serializers": [
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_name": "Serializers::ErrorsSerializer",
-          "scoped_path": [
-            "Serializers",
-            "ErrorsSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "ErrorsSerializer"
-        },
-        {
-          "domain": "CommandConnectors",
-          "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
-          "parent": [
-            "domain",
-            "CommandConnectors"
-          ],
-          "processor_type": "transformer",
-          "reference": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_category": "processor_class",
-          "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
-          "scoped_full_path": [
-            "CommandConnectors",
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_name": "Serializers::JsonSerializer",
-          "scoped_path": [
-            "Serializers",
-            "JsonSerializer"
-          ],
-          "scoped_prefix": [
-            "Serializers"
-          ],
-          "scoped_short_name": "JsonSerializer"
-        }
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
       ],
       "types_depended_on": [
         "SomeOtherOrg::SomeOtherAuth::User",
@@ -9616,6 +8794,110 @@
     }
   },
   "processor_class": {
+    "CommandConnectors::Serializers::AggregateSerializer": {
+      "domain": "CommandConnectors",
+      "name": "Foobara::CommandConnectors::Serializers::AggregateSerializer",
+      "parent": [
+        "domain",
+        "CommandConnectors"
+      ],
+      "processor_type": "transformer",
+      "reference": "CommandConnectors::Serializers::AggregateSerializer",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "CommandConnectors::Serializers::AggregateSerializer",
+      "scoped_full_path": [
+        "CommandConnectors",
+        "Serializers",
+        "AggregateSerializer"
+      ],
+      "scoped_name": "Serializers::AggregateSerializer",
+      "scoped_path": [
+        "Serializers",
+        "AggregateSerializer"
+      ],
+      "scoped_prefix": [
+        "Serializers"
+      ],
+      "scoped_short_name": "AggregateSerializer"
+    },
+    "CommandConnectors::Serializers::AtomicSerializer": {
+      "domain": "CommandConnectors",
+      "name": "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+      "parent": [
+        "domain",
+        "CommandConnectors"
+      ],
+      "processor_type": "transformer",
+      "reference": "CommandConnectors::Serializers::AtomicSerializer",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "CommandConnectors::Serializers::AtomicSerializer",
+      "scoped_full_path": [
+        "CommandConnectors",
+        "Serializers",
+        "AtomicSerializer"
+      ],
+      "scoped_name": "Serializers::AtomicSerializer",
+      "scoped_path": [
+        "Serializers",
+        "AtomicSerializer"
+      ],
+      "scoped_prefix": [
+        "Serializers"
+      ],
+      "scoped_short_name": "AtomicSerializer"
+    },
+    "CommandConnectors::Serializers::ErrorsSerializer": {
+      "domain": "CommandConnectors",
+      "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+      "parent": [
+        "domain",
+        "CommandConnectors"
+      ],
+      "processor_type": "transformer",
+      "reference": "CommandConnectors::Serializers::ErrorsSerializer",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "CommandConnectors::Serializers::ErrorsSerializer",
+      "scoped_full_path": [
+        "CommandConnectors",
+        "Serializers",
+        "ErrorsSerializer"
+      ],
+      "scoped_name": "Serializers::ErrorsSerializer",
+      "scoped_path": [
+        "Serializers",
+        "ErrorsSerializer"
+      ],
+      "scoped_prefix": [
+        "Serializers"
+      ],
+      "scoped_short_name": "ErrorsSerializer"
+    },
+    "CommandConnectors::Serializers::JsonSerializer": {
+      "domain": "CommandConnectors",
+      "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
+      "parent": [
+        "domain",
+        "CommandConnectors"
+      ],
+      "processor_type": "transformer",
+      "reference": "CommandConnectors::Serializers::JsonSerializer",
+      "scoped_category": "processor_class",
+      "scoped_full_name": "CommandConnectors::Serializers::JsonSerializer",
+      "scoped_full_path": [
+        "CommandConnectors",
+        "Serializers",
+        "JsonSerializer"
+      ],
+      "scoped_name": "Serializers::JsonSerializer",
+      "scoped_path": [
+        "Serializers",
+        "JsonSerializer"
+      ],
+      "scoped_prefix": [
+        "Serializers"
+      ],
+      "scoped_short_name": "JsonSerializer"
+    },
     "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration": {
       "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
       "processor_type": "type_declaration_handler",

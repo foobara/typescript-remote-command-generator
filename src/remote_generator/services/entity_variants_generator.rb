@@ -33,17 +33,13 @@ module Foobara
         end
 
         def dependencies
-          deps = [
-            entity_generator,
-            unloaded_entity_generator,
-            loaded_entity_generator
-          ]
-
-          if has_associations?
-            deps += [atom_entity_generator, aggregate_entity_generator]
-          end
-
-          deps
+          Set[
+           entity_generator,
+           unloaded_entity_generator,
+           loaded_entity_generator,
+           atom_entity_generator,
+           aggregate_entity_generator
+         ]
         end
       end
     end

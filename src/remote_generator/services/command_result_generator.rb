@@ -48,7 +48,6 @@ module Foobara
               model_generators(attribute_declaration, false)
             end.flatten
           else
-            binding.pry if type.type =~ /nested/i
             # TODO: handle tuples, associative arrays, arrays
             []
           end

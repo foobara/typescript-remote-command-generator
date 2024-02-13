@@ -2,7 +2,14 @@
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-type Result = <%= foobara_type_to_ts_type(result_type, dependency_group:) %>
+type Result = <%=
+binding.pry if command_name == "FindNestedAtom"
+begin
+foobara_type_to_ts_type(result_type, dependency_group:, association_depth:)
+rescue => e
+binding.pry
+raise
+end
+%>
 
 export default Result
-

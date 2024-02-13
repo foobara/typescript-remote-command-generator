@@ -382,11 +382,7 @@
         "type": "Ai::Gpt::Completion"
       },
       "result_types_depended_on": [
-        "Ai::Gpt::Completion",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "Ai::Gpt::Completion"
       ],
       "scoped_category": "command",
       "scoped_full_name": "Ai::Gpt::GenerateCompletion",
@@ -3018,11 +3014,7 @@
         "type": "NestedModels::OuterEntity"
       },
       "result_types_depended_on": [
-        "NestedModels::OuterEntity",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "NestedModels::OuterEntity"
       ],
       "scoped_category": "command",
       "scoped_full_name": "NestedModels::CreateNested",
@@ -3216,11 +3208,7 @@
         "type": "NestedModels::OuterEntity"
       },
       "result_types_depended_on": [
-        "NestedModels::OuterEntity",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "NestedModels::OuterEntity"
       ],
       "scoped_category": "command",
       "scoped_full_name": "NestedModels::FindNested",
@@ -3414,11 +3402,7 @@
         "type": "NestedModels::OuterEntity"
       },
       "result_types_depended_on": [
-        "NestedModels::OuterEntity",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "NestedModels::OuterEntity"
       ],
       "scoped_category": "command",
       "scoped_full_name": "NestedModels::FindNestedAggregate",
@@ -3433,6 +3417,32 @@
       "scoped_prefix": null,
       "scoped_short_name": "FindNestedAggregate",
       "serializers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Serializers::AggregateSerializer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Serializers::AggregateSerializer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Serializers::AggregateSerializer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Serializers",
+            "AggregateSerializer"
+          ],
+          "scoped_name": "Serializers::AggregateSerializer",
+          "scoped_path": [
+            "Serializers",
+            "AggregateSerializer"
+          ],
+          "scoped_prefix": [
+            "Serializers"
+          ],
+          "scoped_short_name": "AggregateSerializer"
+        },
         {
           "domain": "CommandConnectors",
           "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
@@ -3612,11 +3622,7 @@
         "type": "NestedModels::OuterEntity"
       },
       "result_types_depended_on": [
-        "NestedModels::OuterEntity",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "NestedModels::OuterEntity"
       ],
       "scoped_category": "command",
       "scoped_full_name": "NestedModels::FindNestedAtom",
@@ -3631,6 +3637,32 @@
       "scoped_prefix": null,
       "scoped_short_name": "FindNestedAtom",
       "serializers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Serializers::AtomicSerializer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Serializers::AtomicSerializer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Serializers",
+            "AtomicSerializer"
+          ],
+          "scoped_name": "Serializers::AtomicSerializer",
+          "scoped_path": [
+            "Serializers",
+            "AtomicSerializer"
+          ],
+          "scoped_prefix": [
+            "Serializers"
+          ],
+          "scoped_short_name": "AtomicSerializer"
+        },
         {
           "domain": "CommandConnectors",
           "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
@@ -4262,11 +4294,7 @@
         "type": "SomeOrg::Auth::Referral"
       },
       "result_types_depended_on": [
-        "SomeOrg::Auth::Referral",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "SomeOrg::Auth::Referral"
       ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOrg::Auth::CreateReferral",
@@ -4885,11 +4913,7 @@
         "type": "SomeOrg::Auth::User"
       },
       "result_types_depended_on": [
-        "SomeOrg::Auth::User",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "SomeOrg::Auth::User"
       ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOrg::Auth::CreateUser",
@@ -5572,11 +5596,7 @@
         "type": "SomeOtherOrg::Auth::Referral"
       },
       "result_types_depended_on": [
-        "SomeOtherOrg::Auth::Referral",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "SomeOtherOrg::Auth::Referral"
       ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOtherOrg::Auth::CreateReferral",
@@ -6121,11 +6141,7 @@
         "type": "SomeOtherOrg::Auth::User"
       },
       "result_types_depended_on": [
-        "SomeOtherOrg::Auth::User",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "SomeOtherOrg::Auth::User"
       ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOtherOrg::Auth::CreateUser",
@@ -6808,11 +6824,7 @@
         "type": "SomeOtherOrg::SomeOtherAuth::Referral"
       },
       "result_types_depended_on": [
-        "SomeOtherOrg::SomeOtherAuth::Referral",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "SomeOtherOrg::SomeOtherAuth::Referral"
       ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOtherOrg::SomeOtherAuth::CreateReferral",
@@ -7357,11 +7369,7 @@
         "type": "SomeOtherOrg::SomeOtherAuth::User"
       },
       "result_types_depended_on": [
-        "SomeOtherOrg::SomeOtherAuth::User",
-        "array",
-        "attributes",
-        "duck",
-        "symbol"
+        "SomeOtherOrg::SomeOtherAuth::User"
       ],
       "scoped_category": "command",
       "scoped_full_name": "SomeOtherOrg::SomeOtherAuth::CreateUser",

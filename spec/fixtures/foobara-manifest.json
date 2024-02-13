@@ -3353,6 +3353,495 @@
         "symbol"
       ]
     },
+    "NestedModels::FindNestedButPutInAttributes": {
+      "command": "NestedModels::FindNestedButPutInAttributes",
+      "description": null,
+      "domain": "NestedModels",
+      "domain_name": "NestedModels",
+      "errors_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "full_command_name": "NestedModels::FindNestedButPutInAttributes",
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity_id": {
+            "type": "integer"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity_id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity_id.cannot_cast",
+          "path": [
+            "outer_entity_id"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity_id": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "reference": "NestedModels::FindNestedButPutInAttributes",
+      "result_type": {
+        "element_type_declarations": {
+          "foo": {
+            "type": "NestedModels::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "result_types_depended_on": [
+        "NestedModels::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels::FindNestedButPutInAttributes",
+      "scoped_full_path": [
+        "NestedModels",
+        "FindNestedButPutInAttributes"
+      ],
+      "scoped_name": "FindNestedButPutInAttributes",
+      "scoped_path": [
+        "FindNestedButPutInAttributes"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedButPutInAttributes",
+      "serializers": [
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ]
+    },
+    "NestedModels::FindNestedButPutInAttributesAggregate": {
+      "command": "NestedModels::FindNestedButPutInAttributesAggregate",
+      "description": null,
+      "domain": "NestedModels",
+      "domain_name": "NestedModels",
+      "errors_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "full_command_name": "NestedModels::FindNestedButPutInAttributesAggregate",
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity_id": {
+            "type": "integer"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity_id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity_id.cannot_cast",
+          "path": [
+            "outer_entity_id"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity_id": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "pre_commit_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_name": "Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_path": [
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "LoadAggregatesPreCommitTransformer"
+        }
+      ],
+      "reference": "NestedModels::FindNestedButPutInAttributesAggregate",
+      "result_type": {
+        "element_type_declarations": {
+          "foo": {
+            "type": "NestedModels::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "result_types_depended_on": [
+        "NestedModels::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels::FindNestedButPutInAttributesAggregate",
+      "scoped_full_path": [
+        "NestedModels",
+        "FindNestedButPutInAttributesAggregate"
+      ],
+      "scoped_name": "FindNestedButPutInAttributesAggregate",
+      "scoped_path": [
+        "FindNestedButPutInAttributesAggregate"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedButPutInAttributesAggregate",
+      "serializers": [
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer",
+        "CommandConnectors::Serializers::AggregateSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ]
+    },
+    "NestedModels::FindNestedButPutInAttributesAtom": {
+      "command": "NestedModels::FindNestedButPutInAttributesAtom",
+      "description": null,
+      "domain": "NestedModels",
+      "domain_name": "NestedModels",
+      "errors_transformers": [
+        {
+          "domain": "CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer",
+          "parent": [
+            "domain",
+            "CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "CommandConnectors::Transformers::AuthErrorsTransformer",
+          "scoped_full_path": [
+            "CommandConnectors",
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_name": "Transformers::AuthErrorsTransformer",
+          "scoped_path": [
+            "Transformers",
+            "AuthErrorsTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "AuthErrorsTransformer"
+        }
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "full_command_name": "NestedModels::FindNestedButPutInAttributesAtom",
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity_id": {
+            "type": "integer"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity_id.cannot_cast": {
+          "category": "data",
+          "error": "Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity_id.cannot_cast",
+          "path": [
+            "outer_entity_id"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity_id": {
+                "type": "integer"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "reference": "NestedModels::FindNestedButPutInAttributesAtom",
+      "result_type": {
+        "element_type_declarations": {
+          "foo": {
+            "type": "NestedModels::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "result_types_depended_on": [
+        "NestedModels::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels::FindNestedButPutInAttributesAtom",
+      "scoped_full_path": [
+        "NestedModels",
+        "FindNestedButPutInAttributesAtom"
+      ],
+      "scoped_name": "FindNestedButPutInAttributesAtom",
+      "scoped_path": [
+        "FindNestedButPutInAttributesAtom"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedButPutInAttributesAtom",
+      "serializers": [
+        "CommandConnectors::Serializers::ErrorsSerializer",
+        "CommandConnectors::Serializers::JsonSerializer",
+        "CommandConnectors::Serializers::AtomicSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ]
+    },
     "NestedModels::FindOuterModelForOuterEntity": {
       "command": "NestedModels::FindOuterModelForOuterEntity",
       "description": null,
@@ -7180,6 +7669,9 @@
         "NestedModels::FindNested",
         "NestedModels::FindNestedAggregate",
         "NestedModels::FindNestedAtom",
+        "NestedModels::FindNestedButPutInAttributes",
+        "NestedModels::FindNestedButPutInAttributesAggregate",
+        "NestedModels::FindNestedButPutInAttributesAtom",
         "NestedModels::FindOuterModelForOuterEntity",
         "NestedModels::FindOuterModelForOuterEntityAggregate",
         "NestedModels::FindOuterModelForOuterEntityAtom"

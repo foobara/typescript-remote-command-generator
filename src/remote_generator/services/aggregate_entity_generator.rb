@@ -26,11 +26,7 @@ module Foobara
 
         def model_generators
           types_depended_on.select(&:model?).map do |model|
-            if model.entity?
-              Services::AggregateEntityGenerator.new(model, elements_to_generate)
-            else
-              Services::AggregateModelGenerator.new(model, elements_to_generate)
-            end
+            Services::AggregateModelGenerator.new(model, elements_to_generate)
           end
         end
 

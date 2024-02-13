@@ -13,6 +13,7 @@ module Foobara
         attr_accessor :dependencies, :name
 
         def initialize(dependencies, name:)
+          binding.pry if dependencies.any? { |dep| dep.reference =~ /Choice/i }
           self.name = name
           self.dependencies = dependencies.to_set
 
@@ -34,6 +35,7 @@ module Foobara
 
           collision_data[key].tap do |cd|
             unless cd
+              binding.pry
               # :nocov:
               raise "Dependency #{dep} is not part of this dependency group"
               # :nocov:

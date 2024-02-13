@@ -80,8 +80,11 @@ module Foobara
             RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
               next unless generator.applicable?
 
-              elements_to_generate << generator
+              unless generated.include?(generator)
+                elements_to_generate << generator
+              end
             end
+
             next
           end
 

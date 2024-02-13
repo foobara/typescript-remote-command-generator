@@ -39,6 +39,8 @@ module Foobara
             loaded_entity_generator
           ]
 
+          #          binding.pry if reference =~ /Referral/i
+
           if has_associations?
             deps += [atom_entity_generator, aggregate_entity_generator]
           end

@@ -6,8 +6,8 @@ gemspec
 
 # TODO: move this to gemspec
 gem "foobara", git: "foobara", branch: "main"
-# gem "foobara-util", github: "foobara/util"
-gem "foobara-util", path: "../util"
+gem "foobara-util", github: "foobara/util"
+# gem "foobara-util", path: "../util"
 
 # Development dependencies go here
 gem "foobara-rubocop-rules", github: "foobara/rubocop-rules"

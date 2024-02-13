@@ -1,6 +1,6 @@
 GIT
   remote: foobara
-  revision: 8cb6a14c4d21bff19d571e7533d3081f37c752e9
+  revision: 4714e5a4cd65e0d48a970604ed89afa44fa5b856
   branch: main
   specs:
     foobara (0.0.1)
@@ -19,8 +19,9 @@ GIT
   specs:
     foobara-spec-helpers (0.1.0)
 
-PATH
-  remote: ../util
+GIT
+  remote: https://github.com/foobara/util.git
+  revision: 2eb1add2428bca2569b035ae57697e1aebaca931
   specs:
     foobara-util (0.1.0)
 

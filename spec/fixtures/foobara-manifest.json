@@ -12797,6 +12797,17 @@
       ]
     },
     "NestedModels::OuterEntity": {
+      "associations": {
+        "attr1.outer_model.attr1.inner_entity": "NestedModels::InnerEntity",
+        "attr1.outer_model.inner_entity": "NestedModels::InnerEntity",
+        "attr1.outer_model.some_array.#": "NestedModels::InnerEntity",
+        "outer_model.attr1.inner_entity": "NestedModels::InnerEntity",
+        "outer_model.inner_entity": "NestedModels::InnerEntity",
+        "outer_model.some_array.#": "NestedModels::InnerEntity",
+        "some_array.#.attr1.inner_entity": "NestedModels::InnerEntity",
+        "some_array.#.inner_entity": "NestedModels::InnerEntity",
+        "some_array.#.some_array.#": "NestedModels::InnerEntity"
+      },
       "attributes_type": {
         "element_type_declarations": {
           "attr1": {
@@ -12872,6 +12883,23 @@
         "primary_key": "id",
         "type": "entity"
       },
+      "deep_associations": {
+        "attr1.outer_model.attr1.inner_entity": "NestedModels::InnerEntity",
+        "attr1.outer_model.inner_entity": "NestedModels::InnerEntity",
+        "attr1.outer_model.some_array.#": "NestedModels::InnerEntity",
+        "outer_model.attr1.inner_entity": "NestedModels::InnerEntity",
+        "outer_model.inner_entity": "NestedModels::InnerEntity",
+        "outer_model.some_array.#": "NestedModels::InnerEntity",
+        "some_array.#.attr1.inner_entity": "NestedModels::InnerEntity",
+        "some_array.#.inner_entity": "NestedModels::InnerEntity",
+        "some_array.#.some_array.#": "NestedModels::InnerEntity"
+      },
+      "deep_depends_on": [
+        "NestedModels::InnerEntity"
+      ],
+      "depends_on": [
+        "NestedModels::InnerEntity"
+      ],
       "description": null,
       "domain": "NestedModels",
       "domain_name": "NestedModels",

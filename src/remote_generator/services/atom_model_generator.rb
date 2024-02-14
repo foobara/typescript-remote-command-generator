@@ -1,25 +1,27 @@
 module Foobara
   module RemoteGenerator
     class Services
-      class AtomEntityGenerator < LoadedEntityGenerator
+      class AtomModelGenerator < ModelGenerator
         class << self
           def new(relevant_manifest, elements_to_generate)
-            return super unless self == AtomEntityGenerator
+            return super unless self == AtomModelGenerator
 
-            if relevant_manifest.has_associations?
+            if relevant_manifest.entity?
+              AtomEntityGenerator.new(relevant_manifest, elements_to_generate)
+            elsif relevant_manifest.has_associations?
               super
             else
-              LoadedEntityGenerator.new(relevant_manifest, elements_to_generate)
+              ModelGenerator.new(relevant_manifest, elements_to_generate)
             end
           end
         end
 
         def target_path
-          [*domain_path, "types", entity_name, "Atom.ts"]
+          [*domain_path, "types", model_name, "Atom.ts"]
         end
 
         def template_path
-          ["Entity", "Atom.ts.erb"]
+          ["Model", "Atom.ts.erb"]
         end
 
         def model_generators

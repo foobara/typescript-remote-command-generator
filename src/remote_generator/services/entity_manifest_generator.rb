@@ -1,10 +1,9 @@
+require_relative "model_manifest_generator"
+
 module Foobara
   module RemoteGenerator
     class Services
-      class EntityManifestGenerator < ManifestGenerator
-        def target_path
-          [*domain_path, "entities", entity_name, "manifest.json"]
-        end
+      class EntityManifestGenerator < ModelManifestGenerator
       end
     end
   end

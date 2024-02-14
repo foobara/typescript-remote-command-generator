@@ -18,12 +18,34 @@ module Foobara
           "Command/Result.ts.erb"
         end
 
-        def entity_generators(type = result_type)
+        def model_generators(type = result_type, initial = true)
           if type.entity?
-            [EntityGenerator.new(type.to_entity, elements_to_generate)]
+            generator_class = if atom?
+                                if initial
+                                  AtomEntityGenerator
+                                else
+                                  UnloadedEntityGenerator
+                                end
+                              elsif aggregate?
+                                AggregateEntityGenerator
+                              else
+                                EntityGenerator
+                              end
+
+            [generator_class.new(type.to_entity, elements_to_generate)]
+          elsif type.model?
+            generator_class = if atom?
+                                AtomModelGenerator
+                              elsif aggregate?
+                                AggregateModelGenerator
+                              else
+                                ModelGenerator
+                              end
+
+            [generator_class.new(type.to_model, elements_to_generate)]
           elsif type.type.to_sym == :attributes
             type.attribute_declarations.values.map do |attribute_declaration|
-              entity_generators(attribute_declaration)
+              model_generators(attribute_declaration, false)
             end.flatten
           else
             # TODO: handle tuples, associative arrays, arrays
@@ -31,8 +53,26 @@ module Foobara
           end
         end
 
+        def atom?
+          serializers&.any? { |s| s == "CommandConnectors::Serializers::AtomicSerializer" }
+        end
+
+        def aggregate?
+          serializers&.any? { |s| s == "CommandConnectors::Serializers::AggregateSerializer" }
+        end
+
+        def association_depth
+          if atom?
+            AssociationDepth::ATOM
+          elsif aggregate?
+            AssociationDepth::AGGREGATE
+          else
+            AssociationDepth::AMBIGUOUS
+          end
+        end
+
         def dependencies
-          entity_generators
+          model_generators
         end
       end
     end

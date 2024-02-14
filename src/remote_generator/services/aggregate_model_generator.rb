@@ -1,32 +1,36 @@
-require_relative "loaded_entity_generator"
-
 module Foobara
   module RemoteGenerator
     class Services
-      class AggregateEntityGenerator < LoadedEntityGenerator
+      class AggregateModelGenerator < ModelGenerator
         class << self
           def new(relevant_manifest, elements_to_generate)
-            return super unless self == AggregateEntityGenerator
+            return super unless self == AggregateModelGenerator
 
-            if relevant_manifest.has_associations?
+            if relevant_manifest.entity?
+              AggregateEntityGenerator.new(relevant_manifest, elements_to_generate)
+            elsif relevant_manifest.has_associations?
               super
             else
-              LoadedEntityGenerator.new(relevant_manifest, elements_to_generate)
+              ModelGenerator.new(relevant_manifest, elements_to_generate)
             end
           end
         end
 
         def target_path
-          [*domain_path, "types", entity_name, "Aggregate.ts"]
+          [*domain_path, "types", model_name, "Aggregate.ts"]
         end
 
         def template_path
-          ["Entity", "Aggregate.ts.erb"]
+          ["Model", "Aggregate.ts.erb"]
         end
 
         def model_generators
           types_depended_on.select(&:model?).map do |model|
-            Services::AggregateModelGenerator.new(model, elements_to_generate)
+            if model.entity?
+              Services::AggregateEntityGenerator.new(model, elements_to_generate)
+            else
+              Services::AggregateModelGenerator.new(model, elements_to_generate)
+            end
           end
         end
 

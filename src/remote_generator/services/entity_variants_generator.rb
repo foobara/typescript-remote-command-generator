@@ -1,9 +1,11 @@
+require_relative "model_variants_generator"
+
 module Foobara
   module RemoteGenerator
     class Services
       class EntityVariantsGenerator < EntityGenerator
         def target_path
-          [*domain_path, "entities", "#{entity_name}.ts"]
+          [*domain_path, "types", "#{model_name}.ts"]
         end
 
         def template_path
@@ -31,13 +33,13 @@ module Foobara
         end
 
         def dependencies
-          [
-            entity_generator,
-            unloaded_entity_generator,
-            loaded_entity_generator,
-            atom_entity_generator,
-            aggregate_entity_generator
-          ]
+          Set[
+           entity_generator,
+           unloaded_entity_generator,
+           loaded_entity_generator,
+           atom_entity_generator,
+           aggregate_entity_generator
+         ]
         end
       end
     end

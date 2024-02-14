@@ -1,0 +1,12 @@
+import {
+  <%= model_name %>,
+  <%= model_name %>AttributesType
+} from "."
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
+export interface <%= model_name %>AggregateAttributesType extends <%= model_name %>AttributesType <%= attributes_type_ts_type %>
+
+export class <%= model_name %>Aggregate extends <%= model_name %><<%= model_name %>AggregateAttributesType> {
+}

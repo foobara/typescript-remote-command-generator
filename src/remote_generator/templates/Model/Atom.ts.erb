@@ -1,0 +1,12 @@
+import {
+  <%= model_name %>,
+  <%= model_name %>AttributesType
+} from "."
+<% dependency_roots.each do |dependency_root| %>
+import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
+
+export interface <%= model_name %>AtomAttributesType extends <%= model_name %>AttributesType <%= atom_attributes_ts_type %>
+
+export class <%= model_name %>Atom extends <%= model_name %><<%= model_name %>AtomAttributesType> {
+}

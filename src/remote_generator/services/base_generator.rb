@@ -51,12 +51,14 @@ module Foobara
                             when Manifest::Entity
                               [
                                 Services::EntityGenerator,
-                                Services::UnloadedEntityGenerator,
-                                Services::LoadedEntityGenerator,
-                                Services::AtomEntityGenerator,
-                                Services::AggregateEntityGenerator,
                                 Services::EntityVariantsGenerator,
                                 Services::EntityManifestGenerator
+                              ]
+                            when Manifest::Model
+                              [
+                                Services::ModelGenerator,
+                                Services::ModelVariantsGenerator,
+                                Services::ModelManifestGenerator
                               ]
                             when Manifest::Error
                               Services::ErrorGenerator
@@ -86,7 +88,13 @@ module Foobara
 
         attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
 
-        def initialize(relevant_manifest, elements_to_generate = nil)
+        def initialize(relevant_manifest, elements_to_generate)
+          unless relevant_manifest.is_a?(Manifest::BaseManifest)
+            # :nocov:
+            raise ArgumentError, "Expected a Foobara::Manifest, got #{relevant_manifest.class}"
+            # :nocov:
+          end
+
           self.relevant_manifest = relevant_manifest
           self.elements_to_generate = elements_to_generate
         end
@@ -146,6 +154,11 @@ module Foobara
           end
 
           dependencies.each do |dependency|
+            if dependency.is_a?(ModelGenerator)
+              # This is confusing
+              elements_to_generate << dependency.relevant_manifest
+            end
+
             elements_to_generate << dependency
           end
 
@@ -217,11 +230,11 @@ module Foobara
         def domain_path
           path = []
 
-          if organization_name != "GlobalOrganization"
+          if organization_name != "GlobalOrganization" && organization_name != "global_organization"
             path << organization_name
           end
 
-          if domain_name != "GlobalDomain"
+          if domain_name != "GlobalDomain" && domain_name != "global_domain"
             path << domain_name
           end
 
@@ -275,7 +288,8 @@ module Foobara
         def foobara_type_to_ts_type(
           type_declaration,
           dependency_group:, name: nil,
-          association_depth: AssociationDepth::AMBIGUOUS
+          association_depth: AssociationDepth::AMBIGUOUS,
+          initial: true
         )
           if type_declaration.is_a?(Manifest::Error)
             error_generator = generator_for(type_declaration)
@@ -292,7 +306,12 @@ module Foobara
                           end
                         elsif type_declaration.is_a?(Manifest::Array)
                           # TODO: which association_depth do we pass here?
-                          ts_type = foobara_type_to_ts_type(type_declaration.element_type, dependency_group:)
+                          ts_type = foobara_type_to_ts_type(
+                            type_declaration.element_type,
+                            association_depth:,
+                            dependency_group:,
+                            initial: false
+                          )
                           "#{ts_type}[]"
                         else
                           type_symbol = type_declaration.type
@@ -310,8 +329,8 @@ module Foobara
                           when "datetime"
                             "Date"
                           else
-                            if type_declaration.entity?
-                              entity_to_ts_entity_name(type_declaration, association_depth:)
+                            if type_declaration.model?
+                              model_to_ts_model_name(type_declaration, association_depth:, initial:)
                             end
                           end
                         end
@@ -336,30 +355,34 @@ module Foobara
         def attributes_to_ts_type(attributes, dependency_group:, association_depth: AssociationDepth::AMBIGUOUS)
           guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
             "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
-              foobara_type_to_ts_type(attribute_declaration, dependency_group:, association_depth:)
+              foobara_type_to_ts_type(attribute_declaration, dependency_group:, association_depth:, initial: false)
             }"
           end.join("\n")
 
           "{\n#{guts}\n}"
         end
 
-        def entity_to_ts_entity_name(entity, association_depth: AssociationDepth::AMBIGUOUS)
-          entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
+        def model_to_ts_model_name(model, association_depth: AssociationDepth::AMBIGUOUS, initial: true)
+          model = model.to_type if model.is_a?(Manifest::TypeDeclaration)
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
-                              Services::EntityGenerator
+                              Services::ModelGenerator
                             when AssociationDepth::ATOM
-                              Services::UnloadedEntityGenerator
+                              if !initial && model.entity?
+                                Services::UnloadedEntityGenerator
+                              else
+                                Services::AtomModelGenerator
+                              end
                             when AssociationDepth::AGGREGATE
-                              Services::AggregateEntityGenerator
+                              Services::AggregateModelGenerator
                             else
                               # :nocov:
                               raise "Bad association_depth: #{association_depth}"
                               # :nocov:
                             end
 
-          generator = generator_class.new(entity, elements_to_generate)
+          generator = generator_class.new(model, elements_to_generate)
 
           dependency_group.non_colliding_type(generator)
         end

@@ -11,6 +11,8 @@ import {
 import {
   Loaded<%= entity_name %>
 } from "./<%= entity_name %>/Loaded"
+
+<% if has_associations? %> %>
 import {
   <%= entity_name %>Atom,
   <%= entity_name %>AtomAttributesType
@@ -19,17 +21,20 @@ import {
   <%= entity_name %>Aggregate,
   <%= entity_name %>AggregateAttributesType
 } from "./<%= entity_name %>/Aggregate"
+<% end %>
 
 export {
   <%= entity_name %>,
-  type <%= entity_name %>PrimaryKeyType,
-  <%= entity_name_downcase %>PrimaryKeyAttributeName,
   type <%= entity_name %>AttributesType,
   Unloaded<%= entity_name %>,
   type Unloaded<%= entity_name %>AttributesType,
   Loaded<%= entity_name %>,
+<% if has_associations? %>
   <%= entity_name %>Atom,
   type <%= entity_name %>AtomAttributesType,
   <%= entity_name %>Aggregate,
-  type <%= entity_name %>AggregateAttributesType
+  type <%= entity_name %>AggregateAttributesType,
+<% end %>
+  type <%= entity_name %>PrimaryKeyType,
+  <%= entity_name_downcase %>PrimaryKeyAttributeName
 }

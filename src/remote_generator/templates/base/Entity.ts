@@ -1,30 +1,24 @@
+import { Model } from './Model';
+
 export type Never<T> = {[P in keyof T]: never};
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export type EntityPrimaryKeyType = number | string
 
-/*
-interface EntityConstructor<PrimaryKeyType extends EntityPrimaryKeyType, AttributesType> {
-  new(primaryKey: PrimaryKeyType, attributes: any): Entity<PrimaryKeyType, AttributesType>
-  entityName: string
-  primaryKeyAttributeName: string
-}
-*/
-
-export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, AttributesType> {
+export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, AttributesType>
+  extends Model<AttributesType> {
   static readonly entityName: string
   static readonly primaryKeyAttributeName: string
 
   readonly primaryKey: PrimaryKeyType
   readonly isLoaded: boolean
-  readonly _attributes: AttributesType
 
   abstract get hasAssociations(): boolean
   abstract get associationPropertyNames (): (keyof AttributesType)[]
 
   constructor(primaryKey: PrimaryKeyType, attributes: AttributesType) {
+    super(attributes)
     this.primaryKey = primaryKey
-    this._attributes = attributes
     this.isLoaded = attributes !== undefined
   }
 
@@ -86,9 +80,5 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     }
 
     return this._attributes
-  }
-
-  readAttribute<T extends keyof this["_attributes"]>(attributeName: T): this["_attributes"][T] {
-    return (this.attributes as unknown as this["_attributes"])[attributeName]
   }
 }

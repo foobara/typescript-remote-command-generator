@@ -10,7 +10,7 @@ function compact(array: any[]): any[] {
   return array.filter(item => item !== null && item !== undefined)
 }
 
-function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path: Array<string | number>): (Record<string, any> | any[]) {
+function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path: Array<string | number>): any[] {
   if (path.length === 0) return objects
 
   const [pathPart, ...remainingParts] = path
@@ -26,6 +26,8 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
     newObjects = compact(objects.map((object: T) => {
       if (typeof object === 'object' && object !== null) {
         return object[pathPart]
+      } else {
+        throw new Error(`Bad object and part: ${pathPart}`)
       }
     }))
   } else {
@@ -35,6 +37,6 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
   return _valuesAt(newObjects, remainingParts)
 }
 
-export function valuesAt<T extends Object> (object: T, path: string[]) {
+export function valuesAt<T extends Object> (object: T, path: string[]): any[] {
   return _valuesAt([object], path)
 }

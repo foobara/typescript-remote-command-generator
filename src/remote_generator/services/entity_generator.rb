@@ -33,6 +33,13 @@ module Foobara
         def attribute_names
           super - [primary_key_name]
         end
+
+        def association_property_names_ts_array
+          puts model_name
+          associations.keys.map(&:to_s).tap do |k|
+            binding.pry if k.any? { |k| k =~ /\./ }
+          end.inspect
+        end
       end
     end
   end

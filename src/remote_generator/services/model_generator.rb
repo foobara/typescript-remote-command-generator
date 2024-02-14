@@ -75,9 +75,7 @@ module Foobara
           foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
         end
 
-        def association_property_names_ts_array
-          associations.keys.map(&:to_s).inspect
-        end
+        # Does this make sense here?
 
         def attribute_names
           attributes_type.attribute_names

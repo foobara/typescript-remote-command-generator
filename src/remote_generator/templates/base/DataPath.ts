@@ -30,6 +30,8 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
         throw new Error(`Bad object and part: ${pathPart}`)
       }
     }))
+  } else {
+    throw new Error(`Bad path part: ${typeof pathPart}`)
   }
 
   return _valuesAt(newObjects, remainingParts)

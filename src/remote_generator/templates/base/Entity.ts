@@ -22,50 +22,6 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     this.isLoaded = attributes !== undefined
   }
 
-  get isAtom(): boolean {
-    if (!this.isLoaded) {
-      throw new Error("Record is not loaded and so can't check if it's an atom")
-    }
-
-    if (!this.hasAssociations) {
-      return true
-    }
-
-    for (const propertyName of this.associationPropertyNames) {
-      const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
-
-      if (record.isLoaded) {
-        return false
-      }
-    }
-
-    return true
-  }
-
-  get isAggregate(): boolean {
-    if (!this.isLoaded) {
-      throw new Error("Record is not loaded and so can't check if it's an aggregate")
-    }
-
-    if (!this.hasAssociations) {
-      return true
-    }
-
-    for (const propertyName of this.associationPropertyNames) {
-      const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
-
-      if (!record.isLoaded) {
-        return false
-      }
-
-      if (!record.isAggregate) {
-        return false
-      }
-    }
-
-    return true
-  }
-
   /* Can we make this work or not?
   getConstructor(): EntityConstructor<PrimaryKeyType, AttributesType> {
     return this.constructor as EntityConstructor<PrimaryKeyType, AttributesType>;

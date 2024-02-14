@@ -6,7 +6,7 @@ function uniq(array: any[]) {
   return [...new Set(array)];
 }
 
-function _valuesAt(objects: Object[], path: (string | number)[]): Object[] {
+function _valuesAt<T extends Object>(objects: T[], path: (string | number)[]): Object[] {
   if (path.length === 0) return objects
 
   const [pathPart, ...remainingParts] = path;
@@ -14,7 +14,7 @@ function _valuesAt(objects: Object[], path: (string | number)[]): Object[] {
   if (pathPart === '#') {
     objects = uniq(flatten(objects))
   } else if (typeof pathPart === 'string' || typeof pathPart === 'number') {
-    objects = objects.map((object: Object) => object[pathPart])
+    objects = objects.map((object: T) => object[pathPart])
   } else {
     throw new Error(`Bad path part: ${pathPart}`)
   }
@@ -22,7 +22,7 @@ function _valuesAt(objects: Object[], path: (string | number)[]): Object[] {
   return _valuesAt(objects, remainingParts)
 }
 
-export function valuesAt(objects: Object[], path: string[]) {
-  return _valuesAt([objects], path);
+export function valuesAt<T extends Object>(object: T, path: string[]) {
+  return _valuesAt([object], path);
 }
 

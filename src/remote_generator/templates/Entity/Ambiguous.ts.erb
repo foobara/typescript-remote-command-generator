@@ -1,3 +1,5 @@
+import { valuesAt } from "<%= path_to_root %>base/DataPath"
+
 import { Entity } from "<%= path_to_root %>base/Entity"
 <% dependency_roots.each do |dependency_root| %>
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
@@ -18,7 +20,7 @@ export class <%= entity_name %><
     return this.primaryKey
   }
 
-  get associationPropertyNames (): (keyof <%= entity_name %>AttributesType)[] { return <%= association_property_names_ts_array %> }
+  get associationPropertyPaths (): string[][] { return <%= association_property_paths %> }
   readonly hasAssociations: <%= has_associations? %> = <%= has_associations? %>
 
   <% attribute_names.each do |attribute_name| %>
@@ -27,61 +29,4 @@ export class <%= entity_name %><
   }
   <% end %>
 
-  get isAtom(): boolean {
-    if (!this.isLoaded) {
-      throw new Error("Record is not loaded so can't check if it's an atom")
-    }
-
-    if (!this.hasAssociations) {
-      return true
-    }
-
-    <% associations.each_pair do |key, type| %>
-      let o = this
-
-      <% key.path.each do |k| %>
-        <% if k == :"#" %>
-        <% else %>
-          o = o.<%= k %>
-        <% end %>
-      <% end %>
-    <% end %>
-    for (const propertyName of this.associationPropertyNames) {
-      const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
-
-      if (record.isLoaded) {
-        return false
-      }
-    }
-
-    return true
-  }
-
-  _isAtom(path, object): booelan {
-
-  }
-
-  get isAggregate(): boolean {
-    if (!this.isLoaded) {
-      throw new Error("Record is not loaded so can't check if it's an aggregate")
-    }
-
-    if (!this.hasAssociations) {
-      return true
-    }
-
-    for (const propertyName of this.associationPropertyNames) {
-      const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
-
-      if (!record.isLoaded) {
-        return false
-      }
-
-      if (!record.isAggregate) {
-        return false
-      }
-    }
-
-    return true
-  }
 }

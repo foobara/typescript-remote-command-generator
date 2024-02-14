@@ -22,7 +22,7 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
     newObjects = uniq(flat)
   } else if (typeof pathPart === 'number') {
     newObjects = compact(objects.map((object: T) => {
-      if (Array.isArray(objects)) {
+      if (Array.isArray(object)) {
         return object[pathPart]
       } else {
         throw new Error(`Cannot access index ${pathPart} of object because it's not an array`)

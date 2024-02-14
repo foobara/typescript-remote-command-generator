@@ -1,7 +1,7 @@
 import {
   <%= model_name %>,
   <%= model_name %>AttributesType
-} from "."
+} from "./<%= model_name %>"
 <% dependency_roots.each do |dependency_root| %>
 import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>

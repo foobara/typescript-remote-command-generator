@@ -1,4 +1,5 @@
 import { Model } from './Model';
+import { valuesAt } from './DataPath';
 
 export type Never<T> = {[P in keyof T]: never};
 
@@ -14,7 +15,7 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
   readonly isLoaded: boolean
 
   abstract get hasAssociations(): boolean
-  abstract get associationPropertyNames (): (keyof AttributesType)[]
+  abstract get associationPropertyPaths (): string[][]
 
   constructor(primaryKey: PrimaryKeyType, attributes: AttributesType) {
     super(attributes)
@@ -22,20 +23,29 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     this.isLoaded = attributes !== undefined
   }
 
+  /* Can we make this work or not?
+  getConstructor(): EntityConstructor<PrimaryKeyType, AttributesType> {
+    return this.constructor as EntityConstructor<PrimaryKeyType, AttributesType>;
+  }
+  */
+  entitiesAt(path: string[]): Entity<EntityPrimaryKeyType, Record<string, any>>[] {
+    return valuesAt(this, path).filter(item => item !== undefined) as Entity<EntityPrimaryKeyType, Record<string, any>>[]
+  }
+
   get isAtom(): boolean {
     if (!this.isLoaded) {
-      throw new Error("Record is not loaded and so can't check if it's an atom")
+      throw new Error("Record is not loaded so can't check if it's an atom")
     }
 
     if (!this.hasAssociations) {
       return true
     }
 
-    for (const propertyName of this.associationPropertyNames) {
-      const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
-
-      if (record.isLoaded) {
-        return false
+    for (const path of this.associationPropertyPaths) {
+      for (const record of this.entitiesAt(path)) {
+        if (record.isLoaded) {
+          return false
+        }
       }
     }
 
@@ -44,34 +54,27 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
 
   get isAggregate(): boolean {
     if (!this.isLoaded) {
-      throw new Error("Record is not loaded and so can't check if it's an aggregate")
+      throw new Error("Record is not loaded so can't check if it's an aggregate")
     }
 
     if (!this.hasAssociations) {
       return true
     }
 
-    for (const propertyName of this.associationPropertyNames) {
-      const record = this[propertyName as keyof this] as Entity<EntityPrimaryKeyType, Record<string, any>>
+    for (const path of this.associationPropertyPaths) {
+      for (const record of this.entitiesAt(path)) {
+        if (!record.isLoaded) {
+          return false
+        }
 
-      if (!record.isLoaded) {
-        return false
-      }
-
-      if (!record.isAggregate) {
-        return false
+        if (!record.isAggregate) {
+          return false
+        }
       }
     }
 
     return true
   }
-
-  /* Can we make this work or not?
-  getConstructor(): EntityConstructor<PrimaryKeyType, AttributesType> {
-    return this.constructor as EntityConstructor<PrimaryKeyType, AttributesType>;
-  }
-  */
-
   get attributes(): AttributesType {
     if (!this.isLoaded) {
       throw new Error(

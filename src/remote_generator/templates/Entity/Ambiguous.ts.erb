@@ -18,7 +18,7 @@ export class <%= entity_name %><
     return this.primaryKey
   }
 
-  get associationPropertyNames (): (keyof <%= entity_name %>AttributesType)[] { return <%= association_property_names_ts_array %> }
+  get associationPropertyPaths (): string[][] { return <%= association_property_paths_ts %> }
   readonly hasAssociations: <%= has_associations? %> = <%= has_associations? %>
 
   <% attribute_names.each do |attribute_name| %>
@@ -26,4 +26,5 @@ export class <%= entity_name %><
     return this.readAttribute("<%= attribute_name %>")
   }
   <% end %>
+
 }

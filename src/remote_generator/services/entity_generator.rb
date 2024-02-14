@@ -6,6 +6,10 @@ module Foobara
       class EntityGenerator < ModelGenerator
         alias entity_manifest relevant_manifest
 
+        def target_path
+          [*domain_path, "types", entity_name, "Ambiguous.ts"]
+        end
+
         def template_path
           ["Entity", "Ambiguous.ts.erb"]
         end
@@ -28,6 +32,10 @@ module Foobara
 
         def attribute_names
           super - [primary_key_name]
+        end
+
+        def association_property_paths_ts
+          associations.keys.map(&:to_s).inspect
         end
       end
     end

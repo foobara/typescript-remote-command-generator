@@ -6,6 +6,10 @@ module Foobara
       class EntityGenerator < ModelGenerator
         alias entity_manifest relevant_manifest
 
+        def target_path
+          [*domain_path, "types", entity_name, "Ambiguous.ts"]
+        end
+
         def template_path
           ["Entity", "Ambiguous.ts.erb"]
         end

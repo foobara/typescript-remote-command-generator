@@ -30,13 +30,11 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
         throw new Error(`Bad object and part: ${pathPart}`)
       }
     }))
-  } else {
-    throw new Error(`Bad path part: ${pathPart}`)
   }
 
   return _valuesAt(newObjects, remainingParts)
 }
 
-export function valuesAt<T extends Object> (object: T, path: string[]): any[] {
+export function valuesAt<T extends Record<string, any> | any[]> (object: T, path: string[]): any[] {
   return _valuesAt([object], path)
 }

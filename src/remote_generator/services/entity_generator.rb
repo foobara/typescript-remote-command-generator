@@ -34,8 +34,8 @@ module Foobara
           super - [primary_key_name]
         end
 
-        def association_property_paths
-          associations.keys.map(&:path).inspect
+        def association_property_paths_ts
+          associations.keys.map { |data_key| data_key.path.map(&:to_s) }.inspect
         end
       end
     end

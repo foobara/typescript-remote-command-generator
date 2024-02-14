@@ -1,5 +1,3 @@
-import { valuesAt } from "<%= path_to_root %>base/DataPath"
-
 import { Entity } from "<%= path_to_root %>base/Entity"
 <% dependency_roots.each do |dependency_root| %>
 import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
@@ -20,7 +18,7 @@ export class <%= entity_name %><
     return this.primaryKey
   }
 
-  get associationPropertyPaths (): string[][] { return <%= association_property_paths %> }
+  get associationPropertyPaths (): string[][] { return <%= association_property_paths_ts %> }
   readonly hasAssociations: <%= has_associations? %> = <%= has_associations? %>
 
   <% attribute_names.each do |attribute_name| %>

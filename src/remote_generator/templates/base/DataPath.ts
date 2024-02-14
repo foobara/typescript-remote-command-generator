@@ -1,28 +1,40 @@
-function flatten(array: any[]) {
-  return array.reduce((acc, val) => acc.concat(val), []);
+function flatten (array: any[][]): any[] {
+  return array.reduce((acc, val) => acc.concat(val), [])
 }
 
-function uniq(array: any[]) {
-  return [...new Set(array)];
+function uniq<T> (array: T[]): T[] {
+  return [...new Set(array)]
 }
 
-function _valuesAt<T extends Object>(objects: T[], path: (string | number)[]): Object[] {
+function compact(array: any[]): any[] {
+  return array.filter(item => item !== null && item !== undefined)
+}
+
+function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path: Array<string | number>): Object[] {
   if (path.length === 0) return objects
 
-  const [pathPart, ...remainingParts] = path;
+  const [pathPart, ...remainingParts] = path
+
+  let newObjects: any[]
 
   if (pathPart === '#') {
-    objects = uniq(flatten(objects))
-  } else if (typeof pathPart === 'string' || typeof pathPart === 'number') {
-    objects = objects.map((object: T) => object[pathPart])
+    const flat = flatten(objects as any[][])
+    newObjects = uniq(flat)
+  } else if (typeof pathPart === 'number') {
+    newObjects = compact(objects.map((object: T) => object[pathPart]))
+  } else if (typeof pathPart === 'string') {
+    newObjects = compact(objects.map((object: T) => {
+      if (typeof object === 'object' && object !== null) {
+        return object[pathPart]
+      }
+    }))
   } else {
     throw new Error(`Bad path part: ${pathPart}`)
   }
 
-  return _valuesAt(objects, remainingParts)
+  return _valuesAt(newObjects, remainingParts)
 }
 
-export function valuesAt<T extends Object>(object: T, path: string[]) {
-  return _valuesAt([object], path);
+export function valuesAt<T extends Object> (object: T, path: string[]) {
+  return _valuesAt([object], path)
 }
-

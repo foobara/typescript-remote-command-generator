@@ -31,7 +31,8 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
   } else if (typeof pathPart === 'string') {
     newObjects = compact(objects.map((object: T) => {
       if (typeof object === 'object' && object !== null) {
-        return object[pathPart]
+        const record: Record<string, any> = object
+        return record[pathPart]
       } else {
         throw new Error(`Bad object and part: ${pathPart}`)
       }

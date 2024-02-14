@@ -329,10 +329,8 @@ module Foobara
                           when "datetime"
                             "Date"
                           else
-                            if type_declaration.entity?
-                              entity_to_ts_entity_name(type_declaration, association_depth:, initial:)
-                            elsif type_declaration.model?
-                              model_to_ts_model_name(type_declaration, association_depth:)
+                            if type_declaration.model?
+                              model_to_ts_model_name(type_declaration, association_depth:, initial:)
                             end
                           end
                         end
@@ -364,41 +362,18 @@ module Foobara
           "{\n#{guts}\n}"
         end
 
-        # TODO: should probably test with a model that has a reference to an entity in it.
-        # TODO: attempt to combine these two methods
-        def entity_to_ts_entity_name(entity, initial:, association_depth: AssociationDepth::AMBIGUOUS)
-          entity = entity.to_type if entity.is_a?(Manifest::TypeDeclaration)
-
-          generator_class = case association_depth
-                            when AssociationDepth::AMBIGUOUS
-                              Services::EntityGenerator
-                            when AssociationDepth::ATOM
-                              if initial
-                                Services::AtomModelGenerator
-                              else
-                                Services::UnloadedEntityGenerator
-                              end
-                            when AssociationDepth::AGGREGATE
-                              Services::AggregateEntityGenerator
-                            else
-                              # :nocov:
-                              raise "Bad association_depth: #{association_depth}"
-                              # :nocov:
-                            end
-
-          generator = generator_class.new(entity, elements_to_generate)
-
-          dependency_group.non_colliding_type(generator)
-        end
-
-        def model_to_ts_model_name(model, association_depth: AssociationDepth::AMBIGUOUS)
+        def model_to_ts_model_name(model, association_depth: AssociationDepth::AMBIGUOUS, initial: true)
           model = model.to_type if model.is_a?(Manifest::TypeDeclaration)
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
                               Services::ModelGenerator
                             when AssociationDepth::ATOM
-                              Services::AtomModelGenerator
+                              if !initial && model.entity?
+                                Services::UnloadedEntityGenerator
+                              else
+                                Services::AtomModelGenerator
+                              end
                             when AssociationDepth::AGGREGATE
                               Services::AggregateModelGenerator
                             else

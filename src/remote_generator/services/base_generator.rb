@@ -367,7 +367,7 @@ module Foobara
         # TODO: should probably test with a model that has a reference to an entity in it.
         # TODO: attempt to combine these two methods
         def entity_to_ts_entity_name(entity, initial:, association_depth: AssociationDepth::AMBIGUOUS)
-          entity = entity.to_entity if entity.is_a?(Manifest::TypeDeclaration)
+          entity = entity.to_type if entity.is_a?(Manifest::TypeDeclaration)
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
@@ -392,7 +392,7 @@ module Foobara
         end
 
         def model_to_ts_model_name(model, association_depth: AssociationDepth::AMBIGUOUS)
-          model = model.to_model if model.is_a?(Manifest::TypeDeclaration)
+          model = model.to_type if model.is_a?(Manifest::TypeDeclaration)
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS

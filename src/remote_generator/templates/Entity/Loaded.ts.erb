@@ -3,7 +3,7 @@ import {
   <%= entity_name %>AttributesType
 } from "./Ambiguous"
 
-export class Loaded<%= entity_name %><T extends <%= entity_name %>AttributesType> extends <%= entity_name %><T> {
+export class Loaded<%= entity_name %><T extends <%= entity_name %>AttributesType = <%= entity_name %>AttributesType> extends <%= entity_name %><T> {
   readonly isLoaded: true = true
   <% unless has_associations? %>
 /* eslint-disable @typescript-eslint/class-literal-property-style */

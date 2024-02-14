@@ -6,7 +6,7 @@ function uniq<T> (array: T[]): T[] {
   return [...new Set(array)]
 }
 
-function compact(array: any[]): any[] {
+function compact (array: any[]): any[] {
   return array.filter(item => item !== null && item !== undefined)
 }
 
@@ -21,7 +21,13 @@ function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path:
     const flat = flatten(objects as any[][])
     newObjects = uniq(flat)
   } else if (typeof pathPart === 'number') {
-    newObjects = compact(objects.map((object: T) => object[pathPart]))
+    newObjects = compact(objects.map((object: T) => {
+      if (Array.isArray(objects)) {
+        return object[pathPart]
+      } else {
+        throw new Error(`Cannot access index ${pathPart} of object because it's not an array`)
+      }
+    }))
   } else if (typeof pathPart === 'string') {
     newObjects = compact(objects.map((object: T) => {
       if (typeof object === 'object' && object !== null) {

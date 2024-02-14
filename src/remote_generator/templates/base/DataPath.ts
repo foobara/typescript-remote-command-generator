@@ -10,7 +10,7 @@ function compact(array: any[]): any[] {
   return array.filter(item => item !== null && item !== undefined)
 }
 
-function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path: Array<string | number>): Object[] {
+function _valuesAt<T extends (Record<string, any> | any[])> (objects: T[], path: Array<string | number>): (Record<string, any> | any[]) {
   if (path.length === 0) return objects
 
   const [pathPart, ...remainingParts] = path

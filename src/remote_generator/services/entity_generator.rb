@@ -35,7 +35,7 @@ module Foobara
         end
 
         def association_property_paths_ts
-          associations.keys.map(&:to_s).inspect
+          associations.keys.map { |k| DataPath.parse(k).path.map(&:to_s) }.inspect
         end
       end
     end

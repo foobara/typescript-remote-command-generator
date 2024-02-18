@@ -5,7 +5,7 @@ module Foobara
     class Services
       class EntityVariantsGenerator < EntityGenerator
         def target_path
-          [*domain_path, "types", "#{model_name}.ts"]
+          [*domain.scoped_full_path, "types", "#{model_name}.ts"]
         end
 
         def template_path

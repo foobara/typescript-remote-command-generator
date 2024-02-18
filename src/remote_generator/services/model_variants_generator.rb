@@ -3,7 +3,7 @@ module Foobara
     class Services
       class ModelVariantsGenerator < ModelGenerator
         def target_path
-          [*domain_path, "types", "#{model_name}.ts"]
+          [*domain.scoped_full_path, "types", "#{model_name}.ts"]
         end
 
         def template_path

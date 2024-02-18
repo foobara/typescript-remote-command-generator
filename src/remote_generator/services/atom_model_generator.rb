@@ -17,7 +17,7 @@ module Foobara
         end
 
         def target_path
-          [*domain_path, "types", model_name, "Atom.ts"]
+          [*domain.scoped_full_path, "types", model_name, "Atom.ts"]
         end
 
         def template_path

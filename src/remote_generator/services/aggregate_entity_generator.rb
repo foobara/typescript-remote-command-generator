@@ -17,7 +17,7 @@ module Foobara
         end
 
         def target_path
-          [*domain_path, "types", entity_name, "Aggregate.ts"]
+          [*domain.scoped_full_path, "types", entity_name, "Aggregate.ts"]
         end
 
         def template_path

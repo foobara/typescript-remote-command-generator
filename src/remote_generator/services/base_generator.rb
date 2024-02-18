@@ -197,12 +197,6 @@ module Foobara
           erb
         end
 
-        def short_name
-          # :nocov:
-          raise "Subclass responsibility"
-          # :nocov:
-        end
-
         def ts_instance_name
           ts_instance_path.join(".")
         end
@@ -226,20 +220,6 @@ module Foobara
         foobara_delegate :organization_name,
                          :domain_name,
                          to: :relevant_manifest
-
-        def domain_path
-          path = []
-
-          if organization_name != "GlobalOrganization" && organization_name != "global_organization"
-            path << organization_name
-          end
-
-          if domain_name != "GlobalDomain" && domain_name != "global_domain"
-            path << domain_name
-          end
-
-          path
-        end
 
         def path_to_root
           size = target_path.size - 1

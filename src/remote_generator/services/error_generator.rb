@@ -15,7 +15,9 @@ module Foobara
           when OrganizationGenerator, DomainGenerator, CommandGenerator
             [*p.target_dir, "errors", basename]
           when nil
-            ["base", "errors", basename]
+            # :nocov:
+            raise "Expected #{error_name} to have a parent but it did not"
+            # :nocov:
           else
             [*p.target_dir, basename]
           end

@@ -49,13 +49,7 @@ module Foobara
         end
 
         def domain_name
-          s = super
-
-          if s == "global_domain"
-            s = "GlobalDomain"
-          end
-
-          s
+          scoped_short_name || "GlobalDomain"
         end
 
         def organization_generator

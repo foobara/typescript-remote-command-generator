@@ -19,7 +19,7 @@ module Foobara
         alias model_manifest relevant_manifest
 
         def target_path
-          [*domain_path, "types", model_name, "#{model_name}.ts"]
+          [*domain.scoped_full_path, "types", model_name, "#{model_name}.ts"]
         end
 
         def template_path

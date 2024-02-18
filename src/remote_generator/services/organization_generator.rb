@@ -33,13 +33,7 @@ module Foobara
         end
 
         def organization_name
-          s = super
-
-          if s == "global_organization"
-            s = "GlobalOrganization"
-          end
-
-          s
+          scoped_short_name || "GlobalOrganization"
         end
       end
     end

@@ -54,11 +54,11 @@ module Foobara
         end
 
         def atom?
-          serializers&.any? { |s| s == "CommandConnectors::Serializers::AtomicSerializer" }
+          serializers&.any? { |s| s == "Foobara::CommandConnectors::Serializers::AtomicSerializer" }
         end
 
         def aggregate?
-          serializers&.any? { |s| s == "CommandConnectors::Serializers::AggregateSerializer" }
+          serializers&.any? { |s| s == "Foobara::CommandConnectors::Serializers::AggregateSerializer" }
         end
 
         def association_depth

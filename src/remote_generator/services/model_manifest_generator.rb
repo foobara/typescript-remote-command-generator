@@ -3,7 +3,7 @@ module Foobara
     class Services
       class ModelManifestGenerator < ManifestGenerator
         def target_path
-          [*domain_path, "types", model_name, "manifest.json"]
+          [*domain.scoped_full_path, "types", model_name, "manifest.json"]
         end
       end
     end

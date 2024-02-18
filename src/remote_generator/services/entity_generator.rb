@@ -7,7 +7,7 @@ module Foobara
         alias entity_manifest relevant_manifest
 
         def target_path
-          [*domain_path, "types", entity_name, "Ambiguous.ts"]
+          [*domain.scoped_full_path, "types", entity_name, "Ambiguous.ts"]
         end
 
         def template_path

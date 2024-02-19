@@ -11,10 +11,9 @@ module Foobara
       inputs do
         raw_manifest :associative_array
         manifest_url :string
+        # TODO: should be able to delete this and inherit it
         output_directory :string, :required
       end
-
-      result :associative_array
 
       depends_on GenerateTypescript
 
@@ -26,41 +25,11 @@ module Foobara
         paths_to_source_code
       end
 
-      attr_accessor :paths_to_source_code
-
       def generate_typescript
         # TODO: we need a way to allow values to be nil in type declarations
         inputs = raw_manifest ? { raw_manifest: } : { manifest_url: }
 
         self.paths_to_source_code = run_subcommand!(GenerateTypescript, inputs)
-      end
-
-      def delete_old_files_if_needed
-        file_list_file = "#{output_directory}/foobara-generated.json"
-
-        if File.exist?(file_list_file)
-          # :nocov:
-          file_list = JSON.parse(File.read(file_list_file))
-
-          file_list.map do |file|
-            Thread.new { FileUtils.rm("#{output_directory}/#{file}") }
-          end.each(&:join)
-          # :nocov:
-        end
-      end
-
-      def write_all_files_to_disk
-        write_file_to_disk("foobara-generated.json", paths_to_source_code["foobara-generated.json"])
-
-        paths_to_source_code.map do |path, contents|
-          Thread.new { write_file_to_disk(path, contents) unless path == "foobara-generated.json" }
-        end.each(&:join)
-      end
-
-      def write_file_to_disk(path, contents)
-        path = "#{output_directory}/#{path}"
-        FileUtils.mkdir_p(File.dirname(path))
-        File.write(path, contents)
       end
     end
   end

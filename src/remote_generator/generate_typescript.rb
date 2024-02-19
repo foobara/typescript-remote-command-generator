@@ -79,17 +79,26 @@ module Foobara
           element_to_generate = elements_to_generate.first
           elements_to_generate.delete(element_to_generate)
 
-          if generated_elements.include?(element_to_generate)
-            next
-          end
+          generators = if element_to_generate.is_a?(FilesGenerator)
+                         if generated.include?(element_to_generate)
+                           []
+                         else
+                           elements_to_generate << element_to_generate.relevant_manifest
+                           [element_to_generate]
+                         end
+                       else
+                         if generated_elements.include?(element_to_generate)
+                           next
+                         end
 
-          generated_elements << element_to_generate
+                         generated_elements << element_to_generate
 
-          generators = Services::TypescriptFromManifestBaseGenerator.generators_for(
-            element_to_generate
-          ).select do |generator|
-            generator.applicable? && !generated.include?(generator)
-          end
+                         Services::TypescriptFromManifestBaseGenerator.generators_for(
+                           element_to_generate
+                         ).select do |generator|
+                           generator.applicable? && !generated.include?(generator)
+                         end
+                       end
 
           generators.each do |generator|
             # TODO: change this name

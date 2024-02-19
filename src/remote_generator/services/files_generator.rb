@@ -3,7 +3,7 @@ module Foobara
     include TruncatedInspect
 
     class << self
-      def manifest_to_generator_classes(manifest)
+      def manifest_to_generator_classes(_manifest)
         # :nocov:
         raise "subclass responsibility"
         # :nocov:
@@ -47,7 +47,9 @@ module Foobara
     end
 
     def generators_for(...)
+      # :nocov:
       self.class.generators_for(...)
+      # :nocov:
     end
 
     def generator_for(...)
@@ -62,11 +64,7 @@ module Foobara
 
     def generate(elements_to_generate)
       dependencies.each do |dependency|
-        elements_to_generate << if dependency.is_a?(FilesGenerator)
-                                  dependency.relevant_manifest
-                                else
-                                  dependency
-                                end
+        elements_to_generate << dependency
       end
 
       # Render the template
@@ -106,7 +104,7 @@ module Foobara
       (["../"] * size).join
     end
 
-    def ==(other)
+    def ==(_other)
       # :nocov:
       raise "subclass responsibility"
       # :nocov:

@@ -76,7 +76,10 @@ module Foobara
           elements_to_generate.delete(element_to_generate)
 
           unless element_to_generate.is_a?(Services::TypescriptFromManifestBaseGenerator)
-            RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
+            Services::TypescriptFromManifestBaseGenerator.generators_for(
+              element_to_generate,
+              elements_to_generate
+            ).each do |generator|
               next unless generator.applicable?
 
               unless generated.include?(generator)

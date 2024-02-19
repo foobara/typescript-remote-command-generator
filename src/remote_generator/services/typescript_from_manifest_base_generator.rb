@@ -22,75 +22,75 @@
 
 module Foobara
   module RemoteGenerator
-    class << self
-      def generators_for(manifest, elements_to_generate)
-        if manifest.is_a?(Services::TypescriptFromManifestBaseGenerator)
-          return Util.array(manifest)
-        end
-
-        generator_classes = manifest_to_generator_classes(manifest)
-
-        Util.array(generator_classes).map do |generator_class|
-          generator_class.new(manifest, elements_to_generate)
-        end
-      end
-
-      def manifest_to_generator_classes(manifest)
-        case manifest
-        when Manifest::Command
-          [
-            Services::CommandGenerator,
-            Services::CommandInputsGenerator,
-            Services::CommandResultGenerator,
-            Services::CommandErrorsGenerator,
-            Services::CommandErrorsIndexGenerator,
-            Services::CommandManifestGenerator
-          ]
-        when Manifest::Domain
-          [
-            Services::DomainGenerator,
-            Services::DomainConfigGenerator,
-            Services::DomainManifestGenerator
-          ]
-        when Manifest::Organization
-          [
-            Services::OrganizationGenerator,
-            Services::OrganizationConfigGenerator,
-            Services::OrganizationManifestGenerator
-          ]
-        when Manifest::Entity
-          [
-            Services::EntityGenerator,
-            Services::EntityVariantsGenerator,
-            Services::EntityManifestGenerator
-          ]
-        when Manifest::Model
-          [
-            Services::ModelGenerator,
-            Services::ModelVariantsGenerator,
-            Services::ModelManifestGenerator
-          ]
-        when Manifest::Error
-          Services::ErrorGenerator
-        when Manifest::ProcessorClass
-          Services::ProcessorClassGenerator
-        when Manifest::RootManifest
-          Services::RootManifestGenerator
-        else
-          # :nocov:
-          raise "Not sure how build a generator for a #{manifest}"
-          # :nocov:
-        end
-      end
-
-      def generator_for(manifest, elements_to_generate = nil)
-        generators_for(manifest, elements_to_generate).first
-      end
-    end
-
     class Services
       class TypescriptFromManifestBaseGenerator
         include TruncatedInspect
+
+        class << self
+          def generators_for(manifest, elements_to_generate)
+            if manifest.is_a?(Services::TypescriptFromManifestBaseGenerator)
+              return Util.array(manifest)
+            end
+
+            generator_classes = manifest_to_generator_classes(manifest)
+
+            Util.array(generator_classes).map do |generator_class|
+              generator_class.new(manifest, elements_to_generate)
+            end
+          end
+
+          def manifest_to_generator_classes(manifest)
+            case manifest
+            when Manifest::Command
+              [
+                Services::CommandGenerator,
+                Services::CommandInputsGenerator,
+                Services::CommandResultGenerator,
+                Services::CommandErrorsGenerator,
+                Services::CommandErrorsIndexGenerator,
+                Services::CommandManifestGenerator
+              ]
+            when Manifest::Domain
+              [
+                Services::DomainGenerator,
+                Services::DomainConfigGenerator,
+                Services::DomainManifestGenerator
+              ]
+            when Manifest::Organization
+              [
+                Services::OrganizationGenerator,
+                Services::OrganizationConfigGenerator,
+                Services::OrganizationManifestGenerator
+              ]
+            when Manifest::Entity
+              [
+                Services::EntityGenerator,
+                Services::EntityVariantsGenerator,
+                Services::EntityManifestGenerator
+              ]
+            when Manifest::Model
+              [
+                Services::ModelGenerator,
+                Services::ModelVariantsGenerator,
+                Services::ModelManifestGenerator
+              ]
+            when Manifest::Error
+              Services::ErrorGenerator
+            when Manifest::ProcessorClass
+              Services::ProcessorClassGenerator
+            when Manifest::RootManifest
+              Services::RootManifestGenerator
+            else
+              # :nocov:
+              raise "Not sure how build a generator for a #{manifest}"
+              # :nocov:
+            end
+          end
+
+          def generator_for(manifest, elements_to_generate = nil)
+            generators_for(manifest, elements_to_generate).first
+          end
+        end
 
         attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
 
@@ -117,7 +117,7 @@ module Foobara
 
         def parent
           if relevant_manifest.parent
-            RemoteGenerator.generator_for(relevant_manifest.parent, elements_to_generate)
+            generator_for(relevant_manifest.parent, elements_to_generate)
           end
         end
 
@@ -134,7 +134,7 @@ module Foobara
         def dependency_group
           @dependency_group ||= begin
             generators = dependencies.map do |dependency|
-              RemoteGenerator.generator_for(dependency, elements_to_generate)
+              generator_for(dependency, elements_to_generate)
             end
 
             DependencyGroup.new(generators, name: scoped_full_path.join("."))
@@ -150,6 +150,14 @@ module Foobara
           end
 
           dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
+        end
+
+        def generators_for(...)
+          self.class.generators_for(...)
+        end
+
+        def generator_for(...)
+          self.class.generator_for(...)
         end
 
         def generate
@@ -170,10 +178,6 @@ module Foobara
 
           # Render the template
           erb_template.result(binding)
-        end
-
-        def generator_for(manifest)
-          RemoteGenerator.generator_for(manifest)
         end
 
         def template_path

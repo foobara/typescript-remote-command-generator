@@ -1,3 +1,5 @@
+require_relative "files_generator"
+
 # Where to put files?
 # let's examine an error...
 # if an error belongs to a command, let's put it in <command path>/errors/<error_name>.ts
@@ -23,22 +25,8 @@
 module Foobara
   module RemoteGenerator
     class Services
-      class TypescriptFromManifestBaseGenerator
-        include TruncatedInspect
-
+      class TypescriptFromManifestBaseGenerator < Foobara::FilesGenerator
         class << self
-          def generators_for(manifest, elements_to_generate)
-            if manifest.is_a?(Services::TypescriptFromManifestBaseGenerator)
-              return Util.array(manifest)
-            end
-
-            generator_classes = manifest_to_generator_classes(manifest)
-
-            Util.array(generator_classes).map do |generator_class|
-              generator_class.new(manifest, elements_to_generate)
-            end
-          end
-
           def manifest_to_generator_classes(manifest)
             case manifest
             when Manifest::Command
@@ -86,13 +74,7 @@ module Foobara
               # :nocov:
             end
           end
-
-          def generator_for(manifest, elements_to_generate = nil)
-            generators_for(manifest, elements_to_generate).first
-          end
         end
-
-        attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
 
         def initialize(relevant_manifest, elements_to_generate)
           unless relevant_manifest.is_a?(Manifest::BaseManifest)
@@ -101,34 +83,13 @@ module Foobara
             # :nocov:
           end
 
-          self.relevant_manifest = relevant_manifest
-          self.elements_to_generate = elements_to_generate
-        end
-
-        def target_path
-          # :nocov:
-          raise "Subclass responsibility"
-          # :nocov:
-        end
-
-        def target_dir
-          target_path[0..-2]
+          super
         end
 
         def parent
           if relevant_manifest.parent
             generator_for(relevant_manifest.parent, elements_to_generate)
           end
-        end
-
-        def applicable?
-          true
-        end
-
-        def dependencies
-          # :nocov:
-          raise "Subclass responsibility"
-          # :nocov:
         end
 
         def dependency_group
@@ -150,61 +111,6 @@ module Foobara
           end
 
           dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
-        end
-
-        def generators_for(...)
-          self.class.generators_for(...)
-        end
-
-        def generator_for(...)
-          self.class.generator_for(...)
-        end
-
-        def generate
-          unless elements_to_generate
-            # :nocov:
-            raise "This generator was created without elements_to_generate and therefore cannot be ran."
-            # :nocov:
-          end
-
-          dependencies.each do |dependency|
-            if dependency.is_a?(ModelGenerator)
-              # This is confusing
-              elements_to_generate << dependency.relevant_manifest
-            end
-
-            elements_to_generate << dependency
-          end
-
-          # Render the template
-          erb_template.result(binding)
-        end
-
-        def template_path
-          # :nocov:
-          raise "Subclass responsibility"
-          # :nocov:
-        end
-
-        def absolute_template_path
-          path = template_path
-
-          if path.is_a?(::Array)
-            path = path.join("/")
-          end
-
-          Pathname.new("#{__dir__}/../templates/#{path}").cleanpath.to_s
-        end
-
-        def template_string
-          File.read(absolute_template_path)
-        end
-
-        def erb_template
-          # erb = ERB.new(template_string.gsub("\n<% end %>", "<% end %>"))
-          erb = ERB.new(template_string)
-          erb.filename = absolute_template_path
-          erb
         end
 
         def ts_instance_name
@@ -230,12 +136,6 @@ module Foobara
         foobara_delegate :organization_name,
                          :domain_name,
                          to: :relevant_manifest
-
-        def path_to_root
-          size = target_path.size - 1
-
-          (["../"] * size).join
-        end
 
         def import_path
           if import_path_array.size == 1
@@ -379,10 +279,6 @@ module Foobara
 
         def ==(other)
           self.class == other.class && path == other.path && root_manifest == other.root_manifest
-        end
-
-        def eql?(other)
-          self == other
         end
 
         def hash

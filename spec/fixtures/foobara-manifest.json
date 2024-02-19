@@ -14583,7 +14583,7 @@
   },
   "organization": {
     "Foobara::Ai": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "domains": [
         "Foobara::Ai::Gpt"
       ],
@@ -14606,7 +14606,7 @@
       "scoped_short_name": "Ai"
     },
     "SomeOrg": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "domains": [
         "SomeOrg::Auth",
         "SomeOrg::Math"
@@ -14626,7 +14626,7 @@
       "scoped_short_name": "SomeOrg"
     },
     "SomeOtherOrg": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "domains": [
         "SomeOtherOrg::Auth",
         "SomeOtherOrg::Math",
@@ -14647,7 +14647,7 @@
       "scoped_short_name": "SomeOtherOrg"
     },
     "global_organization": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "domains": [
         "FoobaraAi",
         "NestedModels",
@@ -15458,9 +15458,9 @@
       "scoped_short_name": "JsonSerializer"
     },
     "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
-      "organization": null,
+      "organization": "global_organization",
       "parent": [
         "organization",
         "Foobara"
@@ -15488,9 +15488,9 @@
       "scoped_short_name": "ExtendEntityTypeDeclaration"
     },
     "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer",
-      "organization": null,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration"
@@ -15514,9 +15514,9 @@
       "scoped_short_name": "ToTypeTransformer"
     },
     "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster": {
-      "domain": null,
+      "domain": "global_organization::global_domain",
       "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-      "organization": null,
+      "organization": "global_organization",
       "parent": [
         "processor_class",
         "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer"

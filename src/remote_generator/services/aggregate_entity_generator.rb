@@ -5,13 +5,13 @@ module Foobara
     class Services
       class AggregateEntityGenerator < LoadedEntityGenerator
         class << self
-          def new(relevant_manifest, elements_to_generate)
+          def new(relevant_manifest)
             return super unless self == AggregateEntityGenerator
 
             if relevant_manifest.has_associations?
               super
             else
-              LoadedEntityGenerator.new(relevant_manifest, elements_to_generate)
+              LoadedEntityGenerator.new(relevant_manifest)
             end
           end
         end
@@ -26,7 +26,7 @@ module Foobara
 
         def model_generators
           types_depended_on.select(&:model?).map do |model|
-            Services::AggregateModelGenerator.new(model, elements_to_generate)
+            Services::AggregateModelGenerator.new(model)
           end
         end
 

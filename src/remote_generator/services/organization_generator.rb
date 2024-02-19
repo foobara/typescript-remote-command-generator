@@ -24,7 +24,7 @@ module Foobara
 
         def domain_generators
           @domain_generators ||= organization_manifest.domains.map do |domain_manifest|
-            DomainGenerator.new(domain_manifest, elements_to_generate)
+            DomainGenerator.new(domain_manifest)
           end
         end
 

@@ -5,11 +5,11 @@ module Foobara
     class Services
       class ModelGenerator < TypescriptFromManifestBaseGenerator
         class << self
-          def new(relevant_manifest, elements_to_generate)
+          def new(relevant_manifest)
             return super unless self == ModelGenerator
 
             if relevant_manifest.entity?
-              EntityGenerator.new(relevant_manifest, elements_to_generate)
+              EntityGenerator.new(relevant_manifest)
             else
               super
             end
@@ -48,7 +48,7 @@ module Foobara
         # Do models have associations??
         def model_generators
           types_depended_on.select(&:model?).map do |model|
-            Services::ModelGenerator.new(model, elements_to_generate)
+            Services::ModelGenerator.new(model)
           end
         end
 

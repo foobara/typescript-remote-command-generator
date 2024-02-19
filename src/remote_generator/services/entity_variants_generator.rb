@@ -13,23 +13,23 @@ module Foobara
         end
 
         def entity_generator
-          EntityGenerator.new(entity_manifest, elements_to_generate)
+          EntityGenerator.new(entity_manifest)
         end
 
         def unloaded_entity_generator
-          UnloadedEntityGenerator.new(entity_manifest, elements_to_generate)
+          UnloadedEntityGenerator.new(entity_manifest)
         end
 
         def loaded_entity_generator
-          LoadedEntityGenerator.new(entity_manifest, elements_to_generate)
+          LoadedEntityGenerator.new(entity_manifest)
         end
 
         def atom_entity_generator
-          AtomEntityGenerator.new(entity_manifest, elements_to_generate)
+          AtomEntityGenerator.new(entity_manifest)
         end
 
         def aggregate_entity_generator
-          AggregateEntityGenerator.new(entity_manifest, elements_to_generate)
+          AggregateEntityGenerator.new(entity_manifest)
         end
 
         def dependencies

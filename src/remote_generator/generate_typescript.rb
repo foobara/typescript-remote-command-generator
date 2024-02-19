@@ -86,8 +86,7 @@ module Foobara
           generated_elements << element_to_generate
 
           generators = Services::TypescriptFromManifestBaseGenerator.generators_for(
-            element_to_generate,
-            elements_to_generate
+            element_to_generate
           ).select do |generator|
             generator.applicable? && !generated.include?(generator)
           end
@@ -116,7 +115,8 @@ module Foobara
       def generate_element
         return unless element_to_generate.applicable?
 
-        paths_to_source_code[element_to_generate.target_path.join("/")] = element_to_generate.generate
+        paths_to_source_code[element_to_generate.target_path.join("/")] =
+          element_to_generate.generate(elements_to_generate)
       end
 
       def manifest

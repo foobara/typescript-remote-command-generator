@@ -76,7 +76,7 @@ module Foobara
           end
         end
 
-        def initialize(relevant_manifest, elements_to_generate)
+        def initialize(relevant_manifest)
           unless relevant_manifest.is_a?(Manifest::BaseManifest)
             # :nocov:
             raise ArgumentError, "Expected a Foobara::Manifest, got #{relevant_manifest.class}"
@@ -88,14 +88,14 @@ module Foobara
 
         def parent
           if relevant_manifest.parent
-            generator_for(relevant_manifest.parent, elements_to_generate)
+            generator_for(relevant_manifest.parent)
           end
         end
 
         def dependency_group
           @dependency_group ||= begin
             generators = dependencies.map do |dependency|
-              generator_for(dependency, elements_to_generate)
+              generator_for(dependency)
             end
 
             DependencyGroup.new(generators, name: scoped_full_path.join("."))
@@ -272,7 +272,7 @@ module Foobara
                               # :nocov:
                             end
 
-          generator = generator_class.new(model, elements_to_generate)
+          generator = generator_class.new(model)
 
           dependency_group.non_colliding_type(generator)
         end

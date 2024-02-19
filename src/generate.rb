@@ -6,6 +6,18 @@ module Foobara
 
       attr_accessor :element_to_generate
 
+      def base_generator
+        # :nocov:
+        raise "subclass responsibility"
+        # :nocov:
+      end
+
+      def templates_dir
+        # :nocov:
+        raise "subclass responsibility"
+        # :nocov:
+      end
+
       def elements_to_generate
         @elements_to_generate ||= Set.new
       end
@@ -16,12 +28,6 @@ module Foobara
 
       def generated_elements
         @generated_elements ||= Set.new
-      end
-
-      def base_generator
-        # :nocov:
-        raise "subclass responsibility"
-        # :nocov:
       end
 
       def each_element_to_generate
@@ -76,10 +82,6 @@ module Foobara
 
           paths_to_source_code[key.to_s] = File.read(file_path)
         end
-      end
-
-      def templates_dir
-        "#{__dir__}/templates"
       end
 
       def generate_generated_files_json

@@ -1,8 +1,9 @@
 require_relative "generate_typescript"
+require_relative "../write_generated_files_to_disk"
 
 module Foobara
   module RemoteGenerator
-    class WriteTypescriptToDisk < Foobara::Command
+    class WriteTypescriptToDisk < Foobara::Generators::WriteGeneratedFilesToDisk
       class MissingManifestError < RuntimeError; end
 
       possible_error MissingManifestError

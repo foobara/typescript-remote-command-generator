@@ -44,6 +44,10 @@ module Foobara
         Services::TypescriptFromManifestBaseGenerator
       end
 
+      def templates_dir
+        "#{__dir__}/templates"
+      end
+
       def load_manifest_if_needed
         self.manifest_data = if raw_manifest
                                raw_manifest

@@ -7,10 +7,12 @@ module Foobara
 
       possible_error MissingManifestError
 
-      # TODO: give better sugar for specifying required inputs
-      inputs raw_manifest: { type: :associative_array },
-             manifest_url: { type: :string },
-             output_directory: { type: :string, required: true }
+      inputs do
+        raw_manifest :associative_array
+        manifest_url :string
+        output_directory :string, :required
+      end
+
       result :associative_array
 
       depends_on GenerateTypescript

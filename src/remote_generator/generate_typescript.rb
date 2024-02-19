@@ -75,20 +75,18 @@ module Foobara
           element_to_generate = elements_to_generate.first
           elements_to_generate.delete(element_to_generate)
 
-          unless element_to_generate.is_a?(Services::TypescriptFromManifestBaseGenerator)
-            Services::TypescriptFromManifestBaseGenerator.generators_for(
-              element_to_generate,
-              elements_to_generate
-            ).each do |generator|
-              next unless generator.applicable?
+          Services::TypescriptFromManifestBaseGenerator.generators_for(
+            element_to_generate,
+            elements_to_generate
+          ).each do |generator|
+            next unless generator.applicable?
 
-              unless generated.include?(generator)
-                elements_to_generate << generator
-              end
+            unless generated.include?(generator)
+              elements_to_generate << generator
             end
-
-            next
           end
+
+          next unless element_to_generate.is_a?(Services::TypescriptFromManifestBaseGenerator)
 
           # TODO: fix this name
           next unless element_to_generate.applicable?

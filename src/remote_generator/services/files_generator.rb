@@ -5,7 +5,7 @@ module Foobara
     class << self
       def generators_for(manifest, elements_to_generate)
         if manifest.is_a?(FilesGenerator)
-          return Util.array(manifest)
+          return [manifest, *generators_for(manifest.relevant_manifest, elements_to_generate)]
         end
 
         generator_classes = manifest_to_generator_classes(manifest)
@@ -71,7 +71,7 @@ module Foobara
       dependencies.each do |dependency|
         if dependency.is_a?(RemoteGenerator::Services::ModelGenerator)
           # This is confusing
-          elements_to_generate << dependency.relevant_manifest
+          # elements_to_generate << dependency.relevant_manifest
         end
 
         elements_to_generate << dependency

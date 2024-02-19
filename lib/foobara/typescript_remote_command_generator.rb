@@ -1,4 +1,5 @@
 require "foobara/all"
+require "foobara/files_generator"
 
 require "erb"
 require "json"

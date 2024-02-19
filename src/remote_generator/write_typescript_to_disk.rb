@@ -1,5 +1,4 @@
 require_relative "generate_typescript"
-require_relative "../write_generated_files_to_disk"
 
 module Foobara
   module RemoteGenerator

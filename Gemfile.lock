@@ -26,6 +26,11 @@ GIT
     foobara-util (0.1.0)
 
 PATH
+  remote: ../files-generator
+  specs:
+    foobara-files-generator (0.1.0)
+
+PATH
   remote: .
   specs:
     typescript-remote-command-generator (0.0.1)
@@ -138,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   foobara!
+  foobara-files-generator!
   foobara-rubocop-rules!
   foobara-spec-helpers!
   foobara-util!

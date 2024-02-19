@@ -1,8 +1,6 @@
 require "net/http"
 require "uri"
 
-require_relative "../generate"
-
 module Foobara
   module RemoteGenerator
     class GenerateTypescript < Foobara::Generators::Generate

@@ -1,5 +1,3 @@
-require_relative "files_generator"
-
 # Where to put files?
 # let's examine an error...
 # if an error belongs to a command, let's put it in <command path>/errors/<error_name>.ts

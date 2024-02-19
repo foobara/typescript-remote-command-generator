@@ -8,9 +8,8 @@ module Foobara
 
       possible_error MissingManifestError
 
-      # TODO: give better sugar for specifying required inputs
-      inputs raw_manifest: { type: :associative_array },
-             manifest_url: { type: :string }
+      inputs raw_manifest: :associative_array,
+             manifest_url: :string
 
       # TODO: specify a better type?
       result :associative_array
@@ -35,12 +34,12 @@ module Foobara
       def validate
         if raw_manifest.nil? && manifest_url.nil?
           # :nocov:
-          add_runtime_error(MissingManifestError.new("Either raw_manifest or manifest_url must be given"))
+          add_runtime_error(MissingManifestError.new(message: "Either raw_manifest or manifest_url must be given"))
           # :nocov:
         end
       end
 
-      attr_accessor :command_manifest, :element_to_generate, :generator, :manifest_data
+      attr_accessor :command_manifest, :element_to_generate, :manifest_data
 
       def load_manifest_if_needed
         self.manifest_data = if raw_manifest
@@ -112,27 +111,9 @@ module Foobara
       end
 
       def generate_element
-        each_generator do
-          run_generator
-        end
-      end
-
-      def run_generator
-        paths_to_source_code[generator.target_path.join("/")] = generator.generate
-      end
-
-      # TODO: eliminate this method
-      def each_generator
-        # RemoteGenerator.generators_for(element_to_generate, elements_to_generate).each do |generator|
-        #   next unless generator.applicable?
-        #
-        #   self.generator = generator
-        #   yield
-        # end
         return unless element_to_generate.applicable?
 
-        self.generator = element_to_generate
-        yield
+        paths_to_source_code[element_to_generate.target_path.join("/")] = element_to_generate.generate
       end
 
       def manifest

@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class ErrorGenerator < TypeScriptFromManifestBaseGenerator
+      class ErrorGenerator < TypescriptFromManifestBaseGenerator
         alias error_manifest relevant_manifest
 
         def target_path

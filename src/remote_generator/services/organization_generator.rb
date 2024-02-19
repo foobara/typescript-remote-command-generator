@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class OrganizationGenerator < TypeScriptFromManifestBaseGenerator
+      class OrganizationGenerator < TypescriptFromManifestBaseGenerator
         alias organization_manifest relevant_manifest
 
         def import_destructure

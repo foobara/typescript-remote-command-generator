@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class ModelGenerator < TypeScriptFromManifestBaseGenerator
+      class ModelGenerator < TypescriptFromManifestBaseGenerator
         class << self
           def new(relevant_manifest, elements_to_generate)
             return super unless self == ModelGenerator

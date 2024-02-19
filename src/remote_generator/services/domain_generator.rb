@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class DomainGenerator < TypeScriptFromManifestBaseGenerator
+      class DomainGenerator < TypescriptFromManifestBaseGenerator
         alias domain_manifest relevant_manifest
 
         def import_destructure

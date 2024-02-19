@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class CommandInputsGenerator < TypeScriptFromManifestBaseGenerator
+      class CommandInputsGenerator < TypescriptFromManifestBaseGenerator
         alias command_manifest relevant_manifest
 
         def target_path

@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class CommandResultGenerator < TypeScriptFromManifestBaseGenerator
+      class CommandResultGenerator < TypescriptFromManifestBaseGenerator
         alias command_manifest relevant_manifest
 
         def result_type

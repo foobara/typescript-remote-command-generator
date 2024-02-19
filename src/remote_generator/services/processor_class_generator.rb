@@ -3,7 +3,7 @@ require_relative "base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class ProcessorClassGenerator < TypeScriptFromManifestBaseGenerator
+      class ProcessorClassGenerator < TypescriptFromManifestBaseGenerator
         alias processor_class_manifest relevant_manifest
 
         def target_path

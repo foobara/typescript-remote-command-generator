@@ -25,7 +25,7 @@ module Foobara
     class << self
       def generators_for(manifest, elements_to_generate)
         generator_classes = case manifest
-                            when Services::TypeScriptFromManifestBaseGenerator
+                            when Services::TypescriptFromManifestBaseGenerator
                               return Util.array(manifest)
                             when Manifest::Command
                               [
@@ -83,7 +83,7 @@ module Foobara
     end
 
     class Services
-      class TypeScriptFromManifestBaseGenerator
+      class TypescriptFromManifestBaseGenerator
         include TruncatedInspect
 
         attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group

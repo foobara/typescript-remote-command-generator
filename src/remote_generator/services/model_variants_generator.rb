@@ -11,15 +11,15 @@ module Foobara
         end
 
         def model_generator
-          ModelGenerator.new(model_manifest, elements_to_generate)
+          ModelGenerator.new(model_manifest)
         end
 
         def atom_model_generator
-          AtomModelGenerator.new(model_manifest, elements_to_generate)
+          AtomModelGenerator.new(model_manifest)
         end
 
         def aggregate_model_generator
-          AggregateModelGenerator.new(model_manifest, elements_to_generate)
+          AggregateModelGenerator.new(model_manifest)
         end
 
         def dependencies

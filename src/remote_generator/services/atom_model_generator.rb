@@ -3,15 +3,15 @@ module Foobara
     class Services
       class AtomModelGenerator < ModelGenerator
         class << self
-          def new(relevant_manifest, elements_to_generate)
+          def new(relevant_manifest)
             return super unless self == AtomModelGenerator
 
             if relevant_manifest.entity?
-              AtomEntityGenerator.new(relevant_manifest, elements_to_generate)
+              AtomEntityGenerator.new(relevant_manifest)
             elsif relevant_manifest.has_associations?
               super
             else
-              ModelGenerator.new(relevant_manifest, elements_to_generate)
+              ModelGenerator.new(relevant_manifest)
             end
           end
         end
@@ -27,9 +27,9 @@ module Foobara
         def model_generators
           types_depended_on.select(&:model?).map do |model|
             if model.entity?
-              Services::UnloadedEntityGenerator.new(model, elements_to_generate)
+              Services::UnloadedEntityGenerator.new(model)
             else
-              Services::AtomModelGenerator.new(model, elements_to_generate)
+              Services::AtomModelGenerator.new(model)
             end
           end
         end

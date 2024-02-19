@@ -24,13 +24,13 @@ module Foobara
 
         def command_generators
           @command_generators ||= domain_manifest.commands.map do |command_manifest|
-            CommandGenerator.new(command_manifest, elements_to_generate)
+            CommandGenerator.new(command_manifest)
           end
         end
 
         def entity_generators
           @entity_generators ||= domain_manifest.entities.map do |entity_manifest|
-            EntityGenerator.new(entity_manifest, elements_to_generate)
+            EntityGenerator.new(entity_manifest)
           end
         end
 
@@ -39,7 +39,7 @@ module Foobara
             only_models = domain_manifest.models.reject(&:entity?)
 
             only_models.map do |model_manifest|
-              ModelGenerator.new(model_manifest, elements_to_generate)
+              ModelGenerator.new(model_manifest)
             end
           end
         end
@@ -53,7 +53,7 @@ module Foobara
         end
 
         def organization_generator
-          @organization_generator ||= OrganizationGenerator.new(domain_manifest.organization, elements_to_generate)
+          @organization_generator ||= OrganizationGenerator.new(domain_manifest.organization)
         end
 
         foobara_delegate :organization_name, to: :organization_generator

@@ -4,7 +4,7 @@ module Foobara
   module RemoteGenerator
     class Services
       class ManifestGenerator < TypescriptFromManifestBaseGenerator
-        def generate
+        def generate(_elements_to_generate)
           JSON.pretty_generate(relevant_manifest.relevant_manifest)
         end
       end

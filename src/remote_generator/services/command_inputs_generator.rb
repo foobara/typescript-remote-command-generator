@@ -17,9 +17,9 @@ module Foobara
         def model_generators
           @model_generators ||= inputs_types_depended_on.select(&:model?).uniq.map do |model|
             if model.entity?
-              Services::EntityGenerator.new(model, elements_to_generate)
+              Services::EntityGenerator.new(model)
             else
-              Services::ModelGenerator.new(model, elements_to_generate)
+              Services::ModelGenerator.new(model)
             end
           end
         end

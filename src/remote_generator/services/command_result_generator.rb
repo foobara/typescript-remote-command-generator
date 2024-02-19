@@ -32,7 +32,7 @@ module Foobara
                                 EntityGenerator
                               end
 
-            [generator_class.new(type.to_entity, elements_to_generate)]
+            [generator_class.new(type.to_entity)]
           elsif type.model?
             generator_class = if atom?
                                 AtomModelGenerator
@@ -42,7 +42,7 @@ module Foobara
                                 ModelGenerator
                               end
 
-            [generator_class.new(type.to_model, elements_to_generate)]
+            [generator_class.new(type.to_model)]
           elsif type.type.to_sym == :attributes
             type.attribute_declarations.values.map do |attribute_declaration|
               model_generators(attribute_declaration, false)

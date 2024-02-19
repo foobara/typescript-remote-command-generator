@@ -9,7 +9,7 @@ module Foobara
         # :nocov:
       end
 
-      def generators_for(manifest, elements_to_generate)
+      def generators_for(manifest)
         if manifest.is_a?(FilesGenerator)
           return [manifest]
         end
@@ -17,20 +17,19 @@ module Foobara
         generator_classes = manifest_to_generator_classes(manifest)
 
         Util.array(generator_classes).map do |generator_class|
-          generator_class.new(manifest, elements_to_generate)
+          generator_class.new(manifest)
         end
       end
 
-      def generator_for(manifest, elements_to_generate = nil)
-        generators_for(manifest, elements_to_generate).first
+      def generator_for(manifest)
+        generators_for(manifest).first
       end
     end
 
-    attr_accessor :relevant_manifest, :elements_to_generate, :belongs_to_dependency_group
+    attr_accessor :relevant_manifest, :belongs_to_dependency_group
 
-    def initialize(relevant_manifest, elements_to_generate)
+    def initialize(relevant_manifest)
       self.relevant_manifest = relevant_manifest
-      self.elements_to_generate = elements_to_generate
     end
 
     def target_path
@@ -61,13 +60,7 @@ module Foobara
       # :nocov:
     end
 
-    def generate
-      unless elements_to_generate
-        # :nocov:
-        raise "This generator was created without elements_to_generate and therefore cannot be ran."
-        # :nocov:
-      end
-
+    def generate(elements_to_generate)
       dependencies.each do |dependency|
         elements_to_generate << if dependency.is_a?(FilesGenerator)
                                   dependency.relevant_manifest

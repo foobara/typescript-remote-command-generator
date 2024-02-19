@@ -70,33 +70,33 @@ module Foobara
         @generated ||= Set.new
       end
 
+      def generated_elements
+        @generated_elements ||= Set.new
+      end
+
       def each_element_to_generate
         until elements_to_generate.empty?
           element_to_generate = elements_to_generate.first
           elements_to_generate.delete(element_to_generate)
 
-          unless element_to_generate.is_a?(Services::TypescriptFromManifestBaseGenerator)
-            Services::TypescriptFromManifestBaseGenerator.generators_for(
-              element_to_generate,
-              elements_to_generate
-            ).each do |generator|
-              next unless generator.applicable?
-
-              unless generated.include?(generator)
-                elements_to_generate << generator
-              end
-            end
-
+          if generated_elements.include?(element_to_generate)
             next
           end
 
-          # TODO: fix this name
-          next unless element_to_generate.applicable?
+          generated_elements << element_to_generate
 
-          unless generated.include?(element_to_generate)
-            self.element_to_generate = element_to_generate
+          generators = Services::TypescriptFromManifestBaseGenerator.generators_for(
+            element_to_generate,
+            elements_to_generate
+          ).select do |generator|
+            generator.applicable? && !generated.include?(generator)
+          end
+
+          generators.each do |generator|
+            # TODO: change this name
+            self.element_to_generate = generator
+            generated << generator
             yield
-            generated << element_to_generate
           end
         end
       end

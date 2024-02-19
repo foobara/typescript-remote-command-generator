@@ -3,6 +3,12 @@ module Foobara
     include TruncatedInspect
 
     class << self
+      def manifest_to_generator_classes(manifest)
+        # :nocov:
+        raise "subclass responsibility"
+        # :nocov:
+      end
+
       def generators_for(manifest, elements_to_generate)
         if manifest.is_a?(FilesGenerator)
           return [manifest]
@@ -13,12 +19,6 @@ module Foobara
         Util.array(generator_classes).map do |generator_class|
           generator_class.new(manifest, elements_to_generate)
         end
-      end
-
-      def manifest_to_generator_classes(manifest)
-        # :nocov:
-        raise "subclass responsibility"
-        # :nocov:
       end
 
       def generator_for(manifest, elements_to_generate = nil)
@@ -120,9 +120,7 @@ module Foobara
     end
 
     def eql?(other)
-      # :nocov:
-      raise "subclass responsibility"
-      # :nocov:
+      self == other
     end
 
     def hash

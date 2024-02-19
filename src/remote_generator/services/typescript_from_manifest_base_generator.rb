@@ -24,56 +24,62 @@ module Foobara
   module RemoteGenerator
     class << self
       def generators_for(manifest, elements_to_generate)
-        generator_classes = case manifest
-                            when Services::TypescriptFromManifestBaseGenerator
-                              return Util.array(manifest)
-                            when Manifest::Command
-                              [
-                                Services::CommandGenerator,
-                                Services::CommandInputsGenerator,
-                                Services::CommandResultGenerator,
-                                Services::CommandErrorsGenerator,
-                                Services::CommandErrorsIndexGenerator,
-                                Services::CommandManifestGenerator
-                              ]
-                            when Manifest::Domain
-                              [
-                                Services::DomainGenerator,
-                                Services::DomainConfigGenerator,
-                                Services::DomainManifestGenerator
-                              ]
-                            when Manifest::Organization
-                              [
-                                Services::OrganizationGenerator,
-                                Services::OrganizationConfigGenerator,
-                                Services::OrganizationManifestGenerator
-                              ]
-                            when Manifest::Entity
-                              [
-                                Services::EntityGenerator,
-                                Services::EntityVariantsGenerator,
-                                Services::EntityManifestGenerator
-                              ]
-                            when Manifest::Model
-                              [
-                                Services::ModelGenerator,
-                                Services::ModelVariantsGenerator,
-                                Services::ModelManifestGenerator
-                              ]
-                            when Manifest::Error
-                              Services::ErrorGenerator
-                            when Manifest::ProcessorClass
-                              Services::ProcessorClassGenerator
-                            when Manifest::RootManifest
-                              Services::RootManifestGenerator
-                            else
-                              # :nocov:
-                              raise "Not sure how build a generator for a #{manifest}"
-                              # :nocov:
-                            end
+        if manifest.is_a?(Services::TypescriptFromManifestBaseGenerator)
+          return Util.array(manifest)
+        end
+
+        generator_classes = manifest_to_generator_classes(manifest)
 
         Util.array(generator_classes).map do |generator_class|
           generator_class.new(manifest, elements_to_generate)
+        end
+      end
+
+      def manifest_to_generator_classes(manifest)
+        case manifest
+        when Manifest::Command
+          [
+            Services::CommandGenerator,
+            Services::CommandInputsGenerator,
+            Services::CommandResultGenerator,
+            Services::CommandErrorsGenerator,
+            Services::CommandErrorsIndexGenerator,
+            Services::CommandManifestGenerator
+          ]
+        when Manifest::Domain
+          [
+            Services::DomainGenerator,
+            Services::DomainConfigGenerator,
+            Services::DomainManifestGenerator
+          ]
+        when Manifest::Organization
+          [
+            Services::OrganizationGenerator,
+            Services::OrganizationConfigGenerator,
+            Services::OrganizationManifestGenerator
+          ]
+        when Manifest::Entity
+          [
+            Services::EntityGenerator,
+            Services::EntityVariantsGenerator,
+            Services::EntityManifestGenerator
+          ]
+        when Manifest::Model
+          [
+            Services::ModelGenerator,
+            Services::ModelVariantsGenerator,
+            Services::ModelManifestGenerator
+          ]
+        when Manifest::Error
+          Services::ErrorGenerator
+        when Manifest::ProcessorClass
+          Services::ProcessorClassGenerator
+        when Manifest::RootManifest
+          Services::RootManifestGenerator
+        else
+          # :nocov:
+          raise "Not sure how build a generator for a #{manifest}"
+          # :nocov:
         end
       end
 

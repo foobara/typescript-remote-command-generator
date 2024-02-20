@@ -84,6 +84,10 @@ module Foobara
           super
         end
 
+        def templates_dir
+          "#{__dir__}/../../../templates"
+        end
+
         def parent
           if relevant_manifest.parent
             generator_for(relevant_manifest.parent)
@@ -157,20 +161,6 @@ module Foobara
           path[-1] = path.last.gsub(/\.ts$/, "")
 
           path
-        end
-
-        def method_missing(method_name, *, &)
-          if relevant_manifest.respond_to?(method_name)
-            relevant_manifest.send(method_name, *, &)
-          else
-            # :nocov:
-            super
-            # :nocov:
-          end
-        end
-
-        def respond_to_missing?(method_name, include_private = false)
-          relevant_manifest.respond_to?(method_name, include_private)
         end
 
         def foobara_type_to_ts_type(

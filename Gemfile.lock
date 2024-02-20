@@ -6,6 +6,12 @@ GIT
     foobara (0.0.1)
 
 GIT
+  remote: https://github.com/foobara/files-generator.git
+  revision: 9fc145d4ecd65cddd632c0a709a9f4e99475dd0d
+  specs:
+    foobara-files-generator (0.1.0)
+
+GIT
   remote: https://github.com/foobara/rubocop-rules.git
   revision: ea100ea86b708a441ef66ce0861dc72237316f2a
   specs:
@@ -24,11 +30,6 @@ GIT
   revision: b2e2e9c04d866b26c21b6e223bc359c76fcea0f8
   specs:
     foobara-util (0.1.0)
-
-PATH
-  remote: ../files-generator
-  specs:
-    foobara-files-generator (0.1.0)
 
 PATH
   remote: .

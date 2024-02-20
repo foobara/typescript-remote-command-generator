@@ -1,7 +1,7 @@
 require_relative "src/typescript_remote_command_generator/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "typescript-remote-command-generator"
+  spec.name = "foobara-typescript-remote-command-generator"
   spec.version = Foobara::TypescriptRemoteCommandGenerator::Version::VERSION
   spec.authors = ["Miles Georgi"]
   spec.email = ["azimux@gmail.com"]

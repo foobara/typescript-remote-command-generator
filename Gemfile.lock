@@ -34,7 +34,7 @@ GIT
 PATH
   remote: .
   specs:
-    typescript-remote-command-generator (0.0.1)
+    foobara-typescript-remote-command-generator (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -147,6 +147,7 @@ DEPENDENCIES
   foobara-files-generator!
   foobara-rubocop-rules!
   foobara-spec-helpers!
+  foobara-typescript-remote-command-generator!
   foobara-util!
   guard-rspec
   pry
@@ -157,7 +158,6 @@ DEPENDENCIES
   rubocop-rake
   rubocop-rspec
   simplecov
-  typescript-remote-command-generator!
 
 RUBY VERSION
    ruby 3.2.2p53

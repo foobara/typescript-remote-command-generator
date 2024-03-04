@@ -20,6 +20,8 @@ gem "pry-byebug"
 gem "rake"
 gem "rspec"
 gem "rspec-its"
+# Pinning this because of broken Gemspec/RequiredRubyVersion rule which crashes even if disabled
+gem "rubocop", "~> 1.60.2"
 gem "rubocop-rake"
 gem "rubocop-rspec"
 gem "simplecov"

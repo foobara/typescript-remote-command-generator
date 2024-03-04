@@ -18,6 +18,7 @@ module Foobara
 
       def execute
         generate_typescript
+        generate_generated_files_json
         delete_old_files_if_needed
         write_all_files_to_disk
 

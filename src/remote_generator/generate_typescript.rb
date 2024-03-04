@@ -23,8 +23,6 @@ module Foobara
           generate_element
         end
 
-        generate_generated_files_json
-
         paths_to_source_code
       end
 

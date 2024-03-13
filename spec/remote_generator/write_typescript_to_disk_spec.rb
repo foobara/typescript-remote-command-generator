@@ -11,9 +11,17 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   it "contains base files" do
     expect(outcome).to be_success
 
-    expect(result["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
-    expect(result["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
+    expect(command.paths_to_source_code["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
+    expect(command.paths_to_source_code["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
 
     expect(File.exist?("#{output_directory}/foobara-generated.json")).to be true
+  end
+
+  context "without a manifest or url" do
+    let(:raw_manifest) { nil }
+
+    it "is not successful" do
+      expect(outcome).to_not be_success
+    end
   end
 end

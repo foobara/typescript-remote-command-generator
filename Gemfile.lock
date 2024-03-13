@@ -1,13 +1,13 @@
 GIT
   remote: foobara
-  revision: ec078ef1126bf4528242b2c8c242c78ef93ab566
+  revision: d805289417ebfac955e16f89568f7fd1f8961a29
   branch: main
   specs:
     foobara (0.0.1)
 
 GIT
   remote: https://github.com/foobara/files-generator.git
-  revision: b7a8c8a40f2be336789488cb044f9a0e97be4176
+  revision: 8e9439014484892bb49a1d720399d924f853baea
   specs:
     foobara-files-generator (0.1.0)
 
@@ -116,7 +116,7 @@ GEM
       rubocop-ast (>= 1.30.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.31.1)
+    rubocop-ast (1.31.2)
       parser (>= 3.3.0.4)
     rubocop-capybara (2.20.0)
       rubocop (~> 1.41)

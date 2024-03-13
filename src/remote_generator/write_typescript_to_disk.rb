@@ -3,6 +3,12 @@ require_relative "generate_typescript"
 module Foobara
   module RemoteGenerator
     class WriteTypescriptToDisk < Generators::WriteGeneratedFilesToDisk
+      class << self
+        def generator_key
+          "typescript-remote-commands"
+        end
+      end
+
       # TODO: shouldn't have to qualify DataError like this
       class MissingManifestError < Value::DataError
         class << self

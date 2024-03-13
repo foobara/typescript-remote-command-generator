@@ -14,7 +14,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     expect(command.paths_to_source_code["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
     expect(command.paths_to_source_code["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
 
-    expect(File.exist?("#{output_directory}/foobara-generated.json")).to be true
+    expect(File.exist?("#{output_directory}/typescript-remote-commands-generator.json")).to be true
   end
 
   context "without a manifest or url" do

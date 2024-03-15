@@ -46,7 +46,7 @@ module Foobara
           elsif type.type.to_sym == :attributes
             type.attribute_declarations.values.map do |attribute_declaration|
               model_generators(attribute_declaration, false)
-            end.flatten
+            end.flatten.uniq
           else
             # TODO: handle tuples, associative arrays, arrays
             []

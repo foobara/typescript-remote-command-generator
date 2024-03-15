@@ -163,9 +163,11 @@ module Foobara
           path
         end
 
+        # TODO: relocate this to a more reusable place
         def foobara_type_to_ts_type(
           type_declaration,
-          dependency_group:, name: nil,
+          dependency_group:,
+          name: nil,
           association_depth: AssociationDepth::AMBIGUOUS,
           initial: true
         )

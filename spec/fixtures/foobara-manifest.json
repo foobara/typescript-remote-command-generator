@@ -3895,6 +3895,3198 @@
         "symbol"
       ]
     },
+    "NestedModels3::CreateNested": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "attr1": {
+            "element_type_declarations": {
+              "outer_model": {
+                "type": "NestedModels3::OuterModel"
+              }
+            },
+            "type": "attributes"
+          },
+          "outer_model": {
+            "type": "NestedModels3::OuterModel"
+          },
+          "some_array": {
+            "element_type_declaration": {
+              "type": "NestedModels3::OuterModel"
+            },
+            "type": "array"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterModel",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.cannot_cast",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_model": {
+                    "type": "NestedModels3::OuterModel"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.attr1.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.attr1.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.attr1.foo.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.attr1.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.attr1.foo.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.attr1.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.attr1.inner_entity.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.attr1.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.attr1.inner_entity.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.attr1.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.outer_model.attr1.unexpected_attributes",
+          "path": [
+            "attr1",
+            "outer_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.attr1.outer_model.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "foo": {
+                        "type": "string"
+                      },
+                      "inner_entity": {
+                        "type": "NestedModels3::InnerEntity"
+                      }
+                    },
+                    "required": [
+                      "inner_entity",
+                      "foo"
+                    ],
+                    "type": "attributes"
+                  },
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  },
+                  "some_array": {
+                    "element_type_declaration": {
+                      "type": "NestedModels3::InnerEntity"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "some_array",
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.foo.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.foo.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.inner_entity.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.inner_entity.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.some_array.#.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.some_array.#.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.some_array.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.outer_model.some_array.cannot_cast",
+          "path": [
+            "attr1",
+            "outer_model",
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.outer_model.some_array.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.outer_model.some_array.missing_required_attribute",
+          "path": [
+            "attr1",
+            "outer_model",
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.outer_model.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.outer_model.unexpected_attributes",
+          "path": [
+            "attr1",
+            "outer_model"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              },
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              },
+              "some_array": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.unexpected_attributes",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_model": {
+                "type": "NestedModels3::OuterModel"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "outer_model": {
+                        "type": "NestedModels3::OuterModel"
+                      }
+                    },
+                    "type": "attributes"
+                  },
+                  "outer_model": {
+                    "type": "NestedModels3::OuterModel"
+                  },
+                  "some_array": {
+                    "element_type_declaration": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.attr1.cannot_cast",
+          "path": [
+            "outer_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.attr1.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.attr1.foo.cannot_cast",
+          "path": [
+            "outer_model",
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.attr1.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.attr1.foo.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.attr1.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.attr1.inner_entity.cannot_cast",
+          "path": [
+            "outer_model",
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.attr1.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.attr1.inner_entity.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.attr1.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.outer_model.attr1.unexpected_attributes",
+          "path": [
+            "outer_model",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.outer_model.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.cannot_cast",
+          "path": [
+            "outer_model"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "foo": {
+                        "type": "string"
+                      },
+                      "inner_entity": {
+                        "type": "NestedModels3::InnerEntity"
+                      }
+                    },
+                    "required": [
+                      "inner_entity",
+                      "foo"
+                    ],
+                    "type": "attributes"
+                  },
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  },
+                  "some_array": {
+                    "element_type_declaration": {
+                      "type": "NestedModels3::InnerEntity"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "some_array",
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.foo.cannot_cast",
+          "path": [
+            "outer_model",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.foo.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.inner_entity.cannot_cast",
+          "path": [
+            "outer_model",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.inner_entity.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.missing_required_attribute",
+          "path": [
+            "outer_model"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.some_array.#.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.some_array.#.cannot_cast",
+          "path": [
+            "outer_model",
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.some_array.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_model.some_array.cannot_cast",
+          "path": [
+            "outer_model",
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_model.some_array.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.outer_model.some_array.missing_required_attribute",
+          "path": [
+            "outer_model",
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.outer_model.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.outer_model.unexpected_attributes",
+          "path": [
+            "outer_model"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              },
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              },
+              "some_array": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_array.#.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.attr1.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.attr1.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.attr1.foo.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.attr1.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.attr1.foo.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.attr1.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.attr1.inner_entity.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.attr1.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.attr1.inner_entity.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.attr1.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.some_array.#.attr1.unexpected_attributes",
+          "path": [
+            "some_array",
+            "#",
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_array.#.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.cannot_cast",
+          "path": [
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "foo": {
+                        "type": "string"
+                      },
+                      "inner_entity": {
+                        "type": "NestedModels3::InnerEntity"
+                      }
+                    },
+                    "required": [
+                      "inner_entity",
+                      "foo"
+                    ],
+                    "type": "attributes"
+                  },
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  },
+                  "some_array": {
+                    "element_type_declaration": {
+                      "type": "NestedModels3::InnerEntity"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "some_array",
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.foo.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.foo.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.inner_entity.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.inner_entity.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.some_array.#.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.some_array.#.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.some_array.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.some_array.cannot_cast",
+          "path": [
+            "some_array",
+            "#",
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.#.some_array.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.#.some_array.missing_required_attribute",
+          "path": [
+            "some_array",
+            "#",
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.some_array.#.unexpected_attributes",
+          "path": [
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              },
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              },
+              "some_array": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.some_array.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.cannot_cast",
+          "path": [
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::OuterModel"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "outer_model": {
+                    "type": "NestedModels3::OuterModel"
+                  }
+                },
+                "type": "attributes"
+              },
+              "outer_model": {
+                "type": "NestedModels3::OuterModel"
+              },
+              "some_array": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::OuterModel"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "reference": "NestedModels3::CreateNested",
+      "result_type": {
+        "type": "NestedModels3::OuterEntity"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::CreateNested",
+      "scoped_full_path": [
+        "NestedModels3",
+        "CreateNested"
+      ],
+      "scoped_name": "CreateNested",
+      "scoped_path": [
+        "CreateNested"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "CreateNested",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "NestedModels3::OuterModel",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNested": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindNested::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "reference": "NestedModels3::FindNested",
+      "result_type": {
+        "type": "NestedModels3::OuterEntity"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindNested",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNested"
+      ],
+      "scoped_name": "FindNested",
+      "scoped_path": [
+        "FindNested"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNested",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNestedAggregate": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindNested::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "pre_commit_transformers": [
+        {
+          "domain": "Foobara::CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "organization": "Foobara",
+          "parent": [
+            "domain",
+            "Foobara::CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_full_path": [
+            "Foobara",
+            "CommandConnectors",
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_name": "Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_path": [
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "LoadAggregatesPreCommitTransformer"
+        }
+      ],
+      "reference": "NestedModels3::FindNestedAggregate",
+      "result_type": {
+        "type": "NestedModels3::OuterEntity"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindNestedAggregate",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNestedAggregate"
+      ],
+      "scoped_name": "FindNestedAggregate",
+      "scoped_path": [
+        "FindNestedAggregate"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedAggregate",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer",
+        "Foobara::CommandConnectors::Serializers::AggregateSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNestedAtom": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindNested::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "reference": "NestedModels3::FindNestedAtom",
+      "result_type": {
+        "type": "NestedModels3::OuterEntity"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindNestedAtom",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNestedAtom"
+      ],
+      "scoped_name": "FindNestedAtom",
+      "scoped_path": [
+        "FindNestedAtom"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedAtom",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer",
+        "Foobara::CommandConnectors::Serializers::AtomicSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNestedButPutInAttributes": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindNestedButPutInAttributes::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "reference": "NestedModels3::FindNestedButPutInAttributes",
+      "result_type": {
+        "element_type_declarations": {
+          "foo": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindNestedButPutInAttributes",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNestedButPutInAttributes"
+      ],
+      "scoped_name": "FindNestedButPutInAttributes",
+      "scoped_path": [
+        "FindNestedButPutInAttributes"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedButPutInAttributes",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNestedButPutInAttributesAggregate": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindNestedButPutInAttributes::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "pre_commit_transformers": [
+        {
+          "domain": "Foobara::CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "organization": "Foobara",
+          "parent": [
+            "domain",
+            "Foobara::CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_full_path": [
+            "Foobara",
+            "CommandConnectors",
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_name": "Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_path": [
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "LoadAggregatesPreCommitTransformer"
+        }
+      ],
+      "reference": "NestedModels3::FindNestedButPutInAttributesAggregate",
+      "result_type": {
+        "element_type_declarations": {
+          "foo": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindNestedButPutInAttributesAggregate",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNestedButPutInAttributesAggregate"
+      ],
+      "scoped_name": "FindNestedButPutInAttributesAggregate",
+      "scoped_path": [
+        "FindNestedButPutInAttributesAggregate"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedButPutInAttributesAggregate",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer",
+        "Foobara::CommandConnectors::Serializers::AggregateSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNestedButPutInAttributesAtom": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindNestedButPutInAttributes::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "reference": "NestedModels3::FindNestedButPutInAttributesAtom",
+      "result_type": {
+        "element_type_declarations": {
+          "foo": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindNestedButPutInAttributesAtom",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNestedButPutInAttributesAtom"
+      ],
+      "scoped_name": "FindNestedButPutInAttributesAtom",
+      "scoped_path": [
+        "FindNestedButPutInAttributesAtom"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindNestedButPutInAttributesAtom",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer",
+        "Foobara::CommandConnectors::Serializers::AtomicSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindOuterModelForOuterEntity": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindOuterModelForOuterEntity::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "reference": "NestedModels3::FindOuterModelForOuterEntity",
+      "result_type": {
+        "type": "NestedModels3::OuterModel"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterModel"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindOuterModelForOuterEntity",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindOuterModelForOuterEntity"
+      ],
+      "scoped_name": "FindOuterModelForOuterEntity",
+      "scoped_path": [
+        "FindOuterModelForOuterEntity"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindOuterModelForOuterEntity",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "NestedModels3::OuterModel",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindOuterModelForOuterEntityAggregate": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindOuterModelForOuterEntity::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "pre_commit_transformers": [
+        {
+          "domain": "Foobara::CommandConnectors",
+          "name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "organization": "Foobara",
+          "parent": [
+            "domain",
+            "Foobara::CommandConnectors"
+          ],
+          "processor_type": "transformer",
+          "reference": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_category": "processor_class",
+          "scoped_full_name": "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_full_path": [
+            "Foobara",
+            "CommandConnectors",
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_name": "Transformers::LoadAggregatesPreCommitTransformer",
+          "scoped_path": [
+            "Transformers",
+            "LoadAggregatesPreCommitTransformer"
+          ],
+          "scoped_prefix": [
+            "Transformers"
+          ],
+          "scoped_short_name": "LoadAggregatesPreCommitTransformer"
+        }
+      ],
+      "reference": "NestedModels3::FindOuterModelForOuterEntityAggregate",
+      "result_type": {
+        "type": "NestedModels3::OuterModel"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterModel"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindOuterModelForOuterEntityAggregate",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindOuterModelForOuterEntityAggregate"
+      ],
+      "scoped_name": "FindOuterModelForOuterEntityAggregate",
+      "scoped_path": [
+        "FindOuterModelForOuterEntityAggregate"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindOuterModelForOuterEntityAggregate",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer",
+        "Foobara::CommandConnectors::Serializers::AggregateSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "NestedModels3::OuterModel",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindOuterModelForOuterEntityAtom": {
+      "description": null,
+      "domain": "NestedModels3",
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_type": {
+        "element_type_declarations": {
+          "outer_entity": {
+            "type": "NestedModels3::OuterEntity"
+          }
+        },
+        "type": "attributes"
+      },
+      "inputs_types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "outer_entity": {
+                    "type": "NestedModels3::OuterEntity"
+                  }
+                },
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.outer_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.outer_entity.cannot_cast",
+          "path": [
+            "outer_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "outer_entity": {
+                "type": "NestedModels3::OuterEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "runtime.outer_entity_not_found": {
+          "category": "runtime",
+          "error": "NestedModels3::FindOuterModelForOuterEntity::OuterEntityNotFoundError",
+          "key": "runtime.outer_entity_not_found",
+          "symbol": "outer_entity_not_found"
+        }
+      },
+      "reference": "NestedModels3::FindOuterModelForOuterEntityAtom",
+      "result_type": {
+        "type": "NestedModels3::OuterModel"
+      },
+      "result_types_depended_on": [
+        "NestedModels3::OuterModel"
+      ],
+      "scoped_category": "command",
+      "scoped_full_name": "NestedModels3::FindOuterModelForOuterEntityAtom",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindOuterModelForOuterEntityAtom"
+      ],
+      "scoped_name": "FindOuterModelForOuterEntityAtom",
+      "scoped_path": [
+        "FindOuterModelForOuterEntityAtom"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "FindOuterModelForOuterEntityAtom",
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer",
+        "Foobara::CommandConnectors::Serializers::AtomicSerializer"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterEntity",
+        "NestedModels3::OuterModel",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
     "NestedModels::CreateNested": {
       "description": null,
       "domain": "NestedModels",
@@ -13257,6 +16449,44 @@
         "NestedModels2::OuterModel"
       ]
     },
+    "NestedModels3": {
+      "commands": [
+        "NestedModels3::CreateNested",
+        "NestedModels3::FindNested",
+        "NestedModels3::FindNestedAggregate",
+        "NestedModels3::FindNestedAtom",
+        "NestedModels3::FindNestedButPutInAttributes",
+        "NestedModels3::FindNestedButPutInAttributesAggregate",
+        "NestedModels3::FindNestedButPutInAttributesAtom",
+        "NestedModels3::FindOuterModelForOuterEntity",
+        "NestedModels3::FindOuterModelForOuterEntityAggregate",
+        "NestedModels3::FindOuterModelForOuterEntityAtom"
+      ],
+      "domain": "NestedModels3",
+      "organization": "global_organization",
+      "parent": [
+        "organization",
+        "global_organization"
+      ],
+      "reference": "NestedModels3",
+      "scoped_category": "domain",
+      "scoped_full_name": "NestedModels3",
+      "scoped_full_path": [
+        "NestedModels3"
+      ],
+      "scoped_name": "NestedModels3",
+      "scoped_path": [
+        "NestedModels3"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "NestedModels3",
+      "types": [
+        "NestedModels3::InnerEntity",
+        "NestedModels3::InnerModel",
+        "NestedModels3::OuterEntity",
+        "NestedModels3::OuterModel"
+      ]
+    },
     "NestedModelsNoCollisions": {
       "commands": [
         "NestedModelsNoCollisions::CreateNestedNoCollisions",
@@ -13578,6 +16808,144 @@
         "array",
         "attributes",
         "duck",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNested::OuterEntityNotFoundError": {
+      "category": "runtime",
+      "context_type_declaration": {
+        "element_type_declarations": {
+          "criteria": {
+            "type": "duck"
+          },
+          "data_path": {
+            "type": "string"
+          },
+          "entity_class": {
+            "type": "string"
+          }
+        },
+        "type": "attributes"
+      },
+      "domain": "NestedModels3",
+      "is_fatal": true,
+      "organization": "global_organization",
+      "parent": [
+        "command",
+        "NestedModels3::FindNested"
+      ],
+      "reference": "NestedModels3::FindNested::OuterEntityNotFoundError",
+      "scoped_category": "error",
+      "scoped_full_name": "NestedModels3::FindNested::OuterEntityNotFoundError",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNested",
+        "OuterEntityNotFoundError"
+      ],
+      "scoped_name": "OuterEntityNotFoundError",
+      "scoped_path": [
+        "OuterEntityNotFoundError"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "OuterEntityNotFoundError",
+      "symbol": "outer_entity_not_found",
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindNestedButPutInAttributes::OuterEntityNotFoundError": {
+      "category": "runtime",
+      "context_type_declaration": {
+        "element_type_declarations": {
+          "criteria": {
+            "type": "duck"
+          },
+          "data_path": {
+            "type": "string"
+          },
+          "entity_class": {
+            "type": "string"
+          }
+        },
+        "type": "attributes"
+      },
+      "domain": "NestedModels3",
+      "is_fatal": true,
+      "organization": "global_organization",
+      "parent": [
+        "command",
+        "NestedModels3::FindNestedButPutInAttributes"
+      ],
+      "reference": "NestedModels3::FindNestedButPutInAttributes::OuterEntityNotFoundError",
+      "scoped_category": "error",
+      "scoped_full_name": "NestedModels3::FindNestedButPutInAttributes::OuterEntityNotFoundError",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindNestedButPutInAttributes",
+        "OuterEntityNotFoundError"
+      ],
+      "scoped_name": "OuterEntityNotFoundError",
+      "scoped_path": [
+        "OuterEntityNotFoundError"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "OuterEntityNotFoundError",
+      "symbol": "outer_entity_not_found",
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::FindOuterModelForOuterEntity::OuterEntityNotFoundError": {
+      "category": "runtime",
+      "context_type_declaration": {
+        "element_type_declarations": {
+          "criteria": {
+            "type": "duck"
+          },
+          "data_path": {
+            "type": "string"
+          },
+          "entity_class": {
+            "type": "string"
+          }
+        },
+        "type": "attributes"
+      },
+      "domain": "NestedModels3",
+      "is_fatal": true,
+      "organization": "global_organization",
+      "parent": [
+        "command",
+        "NestedModels3::FindOuterModelForOuterEntity"
+      ],
+      "reference": "NestedModels3::FindOuterModelForOuterEntity::OuterEntityNotFoundError",
+      "scoped_category": "error",
+      "scoped_full_name": "NestedModels3::FindOuterModelForOuterEntity::OuterEntityNotFoundError",
+      "scoped_full_path": [
+        "NestedModels3",
+        "FindOuterModelForOuterEntity",
+        "OuterEntityNotFoundError"
+      ],
+      "scoped_name": "OuterEntityNotFoundError",
+      "scoped_path": [
+        "OuterEntityNotFoundError"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "OuterEntityNotFoundError",
+      "symbol": "outer_entity_not_found",
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
         "symbol"
       ]
     },
@@ -14652,6 +18020,7 @@
         "FoobaraAi",
         "NestedModels",
         "NestedModels2",
+        "NestedModels3",
         "NestedModelsNoCollisions",
         "SomeDomainWithoutOrg",
         "global_organization::global_domain"
@@ -19485,6 +22854,1316 @@
       ],
       "types_depended_on": [
         "NestedModels2::InnerEntity",
+        "array",
+        "attributes",
+        "duck",
+        "model",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::InnerEntity": {
+      "attributes_type": {
+        "element_type_declarations": {
+          "attr1": {
+            "element_type_declarations": {
+              "inner_model": {
+                "type": "NestedModels3::InnerModel"
+              }
+            },
+            "required": [
+              "inner_model"
+            ],
+            "type": "attributes"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "inner_model": {
+            "type": "NestedModels3::InnerModel"
+          },
+          "some_array": {
+            "element_type_declaration": {
+              "type": "NestedModels3::InnerModel"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "attr1",
+          "some_array",
+          "inner_model"
+        ],
+        "type": "attributes"
+      },
+      "base_type": "entity",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "attr1": {
+              "element_type_declarations": {
+                "inner_model": {
+                  "type": "NestedModels3::InnerModel"
+                }
+              },
+              "required": [
+                "inner_model"
+              ],
+              "type": "attributes"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "inner_model": {
+              "type": "NestedModels3::InnerModel"
+            },
+            "some_array": {
+              "element_type_declaration": {
+                "type": "NestedModels3::InnerModel"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "attr1",
+            "some_array",
+            "inner_model"
+          ],
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Entity",
+        "model_class": "NestedModels3::Types::InnerEntity",
+        "model_module": "NestedModels3::Types",
+        "name": "InnerEntity",
+        "primary_key": "id",
+        "type": "entity"
+      },
+      "description": null,
+      "domain": "NestedModels3",
+      "domain_name": "NestedModels3",
+      "entity_name": "InnerEntity",
+      "model_base_class": "Foobara::Entity",
+      "model_class": "NestedModels3::Types::InnerEntity",
+      "model_name": "InnerEntity",
+      "name": "InnerEntity",
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        }
+      },
+      "primary_key_attribute": "id",
+      "primary_key_type": {
+        "type": "integer"
+      },
+      "processors": {
+        "caster_classes": [
+          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
+          "entity::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "entity::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "NestedModels3::InnerEntity",
+      "scoped_category": "type",
+      "scoped_full_name": "NestedModels3::InnerEntity",
+      "scoped_full_path": [
+        "NestedModels3",
+        "InnerEntity"
+      ],
+      "scoped_name": "InnerEntity",
+      "scoped_path": [
+        "InnerEntity"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "InnerEntity",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "NestedModels3::Types::InnerEntity"
+      ],
+      "types_depended_on": [
+        "NestedModels3::InnerModel",
+        "array",
+        "attributes",
+        "duck",
+        "entity",
+        "integer",
+        "symbol"
+      ]
+    },
+    "NestedModels3::InnerModel": {
+      "attributes_type": {
+        "element_type_declarations": {
+          "attr1": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "foo"
+            ],
+            "type": "attributes"
+          },
+          "foo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "attr1",
+          "foo"
+        ],
+        "type": "attributes"
+      },
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "attr1": {
+              "element_type_declarations": {
+                "foo": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "foo"
+              ],
+              "type": "attributes"
+            },
+            "foo": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "attr1",
+            "foo"
+          ],
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "NestedModels3::Types::InnerModel",
+        "model_module": "NestedModels3::Types",
+        "name": "InnerModel",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "NestedModels3",
+      "domain_name": "NestedModels3",
+      "model_base_class": "Foobara::Model",
+      "model_class": "NestedModels3::Types::InnerModel",
+      "model_name": "InnerModel",
+      "name": "InnerModel",
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.cannot_cast",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.foo.cannot_cast",
+          "path": [
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.foo.missing_required_attribute",
+          "path": [
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.missing_required_attribute",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.unexpected_attributes",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "foo": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "foo"
+                    ],
+                    "type": "attributes"
+                  },
+                  "foo": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.foo.cannot_cast",
+          "path": [
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.foo.missing_required_attribute",
+          "path": [
+            "foo"
+          ],
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.missing_required_attribute",
+          "processor_class": "Foobara::Value::Processor::Pipeline",
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "foo"
+                ],
+                "type": "attributes"
+              },
+              "foo": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "NestedModels3::InnerModel",
+      "scoped_category": "type",
+      "scoped_full_name": "NestedModels3::InnerModel",
+      "scoped_full_path": [
+        "NestedModels3",
+        "InnerModel"
+      ],
+      "scoped_name": "InnerModel",
+      "scoped_path": [
+        "InnerModel"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "InnerModel",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "NestedModels3::Types::InnerModel"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "model",
+        "string",
+        "symbol"
+      ]
+    },
+    "NestedModels3::OuterEntity": {
+      "associations": {
+        "attr1.outer_model.attr1.inner_entity": "NestedModels3::InnerEntity",
+        "attr1.outer_model.inner_entity": "NestedModels3::InnerEntity",
+        "attr1.outer_model.some_array.#": "NestedModels3::InnerEntity",
+        "outer_model.attr1.inner_entity": "NestedModels3::InnerEntity",
+        "outer_model.inner_entity": "NestedModels3::InnerEntity",
+        "outer_model.some_array.#": "NestedModels3::InnerEntity",
+        "some_array.#.attr1.inner_entity": "NestedModels3::InnerEntity",
+        "some_array.#.inner_entity": "NestedModels3::InnerEntity",
+        "some_array.#.some_array.#": "NestedModels3::InnerEntity"
+      },
+      "attributes_type": {
+        "element_type_declarations": {
+          "attr1": {
+            "element_type_declarations": {
+              "outer_model": {
+                "type": "NestedModels3::OuterModel"
+              }
+            },
+            "required": [
+              "outer_model"
+            ],
+            "type": "attributes"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "outer_model": {
+            "type": "NestedModels3::OuterModel"
+          },
+          "some_array": {
+            "element_type_declaration": {
+              "type": "NestedModels3::OuterModel"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "attr1",
+          "some_array",
+          "outer_model"
+        ],
+        "type": "attributes"
+      },
+      "base_type": "entity",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "attr1": {
+              "element_type_declarations": {
+                "outer_model": {
+                  "type": "NestedModels3::OuterModel"
+                }
+              },
+              "required": [
+                "outer_model"
+              ],
+              "type": "attributes"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "outer_model": {
+              "type": "NestedModels3::OuterModel"
+            },
+            "some_array": {
+              "element_type_declaration": {
+                "type": "NestedModels3::OuterModel"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "attr1",
+            "some_array",
+            "outer_model"
+          ],
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Entity",
+        "model_class": "NestedModels3::Types::OuterEntity",
+        "model_module": "NestedModels3::Types",
+        "name": "OuterEntity",
+        "primary_key": "id",
+        "type": "entity"
+      },
+      "deep_associations": {
+        "attr1.outer_model.attr1.inner_entity": "NestedModels3::InnerEntity",
+        "attr1.outer_model.inner_entity": "NestedModels3::InnerEntity",
+        "attr1.outer_model.some_array.#": "NestedModels3::InnerEntity",
+        "outer_model.attr1.inner_entity": "NestedModels3::InnerEntity",
+        "outer_model.inner_entity": "NestedModels3::InnerEntity",
+        "outer_model.some_array.#": "NestedModels3::InnerEntity",
+        "some_array.#.attr1.inner_entity": "NestedModels3::InnerEntity",
+        "some_array.#.inner_entity": "NestedModels3::InnerEntity",
+        "some_array.#.some_array.#": "NestedModels3::InnerEntity"
+      },
+      "deep_depends_on": [
+        "NestedModels3::InnerEntity"
+      ],
+      "depends_on": [
+        "NestedModels3::InnerEntity"
+      ],
+      "description": null,
+      "domain": "NestedModels3",
+      "domain_name": "NestedModels3",
+      "entity_name": "OuterEntity",
+      "model_base_class": "Foobara::Entity",
+      "model_class": "NestedModels3::Types::OuterEntity",
+      "model_name": "OuterEntity",
+      "name": "OuterEntity",
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "outer_model": {
+                          "type": "NestedModels3::OuterModel"
+                        }
+                      },
+                      "required": [
+                        "outer_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "outer_model": {
+                      "type": "NestedModels3::OuterModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::OuterModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "outer_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::OuterEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "OuterEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        }
+      },
+      "primary_key_attribute": "id",
+      "primary_key_type": {
+        "type": "integer"
+      },
+      "processors": {
+        "caster_classes": [
+          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
+          "entity::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "entity::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "NestedModels3::OuterEntity",
+      "scoped_category": "type",
+      "scoped_full_name": "NestedModels3::OuterEntity",
+      "scoped_full_path": [
+        "NestedModels3",
+        "OuterEntity"
+      ],
+      "scoped_name": "OuterEntity",
+      "scoped_path": [
+        "OuterEntity"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "OuterEntity",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "NestedModels3::Types::OuterEntity"
+      ],
+      "types_depended_on": [
+        "NestedModels3::OuterModel",
+        "array",
+        "attributes",
+        "duck",
+        "entity",
+        "integer",
+        "symbol"
+      ]
+    },
+    "NestedModels3::OuterModel": {
+      "attributes_type": {
+        "element_type_declarations": {
+          "attr1": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              }
+            },
+            "required": [
+              "inner_entity",
+              "foo"
+            ],
+            "type": "attributes"
+          },
+          "foo": {
+            "type": "string"
+          },
+          "inner_entity": {
+            "type": "NestedModels3::InnerEntity"
+          },
+          "some_array": {
+            "element_type_declaration": {
+              "type": "NestedModels3::InnerEntity"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "attr1",
+          "some_array",
+          "inner_entity",
+          "foo"
+        ],
+        "type": "attributes"
+      },
+      "base_type": "model",
+      "declaration_data": {
+        "attributes_declaration": {
+          "element_type_declarations": {
+            "attr1": {
+              "element_type_declarations": {
+                "foo": {
+                  "type": "string"
+                },
+                "inner_entity": {
+                  "type": "NestedModels3::InnerEntity"
+                }
+              },
+              "required": [
+                "inner_entity",
+                "foo"
+              ],
+              "type": "attributes"
+            },
+            "foo": {
+              "type": "string"
+            },
+            "inner_entity": {
+              "type": "NestedModels3::InnerEntity"
+            },
+            "some_array": {
+              "element_type_declaration": {
+                "type": "NestedModels3::InnerEntity"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "attr1",
+            "some_array",
+            "inner_entity",
+            "foo"
+          ],
+          "type": "attributes"
+        },
+        "model_base_class": "Foobara::Model",
+        "model_class": "NestedModels3::Types::OuterModel",
+        "model_module": "NestedModels3::Types",
+        "name": "OuterModel",
+        "type": "model"
+      },
+      "description": null,
+      "domain": "NestedModels3",
+      "domain_name": "NestedModels3",
+      "model_base_class": "Foobara::Model",
+      "model_class": "NestedModels3::Types::OuterModel",
+      "model_name": "OuterModel",
+      "name": "OuterModel",
+      "organization": "global_organization",
+      "organization_name": "global_organization",
+      "parent": [
+        "domain",
+        "NestedModels3"
+      ],
+      "possible_errors": {
+        "data.attr1.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.cannot_cast",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.foo.cannot_cast",
+          "path": [
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.foo.missing_required_attribute",
+          "path": [
+            "attr1",
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.attr1.inner_entity.cannot_cast",
+          "path": [
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.attr1.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.inner_entity.missing_required_attribute",
+          "path": [
+            "attr1",
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "required": [
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.attr1.missing_required_attribute",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.attr1.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.attr1.unexpected_attributes",
+          "path": [
+            "attr1"
+          ],
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        },
+        "data.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.cannot_cast",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declarations": {
+                  "attr1": {
+                    "element_type_declarations": {
+                      "foo": {
+                        "type": "string"
+                      },
+                      "inner_entity": {
+                        "type": "NestedModels3::InnerEntity"
+                      }
+                    },
+                    "required": [
+                      "inner_entity",
+                      "foo"
+                    ],
+                    "type": "attributes"
+                  },
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  },
+                  "some_array": {
+                    "element_type_declaration": {
+                      "type": "NestedModels3::InnerEntity"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "attr1",
+                  "some_array",
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.foo.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.foo.cannot_cast",
+          "path": [
+            "foo"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.foo.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.foo.missing_required_attribute",
+          "path": [
+            "foo"
+          ],
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.inner_entity.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.inner_entity.cannot_cast",
+          "path": [
+            "inner_entity"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.inner_entity.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.inner_entity.missing_required_attribute",
+          "path": [
+            "inner_entity"
+          ],
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.missing_required_attribute",
+          "processor_class": "Foobara::Value::Processor::Pipeline",
+          "processor_manifest_data": {
+            "pipeline": null
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.some_array.#.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.#.cannot_cast",
+          "path": [
+            "some_array",
+            "#"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "attributes_declaration": {
+                  "element_type_declarations": {
+                    "attr1": {
+                      "element_type_declarations": {
+                        "inner_model": {
+                          "type": "NestedModels3::InnerModel"
+                        }
+                      },
+                      "required": [
+                        "inner_model"
+                      ],
+                      "type": "attributes"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "inner_model": {
+                      "type": "NestedModels3::InnerModel"
+                    },
+                    "some_array": {
+                      "element_type_declaration": {
+                        "type": "NestedModels3::InnerModel"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "attr1",
+                    "some_array",
+                    "inner_model"
+                  ],
+                  "type": "attributes"
+                },
+                "model_base_class": "Foobara::Entity",
+                "model_class": "NestedModels3::Types::InnerEntity",
+                "model_module": "NestedModels3::Types",
+                "name": "InnerEntity",
+                "primary_key": "id",
+                "type": "entity"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.cannot_cast": {
+          "category": "data",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "key": "data.some_array.cannot_cast",
+          "path": [
+            "some_array"
+          ],
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "cannot_cast"
+        },
+        "data.some_array.missing_required_attribute": {
+          "category": "data",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "key": "data.some_array.missing_required_attribute",
+          "path": [
+            "some_array"
+          ],
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "attr1",
+              "some_array",
+              "inner_entity",
+              "foo"
+            ]
+          },
+          "symbol": "missing_required_attribute"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "key": "data.unexpected_attributes",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "attr1": {
+                "element_type_declarations": {
+                  "foo": {
+                    "type": "string"
+                  },
+                  "inner_entity": {
+                    "type": "NestedModels3::InnerEntity"
+                  }
+                },
+                "required": [
+                  "inner_entity",
+                  "foo"
+                ],
+                "type": "attributes"
+              },
+              "foo": {
+                "type": "string"
+              },
+              "inner_entity": {
+                "type": "NestedModels3::InnerEntity"
+              },
+              "some_array": {
+                "element_type_declaration": {
+                  "type": "NestedModels3::InnerEntity"
+                },
+                "type": "array"
+              }
+            }
+          },
+          "symbol": "unexpected_attributes"
+        }
+      },
+      "processors": {
+        "caster_classes": [
+          "model::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "model::Transformers::Mutable"
+        ],
+        "validator_classes": [
+          "model::Validators::AttributesDeclaration"
+        ]
+      },
+      "reference": "NestedModels3::OuterModel",
+      "scoped_category": "type",
+      "scoped_full_name": "NestedModels3::OuterModel",
+      "scoped_full_path": [
+        "NestedModels3",
+        "OuterModel"
+      ],
+      "scoped_name": "OuterModel",
+      "scoped_path": [
+        "OuterModel"
+      ],
+      "scoped_prefix": null,
+      "scoped_short_name": "OuterModel",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::OneOf"
+      ],
+      "target_classes": [
+        "NestedModels3::Types::OuterModel"
+      ],
+      "types_depended_on": [
+        "NestedModels3::InnerEntity",
         "array",
         "attributes",
         "duck",

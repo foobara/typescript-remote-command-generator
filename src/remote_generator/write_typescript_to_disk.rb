@@ -34,6 +34,7 @@ module Foobara
         generate_generated_files_json
         delete_old_files_if_needed
         write_all_files_to_disk
+        run_post_generation_tasks
 
         stats
       end
@@ -54,6 +55,23 @@ module Foobara
         inputs = raw_manifest ? { raw_manifest: } : { manifest_url: }
 
         self.paths_to_source_code = run_subcommand!(GenerateTypescript, inputs)
+      end
+
+      def run_post_generation_tasks
+        eslint_fix
+      end
+
+      def eslint_fix
+        cmd = "npx eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+
+        Open3.popen3(cmd) do |_stdin, _stdout, stderr, wait_thr|
+          exit_status = wait_thr.value
+          unless exit_status.success?
+            # :nocov:
+            warn "WARNING: could not #{cmd}\n#{stderr.read}"
+            # :nocov:
+          end
+        end
       end
     end
   end

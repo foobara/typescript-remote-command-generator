@@ -3,7 +3,7 @@ function flatten (array: any[][]): any[] {
 }
 
 function uniq<T> (array: T[]): T[] {
-  return [...new Set(array)]
+  return Array.from(new Set(array));
 }
 
 function compact (array: any[]): any[] {

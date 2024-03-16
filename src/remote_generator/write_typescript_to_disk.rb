@@ -24,7 +24,7 @@ module Foobara
         raw_manifest :associative_array, :allow_nil
         manifest_url :string, :allow_nil
         # TODO: should be able to delete this and inherit it
-        output_directory :string, :required
+        output_directory :string, default: "src/domains"
       end
 
       depends_on GenerateTypescript

@@ -14,7 +14,7 @@ module Foobara
       def execute
         load_manifest_if_needed
 
-        generate_base_files
+        include_non_templated_files
 
         add_root_manifest_to_set_of_elements_to_generate
         add_all_commands_to_set_of_elements_to_generate
@@ -79,16 +79,6 @@ module Foobara
 
       def manifest
         @manifest ||= Manifest::RootManifest.new(manifest_data)
-      end
-
-      def generate_base_files
-        Dir["#{templates_dir}/base/**/*.ts"].each do |file_path|
-          pathname = Pathname.new(file_path)
-
-          key = pathname.relative_path_from(templates_dir)
-
-          paths_to_source_code[key.to_s] = File.read(file_path)
-        end
       end
     end
   end

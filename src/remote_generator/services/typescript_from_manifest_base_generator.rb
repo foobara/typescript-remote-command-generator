@@ -163,10 +163,23 @@ module Foobara
           path
         end
 
+        def value_to_ts_value(value)
+          case value
+          when ::String, Numeric
+            value.inspect
+          when ::Symbol
+            value.to_s.inspect
+          else
+            # :nocov:
+            raise "Not sure how to represent #{value} in typescript. Maybe implement it."
+            # :nocov:
+          end
+        end
+
         # TODO: relocate this to a more reusable place
         def foobara_type_to_ts_type(
           type_declaration,
-          dependency_group:,
+          dependency_group: self.dependency_group,
           name: nil,
           association_depth: AssociationDepth::AMBIGUOUS,
           initial: true

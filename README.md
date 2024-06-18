@@ -48,3 +48,8 @@ push git commits and the created tag, and push the `.gem` file to [rubygems.org]
 
 Bug reports and pull requests are welcome on GitHub
 at https://github.com/[USERNAME]/typescript-remote-command-generator.
+
+## License
+
+This project is licensed under your choice of the Apache-2.0 license or the MIT license.
+See [LICENSE.txt](LICENSE.txt) for more info about licensing.

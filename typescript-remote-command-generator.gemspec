@@ -8,10 +8,12 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Generates remote commands for Typescript from a foobara manifest"
   spec.homepage = "https://github.com/foobara/typescript-remote-command-generator"
-  spec.license = "none yet"
-  spec.required_ruby_version = ">= #{File.read("#{__dir__}/.ruby-version")}"
 
-  #   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  # Equivalent to SPDX License Expression: Apache-2.0 OR MIT
+  spec.license = "Apache-2.0 OR MIT"
+  spec.licenses = ["Apache-2.0", "MIT"]
+
+  spec.required_ruby_version = ">= #{File.read("#{__dir__}/.ruby-version")}"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage

@@ -66,6 +66,8 @@ module Foobara
               Services::ProcessorClassGenerator
             when Manifest::RootManifest
               Services::RootManifestGenerator
+            when Manifest::Type
+              Services::TypeGenerator
             else
               # :nocov:
               raise "Not sure how build a generator for a #{manifest}"
@@ -224,6 +226,10 @@ module Foobara
                           else
                             if type_declaration.model?
                               model_to_ts_model_name(type_declaration, association_depth:, initial:)
+                            elsif can_convert_type_declaration_to_ts_type?(type_declaration)
+                              type = type_declaration.to_type
+
+                              custom_type_to_ts_type_name(type)
                             end
                           end
                         end
@@ -243,6 +249,22 @@ module Foobara
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:
           end
+        end
+
+        def can_convert_type_declaration_to_ts_type?(type_declaration)
+          type = type_declaration.to_type
+
+          return false if BuiltinTypes.builtin_reference?(type.reference)
+
+          allowed_keys = %w[type one_of allows_nil]
+
+          declaration_data = type.declaration_data
+
+          bad_keys = declaration_data.keys - allowed_keys
+
+          return false unless bad_keys.empty?
+
+          BuiltinTypes.builtin_reference?(declaration_data["type"])
         end
 
         def attributes_to_ts_type(attributes, dependency_group:, association_depth: AssociationDepth::AMBIGUOUS)
@@ -276,6 +298,13 @@ module Foobara
                             end
 
           generator = generator_class.new(model)
+
+          dependency_group.non_colliding_type(generator)
+        end
+
+        def custom_type_to_ts_type_name(type)
+          type = type.to_type if type.is_a?(Manifest::TypeDeclaration)
+          generator = TypeGenerator.new(type)
 
           dependency_group.non_colliding_type(generator)
         end

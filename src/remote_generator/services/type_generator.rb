@@ -66,20 +66,19 @@ module Foobara
         end
 
         def model_generators
-          binding.pry
-          type_generators.select do |type_generator|
-            type_generator.is_a?(Services::ModelGenerator)
+          @model_generators ||= types_depended_on.select(&:model?).map do |model|
+            Services::ModelGenerator.new(model)
           end
         end
 
-        def type_generators
-          @type_generators ||= types_depended_on.reject(&:builtin?).map do |type|
+        def custom_type_generators
+          @custom_type_generators ||= types_depended_on.reject(&:builtin?).reject(&:model?).map do |type|
             Services::TypeGenerator.new(type)
           end
         end
 
         def dependencies
-          type_generators
+          custom_type_generators + model_generators
         end
 
         def type_name_downcase

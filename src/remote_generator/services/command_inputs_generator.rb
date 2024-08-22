@@ -14,16 +14,15 @@ module Foobara
           "Command/Inputs.ts.erb"
         end
 
-        def model_generators
-          binding.pry
-          type_generators.select do |type_generator|
-            type_generator.is_a?(Services::ModelGenerator)
+        def type_generators
+          @type_generators ||= inputs_types_depended_on.reject(&:builtin?).uniq.map do |type|
+            TypeGenerator.new(type)
           end
         end
 
-        def type_generators
-          @type_generators ||= types_depended_on.reject(&:builtin?).map do |type|
-            Services::TypeGenerator.new(type)
+        def model_generators
+          @model_generators ||= type_generators.select do |type_generator|
+            type_generator.is_a?(ModelGenerator)
           end
         end
 

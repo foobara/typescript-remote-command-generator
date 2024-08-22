@@ -229,6 +229,7 @@ module Foobara
                             elsif can_convert_type_declaration_to_ts_type?(type_declaration)
                               type = type_declaration.to_type
 
+                              binding.pry
                               custom_type_to_ts_type_name(type)
                             end
                           end

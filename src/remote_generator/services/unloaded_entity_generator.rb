@@ -3,7 +3,7 @@ module Foobara
     class Services
       class UnloadedEntityGenerator < EntityGenerator
         def target_path
-          [*domain.scoped_full_path, "types", entity_name, "Unloaded.ts"]
+          [*super[..-2], "Unloaded.ts"]
         end
 
         def template_path

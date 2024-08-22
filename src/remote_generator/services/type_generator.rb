@@ -21,11 +21,29 @@ module Foobara
         alias type_manifest relevant_manifest
 
         def target_path
-          [*domain.scoped_full_path, "types", "#{type_name}.ts"]
+          [*domain.scoped_full_path, "Types", *type_prefix, "#{type_short_name}.ts"]
+        end
+
+        def type_short_name
+          scoped_short_name
         end
 
         def template_path
           ["Type", "Type.ts.erb"]
+        end
+
+        def type_prefix
+          path = scoped_prefix
+
+          if path && !path.empty?
+            if path.first == "Types"
+              path[1..]
+            else
+              path
+            end
+          else
+            []
+          end
         end
 
         def scoped_full_path(points = nil)

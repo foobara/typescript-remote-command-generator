@@ -245,7 +245,6 @@ module Foobara
 
             name ? "#{name} = #{type_string}" : type_string
           else
-            binding.pry
             # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:
@@ -301,9 +300,6 @@ module Foobara
           generator = generator_class.new(model)
 
           dependency_group.non_colliding_type(generator)
-        rescue => e
-          binding.pry
-          raise
         end
 
         def custom_type_to_ts_type_name(type)

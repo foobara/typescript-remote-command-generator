@@ -27,8 +27,8 @@ module Foobara
           ["Model", "Model.ts.erb"]
         end
 
-        def model_name
-          type_name
+        def model_name(points = nil)
+          type_name(points)
         end
 
         def model_name_downcase

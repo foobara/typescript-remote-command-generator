@@ -59,7 +59,10 @@ module Foobara
                  end
 
           if declaration_data["allows_nil"]
+            # TODO: add a custom type to the fixture manifest that includes allows_nil
+            # :nocov:
             guts += " | undefined"
+            # :nocov:
           end
 
           guts

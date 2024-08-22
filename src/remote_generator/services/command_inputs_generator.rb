@@ -20,12 +20,6 @@ module Foobara
           end
         end
 
-        def model_generators
-          @model_generators ||= type_generators.select do |type_generator|
-            type_generator.is_a?(ModelGenerator)
-          end
-        end
-
         def dependencies
           type_generators
         end

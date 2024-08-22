@@ -15,17 +15,20 @@ module Foobara
         end
 
         def model_generators
-          @model_generators ||= inputs_types_depended_on.select(&:model?).uniq.map do |model|
-            if model.entity?
-              Services::EntityGenerator.new(model)
-            else
-              Services::ModelGenerator.new(model)
-            end
+          binding.pry
+          type_generators.select do |type_generator|
+            type_generator.is_a?(Services::ModelGenerator)
+          end
+        end
+
+        def type_generators
+          @type_generators ||= types_depended_on.reject(&:builtin?).map do |type|
+            Services::TypeGenerator.new(type)
           end
         end
 
         def dependencies
-          model_generators
+          type_generators
         end
       end
     end

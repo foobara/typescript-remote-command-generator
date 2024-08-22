@@ -53,6 +53,22 @@ module Foobara
           end
         end
 
+        def type_generators
+          @type_generators ||= begin
+            type = result_type
+            type = type.to_type if result_type.is_a?(Manifest::TypeDeclaration)
+
+            if !type.builtin? && !type.model?
+              # TODO: Test this!!
+              # :nocov:
+              [TypeGenerator.new(type)]
+              # :nocov:
+            else
+              []
+            end
+          end
+        end
+
         def atom?
           serializers&.any? { |s| s == "Foobara::CommandConnectors::Serializers::AtomicSerializer" }
         end
@@ -72,7 +88,7 @@ module Foobara
         end
 
         def dependencies
-          model_generators
+          model_generators + type_generators
         end
       end
     end

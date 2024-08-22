@@ -1,3 +1,7 @@
+## [unreleased] - 2024-08-2x
+
+- Add type generators to command result generator
+
 ## [0.0.2] - 2024-08-21
 
 - Add a TypeGenerator for custom non-model types

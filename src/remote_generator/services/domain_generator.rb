@@ -34,6 +34,18 @@ module Foobara
           end
         end
 
+        def type_generators
+          @type_generators ||= begin
+            # TODO: create a Manifest::Domain#custom_types
+            only_custom_types = domain_manifest.types.reject(&:model?)
+            only_custom_types.reject!(&:builtin?)
+
+            only_custom_types.map do |type|
+              TypeGenerator.new(type)
+            end
+          end
+        end
+
         def model_generators
           @model_generators ||= begin
             only_models = domain_manifest.models.reject(&:entity?)
@@ -45,7 +57,7 @@ module Foobara
         end
 
         def dependencies
-          [*command_generators, *model_generators, *entity_generators, *organization]
+          [*command_generators, *model_generators, *entity_generators, *type_generators, *organization]
         end
 
         def domain_name

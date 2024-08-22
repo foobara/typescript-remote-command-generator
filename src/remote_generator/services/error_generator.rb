@@ -50,6 +50,7 @@ module Foobara
         end
 
         def dependencies
+          # Why don't we need models and custom types?
           types_depended_on.select(&:entity?)
         end
 

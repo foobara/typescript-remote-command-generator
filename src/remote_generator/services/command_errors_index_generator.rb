@@ -23,7 +23,7 @@ module Foobara
         end
 
         def import_destructure
-          "* as #{scoped_name}Errors"
+          "* as #{scoped_short_name}Errors"
         end
       end
     end

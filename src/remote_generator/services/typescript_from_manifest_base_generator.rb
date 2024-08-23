@@ -146,7 +146,7 @@ module Foobara
         end
 
         def import_destructure
-          "{ #{scoped_name} }"
+          "{ #{scoped_short_name} }"
         end
 
         def import_path_array

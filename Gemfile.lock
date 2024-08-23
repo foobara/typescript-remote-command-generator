@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foobara-typescript-remote-command-generator (0.0.5)
+    foobara-typescript-remote-command-generator (0.0.6)
       foobara
       foobara-files-generator
 

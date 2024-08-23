@@ -1,5 +1,5 @@
 <% dependency_roots.each do |dependency_root| %>
-import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
 type Result = <%= foobara_type_to_ts_type(result_type, dependency_group:, association_depth:) %>

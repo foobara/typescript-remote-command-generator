@@ -1,20 +1,20 @@
 import { Entity } from "<%= path_to_root %>base/Entity"
 <% dependency_roots.each do |dependency_root| %>
-import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export type <%= entity_name %>PrimaryKeyType = <%= primary_key_ts_type %>
+export type <%= entity_short_name %>PrimaryKeyType = <%= primary_key_ts_type %>
 export const <%= entity_name_downcase %>PrimaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
-export interface <%= entity_name %>AttributesType <%= attributes_type_ts_type %>
+export interface <%= entity_short_name %>AttributesType <%= attributes_type_ts_type %>
 
-export class <%= entity_name %><
-  AttributesType extends <%= entity_name %>AttributesType = <%= entity_name %>AttributesType
-> extends Entity<<%= entity_name %>PrimaryKeyType, AttributesType> {
-  static readonly modelName: string = "<%= entity_name %>"
-  static readonly entityName: string = "<%= entity_name %>"
+export class <%= entity_short_name %><
+  AttributesType extends <%= entity_short_name %>AttributesType = <%= entity_short_name %>AttributesType
+> extends Entity<<%= entity_short_name %>PrimaryKeyType, AttributesType> {
+  static readonly modelName: string = "<%= entity_short_name %>"
+  static readonly entityName: string = "<%= entity_short_name %>"
   static readonly primaryKeyAttributeName: "<%= primary_key_name %>" = "<%= primary_key_name %>"
 
-  get <%= primary_key_name %> (): <%= entity_name %>PrimaryKeyType {
+  get <%= primary_key_name %> (): <%= entity_short_name %>PrimaryKeyType {
     return this.primaryKey
   }
 

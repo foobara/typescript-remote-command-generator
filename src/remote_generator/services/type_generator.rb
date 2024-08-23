@@ -103,7 +103,7 @@ module Foobara
         end
 
         def type_name_downcase
-          type_name[0].downcase + type_name[1..]
+          type_short_name[0].downcase + type_short_name[1..]
         end
 
         def attributes_type_ts_type

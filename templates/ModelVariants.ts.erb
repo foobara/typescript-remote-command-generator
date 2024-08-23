@@ -1,26 +1,26 @@
 import {
-  <%= model_name %>,
-  <%= model_name %>AttributesType
-} from "./<%= model_name %>/<%= model_name %>"
+  <%= model_short_name %>,
+  <%= model_short_name %>AttributesType
+} from "./<%= model_short_name %>/<%= model_short_name %>"
 
 <% if has_associations? %>
 import {
-  <%= model_name %>Atom,
-  <%= model_name %>AtomAttributesType
-} from "./<%= model_name %>/Atom"
+  <%= model_short_name %>Atom,
+  <%= model_short_name %>AtomAttributesType
+} from "./<%= model_short_name %>/Atom"
 import {
-  <%= model_name %>Aggregate,
-  <%= model_name %>AggregateAttributesType
-} from "./<%= model_name %>/Aggregate"
+  <%= model_short_name %>Aggregate,
+  <%= model_short_name %>AggregateAttributesType
+} from "./<%= model_short_name %>/Aggregate"
 <% end %>
 
 export {
-  <%= model_name %>,
-  type <%= model_name %>AttributesType,
+  <%= model_short_name %>,
+  type <%= model_short_name %>AttributesType,
 <% if has_associations? %>
-  <%= model_name %>Atom,
-  type <%= model_name %>AtomAttributesType,
-  <%= model_name %>Aggregate,
-  type <%= model_name %>AggregateAttributesType,
+  <%= model_short_name %>Atom,
+  type <%= model_short_name %>AtomAttributesType,
+  <%= model_short_name %>Aggregate,
+  type <%= model_short_name %>AggregateAttributesType,
 <% end %>
 }

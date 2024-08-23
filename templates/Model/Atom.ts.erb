@@ -1,12 +1,12 @@
 import {
-  <%= model_name %>,
-  <%= model_name %>AttributesType
-} from "./<%= model_name %>"
+  <%= model_short_name %>,
+  <%= model_short_name %>AttributesType
+} from "./<%= model_short_name %>"
 <% dependency_roots.each do |dependency_root| %>
-import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export interface <%= model_name %>AtomAttributesType extends <%= model_name %>AttributesType <%= atom_attributes_ts_type %>
+export interface <%= model_short_name %>AtomAttributesType extends <%= model_short_name %>AttributesType <%= atom_attributes_ts_type %>
 
-export class <%= model_name %>Atom extends <%= model_name %><<%= model_name %>AtomAttributesType> {
+export class <%= model_short_name %>Atom extends <%= model_short_name %><<%= model_short_name %>AtomAttributesType> {
 }

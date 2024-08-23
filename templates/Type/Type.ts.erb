@@ -1,5 +1,5 @@
 <% dependency_roots.each do |dependency_root| %>
-import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export type <%= type_name %> = <%= type_guts %>
+export type <%= type_short_name %> = <%= type_guts %>

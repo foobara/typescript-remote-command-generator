@@ -1,5 +1,5 @@
 <% dependency_roots.each do |dependency_root| %>
-import { <%= dependency_root.scoped_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
 import { <%= error_base_class %> } from "<%= path_to_root %>base/Error"

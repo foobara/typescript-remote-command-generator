@@ -1,14 +1,14 @@
 import {
-  <%= entity_name %>AttributesType
+  <%= entity_short_name %>AttributesType
 } from "./Ambiguous"
-import { Loaded<%= entity_name %> } from "./Loaded"
+import { Loaded<%= entity_short_name %> } from "./Loaded"
 <% dependency_roots.each do |dependency_root| %>
-import { <%= dependency_root.ts_instance_name %> } from "<%= path_to_root %><%= dependency_root.import_path %>"
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-export interface <%= entity_name %>AggregateAttributesType extends <%= entity_name %>AttributesType <%= attributes_type_ts_type %>
+export interface <%= entity_short_name %>AggregateAttributesType extends <%= entity_short_name %>AttributesType <%= attributes_type_ts_type %>
 
-export class <%= entity_name %>Aggregate extends Loaded<%= entity_name %><<%= entity_name %>AggregateAttributesType> {
+export class <%= entity_short_name %>Aggregate extends Loaded<%= entity_short_name %><<%= entity_short_name %>AggregateAttributesType> {
   <% if has_associations? %>
   /* eslint-disable @typescript-eslint/class-literal-property-style */
   get isAtom (): false { return false }

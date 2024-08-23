@@ -117,10 +117,6 @@ module Foobara
           dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
 
-        def ts_instance_name
-          ts_instance_path.join(".")
-        end
-
         def ts_instance_path
           scoped_path
         end

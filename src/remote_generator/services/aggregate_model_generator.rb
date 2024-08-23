@@ -38,11 +38,6 @@ module Foobara
           aggregate_attributes_ts_type
         end
 
-        def ts_instance_path
-          *prefix, name = scoped_path
-          [*prefix, "#{name}Aggregate"]
-        end
-
         def ts_instance_full_path
           *prefix, name = scoped_full_path
           [*prefix, "#{name}Aggregate"]

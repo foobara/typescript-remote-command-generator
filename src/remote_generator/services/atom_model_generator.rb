@@ -34,11 +34,6 @@ module Foobara
           end
         end
 
-        def ts_instance_path
-          *prefix, name = scoped_path
-          [*prefix, "#{name}Atom"]
-        end
-
         def ts_instance_full_path
           *prefix, name = scoped_full_path
           [*prefix, "#{name}Atom"]

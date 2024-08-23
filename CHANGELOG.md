@@ -1,3 +1,7 @@
+## [0.0.5] - 2024-08-23
+
+- Fix several naming/import issues in templates
+
 ## [0.0.4] - 2024-08-22
 
 - Add type generators to command result generator

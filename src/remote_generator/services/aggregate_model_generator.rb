@@ -26,6 +26,8 @@ module Foobara
 
         def model_generators
           types_depended_on.select(&:model?).map do |model|
+            # TODO: what about detached_entity? What is the difference in this context between entity and model and
+            # which is detached_entity more like?
             if model.entity?
               Services::AggregateEntityGenerator.new(model)
             else

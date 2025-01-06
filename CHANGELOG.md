@@ -1,3 +1,7 @@
+## [0.0.7] - 2025-01-06
+
+- Bump Ruby to 3.4.1
+
 ## [0.0.6] - 2024-08-22
 
 - Fix remaining naming bug in model templates

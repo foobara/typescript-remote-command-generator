@@ -1,8 +1,11 @@
-source "https://rubygems.org"
-ruby File.read("#{__dir__}/.ruby-version")
+require_relative "version"
 
-# Specify your gem's dependencies in typescript-remote-command-generator.gemspec
+source "https://rubygems.org"
+ruby Foobara::TypescriptRemoteCommandGenerator::Version::MINIMUM_RUBY_VERSION
+
 gemspec
+
+# gem "foobara-files-generator", path: "../files-generator"
 
 # Development dependencies go here
 gem "foobara-rubocop-rules"

@@ -17274,6 +17274,7 @@
         "atomic_duck",
         "attributes",
         "datetime",
+        "detached_entity",
         "duck",
         "duckture",
         "email",
@@ -19644,89 +19645,6 @@
       "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
       "processor_type": "transformer"
     },
-    "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration": {
-      "scoped_path": [
-        "TypeDeclarations",
-        "Handlers",
-        "ExtendEntityTypeDeclaration"
-      ],
-      "scoped_name": "TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
-      "scoped_short_name": "ExtendEntityTypeDeclaration",
-      "scoped_prefix": [
-        "TypeDeclarations",
-        "Handlers"
-      ],
-      "scoped_full_path": [
-        "Foobara",
-        "TypeDeclarations",
-        "Handlers",
-        "ExtendEntityTypeDeclaration"
-      ],
-      "scoped_full_name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
-      "scoped_category": "processor_class",
-      "reference": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
-      "domain": "global_organization::global_domain",
-      "organization": "global_organization",
-      "parent": [
-        "organization",
-        "Foobara"
-      ],
-      "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration",
-      "processor_type": "type_declaration_handler"
-    },
-    "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer": {
-      "scoped_path": [
-        "ToTypeTransformer"
-      ],
-      "scoped_name": "ToTypeTransformer",
-      "scoped_short_name": "ToTypeTransformer",
-      "scoped_prefix": null,
-      "scoped_full_path": [
-        "Foobara",
-        "TypeDeclarations",
-        "Handlers",
-        "ExtendEntityTypeDeclaration",
-        "ToTypeTransformer"
-      ],
-      "scoped_full_name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer",
-      "scoped_category": "processor_class",
-      "reference": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer",
-      "domain": "global_organization::global_domain",
-      "organization": "global_organization",
-      "parent": [
-        "processor_class",
-        "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration"
-      ],
-      "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer",
-      "processor_type": "transformer"
-    },
-    "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster": {
-      "scoped_path": [
-        "EntityPrimaryKeyCaster"
-      ],
-      "scoped_name": "EntityPrimaryKeyCaster",
-      "scoped_short_name": "EntityPrimaryKeyCaster",
-      "scoped_prefix": null,
-      "scoped_full_path": [
-        "Foobara",
-        "TypeDeclarations",
-        "Handlers",
-        "ExtendEntityTypeDeclaration",
-        "ToTypeTransformer",
-        "EntityPrimaryKeyCaster"
-      ],
-      "scoped_full_name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-      "scoped_category": "processor_class",
-      "reference": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-      "domain": "global_organization::global_domain",
-      "organization": "global_organization",
-      "parent": [
-        "processor_class",
-        "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer"
-      ],
-      "name": "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-      "processor_type": "caster"
-    },
     "Foobara::Value::Processor::Casting": {
       "scoped_path": [
         "Processor",
@@ -20200,6 +20118,60 @@
       "name": "Foobara::BuiltinTypes::Datetime::Casters::String",
       "processor_type": "caster"
     },
+    "detached_entity::Casters::Hash": {
+      "scoped_path": [
+        "Casters",
+        "Hash"
+      ],
+      "scoped_name": "Casters::Hash",
+      "scoped_short_name": "Hash",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "detached_entity",
+        "Casters",
+        "Hash"
+      ],
+      "scoped_full_name": "detached_entity::Casters::Hash",
+      "scoped_category": "processor_class",
+      "reference": "detached_entity::Casters::Hash",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "detached_entity"
+      ],
+      "name": "Foobara::BuiltinTypes::DetachedEntity::Casters::Hash",
+      "processor_type": "caster"
+    },
+    "detached_entity::Validators::AttributesDeclaration": {
+      "scoped_path": [
+        "Validators",
+        "AttributesDeclaration"
+      ],
+      "scoped_name": "Validators::AttributesDeclaration",
+      "scoped_short_name": "AttributesDeclaration",
+      "scoped_prefix": [
+        "Validators"
+      ],
+      "scoped_full_path": [
+        "detached_entity",
+        "Validators",
+        "AttributesDeclaration"
+      ],
+      "scoped_full_name": "detached_entity::Validators::AttributesDeclaration",
+      "scoped_category": "processor_class",
+      "reference": "detached_entity::Validators::AttributesDeclaration",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "detached_entity"
+      ],
+      "name": "Foobara::BuiltinTypes::DetachedEntity::Validators::AttributesDeclaration",
+      "processor_type": "processor"
+    },
     "duck::SupportedCasters::AllowNil": {
       "scoped_path": [
         "SupportedCasters",
@@ -20611,6 +20583,33 @@
       "name": "Foobara::BuiltinTypes::Entity::Casters::Hash",
       "processor_type": "caster"
     },
+    "entity::Casters::PrimaryKey": {
+      "scoped_path": [
+        "Casters",
+        "PrimaryKey"
+      ],
+      "scoped_name": "Casters::PrimaryKey",
+      "scoped_short_name": "PrimaryKey",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "entity",
+        "Casters",
+        "PrimaryKey"
+      ],
+      "scoped_full_name": "entity::Casters::PrimaryKey",
+      "scoped_category": "processor_class",
+      "reference": "entity::Casters::PrimaryKey",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "entity"
+      ],
+      "name": "Foobara::BuiltinTypes::Entity::Casters::PrimaryKey",
+      "processor_type": "caster"
+    },
     "entity::Validators::AttributesDeclaration": {
       "scoped_path": [
         "Validators",
@@ -20692,31 +20691,31 @@
       "name": "Foobara::BuiltinTypes::Model::Casters::Hash",
       "processor_type": "caster"
     },
-    "model::Transformers::Mutable": {
+    "model::SupportedTransformers::Mutable": {
       "scoped_path": [
-        "Transformers",
+        "SupportedTransformers",
         "Mutable"
       ],
-      "scoped_name": "Transformers::Mutable",
+      "scoped_name": "SupportedTransformers::Mutable",
       "scoped_short_name": "Mutable",
       "scoped_prefix": [
-        "Transformers"
+        "SupportedTransformers"
       ],
       "scoped_full_path": [
         "model",
-        "Transformers",
+        "SupportedTransformers",
         "Mutable"
       ],
-      "scoped_full_name": "model::Transformers::Mutable",
+      "scoped_full_name": "model::SupportedTransformers::Mutable",
       "scoped_category": "processor_class",
-      "reference": "model::Transformers::Mutable",
+      "reference": "model::SupportedTransformers::Mutable",
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
         "type",
         "model"
       ],
-      "name": "Foobara::BuiltinTypes::Model::Transformers::Mutable",
+      "name": "Foobara::BuiltinTypes::Model::SupportedTransformers::Mutable",
       "processor_type": "transformer"
     },
     "model::Validators::AttributesDeclaration": {
@@ -21141,6 +21140,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -21148,9 +21150,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -21970,6 +21969,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -21977,9 +21979,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -22252,6 +22251,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -22259,9 +22261,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -22478,6 +22477,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -22485,9 +22487,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -22851,17 +22850,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -23169,6 +23168,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -23176,9 +23178,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -23350,17 +23349,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -23985,6 +23984,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -23992,9 +23994,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -24181,17 +24180,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -24499,6 +24498,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -24506,9 +24508,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -24680,17 +24679,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -25315,6 +25314,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -25322,9 +25324,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -25511,17 +25510,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -25829,6 +25828,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -25836,9 +25838,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -26010,17 +26009,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -26645,6 +26644,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -26652,9 +26654,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -26841,17 +26840,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -27159,6 +27158,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -27166,9 +27168,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -27461,6 +27460,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -27468,9 +27470,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -27642,17 +27641,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -28489,6 +28488,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -28496,9 +28498,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -29195,6 +29194,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -29202,9 +29204,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -29557,6 +29556,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -29564,9 +29566,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -29771,6 +29770,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -29778,9 +29780,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -29970,6 +29969,9 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
@@ -29977,9 +29979,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -30118,17 +30117,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -30325,17 +30324,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -30594,17 +30593,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -30770,17 +30769,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -30932,17 +30931,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -31108,17 +31107,17 @@
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
       ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
         "duck::SupportedValidators::OneOf"
       ],
       "processors": {
         "caster_classes": [
-          "Foobara::TypeDeclarations::Handlers::ExtendEntityTypeDeclaration::ToTypeTransformer::EntityPrimaryKeyCaster",
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -31205,6 +31204,7 @@
         "duckture",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in array type",
       "base_type": "duckture",
       "supported_casters": [
@@ -31276,6 +31276,7 @@
         "duckture",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in associative_array type",
       "base_type": "duckture",
       "supported_casters": [
@@ -31346,6 +31347,7 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in atomic_duck type",
       "base_type": "duck",
       "supported_casters": [
@@ -31401,6 +31403,7 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in attributes type",
       "base_type": "associative_array",
       "supported_casters": [
@@ -31479,6 +31482,7 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in datetime type",
       "base_type": "atomic_duck",
       "supported_casters": [
@@ -31500,6 +31504,74 @@
           "datetime::Casters::Hash",
           "datetime::Casters::SecondsSinceEpoch",
           "datetime::Casters::String"
+        ]
+      }
+    },
+    "detached_entity": {
+      "scoped_path": [
+        "detached_entity"
+      ],
+      "scoped_name": "detached_entity",
+      "scoped_short_name": "detached_entity",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "detached_entity"
+      ],
+      "scoped_full_name": "detached_entity",
+      "scoped_category": "type",
+      "reference": "detached_entity",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "detached_entity"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "detached_entity"
+              }
+            }
+          }
+        }
+      },
+      "name": "detached_entity",
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "model",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in detached_entity type",
+      "base_type": "model",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ],
+      "processors": {
+        "caster_classes": [
+          "detached_entity::Casters::Hash"
+        ],
+        "validator_classes": [
+          "detached_entity::Validators::AttributesDeclaration"
         ]
       }
     },
@@ -31550,6 +31622,7 @@
         "attributes",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in duck type",
       "base_type": null,
       "supported_casters": [
@@ -31608,6 +31681,7 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in duckture type",
       "base_type": "duck",
       "supported_casters": [
@@ -31739,6 +31813,7 @@
         "string",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in email type",
       "base_type": "string",
       "supported_casters": [
@@ -31834,14 +31909,18 @@
       "types_depended_on": [
         "array",
         "attributes",
+        "detached_entity",
         "duck",
-        "model",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in entity type",
-      "base_type": "model",
+      "base_type": "detached_entity",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
       ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
@@ -31849,10 +31928,8 @@
       ],
       "processors": {
         "caster_classes": [
-          "entity::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
+          "entity::Casters::Hash",
+          "entity::Casters::PrimaryKey"
         ],
         "validator_classes": [
           "entity::Validators::AttributesDeclaration"
@@ -31908,6 +31985,7 @@
         "number",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in integer type",
       "base_type": "number",
       "supported_casters": [
@@ -31974,10 +32052,14 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in model type",
       "base_type": "atomic_duck",
       "supported_casters": [
         "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_transformers": [
+        "model::SupportedTransformers::Mutable"
       ],
       "supported_validators": [
         "duck::SupportedValidators::InstanceOf",
@@ -31986,9 +32068,6 @@
       "processors": {
         "caster_classes": [
           "model::Casters::Hash"
-        ],
-        "transformer_classes": [
-          "model::Transformers::Mutable"
         ],
         "validator_classes": [
           "model::Validators::AttributesDeclaration"
@@ -32044,6 +32123,7 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in number type",
       "base_type": "atomic_duck",
       "supported_casters": [
@@ -32206,6 +32286,7 @@
         "duck",
         "symbol"
       ],
+      "builtin": true,
       "description": "Built-in string type",
       "base_type": "atomic_duck",
       "supported_casters": [
@@ -32279,6 +32360,7 @@
         "attributes",
         "duck"
       ],
+      "builtin": true,
       "description": "Built-in symbol type",
       "base_type": "atomic_duck",
       "supported_casters": [
@@ -32299,7 +32381,7 @@
     }
   },
   "metadata": {
-    "url": "http://localhost:9292/manifest",
-    "when": "2024-08-21 17:20:28 -0700"
+    "when": "2025-02-01 14:43:46 -0800",
+    "url": "http://127.0.0.1:9292/manifest?detached=false"
   }
 }

@@ -9,7 +9,7 @@ module Foobara
           def new(relevant_manifest)
             return super unless self == ModelGenerator
 
-            if relevant_manifest.entity?
+            if relevant_manifest.detached_entity?
               EntityGenerator.new(relevant_manifest)
             else
               super

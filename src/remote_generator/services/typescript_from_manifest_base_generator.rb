@@ -280,7 +280,7 @@ module Foobara
                             when AssociationDepth::AMBIGUOUS
                               Services::ModelGenerator
                             when AssociationDepth::ATOM
-                              if !initial && model.entity?
+                              if !initial && model.detached_entity?
                                 Services::UnloadedEntityGenerator
                               else
                                 Services::AtomModelGenerator

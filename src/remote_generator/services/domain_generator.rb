@@ -47,8 +47,9 @@ module Foobara
         end
 
         def model_generators
+          # HERE!!!
           @model_generators ||= begin
-            only_models = domain_manifest.models.reject(&:entity?)
+            only_models = domain_manifest.models.reject(&:detached_entity?)
 
             only_models.map do |model_manifest|
               ModelGenerator.new(model_manifest)

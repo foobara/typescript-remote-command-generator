@@ -1,3 +1,7 @@
+## [0.0.8] - 2025-02-02
+
+- Make sure entity/detached_entity/model are used properly in several places
+
 ## [0.0.7] - 2025-01-06
 
 - Bump Ruby to 3.4.1

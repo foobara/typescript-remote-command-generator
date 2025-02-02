@@ -6,7 +6,7 @@ module Foobara
           def new(relevant_manifest)
             return super unless self == AggregateModelGenerator
 
-            if relevant_manifest.entity?
+            if relevant_manifest.detached_entity?
               AggregateEntityGenerator.new(relevant_manifest)
             elsif relevant_manifest.has_associations?
               super
@@ -26,9 +26,7 @@ module Foobara
 
         def model_generators
           types_depended_on.select(&:model?).map do |model|
-            # TODO: what about detached_entity? What is the difference in this context between entity and model and
-            # which is detached_entity more like?
-            if model.entity?
+            if model.detached_entity?
               Services::AggregateEntityGenerator.new(model)
             else
               Services::AggregateModelGenerator.new(model)

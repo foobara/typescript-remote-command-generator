@@ -19,7 +19,7 @@ module Foobara
         end
 
         def model_generators(type = result_type, initial = true)
-          if type.entity?
+          if type.detached_entity?
             generator_class = if atom?
                                 if initial
                                   AtomEntityGenerator
@@ -32,7 +32,13 @@ module Foobara
                                 EntityGenerator
                               end
 
-            [generator_class.new(type.to_entity)]
+            entity = if type.entity?
+                       type.to_entity
+                     else
+                       type.to_detached_entity
+                     end
+
+            [generator_class.new(entity)]
           elsif type.model?
             generator_class = if atom?
                                 AtomModelGenerator

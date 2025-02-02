@@ -6,7 +6,7 @@ module Foobara
           def new(relevant_manifest)
             return super unless self == AtomModelGenerator
 
-            if relevant_manifest.entity?
+            if relevant_manifest.detached_entity?
               AtomEntityGenerator.new(relevant_manifest)
             elsif relevant_manifest.has_associations?
               super
@@ -26,7 +26,7 @@ module Foobara
 
         def model_generators
           types_depended_on.select(&:model?).map do |model|
-            if model.entity?
+            if model.detached_entity?
               Services::UnloadedEntityGenerator.new(model)
             else
               Services::AtomModelGenerator.new(model)

@@ -8,7 +8,7 @@ module Foobara
           def new(relevant_manifest)
             return super unless self == TypeGenerator
 
-            if relevant_manifest.entity?
+            if relevant_manifest.detached_entity?
               EntityGenerator.new(relevant_manifest)
             elsif relevant_manifest.model?
               ModelGenerator.new(relevant_manifest)
@@ -87,7 +87,7 @@ module Foobara
         end
 
         def model_generators
-          @model_generators ||= types_depended_on.select(&:model?).map do |model|
+          @model_generators ||= types_depended_on.select(&:model?).reject(&:builtin?).map do |model|
             Services::ModelGenerator.new(model)
           end
         end

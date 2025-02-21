@@ -222,10 +222,8 @@ module Foobara
                           else
                             if type_declaration.model?
                               model_to_ts_model_name(type_declaration, association_depth:, initial:)
-                            elsif can_convert_type_declaration_to_ts_type?(type_declaration)
-                              type = type_declaration.to_type
-
-                              custom_type_to_ts_type_name(type)
+                            elsif type_declaration.custom?
+                              custom_type_to_ts_type_name(type_declaration)
                             end
                           end
                         end
@@ -245,22 +243,6 @@ module Foobara
             raise "Not sure how to convert #{type_declaration} to a TS type"
             # :nocov:
           end
-        end
-
-        def can_convert_type_declaration_to_ts_type?(type_declaration)
-          type = type_declaration.to_type
-
-          return false if BuiltinTypes.builtin_reference?(type.reference)
-
-          allowed_keys = %w[type one_of allows_nil]
-
-          declaration_data = type.declaration_data
-
-          bad_keys = declaration_data.keys - allowed_keys
-
-          return false unless bad_keys.empty?
-
-          BuiltinTypes.builtin_reference?(declaration_data["type"])
         end
 
         def attributes_to_ts_type(attributes, dependency_group:, association_depth: AssociationDepth::AMBIGUOUS)

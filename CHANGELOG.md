@@ -1,4 +1,8 @@
-## [0.0.8] - 2025-02-02
+## [0.0.9] - 2025-02-21
+
+- Fix a bug where we don't use the name of a custom type when we could
+
+## [0.0.8] - 2025-02-21
 
 - Make sure entity/detached_entity/model are used properly in several places
 

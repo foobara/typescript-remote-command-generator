@@ -43,4 +43,17 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
       expect(File.exist?("#{output_directory}/typescript-remote-commands-generator.json")).to be true
     end
   end
+
+  context "when using yet another manifest that has led to errors in the past" do
+    let(:raw_manifest) { JSON.parse(File.read("spec/fixtures/answer-bot-manifest.json")) }
+    let(:inputs) { { raw_manifest:, output_directory: } }
+
+    it "contains command domain and command files" do
+      expect(outcome).to be_success
+
+      expect(
+        command.paths_to_source_code["Foobara/Ai/AnswerBot/Ask/index.ts"]
+      ).to include("export class Ask extends RemoteCommand")
+    end
+  end
 end

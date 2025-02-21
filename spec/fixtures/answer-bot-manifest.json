@@ -1,0 +1,2932 @@
+{
+  "command": {
+    "Foobara::Ai::AnswerBot::Ask": {
+      "scoped_path": [
+        "Ask"
+      ],
+      "scoped_name": "Ask",
+      "scoped_short_name": "Ask",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "Foobara",
+        "Ai",
+        "AnswerBot",
+        "Ask"
+      ],
+      "scoped_full_name": "Foobara::Ai::AnswerBot::Ask",
+      "scoped_category": "command",
+      "reference": "Foobara::Ai::AnswerBot::Ask",
+      "domain": "Foobara::Ai::AnswerBot",
+      "organization": "Foobara::Ai",
+      "parent": [
+        "domain",
+        "Foobara::Ai::AnswerBot"
+      ],
+      "types_depended_on": [
+        "Foobara::Ai::AnswerBot::model",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_types_depended_on": [
+        "Foobara::Ai::AnswerBot::model",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "result_types_depended_on": [
+        "string"
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "attributes",
+                "element_type_declarations": {
+                  "question": {
+                    "description": "whatever you want to know!",
+                    "type": "string"
+                  },
+                  "service": {
+                    "one_of": [
+                      "open-ai",
+                      "anthropic"
+                    ],
+                    "type": "string"
+                  },
+                  "model": {
+                    "type": "Foobara::Ai::AnswerBot::model"
+                  }
+                },
+                "required": [
+                  "question"
+                ],
+                "defaults": {
+                  "model": "gpt-3.5-turbo"
+                }
+              }
+            }
+          }
+        },
+        "data.missing_required_attribute": {
+          "category": "data",
+          "symbol": "missing_required_attribute",
+          "key": "data.missing_required_attribute",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "processor_class": "Foobara::Value::Processor::Pipeline",
+          "processor_manifest_data": {
+            "pipeline": null
+          }
+        },
+        "data.model.cannot_cast": {
+          "path": [
+            "model"
+          ],
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.model.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "babbage-002",
+                  "chatgpt-4o-latest",
+                  "claude-2.0",
+                  "claude-2.1",
+                  "claude-3-5-haiku-20241022",
+                  "claude-3-5-sonnet-20240620",
+                  "claude-3-5-sonnet-20241022",
+                  "claude-3-haiku-20240307",
+                  "claude-3-opus-20240229",
+                  "claude-3-sonnet-20240229",
+                  "dall-e-2",
+                  "dall-e-3",
+                  "davinci-002",
+                  "gpt-3.5-turbo",
+                  "gpt-3.5-turbo-0125",
+                  "gpt-3.5-turbo-1106",
+                  "gpt-3.5-turbo-16k",
+                  "gpt-3.5-turbo-instruct",
+                  "gpt-3.5-turbo-instruct-0914",
+                  "gpt-4",
+                  "gpt-4-0125-preview",
+                  "gpt-4-0613",
+                  "gpt-4-1106-preview",
+                  "gpt-4-turbo",
+                  "gpt-4-turbo-2024-04-09",
+                  "gpt-4-turbo-preview",
+                  "gpt-4o",
+                  "gpt-4o-2024-05-13",
+                  "gpt-4o-2024-08-06",
+                  "gpt-4o-2024-11-20",
+                  "gpt-4o-audio-preview",
+                  "gpt-4o-audio-preview-2024-10-01",
+                  "gpt-4o-audio-preview-2024-12-17",
+                  "gpt-4o-mini",
+                  "gpt-4o-mini-2024-07-18",
+                  "gpt-4o-mini-audio-preview",
+                  "gpt-4o-mini-audio-preview-2024-12-17",
+                  "gpt-4o-mini-realtime-preview",
+                  "gpt-4o-mini-realtime-preview-2024-12-17",
+                  "gpt-4o-realtime-preview",
+                  "gpt-4o-realtime-preview-2024-10-01",
+                  "gpt-4o-realtime-preview-2024-12-17",
+                  "o1-mini",
+                  "o1-mini-2024-09-12",
+                  "o1-preview",
+                  "o1-preview-2024-09-12",
+                  "omni-moderation-2024-09-26",
+                  "omni-moderation-latest",
+                  "text-embedding-3-large",
+                  "text-embedding-3-small",
+                  "text-embedding-ada-002",
+                  "tts-1",
+                  "tts-1-1106",
+                  "tts-1-hd",
+                  "tts-1-hd-1106",
+                  "whisper-1"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        },
+        "data.model.value_not_valid": {
+          "path": [
+            "model"
+          ],
+          "category": "data",
+          "symbol": "value_not_valid",
+          "key": "data.model.value_not_valid",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "processor_manifest_data": {
+            "one_of": [
+              "babbage-002",
+              "chatgpt-4o-latest",
+              "claude-2.0",
+              "claude-2.1",
+              "claude-3-5-haiku-20241022",
+              "claude-3-5-sonnet-20240620",
+              "claude-3-5-sonnet-20241022",
+              "claude-3-haiku-20240307",
+              "claude-3-opus-20240229",
+              "claude-3-sonnet-20240229",
+              "dall-e-2",
+              "dall-e-3",
+              "davinci-002",
+              "gpt-3.5-turbo",
+              "gpt-3.5-turbo-0125",
+              "gpt-3.5-turbo-1106",
+              "gpt-3.5-turbo-16k",
+              "gpt-3.5-turbo-instruct",
+              "gpt-3.5-turbo-instruct-0914",
+              "gpt-4",
+              "gpt-4-0125-preview",
+              "gpt-4-0613",
+              "gpt-4-1106-preview",
+              "gpt-4-turbo",
+              "gpt-4-turbo-2024-04-09",
+              "gpt-4-turbo-preview",
+              "gpt-4o",
+              "gpt-4o-2024-05-13",
+              "gpt-4o-2024-08-06",
+              "gpt-4o-2024-11-20",
+              "gpt-4o-audio-preview",
+              "gpt-4o-audio-preview-2024-10-01",
+              "gpt-4o-audio-preview-2024-12-17",
+              "gpt-4o-mini",
+              "gpt-4o-mini-2024-07-18",
+              "gpt-4o-mini-audio-preview",
+              "gpt-4o-mini-audio-preview-2024-12-17",
+              "gpt-4o-mini-realtime-preview",
+              "gpt-4o-mini-realtime-preview-2024-12-17",
+              "gpt-4o-realtime-preview",
+              "gpt-4o-realtime-preview-2024-10-01",
+              "gpt-4o-realtime-preview-2024-12-17",
+              "o1-mini",
+              "o1-mini-2024-09-12",
+              "o1-preview",
+              "o1-preview-2024-09-12",
+              "omni-moderation-2024-09-26",
+              "omni-moderation-latest",
+              "text-embedding-3-large",
+              "text-embedding-3-small",
+              "text-embedding-ada-002",
+              "tts-1",
+              "tts-1-1106",
+              "tts-1-hd",
+              "tts-1-hd-1106",
+              "whisper-1"
+            ]
+          }
+        },
+        "data.question.cannot_cast": {
+          "path": [
+            "question"
+          ],
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.question.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "description": "whatever you want to know!",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "data.question.missing_required_attribute": {
+          "path": [
+            "question"
+          ],
+          "category": "data",
+          "symbol": "missing_required_attribute",
+          "key": "data.question.missing_required_attribute",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+          "processor_class": "attributes::SupportedValidators::Required",
+          "processor_manifest_data": {
+            "required": [
+              "question"
+            ]
+          }
+        },
+        "data.service.cannot_cast": {
+          "path": [
+            "service"
+          ],
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.service.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "open-ai",
+                  "anthropic"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        },
+        "data.service.value_not_valid": {
+          "path": [
+            "service"
+          ],
+          "category": "data",
+          "symbol": "value_not_valid",
+          "key": "data.service.value_not_valid",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "processor_manifest_data": {
+            "one_of": [
+              "open-ai",
+              "anthropic"
+            ]
+          }
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "symbol": "unexpected_attributes",
+          "key": "data.unexpected_attributes",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+          "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
+          "processor_manifest_data": {
+            "element_type_declarations": {
+              "question": {
+                "description": "whatever you want to know!",
+                "type": "string"
+              },
+              "service": {
+                "one_of": [
+                  "open-ai",
+                  "anthropic"
+                ],
+                "type": "string"
+              },
+              "model": {
+                "type": "Foobara::Ai::AnswerBot::model"
+              }
+            }
+          }
+        }
+      },
+      "depends_on": [
+        "Foobara::Ai::AnthropicApi::CreateMessage",
+        "Foobara::Ai::OpenAiApi::CreateChatCompletion"
+      ],
+      "inputs_type": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "question": {
+            "description": "whatever you want to know!",
+            "type": "string"
+          },
+          "service": {
+            "one_of": [
+              "open-ai",
+              "anthropic"
+            ],
+            "type": "string"
+          },
+          "model": {
+            "type": "Foobara::Ai::AnswerBot::model"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "defaults": {
+          "model": "gpt-3.5-turbo"
+        }
+      },
+      "description": "Ask a question and receive the knowledge you seek.",
+      "result_type": {
+        "type": "string"
+      },
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ]
+    }
+  },
+  "domain": {
+    "Foobara::Ai::AnswerBot": {
+      "scoped_path": [
+        "AnswerBot"
+      ],
+      "scoped_name": "AnswerBot",
+      "scoped_short_name": "AnswerBot",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "Foobara",
+        "Ai",
+        "AnswerBot"
+      ],
+      "scoped_full_name": "Foobara::Ai::AnswerBot",
+      "scoped_category": "domain",
+      "reference": "Foobara::Ai::AnswerBot",
+      "domain": "Foobara::Ai::AnswerBot",
+      "organization": "Foobara::Ai",
+      "parent": [
+        "organization",
+        "Foobara::Ai"
+      ],
+      "commands": [
+        "Foobara::Ai::AnswerBot::Ask"
+      ],
+      "types": [
+        "Foobara::Ai::AnswerBot::model"
+      ],
+      "depends_on": [
+        "Foobara::Ai::AnthropicApi",
+        "Foobara::Ai::OpenAiApi"
+      ]
+    },
+    "global_organization::global_domain": {
+      "scoped_path": [],
+      "scoped_name": null,
+      "scoped_short_name": null,
+      "scoped_prefix": [],
+      "scoped_full_path": [],
+      "scoped_full_name": "",
+      "scoped_category": "domain",
+      "reference": "global_organization::global_domain",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "organization",
+        "global_organization"
+      ],
+      "commands": [],
+      "types": [
+        "array",
+        "associative_array",
+        "atomic_duck",
+        "attributes",
+        "duck",
+        "duckture",
+        "integer",
+        "number",
+        "string",
+        "symbol"
+      ]
+    }
+  },
+  "error": {
+    "Foobara::Value::DataError": {
+      "scoped_path": [
+        "DataError"
+      ],
+      "scoped_name": "DataError",
+      "scoped_short_name": "DataError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "Foobara",
+        "Value",
+        "DataError"
+      ],
+      "scoped_full_name": "Foobara::Value::DataError",
+      "scoped_category": "error",
+      "reference": "Foobara::Value::DataError",
+      "domain": "Foobara::Value",
+      "organization": "Foobara",
+      "parent": [
+        "domain",
+        "Foobara::Value"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "data",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "attribute_name": {
+            "type": "symbol"
+          },
+          "value": {
+            "type": "duck"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::Value::DataError"
+    },
+    "Foobara::Value::Processor::Casting::CannotCastError": {
+      "scoped_path": [
+        "CannotCastError"
+      ],
+      "scoped_name": "CannotCastError",
+      "scoped_short_name": "CannotCastError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "Foobara",
+        "Value",
+        "Processor",
+        "Casting",
+        "CannotCastError"
+      ],
+      "scoped_full_name": "Foobara::Value::Processor::Casting::CannotCastError",
+      "scoped_category": "error",
+      "reference": "Foobara::Value::Processor::Casting::CannotCastError",
+      "domain": "Foobara::Value",
+      "organization": "Foobara",
+      "parent": [
+        "processor_class",
+        "Foobara::Value::Processor::Casting"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "cast_to": {
+            "type": "duck"
+          },
+          "value": {
+            "type": "duck"
+          },
+          "attribute_name": {
+            "type": "symbol"
+          }
+        }
+      },
+      "is_fatal": true,
+      "error_class": "Foobara::Value::Processor::Casting::CannotCastError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "array::SupportedValidators::Size::IncorrectTupleSizeError": {
+      "scoped_path": [
+        "IncorrectTupleSizeError"
+      ],
+      "scoped_name": "IncorrectTupleSizeError",
+      "scoped_short_name": "IncorrectTupleSizeError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "array",
+        "SupportedValidators",
+        "Size",
+        "IncorrectTupleSizeError"
+      ],
+      "scoped_full_name": "array::SupportedValidators::Size::IncorrectTupleSizeError",
+      "scoped_category": "error",
+      "reference": "array::SupportedValidators::Size::IncorrectTupleSizeError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "array::SupportedValidators::Size"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "incorrect_tuple_size",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "expected_size": {
+            "type": "integer"
+          },
+          "actual_size": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "array"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::Array::SupportedValidators::Size::IncorrectTupleSizeError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError": {
+      "scoped_path": [
+        "UnexpectedAttributesError"
+      ],
+      "scoped_name": "UnexpectedAttributesError",
+      "scoped_short_name": "UnexpectedAttributesError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "attributes",
+        "SupportedProcessors",
+        "ElementTypeDeclarations",
+        "UnexpectedAttributesError"
+      ],
+      "scoped_full_name": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+      "scoped_category": "error",
+      "reference": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "attributes::SupportedProcessors::ElementTypeDeclarations"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "unexpected_attributes": {
+            "type": "array",
+            "element_type_declaration": {
+              "type": "symbol"
+            }
+          },
+          "allowed_attributes": {
+            "type": "array",
+            "element_type_declaration": {
+              "type": "symbol"
+            }
+          }
+        }
+      },
+      "is_fatal": true,
+      "error_class": "Foobara::BuiltinTypes::Attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "attributes::SupportedValidators::Required::MissingRequiredAttributeError": {
+      "scoped_path": [
+        "MissingRequiredAttributeError"
+      ],
+      "scoped_name": "MissingRequiredAttributeError",
+      "scoped_short_name": "MissingRequiredAttributeError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "attributes",
+        "SupportedValidators",
+        "Required",
+        "MissingRequiredAttributeError"
+      ],
+      "scoped_full_name": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+      "scoped_category": "error",
+      "reference": "attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "attributes::SupportedValidators::Required"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "attribute_name": {
+            "type": "symbol"
+          }
+        }
+      },
+      "is_fatal": true,
+      "error_class": "Foobara::BuiltinTypes::Attributes::SupportedValidators::Required::MissingRequiredAttributeError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "duck::SupportedValidators::InstanceOf::NotInstanceOfError": {
+      "scoped_path": [
+        "NotInstanceOfError"
+      ],
+      "scoped_name": "NotInstanceOfError",
+      "scoped_short_name": "NotInstanceOfError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "duck",
+        "SupportedValidators",
+        "InstanceOf",
+        "NotInstanceOfError"
+      ],
+      "scoped_full_name": "duck::SupportedValidators::InstanceOf::NotInstanceOfError",
+      "scoped_category": "error",
+      "reference": "duck::SupportedValidators::InstanceOf::NotInstanceOfError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "duck::SupportedValidators::InstanceOf"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "not_instance_of",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "value": {
+            "type": "duck"
+          },
+          "expected_class_name": {
+            "type": "string"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::Duck::SupportedValidators::InstanceOf::NotInstanceOfError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "duck::SupportedValidators::OneOf::ValueNotValidError": {
+      "scoped_path": [
+        "ValueNotValidError"
+      ],
+      "scoped_name": "ValueNotValidError",
+      "scoped_short_name": "ValueNotValidError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "duck",
+        "SupportedValidators",
+        "OneOf",
+        "ValueNotValidError"
+      ],
+      "scoped_full_name": "duck::SupportedValidators::OneOf::ValueNotValidError",
+      "scoped_category": "error",
+      "reference": "duck::SupportedValidators::OneOf::ValueNotValidError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "duck::SupportedValidators::OneOf"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "value_not_valid",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "value": {
+            "type": "duck"
+          },
+          "valid_values": {
+            "type": "array",
+            "element_type_declaration": {
+              "type": "duck"
+            }
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::Duck::SupportedValidators::OneOf::ValueNotValidError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "number::SupportedValidators::Max::MaxExceededError": {
+      "scoped_path": [
+        "MaxExceededError"
+      ],
+      "scoped_name": "MaxExceededError",
+      "scoped_short_name": "MaxExceededError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "number",
+        "SupportedValidators",
+        "Max",
+        "MaxExceededError"
+      ],
+      "scoped_full_name": "number::SupportedValidators::Max::MaxExceededError",
+      "scoped_category": "error",
+      "reference": "number::SupportedValidators::Max::MaxExceededError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "number::SupportedValidators::Max"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "number",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "max_exceeded",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "value": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::Number::SupportedValidators::Max::MaxExceededError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "number::SupportedValidators::Min::BelowMinimumError": {
+      "scoped_path": [
+        "BelowMinimumError"
+      ],
+      "scoped_name": "BelowMinimumError",
+      "scoped_short_name": "BelowMinimumError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "number",
+        "SupportedValidators",
+        "Min",
+        "BelowMinimumError"
+      ],
+      "scoped_full_name": "number::SupportedValidators::Min::BelowMinimumError",
+      "scoped_category": "error",
+      "reference": "number::SupportedValidators::Min::BelowMinimumError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "number::SupportedValidators::Min"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "number",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "below_minimum",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "value": {
+            "type": "number"
+          },
+          "min": {
+            "type": "number"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::Number::SupportedValidators::Min::BelowMinimumError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "string::SupportedValidators::Matches::DoesNotMatchError": {
+      "scoped_path": [
+        "DoesNotMatchError"
+      ],
+      "scoped_name": "DoesNotMatchError",
+      "scoped_short_name": "DoesNotMatchError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "string",
+        "SupportedValidators",
+        "Matches",
+        "DoesNotMatchError"
+      ],
+      "scoped_full_name": "string::SupportedValidators::Matches::DoesNotMatchError",
+      "scoped_category": "error",
+      "reference": "string::SupportedValidators::Matches::DoesNotMatchError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "string::SupportedValidators::Matches"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "does_not_match",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "value": {
+            "type": "string"
+          },
+          "regex": {
+            "type": "duck"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::String::SupportedValidators::Matches::DoesNotMatchError",
+      "base_error": "Foobara::Value::DataError"
+    },
+    "string::SupportedValidators::MaxLength::MaxLengthExceededError": {
+      "scoped_path": [
+        "MaxLengthExceededError"
+      ],
+      "scoped_name": "MaxLengthExceededError",
+      "scoped_short_name": "MaxLengthExceededError",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "string",
+        "SupportedValidators",
+        "MaxLength",
+        "MaxLengthExceededError"
+      ],
+      "scoped_full_name": "string::SupportedValidators::MaxLength::MaxLengthExceededError",
+      "scoped_category": "error",
+      "reference": "string::SupportedValidators::MaxLength::MaxLengthExceededError",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "processor_class",
+        "string::SupportedValidators::MaxLength"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "integer",
+        "string",
+        "symbol"
+      ],
+      "category": "data",
+      "symbol": "max_length_exceeded",
+      "context_type_declaration": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "value": {
+            "type": "string"
+          },
+          "max_length": {
+            "type": "integer"
+          }
+        }
+      },
+      "is_fatal": false,
+      "error_class": "Foobara::BuiltinTypes::String::SupportedValidators::MaxLength::MaxLengthExceededError",
+      "base_error": "Foobara::Value::DataError"
+    }
+  },
+  "organization": {
+    "Foobara::Ai": {
+      "scoped_path": [
+        "Foobara",
+        "Ai"
+      ],
+      "scoped_name": "Foobara::Ai",
+      "scoped_short_name": "Ai",
+      "scoped_prefix": [
+        "Foobara"
+      ],
+      "scoped_full_path": [
+        "Foobara",
+        "Ai"
+      ],
+      "scoped_full_name": "Foobara::Ai",
+      "scoped_category": "organization",
+      "reference": "Foobara::Ai",
+      "domain": "global_organization::global_domain",
+      "organization": "Foobara::Ai",
+      "domains": [
+        "Foobara::Ai::AnswerBot"
+      ]
+    },
+    "global_organization": {
+      "scoped_path": [],
+      "scoped_name": null,
+      "scoped_short_name": null,
+      "scoped_prefix": [],
+      "scoped_full_path": [],
+      "scoped_full_name": "",
+      "scoped_category": "organization",
+      "reference": "global_organization",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "domains": [
+        "global_organization::global_domain"
+      ]
+    }
+  },
+  "processor": {
+    "array::Casters::arrayable": {
+      "scoped_path": [
+        "Casters",
+        "arrayable"
+      ],
+      "scoped_name": "Casters::arrayable",
+      "scoped_short_name": "arrayable",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "array",
+        "Casters",
+        "arrayable"
+      ],
+      "scoped_full_name": "array::Casters::arrayable",
+      "scoped_category": "processor",
+      "reference": "array::Casters::arrayable",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "array"
+      ],
+      "processor_class": "array::Casters::Arrayable"
+    },
+    "associative_array::Casters::array": {
+      "scoped_path": [
+        "Casters",
+        "array"
+      ],
+      "scoped_name": "Casters::array",
+      "scoped_short_name": "array",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "associative_array",
+        "Casters",
+        "array"
+      ],
+      "scoped_full_name": "associative_array::Casters::array",
+      "scoped_category": "processor",
+      "reference": "associative_array::Casters::array",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "associative_array"
+      ],
+      "processor_class": "associative_array::Casters::Array"
+    },
+    "attributes::Casters::array": {
+      "scoped_path": [
+        "Casters",
+        "array"
+      ],
+      "scoped_name": "Casters::array",
+      "scoped_short_name": "array",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "Casters",
+        "array"
+      ],
+      "scoped_full_name": "attributes::Casters::array",
+      "scoped_category": "processor",
+      "reference": "attributes::Casters::array",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "processor_class": "attributes::Casters::Array"
+    },
+    "attributes::Casters::hash": {
+      "scoped_path": [
+        "Casters",
+        "hash"
+      ],
+      "scoped_name": "Casters::hash",
+      "scoped_short_name": "hash",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "Casters",
+        "hash"
+      ],
+      "scoped_full_name": "attributes::Casters::hash",
+      "scoped_category": "processor",
+      "reference": "attributes::Casters::hash",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "processor_class": "attributes::Casters::Hash"
+    },
+    "integer::Casters::string": {
+      "scoped_path": [
+        "Casters",
+        "string"
+      ],
+      "scoped_name": "Casters::string",
+      "scoped_short_name": "string",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "integer",
+        "Casters",
+        "string"
+      ],
+      "scoped_full_name": "integer::Casters::string",
+      "scoped_category": "processor",
+      "reference": "integer::Casters::string",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "integer"
+      ],
+      "processor_class": "integer::Casters::String"
+    },
+    "string::Casters::numeric": {
+      "scoped_path": [
+        "Casters",
+        "numeric"
+      ],
+      "scoped_name": "Casters::numeric",
+      "scoped_short_name": "numeric",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "string",
+        "Casters",
+        "numeric"
+      ],
+      "scoped_full_name": "string::Casters::numeric",
+      "scoped_category": "processor",
+      "reference": "string::Casters::numeric",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "processor_class": "string::Casters::Numeric"
+    },
+    "string::Casters::symbol": {
+      "scoped_path": [
+        "Casters",
+        "symbol"
+      ],
+      "scoped_name": "Casters::symbol",
+      "scoped_short_name": "symbol",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "string",
+        "Casters",
+        "symbol"
+      ],
+      "scoped_full_name": "string::Casters::symbol",
+      "scoped_category": "processor",
+      "reference": "string::Casters::symbol",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "processor_class": "string::Casters::Symbol"
+    },
+    "symbol::Casters::string": {
+      "scoped_path": [
+        "Casters",
+        "string"
+      ],
+      "scoped_name": "Casters::string",
+      "scoped_short_name": "string",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "symbol",
+        "Casters",
+        "string"
+      ],
+      "scoped_full_name": "symbol::Casters::string",
+      "scoped_category": "processor",
+      "reference": "symbol::Casters::string",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "symbol"
+      ],
+      "processor_class": "symbol::Casters::String"
+    }
+  },
+  "processor_class": {
+    "Foobara::CommandConnectors::Serializers::ErrorsSerializer": {
+      "scoped_path": [
+        "Serializers",
+        "ErrorsSerializer"
+      ],
+      "scoped_name": "Serializers::ErrorsSerializer",
+      "scoped_short_name": "ErrorsSerializer",
+      "scoped_prefix": [
+        "Serializers"
+      ],
+      "scoped_full_path": [
+        "Foobara",
+        "CommandConnectors",
+        "Serializers",
+        "ErrorsSerializer"
+      ],
+      "scoped_full_name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+      "scoped_category": "processor_class",
+      "reference": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+      "domain": "Foobara::CommandConnectors",
+      "organization": "Foobara",
+      "parent": [
+        "domain",
+        "Foobara::CommandConnectors"
+      ],
+      "name": "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+      "processor_type": "transformer"
+    },
+    "Foobara::CommandConnectors::Serializers::JsonSerializer": {
+      "scoped_path": [
+        "Serializers",
+        "JsonSerializer"
+      ],
+      "scoped_name": "Serializers::JsonSerializer",
+      "scoped_short_name": "JsonSerializer",
+      "scoped_prefix": [
+        "Serializers"
+      ],
+      "scoped_full_path": [
+        "Foobara",
+        "CommandConnectors",
+        "Serializers",
+        "JsonSerializer"
+      ],
+      "scoped_full_name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
+      "scoped_category": "processor_class",
+      "reference": "Foobara::CommandConnectors::Serializers::JsonSerializer",
+      "domain": "Foobara::CommandConnectors",
+      "organization": "Foobara",
+      "parent": [
+        "domain",
+        "Foobara::CommandConnectors"
+      ],
+      "name": "Foobara::CommandConnectors::Serializers::JsonSerializer",
+      "processor_type": "transformer"
+    },
+    "Foobara::Value::Processor::Casting": {
+      "scoped_path": [
+        "Processor",
+        "Casting"
+      ],
+      "scoped_name": "Processor::Casting",
+      "scoped_short_name": "Casting",
+      "scoped_prefix": [
+        "Processor"
+      ],
+      "scoped_full_path": [
+        "Foobara",
+        "Value",
+        "Processor",
+        "Casting"
+      ],
+      "scoped_full_name": "Foobara::Value::Processor::Casting",
+      "scoped_category": "processor_class",
+      "reference": "Foobara::Value::Processor::Casting",
+      "domain": "Foobara::Value",
+      "organization": "Foobara",
+      "parent": [
+        "domain",
+        "Foobara::Value"
+      ],
+      "name": "Foobara::Value::Processor::Casting",
+      "processor_type": "casting",
+      "error_classes": [
+        "Foobara::Value::Processor::Casting::CannotCastError"
+      ]
+    },
+    "Foobara::Value::Processor::Pipeline": {
+      "scoped_path": [
+        "Processor",
+        "Pipeline"
+      ],
+      "scoped_name": "Processor::Pipeline",
+      "scoped_short_name": "Pipeline",
+      "scoped_prefix": [
+        "Processor"
+      ],
+      "scoped_full_path": [
+        "Foobara",
+        "Value",
+        "Processor",
+        "Pipeline"
+      ],
+      "scoped_full_name": "Foobara::Value::Processor::Pipeline",
+      "scoped_category": "processor_class",
+      "reference": "Foobara::Value::Processor::Pipeline",
+      "domain": "Foobara::Value",
+      "organization": "Foobara",
+      "parent": [
+        "domain",
+        "Foobara::Value"
+      ],
+      "name": "Foobara::Value::Processor::Pipeline",
+      "processor_type": "pipeline"
+    },
+    "array::Casters::Arrayable": {
+      "scoped_path": [
+        "Casters",
+        "Arrayable"
+      ],
+      "scoped_name": "Casters::Arrayable",
+      "scoped_short_name": "Arrayable",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "array",
+        "Casters",
+        "Arrayable"
+      ],
+      "scoped_full_name": "array::Casters::Arrayable",
+      "scoped_category": "processor_class",
+      "reference": "array::Casters::Arrayable",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "array"
+      ],
+      "name": "Foobara::BuiltinTypes::Array::Casters::Arrayable",
+      "processor_type": "caster"
+    },
+    "array::SupportedProcessors::ElementTypeDeclaration": {
+      "scoped_path": [
+        "SupportedProcessors",
+        "ElementTypeDeclaration"
+      ],
+      "scoped_name": "SupportedProcessors::ElementTypeDeclaration",
+      "scoped_short_name": "ElementTypeDeclaration",
+      "scoped_prefix": [
+        "SupportedProcessors"
+      ],
+      "scoped_full_path": [
+        "array",
+        "SupportedProcessors",
+        "ElementTypeDeclaration"
+      ],
+      "scoped_full_name": "array::SupportedProcessors::ElementTypeDeclaration",
+      "scoped_category": "processor_class",
+      "reference": "array::SupportedProcessors::ElementTypeDeclaration",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "array"
+      ],
+      "name": "Foobara::BuiltinTypes::Array::SupportedProcessors::ElementTypeDeclaration",
+      "processor_type": "processor"
+    },
+    "array::SupportedValidators::Size": {
+      "scoped_path": [
+        "SupportedValidators",
+        "Size"
+      ],
+      "scoped_name": "SupportedValidators::Size",
+      "scoped_short_name": "Size",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "array",
+        "SupportedValidators",
+        "Size"
+      ],
+      "scoped_full_name": "array::SupportedValidators::Size",
+      "scoped_category": "processor_class",
+      "reference": "array::SupportedValidators::Size",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "array"
+      ],
+      "name": "Foobara::BuiltinTypes::Array::SupportedValidators::Size",
+      "processor_type": "transformer",
+      "error_classes": [
+        "array::SupportedValidators::Size::IncorrectTupleSizeError"
+      ]
+    },
+    "associative_array::Casters::Array": {
+      "scoped_path": [
+        "Casters",
+        "Array"
+      ],
+      "scoped_name": "Casters::Array",
+      "scoped_short_name": "Array",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "associative_array",
+        "Casters",
+        "Array"
+      ],
+      "scoped_full_name": "associative_array::Casters::Array",
+      "scoped_category": "processor_class",
+      "reference": "associative_array::Casters::Array",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "associative_array"
+      ],
+      "name": "Foobara::BuiltinTypes::AssociativeArray::Casters::Array",
+      "processor_type": "caster"
+    },
+    "associative_array::SupportedProcessors::KeyTypeDeclaration": {
+      "scoped_path": [
+        "SupportedProcessors",
+        "KeyTypeDeclaration"
+      ],
+      "scoped_name": "SupportedProcessors::KeyTypeDeclaration",
+      "scoped_short_name": "KeyTypeDeclaration",
+      "scoped_prefix": [
+        "SupportedProcessors"
+      ],
+      "scoped_full_path": [
+        "associative_array",
+        "SupportedProcessors",
+        "KeyTypeDeclaration"
+      ],
+      "scoped_full_name": "associative_array::SupportedProcessors::KeyTypeDeclaration",
+      "scoped_category": "processor_class",
+      "reference": "associative_array::SupportedProcessors::KeyTypeDeclaration",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "associative_array"
+      ],
+      "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::KeyTypeDeclaration",
+      "processor_type": "processor"
+    },
+    "associative_array::SupportedProcessors::ValueTypeDeclaration": {
+      "scoped_path": [
+        "SupportedProcessors",
+        "ValueTypeDeclaration"
+      ],
+      "scoped_name": "SupportedProcessors::ValueTypeDeclaration",
+      "scoped_short_name": "ValueTypeDeclaration",
+      "scoped_prefix": [
+        "SupportedProcessors"
+      ],
+      "scoped_full_path": [
+        "associative_array",
+        "SupportedProcessors",
+        "ValueTypeDeclaration"
+      ],
+      "scoped_full_name": "associative_array::SupportedProcessors::ValueTypeDeclaration",
+      "scoped_category": "processor_class",
+      "reference": "associative_array::SupportedProcessors::ValueTypeDeclaration",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "associative_array"
+      ],
+      "name": "Foobara::BuiltinTypes::AssociativeArray::SupportedProcessors::ValueTypeDeclaration",
+      "processor_type": "processor"
+    },
+    "attributes::Casters::Array": {
+      "scoped_path": [
+        "Casters",
+        "Array"
+      ],
+      "scoped_name": "Casters::Array",
+      "scoped_short_name": "Array",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "Casters",
+        "Array"
+      ],
+      "scoped_full_name": "attributes::Casters::Array",
+      "scoped_category": "processor_class",
+      "reference": "attributes::Casters::Array",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "name": "Foobara::BuiltinTypes::Attributes::Casters::Array",
+      "processor_type": "caster"
+    },
+    "attributes::Casters::Hash": {
+      "scoped_path": [
+        "Casters",
+        "Hash"
+      ],
+      "scoped_name": "Casters::Hash",
+      "scoped_short_name": "Hash",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "Casters",
+        "Hash"
+      ],
+      "scoped_full_name": "attributes::Casters::Hash",
+      "scoped_category": "processor_class",
+      "reference": "attributes::Casters::Hash",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "name": "Foobara::BuiltinTypes::Attributes::Casters::Hash",
+      "processor_type": "caster"
+    },
+    "attributes::SupportedProcessors::ElementTypeDeclarations": {
+      "scoped_path": [
+        "SupportedProcessors",
+        "ElementTypeDeclarations"
+      ],
+      "scoped_name": "SupportedProcessors::ElementTypeDeclarations",
+      "scoped_short_name": "ElementTypeDeclarations",
+      "scoped_prefix": [
+        "SupportedProcessors"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "SupportedProcessors",
+        "ElementTypeDeclarations"
+      ],
+      "scoped_full_name": "attributes::SupportedProcessors::ElementTypeDeclarations",
+      "scoped_category": "processor_class",
+      "reference": "attributes::SupportedProcessors::ElementTypeDeclarations",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "name": "Foobara::BuiltinTypes::Attributes::SupportedProcessors::ElementTypeDeclarations",
+      "processor_type": "processor",
+      "error_classes": [
+        "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+      ]
+    },
+    "attributes::SupportedTransformers::Defaults": {
+      "scoped_path": [
+        "SupportedTransformers",
+        "Defaults"
+      ],
+      "scoped_name": "SupportedTransformers::Defaults",
+      "scoped_short_name": "Defaults",
+      "scoped_prefix": [
+        "SupportedTransformers"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "SupportedTransformers",
+        "Defaults"
+      ],
+      "scoped_full_name": "attributes::SupportedTransformers::Defaults",
+      "scoped_category": "processor_class",
+      "reference": "attributes::SupportedTransformers::Defaults",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "name": "Foobara::BuiltinTypes::Attributes::SupportedTransformers::Defaults",
+      "processor_type": "transformer"
+    },
+    "attributes::SupportedValidators::Required": {
+      "scoped_path": [
+        "SupportedValidators",
+        "Required"
+      ],
+      "scoped_name": "SupportedValidators::Required",
+      "scoped_short_name": "Required",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "SupportedValidators",
+        "Required"
+      ],
+      "scoped_full_name": "attributes::SupportedValidators::Required",
+      "scoped_category": "processor_class",
+      "reference": "attributes::SupportedValidators::Required",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "name": "Foobara::BuiltinTypes::Attributes::SupportedValidators::Required",
+      "processor_type": "transformer",
+      "error_classes": [
+        "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+      ]
+    },
+    "attributes::Transformers::RemoveUnexpectedAttributes": {
+      "scoped_path": [
+        "Transformers",
+        "RemoveUnexpectedAttributes"
+      ],
+      "scoped_name": "Transformers::RemoveUnexpectedAttributes",
+      "scoped_short_name": "RemoveUnexpectedAttributes",
+      "scoped_prefix": [
+        "Transformers"
+      ],
+      "scoped_full_path": [
+        "attributes",
+        "Transformers",
+        "RemoveUnexpectedAttributes"
+      ],
+      "scoped_full_name": "attributes::Transformers::RemoveUnexpectedAttributes",
+      "scoped_category": "processor_class",
+      "reference": "attributes::Transformers::RemoveUnexpectedAttributes",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "attributes"
+      ],
+      "name": "Foobara::BuiltinTypes::Attributes::Transformers::RemoveUnexpectedAttributes",
+      "processor_type": "transformer"
+    },
+    "duck::SupportedCasters::AllowNil": {
+      "scoped_path": [
+        "SupportedCasters",
+        "AllowNil"
+      ],
+      "scoped_name": "SupportedCasters::AllowNil",
+      "scoped_short_name": "AllowNil",
+      "scoped_prefix": [
+        "SupportedCasters"
+      ],
+      "scoped_full_path": [
+        "duck",
+        "SupportedCasters",
+        "AllowNil"
+      ],
+      "scoped_full_name": "duck::SupportedCasters::AllowNil",
+      "scoped_category": "processor_class",
+      "reference": "duck::SupportedCasters::AllowNil",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "duck"
+      ],
+      "name": "Foobara::BuiltinTypes::Duck::SupportedCasters::AllowNil",
+      "processor_type": "caster"
+    },
+    "duck::SupportedValidators::InstanceOf": {
+      "scoped_path": [
+        "SupportedValidators",
+        "InstanceOf"
+      ],
+      "scoped_name": "SupportedValidators::InstanceOf",
+      "scoped_short_name": "InstanceOf",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "duck",
+        "SupportedValidators",
+        "InstanceOf"
+      ],
+      "scoped_full_name": "duck::SupportedValidators::InstanceOf",
+      "scoped_category": "processor_class",
+      "reference": "duck::SupportedValidators::InstanceOf",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "duck"
+      ],
+      "name": "Foobara::BuiltinTypes::Duck::SupportedValidators::InstanceOf",
+      "processor_type": "transformer",
+      "error_classes": [
+        "duck::SupportedValidators::InstanceOf::NotInstanceOfError"
+      ]
+    },
+    "duck::SupportedValidators::OneOf": {
+      "scoped_path": [
+        "SupportedValidators",
+        "OneOf"
+      ],
+      "scoped_name": "SupportedValidators::OneOf",
+      "scoped_short_name": "OneOf",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "duck",
+        "SupportedValidators",
+        "OneOf"
+      ],
+      "scoped_full_name": "duck::SupportedValidators::OneOf",
+      "scoped_category": "processor_class",
+      "reference": "duck::SupportedValidators::OneOf",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "duck"
+      ],
+      "name": "Foobara::BuiltinTypes::Duck::SupportedValidators::OneOf",
+      "processor_type": "transformer",
+      "error_classes": [
+        "duck::SupportedValidators::OneOf::ValueNotValidError"
+      ]
+    },
+    "integer::Casters::String": {
+      "scoped_path": [
+        "Casters",
+        "String"
+      ],
+      "scoped_name": "Casters::String",
+      "scoped_short_name": "String",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "integer",
+        "Casters",
+        "String"
+      ],
+      "scoped_full_name": "integer::Casters::String",
+      "scoped_category": "processor_class",
+      "reference": "integer::Casters::String",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "integer"
+      ],
+      "name": "Foobara::BuiltinTypes::Integer::Casters::String",
+      "processor_type": "caster"
+    },
+    "number::SupportedValidators::Max": {
+      "scoped_path": [
+        "SupportedValidators",
+        "Max"
+      ],
+      "scoped_name": "SupportedValidators::Max",
+      "scoped_short_name": "Max",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "number",
+        "SupportedValidators",
+        "Max"
+      ],
+      "scoped_full_name": "number::SupportedValidators::Max",
+      "scoped_category": "processor_class",
+      "reference": "number::SupportedValidators::Max",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "number"
+      ],
+      "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Max",
+      "processor_type": "transformer",
+      "error_classes": [
+        "number::SupportedValidators::Max::MaxExceededError"
+      ]
+    },
+    "number::SupportedValidators::Min": {
+      "scoped_path": [
+        "SupportedValidators",
+        "Min"
+      ],
+      "scoped_name": "SupportedValidators::Min",
+      "scoped_short_name": "Min",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "number",
+        "SupportedValidators",
+        "Min"
+      ],
+      "scoped_full_name": "number::SupportedValidators::Min",
+      "scoped_category": "processor_class",
+      "reference": "number::SupportedValidators::Min",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "number"
+      ],
+      "name": "Foobara::BuiltinTypes::Number::SupportedValidators::Min",
+      "processor_type": "transformer",
+      "error_classes": [
+        "number::SupportedValidators::Min::BelowMinimumError"
+      ]
+    },
+    "string::Casters::Numeric": {
+      "scoped_path": [
+        "Casters",
+        "Numeric"
+      ],
+      "scoped_name": "Casters::Numeric",
+      "scoped_short_name": "Numeric",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "string",
+        "Casters",
+        "Numeric"
+      ],
+      "scoped_full_name": "string::Casters::Numeric",
+      "scoped_category": "processor_class",
+      "reference": "string::Casters::Numeric",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "name": "Foobara::BuiltinTypes::String::Casters::Numeric",
+      "processor_type": "caster"
+    },
+    "string::Casters::Symbol": {
+      "scoped_path": [
+        "Casters",
+        "Symbol"
+      ],
+      "scoped_name": "Casters::Symbol",
+      "scoped_short_name": "Symbol",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "string",
+        "Casters",
+        "Symbol"
+      ],
+      "scoped_full_name": "string::Casters::Symbol",
+      "scoped_category": "processor_class",
+      "reference": "string::Casters::Symbol",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "name": "Foobara::BuiltinTypes::String::Casters::Symbol",
+      "processor_type": "caster"
+    },
+    "string::SupportedTransformers::Downcase": {
+      "scoped_path": [
+        "SupportedTransformers",
+        "Downcase"
+      ],
+      "scoped_name": "SupportedTransformers::Downcase",
+      "scoped_short_name": "Downcase",
+      "scoped_prefix": [
+        "SupportedTransformers"
+      ],
+      "scoped_full_path": [
+        "string",
+        "SupportedTransformers",
+        "Downcase"
+      ],
+      "scoped_full_name": "string::SupportedTransformers::Downcase",
+      "scoped_category": "processor_class",
+      "reference": "string::SupportedTransformers::Downcase",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "name": "Foobara::BuiltinTypes::String::SupportedTransformers::Downcase",
+      "processor_type": "transformer"
+    },
+    "string::SupportedValidators::Matches": {
+      "scoped_path": [
+        "SupportedValidators",
+        "Matches"
+      ],
+      "scoped_name": "SupportedValidators::Matches",
+      "scoped_short_name": "Matches",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "string",
+        "SupportedValidators",
+        "Matches"
+      ],
+      "scoped_full_name": "string::SupportedValidators::Matches",
+      "scoped_category": "processor_class",
+      "reference": "string::SupportedValidators::Matches",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "name": "Foobara::BuiltinTypes::String::SupportedValidators::Matches",
+      "processor_type": "transformer",
+      "error_classes": [
+        "string::SupportedValidators::Matches::DoesNotMatchError"
+      ]
+    },
+    "string::SupportedValidators::MaxLength": {
+      "scoped_path": [
+        "SupportedValidators",
+        "MaxLength"
+      ],
+      "scoped_name": "SupportedValidators::MaxLength",
+      "scoped_short_name": "MaxLength",
+      "scoped_prefix": [
+        "SupportedValidators"
+      ],
+      "scoped_full_path": [
+        "string",
+        "SupportedValidators",
+        "MaxLength"
+      ],
+      "scoped_full_name": "string::SupportedValidators::MaxLength",
+      "scoped_category": "processor_class",
+      "reference": "string::SupportedValidators::MaxLength",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "string"
+      ],
+      "name": "Foobara::BuiltinTypes::String::SupportedValidators::MaxLength",
+      "processor_type": "transformer",
+      "error_classes": [
+        "string::SupportedValidators::MaxLength::MaxLengthExceededError"
+      ]
+    },
+    "symbol::Casters::String": {
+      "scoped_path": [
+        "Casters",
+        "String"
+      ],
+      "scoped_name": "Casters::String",
+      "scoped_short_name": "String",
+      "scoped_prefix": [
+        "Casters"
+      ],
+      "scoped_full_path": [
+        "symbol",
+        "Casters",
+        "String"
+      ],
+      "scoped_full_name": "symbol::Casters::String",
+      "scoped_category": "processor_class",
+      "reference": "symbol::Casters::String",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "type",
+        "symbol"
+      ],
+      "name": "Foobara::BuiltinTypes::Symbol::Casters::String",
+      "processor_type": "caster"
+    }
+  },
+  "type": {
+    "Foobara::Ai::AnswerBot::model": {
+      "scoped_path": [
+        "model"
+      ],
+      "scoped_name": "model",
+      "scoped_short_name": "model",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "Foobara",
+        "Ai",
+        "AnswerBot",
+        "model"
+      ],
+      "scoped_full_name": "Foobara::Ai::AnswerBot::model",
+      "scoped_category": "type",
+      "reference": "Foobara::Ai::AnswerBot::model",
+      "domain": "Foobara::Ai::AnswerBot",
+      "organization": "Foobara::Ai",
+      "parent": [
+        "domain",
+        "Foobara::Ai::AnswerBot"
+      ],
+      "declaration_data": {
+        "one_of": [
+          "babbage-002",
+          "chatgpt-4o-latest",
+          "claude-2.0",
+          "claude-2.1",
+          "claude-3-5-haiku-20241022",
+          "claude-3-5-sonnet-20240620",
+          "claude-3-5-sonnet-20241022",
+          "claude-3-haiku-20240307",
+          "claude-3-opus-20240229",
+          "claude-3-sonnet-20240229",
+          "dall-e-2",
+          "dall-e-3",
+          "davinci-002",
+          "gpt-3.5-turbo",
+          "gpt-3.5-turbo-0125",
+          "gpt-3.5-turbo-1106",
+          "gpt-3.5-turbo-16k",
+          "gpt-3.5-turbo-instruct",
+          "gpt-3.5-turbo-instruct-0914",
+          "gpt-4",
+          "gpt-4-0125-preview",
+          "gpt-4-0613",
+          "gpt-4-1106-preview",
+          "gpt-4-turbo",
+          "gpt-4-turbo-2024-04-09",
+          "gpt-4-turbo-preview",
+          "gpt-4o",
+          "gpt-4o-2024-05-13",
+          "gpt-4o-2024-08-06",
+          "gpt-4o-2024-11-20",
+          "gpt-4o-audio-preview",
+          "gpt-4o-audio-preview-2024-10-01",
+          "gpt-4o-audio-preview-2024-12-17",
+          "gpt-4o-mini",
+          "gpt-4o-mini-2024-07-18",
+          "gpt-4o-mini-audio-preview",
+          "gpt-4o-mini-audio-preview-2024-12-17",
+          "gpt-4o-mini-realtime-preview",
+          "gpt-4o-mini-realtime-preview-2024-12-17",
+          "gpt-4o-realtime-preview",
+          "gpt-4o-realtime-preview-2024-10-01",
+          "gpt-4o-realtime-preview-2024-12-17",
+          "o1-mini",
+          "o1-mini-2024-09-12",
+          "o1-preview",
+          "o1-preview-2024-09-12",
+          "omni-moderation-2024-09-26",
+          "omni-moderation-latest",
+          "text-embedding-3-large",
+          "text-embedding-3-small",
+          "text-embedding-ada-002",
+          "tts-1",
+          "tts-1-1106",
+          "tts-1-hd",
+          "tts-1-hd-1106",
+          "whisper-1"
+        ],
+        "type": "string"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "one_of": [
+                  "babbage-002",
+                  "chatgpt-4o-latest",
+                  "claude-2.0",
+                  "claude-2.1",
+                  "claude-3-5-haiku-20241022",
+                  "claude-3-5-sonnet-20240620",
+                  "claude-3-5-sonnet-20241022",
+                  "claude-3-haiku-20240307",
+                  "claude-3-opus-20240229",
+                  "claude-3-sonnet-20240229",
+                  "dall-e-2",
+                  "dall-e-3",
+                  "davinci-002",
+                  "gpt-3.5-turbo",
+                  "gpt-3.5-turbo-0125",
+                  "gpt-3.5-turbo-1106",
+                  "gpt-3.5-turbo-16k",
+                  "gpt-3.5-turbo-instruct",
+                  "gpt-3.5-turbo-instruct-0914",
+                  "gpt-4",
+                  "gpt-4-0125-preview",
+                  "gpt-4-0613",
+                  "gpt-4-1106-preview",
+                  "gpt-4-turbo",
+                  "gpt-4-turbo-2024-04-09",
+                  "gpt-4-turbo-preview",
+                  "gpt-4o",
+                  "gpt-4o-2024-05-13",
+                  "gpt-4o-2024-08-06",
+                  "gpt-4o-2024-11-20",
+                  "gpt-4o-audio-preview",
+                  "gpt-4o-audio-preview-2024-10-01",
+                  "gpt-4o-audio-preview-2024-12-17",
+                  "gpt-4o-mini",
+                  "gpt-4o-mini-2024-07-18",
+                  "gpt-4o-mini-audio-preview",
+                  "gpt-4o-mini-audio-preview-2024-12-17",
+                  "gpt-4o-mini-realtime-preview",
+                  "gpt-4o-mini-realtime-preview-2024-12-17",
+                  "gpt-4o-realtime-preview",
+                  "gpt-4o-realtime-preview-2024-10-01",
+                  "gpt-4o-realtime-preview-2024-12-17",
+                  "o1-mini",
+                  "o1-mini-2024-09-12",
+                  "o1-preview",
+                  "o1-preview-2024-09-12",
+                  "omni-moderation-2024-09-26",
+                  "omni-moderation-latest",
+                  "text-embedding-3-large",
+                  "text-embedding-3-small",
+                  "text-embedding-ada-002",
+                  "tts-1",
+                  "tts-1-1106",
+                  "tts-1-hd",
+                  "tts-1-hd-1106",
+                  "whisper-1"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        },
+        "data.value_not_valid": {
+          "category": "data",
+          "symbol": "value_not_valid",
+          "key": "data.value_not_valid",
+          "error": "duck::SupportedValidators::OneOf::ValueNotValidError",
+          "processor_class": "duck::SupportedValidators::OneOf",
+          "processor_manifest_data": {
+            "one_of": [
+              "babbage-002",
+              "chatgpt-4o-latest",
+              "claude-2.0",
+              "claude-2.1",
+              "claude-3-5-haiku-20241022",
+              "claude-3-5-sonnet-20240620",
+              "claude-3-5-sonnet-20241022",
+              "claude-3-haiku-20240307",
+              "claude-3-opus-20240229",
+              "claude-3-sonnet-20240229",
+              "dall-e-2",
+              "dall-e-3",
+              "davinci-002",
+              "gpt-3.5-turbo",
+              "gpt-3.5-turbo-0125",
+              "gpt-3.5-turbo-1106",
+              "gpt-3.5-turbo-16k",
+              "gpt-3.5-turbo-instruct",
+              "gpt-3.5-turbo-instruct-0914",
+              "gpt-4",
+              "gpt-4-0125-preview",
+              "gpt-4-0613",
+              "gpt-4-1106-preview",
+              "gpt-4-turbo",
+              "gpt-4-turbo-2024-04-09",
+              "gpt-4-turbo-preview",
+              "gpt-4o",
+              "gpt-4o-2024-05-13",
+              "gpt-4o-2024-08-06",
+              "gpt-4o-2024-11-20",
+              "gpt-4o-audio-preview",
+              "gpt-4o-audio-preview-2024-10-01",
+              "gpt-4o-audio-preview-2024-12-17",
+              "gpt-4o-mini",
+              "gpt-4o-mini-2024-07-18",
+              "gpt-4o-mini-audio-preview",
+              "gpt-4o-mini-audio-preview-2024-12-17",
+              "gpt-4o-mini-realtime-preview",
+              "gpt-4o-mini-realtime-preview-2024-12-17",
+              "gpt-4o-realtime-preview",
+              "gpt-4o-realtime-preview-2024-10-01",
+              "gpt-4o-realtime-preview-2024-12-17",
+              "o1-mini",
+              "o1-mini-2024-09-12",
+              "o1-preview",
+              "o1-preview-2024-09-12",
+              "omni-moderation-2024-09-26",
+              "omni-moderation-latest",
+              "text-embedding-3-large",
+              "text-embedding-3-small",
+              "text-embedding-ada-002",
+              "tts-1",
+              "tts-1-1106",
+              "tts-1-hd",
+              "tts-1-hd-1106",
+              "whisper-1"
+            ]
+          }
+        }
+      },
+      "name": "Anonymous string extension",
+      "target_classes": [
+        "String"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "description": null,
+      "base_type": "string",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_transformers": [
+        "string::SupportedTransformers::Downcase"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf",
+        "string::SupportedValidators::Matches",
+        "string::SupportedValidators::MaxLength"
+      ],
+      "processors": {
+        "casters": [
+          "string::Casters::numeric",
+          "string::Casters::symbol"
+        ],
+        "caster_classes": [
+          "string::Casters::Numeric",
+          "string::Casters::Symbol"
+        ],
+        "validator_classes": [
+          "duck::SupportedValidators::OneOf"
+        ]
+      }
+    },
+    "array": {
+      "scoped_path": [
+        "array"
+      ],
+      "scoped_name": "array",
+      "scoped_short_name": "array",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "array"
+      ],
+      "scoped_full_name": "array",
+      "scoped_category": "type",
+      "reference": "array",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "array"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      },
+      "name": "array",
+      "target_classes": [
+        "Array"
+      ],
+      "types_depended_on": [
+        "attributes",
+        "duck",
+        "duckture",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in array type",
+      "base_type": "duckture",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "array::SupportedValidators::Size",
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ],
+      "supported_processors": [
+        "array::SupportedProcessors::ElementTypeDeclaration"
+      ],
+      "processors": {
+        "casters": [
+          "array::Casters::arrayable"
+        ],
+        "caster_classes": [
+          "array::Casters::Arrayable"
+        ]
+      }
+    },
+    "associative_array": {
+      "scoped_path": [
+        "associative_array"
+      ],
+      "scoped_name": "associative_array",
+      "scoped_short_name": "associative_array",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "associative_array"
+      ],
+      "scoped_full_name": "associative_array",
+      "scoped_category": "type",
+      "reference": "associative_array",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "associative_array"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "associative_array"
+              }
+            }
+          }
+        }
+      },
+      "name": "associative_array",
+      "target_classes": [
+        "Hash"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "duckture",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in associative_array type",
+      "base_type": "duckture",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ],
+      "supported_processors": [
+        "associative_array::SupportedProcessors::KeyTypeDeclaration",
+        "associative_array::SupportedProcessors::ValueTypeDeclaration"
+      ],
+      "processors": {
+        "casters": [
+          "associative_array::Casters::array"
+        ],
+        "caster_classes": [
+          "associative_array::Casters::Array"
+        ]
+      }
+    },
+    "atomic_duck": {
+      "scoped_path": [
+        "atomic_duck"
+      ],
+      "scoped_name": "atomic_duck",
+      "scoped_short_name": "atomic_duck",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "atomic_duck"
+      ],
+      "scoped_full_name": "atomic_duck",
+      "scoped_category": "type",
+      "reference": "atomic_duck",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "atomic_duck"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "atomic_duck"
+              }
+            }
+          }
+        }
+      },
+      "name": "atomic_duck",
+      "target_classes": [
+        "Object"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in atomic_duck type",
+      "base_type": "duck",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ]
+    },
+    "attributes": {
+      "scoped_path": [
+        "attributes"
+      ],
+      "scoped_name": "attributes",
+      "scoped_short_name": "attributes",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "attributes"
+      ],
+      "scoped_full_name": "attributes",
+      "scoped_category": "type",
+      "reference": "attributes",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "attributes"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "attributes"
+              }
+            }
+          }
+        }
+      },
+      "name": "attributes",
+      "types_depended_on": [
+        "array",
+        "associative_array",
+        "duck",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in attributes type",
+      "base_type": "associative_array",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_transformers": [
+        "attributes::SupportedTransformers::Defaults"
+      ],
+      "supported_validators": [
+        "attributes::SupportedValidators::Required",
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ],
+      "supported_processors": [
+        "associative_array::SupportedProcessors::KeyTypeDeclaration",
+        "associative_array::SupportedProcessors::ValueTypeDeclaration",
+        "attributes::SupportedProcessors::ElementTypeDeclarations"
+      ],
+      "processors": {
+        "casters": [
+          "attributes::Casters::array",
+          "attributes::Casters::hash"
+        ],
+        "caster_classes": [
+          "attributes::Casters::Array",
+          "attributes::Casters::Hash"
+        ],
+        "transformer_classes": [
+          "attributes::Transformers::RemoveUnexpectedAttributes"
+        ]
+      }
+    },
+    "duck": {
+      "scoped_path": [
+        "duck"
+      ],
+      "scoped_name": "duck",
+      "scoped_short_name": "duck",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "duck"
+      ],
+      "scoped_full_name": "duck",
+      "scoped_category": "type",
+      "reference": "duck",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "duck"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "duck"
+              }
+            }
+          }
+        }
+      },
+      "name": "duck",
+      "target_classes": [
+        "Object"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in duck type",
+      "base_type": null,
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ]
+    },
+    "duckture": {
+      "scoped_path": [
+        "duckture"
+      ],
+      "scoped_name": "duckture",
+      "scoped_short_name": "duckture",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "duckture"
+      ],
+      "scoped_full_name": "duckture",
+      "scoped_category": "type",
+      "reference": "duckture",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "duckture"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "duckture"
+              }
+            }
+          }
+        }
+      },
+      "name": "duckture",
+      "target_classes": [
+        "Object"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in duckture type",
+      "base_type": "duck",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ]
+    },
+    "integer": {
+      "scoped_path": [
+        "integer"
+      ],
+      "scoped_name": "integer",
+      "scoped_short_name": "integer",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "integer"
+      ],
+      "scoped_full_name": "integer",
+      "scoped_category": "type",
+      "reference": "integer",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "integer"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "name": "integer",
+      "target_classes": [
+        "Integer"
+      ],
+      "types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "number",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in integer type",
+      "base_type": "number",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf",
+        "number::SupportedValidators::Max",
+        "number::SupportedValidators::Min"
+      ],
+      "processors": {
+        "casters": [
+          "integer::Casters::string"
+        ],
+        "caster_classes": [
+          "integer::Casters::String"
+        ]
+      }
+    },
+    "number": {
+      "scoped_path": [
+        "number"
+      ],
+      "scoped_name": "number",
+      "scoped_short_name": "number",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "number"
+      ],
+      "scoped_full_name": "number",
+      "scoped_category": "type",
+      "reference": "number",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "number"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "name": "number",
+      "target_classes": [
+        "Object"
+      ],
+      "types_depended_on": [
+        "array",
+        "atomic_duck",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in number type",
+      "base_type": "atomic_duck",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf",
+        "number::SupportedValidators::Max",
+        "number::SupportedValidators::Min"
+      ]
+    },
+    "string": {
+      "scoped_path": [
+        "string"
+      ],
+      "scoped_name": "string",
+      "scoped_short_name": "string",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "string"
+      ],
+      "scoped_full_name": "string",
+      "scoped_category": "type",
+      "reference": "string",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "string"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "name": "string",
+      "target_classes": [
+        "String"
+      ],
+      "types_depended_on": [
+        "array",
+        "atomic_duck",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "builtin": true,
+      "description": "Built-in string type",
+      "base_type": "atomic_duck",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_transformers": [
+        "string::SupportedTransformers::Downcase"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf",
+        "string::SupportedValidators::Matches",
+        "string::SupportedValidators::MaxLength"
+      ],
+      "processors": {
+        "casters": [
+          "string::Casters::numeric",
+          "string::Casters::symbol"
+        ],
+        "caster_classes": [
+          "string::Casters::Numeric",
+          "string::Casters::Symbol"
+        ]
+      }
+    },
+    "symbol": {
+      "scoped_path": [
+        "symbol"
+      ],
+      "scoped_name": "symbol",
+      "scoped_short_name": "symbol",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "symbol"
+      ],
+      "scoped_full_name": "symbol",
+      "scoped_category": "type",
+      "reference": "symbol",
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "domain",
+        "global_organization::global_domain"
+      ],
+      "declaration_data": {
+        "type": "symbol"
+      },
+      "possible_errors": {
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError",
+          "processor_class": "Foobara::Value::Processor::Casting",
+          "processor_manifest_data": {
+            "casting": {
+              "cast_to": {
+                "type": "symbol"
+              }
+            }
+          }
+        }
+      },
+      "name": "symbol",
+      "target_classes": [
+        "Symbol"
+      ],
+      "types_depended_on": [
+        "array",
+        "atomic_duck",
+        "attributes",
+        "duck"
+      ],
+      "builtin": true,
+      "description": "Built-in symbol type",
+      "base_type": "atomic_duck",
+      "supported_casters": [
+        "duck::SupportedCasters::AllowNil"
+      ],
+      "supported_validators": [
+        "duck::SupportedValidators::InstanceOf",
+        "duck::SupportedValidators::OneOf"
+      ],
+      "processors": {
+        "casters": [
+          "symbol::Casters::string"
+        ],
+        "caster_classes": [
+          "symbol::Casters::String"
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "when": "2025-02-21 11:24:09 -0800",
+    "url": "http://localhost:9292/manifest"
+  }
+}

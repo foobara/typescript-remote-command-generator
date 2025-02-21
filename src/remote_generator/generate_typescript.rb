@@ -17,6 +17,7 @@ module Foobara
         include_non_templated_files
 
         add_root_manifest_to_set_of_elements_to_generate
+        # TODO: allow specifying subset of commands
         add_all_commands_to_set_of_elements_to_generate
 
         each_element_to_generate do

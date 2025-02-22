@@ -33,7 +33,7 @@ module Foobara
         end
 
         def organization_name
-          scoped_short_name || "GlobalOrganization"
+          scoped_name || "GlobalOrganization"
         end
       end
     end

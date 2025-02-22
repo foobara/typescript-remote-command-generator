@@ -62,7 +62,7 @@ module Foobara
         end
 
         def domain_name
-          scoped_short_name || "GlobalDomain"
+          scoped_name || "GlobalDomain"
         end
 
         def organization_generator

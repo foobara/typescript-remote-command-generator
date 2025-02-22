@@ -1,3 +1,7 @@
+## [0.0.10] - 2025-02-21
+
+- Include org/domain prefixes in command URLs
+
 ## [0.0.9] - 2025-02-21
 
 - Fix a bug where we don't use the name of a custom type when we could

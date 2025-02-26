@@ -1,3 +1,7 @@
+## [0.0.11] - 2025-02-26
+
+- Implement support for command result types that are arrays
+
 ## [0.0.10] - 2025-02-21
 
 - Include org/domain prefixes in command URLs

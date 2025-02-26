@@ -53,8 +53,10 @@ module Foobara
             type.attribute_declarations.values.map do |attribute_declaration|
               model_generators(attribute_declaration, false)
             end.flatten.uniq
+          elsif type.array?
+            model_generators(type.element_type, false)
           else
-            # TODO: handle tuples, associative arrays, arrays
+            # TODO: handle tuples, associative arrays
             []
           end
         end

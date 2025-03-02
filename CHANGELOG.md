@@ -1,3 +1,7 @@
+## [0.0.12] - 2025-03-02
+
+- Add ability to ask RemoteCommand for its state and outcome
+
 ## [0.0.11] - 2025-02-26
 
 - Implement support for command result types that are arrays

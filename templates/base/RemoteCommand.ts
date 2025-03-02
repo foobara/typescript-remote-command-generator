@@ -1,6 +1,8 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
 import { type FoobaraError } from './Error'
 
+export type commandState = 'initialized' | 'executing' | 'succeeded' | 'errored' | 'failed'
+
 export default abstract class RemoteCommand<Inputs, Result, CommandError extends FoobaraError> {
   static _urlBase: string | undefined
   static commandName: string
@@ -16,7 +18,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     }
 
     if (base == null) {
-      throw new Error("urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined")
+      throw new Error('urlBase is not set and REACT_APP_FOOBARA_GLOBAL_URL_BASE is undefined')
     }
 
     return base
@@ -35,9 +37,13 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   }
 
   inputs: Inputs
+  outcome: null | Outcome<Result, CommandError>
+  commandState: commandState
 
   constructor (inputs: Inputs) {
     this.inputs = inputs
+    this.commandState = 'initialized'
+    this.outcome = null
   }
 
   get commandName (): string {
@@ -51,10 +57,10 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   static get fullCommandName (): string {
     const path = []
 
-    if (this.organizationName != null && this.organizationName !== "GlobalOrganization") {
+    if (this.organizationName != null && this.organizationName !== 'GlobalOrganization') {
       path.push(this.organizationName)
     }
-    if (this.domainName != null && this.domainName !== "GlobalDomain") {
+    if (this.domainName != null && this.domainName !== 'GlobalDomain') {
       path.push(this.domainName)
     }
     if (this.commandName != null) {
@@ -70,18 +76,26 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   async run (): Promise<Outcome<Result, CommandError>> {
     const url = `${this.urlBase}/run/${this.fullCommandName}`
 
+    this.commandState = 'executing'
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.inputs)
     })
 
+    const body = await response.json()
+
     if (response.ok) {
-      return new SuccessfulOutcome<Result, CommandError>(await response.json())
+      this.commandState = 'succeeded'
+      this.outcome = new SuccessfulOutcome<Result, CommandError>(body)
     } else if (response.status === 422) {
-      return new ErrorOutcome<Result, CommandError>(await response.json())
+      this.commandState = 'errored'
+      this.outcome = new ErrorOutcome<Result, CommandError>(body)
     } else {
+      this.commandState = 'failed'
       throw new Error(`not sure how to handle ${await response.text()}`)
     }
+
+    return this.outcome
   }
 }

@@ -1,3 +1,11 @@
+## [0.0.13] - 2025-03-17
+
+- Fix bug incorrectly generating model typescript for detached entities
+- Fix bug preventing Loaded/Unloaded entity import from being destructured properly
+- Handle errors with prefixes
+- Include custom types and models in error generator dependencies
+- Fix bug preventing allow_nil from having an effect
+
 ## [0.0.12] - 2025-03-02
 
 - Add ability to ask RemoteCommand for its state and outcome

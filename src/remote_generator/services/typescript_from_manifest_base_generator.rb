@@ -48,7 +48,7 @@ module Foobara
                 Services::OrganizationConfigGenerator,
                 Services::OrganizationManifestGenerator
               ]
-            when Manifest::Entity
+            when Manifest::Entity, Manifest::DetachedEntity
               [
                 Services::EntityGenerator,
                 Services::EntityVariantsGenerator,

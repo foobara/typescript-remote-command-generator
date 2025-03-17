@@ -21,6 +21,10 @@ module Foobara
           *prefix, name = super
           [*prefix, "Loaded#{name}"]
         end
+
+        def import_destructure
+          "{ Loaded#{scoped_short_name} }"
+        end
       end
     end
   end

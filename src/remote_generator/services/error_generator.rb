@@ -50,8 +50,7 @@ module Foobara
         end
 
         def dependencies
-          # Why don't we need models and custom types?
-          types_depended_on.select(&:detached_entity?)
+          types_depended_on.select { |type| type.detached_entity? || type.custom? || type.model? }
         end
 
         def ts_type_full_path

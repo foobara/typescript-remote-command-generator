@@ -9,17 +9,17 @@ module Foobara
         def target_path
           p = parent
 
-          basename = "#{error_name}.ts"
+          basename = "#{error_name}.ts".split("::")
 
           case parent
           when OrganizationGenerator, DomainGenerator, CommandGenerator
-            [*p.target_dir, "errors", basename]
+            [*p.target_dir, "errors", *basename]
           when nil
             # :nocov:
             raise "Expected #{error_name} to have a parent but it did not"
             # :nocov:
           else
-            [*p.target_dir, basename]
+            [*p.target_dir, *basename]
           end
         end
 

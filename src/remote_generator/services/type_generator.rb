@@ -76,7 +76,7 @@ module Foobara
                    # :nocov:
                  end
 
-          if declaration_data["allows_nil"]
+          if declaration_data["allow_nil"]
             # TODO: add a custom type to the fixture manifest that includes allows_nil
             # :nocov:
             guts += " | undefined"

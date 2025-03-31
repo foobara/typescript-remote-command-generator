@@ -3,7 +3,7 @@ import { type FoobaraError } from '../../base/Error'
 import { type Outcome } from '../../base/Outcome'
 import { handleLogout } from './utils/accessTokens'
 
-export class LogoutCommand<Inputs, Result, Error extends FoobaraError<any>>
+export default class LogoutCommand<Inputs, Result, Error extends FoobaraError<any>>
   extends RemoteCommand<Inputs, Result, Error> {
   async run (): Promise<Outcome<Result, Error>> {
     const outcome = await super.run()

@@ -3,7 +3,7 @@ import { type Outcome } from '../../base/Outcome'
 import { type FoobaraError } from '../../base/Error'
 import { tokenForUrl } from './utils/accessTokens'
 
-export class RequiresAuthCommand<Inputs, Result, Error extends FoobaraError<any>>
+export default class RequiresAuthCommand<Inputs, Result, Error extends FoobaraError<any>>
   extends RemoteCommand<Inputs, Result, Error> {
   _buildRequestParams (): RequestInit {
     const requestParams = super._buildRequestParams()

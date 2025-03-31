@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foobara-typescript-remote-command-generator (0.0.15)
+    foobara-typescript-remote-command-generator (0.0.16)
       foobara (~> 0.0.88)
       foobara-files-generator (~> 0.0.1)
 
@@ -15,7 +15,7 @@ GEM
     diff-lcs (1.6.1)
     docile (1.4.1)
     ffi (1.17.1-x86_64-linux-gnu)
-    foobara (0.0.90)
+    foobara (0.0.91)
       bigdecimal
       foobara-lru-cache (~> 0.0.2)
       foobara-util (~> 0.0.11)

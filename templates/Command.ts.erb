@@ -1,10 +1,10 @@
-import RemoteCommand from "<%= path_to_root %>base/RemoteCommand"
+import <%= base_class_name %> from "<%= path_to_root %><%= base_class_path %>"
 
 import Inputs from "./Inputs"
 import Result from "./Result"
 import { Error } from "./Errors"
 
-export class <%= command_name %> extends RemoteCommand<Inputs, Result, Error> {
+export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, Error> {
   static readonly organizationName = "<%= organization_name %>"
   static readonly domainName = "<%= domain_name %>"
   static readonly commandName = "<%= command_name %>"

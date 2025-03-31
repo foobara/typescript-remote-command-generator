@@ -35,6 +35,14 @@ module Foobara
         def command_errors_index_generator
           Services::CommandErrorsIndexGenerator.new(command_manifest)
         end
+
+        def base_class_path
+          "base/RemoteCommand"
+        end
+
+        def base_class_name
+          base_class_path.split("/").last
+        end
       end
     end
   end

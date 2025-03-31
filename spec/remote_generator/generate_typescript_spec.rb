@@ -20,4 +20,17 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
     expect(result["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
     expect(result["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
   end
+
+  context "when generating typescript for a domain using Foobara::Auth" do
+    let(:raw_manifest) { JSON.parse(File.read("spec/fixtures/auth-manifest.json")) }
+
+    it "generates Auth support files and gives commands the proper base classes" do
+      expect(outcome).to be_success
+
+      expect(result.keys).to include("Foobara/Auth/LoginCommand.ts")
+      expect(result.keys).to include("Foobara/Auth/LogoutCommand.ts")
+      expect(result.keys).to include("Foobara/Auth/RequiresAuthCommand.ts")
+      expect(result.keys).to include("Foobara/Auth/utils/accessTokens.ts")
+    end
+  end
 end

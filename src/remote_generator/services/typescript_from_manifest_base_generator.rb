@@ -28,8 +28,23 @@ module Foobara
           def manifest_to_generator_classes(manifest)
             case manifest
             when Manifest::Command
+              generator_classes = case manifest.full_command_name
+                                  when "Foobara::Auth::RefreshLogin"
+                                    Services::Auth::RefreshLoginGenerator
+                                  when "Foobara::Auth::Login"
+                                    Services::Auth::LoginGenerator
+                                  when "Foobara::Auth::Logout"
+                                    Services::Auth::LogoutGenerator
+                                  else
+                                    if manifest.requires_authentication?
+                                      Services::Auth::RequiresAuthGenerator
+                                    else
+                                      Services::CommandGenerator
+                                    end
+                                  end
+
               [
-                Services::CommandGenerator,
+                *generator_classes,
                 Services::CommandInputsGenerator,
                 Services::CommandResultGenerator,
                 Services::CommandErrorsGenerator,
@@ -190,10 +205,12 @@ module Foobara
           type_string = if type_declaration.is_a?(Manifest::Attributes)
                           ts_type = attributes_to_ts_type(type_declaration, association_depth:, dependency_group:)
 
+                          is_empty = type_declaration.attribute_declarations.empty?
+
                           if name
-                            return "interface #{name} #{ts_type}"
+                            return is_empty ? "undefined" : "interface #{name} #{ts_type}"
                           else
-                            ts_type
+                            is_empty ? "undefined" : ts_type
                           end
                         elsif type_declaration.is_a?(Manifest::Array)
                           # TODO: which association_depth do we pass here?

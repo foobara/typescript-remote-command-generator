@@ -24,7 +24,7 @@ module Foobara
 
         def command_generators
           @command_generators ||= domain_manifest.commands.map do |command_manifest|
-            CommandGenerator.new(command_manifest)
+            generator_for(command_manifest)
           end
         end
 

@@ -77,7 +77,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   }
 
   get commandPath (): string {
-    return this.fullCommandName.replace('::', '/')
+    return this.fullCommandName.replaceAll('::', '/')
   }
 
   async run (): Promise<Outcome<Result, CommandError>> {
@@ -122,7 +122,8 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
       }
     }
 
-    const body = await response.json()
+    const text = await response.text()
+    const body = JSON.parse(text)
 
     if (response.ok) {
       const accessToken: string | null = response.headers.get('X-Access-Token')
@@ -133,12 +134,12 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
 
       this.commandState = 'succeeded'
       this.outcome = new SuccessfulOutcome<Result, CommandError>(body)
-    } else if (response.status === 422) {
+    } else if (response.status === 422 || response.status === 401 || response.status === 403) {
       this.commandState = 'errored'
       this.outcome = new ErrorOutcome<Result, CommandError>(body)
     } else {
       this.commandState = 'failed'
-      throw new Error(`not sure how to handle ${await response.text()}`)
+      throw new Error(`not sure how to handle ${text}`)
     }
 
     return this.outcome

@@ -1,6 +1,10 @@
-## [0.0.14] - 2025-03-29
+## [0.0.15] - 2025-03-30
 
-- Send credentials: 'include'
+- Better error handling in RemoteCommand
+
+## [0.0.14] - 2025-03-30
+
+- Implement Auth domain support in RemoteCommand
 
 ## [0.0.13] - 2025-03-17
 

@@ -76,8 +76,12 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).fullCommandName
   }
 
+  get commandPath (): string {
+    return this.fullCommandName.replace('::', '/')
+  }
+
   async run (): Promise<Outcome<Result, CommandError>> {
-    const url = `${this.urlBase}/run/${this.fullCommandName}`
+    const url = `${this.urlBase}/run/${this.commandPath}`
 
     const bearerToken = accessTokens[this.urlBase]
 

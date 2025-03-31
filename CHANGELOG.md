@@ -1,3 +1,7 @@
+## [0.0.14] - 2025-03-29
+
+- Send credentials: 'include'
+
 ## [0.0.13] - 2025-03-17
 
 - Fix bug incorrectly generating model typescript for detached entities

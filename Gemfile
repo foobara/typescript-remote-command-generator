@@ -8,8 +8,8 @@ gemspec
 # gem "foobara-files-generator", path: "../files-generator"
 
 # Development dependencies go here
-gem "foobara-rubocop-rules"
-gem "foobara-spec-helpers"
+gem "foobara-rubocop-rules", "~> 0.0.1"
+gem "foobara-spec-helpers", "~> 0.0.1"
 gem "guard-rspec"
 gem "pry"
 gem "pry-byebug"

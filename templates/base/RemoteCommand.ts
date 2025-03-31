@@ -1,13 +1,16 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
 import { type FoobaraError } from './Error'
 
-export type commandState = 'initialized' | 'executing' | 'succeeded' | 'errored' | 'failed'
+export type commandState = 'initialized' | 'executing' | 'refreshing_auth' | 'succeeded' | 'errored' | 'failed'
+
+const accessTokens: Record<string, string> = {}
 
 export default abstract class RemoteCommand<Inputs, Result, CommandError extends FoobaraError> {
   static _urlBase: string | undefined
   static commandName: string
   static organizationName: string
   static domainName: string
+  static authRequired: boolean = true // TODO: set this from generator
 
   // TODO: make use of domain's config instead of process.env directly.
   static get urlBase (): string {
@@ -76,16 +79,54 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   async run (): Promise<Outcome<Result, CommandError>> {
     const url = `${this.urlBase}/run/${this.fullCommandName}`
 
-    this.commandState = 'executing'
-    const response = await fetch(url, {
+    const bearerToken = accessTokens[this.urlBase]
+
+    const requestParams: RequestInit = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.inputs)
-    })
+      body: JSON.stringify(this.inputs),
+      credentials: 'include'
+    }
+
+    requestParams.headers = { 'Content-Type': 'application/json' }
+
+    if (bearerToken != null) {
+      requestParams.headers.Authorization = `Bearer ${bearerToken}`
+    }
+
+    this.commandState = 'executing'
+    let response = await fetch(url, requestParams)
+
+    if ((this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).authRequired &&
+        response.status === 401) {
+      this.commandState = 'refreshing_auth'
+
+      // TODO: in generator make this conditional
+      const { RefreshLogin } = await import('../Foobara/Auth')
+      // See if we can authenticate using the refresh token
+      const refreshCommand = new RefreshLogin({})
+      const outcome = await refreshCommand.run()
+
+      if (outcome.isSuccess()) {
+        const bearerToken = accessTokens[this.urlBase]
+
+        if (bearerToken != null) {
+          requestParams.headers.Authorization = `Bearer ${bearerToken}`
+        }
+
+        this.commandState = 'executing'
+        response = await fetch(url, requestParams)
+      }
+    }
 
     const body = await response.json()
 
     if (response.ok) {
+      const accessToken: string | null = response.headers.get('X-Access-Token')
+
+      if (accessToken != null) {
+        accessTokens[this.urlBase] = accessToken
+      }
+
       this.commandState = 'succeeded'
       this.outcome = new SuccessfulOutcome<Result, CommandError>(body)
     } else if (response.status === 422) {

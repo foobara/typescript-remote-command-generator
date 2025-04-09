@@ -1,6 +1,10 @@
+## [0.0.17] - 2025-04-08
+
+- 
+
 ## [0.0.16] - 2025-03-31
 
-- Add a bunch of special-case support for Foobara::Auth domain  convenience
+- Add a bunch of special-case support for Foobara::Auth domain convenience
 
 ## [0.0.15] - 2025-03-30
 

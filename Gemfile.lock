@@ -1,8 +1,7 @@
 PATH
   remote: .
   specs:
-    foobara-typescript-remote-command-generator (0.0.16)
-      foobara (~> 0.0.88)
+    foobara-typescript-remote-command-generator (0.0.17)
       foobara-files-generator (~> 0.0.1)
 
 GEM
@@ -15,7 +14,7 @@ GEM
     diff-lcs (1.6.1)
     docile (1.4.1)
     ffi (1.17.1-x86_64-linux-gnu)
-    foobara (0.0.91)
+    foobara (0.0.96)
       bigdecimal
       foobara-lru-cache (~> 0.0.2)
       foobara-util (~> 0.0.11)
@@ -93,7 +92,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.2)
-    rubocop (1.75.1)
+    rubocop (1.75.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -101,10 +100,10 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.43.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.43.0)
+    rubocop-ast (1.44.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     rubocop-rake (0.7.1)

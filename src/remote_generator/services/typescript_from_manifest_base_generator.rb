@@ -208,7 +208,10 @@ module Foobara
                           is_empty = type_declaration.attribute_declarations.empty?
 
                           if name
+                            # TODO: test this code path or delete it
+                            # :nocov:
                             return is_empty ? "undefined" : "interface #{name} #{ts_type}"
+                            # :nocov:
                           else
                             is_empty ? "undefined" : ts_type
                           end

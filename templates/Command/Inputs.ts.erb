@@ -2,6 +2,6 @@
   import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-type Inputs = <%= foobara_type_to_ts_type(inputs_type, dependency_group:) %>
+type Inputs = <%= foobara_type_to_ts_type(inputs_type, dependency_group:, model_and_entity_free: true) %>
 
 export default Inputs

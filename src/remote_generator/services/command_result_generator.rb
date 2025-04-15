@@ -29,7 +29,7 @@ module Foobara
                               elsif aggregate?
                                 AggregateEntityGenerator
                               else
-                                EntityGenerator
+                                TypeGenerator
                               end
 
             entity = if type.entity?
@@ -45,7 +45,7 @@ module Foobara
                               elsif aggregate?
                                 AggregateModelGenerator
                               else
-                                ModelGenerator
+                                TypeGenerator
                               end
 
             [generator_class.new(type.to_model)]

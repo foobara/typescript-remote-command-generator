@@ -195,7 +195,8 @@ module Foobara
           dependency_group: self.dependency_group,
           name: nil,
           association_depth: AssociationDepth::AMBIGUOUS,
-          initial: true
+          initial: true,
+          model_and_entity_free: false
         )
           if type_declaration.is_a?(Manifest::Error)
             error_generator = generator_for(type_declaration)
@@ -203,7 +204,12 @@ module Foobara
           end
 
           type_string = if type_declaration.is_a?(Manifest::Attributes)
-                          ts_type = attributes_to_ts_type(type_declaration, association_depth:, dependency_group:)
+                          ts_type = attributes_to_ts_type(
+                            type_declaration,
+                            association_depth:,
+                            dependency_group:,
+                            model_and_entity_free:
+                          )
 
                           is_empty = type_declaration.attribute_declarations.empty?
 
@@ -221,7 +227,8 @@ module Foobara
                             type_declaration.element_type,
                             association_depth:,
                             dependency_group:,
-                            initial: false
+                            initial: false,
+                            model_and_entity_free:
                           )
                           "#{ts_type}[]"
                         else
@@ -241,7 +248,25 @@ module Foobara
                             "Date"
                           else
                             if type_declaration.model?
-                              model_to_ts_model_name(type_declaration, association_depth:, initial:)
+                              if model_and_entity_free
+                                model_type = type_declaration.to_type
+
+                                translated_type = if type_declaration.entity?
+                                                    model_type.primary_key_type
+                                                  else
+                                                    model_type.attributes_type
+                                                  end
+
+                                foobara_type_to_ts_type(
+                                  translated_type,
+                                  association_depth:,
+                                  dependency_group:,
+                                  initial:,
+                                  model_and_entity_free:
+                                )
+                              else
+                                model_to_ts_model_name(type_declaration, association_depth:, initial:)
+                              end
                             elsif type_declaration.custom?
                               custom_type_to_ts_type_name(type_declaration)
                             end
@@ -265,10 +290,21 @@ module Foobara
           end
         end
 
-        def attributes_to_ts_type(attributes, dependency_group:, association_depth: AssociationDepth::AMBIGUOUS)
+        def attributes_to_ts_type(
+          attributes,
+          dependency_group:,
+          association_depth: AssociationDepth::AMBIGUOUS,
+          model_and_entity_free: false
+        )
           guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
             "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
-              foobara_type_to_ts_type(attribute_declaration, dependency_group:, association_depth:, initial: false)
+              foobara_type_to_ts_type(
+                attribute_declaration,
+                dependency_group:,
+                association_depth:,
+                initial: false,
+                model_and_entity_free:
+              )
             }"
           end.join("\n")
 

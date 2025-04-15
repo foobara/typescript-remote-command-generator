@@ -21,4 +21,8 @@ export abstract class Model<AttributesType> {
   readAttribute<T extends keyof this["_attributes"]>(attributeName: T): this["_attributes"][T] {
     return (this.attributes as unknown as this["_attributes"])[attributeName]
   }
+
+  toJSON (): unknown {
+    return this._attributes
+  }
 }

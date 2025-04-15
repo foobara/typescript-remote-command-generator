@@ -1,6 +1,11 @@
+## [0.0.18] - 2025-04-15
+
+- Don't make use of Model/Entity in input types
+- Add toJSON methods to Model and Entity for proper serialization when building inputs
+
 ## [0.0.17] - 2025-04-08
 
-- 
+- Handle undefined/empty inputs in Inputs.ts.erb
 
 ## [0.0.16] - 2025-03-31
 

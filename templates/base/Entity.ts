@@ -84,4 +84,8 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
 
     return this._attributes
   }
+
+  override toJSON (): unknown {
+    return this.primaryKey
+  }
 }

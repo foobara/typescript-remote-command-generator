@@ -251,7 +251,7 @@ module Foobara
                               if model_and_entity_free
                                 model_type = type_declaration.to_type
 
-                                translated_type = if type_declaration.entity?
+                                translated_type = if type_declaration.detached_entity?
                                                     model_type.primary_key_type
                                                   else
                                                     model_type.attributes_type

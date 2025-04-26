@@ -1,3 +1,7 @@
+## [0.0.19] - 2025-04-25
+
+- Fix bugs causing issues with generating command inputs for entities or custom types
+
 ## [0.0.18] - 2025-04-15
 
 - Don't make use of Model/Entity in input types

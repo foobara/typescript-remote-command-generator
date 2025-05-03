@@ -1,3 +1,5 @@
+require_relative "../command_generator"
+
 module Foobara
   module RemoteGenerator
     class Services

@@ -1,3 +1,7 @@
+## [0.0.20] - 2025-05-03
+
+- Add a potentially missing require_relative
+
 ## [0.0.19] - 2025-04-25
 
 - Fix bugs causing issues with generating command inputs for entities or custom types

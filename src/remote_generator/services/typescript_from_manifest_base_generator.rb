@@ -37,7 +37,7 @@ module Foobara
                                     Services::Auth::LogoutGenerator
                                   when /\bGetCurrentUser$/
                                     [
-                                      Services::CommandGenerator,
+                                      Services::Auth::RequiresAuthGenerator,
                                       Services::Auth::SetupGenerator
                                     ]
                                   else

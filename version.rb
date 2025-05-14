@@ -1,7 +1,7 @@
 module Foobara
   module TypescriptRemoteCommandGenerator
     module Version
-      VERSION = "0.0.22".freeze
+      VERSION = "0.0.23".freeze
 
       local_ruby_version = File.read("#{__dir__}/.ruby-version").chomp
       local_ruby_version_minor = local_ruby_version[/\A(\d+\.\d+)\.\d+\z/, 1]

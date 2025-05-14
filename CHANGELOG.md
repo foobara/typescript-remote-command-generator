@@ -1,3 +1,7 @@
+## [0.0.21] - 2025-05-13
+
+- Implement Query/QueryCache/useQuery to use commands as data sources and share that data across components
+
 ## [0.0.20] - 2025-05-03
 
 - Add a potentially missing require_relative

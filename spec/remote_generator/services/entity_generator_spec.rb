@@ -28,7 +28,7 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
 
       it "gives the loaded path" do
         expect(generator.ts_instance_path).to eq(["LoadedReferral"])
-        expect(generator.ts_instance_full_path).to eq(%w[SomeOrg Auth LoadedReferral])
+        expect(generator.ts_instance_full_path).to eq(["SomeOrg", "Auth", "LoadedReferral"])
         expect(generator.ts_instance_full_name).to eq("SomeOrg.Auth.LoadedReferral")
       end
     end
@@ -38,7 +38,7 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
 
       it "gives the atom path" do
         expect(generator.ts_instance_path).to eq(["ReferralAtom"])
-        expect(generator.ts_instance_full_path).to eq(%w[SomeOrg Auth ReferralAtom])
+        expect(generator.ts_instance_full_path).to eq(["SomeOrg", "Auth", "ReferralAtom"])
         expect(generator.ts_instance_full_name).to eq("SomeOrg.Auth.ReferralAtom")
       end
     end
@@ -48,7 +48,7 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
 
       it "gives the aggregate path" do
         expect(generator.ts_instance_path).to eq(["ReferralAggregate"])
-        expect(generator.ts_instance_full_path).to eq(%w[SomeOrg Auth ReferralAggregate])
+        expect(generator.ts_instance_full_path).to eq(["SomeOrg", "Auth", "ReferralAggregate"])
         expect(generator.ts_instance_full_name).to eq("SomeOrg.Auth.ReferralAggregate")
       end
     end

@@ -80,7 +80,10 @@ module Foobara
             when Manifest::ProcessorClass
               Services::ProcessorClassGenerator
             when Manifest::RootManifest
-              Services::RootManifestGenerator
+              [
+                Services::RootManifestGenerator,
+                Services::Auth::SetupGenerator
+              ]
             when Manifest::Type
               Services::TypeGenerator
             else

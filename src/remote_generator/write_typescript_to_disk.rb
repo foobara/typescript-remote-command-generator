@@ -59,6 +59,7 @@ module Foobara
 
       def run_post_generation_tasks
         eslint_fix
+        warn_about_adding_setup_to_index
       end
 
       def eslint_fix
@@ -71,6 +72,13 @@ module Foobara
             warn "WARNING: could not #{cmd}\n#{stderr.read}"
             # :nocov:
           end
+        end
+      end
+
+      def warn_about_adding_setup_to_index
+        if paths_to_source_code.key?("setup.ts")
+          warn "WARNING: you should add the following to src/index.ts:\n\n" \
+               "import './domains/setup'"
         end
       end
     end

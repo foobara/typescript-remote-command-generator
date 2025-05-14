@@ -1,0 +1,5 @@
+import { GetCurrentUser } from './BlogWww/GetCurrentUser'
+import { getQuery } from './base/QueryCache'
+import { setGetCurrentUserQuery } from './Foobara/Auth/utils/accessTokens'
+
+setGetCurrentUserQuery(getQuery(GetCurrentUser, undefined))

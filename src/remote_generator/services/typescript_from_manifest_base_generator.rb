@@ -35,6 +35,11 @@ module Foobara
                                     Services::Auth::LoginGenerator
                                   when "Foobara::Auth::Logout"
                                     Services::Auth::LogoutGenerator
+                                  when /\bGetCurrentUser$/
+                                    [
+                                      Services::CommandGenerator,
+                                      Services::Auth::SetupGenerator
+                                    ]
                                   else
                                     if manifest.requires_authentication?
                                       Services::Auth::RequiresAuthGenerator
@@ -80,10 +85,7 @@ module Foobara
             when Manifest::ProcessorClass
               Services::ProcessorClassGenerator
             when Manifest::RootManifest
-              [
-                Services::RootManifestGenerator,
-                Services::Auth::SetupGenerator
-              ]
+              Services::RootManifestGenerator
             when Manifest::Type
               Services::TypeGenerator
             else

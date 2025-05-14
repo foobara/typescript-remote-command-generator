@@ -1,3 +1,7 @@
+## [0.0.22] - 2025-05-14
+
+- Fix bug hard-coding wrong GetCurrentUser command in setup.ts
+
 ## [0.0.21] - 2025-05-13
 
 - Implement Query/QueryCache/useQuery to use commands as data sources and share that data across components

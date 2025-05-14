@@ -1,5 +1,6 @@
-import { GetCurrentUser } from './BlogWww/GetCurrentUser'
 import { getQuery } from './base/QueryCache'
 import { setGetCurrentUserQuery } from './Foobara/Auth/utils/accessTokens'
 
-setGetCurrentUserQuery(getQuery(GetCurrentUser, undefined))
+import <%= import_destructure %> from "<%= path_to_root %><%= import_path %>"
+
+setGetCurrentUserQuery(getQuery(<%= dependency_group.non_colliding_type(self) %>, undefined))

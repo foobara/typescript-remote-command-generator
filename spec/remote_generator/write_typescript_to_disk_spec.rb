@@ -65,6 +65,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     it "contains setup.ts" do
       expect(outcome).to be_success
       expect(command.paths_to_source_code.key?("setup.ts")).to be true
+      expect(command.paths_to_source_code["setup.ts"]).to include("getQuery(GetCurrentUser,")
     end
   end
 end

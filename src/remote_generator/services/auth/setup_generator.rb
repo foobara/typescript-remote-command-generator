@@ -11,8 +11,12 @@ module Foobara
             ["setup.ts"]
           end
 
+          def command_generator
+            generator_for(command_manifest)
+          end
+
           def dependencies
-            [self]
+            [command_generator]
           end
         end
       end

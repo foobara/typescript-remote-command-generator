@@ -355,6 +355,16 @@ module Foobara
         def hash
           path.hash
         end
+
+        def path_to_root
+          path = super
+
+          if path.empty?
+            "./"
+          else
+            path
+          end
+        end
       end
     end
   end

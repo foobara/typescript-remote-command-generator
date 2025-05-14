@@ -1,6 +1,6 @@
-## [0.0.23] - 2025-05-14
+## [0.0.24] - 2025-05-14
 
-- Fix bug hard-coding wrong GetCurrentUser command in setup.ts
+- Fix bugs with setup.ts
 
 ## [0.0.21] - 2025-05-13
 

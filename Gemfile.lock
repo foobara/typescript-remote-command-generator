@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foobara-typescript-remote-command-generator (0.0.24)
+    foobara-typescript-remote-command-generator (1.0.0)
       foobara-files-generator (< 2.0.0)
 
 GEM

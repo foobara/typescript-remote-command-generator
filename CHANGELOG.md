@@ -1,3 +1,8 @@
+## [1.0.0] - 2025-07-31
+
+- Create never types for Error/PossibleErrors when command cannot error
+- Support built-in non-extended attributes type
+
 ## [0.0.24] - 2025-05-14
 
 - Fix bugs with setup.ts

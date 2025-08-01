@@ -15,6 +15,10 @@ module Foobara
           "Command/Errors.ts.erb"
         end
 
+        def has_possible_errors?
+          error_generators.any?
+        end
+
         def error_generators
           @error_generators ||= possible_errors.values.map(&:error).sort_by(&:error_name).uniq.map do |error|
             Services::ErrorGenerator.new(error)
@@ -22,6 +26,8 @@ module Foobara
         end
 
         def error_type_union
+          return "never" unless has_possible_errors?
+
           error_generators.map do |error_generator|
             dependency_group.non_colliding_type(error_generator)
           end.join(" |\n  ")

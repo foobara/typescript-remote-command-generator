@@ -2,10 +2,14 @@
 import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
+<% if has_possible_errors? %>
 export interface PossibleErrors {
 <% possible_errors.keys.sort.each do |key| %>
   "<%= key %>": <%= foobara_type_to_ts_type(possible_errors[key].error, dependency_group:) %>,
 <% end  %>
 }
+<% else %>
+export type PossibleErrors = Record<never, never>
+<% end %>
 
 export type Error = <%= error_type_union %>

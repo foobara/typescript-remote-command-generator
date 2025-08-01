@@ -216,15 +216,23 @@ module Foobara
                             model_and_entity_free:
                           )
 
-                          is_empty = type_declaration.attribute_declarations.empty?
+                          if type_declaration.has_attribute_declarations?
+                            is_empty = type_declaration.attribute_declarations.empty?
 
-                          if name
-                            # TODO: test this code path or delete it
-                            # :nocov:
-                            return is_empty ? "undefined" : "interface #{name} #{ts_type}"
-                            # :nocov:
+                            if name
+                              # TODO: test this code path or delete it
+                              # :nocov:
+                              return is_empty ? "undefined" : "interface #{name} #{ts_type}"
+                              # :nocov:
+                            else
+                              is_empty ? "undefined" : ts_type
+                            end
                           else
-                            is_empty ? "undefined" : ts_type
+                            # TODO: test this path with an :attributes type (not extended from :attributes but
+                            # the built-in type itself directly)
+                            # :nocov:
+                            ts_type
+                            # :nocov:
                           end
                         elsif type_declaration.is_a?(Manifest::Array)
                           # TODO: which association_depth do we pass here?
@@ -287,7 +295,8 @@ module Foobara
               type_string = "#{type_string} | null"
             end
 
-            name ? "#{name} = #{type_string}" : type_string
+            # TODO: Add description as a comment?
+            name ? "type #{name} = #{type_string}" : type_string
           else
             # :nocov:
             raise "Not sure how to convert #{type_declaration} to a TS type"
@@ -301,8 +310,12 @@ module Foobara
           association_depth: AssociationDepth::AMBIGUOUS,
           model_and_entity_free: false
         )
-          guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
-            "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
+          # TODO: if we don't actually have attribute_declarations because we
+          # are trying to express attributes of any type, then we want Record<string, any>
+          # or something.
+          if attributes.has_attribute_declarations?
+            guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
+              "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
               foobara_type_to_ts_type(
                 attribute_declaration,
                 dependency_group:,
@@ -311,9 +324,16 @@ module Foobara
                 model_and_entity_free:
               )
             }"
-          end.join("\n")
+            end.join("\n")
 
-          "{\n#{guts}\n}"
+            "{\n#{guts}\n}"
+          else
+            # TODO: test this path with an :attributes type (not extended from :attributes but
+            # the built-in type itself directly)
+            # :nocov:
+            "Record<string, any>"
+            # :nocov:
+          end
         end
 
         def model_to_ts_model_name(model, association_depth: AssociationDepth::AMBIGUOUS, initial: true)

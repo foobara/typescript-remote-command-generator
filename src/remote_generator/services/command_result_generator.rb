@@ -19,6 +19,8 @@ module Foobara
         end
 
         def model_generators(type = result_type, initial = true)
+          return [] if type.nil?
+
           if type.detached_entity?
             generator_class = if atom?
                                 if initial
@@ -66,7 +68,7 @@ module Foobara
             type = result_type
             type = type.to_type if result_type.is_a?(Manifest::TypeDeclaration)
 
-            if !type.builtin? && !type.model?
+            if type && !type.builtin? && !type.model?
               # TODO: Test this!!
               # :nocov:
               [TypeGenerator.new(type)]

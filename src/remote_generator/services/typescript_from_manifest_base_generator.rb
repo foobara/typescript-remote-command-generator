@@ -257,7 +257,7 @@ module Foobara
                             "string"
                           when "duck"
                             "any"
-                          when "datetime"
+                          when "datetime", "date"
                             "Date"
                           else
                             if type_declaration.model?

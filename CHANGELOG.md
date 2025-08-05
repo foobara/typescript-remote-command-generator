@@ -1,3 +1,8 @@
+## [1.0.1] - 2025-08-04
+
+- Properly handle no result type with a Result type of null
+- Add "date" to list of supported types and use Date for it
+
 ## [1.0.0] - 2025-07-31
 
 - Create never types for Error/PossibleErrors when command cannot error

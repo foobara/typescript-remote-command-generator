@@ -287,12 +287,14 @@ module Foobara
                         end
 
           if type_string
-            if type_declaration.one_of
-              type_string = type_declaration.one_of.map(&:inspect).join(" | ")
-            end
+            unless type_declaration.reference?
+              if type_declaration.one_of
+                type_string = type_declaration.one_of.map(&:inspect).join(" | ")
+              end
 
-            if type_declaration.allows_nil?
-              type_string = "#{type_string} | null"
+              if type_declaration.allows_nil?
+                type_string = "#{type_string} | null"
+              end
             end
 
             # TODO: Add description as a comment?

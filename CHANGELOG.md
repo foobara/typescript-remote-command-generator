@@ -1,3 +1,7 @@
+## [1.1.0] - 2025-08-22
+
+- Handle Foobara 0.1.0 type declarations
+
 ## [1.0.1] - 2025-08-04
 
 - Properly handle no result type with a Result type of null

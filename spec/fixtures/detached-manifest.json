@@ -56,9 +56,7 @@
               "cast_to": {
                 "type": "attributes",
                 "element_type_declarations": {
-                  "email": {
-                    "type": "string"
-                  }
+                  "email": "string"
                 },
                 "required": [
                   "email"
@@ -77,9 +75,7 @@
           "error": "Foobara::Value::Processor::Casting::CannotCastError",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "string"
-              }
+              "cast_to": "string"
             }
           }
         },
@@ -116,9 +112,7 @@
           "processor_class": "attributes::SupportedProcessors::ElementTypeDeclarations",
           "processor_manifest_data": {
             "element_type_declarations": {
-              "email": {
-                "type": "string"
-              }
+              "email": "string"
             }
           }
         }
@@ -129,18 +123,14 @@
       "inputs_type": {
         "type": "attributes",
         "element_type_declarations": {
-          "email": {
-            "type": "string"
-          }
+          "email": "string"
         },
         "required": [
           "email"
         ]
       },
       "description": null,
-      "result_type": {
-        "type": "Todo::User"
-      },
+      "result_type": "Todo::User",
       "serializers": [
         "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
         "Foobara::CommandConnectors::Serializers::ActiveRecordAtomicSerializer",
@@ -242,12 +232,8 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "attribute_name": {
-            "type": "symbol"
-          },
-          "value": {
-            "type": "duck"
-          }
+          "attribute_name": "symbol",
+          "value": "duck"
         }
       },
       "is_fatal": false,
@@ -287,15 +273,9 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "cast_to": {
-            "type": "duck"
-          },
-          "value": {
-            "type": "duck"
-          },
-          "attribute_name": {
-            "type": "symbol"
-          }
+          "cast_to": "duck",
+          "value": "duck",
+          "attribute_name": "symbol"
         }
       },
       "is_fatal": true,
@@ -336,15 +316,9 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "expected_size": {
-            "type": "integer"
-          },
-          "actual_size": {
-            "type": "integer"
-          },
-          "value": {
-            "type": "array"
-          }
+          "expected_size": "integer",
+          "actual_size": "integer",
+          "value": "array"
         }
       },
       "is_fatal": false,
@@ -386,15 +360,11 @@
         "element_type_declarations": {
           "unexpected_attributes": {
             "type": "array",
-            "element_type_declaration": {
-              "type": "symbol"
-            }
+            "element_type_declaration": "symbol"
           },
           "allowed_attributes": {
             "type": "array",
-            "element_type_declaration": {
-              "type": "symbol"
-            }
+            "element_type_declaration": "symbol"
           }
         }
       },
@@ -435,9 +405,7 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "attribute_name": {
-            "type": "symbol"
-          }
+          "attribute_name": "symbol"
         }
       },
       "is_fatal": true,
@@ -478,12 +446,8 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "value": {
-            "type": "duck"
-          },
-          "expected_class_name": {
-            "type": "string"
-          }
+          "value": "duck",
+          "expected_class_name": "string"
         }
       },
       "is_fatal": false,
@@ -523,14 +487,10 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "value": {
-            "type": "duck"
-          },
+          "value": "duck",
           "valid_values": {
             "type": "array",
-            "element_type_declaration": {
-              "type": "duck"
-            }
+            "element_type_declaration": "duck"
           }
         }
       },
@@ -572,12 +532,8 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "value": {
-            "type": "number"
-          },
-          "max": {
-            "type": "number"
-          }
+          "value": "number",
+          "max": "number"
         }
       },
       "is_fatal": false,
@@ -618,12 +574,8 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "value": {
-            "type": "number"
-          },
-          "min": {
-            "type": "number"
-          }
+          "value": "number",
+          "min": "number"
         }
       },
       "is_fatal": false,
@@ -664,12 +616,8 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "value": {
-            "type": "string"
-          },
-          "regex": {
-            "type": "duck"
-          }
+          "value": "string",
+          "regex": "duck"
         }
       },
       "is_fatal": false,
@@ -711,12 +659,8 @@
       "context_type_declaration": {
         "type": "attributes",
         "element_type_declarations": {
-          "value": {
-            "type": "string"
-          },
-          "max_length": {
-            "type": "integer"
-          }
+          "value": "string",
+          "max_length": "integer"
         }
       },
       "is_fatal": false,
@@ -2177,18 +2121,10 @@
         "attributes_declaration": {
           "type": "attributes",
           "element_type_declarations": {
-            "id": {
-              "type": "integer"
-            },
-            "auth_user_id": {
-              "type": "integer"
-            },
-            "created_at": {
-              "type": "datetime"
-            },
-            "updated_at": {
-              "type": "datetime"
-            }
+            "id": "integer",
+            "auth_user_id": "integer",
+            "created_at": "datetime",
+            "updated_at": "datetime"
           },
           "required": [
             "id",
@@ -2217,18 +2153,10 @@
                 "attributes_declaration": {
                   "type": "attributes",
                   "element_type_declarations": {
-                    "id": {
-                      "type": "integer"
-                    },
-                    "auth_user_id": {
-                      "type": "integer"
-                    },
-                    "created_at": {
-                      "type": "datetime"
-                    },
-                    "updated_at": {
-                      "type": "datetime"
-                    }
+                    "id": "integer",
+                    "auth_user_id": "integer",
+                    "created_at": "datetime",
+                    "updated_at": "datetime"
                   },
                   "required": [
                     "id",
@@ -2276,18 +2204,10 @@
       "attributes_type": {
         "type": "attributes",
         "element_type_declarations": {
-          "id": {
-            "type": "integer"
-          },
-          "auth_user_id": {
-            "type": "integer"
-          },
-          "created_at": {
-            "type": "datetime"
-          },
-          "updated_at": {
-            "type": "datetime"
-          }
+          "id": "integer",
+          "auth_user_id": "integer",
+          "created_at": "datetime",
+          "updated_at": "datetime"
         },
         "required": [
           "id",
@@ -2303,9 +2223,7 @@
       "model_class": "Todo::User",
       "entity_name": "User",
       "primary_key_attribute": "id",
-      "primary_key_type": {
-        "type": "integer"
-      }
+      "primary_key_type": "integer"
     },
     "active_record": {
       "scoped_path": [
@@ -2326,9 +2244,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "active_record"
-      },
+      "declaration_data": "active_record",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2338,9 +2254,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "active_record"
-              }
+              "cast_to": "active_record"
             }
           }
         }
@@ -2392,9 +2306,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "array"
-      },
+      "declaration_data": "array",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2404,9 +2316,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "array"
-              }
+              "cast_to": "array"
             }
           }
         }
@@ -2463,9 +2373,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "associative_array"
-      },
+      "declaration_data": "associative_array",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2475,9 +2383,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "associative_array"
-              }
+              "cast_to": "associative_array"
             }
           }
         }
@@ -2535,9 +2441,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "atomic_duck"
-      },
+      "declaration_data": "atomic_duck",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2547,9 +2451,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "atomic_duck"
-              }
+              "cast_to": "atomic_duck"
             }
           }
         }
@@ -2594,9 +2496,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "attributes"
-      },
+      "declaration_data": "attributes",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2606,9 +2506,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "attributes"
-              }
+              "cast_to": "attributes"
             }
           }
         }
@@ -2669,9 +2567,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "datetime"
-      },
+      "declaration_data": "datetime",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2681,9 +2577,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "datetime"
-              }
+              "cast_to": "datetime"
             }
           }
         }
@@ -2743,9 +2637,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "detached_entity"
-      },
+      "declaration_data": "detached_entity",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2755,9 +2647,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "detached_entity"
-              }
+              "cast_to": "detached_entity"
             }
           }
         }
@@ -2811,9 +2701,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "duck"
-      },
+      "declaration_data": "duck",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2823,9 +2711,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "duck"
-              }
+              "cast_to": "duck"
             }
           }
         }
@@ -2869,9 +2755,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "duckture"
-      },
+      "declaration_data": "duckture",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2881,9 +2765,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "duckture"
-              }
+              "cast_to": "duckture"
             }
           }
         }
@@ -2928,9 +2810,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "integer"
-      },
+      "declaration_data": "integer",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -2940,9 +2820,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "integer"
-              }
+              "cast_to": "integer"
             }
           }
         }
@@ -2998,9 +2876,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "model"
-      },
+      "declaration_data": "model",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -3010,9 +2886,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "model"
-              }
+              "cast_to": "model"
             }
           }
         }
@@ -3066,9 +2940,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "number"
-      },
+      "declaration_data": "number",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -3078,9 +2950,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "number"
-              }
+              "cast_to": "number"
             }
           }
         }
@@ -3128,9 +2998,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "string"
-      },
+      "declaration_data": "string",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -3140,9 +3008,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "string"
-              }
+              "cast_to": "string"
             }
           }
         }
@@ -3203,9 +3069,7 @@
         "domain",
         "global_organization::global_domain"
       ],
-      "declaration_data": {
-        "type": "symbol"
-      },
+      "declaration_data": "symbol",
       "possible_errors": {
         "data.cannot_cast": {
           "category": "data",
@@ -3215,9 +3079,7 @@
           "processor_class": "Foobara::Value::Processor::Casting",
           "processor_manifest_data": {
             "casting": {
-              "cast_to": {
-                "type": "symbol"
-              }
+              "cast_to": "symbol"
             }
           }
         }

@@ -1,3 +1,7 @@
+## [1.1.1] - 2025-08-25
+
+- Improve location of generated types and their errors
+
 ## [1.1.0] - 2025-08-22
 
 - Handle Foobara 0.1.0 type declarations

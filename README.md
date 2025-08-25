@@ -44,6 +44,15 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version,
 push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+### Updating the test fixture manifest JSON files
+
+* answer-bot-manifest.json is created from the ai-rack project
+* auth-manifest.json is created from the blog-rails project
+* foobara-manifest is created from the playground-be project
+* detached-manifest is created from the todo-list-backend
+
+These were generated with http://localhost:9292/manifest?include_processors=true (or port 3000 for the rails ones)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub

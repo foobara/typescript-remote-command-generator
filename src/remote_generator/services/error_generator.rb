@@ -11,16 +11,20 @@ module Foobara
 
           basename = "#{error_name}.ts".split("::")
 
-          case parent
-          when OrganizationGenerator, DomainGenerator, CommandGenerator
-            [*p.target_dir, "errors", *basename]
-          when nil
-            # :nocov:
-            raise "Expected #{error_name} to have a parent but it did not"
-            # :nocov:
-          else
-            [*p.target_dir, *basename]
-          end
+          prefix = case p
+                   when OrganizationGenerator, DomainGenerator, CommandGenerator
+                     [*p.target_dir, "errors"]
+                   when TypeGenerator
+                     [*p.target_dir, p.type_short_name, "errors"]
+                   when nil
+                     # :nocov:
+                     raise "Expected #{error_name} to have a parent but it did not"
+                   # :nocov:
+                   else
+                     p.target_dir
+                   end
+
+          [*prefix, *basename]
         end
 
         def error_base_class

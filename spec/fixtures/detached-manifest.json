@@ -1011,7 +1011,8 @@
     }
   },
   "metadata": {
-    "when": "2025-08-25 17:41:51 -0700",
+    "when": "2025-08-25 21:26:47 -0700",
+    "foobara_version": "0.1.6",
     "url": "http://localhost:3000/manifest?detached=true"
   }
 }

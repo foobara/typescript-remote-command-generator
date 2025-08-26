@@ -29656,8 +29656,8 @@
     }
   },
   "metadata": {
-    "when": "2025-08-25 18:28:07 -0700",
+    "when": "2025-08-25 21:25:21 -0700",
     "foobara_version": "0.1.6",
-    "url": "http://localhost:9292/manifest?include_processors=true"
+    "url": "http://localhost:9292/manifest?detached=false&include_processors=true"
   }
 }

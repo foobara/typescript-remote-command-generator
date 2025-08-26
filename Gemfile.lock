@@ -15,7 +15,7 @@ GEM
     diff-lcs (1.6.2)
     docile (1.4.1)
     ffi (1.17.2-x86_64-linux-gnu)
-    foobara (0.1.6)
+    foobara (0.1.7)
       bigdecimal
       foobara-lru-cache (< 2.0.0)
       foobara-util (< 2.0.0)

@@ -43,6 +43,10 @@ module Foobara
           *prefix, name = scoped_full_path
           [*prefix, "#{name}Aggregate"]
         end
+
+        def import_destructure
+          "{ #{scoped_short_name}Aggregate }"
+        end
       end
     end
   end

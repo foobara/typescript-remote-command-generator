@@ -41,6 +41,10 @@ module Foobara
           *prefix, name = scoped_full_path
           [*prefix, "#{name}Atom"]
         end
+
+        def import_destructure
+          "{ #{scoped_short_name}Atom }"
+        end
       end
     end
   end

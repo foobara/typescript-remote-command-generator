@@ -1,3 +1,7 @@
+## [1.1.2] - 2025-09-27
+
+- Fix busted Atom/Aggregate entity import generation
+
 ## [1.1.1] - 2025-08-25
 
 - Improve location of generated types and their errors

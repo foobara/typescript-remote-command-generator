@@ -62,6 +62,11 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     let(:raw_manifest) { JSON.parse(File.read("spec/fixtures/auth-manifest.json")) }
     let(:inputs) { { raw_manifest:, output_directory: } }
 
+    before do
+      FileUtils.mkdir_p(output_directory)
+      File.write("#{output_directory}/index.tsx", "")
+    end
+
     it "contains setup.ts" do
       expect(outcome).to be_success
       expect(command.paths_to_source_code.key?("setup.ts")).to be true

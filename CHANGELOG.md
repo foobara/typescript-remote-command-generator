@@ -1,3 +1,7 @@
+## [1.1.3] - 2025-10-02
+
+
+
 ## [1.1.2] - 2025-09-27
 
 - Fix busted Atom/Aggregate entity import generation

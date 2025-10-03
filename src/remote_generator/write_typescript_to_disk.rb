@@ -77,8 +77,19 @@ module Foobara
 
       def warn_about_adding_setup_to_index
         if paths_to_source_code.key?("setup.ts")
-          warn "WARNING: you should add the following to src/index.ts:\n\n" \
-               "import './domains/setup'"
+          index_tsx_path = "#{output_directory}/index.tsx"
+
+          if File.exist?(index_tsx_path)
+            unless File.read(index_tsx_path) =~ /import.*domains\/setup/
+              warn "WARNING: you should add the following to src/index.tsx:\n\n" \
+                   "import './domains/setup'"
+            end
+          else
+            # :nocov:
+            warn "WARNING: Make sure you add the following somewhere:\n\n" \
+                 "import './domains/setup'"
+            # :nocov:
+          end
         end
       end
     end

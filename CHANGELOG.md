@@ -1,6 +1,6 @@
-## [1.1.3] - 2025-10-02
+## [1.1.4] - 2025-10-02
 
-
+- Don't give warning about importing domain/setup.ts if it already has been added to index.tsx
 
 ## [1.1.2] - 2025-09-27
 

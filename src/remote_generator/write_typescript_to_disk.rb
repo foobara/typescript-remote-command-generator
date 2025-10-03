@@ -77,7 +77,7 @@ module Foobara
 
       def warn_about_adding_setup_to_index
         if paths_to_source_code.key?("setup.ts")
-          index_tsx_path = "#{output_directory}/index.tsx"
+          index_tsx_path = "#{output_directory}/../index.tsx"
 
           if File.exist?(index_tsx_path)
             unless File.read(index_tsx_path) =~ /import.*domains\/setup/

@@ -64,7 +64,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
 
     before do
       FileUtils.mkdir_p(output_directory)
-      File.write("#{output_directory}/index.tsx", "")
+      File.write("#{output_directory}/../index.tsx", "")
     end
 
     it "contains setup.ts" do

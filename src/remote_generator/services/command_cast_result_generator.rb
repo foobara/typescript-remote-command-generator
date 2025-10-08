@@ -18,6 +18,14 @@ module Foobara
           "Command/castJsonResult.ts.erb"
         end
 
+        def applicable?
+          result_json_requires_cast?
+        end
+
+        def result_json_requires_cast?
+          raise "asfd"
+        end
+
         def model_generators(type = result_type, initial = true)
           return [] if type.nil?
 

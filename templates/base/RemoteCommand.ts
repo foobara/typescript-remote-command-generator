@@ -101,26 +101,27 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return await fetch(this._buildUrl(), this._buildRequestParams())
   }
 
-  castJsonResult (_json: any): Result {
-    throw new Error("Subclass responsibility")
+  castJsonResult (json: any): Result {
+    return json
   }
-  castJsonErrors (_json: any): CommandError[] {
-    throw new Error("Subclass responsibility")
+  castJsonErrors (json: any): CommandError[] {
+    return json
   }
-
 
   async _handleResponse (response: Response): Promise<Outcome<Result, CommandError>> {
     const text = await response.text()
     const body = JSON.parse(text)
 
     if (response.ok) {
-      this.commandState = 'succeeded'
-        const result = this.castJsonResult(body)
+      const result = this.castJsonResult(body)
+
       this.outcome = new SuccessfulOutcome<Result, CommandError>(result)
+      this.commandState = 'succeeded'
     } else if (response.status === 422 || response.status === 401 || response.status === 403) {
-      this.commandState = 'errored'
-        const errors = this.castJsonErrors(body)
+      const errors = this.castJsonErrors(body)
+
       this.outcome = new ErrorOutcome<Result, CommandError>(errors)
+      this.commandState = 'errored'
     } else {
       this.commandState = 'failed'
       throw new Error(`not sure how to handle ${text}`)

@@ -52,6 +52,7 @@ module Foobara
                 *generator_classes,
                 Services::CommandInputsGenerator,
                 Services::CommandResultGenerator,
+                Services::CommandCastResultGenerator,
                 Services::CommandErrorsGenerator,
                 Services::CommandErrorsIndexGenerator,
                 Services::CommandManifestGenerator

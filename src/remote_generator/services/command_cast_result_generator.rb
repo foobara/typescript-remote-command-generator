@@ -105,8 +105,80 @@ module Foobara
           model_generators + type_generators
         end
 
-        def cast_json_result_function_body
-          raise "wtf"
+        private
+
+        def cast_json_result_function_body(cast_tree = _construct_cast_tree(result_type), parent = "json")
+          result = []
+
+          if cast_tree.is_a?(::Hash)
+            cast_tree.each_pair do |path_part, child_cast_tree|
+              if path_part == :"#"
+                if child_cast_tree.is_a?(::Hash)
+                  result << "#{parent}?.forEach((element) => {"
+                  result << cast_json_result_function_body(child_cast_tree, "element")
+                  result << "}"
+                elsif child_cast_tree.is_a?(::String)
+                  value = child_cast_tree.gsub("$$", "element")
+                  result << "#{parent}?.forEach((element, index, array) => {"
+                  result << "array[#{index}] = #{value}"
+                  result << "}"
+                else
+                  raise "wtf"
+                end
+              elsif child_cast_tree.is_a?(::Hash)
+                result << "const #{path_part} = #{parent}[\"#{path_part}\"]"
+                result << cast_json_result_function_body(child_cast_tree, path_part)
+              elsif child_cast_tree.is_a?(::String)
+                value = child_cast_tree.gsub("$$", child_cast_tree)
+                result << "#{parent}[\"#{path_part}\"] = #{value}"
+              else
+                raise "wtf"
+              end
+            end
+          elsif cast_tree.is_a?(::String)
+            value = cast_tree.gsub("$$", parent)
+            result << "#{parent} = #{value}"
+          end
+
+          result.join("\n")
+        end
+
+        def _construct_cast_tree(type_declaration)
+          if type_declaration.is_a?(Manifest::Attributes)
+            return unless type_declaration.has_attribute_declarations?
+            return if type_declaration.attribute_declarations.empty?
+
+            path_tree = {}
+
+            type_declaration.attribute_declarations.each_pair do |attribute_name, attribute_declaration|
+              if type_requires_cast?(attribute_declaration)
+                path_tree[attribute_name] = _construct_cast_tree(attribute_declaration)
+              end
+            end
+
+            unless path_tree.empty?
+              path_tree
+            end
+          elsif type_declaration.is_a?(Manifest::Array)
+            element_type = type_declaration.element_type
+
+            if element_type && type_requires_cast?(element_type)
+              { "#": _construct_cast_tree(element_type) }
+            end
+          elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
+            "new Date($$)"
+          elsif type_declaration.model?
+            type_symbol = type_declaration.type
+            type_symbol = type_symbol.to_sym if type_symbol.is_a?(::Symbol)
+
+            ts_model_name = model_to_ts_model_name(type_declaration)
+
+            "new #{ts_model_name}($$)"
+          elsif type_declaration.custom?
+            if type_requires_cast?(type_declaration.base_type.to_type_declaration)
+              _construct_cast_tree(type_declaration.base_type.to_type_declaration)
+            end
+          end
         end
       end
     end

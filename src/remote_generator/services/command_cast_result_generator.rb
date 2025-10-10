@@ -168,9 +168,6 @@ module Foobara
           elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
             "new Date($$)"
           elsif type_declaration.model?
-            type_symbol = type_declaration.type
-            type_symbol = type_symbol.to_sym if type_symbol.is_a?(::Symbol)
-
             ts_model_name = model_to_ts_model_name(type_declaration)
 
             "new #{ts_model_name}($$)"

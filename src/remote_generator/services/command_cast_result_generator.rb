@@ -3,7 +3,7 @@ require_relative "typescript_from_manifest_base_generator"
 module Foobara
   module RemoteGenerator
     class Services
-      class CommandCastResultGenerator < TypescriptFromManifestBaseGenerator
+      class CommandCastResultGenerator < CommandGenerator
         alias command_manifest relevant_manifest
 
         def result_type
@@ -20,12 +20,6 @@ module Foobara
 
         def applicable?
           result_json_requires_cast?
-        end
-
-        def result_json_requires_cast?
-          # What types require a cast?
-          # :date and :datetime, :model, custom type declaration (check #custom?)
-          raise "asfd"
         end
 
         def model_generators(type = result_type, initial = true)
@@ -113,33 +107,6 @@ module Foobara
 
         def cast_json_result_function_body
           raise "wtf"
-        end
-
-        private
-
-        def type_requires_cast?(type_declaration)
-          if type_declaration.is_a?(Manifest::Attributes)
-            return false unless type_declaration.has_attribute_declarations?
-            return false if type_declaration.attribute_declarations.empty?
-
-            type_declaration.attribute_declarations.values.any? do |attribute_declaration|
-              type_requires_cast?(attribute_declaration)
-            end
-          elsif type_declaration.is_a?(Manifest::Array)
-            element_type = type_declaration.element_type
-            element_type && type_requires_cast?(element_type)
-          else
-            return true if type_declaration.model?
-
-            type_symbol = type_declaration.type
-            type_symbol = type_symbol.to_sym if type_symbol.is_a?(::Symbol)
-
-            type_symbol == :date || type_symbol == :datetime
-
-            if type_declaration.custom?
-              type_requires_cast?(type_declaration.base_type.to_type_declaration)
-            end
-          end
         end
       end
     end

@@ -3,7 +3,7 @@ import <%= base_class_name %> from "<%= path_to_root %><%= base_class_path %>"
 import Inputs from "./Inputs"
 import Result from "./Result"
 import { Error } from "./Errors"
-<% if json_result_requires_cast? %>
+<% if result_json_requires_cast? %>
 import castJsonResult from "./castJsonResult"
 <% end %>
 
@@ -12,7 +12,7 @@ export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, 
   static readonly domainName = "<%= domain_name %>"
   static readonly commandName = "<%= command_name %>"
 
-<% if json_result_requires_cast? %>
+<% if result_json_requires_cast? %>
   castJsonResult(json: any) {
     return castJsonResult(json)
   }

@@ -22,65 +22,52 @@ module Foobara
           result_json_requires_cast?
         end
 
-        def model_generators(type = result_type, initial = true)
-          return [] if type.nil?
+        def model_generators
+          generators = []
 
-          if type.detached_entity?
-            generator_class = if atom?
-                                if initial
-                                  AtomEntityGenerator
+          result_generator = CommandResultGenerator.new(command_manifest)
+
+          result_generator.model_generators.each do |model_generator|
+            if model_generator.model?
+              generators << model_generator
+            end
+          end
+
+          _models_reachable_from_declaration(result_type).each do |type|
+            if generators.any? { |g| g.relevant_manifest == type }
+              next
+            end
+
+            generator_class = if type.detached_entity?
+                                if aggregate?
+                                  AggregateEntityGenerator
                                 else
                                   UnloadedEntityGenerator
                                 end
-                              elsif aggregate?
-                                AggregateEntityGenerator
-                              else
-                                TypeGenerator
+                              elsif type.model?
+                                if aggregate?
+                                  AggregateModelGenerator
+                                else
+                                  AtomModelGenerator
+                                end
                               end
 
-            entity = if type.entity?
-                       type.to_entity
-                     else
-                       type.to_detached_entity
-                     end
+            type = if type.entity?
+                     type.to_entity
+                   elsif type.detached_entity?
+                     type.to_detached_entity
+                   else
+                     type.to_model
+                   end
 
-            [generator_class.new(entity)]
-          elsif type.model?
-            generator_class = if atom?
-                                AtomModelGenerator
-                              elsif aggregate?
-                                AggregateModelGenerator
-                              else
-                                TypeGenerator
-                              end
-
-            [generator_class.new(type.to_model)]
-          elsif type.type.to_sym == :attributes
-            type.attribute_declarations.values.map do |attribute_declaration|
-              model_generators(attribute_declaration, false)
-            end.flatten.uniq
-          elsif type.array?
-            model_generators(type.element_type, false)
-          else
-            # TODO: handle tuples, associative arrays
-            []
-          end
-        end
-
-        def type_generators
-          @type_generators ||= begin
-            type = result_type
-            type = type.to_type if result_type.is_a?(Manifest::TypeDeclaration)
-
-            if type && !type.builtin? && !type.model?
-              # TODO: Test this!!
-              # :nocov:
-              [TypeGenerator.new(type)]
-              # :nocov:
-            else
-              []
+            if generators.any? { |g| g.relevant_manifest == type }
+              next
             end
+
+            generators << generator_class.new(type)
           end
+
+          generators
         end
 
         def atom?
@@ -102,7 +89,7 @@ module Foobara
         end
 
         def dependencies
-          model_generators + type_generators
+          model_generators
         end
 
         private
@@ -120,7 +107,7 @@ module Foobara
                 elsif child_cast_tree.is_a?(::String)
                   value = child_cast_tree.gsub("$$", "element")
                   result << "#{parent}?.forEach((element, index, array) => {"
-                  result << "array[#{index}] = #{value}"
+                  result << "array[index] = #{value}"
                   result << "}"
                 else
                   raise "wtf"
@@ -175,6 +162,37 @@ module Foobara
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               _construct_cast_tree(type_declaration.base_type.to_type_declaration)
             end
+          end
+        end
+
+        def _models_reachable_from_declaration(type_declaration)
+          if type_declaration.is_a?(Manifest::Attributes)
+            return Set.new unless type_declaration.has_attribute_declarations?
+            return Set.new if type_declaration.attribute_declarations.empty?
+
+            models = Set.new
+
+            type_declaration.attribute_declarations.each_value do |attribute_declaration|
+              if type_requires_cast?(attribute_declaration)
+                models |= _models_reachable_from_declaration(attribute_declaration)
+              end
+            end
+
+            models
+          elsif type_declaration.is_a?(Manifest::Array)
+            element_type = type_declaration.element_type
+
+            if element_type && type_requires_cast?(element_type)
+              _models_reachable_from_declaration(element_type)
+            end || Set.new
+          elsif type_declaration.model?
+            Set[type_declaration.to_type]
+          elsif type_declaration.custom?
+            if type_requires_cast?(type_declaration.base_type.to_type_declaration)
+              _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)
+            end || Set.new
+          else
+            Set.new
           end
         end
       end

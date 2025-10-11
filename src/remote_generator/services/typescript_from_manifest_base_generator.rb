@@ -90,6 +90,7 @@ module Foobara
             when Manifest::Type
               Services::TypeGenerator
             else
+              binding.pry
               # :nocov:
               raise "Not sure how build a generator for a #{manifest}"
               # :nocov:

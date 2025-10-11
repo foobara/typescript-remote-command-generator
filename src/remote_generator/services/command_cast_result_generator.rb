@@ -26,25 +26,25 @@ module Foobara
           []
         end
 
-        def model_generators
-          generators = super.select(&:model?)
+        def model_generators(*args)
+          return super if args.size == 2
+
+          generators = super(result_type, true).select(&:model?)
 
           nested_model_generators = []
 
           generators.each do |generator|
             _models_reachable_from_declaration(generator.relevant_manifest).each do |model|
-              generator_class = if type.detached_entity?
+              generator_class = if model.detached_entity?
                                   if aggregate?
                                     AggregateEntityGenerator
                                   else
                                     UnloadedEntityGenerator
                                   end
-                                elsif type.model?
-                                  if aggregate?
-                                    AggregateModelGenerator
-                                  else
-                                    AtomModelGenerator
-                                  end
+                                elsif aggregate?
+                                  AggregateModelGenerator
+                                else
+                                  AtomModelGenerator
                                 end
 
               new_generator = generator_class.new(model)
@@ -177,7 +177,11 @@ module Foobara
               _models_reachable_from_declaration(element_type)
             end || Set.new
           elsif type_declaration.model?
-            Set[type_declaration.to_type]
+            if type_declaration.is_a?(Manifest::TypeDeclaration)
+              type_declaration = type_declaration.to_type
+            end
+
+            Set[type_declaration]
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)

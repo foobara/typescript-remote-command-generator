@@ -131,7 +131,7 @@ module Foobara
           result.join("\n")
         end
 
-        def _construct_cast_tree(type_declaration)
+        def _construct_cast_tree(type_declaration, past_first_model: false)
           if type_declaration.is_a?(Manifest::Attributes)
             return unless type_declaration.has_attribute_declarations?
             return if type_declaration.attribute_declarations.empty?
@@ -145,23 +145,26 @@ module Foobara
             end
 
             unless path_tree.empty?
-              path_tree
+              CastTree.new(children: path_tree, past_first_model:)
             end
           elsif type_declaration.is_a?(Manifest::Array)
             element_type = type_declaration.element_type
 
             if element_type && type_requires_cast?(element_type)
-              { "#": _construct_cast_tree(element_type) }
+              CastTree.new(children: { "#": _construct_cast_tree(element_type) }, past_first_model:)
             end
-          elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime ||
-                type_declaration.model?
-            type_declaration
-          elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime ||
-                type_declaration.model?
-            type_declaration
+          elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
+            CastTree.new(declaration_to_cast: type_declaration)
+          elsif type_declaration.model?
+            children = _construct_cast_tree(type_declaration.attributes_declaration)
+            CastTree.new(children:, declaration_to_cast: type_declaration, past_first_model: true)
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
-              _construct_cast_tree(type_declaration.base_type.to_type_declaration)
+              tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration)
+
+              if tree
+                CastTree.new(children: tree, past_first_model:)
+              end
             end
           end
         end

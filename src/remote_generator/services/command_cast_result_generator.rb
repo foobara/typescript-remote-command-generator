@@ -155,7 +155,12 @@ module Foobara
           elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
             "new Date($$)"
           elsif type_declaration.model?
-            ts_model_name = model_to_ts_model_name(type_declaration)
+            ts_model_name = begin
+              model_to_ts_model_name(type_declaration)
+            rescue => e
+              binding.pry
+              raise
+            end
 
             "new #{ts_model_name}($$)"
           elsif type_declaration.custom?

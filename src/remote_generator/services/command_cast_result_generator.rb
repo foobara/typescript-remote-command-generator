@@ -1,9 +1,9 @@
-require_relative "typescript_from_manifest_base_generator"
+require_relative "command_result_generator"
 
 module Foobara
   module RemoteGenerator
     class Services
-      class CommandCastResultGenerator < CommandGenerator
+      class CommandCastResultGenerator < CommandResultGenerator
         alias command_manifest relevant_manifest
 
         def result_type
@@ -22,52 +22,42 @@ module Foobara
           result_json_requires_cast?
         end
 
+        def type_generators
+          []
+        end
+
         def model_generators
-          generators = []
+          generators = super.select(&:model?)
 
-          result_generator = CommandResultGenerator.new(command_manifest)
+          nested_model_generators = []
 
-          result_generator.model_generators.each do |model_generator|
-            if model_generator.model?
-              generators << model_generator
+          generators.each do |generator|
+            _models_reachable_from_declaration(generator.relevant_manifest).each do |model|
+              generator_class = if type.detached_entity?
+                                  if aggregate?
+                                    AggregateEntityGenerator
+                                  else
+                                    UnloadedEntityGenerator
+                                  end
+                                elsif type.model?
+                                  if aggregate?
+                                    AggregateModelGenerator
+                                  else
+                                    AtomModelGenerator
+                                  end
+                                end
+
+              new_generator = generator_class.new(model)
+
+              unless generators.any? do |g|
+                g.relevant_manifest == model && g.class == new_generator.class
+              end
+                nested_model_generators << new_generator
+              end
             end
           end
 
-          _models_reachable_from_declaration(result_type).each do |type|
-            if generators.any? { |g| g.relevant_manifest == type }
-              next
-            end
-
-            generator_class = if type.detached_entity?
-                                if aggregate?
-                                  AggregateEntityGenerator
-                                else
-                                  UnloadedEntityGenerator
-                                end
-                              elsif type.model?
-                                if aggregate?
-                                  AggregateModelGenerator
-                                else
-                                  AtomModelGenerator
-                                end
-                              end
-
-            type = if type.entity?
-                     type.to_entity
-                   elsif type.detached_entity?
-                     type.to_detached_entity
-                   else
-                     type.to_model
-                   end
-
-            if generators.any? { |g| g.relevant_manifest == type }
-              next
-            end
-
-            generators << generator_class.new(type)
-          end
-
-          generators
+          generators + nested_model_generators
         end
 
         def atom?
@@ -94,6 +84,7 @@ module Foobara
 
         private
 
+        # TODO: need to make use of initial?
         def cast_json_result_function_body(cast_tree = _construct_cast_tree(result_type), parent = "json")
           result = []
 
@@ -155,12 +146,7 @@ module Foobara
           elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
             "new Date($$)"
           elsif type_declaration.model?
-            ts_model_name = begin
-              model_to_ts_model_name(type_declaration)
-            rescue => e
-              binding.pry
-              raise
-            end
+            ts_model_name = model_to_ts_model_name(type_declaration.to_type)
 
             "new #{ts_model_name}($$)"
           elsif type_declaration.custom?

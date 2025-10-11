@@ -1,4 +1,11 @@
 PATH
+  remote: ../rubocop-rules
+  specs:
+    foobara-rubocop-rules (1.0.3)
+      rubocop
+      rubocop-rspec
+
+PATH
   remote: .
   specs:
     foobara-typescript-remote-command-generator (1.1.4)
@@ -23,9 +30,6 @@ GEM
     foobara-files-generator (0.1.0)
       foobara (>= 0.1.1, < 2.0.0)
     foobara-lru-cache (1.0.0)
-    foobara-rubocop-rules (1.0.3)
-      rubocop
-      rubocop-rspec
     foobara-spec-helpers (0.0.4)
       foobara-util
     foobara-util (1.0.3)
@@ -136,7 +140,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  foobara-rubocop-rules (>= 1.0.0)
+  foobara-rubocop-rules (>= 1.0.0)!
   foobara-spec-helpers (< 2.0.0)
   foobara-typescript-remote-command-generator!
   guard-rspec

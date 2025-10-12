@@ -153,7 +153,13 @@ module Foobara
           result.join("\n")
         end
 
-        def _ts_cast_expression(type_declaration, parent, value)
+        def _ts_cast_expression(type_declaration, value:, parent: nil, property: nil)
+          lvalue = if parent
+                     "#{parent}[#{property}]"
+                   else
+                     value
+                   end
+
           type = if type_declaration.is_a?(Manifest::TypeDeclaration)
                    type_declaration.to_type
                  else
@@ -163,11 +169,10 @@ module Foobara
           type_symbol = type.type_symbol
 
           if type_symbol == :date || type_symbol == :datetime
-            "#{value} = new Date(#{value})"
+            "#{lvalue} = new Date(#{value})"
           elsif type.model?
-            ts_model_name = model_to_ts_model_name(type_declaration.to_type)
-
-            "#{value} = new #{ts_model_name}(#{value})"
+            ts_model_name = model_to_ts_model_name(type)
+            "#{lvalue} = new #{ts_model_name}(#{value})"
           else
             raise "wtf"
           end

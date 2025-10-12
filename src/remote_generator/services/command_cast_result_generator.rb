@@ -14,7 +14,30 @@ module Foobara
           end
 
           def empty?
-            children.empty? && declaration_to_cast.nil?
+            (children.nil? || children.empty?) && declaration_to_cast.nil?
+          end
+
+          def to_ts_cast_expression(parent)
+            type_declaration = declaration_to_cast
+
+            type = if type_declaration.is_a?(Manifest::TypeDeclaration)
+                     type_declaration.to_type
+                   else
+                     type_declaration
+                   end
+
+            type_symbol = type.type_symbol
+
+            if type_symbol == :date || type_symbol == :datetime
+
+            elsif type.model?
+              asdf
+            else
+              raise "wtf"
+            end
+          end
+
+          def ts_path(parent)
           end
         end
 
@@ -86,13 +109,18 @@ module Foobara
 
         # TODO: need to make use of initial?
         def cast_json_result_function_body(cast_tree = _construct_cast_tree(result_type), parent = "json")
-          unless cast_tree.empty?
-            raise "wtf"
-          end
+          return if cast_tree.empty?
 
           result = []
 
-          if cast_tree.is_a?(::Hash)
+          case cast_tree
+          when CastTree
+            result = _construct_cast_tree(cast_tree.children, parent)
+
+            if cast_tree.declaration_to_cast
+              result << "#{parent} = #{cast_tree.declaration_to_cast.type.to_sym == :date || cast_tree.declaration_to_cast.type.to_sym == :datetime ? "new Date(#{parent})" : parent}"
+            end
+          when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
               if path_part == :"#"
                 if child_cast_tree.is_a?(::Hash)
@@ -117,12 +145,32 @@ module Foobara
                 raise "wtf"
               end
             end
-          elsif cast_tree.is_a?(::String)
+          when ::String
             value = cast_tree.gsub("$$", parent)
             result << "#{parent} = #{value}"
           end
 
           result.join("\n")
+        end
+
+        def _ts_cast_expression(type_declaration, parent, value)
+          type = if type_declaration.is_a?(Manifest::TypeDeclaration)
+                   type_declaration.to_type
+                 else
+                   type_declaration
+                 end
+
+          type_symbol = type.type_symbol
+
+          if type_symbol == :date || type_symbol == :datetime
+            "#{value} = new Date(#{value})"
+          elsif type.model?
+            ts_model_name = model_to_ts_model_name(type_declaration.to_type)
+
+            "#{value} = new #{ts_model_name}(#{value})"
+          else
+            raise "wtf"
+          end
         end
 
         def _construct_cast_tree(type_declaration, past_first_model: false)

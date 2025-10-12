@@ -103,12 +103,19 @@ module Foobara
                   result << cast_json_result_function_body(child_cast_tree, "element")
                   result << "}"
                 when ::String
-                  value = child_cast_tree.gsub("$$", "element")
+                  binding.pry
                   result << "#{parent}?.forEach((element, index, array) => {"
                   result << _ts_cast_expression(child_cast_tree, parent: "array", property: "index")
                   result << "}"
                 when CastTree
-                  asdf
+                  result << "#{parent}?.forEach((element, index, array) => {"
+                  result << _ts_cast_expression(child_cast_tree.children,
+                                                parent: "array",
+                                                property: "index",
+                                                value: "element")
+                  result << "}"
+
+                  result << ts_cast_expression(child_cast_tree, parent:)
                 else
                   binding.pry
                   raise "wtf"
@@ -117,8 +124,8 @@ module Foobara
                 result << "const #{path_part} = #{parent}[\"#{path_part}\"]"
                 result << cast_json_result_function_body(child_cast_tree, path_part)
               elsif child_cast_tree.is_a?(::String)
-                value = child_cast_tree.gsub("$$", child_cast_tree)
-                result << "#{parent}[\"#{path_part}\"] = #{value}"
+                binding.pry
+                raise "wtf"
               elsif child_cast_tree.is_a?(CastTree)
                 result << cast_json_result_function_body(child_cast_tree.children, path_part)
                 result << _ts_cast_expression(
@@ -137,7 +144,7 @@ module Foobara
             binding.pry
           end
 
-          result.join("\n")
+          result.compact.join("\n")
         end
 
         def _ts_cast_expression(cast_tree, value:, parent: nil, property: nil)

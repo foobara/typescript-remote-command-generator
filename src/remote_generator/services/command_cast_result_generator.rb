@@ -111,6 +111,8 @@ module Foobara
                   result << "#{parent}?.forEach((element, index, array) => {"
                   result << "array[index] = #{value}"
                   result << "}"
+                elsif child_cast_tree.is_a?(CastTree)
+                  asdf
                 else
                   binding.pry
                   raise "wtf"

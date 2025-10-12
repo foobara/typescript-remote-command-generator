@@ -86,62 +86,35 @@ module Foobara
 
         # TODO: need to make use of initial?
         def cast_json_result_function_body(cast_tree = _construct_cast_tree(result_type), parent = "json")
-          return if cast_tree.empty?
+          return if cast_tree.nil? || cast_tree.empty?
 
           result = []
 
           case cast_tree
           when CastTree
-            result = cast_json_result_function_body(cast_tree.children, parent)
-            result << _ts_cast_expression(cast_tree, parent)
+            result << cast_json_result_function_body(cast_tree.children, parent)
+            result << _ts_cast_expression(cast_tree, value: parent)
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
               if path_part == :"#"
-                case child_cast_tree
-                when ::Hash
-                  result << "#{parent}?.forEach((element) => {"
-                  result << cast_json_result_function_body(child_cast_tree, "element")
-                  result << "}"
-                when ::String
-                  binding.pry
-                  result << "#{parent}?.forEach((element, index, array) => {"
-                  result << _ts_cast_expression(child_cast_tree, parent: "array", property: "index")
-                  result << "}"
-                when CastTree
-                  result << "#{parent}?.forEach((element, index, array) => {"
-                  result << _ts_cast_expression(child_cast_tree.children,
-                                                parent: "array",
-                                                property: "index",
-                                                value: "element")
-                  result << "}"
-
-                  result << ts_cast_expression(child_cast_tree, parent:)
-                else
-                  binding.pry
-                  raise "wtf"
-                end
+                result << "#{parent}?.forEach((element, index, array) => {"
+                result << cast_json_result_function_body(child_cast_tree, "array[index]")
+                result << "}"
               elsif child_cast_tree.is_a?(::Hash)
                 result << "const #{path_part} = #{parent}[\"#{path_part}\"]"
                 result << cast_json_result_function_body(child_cast_tree, path_part)
-              elsif child_cast_tree.is_a?(::String)
-                binding.pry
-                raise "wtf"
               elsif child_cast_tree.is_a?(CastTree)
                 result << cast_json_result_function_body(child_cast_tree.children, path_part)
-                result << _ts_cast_expression(
-                  child_cast_tree.declaration_to_cast,
-                  parent: path_part
-                )
+
+                result << _ts_cast_expression(child_cast_tree, value: parent)
               else
                 binding.pry
                 raise "wtf"
               end
             end
-          when ::String
-            value = cast_tree.gsub("$$", parent)
-            result << "#{parent} = #{value}"
           else
             binding.pry
+            raise "wtf"
           end
 
           result.compact.join("\n")
@@ -176,7 +149,12 @@ module Foobara
           if type_symbol == :date || type_symbol == :datetime
             "#{lvalue} = new Date(#{value})"
           elsif type.model?
-            ts_model_name = model_to_ts_model_name(type)
+            ts_model_name = begin
+              model_to_ts_model_name(type)
+            rescue => e
+              binding.pry
+              raise
+            end
             "#{lvalue} = new #{ts_model_name}(#{value})"
           else
             raise "wtf"
@@ -248,7 +226,7 @@ module Foobara
               type_declaration = type_declaration.to_type
             end
 
-            Set[type_declaration]
+            Set[type_declaration] + _models_reachable_from_declaration(type_declaration.attributes_type)
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)

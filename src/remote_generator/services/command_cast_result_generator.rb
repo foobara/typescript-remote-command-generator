@@ -92,11 +92,12 @@ module Foobara
 
           case cast_tree
           when CastTree
-            result = _construct_cast_tree(cast_tree.children, parent)
+            result = cast_json_result_function_body(cast_tree.children, parent)
 
             type_declaration = cast_tree.declaration_to_cast
+
             if type_declaration
-              result << _to_cast_expression(type_declaration, value: parent)
+              result << _to_cast_expression(type_declaration, parent)
             end
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
@@ -111,6 +112,7 @@ module Foobara
                   result << "array[index] = #{value}"
                   result << "}"
                 else
+                  binding.pry
                   raise "wtf"
                 end
               elsif child_cast_tree.is_a?(::Hash)
@@ -119,13 +121,22 @@ module Foobara
               elsif child_cast_tree.is_a?(::String)
                 value = child_cast_tree.gsub("$$", child_cast_tree)
                 result << "#{parent}[\"#{path_part}\"] = #{value}"
+              elsif child_cast_tree.is_a?(CastTree)
+                result << cast_json_result_function_body(child_cast_tree.children, path_part)
+                result << _to_cast_expression(
+                  child_cast_tree.declaration_to_cast,
+                  parent: path_part
+                )
               else
+                binding.pry
                 raise "wtf"
               end
             end
           when ::String
             value = cast_tree.gsub("$$", parent)
             result << "#{parent} = #{value}"
+          else
+            binding.pry
           end
 
           result.join("\n")
@@ -145,6 +156,8 @@ module Foobara
                  end
 
           type_symbol = type.type_symbol
+
+          value ||= lvalue
 
           if type_symbol == :date || type_symbol == :datetime
             "#{lvalue} = new Date(#{value})"

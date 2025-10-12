@@ -31,5 +31,7 @@ RSpec.configure do |config|
   # config.raise_errors_for_deprecations!
 end
 
+Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
+
 require "foobara/typescript_remote_command_generator"
 require "foobara/spec_helpers/all"

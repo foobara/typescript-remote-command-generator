@@ -36,25 +36,23 @@ module Foobara
           result_json_requires_cast?
         end
 
-        def model_generators(*args)
-          return super if args.size == 2
-
-          generators = super(result_type, true).select(&:model?)
-
+        def nested_model_generators
           nested_model_generators = []
+
+          generators = model_generators
 
           generators.each do |generator|
             _models_reachable_from_declaration(generator.relevant_manifest).each do |model|
-              generator_class = if model.detached_entity?
-                                  if aggregate?
-                                    AggregateEntityGenerator
+              generator_class = if atom?
+                                  if model.detached_entity?
+                                    Services::UnloadedEntityGenerator
                                   else
-                                    UnloadedEntityGenerator
+                                    Services::AtomModelGenerator
                                   end
                                 elsif aggregate?
-                                  AggregateModelGenerator
+                                  Services::AggregateModelGenerator
                                 else
-                                  AtomModelGenerator
+                                  Services::ModelGenerator
                                 end
 
               new_generator = generator_class.new(model)
@@ -67,7 +65,7 @@ module Foobara
             end
           end
 
-          generators + nested_model_generators
+          nested_model_generators
         end
 
         def atom?
@@ -79,7 +77,7 @@ module Foobara
         end
 
         def dependencies
-          model_generators
+          model_generators + nested_model_generators
         end
 
         private
@@ -149,8 +147,9 @@ module Foobara
           if type_symbol == :date || type_symbol == :datetime
             "#{lvalue} = new Date(#{value})"
           elsif type.model?
+
             ts_model_name = begin
-              model_to_ts_model_name(type)
+              model_to_ts_model_name(type, association_depth:, initial: !cast_tree.past_first_model)
             rescue => e
               binding.pry
               raise

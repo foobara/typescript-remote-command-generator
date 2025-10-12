@@ -1,4 +1,19 @@
 PATH
+  remote: ../files-generator
+  specs:
+    foobara-files-generator (0.1.0)
+      foobara (>= 0.1.1, < 2.0.0)
+
+PATH
+  remote: ../foobara
+  specs:
+    foobara (0.1.15)
+      bigdecimal
+      foobara-lru-cache (< 2.0.0)
+      foobara-util (< 2.0.0)
+      inheritable-thread-vars (< 2.0.0)
+
+PATH
   remote: ../rubocop-rules
   specs:
     foobara-rubocop-rules (1.0.3)
@@ -22,13 +37,6 @@ GEM
     diff-lcs (1.6.2)
     docile (1.4.1)
     ffi (1.17.2-x86_64-linux-gnu)
-    foobara (0.1.15)
-      bigdecimal
-      foobara-lru-cache (< 2.0.0)
-      foobara-util (< 2.0.0)
-      inheritable-thread-vars (< 2.0.0)
-    foobara-files-generator (0.1.0)
-      foobara (>= 0.1.1, < 2.0.0)
     foobara-lru-cache (1.0.0)
     foobara-spec-helpers (0.0.4)
       foobara-util
@@ -140,6 +148,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  foobara!
+  foobara-files-generator!
   foobara-rubocop-rules (>= 1.0.0)!
   foobara-spec-helpers (< 2.0.0)
   foobara-typescript-remote-command-generator!

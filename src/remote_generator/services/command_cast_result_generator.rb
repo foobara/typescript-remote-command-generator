@@ -156,13 +156,15 @@ module Foobara
           elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
             CastTree.new(declaration_to_cast: type_declaration)
           elsif type_declaration.model?
-            children = _construct_cast_tree(type_declaration.attributes_declaration)
+            type_declaration = type_declaration.to_type
+
+            children = _construct_cast_tree(type_declaration.attributes_type)
             CastTree.new(children:, declaration_to_cast: type_declaration, past_first_model: true)
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration)
 
-              if tree
+              if tree && !tree.empty?
                 CastTree.new(children: tree, past_first_model:)
               end
             end

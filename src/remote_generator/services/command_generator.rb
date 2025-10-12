@@ -66,13 +66,19 @@ module Foobara
           else
             return true if type_declaration.model?
 
-            type_symbol = type_declaration.type
-            type_symbol = type_symbol.to_sym if type_symbol.is_a?(::Symbol)
+            type_symbol = type_declaration.type_symbol
 
-            type_symbol == :date || type_symbol == :datetime
+            if type_symbol == :date || type_symbol == :datetime
+              return true
+            end
 
             if type_declaration.custom?
-              type_requires_cast?(type_declaration.base_type.to_type_declaration)
+              base_type = if type_declaration.is_a?(Manifest::TypeDeclaration)
+                            type_declaration.to_type.base_type
+                          else
+                            type_declaration.base_type
+                          end
+              type_requires_cast?(base_type)
             end
           end
         end

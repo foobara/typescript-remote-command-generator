@@ -16,29 +16,6 @@ module Foobara
           def empty?
             (children.nil? || children.empty?) && declaration_to_cast.nil?
           end
-
-          def to_ts_cast_expression(parent)
-            type_declaration = declaration_to_cast
-
-            type = if type_declaration.is_a?(Manifest::TypeDeclaration)
-                     type_declaration.to_type
-                   else
-                     type_declaration
-                   end
-
-            type_symbol = type.type_symbol
-
-            if type_symbol == :date || type_symbol == :datetime
-
-            elsif type.model?
-              asdf
-            else
-              raise "wtf"
-            end
-          end
-
-          def ts_path(parent)
-          end
         end
 
         alias command_manifest relevant_manifest
@@ -117,8 +94,9 @@ module Foobara
           when CastTree
             result = _construct_cast_tree(cast_tree.children, parent)
 
-            if cast_tree.declaration_to_cast
-              result << "#{parent} = #{cast_tree.declaration_to_cast.type.to_sym == :date || cast_tree.declaration_to_cast.type.to_sym == :datetime ? "new Date(#{parent})" : parent}"
+            type_declaration = cast_tree.declaration_to_cast
+            if type_declaration
+              result << _to_cast_expression(type_declaration, value: parent)
             end
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|

@@ -93,25 +93,21 @@ module Foobara
           case cast_tree
           when CastTree
             result = cast_json_result_function_body(cast_tree.children, parent)
-
-            type_declaration = cast_tree.declaration_to_cast
-
-            if type_declaration
-              result << _to_cast_expression(type_declaration, parent)
-            end
+            result << _ts_cast_expression(cast_tree, parent)
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
               if path_part == :"#"
-                if child_cast_tree.is_a?(::Hash)
+                case child_cast_tree
+                when ::Hash
                   result << "#{parent}?.forEach((element) => {"
                   result << cast_json_result_function_body(child_cast_tree, "element")
                   result << "}"
-                elsif child_cast_tree.is_a?(::String)
+                when ::String
                   value = child_cast_tree.gsub("$$", "element")
                   result << "#{parent}?.forEach((element, index, array) => {"
-                  result << "array[index] = #{value}"
+                  result << _ts_cast_expression(child_cast_tree, parent: "array", property: "index")
                   result << "}"
-                elsif child_cast_tree.is_a?(CastTree)
+                when CastTree
                   asdf
                 else
                   binding.pry
@@ -125,7 +121,7 @@ module Foobara
                 result << "#{parent}[\"#{path_part}\"] = #{value}"
               elsif child_cast_tree.is_a?(CastTree)
                 result << cast_json_result_function_body(child_cast_tree.children, path_part)
-                result << _to_cast_expression(
+                result << _ts_cast_expression(
                   child_cast_tree.declaration_to_cast,
                   parent: path_part
                 )
@@ -144,7 +140,16 @@ module Foobara
           result.join("\n")
         end
 
-        def _ts_cast_expression(type_declaration, value:, parent: nil, property: nil)
+        def _ts_cast_expression(cast_tree, value:, parent: nil, property: nil)
+          unless cast_tree.is_a?(CastTree)
+            binding.pry
+            raise "wtf"
+          end
+
+          type_declaration = cast_tree.declaration_to_cast
+
+          return unless type_declaration
+
           lvalue = if parent
                      "#{parent}[#{property}]"
                    else

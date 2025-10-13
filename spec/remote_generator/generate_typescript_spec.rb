@@ -7,7 +7,7 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
 
-  it "contains base files" do
+  it "contains base files", :focus, :profile do
     expect(outcome).to be_success
 
     expect(result.keys).to any match(/base/)

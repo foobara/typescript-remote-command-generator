@@ -32,7 +32,7 @@ RSpec.configure do |config|
   config.after do
     tg = Foobara::RemoteGenerator::Services::TypeGenerator
     if tg.instance_variable_defined?(:@lru_cache)
-      tg.remove_instance_variable(:@lru_cache)
+      tg.lru_cache.reset!
     end
   end
 end

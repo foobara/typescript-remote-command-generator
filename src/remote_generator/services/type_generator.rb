@@ -11,10 +11,11 @@ module Foobara
 
           def new(relevant_manifest)
             unless self == TypeGenerator
-              lru_cache.cached([self, relevant_manifest]) do
-                return super
+              generator = lru_cache.cached([self, relevant_manifest]) do
+                super
               end
 
+              return generator
             end
 
             if relevant_manifest.detached_entity?

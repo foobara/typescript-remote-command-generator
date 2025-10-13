@@ -108,13 +108,11 @@ module Foobara
                 result << cast_json_result_function_body(child_cast_tree.children, "#{parent}.#{path_part}")
                 result << _ts_cast_expression(child_cast_tree, value: "#{parent}.#{path_part}")
               else
-                binding.pry
-                raise "wtf"
+                raise "Not sure how to handle a #{cast_tree.class}: #{cast_tree}"
               end
             end
           else
-            binding.pry
-            raise "wtf"
+            raise "Not sure how to handle a #{cast_tree.class}: #{cast_tree}"
           end
 
           result.compact.join("\n")
@@ -122,8 +120,7 @@ module Foobara
 
         def _ts_cast_expression(cast_tree, value:, parent: nil, property: nil)
           unless cast_tree.is_a?(CastTree)
-            binding.pry
-            raise "wtf"
+            raise "Expected a CastTree but got a #{cast_tree.class}: #{cast_tree}"
           end
 
           type_declaration = cast_tree.declaration_to_cast
@@ -149,13 +146,9 @@ module Foobara
           if type_symbol == :date || type_symbol == :datetime
             "#{lvalue} = new Date(#{value})"
           elsif type.model?
+            ts_model_name = model_to_ts_model_name(type, association_depth:,
+                                                         initial: !cast_tree.past_first_model)
 
-            ts_model_name = begin
-              model_to_ts_model_name(type, association_depth:, initial: !cast_tree.past_first_model)
-            rescue => e
-              binding.pry
-              raise
-            end
             "#{lvalue} = new #{ts_model_name}(#{value})"
           else
             raise "wtf"

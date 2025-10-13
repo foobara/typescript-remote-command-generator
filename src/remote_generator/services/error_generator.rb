@@ -54,7 +54,7 @@ module Foobara
         end
 
         def dependencies
-          types_depended_on.select { |type| type.detached_entity? || type.custom? || type.model? }
+          @dependencies ||= types_depended_on.select { |type| type.detached_entity? || type.custom? || type.model? }
         end
 
         def ts_type_full_path

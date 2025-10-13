@@ -23,11 +23,11 @@ module Foobara
         end
 
         def dependencies
-          if has_associations?
-            [model_generator, atom_model_generator, aggregate_model_generator]
-          else
-            [model_generator]
-          end
+          @dependencies ||= if has_associations?
+                              [model_generator, atom_model_generator, aggregate_model_generator]
+                            else
+                              [model_generator]
+                            end
         end
       end
     end

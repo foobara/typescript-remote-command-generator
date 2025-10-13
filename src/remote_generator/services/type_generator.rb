@@ -5,15 +5,26 @@ module Foobara
     class Services
       class TypeGenerator < TypescriptFromManifestBaseGenerator
         class << self
+          def lru_cache
+            @lru_cache ||= LruCache.new(1000)
+          end
+
           def new(relevant_manifest)
-            return super unless self == TypeGenerator
+            unless self == TypeGenerator
+              lru_cache.cached([self, relevant_manifest]) do
+                return super
+              end
+
+            end
 
             if relevant_manifest.detached_entity?
               EntityGenerator.new(relevant_manifest)
             elsif relevant_manifest.model?
               ModelGenerator.new(relevant_manifest)
             else
-              super
+              lru_cache.cached([self, relevant_manifest]) do
+                super
+              end
             end
           end
         end
@@ -99,7 +110,7 @@ module Foobara
         end
 
         def dependencies
-          custom_type_generators + model_generators
+          @dependencies ||= custom_type_generators + model_generators
         end
 
         def type_name_downcase

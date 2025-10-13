@@ -7,7 +7,9 @@ module Foobara
       class ModelGenerator < TypeGenerator
         class << self
           def new(relevant_manifest)
-            return super unless self == ModelGenerator
+            unless self == ModelGenerator
+              return super
+            end
 
             if relevant_manifest.detached_entity?
               EntityGenerator.new(relevant_manifest)

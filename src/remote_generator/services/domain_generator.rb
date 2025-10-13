@@ -58,7 +58,8 @@ module Foobara
         end
 
         def dependencies
-          [*command_generators, *model_generators, *entity_generators, *type_generators, *organization]
+          @dependencies ||= [*command_generators, *model_generators, *entity_generators, *type_generators,
+                             *organization]
         end
 
         def domain_name

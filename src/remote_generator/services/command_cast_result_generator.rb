@@ -37,6 +37,8 @@ module Foobara
         end
 
         def nested_model_generators
+          return @nested_model_generators if defined?(@nested_model_generators)
+
           nested_model_generators = []
 
           generators = model_generators
@@ -65,7 +67,7 @@ module Foobara
             end
           end
 
-          nested_model_generators
+          @nested_model_generators = nested_model_generators
         end
 
         def atom?
@@ -77,7 +79,7 @@ module Foobara
         end
 
         def dependencies
-          model_generators + nested_model_generators
+          @dependencies ||= model_generators + nested_model_generators
         end
 
         def cast_json_result_function

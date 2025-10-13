@@ -19,48 +19,53 @@ module Foobara
         end
 
         def model_generators(type = result_type, initial = true)
-          return [] if type.nil?
+          return @model_generators if defined?(@model_generators)
 
-          if type.detached_entity?
-            generator_class = if atom?
-                                if initial
-                                  AtomEntityGenerator
-                                else
-                                  UnloadedEntityGenerator
-                                end
-                              elsif aggregate?
-                                AggregateEntityGenerator
-                              else
-                                TypeGenerator
-                              end
-
-            entity = if type.entity?
-                       type.to_entity
-                     else
-                       type.to_detached_entity
-                     end
-
-            [generator_class.new(entity)]
-          elsif type.model?
-            generator_class = if atom?
-                                AtomModelGenerator
-                              elsif aggregate?
-                                AggregateModelGenerator
-                              else
-                                TypeGenerator
-                              end
-
-            [generator_class.new(type.to_model)]
-          elsif type.type.to_sym == :attributes
-            type.attribute_declarations.values.map do |attribute_declaration|
-              model_generators(attribute_declaration, false)
-            end.flatten.uniq
-          elsif type.array?
-            model_generators(type.element_type, false)
-          else
-            # TODO: handle tuples, associative arrays
-            []
+          if type.nil?
+            @model_generators = []
+            return @model_generators
           end
+
+          @model_generators = if type.detached_entity?
+                                generator_class = if atom?
+                                                    if initial
+                                                      AtomEntityGenerator
+                                                    else
+                                                      UnloadedEntityGenerator
+                                                    end
+                                                  elsif aggregate?
+                                                    AggregateEntityGenerator
+                                                  else
+                                                    TypeGenerator
+                                                  end
+
+                                entity = if type.entity?
+                                           type.to_entity
+                                         else
+                                           type.to_detached_entity
+                                         end
+
+                                [generator_class.new(entity)]
+                              elsif type.model?
+                                generator_class = if atom?
+                                                    AtomModelGenerator
+                                                  elsif aggregate?
+                                                    AggregateModelGenerator
+                                                  else
+                                                    TypeGenerator
+                                                  end
+
+                                [generator_class.new(type.to_model)]
+                              elsif type.type.to_sym == :attributes
+                                type.attribute_declarations.values.map do |attribute_declaration|
+                                  model_generators(attribute_declaration, false)
+                                end.flatten.uniq
+                              elsif type.array?
+                                model_generators(type.element_type, false)
+                              else
+                                # TODO: handle tuples, associative arrays
+                                []
+                              end
         end
 
         def type_generators

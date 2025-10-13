@@ -80,6 +80,12 @@ module Foobara
           model_generators + nested_model_generators
         end
 
+        def cast_json_result_function
+          result = +""
+          result << cast_json_result_function_body
+          result << "return json"
+        end
+
         private
 
         # TODO: need to make use of initial?
@@ -100,12 +106,10 @@ module Foobara
                 result << cast_json_result_function_body(child_cast_tree, "array[index]")
                 result << "}"
               elsif child_cast_tree.is_a?(::Hash)
-                result << "const #{path_part} = #{parent}.#{path_part}"
-                result << cast_json_result_function_body(child_cast_tree, path_part)
+                result << cast_json_result_function_body(child_cast_tree, "#{parent}.#{path_part}")
               elsif child_cast_tree.is_a?(CastTree)
-                result << "const #{path_part} = #{parent}.#{path_part}"
-                result << cast_json_result_function_body(child_cast_tree.children, path_part)
-                result << _ts_cast_expression(child_cast_tree, value: parent)
+                result << cast_json_result_function_body(child_cast_tree.children, "#{parent}.#{path_part}")
+                result << _ts_cast_expression(child_cast_tree, value: "#{parent}.#{path_part}")
               else
                 binding.pry
                 raise "wtf"

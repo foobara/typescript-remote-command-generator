@@ -29,6 +29,12 @@ RSpec.configure do |config|
   end
 
   # config.raise_errors_for_deprecations!
+  config.after do
+    tg = Foobara::RemoteGenerator::Services::TypeGenerator
+    if tg.instance_variable_defined?(:@lru_cache)
+      tg.remove_instance_variable(:@lru_cache)
+    end
+  end
 end
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }

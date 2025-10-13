@@ -44,7 +44,7 @@ module Foobara
           generators = model_generators
 
           generators.each do |generator|
-            _models_reachable_from_declaration(generator.relevant_manifest).each do |model|
+            _models_reachable_from_declaration(generator.relevant_manifest)&.each do |model|
               generator_class = if atom?
                                   if model.detached_entity?
                                     Services::UnloadedEntityGenerator
@@ -199,14 +199,18 @@ module Foobara
 
         def _models_reachable_from_declaration(type_declaration)
           if type_declaration.is_a?(Manifest::Attributes)
-            return Set.new unless type_declaration.has_attribute_declarations?
-            return Set.new if type_declaration.attribute_declarations.empty?
+            return  unless type_declaration.has_attribute_declarations?
+            return  if type_declaration.attribute_declarations.empty?
 
-            models = Set.new
+            models = nil
 
             type_declaration.attribute_declarations.each_value do |attribute_declaration|
               if type_requires_cast?(attribute_declaration)
-                models |= _models_reachable_from_declaration(attribute_declaration)
+                models ||= Set.new
+
+                _models_reachable_from_declaration(attribute_declaration)&.each do |model|
+                  models << model
+                end
               end
             end
 
@@ -216,19 +220,23 @@ module Foobara
 
             if element_type && type_requires_cast?(element_type)
               _models_reachable_from_declaration(element_type)
-            end || Set.new
+            end
           elsif type_declaration.model?
             if type_declaration.is_a?(Manifest::TypeDeclaration)
               type_declaration = type_declaration.to_type
             end
 
-            Set[type_declaration] + _models_reachable_from_declaration(type_declaration.attributes_type)
+            models = Set[type_declaration]
+
+            _models_reachable_from_declaration(type_declaration.attributes_type)&.each do |model|
+              models << model
+            end
+
+            models
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)
-            end || Set.new
-          else
-            Set.new
+            end
           end
         end
       end

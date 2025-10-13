@@ -81,7 +81,7 @@ module Foobara
         end
 
         def cast_json_result_function
-          "#{cast_json_result_function_body}\n#return json"
+          "#{cast_json_result_function_body}\nreturn json"
         end
 
         private

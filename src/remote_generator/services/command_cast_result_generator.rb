@@ -95,15 +95,16 @@ module Foobara
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
               if path_part == :"#"
+                binding.pry if parent =~ /content/
                 result << "#{parent}?.forEach((element, index, array) => {"
                 result << cast_json_result_function_body(child_cast_tree, "array[index]")
                 result << "}"
               elsif child_cast_tree.is_a?(::Hash)
-                result << "const #{path_part} = #{parent}[\"#{path_part}\"]"
+                result << "const #{path_part} = #{parent}.#{path_part}"
                 result << cast_json_result_function_body(child_cast_tree, path_part)
               elsif child_cast_tree.is_a?(CastTree)
+                result << "const #{path_part} = #{parent}.#{path_part}"
                 result << cast_json_result_function_body(child_cast_tree.children, path_part)
-
                 result << _ts_cast_expression(child_cast_tree, value: parent)
               else
                 binding.pry

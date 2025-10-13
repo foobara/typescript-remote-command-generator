@@ -19,6 +19,7 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
 
     expect(result["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
     expect(result["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
+    binding.pry
   end
 
   context "when generating typescript for a domain using Foobara::Auth" do

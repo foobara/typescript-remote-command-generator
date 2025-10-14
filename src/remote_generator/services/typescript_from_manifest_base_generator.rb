@@ -364,6 +364,9 @@ module Foobara
           generator = generator_class.new(model)
 
           dependency_group.non_colliding_type(generator)
+        rescue => e
+          binding.pry
+          raise
         end
 
         def custom_type_to_ts_type_name(type)

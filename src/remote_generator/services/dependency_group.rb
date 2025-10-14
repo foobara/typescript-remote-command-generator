@@ -34,6 +34,9 @@ module Foobara
 
           collision_data[key].tap do |cd|
             unless cd
+              require "pry"
+              require "pry-byebug"
+              binding.pry
               # :nocov:
               raise "Dependency #{dep} is not part of this dependency group"
               # :nocov:

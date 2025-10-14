@@ -103,7 +103,7 @@ module Foobara
               if path_part == :"#"
                 result << "#{parent}?.forEach((element, index, array) => {"
                 result << cast_json_result_function_body(child_cast_tree, "array[index]")
-                result << "}"
+                result << "})"
               elsif child_cast_tree.is_a?(::Hash)
                 result << cast_json_result_function_body(child_cast_tree, "#{parent}.#{path_part}")
               elsif child_cast_tree.is_a?(CastTree)

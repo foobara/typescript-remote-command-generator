@@ -5,6 +5,11 @@ import {
 
 export class Loaded<%= entity_short_name %><T extends <%= entity_short_name %>AttributesType = <%= entity_short_name %>AttributesType> extends <%= entity_short_name %><T> {
   readonly isLoaded: true = true
+
+  constructor(attributes: T) {
+    super(attributes)
+  }
+
   <% unless has_associations? %>
 /* eslint-disable @typescript-eslint/class-literal-property-style */
   get isAtom (): true { return true }

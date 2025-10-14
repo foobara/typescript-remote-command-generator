@@ -17,10 +17,21 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
   abstract get hasAssociations(): boolean
   abstract get associationPropertyPaths (): string[][]
 
-  constructor(primaryKey: PrimaryKeyType, attributes: AttributesType) {
-    super(attributes)
-    this.primaryKey = primaryKey
-    this.isLoaded = attributes !== undefined
+  constructor(primaryKeyOrAttributes: PrimaryKeyType | AttributesType) {
+    let attributes: AttributesType | undefined
+
+    const klass = new.target as typeof Entity<PrimaryKeyType, AttributesType>
+
+    if (typeof primaryKeyOrAttributes === "object") {
+      attributes = primaryKeyOrAttributes
+      super(attributes)
+      this.isLoaded = true
+      this.primaryKey = this.attributes[klass.primaryKeyAttributeName as keyof AttributesType] as PrimaryKeyType
+    } else {
+      super({ [klass.primaryKeyAttributeName]: primaryKeyOrAttributes }) as AttributesType
+      this.isLoaded = false
+      this.primaryKey = primaryKeyOrAttributes as PrimaryKeyType
+    }
   }
 
   /* Can we make this work or not?

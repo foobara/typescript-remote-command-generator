@@ -14,5 +14,9 @@ export class Unloaded<%= entity_short_name %> extends <%= entity_short_name %><U
   }
   */
 
+  constructor(primaryKey: PrimaryKeyType) {
+    super(primaryKey)
+  }
+
   readonly isLoaded: false = false
 }

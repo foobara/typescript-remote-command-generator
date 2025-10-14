@@ -18,54 +18,65 @@ module Foobara
           "Command/Result.ts.erb"
         end
 
-        def model_generators(type = result_type, initial = true)
-          return @model_generators if defined?(@model_generators)
+        def model_generators(*args)
+          type, initial = if args.empty?
+                            return @model_generators if defined?(@model_generators)
+
+                            use_cache = true
+
+                            [result_type, true]
+                          else
+                            args
+                          end
 
           if type.nil?
-            @model_generators = []
-            return @model_generators
-          end
-
-          @model_generators = if type.detached_entity?
-                                generator_class = if atom?
-                                                    if initial
-                                                      AtomEntityGenerator
-                                                    else
-                                                      UnloadedEntityGenerator
-                                                    end
-                                                  elsif aggregate?
-                                                    AggregateEntityGenerator
-                                                  else
-                                                    TypeGenerator
-                                                  end
-
-                                entity = if type.entity?
-                                           type.to_entity
-                                         else
-                                           type.to_detached_entity
-                                         end
-
-                                [generator_class.new(entity)]
-                              elsif type.model?
-                                generator_class = if atom?
-                                                    AtomModelGenerator
-                                                  elsif aggregate?
-                                                    AggregateModelGenerator
-                                                  else
-                                                    TypeGenerator
-                                                  end
-
-                                [generator_class.new(type.to_model)]
-                              elsif type.type.to_sym == :attributes
-                                type.attribute_declarations.values.map do |attribute_declaration|
-                                  model_generators(attribute_declaration, false)
-                                end.flatten.uniq
-                              elsif type.array?
-                                model_generators(type.element_type, false)
+            []
+          elsif type.detached_entity?
+            generator_class = if atom?
+                                if initial
+                                  AtomEntityGenerator
+                                else
+                                  UnloadedEntityGenerator
+                                end
+                              elsif aggregate?
+                                AggregateEntityGenerator
                               else
-                                # TODO: handle tuples, associative arrays
-                                []
+                                TypeGenerator
                               end
+
+            entity = if type.entity?
+                       type.to_entity
+                     else
+                       type.to_detached_entity
+                     end
+
+            [generator_class.new(entity)]
+          elsif type.model?
+            generator_class = if atom?
+                                AtomModelGenerator
+                              elsif aggregate?
+                                AggregateModelGenerator
+                              else
+                                TypeGenerator
+                              end
+
+            [generator_class.new(type.to_model)]
+          elsif type.type.to_sym == :attributes
+            type.attribute_declarations.values.map do |attribute_declaration|
+              model_generators(attribute_declaration, false)
+            end.flatten.uniq
+          elsif type.array?
+            model_generators(type.element_type, false)
+            # rubocop:disable Lint/DuplicateBranch
+          else
+            # TODO: handle tuples, associative arrays
+            []
+            # rubocop:enable Lint/DuplicateBranch
+          end.tap do |result|
+            if use_cache
+              @model_generators = result
+            end
+          end
         end
 
         def type_generators

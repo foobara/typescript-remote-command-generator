@@ -89,26 +89,45 @@ module Foobara
         private
 
         # TODO: need to make use of initial?
-        def cast_json_result_function_body(cast_tree = _construct_cast_tree(result_type), parent = "json")
+        def cast_json_result_function_body(
+          cast_tree = _construct_cast_tree(result_type),
+          parent: "json",
+          property: nil,
+          value: parent
+        )
           return if cast_tree.nil? || cast_tree.empty?
 
           result = []
 
           case cast_tree
           when CastTree
-            result << cast_json_result_function_body(cast_tree.children, parent)
-            result << _ts_cast_expression(cast_tree, value: parent)
+            result << cast_json_result_function_body(cast_tree.children, parent: value)
+            result << _ts_cast_expression(cast_tree, parent:, property:, value:)
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
               if path_part == :"#"
                 result << "#{parent}?.forEach((element, index, array) => {"
-                result << cast_json_result_function_body(child_cast_tree, "array[index]")
+                result << cast_json_result_function_body(child_cast_tree,
+                                                         parent: "array",
+                                                         property: "index",
+                                                         value: "element")
                 result << "})"
               elsif child_cast_tree.is_a?(::Hash)
-                result << cast_json_result_function_body(child_cast_tree, "#{parent}.#{path_part}")
+                property = path_part =~ /\A\d+\z/ ? path_part.to_i : "\"#{path_part}\""
+
+                result << cast_json_result_function_body(child_cast_tree,
+                                                         parent:,
+                                                         property:,
+                                                         value: "#{parent}.#{path_part}")
               elsif child_cast_tree.is_a?(CastTree)
-                result << cast_json_result_function_body(child_cast_tree.children, "#{parent}.#{path_part}")
-                result << _ts_cast_expression(child_cast_tree, value: "#{parent}.#{path_part}")
+                result << cast_json_result_function_body(child_cast_tree.children,
+                                                         parent: "#{parent}.#{path_part}")
+
+                property = path_part =~ /\A\d+\z/ ? path_part.to_i : "\"#{path_part}\""
+                result << _ts_cast_expression(child_cast_tree,
+                                              parent:,
+                                              property:,
+                                              value: "#{parent}.#{path_part}")
               else
                 raise "Not sure how to handle a #{cast_tree.class}: #{cast_tree}"
               end
@@ -130,7 +149,13 @@ module Foobara
           return unless type_declaration
 
           lvalue = if parent
-                     "#{parent}[#{property}]"
+                     if property.nil?
+                       parent
+                     elsif property =~ /\A"(.*)"\z/
+                       "#{parent}.#{$1}"
+                     else
+                       "#{parent}[#{property}]"
+                     end
                    else
                      value
                    end

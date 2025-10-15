@@ -61,7 +61,7 @@ module Foobara
 
               new_generator = generator_class.new(model)
 
-              binding.pry if command_name =~ /CreateCommand/
+              # binding.pry if command_name =~ /CreateCommand/
 
               unless generators.any? do |g|
                 g.relevant_manifest == model && g.class == new_generator.class
@@ -99,8 +99,8 @@ module Foobara
           property: nil,
           value: parent
         )
-          require "pry"
-          binding.pry if command_name =~ /CreateCommand/
+          # require "pry"
+          # binding.pry if command_name =~ /CreateCommand/
           if cast_tree.nil? || cast_tree.empty?
             return
           end
@@ -114,7 +114,7 @@ module Foobara
           when ::Hash
             cast_tree.each_pair do |path_part, child_cast_tree|
               if path_part == :"#"
-                result << "#{parent}?.forEach((element, index, array) => {"
+                result << "#{parent}?.forEach((element: any, index: number, array: any[]) => {"
                 result << cast_json_result_function_body(child_cast_tree,
                                                          parent: "array",
                                                          property: "index",

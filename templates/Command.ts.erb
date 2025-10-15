@@ -13,7 +13,7 @@ export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, 
   static readonly commandName = "<%= command_name %>"
 
 <% if result_json_requires_cast? %>
-  castJsonResult(json: any) {
+  castJsonResult(json: any): Result {
     return castJsonResult(json)
   }
 <% end %>

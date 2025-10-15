@@ -28,7 +28,8 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
       this.isLoaded = true
       this.primaryKey = this.attributes[klass.primaryKeyAttributeName as keyof AttributesType] as PrimaryKeyType
     } else {
-      super({ [klass.primaryKeyAttributeName]: primaryKeyOrAttributes }) as AttributesType
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      super({[klass.primaryKeyAttributeName]: primaryKeyOrAttributes} as AttributesType)
       this.isLoaded = false
       this.primaryKey = primaryKeyOrAttributes as PrimaryKeyType
     }

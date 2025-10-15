@@ -44,9 +44,11 @@ module Foobara
           generators = model_generators
 
           generators.each do |generator|
-            _models_reachable_from_declaration(generator.relevant_manifest)&.each do |model|
+            _models_reachable_from_declaration(
+              generator.relevant_manifest
+            )&.each do |(model, past_first)|
               generator_class = if atom?
-                                  if model.detached_entity?
+                                  if model.detached_entity? && past_first
                                     Services::UnloadedEntityGenerator
                                   else
                                     Services::AtomModelGenerator
@@ -58,6 +60,8 @@ module Foobara
                                 end
 
               new_generator = generator_class.new(model)
+
+              binding.pry if command_name =~ /CreateCommand/
 
               unless generators.any? do |g|
                 g.relevant_manifest == model && g.class == new_generator.class
@@ -95,7 +99,11 @@ module Foobara
           property: nil,
           value: parent
         )
-          return if cast_tree.nil? || cast_tree.empty?
+          require "pry"
+          binding.pry if command_name =~ /CreateCommand/
+          if cast_tree.nil? || cast_tree.empty?
+            return
+          end
 
           result = []
 
@@ -191,7 +199,7 @@ module Foobara
 
             type_declaration.attribute_declarations.each_pair do |attribute_name, attribute_declaration|
               if type_requires_cast?(attribute_declaration)
-                path_tree[attribute_name] = _construct_cast_tree(attribute_declaration)
+                path_tree[attribute_name] = _construct_cast_tree(attribute_declaration, past_first_model:)
               end
             end
 
@@ -202,18 +210,23 @@ module Foobara
             element_type = type_declaration.element_type
 
             if element_type && type_requires_cast?(element_type)
-              CastTree.new(children: { "#": _construct_cast_tree(element_type) }, past_first_model:)
+              CastTree.new(children: { "#": _construct_cast_tree(element_type, past_first_model:) })
             end
           elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
-            CastTree.new(declaration_to_cast: type_declaration)
+            CastTree.new(declaration_to_cast: type_declaration, past_first_model:)
           elsif type_declaration.model?
             type_declaration = type_declaration.to_type
 
-            children = _construct_cast_tree(type_declaration.attributes_type)
-            CastTree.new(children:, declaration_to_cast: type_declaration, past_first_model: true)
+            children = if type_declaration.detached_entity? && atom?
+                         nil
+                       else
+                         _construct_cast_tree(type_declaration.attributes_type, past_first_model: true)
+                       end
+
+            CastTree.new(children:, declaration_to_cast: type_declaration, past_first_model:)
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
-              tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration)
+              tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration, past_first_model:)
 
               if tree && !tree.empty?
                 CastTree.new(children: tree, past_first_model:)
@@ -222,10 +235,11 @@ module Foobara
           end
         end
 
-        def _models_reachable_from_declaration(type_declaration)
+        # TODO: Feels like similar complicated logic is popping up in many places? How to find/converge such logic
+        def _models_reachable_from_declaration(type_declaration, past_first_model: false)
           if type_declaration.is_a?(Manifest::Attributes)
-            return  unless type_declaration.has_attribute_declarations?
-            return  if type_declaration.attribute_declarations.empty?
+            return unless type_declaration.has_attribute_declarations?
+            return if type_declaration.attribute_declarations.empty?
 
             models = nil
 
@@ -233,8 +247,11 @@ module Foobara
               if type_requires_cast?(attribute_declaration)
                 models ||= Set.new
 
-                _models_reachable_from_declaration(attribute_declaration)&.each do |model|
-                  models << model
+                _models_reachable_from_declaration(
+                  attribute_declaration,
+                  past_first_model:
+                )&.each do |pair|
+                  models << pair
                 end
               end
             end
@@ -244,23 +261,33 @@ module Foobara
             element_type = type_declaration.element_type
 
             if element_type && type_requires_cast?(element_type)
-              _models_reachable_from_declaration(element_type)
+              _models_reachable_from_declaration(element_type, past_first_model:)
             end
           elsif type_declaration.model?
             if type_declaration.is_a?(Manifest::TypeDeclaration)
               type_declaration = type_declaration.to_type
             end
 
-            models = Set[type_declaration]
+            models = Set[[type_declaration, past_first_model]]
 
-            _models_reachable_from_declaration(type_declaration.attributes_type)&.each do |model|
-              models << model
+            if atom? && type_declaration.detached_entity?
+              return models
+            end
+
+            _models_reachable_from_declaration(
+              type_declaration.attributes_type,
+              past_first_model: true
+            )&.each do |pair|
+              models << pair
             end
 
             models
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
-              _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)
+              _models_reachable_from_declaration(
+                type_declaration.base_type.to_type_declaration,
+                past_first_model:
+              )
             end
           end
         end

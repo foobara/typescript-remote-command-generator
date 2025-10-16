@@ -1,18 +1,17 @@
 import { Never } from "<%= path_to_root %>base/Entity"
 import {
   <%= entity_short_name %>,
-  //<%= entity_short_name %>PrimaryKeyType
+  <%= entity_short_name %>PrimaryKeyType,
   <%= entity_short_name %>AttributesType
 } from "./Ambiguous"
 
 export type Unloaded<%= entity_short_name %>AttributesType = Never<<%= entity_short_name %>AttributesType>
 
 export class Unloaded<%= entity_short_name %> extends <%= entity_short_name %><Unloaded<%= entity_short_name %>AttributesType> {
-  /*
-  constructor(id: <%= entity_short_name %>PrimaryKeyType) {
-    super(id, {})
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+  constructor(primaryKey: <%= entity_short_name %>PrimaryKeyType) {
+    super(primaryKey)
   }
-  */
 
   readonly isLoaded: false = false
 }

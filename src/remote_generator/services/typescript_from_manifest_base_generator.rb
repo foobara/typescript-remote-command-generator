@@ -127,6 +127,8 @@ module Foobara
         end
 
         def dependency_roots
+          return @dependency_roots if defined?(@dependency_roots)
+
           unless dependency_group
             # :nocov:
             raise "This generator was created without a " \
@@ -134,7 +136,7 @@ module Foobara
             # :nocov:
           end
 
-          dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
+          @dependency_roots = dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
 
         def ts_instance_path

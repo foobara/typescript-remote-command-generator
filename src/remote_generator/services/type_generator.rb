@@ -111,7 +111,7 @@ module Foobara
         end
 
         def dependencies
-          custom_type_generators + model_generators
+          @dependencies ||= custom_type_generators + model_generators
         end
 
         def type_name_downcase

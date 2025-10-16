@@ -23,7 +23,7 @@ module Foobara
         end
 
         def model_generators
-          types_depended_on.select(&:model?).map do |model|
+          @model_generators ||= types_depended_on.select(&:model?).map do |model|
             if model.detached_entity?
               Services::UnloadedEntityGenerator.new(model)
             else

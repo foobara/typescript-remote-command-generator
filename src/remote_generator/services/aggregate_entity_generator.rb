@@ -25,7 +25,7 @@ module Foobara
         end
 
         def model_generators
-          types_depended_on.select(&:model?).map do |model|
+          @model_generators ||= types_depended_on.select(&:model?).map do |model|
             Services::AggregateModelGenerator.new(model)
           end
         end

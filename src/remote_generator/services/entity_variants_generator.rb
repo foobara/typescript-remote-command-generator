@@ -35,7 +35,7 @@ module Foobara
         end
 
         def dependencies
-          Set[
+          @dependencies ||= Set[
            entity_generator,
            unloaded_entity_generator,
            loaded_entity_generator,

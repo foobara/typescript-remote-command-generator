@@ -16,16 +16,6 @@ module Foobara
           self.name = name
           self.dependencies = dependencies.to_set
 
-          dependencies.each do |dep|
-            if dep.belongs_to_dependency_group
-              # :nocov:
-              raise "Dependency group #{dep} already belongs to dependency group #{dep.dependency_group}"
-              # :nocov:
-            end
-
-            dep.belongs_to_dependency_group = self
-          end
-
           find_collisions
         end
 

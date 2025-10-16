@@ -3,9 +3,18 @@ import <%= base_class_name %> from "<%= path_to_root %><%= base_class_path %>"
 import Inputs from "./Inputs"
 import Result from "./Result"
 import { Error } from "./Errors"
+<% if result_json_requires_cast? %>
+import castJsonResult from "./castJsonResult"
+<% end %>
 
 export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, Error> {
   static readonly organizationName = "<%= organization_name %>"
   static readonly domainName = "<%= domain_name %>"
   static readonly commandName = "<%= command_name %>"
+
+<% if result_json_requires_cast? %>
+  castJsonResult(json: any): Result {
+    return castJsonResult(json)
+  }
+<% end %>
 }

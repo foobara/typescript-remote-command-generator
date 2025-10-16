@@ -1,3 +1,11 @@
+## [1.1.5] - 2025-10-15
+
+- Implement castJsonResult
+- Fix various problems with Model and subclass constructors
+- Memoize various #model_generators, #dependencies, #dependency_roots
+- Cache generator creation
+- Add ruby-prof and term trap spec support files
+
 ## [1.1.4] - 2025-10-02
 
 - Don't give warning about importing domain/setup.ts if it already has been added to index.tsx

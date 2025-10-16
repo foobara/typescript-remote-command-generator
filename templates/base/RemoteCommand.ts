@@ -101,13 +101,19 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return await fetch(this._buildUrl(), this._buildRequestParams())
   }
 
+  castJsonResult (json: any): Result {
+    return json
+  }
+
   async _handleResponse (response: Response): Promise<Outcome<Result, CommandError>> {
     const text = await response.text()
     const body = JSON.parse(text)
 
     if (response.ok) {
+      const result = this.castJsonResult(body)
+
+      this.outcome = new SuccessfulOutcome<Result, CommandError>(result)
       this.commandState = 'succeeded'
-      this.outcome = new SuccessfulOutcome<Result, CommandError>(body)
     } else if (response.status === 422 || response.status === 401 || response.status === 403) {
       this.commandState = 'errored'
       this.outcome = new ErrorOutcome<Result, CommandError>(body)

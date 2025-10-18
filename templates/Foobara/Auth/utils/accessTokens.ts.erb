@@ -1,31 +1,25 @@
 import type Query from '../../../base/Query'
 import type RemoteCommand from '../../../base/RemoteCommand'
+import { forEachQuery } from '../../../base/QueryCache'
 
-let getCurrentUserQuery: Query<RemoteCommand<any, any, any>> | undefined
-
-export function setGetCurrentUserQuery (query: Query<RemoteCommand<any, any, any>>): void {
-  getCurrentUserQuery = query
-}
-
-function setCurrentUserDirty () {
-  console.log('setCurrentUserDirty')
-  if (getCurrentUserQuery != null) {
-    getCurrentUserQuery.setDirty()
-  }
+function dirtyAllQueries () {
+  forEachQuery((query: Query<RemoteCommand<any, any, any>>) => {
+    query.setDirty()
+  })
 }
 
 const accessTokens = new Map<string, string>()
 
 const logout = (urlBase: string): void => {
   accessTokens.delete(urlBase)
-  setCurrentUserDirty()
+  dirtyAllQueries()
 }
 let handleLogout: (baseUrl: string) => void = logout
 
 const tokenForUrl = (baseUrl: string): string | undefined => accessTokens.get(baseUrl)
 const handleLogin: (baseUrl: string, accessToken: string) => void = (baseUrl, accessToken) => {
   accessTokens.set(baseUrl, accessToken)
-  setCurrentUserDirty()
+  dirtyAllQueries()
 }
 
 if (typeof BroadcastChannel !== 'undefined') {

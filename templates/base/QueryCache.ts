@@ -33,6 +33,10 @@ export function getQuery<CommandT extends RemoteCommand<any, any, any>> (
   return query
 }
 
+export function forEachQuery (callback: (query: Query<RemoteCommand<any, any, any>>) => void): void {
+  queryCache.forEach(callback)
+}
+
 function toKey<CommandT extends RemoteCommand<any, any, any>> (
   CommandClass: RemoteCommandConstructor<CommandT>,
   inputs: InputsOf<CommandT> | undefined

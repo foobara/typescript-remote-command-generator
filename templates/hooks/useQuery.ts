@@ -57,19 +57,23 @@ export default function useQuery<CommandT extends RemoteCommand<any, any, any>> 
     queryRef.current = query
   }
 
+  const [queryState, setQueryState] = useState<QueryState<CommandT>>(
+    queryToQueryState<CommandT>(query)
+  )
+
   useEffect(() => {
-    const unsubscribe = query?.onChange(() => {
-      if (query != null) { // just here to satisfy type checker
+    if (query == null) {
+      return undefined
+    }
+
+    const removeListener = query.onChange(() => {
+      if (query != null) { // Just here to satisfy type check
         setQueryState(queryToQueryState<CommandT>(query))
       }
     })
 
-    return unsubscribe
+    return removeListener
   }, [query])
-
-  const [queryState, setQueryState] = useState<QueryState<CommandT>>(
-    queryToQueryState<CommandT>(query)
-  )
 
   return queryState
 }

@@ -1,3 +1,8 @@
+## [1.1.6] - 2025-10-17
+
+- Dirty all queries on login/logout, not just GetCurrentUser
+- Remove no-longer needed /setup.ts file generation
+
 ## [1.1.5] - 2025-10-15
 
 - Implement castJsonResult

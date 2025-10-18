@@ -36,10 +36,7 @@ module Foobara
                                   when "Foobara::Auth::Logout"
                                     Services::Auth::LogoutGenerator
                                   when /\bGetCurrentUser$/
-                                    [
-                                      Services::Auth::RequiresAuthGenerator,
-                                      Services::Auth::SetupGenerator
-                                    ]
+                                    Services::Auth::RequiresAuthGenerator
                                   else
                                     if manifest.requires_authentication?
                                       Services::Auth::RequiresAuthGenerator
@@ -383,12 +380,7 @@ module Foobara
 
         def path_to_root
           path = super
-
-          if path.empty?
-            "./"
-          else
-            path
-          end
+          path.empty? ? "./" : path
         end
       end
     end

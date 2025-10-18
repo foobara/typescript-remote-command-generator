@@ -1,6 +1,0 @@
-import { getQuery } from './base/QueryCache'
-import { setGetCurrentUserQuery } from './Foobara/Auth/utils/accessTokens'
-
-import <%= command_generator.import_destructure %> from "<%= path_to_root %><%= command_generator.import_path %>"
-
-setGetCurrentUserQuery(getQuery(<%= dependency_group.non_colliding_type(command_generator) %>, undefined))

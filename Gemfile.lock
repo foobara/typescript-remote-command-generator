@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foobara-typescript-remote-command-generator (1.1.5)
+    foobara-typescript-remote-command-generator (1.1.6)
       foobara (>= 0.1.16, < 2.0.0)
       foobara-files-generator (< 2.0.0)
 
@@ -68,7 +68,7 @@ GEM
     parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
-    prism (1.5.2)
+    prism (1.6.0)
     pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)

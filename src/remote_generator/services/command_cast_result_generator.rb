@@ -5,12 +5,12 @@ module Foobara
     class Services
       class CommandCastResultGenerator < CommandResultGenerator
         class CastTree
-          attr_accessor :children, :declaration_to_cast, :past_first_model
+          attr_accessor :children, :declaration_to_cast, :initial
 
-          def initialize(children: nil, declaration_to_cast: nil, past_first_model: false)
+          def initialize(children: nil, declaration_to_cast: nil, initial: false)
             self.children = children
             self.declaration_to_cast = declaration_to_cast
-            self.past_first_model = past_first_model
+            self.initial = initial
           end
 
           def empty?
@@ -41,31 +41,30 @@ module Foobara
 
           nested_model_generators = []
 
-          generators = model_generators
+          if result_type.detached_entity? && atom?
+            declaration = result_type.is_a?(Manifest::TypeDeclaration) ? result_type.to_type : result_type
+            return @nested_model_generators = Set[Services::AtomEntityGenerator.new(declaration)]
+          end
 
-          generators.each do |generator|
-            _models_reachable_from_declaration(
-              generator.relevant_manifest
-            )&.each do |(model, past_first)|
-              generator_class = if atom?
-                                  if model.detached_entity? && past_first
-                                    Services::UnloadedEntityGenerator
-                                  else
-                                    Services::AtomModelGenerator
-                                  end
-                                elsif aggregate?
-                                  Services::AggregateModelGenerator
+          _models_reachable_from_declaration(result_type, initial: true)&.each do |model|
+            generator_class = if atom?
+                                if model.detached_entity?
+                                  Services::UnloadedEntityGenerator
                                 else
-                                  Services::ModelGenerator
+                                  Services::AtomModelGenerator
                                 end
+                              elsif aggregate?
+                                Services::AggregateModelGenerator
+                              else
+                                Services::ModelGenerator
+                              end
 
-              new_generator = generator_class.new(model)
+            new_generator = generator_class.new(model)
 
-              unless generators.any? do |g|
-                g.relevant_manifest == model && g.class == new_generator.class
-              end
-                nested_model_generators << new_generator
-              end
+            unless nested_model_generators.any? do |g|
+              g.relevant_manifest == model && g.class == new_generator.class
+            end
+              nested_model_generators << new_generator
             end
           end
 
@@ -81,7 +80,7 @@ module Foobara
         end
 
         def dependencies
-          @dependencies ||= model_generators + nested_model_generators
+          nested_model_generators
         end
 
         def cast_json_result_function
@@ -92,7 +91,7 @@ module Foobara
 
         # TODO: need to make use of initial?
         def cast_json_result_function_body(
-          cast_tree = _construct_cast_tree(result_type),
+          cast_tree = _construct_cast_tree(result_type, initial: true),
           parent: "json",
           property: nil,
           value: parent
@@ -189,8 +188,9 @@ module Foobara
           if type_symbol == :date || type_symbol == :datetime
             "#{lvalue} = new Date(#{value})"
           elsif type.model?
-            ts_model_name = model_to_ts_model_name(type, association_depth:,
-                                                         initial: !cast_tree.past_first_model)
+            ts_model_name = model_to_ts_model_name(type,
+                                                   association_depth:,
+                                                   initial: cast_tree.initial)
 
             "#{lvalue} = new #{ts_model_name}(#{value})"
           else
@@ -200,7 +200,7 @@ module Foobara
           end
         end
 
-        def _construct_cast_tree(type_declaration, past_first_model: false)
+        def _construct_cast_tree(type_declaration, initial: false)
           if type_declaration.is_a?(Manifest::Attributes)
             return unless type_declaration.has_attribute_declarations?
             return if type_declaration.attribute_declarations.empty?
@@ -209,39 +209,39 @@ module Foobara
 
             type_declaration.attribute_declarations.each_pair do |attribute_name, attribute_declaration|
               if type_requires_cast?(attribute_declaration)
-                path_tree[attribute_name] = _construct_cast_tree(attribute_declaration, past_first_model:)
+                path_tree[attribute_name] = _construct_cast_tree(attribute_declaration)
               end
             end
 
             unless path_tree.empty?
-              CastTree.new(children: path_tree, past_first_model:)
+              CastTree.new(children: path_tree, initial:)
             end
           elsif type_declaration.is_a?(Manifest::Array)
             element_type = type_declaration.element_type
 
             if element_type && type_requires_cast?(element_type)
-              CastTree.new(children: { "#": _construct_cast_tree(element_type, past_first_model:) })
+              CastTree.new(initial:, children: { "#": _construct_cast_tree(element_type) })
             end
           elsif type_declaration.type.to_sym == :date || type_declaration.type.to_sym == :datetime
-            CastTree.new(declaration_to_cast: type_declaration, past_first_model:)
+            CastTree.new(declaration_to_cast: type_declaration, initial:)
           elsif type_declaration.model?
             type_declaration = type_declaration.to_type
 
             children = if type_declaration.detached_entity? && atom?
                          nil
                        else
-                         _construct_cast_tree(type_declaration.attributes_type, past_first_model: true)
+                         _construct_cast_tree(type_declaration.attributes_type)
                        end
 
-            CastTree.new(children:, declaration_to_cast: type_declaration, past_first_model:)
+            CastTree.new(children:, declaration_to_cast: type_declaration, initial:)
             # TODO: either test this code path or raise or delete it
             # :nocov:
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
-              tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration, past_first_model:)
+              tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration)
 
               if tree && !tree.empty?
-                CastTree.new(children: tree, past_first_model:)
+                CastTree.new(children: tree, initial:)
               end
             end
           end
@@ -249,7 +249,7 @@ module Foobara
         end
 
         # TODO: Feels like similar complicated logic is popping up in many places? How to find/converge such logic
-        def _models_reachable_from_declaration(type_declaration, past_first_model: false)
+        def _models_reachable_from_declaration(type_declaration, initial: false)
           if type_declaration.is_a?(Manifest::Attributes)
             return unless type_declaration.has_attribute_declarations?
             return if type_declaration.attribute_declarations.empty?
@@ -258,13 +258,14 @@ module Foobara
 
             type_declaration.attribute_declarations.each_value do |attribute_declaration|
               if type_requires_cast?(attribute_declaration)
-                models ||= Set.new
+                additional = _models_reachable_from_declaration(attribute_declaration)
 
-                _models_reachable_from_declaration(
-                  attribute_declaration,
-                  past_first_model:
-                )&.each do |pair|
-                  models << pair
+                if additional
+                  if models
+                    models |= additional
+                  else
+                    models = additional
+                  end
                 end
               end
             end
@@ -274,24 +275,23 @@ module Foobara
             element_type = type_declaration.element_type
 
             if element_type && type_requires_cast?(element_type)
-              _models_reachable_from_declaration(element_type, past_first_model:)
+              _models_reachable_from_declaration(element_type)
             end
           elsif type_declaration.model?
             if type_declaration.is_a?(Manifest::TypeDeclaration)
               type_declaration = type_declaration.to_type
             end
 
-            models = Set[[type_declaration, past_first_model]]
+            models = Set[type_declaration]
 
             if atom? && type_declaration.detached_entity?
               return models
             end
 
-            _models_reachable_from_declaration(
-              type_declaration.attributes_type,
-              past_first_model: true
-            )&.each do |pair|
-              models << pair
+            additional = _models_reachable_from_declaration(type_declaration.attributes_type)
+
+            if additional
+              models |= additional
             end
 
             models
@@ -299,10 +299,7 @@ module Foobara
             # TODO: either test this code path or raise or delete it
             # :nocov:
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
-              _models_reachable_from_declaration(
-                type_declaration.base_type.to_type_declaration,
-                past_first_model:
-              )
+              _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)
             end
             # :nocov:
           end

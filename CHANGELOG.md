@@ -1,3 +1,7 @@
+## [1.1.7] - 2025-11-02
+
+- Make CommandCastResultGenerator's interpretation of atom? match other generators
+
 ## [1.1.6] - 2025-10-17
 
 - Dirty all queries on login/logout, not just GetCurrentUser

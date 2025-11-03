@@ -1,3 +1,9 @@
+## [1.2.0] - 2025-11-06
+
+- If an attribute isn't required but has a default, it will have a non-required create
+  interface but a required read interface. This updates the types to reflect that for
+  convenience to avoid pointless null checks.
+
 ## [1.1.7] - 2025-11-02
 
 - Make CommandCastResultGenerator's interpretation of atom? match other generators

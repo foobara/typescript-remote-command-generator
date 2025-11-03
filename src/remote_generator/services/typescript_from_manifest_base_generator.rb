@@ -194,14 +194,19 @@ module Foobara
           end
         end
 
-        # TODO: relocate this to a more reusable place
+        # is_output means the value came from elsewhere and is fully formed.
+        # This is helpful for specifying what is expected to be present. If this is provided,
+        # then things like attribute properties that have defaults will be considered
+        # required and present.
         def foobara_type_to_ts_type(
           type_declaration,
           dependency_group: self.dependency_group,
           name: nil,
           association_depth: AssociationDepth::AMBIGUOUS,
           initial: true,
-          model_and_entity_free: false
+          model_and_entity_free: false,
+          is_output: false,
+          parent: nil
         )
           if type_declaration.is_a?(Manifest::Error)
             error_generator = generator_for(type_declaration)
@@ -213,7 +218,9 @@ module Foobara
                             type_declaration,
                             association_depth:,
                             dependency_group:,
-                            model_and_entity_free:
+                            model_and_entity_free:,
+                            is_output:,
+                            parent:
                           )
 
                           if type_declaration.has_attribute_declarations?
@@ -241,7 +248,8 @@ module Foobara
                             association_depth:,
                             dependency_group:,
                             initial: false,
-                            model_and_entity_free:
+                            model_and_entity_free:,
+                            is_output:
                           )
                           "#{ts_type}[]"
                         else
@@ -275,7 +283,9 @@ module Foobara
                                   association_depth:,
                                   dependency_group:,
                                   initial:,
-                                  model_and_entity_free:
+                                  model_and_entity_free:,
+                                  is_output:,
+                                  parent: model_type
                                 )
                               else
                                 model_to_ts_model_name(type_declaration, association_depth:, initial:)
@@ -310,20 +320,34 @@ module Foobara
           attributes,
           dependency_group:,
           association_depth: AssociationDepth::AMBIGUOUS,
-          model_and_entity_free: false
+          model_and_entity_free: false,
+          is_output: false,
+          parent: nil
         )
           # TODO: if we don't actually have attribute_declarations because we
           # are trying to express attributes of any type, then we want Record<string, any>
           # or something.
           if attributes.has_attribute_declarations?
             guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
-              "  #{attribute_name}#{"?" unless attributes.required?(attribute_name)}: #{
+              is_required = attributes.required?(attribute_name)
+
+              if !is_required && is_output
+                default = attributes.default_for(attribute_name)
+
+                if default || default == false ||
+                   (parent&.detached_entity? && attribute_name == parent.primary_key_name.to_sym)
+                  is_required = true
+                end
+              end
+
+              "  #{attribute_name}#{"?" unless is_required}: #{
               foobara_type_to_ts_type(
                 attribute_declaration,
                 dependency_group:,
                 association_depth:,
                 initial: false,
-                model_and_entity_free:
+                model_and_entity_free:,
+                is_output:
               )
             }"
             end.join("\n")

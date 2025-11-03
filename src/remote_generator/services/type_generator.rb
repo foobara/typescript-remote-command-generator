@@ -120,17 +120,29 @@ module Foobara
 
         def attributes_type_ts_type
           association_depth = AssociationDepth::AMBIGUOUS
-          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
+          foobara_type_to_ts_type(attributes_type,
+                                  association_depth:,
+                                  dependency_group:,
+                                  is_output: true,
+                                  parent: relevant_manifest)
         end
 
         def atom_attributes_ts_type
           association_depth = AssociationDepth::ATOM
-          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
+          foobara_type_to_ts_type(attributes_type,
+                                  association_depth:,
+                                  dependency_group:,
+                                  is_output: true,
+                                  parent: relevant_manifest)
         end
 
         def aggregate_attributes_ts_type
           association_depth = AssociationDepth::AGGREGATE
-          foobara_type_to_ts_type(attributes_type, association_depth:, dependency_group:)
+          foobara_type_to_ts_type(attributes_type,
+                                  association_depth:,
+                                  dependency_group:,
+                                  is_output: true,
+                                  parent: relevant_manifest)
         end
 
         def attribute_names

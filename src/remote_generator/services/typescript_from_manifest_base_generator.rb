@@ -153,9 +153,8 @@ module Foobara
           ts_instance_full_path
         end
 
-        foobara_delegate :organization_name,
-                         :domain_name,
-                         to: :relevant_manifest
+        def organization_name = relevant_manifest.organization_name
+        def domain_name = relevant_manifest.domain_name
 
         def import_path
           if import_path_array.size == 1

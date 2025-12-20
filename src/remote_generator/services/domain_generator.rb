@@ -70,7 +70,7 @@ module Foobara
           @organization_generator ||= OrganizationGenerator.new(domain_manifest.organization)
         end
 
-        foobara_delegate :organization_name, to: :organization_generator
+        def organization_name = organization_generator.organization_name
       end
     end
   end

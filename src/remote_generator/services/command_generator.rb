@@ -18,7 +18,9 @@ module Foobara
           @domain_generator ||= Services::DomainGenerator.new(domain)
         end
 
-        foobara_delegate :organization_generator, :domain_name, :organization_name, to: :domain_generator
+        def organization_generator = domain_generator.organization_generator
+        def domain_name = domain_generator.domain_name
+        def organization_name = domain_generator.organization_name
 
         def errors_in_this_namespace
           @errors_in_this_namespace ||= possible_errors.values.map(&:error).uniq.sort_by(&:error_name).select do |error|

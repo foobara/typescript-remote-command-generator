@@ -393,12 +393,15 @@ module Foobara
           dependency_group.non_colliding_type(generator)
         end
 
+        # Files generator checks that the relevant_manifest is the same but this is faster
         def ==(other)
-          self.class == other.class && path == other.path && root_manifest == other.root_manifest
+          self.class == other.class &&
+            manifest_path == other.manifest_path &&
+            root_manifest == other.root_manifest
         end
 
         def hash
-          path.hash
+          manifest_path.hash
         end
 
         def path_to_root

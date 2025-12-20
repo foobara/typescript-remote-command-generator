@@ -24,7 +24,7 @@ module Foobara
 
         def errors_in_this_namespace
           @errors_in_this_namespace ||= possible_errors.values.map(&:error).uniq.sort_by(&:error_name).select do |error|
-            error.parent&.path&.map(&:to_s) == path.map(&:to_s)
+            error.parent&.manifest_path&.map(&:to_s) == manifest_path.map(&:to_s)
           end.map do |error_manifest|
             Services::ErrorGenerator.new(error_manifest)
           end

@@ -41,7 +41,9 @@ module Foobara
         end
 
         def context_type_declaration
-          @context_type_declaration ||= Manifest::TypeDeclaration.new(root_manifest, [*path, :context_type_declaration])
+          @context_type_declaration ||= Manifest::TypeDeclaration.new(
+            root_manifest, [*manifest_path, :context_type_declaration]
+          )
         end
 
         def context_ts_type

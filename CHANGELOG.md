@@ -1,3 +1,7 @@
+## [1.2.1] - 2025-12-19
+
+- Handle some foobara_delegate deprecation warnings
+
 ## [1.2.0] - 2025-11-06
 
 - If an attribute isn't required but has a default, it will have a non-required create

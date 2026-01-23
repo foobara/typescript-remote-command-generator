@@ -1,6 +1,6 @@
 ## [1.2.1] - 2025-12-19
 
-- Handle some foobara_delegate deprecation warnings
+- Handle some .foobara_delegate and #path deprecation warnings
 
 ## [1.2.0] - 2025-11-06
 

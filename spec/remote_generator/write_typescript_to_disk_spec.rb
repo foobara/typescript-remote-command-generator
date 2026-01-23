@@ -3,10 +3,23 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   let(:outcome) { command.run }
   let(:result) { outcome.result }
   let(:errors) { outcome.errors }
-  let(:inputs) { { raw_manifest:, output_directory: } }
+  let(:errors_hash) { outcome.errors_hash }
+  let(:inputs) do
+    {
+      raw_manifest:,
+      output_directory:,
+      fail_if_does_not_pass_linter:
+    }
+  end
   let(:output_directory) { "#{__dir__}/../../tmp/domains" }
+  let(:test_app_directory) { "#{__dir__}/../../spec/fixtures/test-app" }
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
+  let(:fail_if_does_not_pass_linter) { true }
+
+  before do
+    FileUtils.cp_r(test_app_directory, output_directory)
+  end
 
   after do
     FileUtils.rm_rf(output_directory)
@@ -46,7 +59,6 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
 
   context "when using yet another manifest that has led to errors in the past" do
     let(:raw_manifest) { JSON.parse(File.read("spec/fixtures/answer-bot-manifest.json")) }
-    let(:inputs) { { raw_manifest:, output_directory: } }
 
     it "contains command domain and command files" do
       expect(outcome).to be_success
@@ -54,6 +66,20 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
       expect(
         command.paths_to_source_code["Foobara/Ai/AnswerBot/Ask/index.ts"]
       ).to include("export class Ask extends RemoteCommand")
+    end
+  end
+
+  context "when using a manifest with several collisions on models named User" do
+    let(:raw_manifest) { JSON.parse(File.read("spec/fixtures/blog-rack.json")) }
+
+    it "contains command domain and command files" do
+      expect(outcome).to be_success
+
+      paths = command.paths_to_source_code.keys
+
+      expect(paths).to include("Foobara/Auth/Types/User.ts")
+      expect(paths).to include("FoobaraDemo/BlogAuth/Types/User.ts")
+      expect(paths).to include("FoobaraDemo/Blog/Types/User.ts")
     end
   end
 end

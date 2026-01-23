@@ -5,7 +5,7 @@ ruby Foobara::TypescriptRemoteCommandGenerator::Version::MINIMUM_RUBY_VERSION
 
 gemspec
 
-# gem "foobara", path: "../foobara"
+gem "foobara", path: "../foobara"
 # gem "foobara-files-generator", path: "../files-generator"
 
 # Development dependencies go here

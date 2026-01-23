@@ -12,3 +12,6 @@ Naming/FileName:
       - Exclude
   Exclude:
     - lib/typescript_remote_command_generator.rb
+
+Style/Semicolon:
+  Enabled: false

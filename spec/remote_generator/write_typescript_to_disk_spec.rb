@@ -20,6 +20,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   let(:fail_if_does_not_pass_linter) { true }
 
   before do
+    FileUtils.mkdir_p(File.dirname(project_directory))
     FileUtils.cp_r(test_app_directory, project_directory)
   end
 

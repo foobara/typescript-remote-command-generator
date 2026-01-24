@@ -57,11 +57,10 @@ module Foobara
         def non_colliding_root(dep)
           root = dep
           points = points_for(dep)
-          points_climbed = 0
+          points_climbed = dep.ts_instance_path.size
 
           until points_climbed >= points
-            # TODO: can't use scoped_path because sometimes we want UnloadedUser instead of User. How to fix??
-            points_climbed += dep.scoped_path.size
+            points_climbed += dep.ts_instance_path.size
             root = root.parent
           end
 
@@ -89,10 +88,25 @@ module Foobara
         end
 
         def non_colliding_type_path(dep, points = points_for(dep))
-          start_at = dep.ts_type_full_path.size - points - 1
-          path = dep.ts_type_full_path[start_at..] || []
+          if points == 0
+            path = dep.ts_instance_path
+            return path.size == 1 ? path : [path.last]
+          end
 
-          path.map(&:to_s)
+          path = dep.ts_instance_path
+          paths = [path]
+          points_climbed = path.size
+
+          until points_climbed >= points
+            dep = dep.parent
+            break unless dep
+
+            path = dep.ts_instance_path
+            paths.unshift(path)
+            points_climbed += path.size
+          end
+
+          paths.flatten
         end
 
         private

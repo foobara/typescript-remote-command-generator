@@ -120,7 +120,7 @@ module Foobara
               generator_for(dependency)
             end
 
-            DependencyGroup.new(generators, name: scoped_full_path.join("."))
+            DependencyGroup.new(generators, deps_are_for: self, name: scoped_full_path.join("."), will_define:)
           end
         end
 

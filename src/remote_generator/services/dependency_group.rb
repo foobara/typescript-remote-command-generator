@@ -10,9 +10,10 @@ module Foobara
           end
         end
 
-        attr_accessor :dependencies, :name
+        attr_accessor :dependencies, :name, :will_define, :deps_are_for
 
-        def initialize(dependencies, name:)
+        def initialize(dependencies, name:, deps_are_for:, will_define:)
+          self.deps_are_for = deps_are_for
           self.name = name
           self.dependencies = dependencies.to_set
 
@@ -112,7 +113,7 @@ module Foobara
         private
 
         def find_collisions
-          dependencies.each do |dep|
+          [deps_are_for, *dependencies].each do |dep|
             collision_data = CollisionData.new
 
             points = 0

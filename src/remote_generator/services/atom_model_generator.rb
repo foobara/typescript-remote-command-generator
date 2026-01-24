@@ -34,9 +34,9 @@ module Foobara
           end
         end
 
-        def ts_instance_full_path
-          *prefix, name = scoped_full_path
-          [*prefix, "#{name}Atom"]
+        def ts_instance_path
+          [*model_prefix, "#{scoped_short_name}Atom"]
+        end
         end
       end
     end

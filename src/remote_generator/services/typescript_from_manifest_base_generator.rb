@@ -146,7 +146,7 @@ module Foobara
         end
 
         def ts_instance_full_path
-          scoped_full_path
+          [*parent&.scoped_full_path, *ts_instance_path]
         end
 
         def ts_type_full_path

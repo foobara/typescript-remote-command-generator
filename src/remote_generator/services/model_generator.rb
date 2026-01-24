@@ -23,6 +23,10 @@ module Foobara
           [*domain.scoped_full_path, "Types", *model_prefix, model_short_name, "#{model_short_name}.ts"]
         end
 
+        def ts_instance_path
+          [*model_prefix, scoped_short_name]
+        end
+
         def model_short_name
           type_short_name
         end

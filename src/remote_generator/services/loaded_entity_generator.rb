@@ -13,13 +13,8 @@ module Foobara
         end
 
         def ts_instance_path
-          *prefix, name = super
-          [*prefix, "Loaded#{name}"]
-        end
+          [*model_prefix, "Loaded#{scoped_short_name}"]
 
-        def ts_instance_full_path
-          *prefix, name = super
-          [*prefix, "Loaded#{name}"]
         end
 
         def import_destructure

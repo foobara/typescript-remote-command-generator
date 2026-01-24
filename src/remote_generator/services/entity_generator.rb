@@ -14,6 +14,10 @@ module Foobara
           ["Entity", "Ambiguous.ts.erb"]
         end
 
+        def ts_instance_path
+          [*model_prefix, scoped_short_name]
+        end
+
         def entity_name(...)
           model_name(...)
         end

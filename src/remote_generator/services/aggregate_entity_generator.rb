@@ -35,13 +35,8 @@ module Foobara
         end
 
         def ts_instance_path
-          *prefix, name = scoped_path
-          [*prefix, "#{name}Aggregate"]
-        end
+          [*model_prefix, "#{scoped_short_name}Aggregate"]
 
-        def ts_instance_full_path
-          *prefix, name = scoped_full_path
-          [*prefix, "#{name}Aggregate"]
         end
 
         def import_destructure

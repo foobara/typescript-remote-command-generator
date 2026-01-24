@@ -38,9 +38,9 @@ module Foobara
           aggregate_attributes_ts_type
         end
 
-        def ts_instance_full_path
-          *prefix, name = scoped_full_path
-          [*prefix, "#{name}Aggregate"]
+        def ts_instance_path
+          [*model_prefix, "#{scoped_short_name}Aggregate"]
+        end
         end
       end
     end

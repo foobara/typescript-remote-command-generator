@@ -10,9 +10,8 @@ module Foobara
           ["Entity", "Unloaded.ts.erb"]
         end
 
-        def ts_instance_full_path
-          *prefix, name = super
-          [*prefix, "Unloaded#{name}"]
+        def ts_instance_path
+          [*model_prefix, "Unloaded#{scoped_short_name}"]
         end
 
         def import_destructure

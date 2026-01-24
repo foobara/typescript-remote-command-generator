@@ -33,13 +33,8 @@ module Foobara
         end
 
         def ts_instance_path
-          *prefix, name = scoped_path
-          [*prefix, "#{name}Atom"]
-        end
+          [*model_prefix, "#{scoped_short_name}Atom"]
 
-        def ts_instance_full_path
-          *prefix, name = scoped_full_path
-          [*prefix, "#{name}Atom"]
         end
 
         def import_destructure

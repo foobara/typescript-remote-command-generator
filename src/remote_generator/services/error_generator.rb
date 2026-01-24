@@ -58,16 +58,6 @@ module Foobara
         def dependencies
           @dependencies ||= types_depended_on.select { |type| type.detached_entity? || type.custom? || type.model? }
         end
-
-        def ts_type_full_path
-          if parent.is_a?(CommandGenerator)
-            p = super.dup
-            p[-2] += "Errors"
-            p
-          else
-            super
-          end
-        end
       end
     end
   end

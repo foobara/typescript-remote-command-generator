@@ -76,6 +76,14 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     let(:raw_manifest) { JSON.parse(File.read("spec/fixtures/blog-rack.json")) }
 
     it "contains command domain and command files" do
+      unless outcome.success?
+        outcome.errors.each do |error|
+          error.to_h[:context].each_pair do |k, v|
+            puts k
+            puts v
+          end
+        end
+      end
       expect(outcome).to be_success
 
       paths = command.paths_to_source_code.keys

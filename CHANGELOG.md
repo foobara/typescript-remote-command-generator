@@ -1,3 +1,9 @@
+## [1.2.2] - 2026-01-24
+
+- Add support for an app model named Model, which collide's with Foobara's Model
+- Fixes a bug when the superclass we import collides with dependencies
+- Fixes a bug where a dependency collides with something we're generating
+
 ## [1.2.1] - 2025-12-19
 
 - Handle some .foobara_delegate and #path deprecation warnings

@@ -14,6 +14,10 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v6
+      - run: |
+          cd spec/fixtures/test-app
+          npm ci
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:

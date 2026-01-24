@@ -159,10 +159,6 @@ module Foobara
           [*parent&.scoped_full_path, *ts_instance_path]
         end
 
-        def ts_type_full_path
-          ts_instance_full_path
-        end
-
         def organization_name = relevant_manifest.organization_name
         def domain_name = relevant_manifest.domain_name
 

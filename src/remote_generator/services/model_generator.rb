@@ -50,6 +50,10 @@ module Foobara
         def generated_type
           model_short_name
         end
+
+        def import_destructure
+          "{ #{generated_type} }"
+        end
       end
     end
   end

@@ -16,10 +16,6 @@ module Foobara
           [*model_prefix, generated_type]
         end
 
-        def import_destructure
-          "{ #{generated_type} }"
-        end
-
         def generated_type
           "Loaded#{scoped_short_name}"
         end

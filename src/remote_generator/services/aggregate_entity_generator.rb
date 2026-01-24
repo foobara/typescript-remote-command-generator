@@ -30,16 +30,24 @@ module Foobara
           end
         end
 
+        def dependencies
+          [*super, superclass_generator]
+        end
+
+        def collision_winners
+          superclass_generator
+        end
+
+        def superclass_generator
+          @superclass_generator ||= LoadedEntityGenerator.new(relevant_manifest)
+        end
+
         def attributes_type_ts_type
           aggregate_attributes_ts_type
         end
 
         def ts_instance_path
           [*model_prefix, generated_type]
-        end
-
-        def import_destructure
-          "{ #{generated_type} }"
         end
 
         def generated_type

@@ -1,7 +1,7 @@
 import {
   <%= entity_short_name %>AttributesType
 } from "./Ambiguous"
-import { Loaded<%= entity_short_name %> } from "./Loaded"
+
 <% dependency_roots.each do |dependency_root| %>
 import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>

@@ -120,7 +120,11 @@ module Foobara
               generator_for(dependency)
             end
 
-            DependencyGroup.new(generators, deps_are_for: self, name: scoped_full_path.join("."), will_define:)
+            DependencyGroup.new(generators,
+                                deps_are_for: self,
+                                name: scoped_full_path.join("."),
+                                will_define:,
+                                winners: collision_winners)
           end
         end
 
@@ -140,6 +144,8 @@ module Foobara
 
           @dependency_roots = dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
+
+        def collision_winners = nil
 
         def ts_instance_path
           scoped_path

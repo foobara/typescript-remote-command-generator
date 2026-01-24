@@ -10,13 +10,14 @@ module Foobara
           end
         end
 
-        attr_accessor :dependencies, :name, :will_define, :deps_are_for
+        attr_accessor :dependencies, :name, :will_define, :deps_are_for, :winners
 
-        def initialize(dependencies, name:, deps_are_for:, will_define:)
+        def initialize(dependencies, name:, deps_are_for:, will_define:, winners: nil)
           self.deps_are_for = deps_are_for
           self.will_define = will_define
           self.name = name
           self.dependencies = dependencies.to_set
+          self.winners = [*winners] if winners
 
           find_collisions
         end
@@ -69,7 +70,7 @@ module Foobara
           root
         end
 
-        def points_for(dep)
+        def raw_points_for(dep)
           points = collision_data_for(dep).points
 
           unless points
@@ -79,6 +80,14 @@ module Foobara
           end
 
           points
+        end
+
+        def points_for(dep)
+          if winners&.include?(dep)
+            0
+          else
+            raw_points_for(dep)
+          end
         end
 
         def non_colliding_type_name(dep, points = points_for(dep))

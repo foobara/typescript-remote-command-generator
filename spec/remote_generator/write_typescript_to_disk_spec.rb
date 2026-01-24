@@ -7,22 +7,24 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   let(:inputs) do
     {
       raw_manifest:,
+      project_directory:,
       output_directory:,
       fail_if_does_not_pass_linter:
     }
   end
-  let(:output_directory) { "#{__dir__}/../../tmp/domains" }
+  let(:project_directory) { "#{__dir__}/../../tmp/test-app" }
+  let(:output_directory) { "#{project_directory}/src/domains" }
   let(:test_app_directory) { "#{__dir__}/../../spec/fixtures/test-app" }
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
   let(:fail_if_does_not_pass_linter) { true }
 
   before do
-    FileUtils.cp_r(test_app_directory, output_directory)
+    FileUtils.cp_r(test_app_directory, project_directory)
   end
 
   after do
-    FileUtils.rm_rf(output_directory)
+    FileUtils.rm_rf(project_directory)
   end
 
   it "contains base files" do

@@ -14,6 +14,7 @@ module Foobara
 
         def initialize(dependencies, name:, deps_are_for:, will_define:)
           self.deps_are_for = deps_are_for
+          self.will_define = will_define
           self.name = name
           self.dependencies = dependencies.to_set
 
@@ -123,6 +124,10 @@ module Foobara
 
               collisions = dependencies.select do |other_dep|
                 dep != other_dep && name == non_colliding_type_name(other_dep, points)
+              end
+
+              if will_define&.include?(name)
+                collisions << deps_are_for
               end
 
               if collisions.empty?

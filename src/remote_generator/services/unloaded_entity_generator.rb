@@ -11,11 +11,15 @@ module Foobara
         end
 
         def ts_instance_path
-          [*model_prefix, "Unloaded#{scoped_short_name}"]
+          [*model_prefix, generated_type]
         end
 
         def import_destructure
-          "{ Unloaded#{scoped_short_name} }"
+          "{ #{generated_type} }"
+        end
+
+        def generated_type
+          "Unloaded#{scoped_short_name}"
         end
       end
     end

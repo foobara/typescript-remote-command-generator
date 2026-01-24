@@ -124,6 +124,10 @@ module Foobara
           end
         end
 
+        def will_define
+          nil
+        end
+
         def dependency_roots
           return @dependency_roots if defined?(@dependency_roots)
 

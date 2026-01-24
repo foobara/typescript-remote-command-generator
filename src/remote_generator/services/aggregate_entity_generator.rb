@@ -35,12 +35,15 @@ module Foobara
         end
 
         def ts_instance_path
-          [*model_prefix, "#{scoped_short_name}Aggregate"]
-
+          [*model_prefix, generated_type]
         end
 
         def import_destructure
-          "{ #{scoped_short_name}Aggregate }"
+          "{ #{generated_type} }"
+        end
+
+        def generated_type
+          "#{scoped_short_name}Aggregate"
         end
       end
     end

@@ -35,8 +35,11 @@ module Foobara
         end
 
         def ts_instance_path
-          [*model_prefix, "#{scoped_short_name}Atom"]
+          [*model_prefix, generated_type]
         end
+
+        def generated_type
+          "#{scoped_short_name}Atom"
         end
       end
     end

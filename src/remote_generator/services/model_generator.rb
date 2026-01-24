@@ -46,6 +46,10 @@ module Foobara
         def model_name_downcase
           type_name_downcase
         end
+
+        def generated_type
+          model_short_name
+        end
       end
     end
   end

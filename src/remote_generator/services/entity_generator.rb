@@ -45,6 +45,14 @@ module Foobara
         def association_property_paths_ts
           associations.keys.map { |k| DataPath.parse(k).path.map(&:to_s) }.inspect
         end
+
+        def will_define
+          [generated_type]
+        end
+
+        def generated_type
+          entity_short_name
+        end
       end
     end
   end

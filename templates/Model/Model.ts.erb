@@ -1,4 +1,4 @@
-import { Model } from "<%= path_to_root %>base/Model"
+import { Model as FoobaraModel } from "<%= path_to_root %>base/Model"
 <% dependency_roots.each do |dependency_root| %>
 import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
@@ -7,7 +7,7 @@ export interface <%= model_short_name %>AttributesType <%= attributes_type_ts_ty
 
 export class <%= model_short_name %><
   AttributesType extends <%= model_short_name %>AttributesType = <%= model_short_name %>AttributesType
-> extends Model<AttributesType> {
+> extends FoobaraModel<AttributesType> {
   static readonly modelName: string = "<%= model_short_name %>"
 
   <% attribute_names.each do |attribute_name| %>

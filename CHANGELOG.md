@@ -1,3 +1,7 @@
+## [1.2.3] - 2026-01-24
+
+- Default the project_directory to "." instead of the output_directory
+
 ## [1.2.2] - 2026-01-24
 
 - Add support for an app model named Model, which collide's with Foobara's Model

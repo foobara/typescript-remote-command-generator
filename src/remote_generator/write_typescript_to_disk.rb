@@ -9,7 +9,9 @@ module Foobara
         raw_manifest :associative_array, :allow_nil
         manifest_url :string, :allow_nil
         # TODO: should be able to delete this and inherit it
-        project_directory :string, :allow_nil, "This lets you specify a directory to run the linter or npm run build in"
+        project_directory :string,
+                          default: ".",
+                          description: "This lets you specify a directory to run the linter or npm run build in"
         output_directory :string, default: "src/domains"
         fail_if_does_not_pass_linter :boolean, default: false
       end

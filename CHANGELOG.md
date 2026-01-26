@@ -1,3 +1,7 @@
+## [1.2.4] - 2026-01-26
+
+- Fix bug where we include models/entities from command inputs
+
 ## [1.2.3] - 2026-01-24
 
 - Default the project_directory to "." instead of the output_directory

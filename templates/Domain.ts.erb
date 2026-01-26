@@ -12,6 +12,6 @@ export <%= command.command_errors_index_generator.import_destructure %> from "<%
 <% end %>
 
 // TODO: put these on an entities module so that commands can be the only top-level interface.
-<% entity_generators.each do |entity| %>
+<% all_type_generators.each do |entity| %>
 export <%= entity.import_destructure %> from "<%= path_to_root %><%= entity.import_path %>"
 <% end %>

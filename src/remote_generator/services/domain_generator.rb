@@ -28,9 +28,9 @@ module Foobara
           end
         end
 
-        def entity_generators
-          @entity_generators ||= domain_manifest.entities.map do |entity_manifest|
-            EntityGenerator.new(entity_manifest)
+        def detached_entity_generators
+          @detached_entity_generators ||= domain_manifest.detached_entities.flat_map do |entity_manifest|
+            EntityVariantsGenerator.new(entity_manifest).dependencies.to_a
           end
         end
 
@@ -47,19 +47,55 @@ module Foobara
         end
 
         def model_generators
-          # HERE!!!
           @model_generators ||= begin
             only_models = domain_manifest.models.reject(&:detached_entity?)
 
-            only_models.map do |model_manifest|
-              ModelGenerator.new(model_manifest)
+            only_models.flat_map do |model_manifest|
+              ModelVariantsGenerator.new(model_manifest).dependencies.to_a
             end
           end
         end
 
+        def all_type_generators
+          all_type_generators = []
+
+          generators_allowed_for_inputs = [*type_generators, *model_generators]
+          generators_allowed_for_errors_or_result = [*generators_allowed_for_inputs, *detached_entity_generators]
+
+          Manifest::RootManifest.new(root_manifest).commands.each do |command_manifest|
+            command_generator = CommandGenerator.new(command_manifest)
+
+            command_generator.inputs_types_depended_on.each do |type_manifest|
+              next unless type_manifest.domain == relevant_manifest
+
+              generators_allowed_for_inputs.each do |generator|
+                if generator.relevant_manifest == type_manifest
+                  all_type_generators << generator
+                end
+              end
+            end
+
+            [
+              *command_generator.result_type&.to_type,
+              *command_generator.result_types_depended_on.each,
+              *command_generator.errors_types_depended_on
+            ].each do |type_manifest|
+              next unless type_manifest.domain == relevant_manifest
+
+              generators_allowed_for_errors_or_result.each do |generator|
+                if generator.relevant_manifest == type_manifest
+                  all_type_generators << generator
+                end
+              end
+            end
+          end
+
+          all_type_generators.uniq!
+          all_type_generators
+        end
+
         def dependencies
-          @dependencies ||= [*command_generators, *model_generators, *entity_generators, *type_generators,
-                             *organization]
+          @dependencies ||= [*command_generators, *all_type_generators, organization]
         end
 
         def domain_name

@@ -1,3 +1,7 @@
+## [1.2.5] - 2026-01-27
+
+- Fix circular dependency that happens if an item from this domain collides
+
 ## [1.2.4] - 2026-01-26
 
 - Fix bug where we include models/entities from command inputs

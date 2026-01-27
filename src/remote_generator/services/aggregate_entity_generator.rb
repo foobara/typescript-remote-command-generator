@@ -34,10 +34,6 @@ module Foobara
           [*super, superclass_generator]
         end
 
-        def collision_winners
-          superclass_generator
-        end
-
         def superclass_generator
           @superclass_generator ||= LoadedEntityGenerator.new(relevant_manifest)
         end

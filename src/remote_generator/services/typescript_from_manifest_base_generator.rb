@@ -145,7 +145,15 @@ module Foobara
           @dependency_roots = dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
         end
 
-        def collision_winners = nil
+        def collision_winners
+          # TODO: odd that root_manifest exists but isn't decorated. We need a decorated and undecorated method
+          root_manifest = Manifest::RootManifest.new(self.root_manifest)
+
+          [*dependencies].select do |dependency|
+            root_manifest.contains?(dependency.domain_reference, :domain) &&
+              dependency.domain == domain
+          end
+        end
 
         def ts_instance_path
           scoped_path

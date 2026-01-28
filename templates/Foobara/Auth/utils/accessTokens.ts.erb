@@ -27,6 +27,7 @@ if (typeof BroadcastChannel !== 'undefined') {
 
   logoutChannel.addEventListener('message', (event: MessageEvent<string>) => {
     accessTokens.delete(event.data)
+    deleteAllQueries()
   })
 
   handleLogout = (baseUrl: string) => {

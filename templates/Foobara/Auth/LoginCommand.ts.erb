@@ -7,7 +7,7 @@ export default class LoginCommand<Inputs, Result, Error extends FoobaraError<any
   extends RemoteCommand<Inputs, Result, Error> {
   async _handleResponse (response: Response): Promise<Outcome<Result, Error>> {
     if (response.ok) {
-      const accessToken: string | null = response.headers.get('X-Access-Token')
+      const accessToken: string | null = response.headers.get('x-access-token')
 
       if (accessToken != null) {
         handleLogin(this.urlBase, accessToken)

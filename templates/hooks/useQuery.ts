@@ -48,12 +48,7 @@ export default function useQuery<CommandT extends RemoteCommand<any, any, any>> 
   let query = queryRef.current
 
   if (query == null) {
-    if (arguments.length === 2) {
-      query = getQuery(CommandClass, inputs as InputsOf<CommandT>)
-    } else {
-      query = getQuery(CommandClass)
-    }
-
+    query = getQuery(CommandClass, inputs)
     queryRef.current = query
   }
 

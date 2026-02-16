@@ -16,6 +16,7 @@ export function getQuery<CommandT extends RemoteCommand<any, any, any>> (
   }
 
   let query: Query<CommandT>
+
   if (arguments.length === 2) {
     query = new Query<CommandT>(CommandClass, inputs)
     query.run()

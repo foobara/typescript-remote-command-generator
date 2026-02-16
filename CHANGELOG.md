@@ -1,3 +1,8 @@
+## [1.2.6] - 2026-02-16
+
+- Make use of guaranteed_to_exist to avoid marking present delegates as optional
+- Make queries automatically run regardless of inputs presence
+
 ## [1.2.5] - 2026-01-27
 
 - Fix circular dependency that happens if an item from this domain collides

@@ -285,21 +285,26 @@ module Foobara
                               if model_and_entity_free
                                 model_type = type_declaration.to_type
 
-                                translated_type = if type_declaration.detached_entity?
-                                                    model_type.primary_key_type
-                                                  else
-                                                    model_type.attributes_type
-                                                  end
-
-                                foobara_type_to_ts_type(
-                                  translated_type,
-                                  association_depth:,
-                                  dependency_group:,
-                                  initial:,
-                                  model_and_entity_free:,
-                                  is_output:,
-                                  parent: model_type
-                                )
+                                if type_declaration.detached_entity?
+                                  foobara_type_to_ts_type(
+                                    model_type.primary_key_type,
+                                    association_depth:,
+                                    dependency_group:,
+                                    initial:,
+                                    model_and_entity_free:,
+                                    is_output:,
+                                    parent: model_type
+                                  )
+                                else
+                                  attributes_to_ts_type(
+                                    model_type.attributes_type,
+                                    association_depth:,
+                                    dependency_group:,
+                                    model_and_entity_free:,
+                                    is_output:,
+                                    parent: model_type
+                                  )
+                                end
                               else
                                 model_to_ts_model_name(type_declaration, association_depth:, initial:)
                               end
@@ -342,18 +347,22 @@ module Foobara
           # or something.
           if attributes.has_attribute_declarations?
             guts = attributes.attribute_declarations.map do |attribute_name, attribute_declaration|
-              is_required = attributes.required?(attribute_name)
+              exists = attributes.required?(attribute_name)
 
-              if !is_required && is_output
+              if !exists && parent&.model?
+                exists = parent.guaranteed_to_exist?(attribute_name)
+              end
+
+              if !exists && is_output
                 default = attributes.default_for(attribute_name)
 
                 if default || default == false ||
                    (parent&.detached_entity? && attribute_name == parent.primary_key_name.to_sym)
-                  is_required = true
+                  exists = true
                 end
               end
 
-              "  #{attribute_name}#{"?" unless is_required}: #{
+              "  #{attribute_name}#{"?" unless exists}: #{
               foobara_type_to_ts_type(
                 attribute_declaration,
                 dependency_group:,

@@ -190,20 +190,22 @@ module Foobara
           expression = "if (#{value} !== undefined) {\n"
 
           expression += if type_symbol == :date || type_symbol == :datetime
-                          "#{lvalue} = new Date(#{present_value})\n"
+                          "#{lvalue} = new Date(#{present_value})"
                         elsif type.model?
                           ts_model_name = model_to_ts_model_name(type,
                                                                  association_depth:,
                                                                  initial: cast_tree.initial)
 
-                          "#{lvalue} = new #{ts_model_name}(#{present_value})\n"
+                          "#{lvalue} = new #{ts_model_name}(#{present_value})"
                         else
                           # :nocov:
                           raise "Not sure how to cast type #{type} to a Typescript expression"
                           # :nocov:
                         end
 
-          expression += "}"
+          expression += "\n}"
+
+          expression
         end
 
         def _construct_cast_tree(type_declaration, initial: false)

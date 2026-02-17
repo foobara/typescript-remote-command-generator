@@ -1,3 +1,7 @@
+## [1.2.7] - 2026-02-16
+
+- Make generated castJsonResult.ts files undefined-safe
+
 ## [1.2.6] - 2026-02-16
 
 - Make use of guaranteed_to_exist to avoid marking present delegates as optional

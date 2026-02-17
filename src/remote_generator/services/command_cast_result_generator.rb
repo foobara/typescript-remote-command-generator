@@ -116,24 +116,24 @@ module Foobara
                                                          value: "element")
                 result << "})"
               elsif child_cast_tree.is_a?(::Hash)
-                # TODO: either test this codepath or delete it
+                # TODO: either test this code path or delete it
                 # :nocov:
                 property = path_part =~ /\A\d+\z/ ? path_part.to_i : "\"#{path_part}\""
 
                 result << cast_json_result_function_body(child_cast_tree,
                                                          parent:,
                                                          property:,
-                                                         value: "#{parent}.#{path_part}")
+                                                         value: "#{parent}?.#{path_part}")
                 # :nocov:
               elsif child_cast_tree.is_a?(CastTree)
                 result << cast_json_result_function_body(child_cast_tree.children,
-                                                         parent: "#{parent}.#{path_part}")
+                                                         parent: "#{parent}?.#{path_part}")
 
                 property = path_part =~ /\A\d+\z/ ? path_part.to_i : "\"#{path_part}\""
                 result << _ts_cast_expression(child_cast_tree,
                                               parent:,
                                               property:,
-                                              value: "#{parent}.#{path_part}")
+                                              value: "#{parent}?.#{path_part}")
               else
                 # :nocov:
                 raise "Not sure how to handle a #{cast_tree.class}: #{cast_tree}"
@@ -164,9 +164,9 @@ module Foobara
                      if property.nil?
                        parent
                      elsif property =~ /\A"(.*)"\z/
-                       "#{parent}.#{$1}"
+                       "#{parent}?.#{$1}"
                      else
-                       "#{parent}[#{property}]"
+                       "#{parent}?.[#{property}]"
                      end
                    else
                      # TODO: either test this path or raise
@@ -183,21 +183,27 @@ module Foobara
 
           type_symbol = type.type_symbol
 
-          value ||= lvalue
+          value ||= lvalue.dup
+          lvalue = lvalue.gsub("?.[", "[").gsub("?.", ".")
+          present_value = value.gsub("?.[", "[").gsub("?.", ".")
 
-          if type_symbol == :date || type_symbol == :datetime
-            "#{lvalue} = new Date(#{value})"
-          elsif type.model?
-            ts_model_name = model_to_ts_model_name(type,
-                                                   association_depth:,
-                                                   initial: cast_tree.initial)
+          expression = "if (#{value} !== undefined) {\n"
 
-            "#{lvalue} = new #{ts_model_name}(#{value})"
-          else
-            # :nocov:
-            raise "Not sure how to cast type #{type} to a Typescript expression"
-            # :nocov:
-          end
+          expression += if type_symbol == :date || type_symbol == :datetime
+                          "#{lvalue} = new Date(#{present_value})\n"
+                        elsif type.model?
+                          ts_model_name = model_to_ts_model_name(type,
+                                                                 association_depth:,
+                                                                 initial: cast_tree.initial)
+
+                          "#{lvalue} = new #{ts_model_name}(#{present_value})\n"
+                        else
+                          # :nocov:
+                          raise "Not sure how to cast type #{type} to a Typescript expression"
+                          # :nocov:
+                        end
+
+          expression += "}"
         end
 
         def _construct_cast_tree(type_declaration, initial: false)

@@ -17,7 +17,7 @@ GEM
     diff-lcs (1.6.2)
     docile (1.4.1)
     ffi (1.17.3-x86_64-linux-gnu)
-    foobara (0.5.4)
+    foobara (0.5.6)
       bigdecimal
       foobara-lru-cache (< 2.0.0)
       foobara-util (< 2.0.0)
@@ -28,7 +28,7 @@ GEM
     foobara-rubocop-rules (1.0.11)
       rubocop
       rubocop-rspec
-    foobara-spec-helpers (0.0.4)
+    foobara-spec-helpers (0.1.0)
       foobara-util
     foobara-util (1.0.8)
     formatador (1.2.3)
@@ -66,7 +66,7 @@ GEM
       shellany (~> 0.0)
     ostruct (0.6.3)
     parallel (1.27.0)
-    parser (3.3.10.1)
+    parser (3.3.10.2)
       ast (~> 2.4.1)
       racc
     prism (1.9.0)
@@ -122,7 +122,7 @@ GEM
     rubocop-rspec (3.9.0)
       lint_roller (~> 1.1)
       rubocop (~> 1.81)
-    ruby-prof (2.0.0)
+    ruby-prof (2.0.2)
       base64
       ostruct
     ruby-progressbar (1.13.0)

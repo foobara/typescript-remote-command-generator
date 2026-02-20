@@ -3,7 +3,7 @@ require_relative "type_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class ModelGenerator < TypeGenerator
         class << self
           def new(relevant_manifest)

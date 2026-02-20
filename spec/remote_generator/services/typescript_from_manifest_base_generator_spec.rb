@@ -1,4 +1,4 @@
-RSpec.describe Foobara::RemoteGenerator::Services::TypescriptFromManifestBaseGenerator do
+RSpec.describe Foobara::RemoteGenerator::Generators::TypescriptFromManifestBaseGenerator do
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
   let(:entity_manifest) { Foobara::Manifest::Entity.new(raw_manifest, path) }

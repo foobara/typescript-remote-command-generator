@@ -3,7 +3,7 @@ require_relative "command_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class CommandErrorsGenerator < CommandGenerator
         alias command_manifest relevant_manifest
 
@@ -21,7 +21,7 @@ module Foobara
 
         def error_generators
           @error_generators ||= possible_errors.values.map(&:error).sort_by(&:error_name).uniq.map do |error|
-            Services::ErrorGenerator.new(error)
+            ErrorGenerator.new(error)
           end
         end
 

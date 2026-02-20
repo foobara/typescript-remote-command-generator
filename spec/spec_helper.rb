@@ -30,7 +30,7 @@ RSpec.configure do |config|
 
   # config.raise_errors_for_deprecations!
   config.after do
-    tg = Foobara::RemoteGenerator::Services::TypeGenerator
+    tg = Foobara::RemoteGenerator::Generators::TypeGenerator
     if tg.instance_variable_defined?(:@lru_cache)
       tg.lru_cache.reset!
     end

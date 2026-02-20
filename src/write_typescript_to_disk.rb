@@ -2,7 +2,7 @@ require_relative "generate_typescript"
 
 module Foobara
   module RemoteGenerator
-    class WriteTypescriptToDisk < Generators::WriteGeneratedFilesToDisk
+    class WriteTypescriptToDisk < Foobara::Generators::WriteGeneratedFilesToDisk
       def self.generator_key = "typescript-remote-commands"
 
       inputs do

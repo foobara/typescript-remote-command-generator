@@ -1,4 +1,4 @@
-RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
+RSpec.describe Foobara::RemoteGenerator::Generators::EntityGenerator do
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
   let(:entity_manifest) { Foobara::Manifest::Entity.new(raw_manifest, path) }
@@ -24,7 +24,7 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
 
   describe "#ts_instance_path" do
     context "when it's a loaded generator" do
-      let(:generator_class) { Foobara::RemoteGenerator::Services::LoadedEntityGenerator }
+      let(:generator_class) { Foobara::RemoteGenerator::Generators::LoadedEntityGenerator }
 
       it "gives the loaded path" do
         expect(generator.ts_instance_path).to eq(["LoadedReferral"])
@@ -34,7 +34,7 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
     end
 
     context "when it's an atom generator" do
-      let(:generator_class) { Foobara::RemoteGenerator::Services::AtomEntityGenerator }
+      let(:generator_class) { Foobara::RemoteGenerator::Generators::AtomEntityGenerator }
 
       it "gives the atom path" do
         expect(generator.ts_instance_path).to eq(["ReferralAtom"])
@@ -44,7 +44,7 @@ RSpec.describe Foobara::RemoteGenerator::Services::EntityGenerator do
     end
 
     context "when it's an aggregate generator" do
-      let(:generator_class) { Foobara::RemoteGenerator::Services::AggregateEntityGenerator }
+      let(:generator_class) { Foobara::RemoteGenerator::Generators::AggregateEntityGenerator }
 
       it "gives the aggregate path" do
         expect(generator.ts_instance_path).to eq(["ReferralAggregate"])

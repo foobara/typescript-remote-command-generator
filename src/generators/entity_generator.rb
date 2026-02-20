@@ -2,7 +2,7 @@ require_relative "model_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class EntityGenerator < ModelGenerator
         alias entity_manifest relevant_manifest
 

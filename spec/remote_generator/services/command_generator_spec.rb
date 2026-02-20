@@ -1,4 +1,4 @@
-RSpec.describe Foobara::RemoteGenerator::Services::CommandGenerator do
+RSpec.describe Foobara::RemoteGenerator::Generators::CommandGenerator do
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
   let(:command_manifest) { Foobara::Manifest::Command.new(raw_manifest, [:command, :GlobalCommand]) }

@@ -2,7 +2,7 @@ require_relative "command_errors_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class CommandErrorsIndexGenerator < CommandErrorsGenerator
         alias command_manifest relevant_manifest
 

@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class AtomEntityGenerator < LoadedEntityGenerator
         class << self
           def new(relevant_manifest)
@@ -25,9 +25,9 @@ module Foobara
         def model_generators
           @model_generators ||= types_depended_on.select(&:model?).map do |model|
             if model.detached_entity?
-              Services::UnloadedEntityGenerator.new(model)
+              UnloadedEntityGenerator.new(model)
             else
-              Services::AtomModelGenerator.new(model)
+              AtomModelGenerator.new(model)
             end
           end
         end

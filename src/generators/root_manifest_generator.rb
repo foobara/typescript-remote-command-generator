@@ -2,7 +2,7 @@ require_relative "manifest_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class RootManifestGenerator < ManifestGenerator
         def target_path
           ["manifest.json"]

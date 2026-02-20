@@ -38,11 +38,11 @@ module Foobara
       attr_accessor :command_manifest, :manifest_data
 
       def base_generator
-        Services::TypescriptFromManifestBaseGenerator
+        Generators::TypescriptFromManifestBaseGenerator
       end
 
       def templates_dir
-        "#{__dir__}/../../templates"
+        "#{__dir__}/../templates"
       end
 
       def load_manifest_if_needed

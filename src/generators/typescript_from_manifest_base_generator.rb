@@ -22,7 +22,7 @@
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class TypescriptFromManifestBaseGenerator < Foobara::FilesGenerator
         class << self
           def manifest_to_generator_classes(manifest)
@@ -30,62 +30,62 @@ module Foobara
             when Manifest::Command
               generator_classes = case manifest.full_command_name
                                   when "Foobara::Auth::RefreshLogin"
-                                    Services::Auth::RefreshLoginGenerator
+                                    Auth::RefreshLoginGenerator
                                   when "Foobara::Auth::Login"
-                                    Services::Auth::LoginGenerator
+                                    Auth::LoginGenerator
                                   when "Foobara::Auth::Logout"
-                                    Services::Auth::LogoutGenerator
+                                    Auth::LogoutGenerator
                                   when /\bGetCurrentUser$/
-                                    Services::Auth::RequiresAuthGenerator
+                                    Auth::RequiresAuthGenerator
                                   else
                                     if manifest.requires_authentication?
-                                      Services::Auth::RequiresAuthGenerator
+                                      Auth::RequiresAuthGenerator
                                     else
-                                      Services::CommandGenerator
+                                      CommandGenerator
                                     end
                                   end
 
               [
                 *generator_classes,
-                Services::CommandInputsGenerator,
-                Services::CommandResultGenerator,
-                Services::CommandCastResultGenerator,
-                Services::CommandErrorsGenerator,
-                Services::CommandErrorsIndexGenerator,
-                Services::CommandManifestGenerator
+                CommandInputsGenerator,
+                CommandResultGenerator,
+                CommandCastResultGenerator,
+                CommandErrorsGenerator,
+                CommandErrorsIndexGenerator,
+                CommandManifestGenerator
               ]
             when Manifest::Domain
               [
-                Services::DomainGenerator,
-                Services::DomainConfigGenerator,
-                Services::DomainManifestGenerator
+                DomainGenerator,
+                DomainConfigGenerator,
+                DomainManifestGenerator
               ]
             when Manifest::Organization
               [
-                Services::OrganizationGenerator,
-                Services::OrganizationConfigGenerator,
-                Services::OrganizationManifestGenerator
+                OrganizationGenerator,
+                OrganizationConfigGenerator,
+                OrganizationManifestGenerator
               ]
             when Manifest::Entity, Manifest::DetachedEntity
               [
-                Services::EntityGenerator,
-                Services::EntityVariantsGenerator,
-                Services::EntityManifestGenerator
+                EntityGenerator,
+                EntityVariantsGenerator,
+                EntityManifestGenerator
               ]
             when Manifest::Model
               [
-                Services::ModelGenerator,
-                Services::ModelVariantsGenerator,
-                Services::ModelManifestGenerator
+                ModelGenerator,
+                ModelVariantsGenerator,
+                ModelManifestGenerator
               ]
             when Manifest::Error
-              Services::ErrorGenerator
+              ErrorGenerator
             when Manifest::ProcessorClass
-              Services::ProcessorClassGenerator
+              ProcessorClassGenerator
             when Manifest::RootManifest
-              Services::RootManifestGenerator
+              RootManifestGenerator
             when Manifest::Type
-              Services::TypeGenerator
+              TypeGenerator
             else
               # :nocov:
               raise "Not sure how build a generator for a #{manifest}"
@@ -105,7 +105,7 @@ module Foobara
         end
 
         def templates_dir
-          "#{__dir__}/../../../templates"
+          "#{__dir__}/../../templates"
         end
 
         def parent
@@ -389,15 +389,15 @@ module Foobara
 
           generator_class = case association_depth
                             when AssociationDepth::AMBIGUOUS
-                              Services::ModelGenerator
+                              ModelGenerator
                             when AssociationDepth::ATOM
                               if !initial && model.detached_entity?
-                                Services::UnloadedEntityGenerator
+                                UnloadedEntityGenerator
                               else
-                                Services::AtomModelGenerator
+                                AtomModelGenerator
                               end
                             when AssociationDepth::AGGREGATE
-                              Services::AggregateModelGenerator
+                              AggregateModelGenerator
                             else
                               # :nocov:
                               raise "Bad association_depth: #{association_depth}"

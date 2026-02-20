@@ -2,7 +2,7 @@ require_relative "../typescript_from_manifest_base_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       module Auth
         class RequiresAuthCommandGenerator < TypescriptFromManifestBaseGenerator
           def template_path

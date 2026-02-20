@@ -2,7 +2,7 @@ require_relative "organization_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class OrganizationConfigGenerator < OrganizationGenerator
         def target_path
           [*super[0..-2], "config.ts"]

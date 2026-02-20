@@ -2,7 +2,7 @@ require_relative "model_variants_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class EntityVariantsGenerator < EntityGenerator
         def target_path
           *prefix, _entity_name, _file = super

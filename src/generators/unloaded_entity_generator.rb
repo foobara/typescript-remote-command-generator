@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class UnloadedEntityGenerator < EntityGenerator
         def target_path
           [*super[..-2], "Unloaded.ts"]

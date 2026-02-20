@@ -2,7 +2,7 @@ require_relative "typescript_from_manifest_base_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class TypeGenerator < TypescriptFromManifestBaseGenerator
         class << self
           def lru_cache
@@ -100,13 +100,13 @@ module Foobara
 
         def model_generators
           @model_generators ||= types_depended_on.select(&:model?).reject(&:builtin?).map do |model|
-            Services::ModelGenerator.new(model)
+            ModelGenerator.new(model)
           end
         end
 
         def custom_type_generators
           @custom_type_generators ||= types_depended_on.reject(&:builtin?).reject(&:model?).map do |type|
-            Services::TypeGenerator.new(type)
+            TypeGenerator.new(type)
           end
         end
 

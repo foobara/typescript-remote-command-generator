@@ -2,7 +2,7 @@ require_relative "typescript_from_manifest_base_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class CommandInputsGenerator < TypescriptFromManifestBaseGenerator
         alias command_manifest relevant_manifest
 

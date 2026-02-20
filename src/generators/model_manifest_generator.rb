@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class ModelManifestGenerator < ManifestGenerator
         def target_path
           [*domain.scoped_full_path, "Types", *model_prefix, scoped_short_name, "manifest.json"]

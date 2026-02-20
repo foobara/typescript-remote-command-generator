@@ -2,7 +2,7 @@ require_relative "entity_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class LoadedEntityGenerator < EntityGenerator
         def target_path
           [*super[..-2], "Loaded.ts"]

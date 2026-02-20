@@ -2,7 +2,7 @@ require_relative "../command_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       module Auth
         class RequiresAuthGenerator < CommandGenerator
           def base_class_path

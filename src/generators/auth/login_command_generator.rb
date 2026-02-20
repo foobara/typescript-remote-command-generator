@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       module Auth
         class LoginCommandGenerator < TypescriptFromManifestBaseGenerator
           def template_path

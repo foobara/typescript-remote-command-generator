@@ -2,7 +2,7 @@ require_relative "typescript_from_manifest_base_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class CommandGenerator < TypescriptFromManifestBaseGenerator
         alias command_manifest relevant_manifest
 
@@ -15,7 +15,7 @@ module Foobara
         end
 
         def domain_generator
-          @domain_generator ||= Services::DomainGenerator.new(domain)
+          @domain_generator ||= DomainGenerator.new(domain)
         end
 
         def organization_generator = domain_generator.organization_generator
@@ -26,7 +26,7 @@ module Foobara
           @errors_in_this_namespace ||= possible_errors.values.map(&:error).uniq.sort_by(&:error_name).select do |error|
             error.parent&.manifest_path&.map(&:to_s) == manifest_path.map(&:to_s)
           end.map do |error_manifest|
-            Services::ErrorGenerator.new(error_manifest)
+            ErrorGenerator.new(error_manifest)
           end
         end
 
@@ -35,7 +35,7 @@ module Foobara
         end
 
         def command_errors_index_generator
-          Services::CommandErrorsIndexGenerator.new(command_manifest)
+          CommandErrorsIndexGenerator.new(command_manifest)
         end
 
         def base_class_path

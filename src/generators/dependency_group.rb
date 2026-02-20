@@ -1,6 +1,6 @@
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class DependencyGroup
         class CollisionData
           attr_accessor :points

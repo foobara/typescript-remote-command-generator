@@ -2,7 +2,7 @@ require_relative "command_result_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class CommandCastResultGenerator < CommandResultGenerator
         class CastTree
           attr_accessor :children, :declaration_to_cast, :initial
@@ -43,20 +43,20 @@ module Foobara
 
           if result_type.detached_entity? && atom?
             declaration = result_type.is_a?(Manifest::TypeDeclaration) ? result_type.to_type : result_type
-            return @nested_model_generators = Set[Services::AtomEntityGenerator.new(declaration)]
+            return @nested_model_generators = Set[AtomEntityGenerator.new(declaration)]
           end
 
           _models_reachable_from_declaration(result_type, initial: true)&.each do |model|
             generator_class = if atom?
                                 if model.detached_entity?
-                                  Services::UnloadedEntityGenerator
+                                  UnloadedEntityGenerator
                                 else
-                                  Services::AtomModelGenerator
+                                  AtomModelGenerator
                                 end
                               elsif aggregate?
-                                Services::AggregateModelGenerator
+                                AggregateModelGenerator
                               else
-                                Services::ModelGenerator
+                                ModelGenerator
                               end
 
             new_generator = generator_class.new(model)

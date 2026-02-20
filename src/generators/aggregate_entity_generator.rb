@@ -2,7 +2,7 @@ require_relative "loaded_entity_generator"
 
 module Foobara
   module RemoteGenerator
-    class Services
+    module Generators
       class AggregateEntityGenerator < LoadedEntityGenerator
         class << self
           def new(relevant_manifest)
@@ -26,7 +26,7 @@ module Foobara
 
         def model_generators
           @model_generators ||= types_depended_on.select(&:model?).map do |model|
-            Services::AggregateModelGenerator.new(model)
+            AggregateModelGenerator.new(model)
           end
         end
 

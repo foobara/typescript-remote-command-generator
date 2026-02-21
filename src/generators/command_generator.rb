@@ -66,8 +66,11 @@ module Foobara
           dirties = {}
 
           inputs_associations.values.uniq do |entity_class|
-            all_queries.each do |query|
-              entity_classes = Manifest::Model.associations(query.result_type).values.uniq
+            Manifest::RootManifest.new(root_manifest).queries.each do |query|
+              query_result_type = query.result_type
+              next unless query_result_type
+
+              entity_classes = Manifest::Model.associations(result_type).values.uniq
 
               if entity_classes.include?(entity_class)
                 dirties[query] = true

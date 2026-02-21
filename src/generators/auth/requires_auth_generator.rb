@@ -10,7 +10,9 @@ module Foobara
           end
 
           def dependencies
-            super + [RequiresAuthCommandGenerator.new(relevant_manifest)]
+            super.reject do |generator|
+              generator.is_a?(RemoteCommandGenerator)
+            end + [RequiresAuthCommandGenerator.new(relevant_manifest)]
           end
         end
       end

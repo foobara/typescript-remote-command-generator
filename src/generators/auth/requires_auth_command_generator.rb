@@ -5,8 +5,20 @@ module Foobara
     module Generators
       module Auth
         class RequiresAuthCommandGenerator < TypescriptFromManifestBaseGenerator
+          def import_destructure
+            ts_instance_path.first
+          end
+
+          def ts_instance_path
+            ["RequiresAuthCommand"]
+          end
+
+          def ts_instance_full_path
+            ["Foobara", "Auth", "RequiresAuthCommand"]
+          end
+
           def template_path
-            "Foobara/Auth/RequiresAuthCommand.ts.erb"
+            ["Foobara", "Auth", "RequiresAuthCommand.ts.erb"]
           end
         end
       end

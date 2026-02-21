@@ -8,7 +8,9 @@ module Foobara
           end
 
           def dependencies
-            super + [LogoutCommandGenerator.new(relevant_manifest)]
+            super.reject do |generator|
+              generator.is_a?(RemoteCommandGenerator)
+            end + [LogoutCommandGenerator.new(relevant_manifest)]
           end
         end
       end

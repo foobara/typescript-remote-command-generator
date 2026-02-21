@@ -1,4 +1,6 @@
-import <%= base_class_name %> from "<%= path_to_root %><%= base_class_path %>"
+<% dependency_roots.each do |dependency_root| %>
+import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
+<% end %>
 
 import Inputs from "./Inputs"
 import Result from "./Result"
@@ -6,6 +8,7 @@ import { Error } from "./Errors"
 <% if result_json_requires_cast? %>
 import castJsonResult from "./castJsonResult"
 <% end %>
+
 
 export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, Error> {
   static readonly organizationName = "<%= organization_name %>"
@@ -15,6 +18,41 @@ export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, 
 <% if result_json_requires_cast? %>
   castJsonResult(json: any): Result {
     return castJsonResult(json)
+  }
+<% end %>
+
+<% if queries_that_are_dirtied_by_this_command.any? %>
+  dirties (): Array<[any] | [any, string, any]> {
+    <% if queries_dirtied_without_inputs.any? %>
+    const queries: Array<[any] | [any, string, any]> = [
+      <% queries_dirtied_without_inputs.each do |query| %>
+      [<%= dependency_group.non_colliding_type(query) %>],
+      <% end %>
+    ]
+    <% end %>
+
+    <% if queries_dirtied_with_inputs.any? %>
+      <% queries_dirtied_with_inputs.each_pair do |query, value_path_and_query_input_path| %>
+        <% value_path_and_query_input_path => [value_path, query_input_path] %>
+        <% if value_path.first == :result %>
+          queries.push([
+            <%= dependency_group.non_colliding_type(query) %>,
+            <%= query_input_path.to_s.inspect %>,
+            this.<%= value_path.join(".") %>
+          ])
+        <% else %>
+          if (this.<%= value_path.join("?.") %> != null) {
+            queries.push([
+              <%= dependency_group.non_colliding_type(query) %>,
+              <%= query_input_path.to_s.inspect %>,
+              this.<%= value_path.join(".") %>
+            ])
+          }
+        <% end %>
+      <% end %>
+    <% end %>
+
+    return queries
   }
 <% end %>
 }

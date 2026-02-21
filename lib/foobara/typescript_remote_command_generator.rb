@@ -5,9 +5,4 @@ require "erb"
 require "json"
 require "open-uri"
 
-src = "#{__dir__}/../../src/"
-
-Foobara::Util.require_directory(src)
-
-module TypescriptRemoteCommandGenerator
-end
+Foobara::Util.require_directory("#{__dir__}/../../src/")

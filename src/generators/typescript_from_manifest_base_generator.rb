@@ -94,14 +94,14 @@ module Foobara
           end
         end
 
-        def initialize(relevant_manifest)
-          unless relevant_manifest.is_a?(Manifest::BaseManifest)
+        def initialize(relevant_manifest = (none_given = true))
+          if none_given || relevant_manifest.is_a?(Manifest::BaseManifest)
+            super
+          else
             # :nocov:
             raise ArgumentError, "Expected a Foobara::Manifest, got #{relevant_manifest.class}"
             # :nocov:
           end
-
-          super
         end
 
         def templates_dir

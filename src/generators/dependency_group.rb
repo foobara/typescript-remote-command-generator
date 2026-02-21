@@ -135,7 +135,7 @@ module Foobara
                 dep != other_dep && name == non_colliding_type_name(other_dep, points)
               end
 
-              if will_define&.include?(name)
+              if will_define&.include?(name) && dep != deps_are_for
                 collisions << deps_are_for
               end
 

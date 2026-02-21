@@ -52,6 +52,46 @@ module Foobara
           result_type && type_requires_cast?(result_type)
         end
 
+        def queries_that_are_dirtied_by_this_command
+          # We can assume that any records we take as input are dirtied, just to be safe
+          # It's fine to consider a query dirtied even when it isn't and a user can tweak the list
+          # after-the-fact.
+          # So once we have that list of entity classes, we can iterate over all queries
+          # to see which take those entity classes as input or return those entity classes.
+          # In the case of taking them as input, we'll create this with inputs pointing to that record.
+          # Otherwise, in the case of returning records only we'll just dirty the query regardless of
+          # inputs by setting the filter to `undefined`.
+          inputs_associations = Manifest::Model.associations(inputs_type)
+
+          dirties = {}
+
+          inputs_associations.values.uniq do |entity_class|
+            all_queries.each do |query|
+              entity_classes = Manifest::Model.associations(query.result_type).values.uniq
+
+              if entity_classes.include?(entity_class)
+                dirties[query] = true
+              end
+            end
+          end
+
+          inputs_associations.each_pair do |data_path, entity_class|
+            all_queries.each do |query|
+              next if dirties[query] == true
+
+              query_associations = Manifest::Model.associations(query.result_type)
+              query_associations.each_pair do |query_association_path, query_entity_class|
+                if query_entity_class == entity_class
+                  filters[query] ||= {}
+                  filters[query][query_association_path] = data_path
+                end
+              end
+            end
+          end
+
+          dirties
+        end
+
         private
 
         def type_requires_cast?(type_declaration)

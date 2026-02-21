@@ -17,4 +17,8 @@ export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, 
     return castJsonResult(json)
   }
 <% end %>
+
+<% queries_that_are_dirtied_by_this_command.each do |query| %>
+  puts query
+<% end %>
 }

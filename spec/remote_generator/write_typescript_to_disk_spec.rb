@@ -28,7 +28,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     FileUtils.rm_rf(project_directory)
   end
 
-  it "contains base files" do
+  it "contains base files", :focus do
     expect(outcome).to be_success
 
     expect(command.paths_to_source_code["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')

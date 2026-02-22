@@ -53,6 +53,8 @@ module Foobara
         end
 
         def queries_that_are_dirtied_by_this_command
+          return @queries_that_are_dirtied_by_this_command if defined?(@queries_that_are_dirtied_by_this_command)
+
           # We can assume that any records we take as input are dirtied, just to be safe
           # It's fine to consider a query dirtied even when it isn't and a user can tweak the list
           # after-the-fact.
@@ -65,8 +67,10 @@ module Foobara
 
           dirties = {}
 
+          all_queries = Manifest::RootManifest.new(root_manifest).queries
+
           inputs_associations.values.uniq do |entity_class|
-            Manifest::RootManifest.new(root_manifest).queries.each do |query|
+            all_queries.each do |query|
               query_result_type = query.result_type
               next unless query_result_type
 
@@ -80,19 +84,48 @@ module Foobara
 
           inputs_associations.each_pair do |data_path, entity_class|
             all_queries.each do |query|
-              next if dirties[query] == true
+              query_inputs_type = query.inputs_type
+              next unless query_inputs_type
 
-              query_associations = Manifest::Model.associations(query.result_type)
+              query_associations = Manifest::Model.associations(query_inputs_type)
               query_associations.each_pair do |query_association_path, query_entity_class|
                 if query_entity_class == entity_class
-                  filters[query] ||= {}
-                  filters[query][query_association_path] = data_path
+                  dirties[query] ||= {}
+                  dirties[query][query_association_path] = data_path
                 end
               end
             end
           end
 
-          dirties
+          @queries_that_are_dirtied_by_this_command = dirties
+        end
+
+        def queries_dirtied_without_inputs
+          return @queries_dirtied_without_inputs if defined?(@queries_dirtied_without_inputs)
+
+          queries_dirtied = []
+
+          queries_that_are_dirtied_by_this_command.each_pair do |query, value|
+            if value == true
+              queries_dirtied << query
+            end
+          end
+
+          @queries_dirtied_without_inputs = queries_dirtied
+        end
+
+        def queries_dirtied_with_inputs
+          return @queries_dirtied_with_inputs if defined?(@queries_dirtied_with_inputs)
+
+          dirtied_queries = {}
+
+          queries_that_are_dirtied_by_this_command.each_pair do |query, value|
+            if value != true
+              dirtied_queries[query] = value
+            end
+          end
+
+          @queries_dirtied_with_inputs = dirtied_queries
         end
 
         private

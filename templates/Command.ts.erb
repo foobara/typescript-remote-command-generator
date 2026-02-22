@@ -18,7 +18,31 @@ export class <%= command_name %> extends <%= base_class_name %><Inputs, Result, 
   }
 <% end %>
 
-<% queries_that_are_dirtied_by_this_command.each do |query| %>
-  puts query
+<% if queries_that_are_dirtied_by_this_command.any? %>
+  <% queries_that_are_dirtied_by_this_command.each do |query| %>
+
+  dirties (): Array<[any, any]> {
+    <% if queries_dirtied_without_inputs.any? %>
+    const queries: Array<[any, any]> = [
+      <% queries_dirtied_without_inputs.each do |query| %>
+      [query, undefined]
+      <% end %>
+    ]
+    <% end %>
+
+    <% if queries_dirtied_with_inputs.any? %>
+      <% queries_dirtied_with_inputs.each_pair do |query, (input_path, query_path)| %>
+        if (this.<%= input_path.join("?.") %> != null) {
+          queries.push([query, {
+            <%= query_path %>: this.<%= input_path.join(".") %>
+          }])
+        }
+      <% end %>
+    <% end %>
+
+
+    return queries
+  }
+  <% end %>
 <% end %>
 }

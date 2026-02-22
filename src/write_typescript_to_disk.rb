@@ -69,6 +69,8 @@ module Foobara
             out = stdout.read
             err = stderr.read
 
+            binding.pry
+
             if fail_if_does_not_pass_linter?
               add_runtime_error :failed_to_lint, stdout: out, stderr: err
             else

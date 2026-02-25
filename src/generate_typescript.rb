@@ -8,8 +8,11 @@ module Foobara
 
       possible_error MissingManifestError
 
-      inputs raw_manifest: :associative_array,
-             manifest_url: :string
+      inputs do
+        raw_manifest :associative_array
+        manifest_url :string
+        auto_dirty_queries :boolean, default: false
+      end
 
       def execute
         load_manifest_if_needed
@@ -71,6 +74,12 @@ module Foobara
           elements_to_generate << command
           elements_to_generate << command.domain
           elements_to_generate << command.organization
+        end
+      end
+
+      def generate_element
+        RemoteGenerator.auto_dirty_queries(auto_dirty_queries) do
+          super
         end
       end
 

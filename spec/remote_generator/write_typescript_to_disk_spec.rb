@@ -9,7 +9,8 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
       raw_manifest:,
       project_directory:,
       output_directory:,
-      fail_if_does_not_pass_linter:
+      fail_if_does_not_pass_linter:,
+      auto_dirty_queries:
     }
   end
   let(:project_directory) { "#{__dir__}/../../tmp/test-app" }
@@ -18,6 +19,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   let(:raw_manifest_json) { File.read("spec/fixtures/foobara-manifest.json") }
   let(:raw_manifest) { JSON.parse(raw_manifest_json) }
   let(:fail_if_does_not_pass_linter) { true }
+  let(:auto_dirty_queries) { true }
 
   before do
     FileUtils.mkdir_p(File.dirname(project_directory))

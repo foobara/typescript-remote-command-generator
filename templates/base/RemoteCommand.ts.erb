@@ -1,6 +1,8 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
 import { type FoobaraError } from './Error'
+<% if auto_dirty_queries? %>
 import * as QueryCache from './QueryCache'
+<% end %>
 
 export default abstract class RemoteCommand<Inputs, Result, CommandError extends FoobaraError> {
   static _urlBase: string | undefined
@@ -106,7 +108,9 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return json
   }
 
+  <% if auto_dirty_queries? %>
   dirties (): Array<[any] | [any, string, any]> { return [] }
+  <% end %>
 
   async _handleResponse (response: Response): Promise<Outcome<Result, CommandError>> {
     const text = await response.text()
@@ -129,6 +133,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return this.outcome
   }
 
+  <% if auto_dirty_queries? %>
   dirtyQueries () {
     for (const [commandClass, inputs] of this.dirties()) {
       QueryCache.forEachQuery((query) => {
@@ -146,4 +151,5 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
       })
     }
   }
+  <% end %>
 }

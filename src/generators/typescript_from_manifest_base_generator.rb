@@ -431,6 +431,10 @@ module Foobara
           path = super
           path.empty? ? "./" : path
         end
+
+        def auto_dirty_queries?
+          RemoteGenerator.auto_dirty_queries?
+        end
       end
     end
   end

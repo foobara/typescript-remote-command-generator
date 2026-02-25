@@ -1,3 +1,7 @@
+## [1.3.0] - 2026-02-26
+
+- Add auto-dirty queries feature
+
 ## [1.2.7] - 2026-02-16
 
 - Make generated castJsonResult.ts files undefined-safe

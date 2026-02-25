@@ -60,7 +60,7 @@ module Foobara
         end
 
         def queries_that_are_dirtied_by_this_command
-          return {} if query?
+          return {} if query? || !auto_dirty_queries?
 
           return @queries_that_are_dirtied_by_this_command if defined?(@queries_that_are_dirtied_by_this_command)
 

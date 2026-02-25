@@ -14,6 +14,7 @@ module Foobara
                           description: "This lets you specify a directory to run the linter or npm run build in"
         output_directory :string, default: "src/domains"
         fail_if_does_not_pass_linter :boolean, default: false
+        auto_dirty_queries :boolean, default: false
       end
 
       possible_error :missing_manifest
@@ -49,7 +50,15 @@ module Foobara
         # TODO: we need a way to allow values to be nil in type declarations
         inputs = raw_manifest ? { raw_manifest: } : { manifest_url: }
 
+        if auto_dirty_queries?
+          inputs[:auto_dirty_queries] = auto_dirty_queries
+        end
+
         self.paths_to_source_code = run_subcommand!(GenerateTypescript, inputs)
+      end
+
+      def auto_dirty_queries?
+        auto_dirty_queries
       end
 
       def run_post_generation_tasks

@@ -38,6 +38,54 @@ export function forEachQuery (callback: (query: Query<RemoteCommand<any, any, an
   queryCache.forEach(callback)
 }
 
+interface DirtyQueryEvent {
+  commandName: string
+  propertyName: string | undefined
+  value: string | number | undefined
+}
+
+let dirtyQueryChannel: BroadcastChannel | null = null
+
+if (typeof BroadcastChannel !== 'undefined') {
+  dirtyQueryChannel = new BroadcastChannel('dirty-query')
+
+  dirtyQueryChannel.addEventListener('message', (event: MessageEvent<DirtyQueryEvent>) => {
+    const { commandName, propertyName, value } = event.data
+
+    dirtyQuery(commandName, propertyName, value, { skipBroadcast: true })
+  })
+}
+
+export function dirtyQuery<CommandT extends RemoteCommand<any, any, any>> (
+  commandClass: RemoteCommandConstructor<CommandT> | string,
+  propertyName: string | undefined = undefined,
+  propertyValue: string | number | undefined = undefined,
+  options: { skipBroadcast: boolean } = { skipBroadcast: false }) {
+  if (typeof commandClass !== 'string') {
+    commandClass = commandClass.fullCommandName
+  }
+
+  forEachQuery((query) => {
+    if (query.CommandClass.fullCommandName === commandClass) {
+      if (query.inputs == null || Object.keys(query.inputs).length === 0) {
+        query.setDirty()
+      } else {
+        if (propertyName != null) {
+          if (query.inputs[propertyName] !== propertyValue) {
+            return
+          }
+        }
+
+        query.setDirty()
+      }
+    }
+  })
+
+  if (dirtyQueryChannel != null && !options.skipBroadcast) {
+    dirtyQueryChannel.postMessage({ commandName: commandClass, propertyName, value: propertyValue })
+  }
+}
+
 function toKey<CommandT extends RemoteCommand<any, any, any>> (
   CommandClass: RemoteCommandConstructor<CommandT>,
   inputs: InputsOf<CommandT> | undefined

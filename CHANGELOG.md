@@ -1,3 +1,7 @@
+## [1.3.1] - 2026-02-28
+
+- Use a channel to make other tabs automatically reload their queries
+
 ## [1.3.0] - 2026-02-26
 
 - Add auto-dirty queries feature

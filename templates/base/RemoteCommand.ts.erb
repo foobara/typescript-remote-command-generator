@@ -1,7 +1,7 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
 import { type FoobaraError } from './Error'
 <% if auto_dirty_queries? %>
-import * as QueryCache from './QueryCache'
+import { dirtyQuery } from './QueryCache'
 <% end %>
 
 export default abstract class RemoteCommand<Inputs, Result, CommandError extends FoobaraError> {
@@ -136,19 +136,13 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   <% if auto_dirty_queries? %>
   dirtyQueries () {
     for (const [commandClass, inputs] of this.dirties()) {
-      QueryCache.forEachQuery((query) => {
-        // debugger
-        if (query.CommandClass === commandClass) {
-          if (inputs == null || Object.keys(inputs).length === 0) {
-            query.setDirty()
-          } else {
-            for (const [property, value] of Object.entries(inputs)) {
-              if (query.inputs[property] !== value) { return }
-            }
-            query.setDirty()
-          }
+      if (inputs != null) {
+        for (const [propertyName, value] of Object.entries(inputs)) {
+          dirtyQuery(commandClass, propertyName, value)
         }
-      })
+      } else {
+        dirtyQuery(commandClass)
+      }
     }
   }
   <% end %>

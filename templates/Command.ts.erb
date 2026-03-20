@@ -2,9 +2,9 @@
 import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"
 <% end %>
 
-import Inputs from "./Inputs"
-import Result from "./Result"
-import { Error } from "./Errors"
+import type Inputs from "./Inputs"
+import type Result from "./Result"
+import { type Error } from "./Errors"
 <% if result_json_requires_cast? %>
 import castJsonResult from "./castJsonResult"
 <% end %>

@@ -6,4 +6,4 @@ type Result = <%=
 result_type.nil? ? "null" : foobara_type_to_ts_type(result_type, dependency_group:, association_depth:)
 %>
 
-export default Result
+export type { Result as default }

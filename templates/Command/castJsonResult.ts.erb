@@ -1,4 +1,4 @@
-import Result from "./Result"
+import type Result from "./Result"
 
 <% dependency_roots.each do |dependency_root| %>
 import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"

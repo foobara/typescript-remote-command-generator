@@ -148,6 +148,10 @@ module Foobara
         def attribute_names
           attributes_type.attribute_names
         end
+
+        def import_destructure
+          "{ type #{scoped_short_name} }"
+        end
       end
     end
   end

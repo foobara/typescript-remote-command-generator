@@ -1,12 +1,12 @@
 import {
   <%= entity_short_name %>,
-  <%= entity_short_name %>PrimaryKeyType,
+  type <%= entity_short_name %>PrimaryKeyType,
   <%= entity_name_downcase %>PrimaryKeyAttributeName,
-  <%= entity_short_name %>AttributesType
+  type <%= entity_short_name %>AttributesType
 } from "./<%= entity_short_name %>/Ambiguous"
 import {
   Unloaded<%= entity_short_name %>,
-  Unloaded<%= entity_short_name %>AttributesType
+  type Unloaded<%= entity_short_name %>AttributesType
 } from "./<%= entity_short_name %>/Unloaded"
 import {
   Loaded<%= entity_short_name %>
@@ -15,11 +15,11 @@ import {
 <% if has_associations? %>
 import {
   <%= entity_short_name %>Atom,
-  <%= entity_short_name %>AtomAttributesType
+  type <%= entity_short_name %>AtomAttributesType
 } from "./<%= entity_short_name %>/Atom"
 import {
   <%= entity_short_name %>Aggregate,
-  <%= entity_short_name %>AggregateAttributesType
+  type <%= entity_short_name %>AggregateAttributesType
 } from "./<%= entity_short_name %>/Aggregate"
 <% end %>
 

@@ -1,8 +1,8 @@
-import { Never } from "<%= path_to_root %>base/Entity"
+import { type Never } from "<%= path_to_root %>base/Entity"
 import {
   <%= entity_short_name %>,
-  <%= entity_short_name %>PrimaryKeyType,
-  <%= entity_short_name %>AttributesType
+  type <%= entity_short_name %>PrimaryKeyType,
+  type <%= entity_short_name %>AttributesType
 } from "./Ambiguous"
 
 export type Unloaded<%= entity_short_name %>AttributesType = Never<<%= entity_short_name %>AttributesType>

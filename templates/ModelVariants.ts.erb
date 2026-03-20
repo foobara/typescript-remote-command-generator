@@ -1,16 +1,16 @@
 import {
   <%= model_short_name %>,
-  <%= model_short_name %>AttributesType
+  type <%= model_short_name %>AttributesType
 } from "./<%= model_short_name %>/<%= model_short_name %>"
 
 <% if has_associations? %>
 import {
   <%= model_short_name %>Atom,
-  <%= model_short_name %>AtomAttributesType
+  type <%= model_short_name %>AtomAttributesType
 } from "./<%= model_short_name %>/Atom"
 import {
   <%= model_short_name %>Aggregate,
-  <%= model_short_name %>AggregateAttributesType
+  type <%= model_short_name %>AggregateAttributesType
 } from "./<%= model_short_name %>/Aggregate"
 <% end %>
 

@@ -1,3 +1,7 @@
+## [1.4.0] - 2026-03-19
+
+- Make things work with Vite instead of CRA
+
 ## [1.3.1] - 2026-02-28
 
 - Use a channel to make other tabs automatically reload their queries

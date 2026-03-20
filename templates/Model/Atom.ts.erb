@@ -1,6 +1,6 @@
 import {
   <%= model_short_name %>,
-  <%= model_short_name %>AttributesType
+  type <%= model_short_name %>AttributesType
 } from "./<%= model_short_name %>"
 <% dependency_roots.each do |dependency_root| %>
 import <%= dependency_root.import_destructure %> from "<%= path_to_root %><%= dependency_root.import_path %>"

@@ -4,4 +4,4 @@
 
 type Inputs = <%= foobara_type_to_ts_type(inputs_type, dependency_group:, model_and_entity_free: true) %>
 
-export default Inputs
+export type { Inputs as default }

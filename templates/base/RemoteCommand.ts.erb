@@ -10,12 +10,12 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   static organizationName: string
   static domainName: string
 
-  // TODO: make use of domain's config instead of process.env directly.
+  // TODO: make use of domain's config instead of import.meta.env directly.
   static get urlBase (): string {
     let base = this._urlBase
 
     if (base == null) {
-      base = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
+      base = import.meta.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
     }
 
     if (base == null) {

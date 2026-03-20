@@ -4,7 +4,7 @@ import {
   type InputsOf, type ResultOf, type ErrorOf, type RemoteCommandConstructor
 } from '../base/RemoteCommandTypes'
 import type Query from '../base/Query'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { getQuery } from '../base/QueryCache'
 
 interface QueryState<CommandT extends RemoteCommand<any, any, any>> {
@@ -43,14 +43,7 @@ export default function useQuery<CommandT extends RemoteCommand<any, any, any>> 
   CommandClass: RemoteCommandConstructor<CommandT>,
   inputs: InputsOf<CommandT> | undefined = undefined
 ): QueryState<CommandT> {
-  const queryRef = useRef<Query<CommandT>>(null)
-
-  let query = queryRef.current
-
-  if (query == null) {
-    query = getQuery(CommandClass, inputs)
-    queryRef.current = query
-  }
+  const [query] = useState<Query<CommandT>>(() => getQuery(CommandClass, inputs))
 
   const [queryState, setQueryState] = useState<QueryState<CommandT>>(
     queryToQueryState<CommandT>(query)

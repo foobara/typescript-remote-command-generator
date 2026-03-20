@@ -2,6 +2,7 @@ import RemoteCommand from '../../base/RemoteCommand'
 import { type Outcome } from '../../base/Outcome'
 import { type FoobaraError } from '../../base/Error'
 import { tokenForUrl } from './utils/accessTokens'
+import { RefreshLogin } from './RefreshLogin'
 
 export default class RequiresAuthCommand<Inputs, Result, Error extends FoobaraError<any>>
   extends RemoteCommand<Inputs, Result, Error> {
@@ -27,7 +28,6 @@ export default class RequiresAuthCommand<Inputs, Result, Error extends FoobaraEr
     if (response.status === 401) {
       this.commandState = 'refreshing_authentication'
 
-      const { RefreshLogin } = await import('./RefreshLogin')
       // See if we can authenticate using the refresh token
       const refreshCommand = new RefreshLogin()
       const outcome = await refreshCommand.run()

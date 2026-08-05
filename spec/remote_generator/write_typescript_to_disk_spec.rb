@@ -39,6 +39,23 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     expect(File.exist?("#{output_directory}/typescript-remote-commands-generator.json")).to be true
   end
 
+  context "when auto_dirty_queries is off" do
+    let(:auto_dirty_queries) { false }
+
+    it "neither defines nor calls dirtyQueries" do
+      # The definition is already behind auto_dirty_queries?, so calling it
+      # unconditionally left every successful command raising
+      # "TypeError: this.dirtyQueries is not a function". It is a runtime error
+      # rather than a type error, so tsc and the linter are both clean and it
+      # only appears in a browser.
+      expect(outcome).to be_success
+
+      remote_command = command.paths_to_source_code["base/RemoteCommand.ts"]
+
+      expect(remote_command).to_not include("dirtyQueries")
+    end
+  end
+
   context "without a manifest or url" do
     let(:raw_manifest) { nil }
 

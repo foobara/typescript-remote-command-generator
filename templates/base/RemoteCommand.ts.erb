@@ -121,7 +121,9 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
 
       this.outcome = new SuccessfulOutcome<Result, CommandError>(result)
       this.commandState = 'succeeded'
+<% if auto_dirty_queries? %>
       this.dirtyQueries()
+<% end %>
     } else if (response.status === 422 || response.status === 401 || response.status === 403) {
       this.commandState = 'errored'
       this.outcome = new ErrorOutcome<Result, CommandError>(body)

@@ -25,6 +25,29 @@ module Foobara
     module Generators
       class TypescriptFromManifestBaseGenerator < Foobara::FilesGenerator
         class << self
+          # Asks whether RequiresAuthCommand's imports will be generated, not
+          # whether the auth domain is present -- they are different questions,
+          # and ./RefreshLogin and ./utils/accessTokens come from different
+          # commands.
+          def requires_auth_command_generatable?(manifest)
+            return false if RemoteGenerator.no_foobara_auth?
+
+            root = manifest.root_manifest
+            commands = root[:command] || root["command"] || {}
+            names = commands.keys.to_set(&:to_s)
+
+            names.include?("Foobara::Auth::RefreshLogin") &&
+              names.intersect?(["Foobara::Auth::Login", "Foobara::Auth::Logout"].to_set)
+          end
+
+          def requires_auth_generator_for(manifest)
+            if requires_auth_command_generatable?(manifest)
+              Auth::RequiresAuthGenerator
+            else
+              CommandGenerator
+            end
+          end
+
           def manifest_to_generator_classes(manifest)
             case manifest
             when Manifest::Command
@@ -36,10 +59,10 @@ module Foobara
                                   when "Foobara::Auth::Logout"
                                     Auth::LogoutGenerator
                                   when /\bGetCurrentUser$/
-                                    Auth::RequiresAuthGenerator
+                                    requires_auth_generator_for(manifest)
                                   else
                                     if manifest.requires_authentication?
-                                      Auth::RequiresAuthGenerator
+                                      requires_auth_generator_for(manifest)
                                     else
                                       CommandGenerator
                                     end

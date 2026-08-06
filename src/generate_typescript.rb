@@ -12,19 +12,28 @@ module Foobara
         raw_manifest :associative_array
         manifest_url :string
         auto_dirty_queries :boolean, default: false
+        no_foobara_auth :boolean,
+                        default: false,
+                        description: "Never generate Foobara::Auth's RequiresAuthCommand, even if the " \
+                                     "manifest contains that domain. For apps that import it from elsewhere."
       end
 
       def execute
-        load_manifest_if_needed
+        # Wraps the whole run, not just generate_element: which generator a
+        # command gets is decided while elements and their dependencies are
+        # collected, which happens before anything is rendered.
+        RemoteGenerator.no_foobara_auth(no_foobara_auth) do
+          load_manifest_if_needed
 
-        include_non_templated_files
+          include_non_templated_files
 
-        add_root_manifest_to_set_of_elements_to_generate
-        # TODO: allow specifying subset of commands
-        add_all_commands_to_set_of_elements_to_generate
+          add_root_manifest_to_set_of_elements_to_generate
+          # TODO: allow specifying subset of commands
+          add_all_commands_to_set_of_elements_to_generate
 
-        each_element_to_generate do
-          generate_element
+          each_element_to_generate do
+            generate_element
+          end
         end
 
         paths_to_source_code

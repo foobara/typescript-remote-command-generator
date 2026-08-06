@@ -33,5 +33,52 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
       expect(result.keys).to include("Foobara/Auth/RequiresAuthCommand.ts")
       expect(result.keys).to include("Foobara/Auth/utils/accessTokens.ts")
     end
+
+    context "when no_foobara_auth is set" do
+      let(:inputs) { { raw_manifest:, no_foobara_auth: true } }
+
+      it "generates no RequiresAuthCommand even though the manifest has the domain" do
+        expect(outcome).to be_success
+
+        expect(result.keys).to_not include("Foobara/Auth/RequiresAuthCommand.ts")
+      end
+
+      it "still generates the commands themselves" do
+        expect(outcome).to be_success
+
+        expect(result.keys).to include("Foobara/Auth/LoginCommand.ts")
+      end
+    end
+  end
+
+  describe ".requires_auth_command_generatable?" do
+    subject(:generatable) do
+      Foobara::RemoteGenerator::Generators::TypescriptFromManifestBaseGenerator
+        .requires_auth_command_generatable?(Foobara::Manifest::RootManifest.new(command: commands))
+    end
+
+    context "when the manifest has every command those imports come from" do
+      let(:commands) do
+        { "Foobara::Auth::RefreshLogin" => {}, "Foobara::Auth::Login" => {}, "Billing::Charge" => {} }
+      end
+
+      it { is_expected.to be true }
+    end
+
+    context "when the refresh endpoint is not exposed" do
+      let(:commands) do
+        { "Foobara::Auth::Login" => {}, "Foobara::Auth::Logout" => {}, "Billing::Charge" => {} }
+      end
+
+      it "is false, because ./RefreshLogin would not be generated" do
+        expect(generatable).to be false
+      end
+    end
+
+    context "when there is no auth domain at all" do
+      let(:commands) { { "Billing::Charge" => {} } }
+
+      it { is_expected.to be false }
+    end
   end
 end

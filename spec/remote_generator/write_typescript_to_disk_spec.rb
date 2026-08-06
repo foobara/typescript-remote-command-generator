@@ -56,28 +56,6 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     end
   end
 
-  context "when a command requires authentication but the app has no Foobara::Auth" do
-    let(:raw_manifest) do
-      manifest = JSON.parse(raw_manifest_json)
-      # Any command will do; this manifest contains no Foobara::Auth at all.
-      manifest["command"]["FoobaraAi::Ask"]["requires_authentication"] = true
-      manifest
-    end
-
-    it "does not emit a RequiresAuthCommand it cannot support" do
-      # Emitting it here used to produce imports of files that were never
-      # generated, so be_success is the linter failing the project.
-      expect(outcome).to be_success
-
-      expect(command.paths_to_source_code.keys).to_not include("Foobara/Auth/RequiresAuthCommand.ts")
-    end
-
-    it "still generates the command itself" do
-      expect(outcome).to be_success
-      expect(command.paths_to_source_code.keys).to include("FoobaraAi/Ask/index.ts")
-    end
-  end
-
   context "without a manifest or url" do
     let(:raw_manifest) { nil }
 

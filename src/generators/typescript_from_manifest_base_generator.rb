@@ -25,10 +25,6 @@ module Foobara
     module Generators
       class TypescriptFromManifestBaseGenerator < Foobara::FilesGenerator
         class << self
-          # Asks whether RequiresAuthCommand's imports will be generated, not
-          # whether the auth domain is present -- they are different questions,
-          # and ./RefreshLogin and ./utils/accessTokens come from different
-          # commands.
           def requires_auth_command_generatable?(manifest)
             return false if RemoteGenerator.no_foobara_auth?
 

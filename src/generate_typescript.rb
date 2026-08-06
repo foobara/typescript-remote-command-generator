@@ -19,9 +19,6 @@ module Foobara
       end
 
       def execute
-        # Wraps the whole run, not just generate_element: which generator a
-        # command gets is decided while elements and their dependencies are
-        # collected, which happens before anything is rendered.
         RemoteGenerator.no_foobara_auth(no_foobara_auth) do
           load_manifest_if_needed
 

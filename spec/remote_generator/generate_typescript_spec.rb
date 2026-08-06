@@ -33,5 +33,21 @@ RSpec.describe Foobara::RemoteGenerator::GenerateTypescript do
       expect(result.keys).to include("Foobara/Auth/RequiresAuthCommand.ts")
       expect(result.keys).to include("Foobara/Auth/utils/accessTokens.ts")
     end
+
+    context "when no_foobara_auth is set" do
+      let(:inputs) { { raw_manifest:, no_foobara_auth: true } }
+
+      it "generates no RequiresAuthCommand even though the manifest has the domain" do
+        expect(outcome).to be_success
+
+        expect(result.keys).to_not include("Foobara/Auth/RequiresAuthCommand.ts")
+      end
+
+      it "still generates the commands themselves" do
+        expect(outcome).to be_success
+
+        expect(result.keys).to include("Foobara/Auth/LoginCommand.ts")
+      end
+    end
   end
 end

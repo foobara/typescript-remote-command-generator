@@ -106,9 +106,9 @@ module Foobara
             when Manifest::Type
               TypeGenerator
             else
-              # :nocov:
+              # simplecov:disable
               raise "Not sure how build a generator for a #{manifest}"
-              # :nocov:
+              # simplecov:enable
             end
           end
         end
@@ -117,9 +117,9 @@ module Foobara
           if none_given || relevant_manifest.is_a?(Manifest::BaseManifest)
             super
           else
-            # :nocov:
+            # simplecov:disable
             raise ArgumentError, "Expected a Foobara::Manifest, got #{relevant_manifest.class}"
-            # :nocov:
+            # simplecov:enable
           end
         end
 
@@ -155,10 +155,10 @@ module Foobara
           return @dependency_roots if defined?(@dependency_roots)
 
           unless dependency_group
-            # :nocov:
+            # simplecov:disable
             raise "This generator was created without a " \
                   "dependency_group and therefore cannot call #{__method__}"
-            # :nocov:
+            # simplecov:enable
           end
 
           @dependency_roots = dependency_group.non_colliding_dependency_roots.sort_by(&:scoped_full_name)
@@ -220,9 +220,9 @@ module Foobara
           when ::Symbol
             value.to_s.inspect
           else
-            # :nocov:
+            # simplecov:disable
             raise "Not sure how to represent #{value} in typescript. Maybe implement it."
-            # :nocov:
+            # simplecov:enable
           end
         end
 
@@ -260,18 +260,18 @@ module Foobara
 
                             if name
                               # TODO: test this code path or delete it
-                              # :nocov:
+                              # simplecov:disable
                               return is_empty ? "undefined" : "interface #{name} #{ts_type}"
-                              # :nocov:
+                              # simplecov:enable
                             else
                               is_empty ? "undefined" : ts_type
                             end
                           else
                             # TODO: test this path with an :attributes type (not extended from :attributes but
                             # the built-in type itself directly)
-                            # :nocov:
+                            # simplecov:disable
                             ts_type
-                            # :nocov:
+                            # simplecov:enable
                           end
                         elsif type_declaration.is_a?(Manifest::Array)
                           # TODO: which association_depth do we pass here?
@@ -347,9 +347,9 @@ module Foobara
             # TODO: Add description as a comment?
             name ? "type #{name} = #{type_string}" : type_string
           else
-            # :nocov:
+            # simplecov:disable
             raise "Not sure how to convert #{type_declaration} to a TS type"
-            # :nocov:
+            # simplecov:enable
           end
         end
 
@@ -397,9 +397,9 @@ module Foobara
           else
             # TODO: test this path with an :attributes type (not extended from :attributes but
             # the built-in type itself directly)
-            # :nocov:
+            # simplecov:disable
             "Record<string, any>"
-            # :nocov:
+            # simplecov:enable
           end
         end
 
@@ -418,9 +418,9 @@ module Foobara
                             when AssociationDepth::AGGREGATE
                               AggregateModelGenerator
                             else
-                              # :nocov:
+                              # simplecov:disable
                               raise "Bad association_depth: #{association_depth}"
-                              # :nocov:
+                              # simplecov:enable
                             end
 
           generator = generator_class.new(model)

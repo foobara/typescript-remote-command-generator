@@ -73,7 +73,7 @@ module Foobara
           exit_status = wait_thr.value
 
           unless exit_status.success?
-            # :nocov:
+            # simplecov:disable
             out = stdout.read
             err = stderr.read
 
@@ -82,7 +82,7 @@ module Foobara
             else
               warn "WARNING: could not #{cmd}\n#{out}\n#{err}"
             end
-            # :nocov:
+            # simplecov:enable
           end
         end
       end

@@ -117,14 +117,14 @@ module Foobara
                 result << "})"
               elsif child_cast_tree.is_a?(::Hash)
                 # TODO: either test this code path or delete it
-                # :nocov:
+                # simplecov:disable
                 property = path_part =~ /\A\d+\z/ ? path_part.to_i : "\"#{path_part}\""
 
                 result << cast_json_result_function_body(child_cast_tree,
                                                          parent:,
                                                          property:,
                                                          value: "#{parent}?.#{path_part}")
-                # :nocov:
+                # simplecov:enable
               elsif child_cast_tree.is_a?(CastTree)
                 result << cast_json_result_function_body(child_cast_tree.children,
                                                          parent: "#{parent}?.#{path_part}")
@@ -135,15 +135,15 @@ module Foobara
                                               property:,
                                               value: "#{parent}?.#{path_part}")
               else
-                # :nocov:
+                # simplecov:disable
                 raise "Not sure how to handle a #{cast_tree.class}: #{cast_tree}"
-                # :nocov:
+                # simplecov:enable
               end
             end
           else
-            # :nocov:
+            # simplecov:disable
             raise "Not sure how to handle a #{cast_tree.class}: #{cast_tree}"
-            # :nocov:
+            # simplecov:enable
           end
 
           result.compact.join("\n")
@@ -151,9 +151,9 @@ module Foobara
 
         def _ts_cast_expression(cast_tree, value:, parent: nil, property: nil)
           unless cast_tree.is_a?(CastTree)
-            # :nocov:
+            # simplecov:disable
             raise "Expected a CastTree but got a #{cast_tree.class}: #{cast_tree}"
-            # :nocov:
+            # simplecov:enable
           end
 
           type_declaration = cast_tree.declaration_to_cast
@@ -170,9 +170,9 @@ module Foobara
                      end
                    else
                      # TODO: either test this path or raise
-                     # :nocov:
+                     # simplecov:disable
                      value
-                     # :nocov:
+                     # simplecov:enable
                    end
 
           type = if type_declaration.is_a?(Manifest::TypeDeclaration)
@@ -198,9 +198,9 @@ module Foobara
 
                           "#{lvalue} = new #{ts_model_name}(#{present_value})"
                         else
-                          # :nocov:
+                          # simplecov:disable
                           raise "Not sure how to cast type #{type} to a Typescript expression"
-                          # :nocov:
+                          # simplecov:enable
                         end
 
           expression += "\n}"
@@ -243,7 +243,7 @@ module Foobara
 
             CastTree.new(children:, declaration_to_cast: type_declaration, initial:)
             # TODO: either test this code path or raise or delete it
-            # :nocov:
+            # simplecov:disable
           elsif type_declaration.custom?
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               tree = _construct_cast_tree(type_declaration.base_type.to_type_declaration)
@@ -253,7 +253,7 @@ module Foobara
               end
             end
           end
-          # :nocov:
+          # simplecov:enable
         end
 
         # TODO: Feels like similar complicated logic is popping up in many places? How to find/converge such logic
@@ -305,11 +305,11 @@ module Foobara
             models
           elsif type_declaration.custom?
             # TODO: either test this code path or raise or delete it
-            # :nocov:
+            # simplecov:disable
             if type_requires_cast?(type_declaration.base_type.to_type_declaration)
               _models_reachable_from_declaration(type_declaration.base_type.to_type_declaration)
             end
-            # :nocov:
+            # simplecov:enable
           end
         end
       end

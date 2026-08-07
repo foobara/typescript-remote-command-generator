@@ -86,9 +86,9 @@ module Foobara
 
             if type && !type.builtin? && !type.model?
               # TODO: Test this!!
-              # :nocov:
+              # simplecov:disable
               [TypeGenerator.new(type)]
-              # :nocov:
+              # simplecov:enable
             else
               []
             end

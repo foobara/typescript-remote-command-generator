@@ -1,3 +1,8 @@
+## [1.5.0] - 2026-08-06
+
+- Only generate RequiresAuthCommand when its imports will exist
+- Only call dirtyQueries when it is defined
+
 ## [1.4.0] - 2026-03-19
 
 - Make things work with Vite instead of CRA

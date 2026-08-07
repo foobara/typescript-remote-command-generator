@@ -27,9 +27,9 @@ module Foobara
 
           collision_data[key].tap do |cd|
             unless cd
-              # :nocov:
+              # simplecov:disable
               raise "Dependency #{dep} is not part of this dependency group"
-              # :nocov:
+              # simplecov:enable
             end
           end
         end
@@ -74,9 +74,9 @@ module Foobara
           points = collision_data_for(dep).points
 
           unless points
-            # :nocov:
+            # simplecov:disable
             raise "Dependency #{dep} has no collision data"
-            # :nocov:
+            # simplecov:enable
           end
 
           points

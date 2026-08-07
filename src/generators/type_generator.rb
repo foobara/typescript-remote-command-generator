@@ -83,16 +83,16 @@ module Foobara
                      value_to_ts_value(enum_item)
                    end.join(" | ")
                  else
-                   # :nocov:
+                   # simplecov:disable
                    raise "Haven't implemented other types yet"
-                   # :nocov:
+                   # simplecov:enable
                  end
 
           if declaration_data["allow_nil"]
             # TODO: add a custom type to the fixture manifest that includes allows_nil
-            # :nocov:
+            # simplecov:disable
             guts += " | undefined"
-            # :nocov:
+            # simplecov:enable
           end
 
           guts

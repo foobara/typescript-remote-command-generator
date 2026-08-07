@@ -38,9 +38,9 @@ module Foobara
 
       def validate
         if raw_manifest.nil? && manifest_url.nil?
-          # :nocov:
+          # simplecov:disable
           add_runtime_error(MissingManifestError.new(message: "Either raw_manifest or manifest_url must be given"))
-          # :nocov:
+          # simplecov:enable
         end
       end
 
@@ -58,7 +58,7 @@ module Foobara
         self.manifest_data = if raw_manifest
                                raw_manifest
                                # TODO: introduce VCR to test the following elsif block
-                               # :nocov:
+                               # simplecov:disable
                              elsif manifest_url
                                url = URI.parse(manifest_url)
                                response = Net::HTTP.get_response(url)
@@ -71,7 +71,7 @@ module Foobara
                                                end
 
                                JSON.parse(manifest_json)
-                               # :nocov:
+                               # simplecov:enable
                              end
       end
 

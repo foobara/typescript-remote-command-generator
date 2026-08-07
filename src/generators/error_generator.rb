@@ -17,9 +17,9 @@ module Foobara
                    when TypeGenerator
                      [*p.target_dir, p.type_short_name, "errors"]
                    when nil
-                     # :nocov:
+                     # simplecov:disable
                      raise "Expected #{error_name} to have a parent but it did not"
-                   # :nocov:
+                   # simplecov:enable
                    else
                      p.target_dir
                    end

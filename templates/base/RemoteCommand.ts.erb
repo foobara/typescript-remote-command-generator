@@ -15,7 +15,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     let base = this._urlBase
 
     if (base == null) {
-      base = import.meta.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
+      base = <%= env_expression %>.REACT_APP_FOOBARA_GLOBAL_URL_BASE
     }
 
     if (base == null) {

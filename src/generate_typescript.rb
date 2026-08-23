@@ -1,6 +1,8 @@
 require "net/http"
 require "uri"
 
+require_relative "remote_generator"
+
 module Foobara
   module RemoteGenerator
     class GenerateTypescript < Foobara::Generators::Generate
@@ -16,6 +18,7 @@ module Foobara
                         default: false,
                         description: "Never generate Foobara::Auth's RequiresAuthCommand, even if the " \
                                      "manifest contains that domain. For apps that import it from elsewhere."
+        env_expression :env_expression, default: "import.meta.env"
       end
 
       def execute
@@ -39,7 +42,9 @@ module Foobara
       def apply_remote_generator_config
         RemoteGenerator.no_foobara_auth(no_foobara_auth) do
           RemoteGenerator.auto_dirty_queries(auto_dirty_queries) do
-            yield
+            RemoteGenerator.with_env_expression(env_expression) do
+              yield
+            end
           end
         end
       end

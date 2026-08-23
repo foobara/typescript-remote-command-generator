@@ -1,3 +1,7 @@
+## [1.5.1] - 2026-08-22
+
+- Allow setting the env expression to either import.meta.env or process.env with --env-expression
+
 ## [1.5.0] - 2026-08-06
 
 - Only generate RequiresAuthCommand when its imports will exist

@@ -19,6 +19,7 @@ module Foobara
                         default: false,
                         description: "Never generate Foobara::Auth's RequiresAuthCommand, even if the " \
                                      "manifest contains that domain. For apps that import it from elsewhere."
+        env_expression :env_expression, default: "import.meta.env"
       end
 
       possible_error :missing_manifest
@@ -56,6 +57,7 @@ module Foobara
 
         inputs[:auto_dirty_queries] = auto_dirty_queries
         inputs[:no_foobara_auth] = no_foobara_auth
+        inputs[:env_expression] = env_expression
 
         self.paths_to_source_code = run_subcommand!(GenerateTypescript, inputs)
       end

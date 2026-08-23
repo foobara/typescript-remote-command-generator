@@ -454,6 +454,8 @@ module Foobara
         def auto_dirty_queries?
           RemoteGenerator.auto_dirty_queries?
         end
+
+        def env_expression = RemoteGenerator.env_expression
       end
     end
   end

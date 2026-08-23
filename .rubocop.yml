@@ -15,3 +15,6 @@ Naming/FileName:
 
 Style/Semicolon:
   Enabled: false
+
+Style/ExplicitBlockArgument:
+  Enabled: false

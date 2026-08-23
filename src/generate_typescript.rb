@@ -19,7 +19,7 @@ module Foobara
       end
 
       def execute
-        RemoteGenerator.no_foobara_auth(no_foobara_auth) do
+        apply_remote_generator_config do
           load_manifest_if_needed
 
           include_non_templated_files
@@ -34,6 +34,14 @@ module Foobara
         end
 
         paths_to_source_code
+      end
+
+      def apply_remote_generator_config
+        RemoteGenerator.no_foobara_auth(no_foobara_auth) do
+          RemoteGenerator.auto_dirty_queries(auto_dirty_queries) do
+            yield
+          end
+        end
       end
 
       def validate
@@ -80,12 +88,6 @@ module Foobara
           elements_to_generate << command
           elements_to_generate << command.domain
           elements_to_generate << command.organization
-        end
-      end
-
-      def generate_element
-        RemoteGenerator.auto_dirty_queries(auto_dirty_queries) do
-          super
         end
       end
 

@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "#{spec.homepage}/CHANGELOG.md"
 
   spec.add_dependency "foobara", ">= 0.1.16", "< 2.0.0"
-  spec.add_dependency "foobara-files-generator", "< 2.0.0"
+  spec.add_dependency "foobara-files-generator", ">= 0.2.3", "< 2.0.0"
 
   spec.files = Dir[
     "lib/**/*",

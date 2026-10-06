@@ -33,8 +33,12 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   it "contains base files" do
     expect(outcome).to be_success
 
-    expect(command.paths_to_source_code["SomeOrg/index.ts"]).to include('export const organizationName = "SomeOrg"')
-    expect(command.paths_to_source_code["SomeOrg/Auth/index.ts"]).to include('export const domainName = "Auth"')
+    expect(
+      command.paths_to_source_code["SomeOrg/index.ts"].content
+    ).to include('export const organizationName = "SomeOrg"')
+    expect(
+      command.paths_to_source_code["SomeOrg/Auth/index.ts"].content
+    ).to include('export const domainName = "Auth"')
 
     expect(File.exist?("#{output_directory}/typescript-remote-commands-generator.json")).to be true
   end
@@ -50,7 +54,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
       # only appears in a browser.
       expect(outcome).to be_success
 
-      remote_command = command.paths_to_source_code["base/RemoteCommand.ts"]
+      remote_command = command.paths_to_source_code["base/RemoteCommand.ts"].content
 
       expect(remote_command).to_not include("dirtyQueries")
     end
@@ -70,9 +74,9 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
     it "contains custom domain and command files" do
       expect(outcome).to be_success
 
-      expect(command.paths_to_source_code["Todo/index.ts"]).to include('export const domainName = "Todo"')
+      expect(command.paths_to_source_code["Todo/index.ts"].content).to include('export const domainName = "Todo"')
       expect(
-        command.paths_to_source_code["Todo/CreateUser/index.ts"]
+        command.paths_to_source_code["Todo/CreateUser/index.ts"].content
       ).to include("export class CreateUser extends RemoteCommand<")
 
       expect(File.exist?("#{output_directory}/typescript-remote-commands-generator.json")).to be true
@@ -86,7 +90,7 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
       expect(outcome).to be_success
 
       expect(
-        command.paths_to_source_code["Foobara/Ai/AnswerBot/Ask/index.ts"]
+        command.paths_to_source_code["Foobara/Ai/AnswerBot/Ask/index.ts"].content
       ).to include("export class Ask extends RemoteCommand")
     end
   end

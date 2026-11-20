@@ -1,3 +1,4 @@
+require "pathname"
 require_relative "generate_typescript"
 
 module Foobara
@@ -64,28 +65,49 @@ module Foobara
 
       def run_post_generation_tasks
         Dir.chdir(project_directory || output_directory) do
-          eslint_fix
+          eslint_fix if eslint_config_present?
+          oxlint_fix if oxlint_config_present?
+          prettier_write if prettier_config_present?
         end
       end
 
+      def output_directory_relative_to_project
+        return @output_directory_relative_to_project if defined?(@output_directory_relative_to_project)
+
+        project_path = Pathname.new(File.expand_path(project_directory || output_directory))
+        pathname = Pathname.new(File.expand_path(output_directory))
+
+        @output_directory_relative_to_project = pathname.relative_path_from(project_path).to_s
+      end
+
+      def eslint_config_present? = any_files_present?("eslint.config.*", ".eslintrc", ".eslintrc.*")
+      def oxlint_config_present? = any_files_present?(".oxlintrc.json", "oxlint.config.*")
+      def prettier_config_present? = any_files_present?("prettier.config.*", ".prettierrc", ".prettierrc.*")
+      def any_files_present?(*globs) = !Dir.glob(globs).empty?
+
       def eslint_fix
-        cmd = "npx eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+        run_lint_cmd("npx eslint '#{output_directory_relative_to_project}/**/*.{js,jsx,ts,tsx}' --fix")
+      end
 
-        Open3.popen3(cmd) do |_stdin, stdout, stderr, wait_thr|
-          exit_status = wait_thr.value
+      def oxlint_fix
+        run_lint_cmd("npx oxlint --fix '#{output_directory_relative_to_project}'")
+      end
 
-          unless exit_status.success?
-            # simplecov:disable
-            out = stdout.read
-            err = stderr.read
+      def prettier_write
+        run_lint_cmd("npx prettier --write '#{output_directory_relative_to_project}/**/*.{js,jsx,ts,tsx}'")
+      end
 
-            if fail_if_does_not_pass_linter?
-              add_runtime_error :failed_to_lint, stdout: out, stderr: err
-            else
-              warn "WARNING: could not #{cmd}\n#{out}\n#{err}"
-            end
-            # simplecov:enable
+      def run_lint_cmd(cmd)
+        out, err, exit_status = Open3.capture3(cmd)
+
+        unless exit_status.success?
+          # simplecov:disable
+          if fail_if_does_not_pass_linter?
+            add_runtime_error :failed_to_lint, stdout: out, stderr: err
+          else
+            warn "WARNING: could not #{cmd}\n#{out}\n#{err}"
           end
+          # simplecov:enable
         end
       end
 

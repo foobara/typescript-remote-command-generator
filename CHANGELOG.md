@@ -1,3 +1,7 @@
+## [1.5.2] - 2026-11-19
+
+- Run eslint, prettier, and/or oxlint if their config files are present
+
 ## [1.5.1] - 2026-08-22
 
 - Allow setting the env expression to either import.meta.env or process.env with --env-expression

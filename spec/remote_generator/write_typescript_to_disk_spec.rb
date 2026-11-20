@@ -24,6 +24,10 @@ RSpec.describe Foobara::RemoteGenerator::WriteTypescriptToDisk do
   before do
     FileUtils.mkdir_p(File.dirname(project_directory))
     FileUtils.cp_r(test_app_directory, project_directory)
+    Dir.chdir project_directory do
+      `git init`
+      raise "could not git init" unless $?.exitstatus == 0
+    end
   end
 
   after do
